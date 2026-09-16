@@ -1,0 +1,70 @@
+[
+  {
+    "request": 1,
+    "wall_ms": 182.852167,
+    "prepare_pack_union_ms": 59.090954,
+    "host_gather_union_ms": 14.789208,
+    "prepare_pack_excluding_host_gather_ms": 44.301746,
+    "source_accounting_union_ms": 2.853963,
+    "gather_overlap_main_resolve_ms": 13.487362,
+    "calls": {
+      "payload/prepare_and_pack": 62,
+      "payload/host_gather": 6,
+      "metadata/source_counts": 31
+    },
+    "host_gather_overlap_gpu_kernel_ms": 2.283947,
+    "host_gather_overlap_gpu_busy_ms": 2.283947,
+    "prepare_pack_overlap_gpu_busy_ms": 5.933163
+  },
+  {
+    "request": 2,
+    "wall_ms": 183.508538,
+    "prepare_pack_union_ms": 62.325172,
+    "host_gather_union_ms": 17.27689,
+    "prepare_pack_excluding_host_gather_ms": 45.048282,
+    "source_accounting_union_ms": 2.813624,
+    "gather_overlap_main_resolve_ms": 15.855522,
+    "calls": {
+      "payload/prepare_and_pack": 62,
+      "payload/host_gather": 6,
+      "metadata/source_counts": 31
+    },
+    "host_gather_overlap_gpu_kernel_ms": 1.738885,
+    "host_gather_overlap_gpu_busy_ms": 1.738885,
+    "prepare_pack_overlap_gpu_busy_ms": 5.622569
+  },
+  {
+    "request": 3,
+    "wall_ms": 179.259989,
+    "prepare_pack_union_ms": 62.013824,
+    "host_gather_union_ms": 15.24456,
+    "prepare_pack_excluding_host_gather_ms": 46.769264,
+    "source_accounting_union_ms": 2.837096,
+    "gather_overlap_main_resolve_ms": 14.393388,
+    "calls": {
+      "payload/prepare_and_pack": 62,
+      "payload/host_gather": 6,
+      "metadata/source_counts": 31
+    },
+    "host_gather_overlap_gpu_kernel_ms": 1.695983,
+    "host_gather_overlap_gpu_busy_ms": 1.695983,
+    "prepare_pack_overlap_gpu_busy_ms": 5.823569
+  },
+  {
+    "request": 4,
+    "wall_ms": 174.972241,
+    "prepare_pack_union_ms": 57.430709,
+    "host_gather_union_ms": 14.417138,
+    "prepare_pack_excluding_host_gather_ms": 43.013571,
+    "source_accounting_union_ms": 2.701453,
+    "gather_overlap_main_resolve_ms": 13.569894,
+    "calls": {
+      "payload/prepare_and_pack": 62,
+      "payload/host_gather": 6,
+      "metadata/source_counts": 31
+    },
+    "host_gather_overlap_gpu_kernel_ms": 1.750023,
+    "host_gather_overlap_gpu_busy_ms": 1.750023,
+    "prepare_pack_overlap_gpu_busy_ms": 5.66751
+  }
+]

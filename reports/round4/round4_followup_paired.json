@@ -1,0 +1,45 @@
+{
+  "state": "complete",
+  "cases": [
+    {
+      "task": "rte",
+      "budget": 5,
+      "repetition": 0,
+      "baseline_ms": 149.25187316839583,
+      "optimized_ms": 152.57532646683103,
+      "reduction_pct": -2.2267414323741574,
+      "speedup": 0.9782176228922722,
+      "exact": true
+    },
+    {
+      "task": "rte",
+      "budget": 5,
+      "repetition": 1,
+      "baseline_ms": 151.57374658156186,
+      "optimized_ms": 148.81715089177305,
+      "reduction_pct": 1.8186498334693324,
+      "speedup": 1.0185233736385233,
+      "exact": true
+    },
+    {
+      "task": "sst2",
+      "budget": 10,
+      "repetition": 0,
+      "baseline_ms": 185.07785667861754,
+      "optimized_ms": 156.60164517066733,
+      "reduction_pct": 15.386071580350292,
+      "speedup": 1.1818385207697935,
+      "exact": true
+    },
+    {
+      "task": "sst2",
+      "budget": 10,
+      "repetition": 1,
+      "baseline_ms": 161.49532505551178,
+      "optimized_ms": 156.26181070547318,
+      "reduction_pct": 3.240659968478754,
+      "speedup": 1.0334919602327077,
+      "exact": true
+    }
+  ]
+}

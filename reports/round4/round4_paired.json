@@ -1,0 +1,65 @@
+{
+  "state": "complete",
+  "cases": [
+    {
+      "task": "trec",
+      "budget": 25,
+      "repetition": 0,
+      "baseline_ms": 376.11044050026976,
+      "optimized_ms": 370.04317295395595,
+      "reduction_pct": 1.6131611603877993,
+      "speedup": 1.0163961072376513,
+      "exact": true
+    },
+    {
+      "task": "trec",
+      "budget": 25,
+      "repetition": 1,
+      "baseline_ms": 390.5042164133192,
+      "optimized_ms": 291.64014653906634,
+      "reduction_pct": 25.31703006494883,
+      "speedup": 1.3389933486438215,
+      "exact": true
+    },
+    {
+      "task": "trec",
+      "budget": 50,
+      "repetition": 0,
+      "baseline_ms": 531.0566057069082,
+      "optimized_ms": 475.36665751977125,
+      "reduction_pct": 10.486631291028958,
+      "speedup": 1.1171515656518687,
+      "exact": true
+    },
+    {
+      "task": "trec",
+      "budget": 50,
+      "repetition": 1,
+      "baseline_ms": 586.3315004680771,
+      "optimized_ms": 403.27195499048685,
+      "reduction_pct": 31.221168456999347,
+      "speedup": 1.4539357205782104,
+      "exact": true
+    },
+    {
+      "task": "rte",
+      "budget": 50,
+      "repetition": 0,
+      "baseline_ms": 805.5811894428189,
+      "optimized_ms": 745.0779409573443,
+      "reduction_pct": 7.510509093108508,
+      "speedup": 1.0812039186232443,
+      "exact": true
+    },
+    {
+      "task": "rte",
+      "budget": 50,
+      "repetition": 1,
+      "baseline_ms": 730.8976456934033,
+      "optimized_ms": 652.2412596732465,
+      "reduction_pct": 10.761614363326533,
+      "speedup": 1.1205940054444905,
+      "exact": true
+    }
+  ]
+}

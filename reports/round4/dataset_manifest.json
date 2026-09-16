@@ -1,0 +1,67 @@
+{
+  "seed": 42,
+  "counts": {
+    "sst2": 867,
+    "subj": 998,
+    "trec": 495,
+    "rte": 272
+  },
+  "prefix_tokens": {
+    "sst2": 3811,
+    "subj": 4412,
+    "trec": 4940,
+    "rte": 6011
+  },
+  "prefix_text_sha256": {
+    "sst2": "ca642ee0f97a402ab1d528cd7fc3e9f5275dc0df502b864fc12f554376359bdf",
+    "subj": "1e68faa21963d2e31401cb591406c3efa94268ae27b737410a604236586f167d",
+    "trec": "b67ac86d2014b838287bcfa021b5bea5b3865a22c6e3b8ed98f5e47cf6e0a70d",
+    "rte": "2538fbefd9ab6c2fdd9f78a25c166bbf9523bc2ccfc8cb0bd1efe443add916b0"
+  },
+  "task_jsonl_sha256": {
+    "sst2": "0582a4521620e112bffca91e2ceb0e748c741a0c48aec5e9a1ba94fd795fd826",
+    "subj": "457e71cd3e50b4ea3b855e7b7db9b8ec435d0dd66a63d779456956c131ae4e91",
+    "trec": "547ad401fb621358768ec69af3e267f0c82dedc2320090eedc54099eb9d6d148",
+    "rte": "46072de2c434ebdb0b9b35c05fd9a352a543f759235903efef74a4f2a5edf090"
+  },
+  "excluded_calibration_uids": {
+    "sst2": [
+      "sst2-32",
+      "sst2-33",
+      "sst2-34",
+      "sst2-35"
+    ],
+    "subj": [
+      "subj-32",
+      "subj-33",
+      "subj-34",
+      "subj-35"
+    ],
+    "trec": [
+      "trec-32",
+      "trec-33",
+      "trec-34",
+      "trec-35"
+    ],
+    "rte": [
+      "rte-32",
+      "rte-33",
+      "rte-34",
+      "rte-35"
+    ]
+  },
+  "strict_excluded_uids": {
+    "sst2": [
+      "sst2-0"
+    ],
+    "subj": [
+      "subj-0"
+    ],
+    "trec": [
+      "trec-0"
+    ],
+    "rte": [
+      "rte-0"
+    ]
+  }
+}

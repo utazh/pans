@@ -1,0 +1,36 @@
+{
+  "tasks": {
+    "sst2": {
+      "history_uids": [
+        "sst2-32",
+        "sst2-33",
+        "sst2-34",
+        "sst2-35"
+      ]
+    },
+    "subj": {
+      "history_uids": [
+        "subj-32",
+        "subj-33",
+        "subj-34",
+        "subj-35"
+      ]
+    },
+    "trec": {
+      "history_uids": [
+        "trec-32",
+        "trec-33",
+        "trec-34",
+        "trec-35"
+      ]
+    },
+    "rte": {
+      "history_uids": [
+        "rte-32",
+        "rte-33",
+        "rte-34",
+        "rte-35"
+      ]
+    }
+  }
+}

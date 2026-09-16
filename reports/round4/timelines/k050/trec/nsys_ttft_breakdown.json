@@ -1,0 +1,1462 @@
+[
+  {
+    "request": 1,
+    "wall_ms": 486.004365,
+    "cpu_partition_ms": {
+      "other_control_and_sync": 17.025047999999998,
+      "selector_control_and_sync": 53.363307000000006,
+      "selector_ready_wait": 1.4447699999999999,
+      "selector_score_enqueue": 7.454927,
+      "score_preparation": 3.1785430000000003,
+      "selection_decision": 18.910833,
+      "prefetch_scheduling": 12.550605000000012,
+      "event_harvest": 1.3415,
+      "payload_resolve_other": 13.192443,
+      "payload_wait_and_gather": 208.42370200000002,
+      "cache_score_maintenance": 53.536724,
+      "payload_layout_cast": 8.210629999999997,
+      "attention_mask": 0.327781,
+      "decoder_enqueue": 87.043552
+    },
+    "gpu_busy_union_ms": 39.713847,
+    "gpu_no_activity_ms": 446.290518,
+    "kernel_union_ms": 36.028223,
+    "copy_union_ms": 3.954364,
+    "kernel_copy_overlap_ms": 0.26874,
+    "gpu_category_union_ms": {
+      "payload_or_other": 7.085097,
+      "selector_index": 0.712682,
+      "selector_score": 1.016719,
+      "cache_layout": 0.879374,
+      "attention_mask": 0.008577,
+      "decoder": 30.521902,
+      "selector_control": 0.0
+    },
+    "stream_busy_union_ms": {
+      "7": 35.306998,
+      "33": 0.712682,
+      "13": 4.207167
+    },
+    "copy_kinds": {
+      "1": {
+        "calls": 208,
+        "bytes": 93837376,
+        "sum_ms": 3.9385559999999984
+      },
+      "2": {
+        "calls": 12,
+        "bytes": 19784,
+        "sum_ms": 0.015808
+      }
+    },
+    "gpu_overlaps_ms": {
+      "decoder__selector_index": 0.044993,
+      "decoder__payload_or_other": 0.453287,
+      "selector_score__payload_or_other": 0.0,
+      "selector_control__selector_index": 0.0
+    },
+    "sync_api_calls_and_ms": {
+      "cudaEventSynchronize_v3020": [
+        36,
+        0.28472299999999995
+      ],
+      "cudaStreamSynchronize_v3020": [
+        94,
+        0.524389
+      ],
+      "cudaDeviceSynchronize_v3020": [
+        1,
+        1.453549
+      ]
+    },
+    "kernel_count": 1898,
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_tn",
+        "calls": 56,
+        "sum_ms": 12.426899
+      },
+      {
+        "name": "Kernel2",
+        "calls": 120,
+        "sum_ms": 6.493306
+      },
+      {
+        "name": "fmha_cutlassF_bf16_aligned_64x128_rf_sm80",
+        "calls": 28,
+        "sum_ms": 5.219949
+      },
+      {
+        "name": "elementwise_kernel",
+        "calls": 546,
+        "sum_ms": 3.5211079999999986
+      },
+      {
+        "name": "CatArrayBatchedCopy",
+        "calls": 177,
+        "sum_ms": 1.9648320000000012
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+        "calls": 1,
+        "sum_ms": 1.310674
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x5_tn",
+        "calls": 32,
+        "sum_ms": 1.2766869999999997
+      },
+      {
+        "name": "vectorized_elementwise_kernel",
+        "calls": 444,
+        "sum_ms": 1.0396290000000017
+      },
+      {
+        "name": "unrolled_elementwise_kernel",
+        "calls": 138,
+        "sum_ms": 0.9421580000000003
+      },
+      {
+        "name": "reduce_kernel",
+        "calls": 77,
+        "sum_ms": 0.5402950000000001
+      },
+      {
+        "name": "vectorized_gather_kernel",
+        "calls": 75,
+        "sum_ms": 0.42236899999999994
+      },
+      {
+        "name": "index_elementwise_kernel",
+        "calls": 56,
+        "sum_ms": 0.403397
+      },
+      {
+        "name": "CatArrayBatchedCopy_vectorized",
+        "calls": 60,
+        "sum_ms": 0.3245820000000001
+      },
+      {
+        "name": "splitKreduce_kernel",
+        "calls": 60,
+        "sum_ms": 0.130403
+      },
+      {
+        "name": "indexSelectSmallIndex",
+        "calls": 12,
+        "sum_ms": 0.110177
+      }
+    ],
+    "main_nvtx_counts": {
+      "resolve_impress_speculation": 28,
+      "configure_online_layer_selection": 4,
+      "load_selector_keys": 4,
+      "_load_selector_keys_sync": 1,
+      "index/H2D_and_dequantize": 1,
+      "qwen_online_prefix_head_scores": 4,
+      "prepare_impress_block_scores": 4,
+      "select_promixed_gqa_blocks": 8,
+      "schedule_impress_missing": 28,
+      "schedule_range": 4,
+      "schedule": 53,
+      "resolve_deferred_impress_compute": 28,
+      "resolve": 28,
+      "_resolve_entry": 31,
+      "metadata/source_counts": 31,
+      "_update_loaded_layer_score": 28,
+      "_cache_layout": 56,
+      "schedule_impress_next": 28,
+      "prefetch_selector_keys": 4,
+      "_layer_causal_mask": 2,
+      "decoder/layer_00": 1,
+      "schedule_impress_period": 28,
+      "decoder/layer_01": 1,
+      "decoder/layer_02": 1,
+      "decoder/layer_03": 1,
+      "decoder/layer_04": 1,
+      "decoder/layer_05": 1,
+      "decoder/layer_06": 1,
+      "decoder/layer_07": 1,
+      "decoder/layer_08": 1,
+      "decoder/layer_09": 1,
+      "decoder/layer_10": 1,
+      "decoder/layer_11": 1,
+      "decoder/layer_12": 1,
+      "decoder/layer_13": 1,
+      "decoder/layer_14": 1,
+      "decoder/layer_15": 1,
+      "decoder/layer_16": 1,
+      "decoder/layer_17": 1,
+      "decoder/layer_18": 1,
+      "decoder/layer_19": 1,
+      "decoder/layer_20": 1,
+      "decoder/layer_21": 1,
+      "decoder/layer_22": 1,
+      "decoder/layer_23": 1,
+      "decoder/layer_24": 1,
+      "decoder/layer_25": 1,
+      "decoder/layer_26": 1,
+      "decoder/layer_27": 1
+    },
+    "gpu_overlap_cpu_phase_ms": {
+      "other_control_and_sync": 5.466029,
+      "selector_control_and_sync": 0.0,
+      "selector_ready_wait": 0.175265,
+      "selector_score_enqueue": 1.016719,
+      "score_preparation": 0.0,
+      "selection_decision": 0.0,
+      "prefetch_scheduling": 0.368634,
+      "event_harvest": 0.691323,
+      "payload_resolve_other": 0.336231,
+      "payload_wait_and_gather": 8.662562,
+      "cache_score_maintenance": 0.054721,
+      "payload_layout_cast": 0.852619,
+      "attention_mask": 0.065666,
+      "decoder_enqueue": 22.024078
+    },
+    "cuda_api_hotspots": [
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 1582,
+        "cpu_elapsed_ms": 16.667317999999995
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 2.340267
+      },
+      {
+        "thread": "worker",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 136,
+        "cpu_elapsed_ms": 1.986495
+      },
+      {
+        "thread": "main",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 96,
+        "cpu_elapsed_ms": 1.7349349999999994
+      },
+      {
+        "thread": "main",
+        "name": "cudaDeviceSynchronize_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 1.453549
+      },
+      {
+        "thread": "main",
+        "name": "cuLaunchKernel",
+        "calls": 120,
+        "cpu_elapsed_ms": 1.2467180000000002
+      },
+      {
+        "thread": "main",
+        "name": "cudaMalloc_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.6035429999999999
+      },
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernelExC_v11060",
+        "calls": 60,
+        "cpu_elapsed_ms": 0.5866549999999999
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamSynchronize_v3020",
+        "calls": 94,
+        "cpu_elapsed_ms": 0.524389
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.45431900000000003
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetName",
+        "calls": 1582,
+        "cpu_elapsed_ms": 0.4386000000000007
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.42506099999999997
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventQuery_v3020",
+        "calls": 90,
+        "cpu_elapsed_ms": 0.419903
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.37095399999999984
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 36,
+        "cpu_elapsed_ms": 0.28472299999999995
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 105,
+        "cpu_elapsed_ms": 0.274476
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.2673330000000001
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventQuery_v3020",
+        "calls": 107,
+        "cpu_elapsed_ms": 0.25011400000000006
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetFunction",
+        "calls": 120,
+        "cpu_elapsed_ms": 0.14255299999999993
+      },
+      {
+        "thread": "worker",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.12838999999999995
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 96,
+        "cpu_elapsed_ms": 0.12199299999999999
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 61,
+        "cpu_elapsed_ms": 0.12172599999999996
+      },
+      {
+        "thread": "worker",
+        "name": "cuKernelGetName",
+        "calls": 136,
+        "cpu_elapsed_ms": 0.044764000000000005
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.019546
+      }
+    ]
+  },
+  {
+    "request": 2,
+    "wall_ms": 409.760404,
+    "cpu_partition_ms": {
+      "other_control_and_sync": 15.211666000000006,
+      "selector_control_and_sync": 48.892592,
+      "selector_ready_wait": 1.3722210000000001,
+      "selector_score_enqueue": 6.970198,
+      "score_preparation": 3.168024,
+      "selection_decision": 17.787838,
+      "prefetch_scheduling": 11.465672999999999,
+      "event_harvest": 1.0999550000000002,
+      "payload_resolve_other": 12.264564999999997,
+      "payload_wait_and_gather": 146.491961,
+      "cache_score_maintenance": 46.56077900000001,
+      "payload_layout_cast": 8.860837000000004,
+      "attention_mask": 0.221669,
+      "decoder_enqueue": 89.39242600000001
+    },
+    "gpu_busy_union_ms": 41.543318,
+    "gpu_no_activity_ms": 368.217086,
+    "kernel_union_ms": 38.282409,
+    "copy_union_ms": 3.989624,
+    "kernel_copy_overlap_ms": 0.728715,
+    "gpu_category_union_ms": {
+      "payload_or_other": 7.226761,
+      "selector_index": 0.752362,
+      "selector_score": 1.096335,
+      "cache_layout": 0.962708,
+      "attention_mask": 0.009856,
+      "decoder": 32.432398,
+      "selector_control": 0.0
+    },
+    "stream_busy_union_ms": {
+      "7": 37.541696,
+      "37": 0.752362,
+      "13": 4.192186
+    },
+    "copy_kinds": {
+      "1": {
+        "calls": 208,
+        "bytes": 94003776,
+        "sum_ms": 3.9759270000000018
+      },
+      "2": {
+        "calls": 12,
+        "bytes": 19784,
+        "sum_ms": 0.019521000000000004
+      }
+    },
+    "gpu_overlaps_ms": {
+      "decoder__selector_index": 0.100802,
+      "decoder__payload_or_other": 0.834572,
+      "selector_score__payload_or_other": 0.0,
+      "selector_control__selector_index": 0.0
+    },
+    "sync_api_calls_and_ms": {
+      "cudaEventSynchronize_v3020": [
+        36,
+        0.206832
+      ],
+      "cudaStreamSynchronize_v3020": [
+        94,
+        0.5444529999999996
+      ],
+      "cudaDeviceSynchronize_v3020": [
+        1,
+        1.491123
+      ]
+    },
+    "kernel_count": 1898,
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_tn",
+        "calls": 56,
+        "sum_ms": 12.595413000000004
+      },
+      {
+        "name": "Kernel2",
+        "calls": 120,
+        "sum_ms": 7.153117999999999
+      },
+      {
+        "name": "fmha_cutlassF_bf16_aligned_64x128_rf_sm80",
+        "calls": 28,
+        "sum_ms": 5.7530100000000015
+      },
+      {
+        "name": "elementwise_kernel",
+        "calls": 546,
+        "sum_ms": 3.8610170000000057
+      },
+      {
+        "name": "CatArrayBatchedCopy",
+        "calls": 177,
+        "sum_ms": 2.1756480000000002
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x5_tn",
+        "calls": 32,
+        "sum_ms": 1.3490780000000002
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+        "calls": 1,
+        "sum_ms": 1.313267
+      },
+      {
+        "name": "vectorized_elementwise_kernel",
+        "calls": 444,
+        "sum_ms": 1.1194110000000006
+      },
+      {
+        "name": "unrolled_elementwise_kernel",
+        "calls": 138,
+        "sum_ms": 1.021075
+      },
+      {
+        "name": "reduce_kernel",
+        "calls": 77,
+        "sum_ms": 0.5956539999999998
+      },
+      {
+        "name": "vectorized_gather_kernel",
+        "calls": 75,
+        "sum_ms": 0.44388
+      },
+      {
+        "name": "index_elementwise_kernel",
+        "calls": 56,
+        "sum_ms": 0.3745649999999999
+      },
+      {
+        "name": "CatArrayBatchedCopy_vectorized",
+        "calls": 60,
+        "sum_ms": 0.32115799999999983
+      },
+      {
+        "name": "splitKreduce_kernel",
+        "calls": 60,
+        "sum_ms": 0.143171
+      },
+      {
+        "name": "indexSelectSmallIndex",
+        "calls": 12,
+        "sum_ms": 0.117634
+      }
+    ],
+    "main_nvtx_counts": {
+      "resolve_impress_speculation": 28,
+      "configure_online_layer_selection": 4,
+      "load_selector_keys": 4,
+      "_load_selector_keys_sync": 1,
+      "index/H2D_and_dequantize": 1,
+      "qwen_online_prefix_head_scores": 4,
+      "prepare_impress_block_scores": 4,
+      "select_promixed_gqa_blocks": 8,
+      "schedule_impress_missing": 28,
+      "schedule_range": 4,
+      "schedule": 53,
+      "resolve_deferred_impress_compute": 28,
+      "resolve": 28,
+      "_resolve_entry": 31,
+      "metadata/source_counts": 31,
+      "_update_loaded_layer_score": 28,
+      "_cache_layout": 56,
+      "schedule_impress_next": 28,
+      "prefetch_selector_keys": 4,
+      "_layer_causal_mask": 2,
+      "decoder/layer_00": 1,
+      "schedule_impress_period": 28,
+      "decoder/layer_01": 1,
+      "decoder/layer_02": 1,
+      "decoder/layer_03": 1,
+      "decoder/layer_04": 1,
+      "decoder/layer_05": 1,
+      "decoder/layer_06": 1,
+      "decoder/layer_07": 1,
+      "decoder/layer_08": 1,
+      "decoder/layer_09": 1,
+      "decoder/layer_10": 1,
+      "decoder/layer_11": 1,
+      "decoder/layer_12": 1,
+      "decoder/layer_13": 1,
+      "decoder/layer_14": 1,
+      "decoder/layer_15": 1,
+      "decoder/layer_16": 1,
+      "decoder/layer_17": 1,
+      "decoder/layer_18": 1,
+      "decoder/layer_19": 1,
+      "decoder/layer_20": 1,
+      "decoder/layer_21": 1,
+      "decoder/layer_22": 1,
+      "decoder/layer_23": 1,
+      "decoder/layer_24": 1,
+      "decoder/layer_25": 1,
+      "decoder/layer_26": 1,
+      "decoder/layer_27": 1
+    },
+    "gpu_overlap_cpu_phase_ms": {
+      "other_control_and_sync": 5.263157,
+      "selector_control_and_sync": 0.0,
+      "selector_ready_wait": 0.17981,
+      "selector_score_enqueue": 1.096335,
+      "score_preparation": 0.0,
+      "selection_decision": 0.0,
+      "prefetch_scheduling": 0.346489,
+      "event_harvest": 0.714869,
+      "payload_resolve_other": 0.27487,
+      "payload_wait_and_gather": 8.236163,
+      "cache_score_maintenance": 0.031618,
+      "payload_layout_cast": 0.995089,
+      "attention_mask": 0.009856,
+      "decoder_enqueue": 24.395062
+    },
+    "cuda_api_hotspots": [
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 1582,
+        "cpu_elapsed_ms": 16.43689899999998
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 2.470859000000001
+      },
+      {
+        "thread": "worker",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 136,
+        "cpu_elapsed_ms": 1.7970670000000002
+      },
+      {
+        "thread": "main",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 96,
+        "cpu_elapsed_ms": 1.6664659999999998
+      },
+      {
+        "thread": "main",
+        "name": "cudaDeviceSynchronize_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 1.491123
+      },
+      {
+        "thread": "main",
+        "name": "cuLaunchKernel",
+        "calls": 120,
+        "cpu_elapsed_ms": 1.2178899999999997
+      },
+      {
+        "thread": "main",
+        "name": "cudaMalloc_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.5959
+      },
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernelExC_v11060",
+        "calls": 60,
+        "cpu_elapsed_ms": 0.5556010000000001
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamSynchronize_v3020",
+        "calls": 94,
+        "cpu_elapsed_ms": 0.5444529999999996
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.45151899999999984
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.43685300000000005
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetName",
+        "calls": 1582,
+        "cpu_elapsed_ms": 0.42711100000000074
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventQuery_v3020",
+        "calls": 90,
+        "cpu_elapsed_ms": 0.37943400000000005
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.315743
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMalloc_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 0.31172
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.266382
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 133,
+        "cpu_elapsed_ms": 0.23129600000000003
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventQuery_v3020",
+        "calls": 107,
+        "cpu_elapsed_ms": 0.22201699999999994
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 36,
+        "cpu_elapsed_ms": 0.206832
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetFunction",
+        "calls": 120,
+        "cpu_elapsed_ms": 0.14000500000000007
+      },
+      {
+        "thread": "worker",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 125,
+        "cpu_elapsed_ms": 0.12614900000000007
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 67,
+        "cpu_elapsed_ms": 0.12357200000000002
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 96,
+        "cpu_elapsed_ms": 0.12075999999999998
+      },
+      {
+        "thread": "worker",
+        "name": "cuKernelGetName",
+        "calls": 136,
+        "cpu_elapsed_ms": 0.04077499999999999
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.022616999999999998
+      }
+    ]
+  },
+  {
+    "request": 3,
+    "wall_ms": 381.143299,
+    "cpu_partition_ms": {
+      "other_control_and_sync": 13.631536999999998,
+      "selector_control_and_sync": 44.9403,
+      "selector_ready_wait": 1.284364,
+      "selector_score_enqueue": 6.927360999999999,
+      "score_preparation": 2.892721,
+      "selection_decision": 16.088207,
+      "prefetch_scheduling": 10.758443999999999,
+      "event_harvest": 1.881067,
+      "payload_resolve_other": 12.348558000000002,
+      "payload_wait_and_gather": 137.657965,
+      "cache_score_maintenance": 45.685787,
+      "payload_layout_cast": 5.551037999999999,
+      "attention_mask": 0.179258,
+      "decoder_enqueue": 81.316692
+    },
+    "gpu_busy_union_ms": 41.382159,
+    "gpu_no_activity_ms": 339.76114,
+    "kernel_union_ms": 38.318339,
+    "copy_union_ms": 3.974938,
+    "kernel_copy_overlap_ms": 0.911118,
+    "gpu_category_union_ms": {
+      "payload_or_other": 7.237705,
+      "selector_index": 0.737548,
+      "selector_score": 1.076437,
+      "cache_layout": 0.963145,
+      "attention_mask": 0.009376,
+      "decoder": 32.516303,
+      "selector_control": 0.0
+    },
+    "stream_busy_union_ms": {
+      "7": 37.591159,
+      "41": 0.737548,
+      "13": 4.211807
+    },
+    "copy_kinds": {
+      "1": {
+        "calls": 208,
+        "bytes": 93702720,
+        "sum_ms": 3.957690000000001
+      },
+      "2": {
+        "calls": 12,
+        "bytes": 19784,
+        "sum_ms": 0.017248
+      }
+    },
+    "gpu_overlaps_ms": {
+      "decoder__selector_index": 0.070528,
+      "decoder__payload_or_other": 1.077042,
+      "selector_score__payload_or_other": 0.0,
+      "selector_control__selector_index": 0.0
+    },
+    "sync_api_calls_and_ms": {
+      "cudaEventSynchronize_v3020": [
+        36,
+        0.21023200000000003
+      ],
+      "cudaStreamSynchronize_v3020": [
+        94,
+        0.4968040000000001
+      ],
+      "cudaDeviceSynchronize_v3020": [
+        1,
+        1.510269
+      ]
+    },
+    "kernel_count": 1898,
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_tn",
+        "calls": 56,
+        "sum_ms": 12.757846999999996
+      },
+      {
+        "name": "Kernel2",
+        "calls": 120,
+        "sum_ms": 7.120742999999997
+      },
+      {
+        "name": "fmha_cutlassF_bf16_aligned_64x128_rf_sm80",
+        "calls": 28,
+        "sum_ms": 5.732435000000001
+      },
+      {
+        "name": "elementwise_kernel",
+        "calls": 546,
+        "sum_ms": 3.872851999999998
+      },
+      {
+        "name": "CatArrayBatchedCopy",
+        "calls": 177,
+        "sum_ms": 2.167901999999999
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x5_tn",
+        "calls": 32,
+        "sum_ms": 1.3441159999999999
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+        "calls": 1,
+        "sum_ms": 1.313747
+      },
+      {
+        "name": "vectorized_elementwise_kernel",
+        "calls": 444,
+        "sum_ms": 1.0839480000000021
+      },
+      {
+        "name": "unrolled_elementwise_kernel",
+        "calls": 138,
+        "sum_ms": 1.0063820000000003
+      },
+      {
+        "name": "reduce_kernel",
+        "calls": 77,
+        "sum_ms": 0.6006500000000002
+      },
+      {
+        "name": "vectorized_gather_kernel",
+        "calls": 75,
+        "sum_ms": 0.4408019999999999
+      },
+      {
+        "name": "index_elementwise_kernel",
+        "calls": 56,
+        "sum_ms": 0.39437500000000003
+      },
+      {
+        "name": "CatArrayBatchedCopy_vectorized",
+        "calls": 60,
+        "sum_ms": 0.3291909999999999
+      },
+      {
+        "name": "splitKreduce_kernel",
+        "calls": 60,
+        "sum_ms": 0.14355599999999993
+      },
+      {
+        "name": "indexSelectSmallIndex",
+        "calls": 12,
+        "sum_ms": 0.11766600000000002
+      }
+    ],
+    "main_nvtx_counts": {
+      "resolve_impress_speculation": 28,
+      "configure_online_layer_selection": 4,
+      "load_selector_keys": 4,
+      "_load_selector_keys_sync": 1,
+      "index/H2D_and_dequantize": 1,
+      "qwen_online_prefix_head_scores": 4,
+      "prepare_impress_block_scores": 4,
+      "select_promixed_gqa_blocks": 8,
+      "schedule_impress_missing": 28,
+      "schedule_range": 4,
+      "schedule": 53,
+      "resolve_deferred_impress_compute": 28,
+      "resolve": 28,
+      "_resolve_entry": 31,
+      "metadata/source_counts": 31,
+      "_update_loaded_layer_score": 28,
+      "_cache_layout": 56,
+      "schedule_impress_next": 28,
+      "prefetch_selector_keys": 4,
+      "_layer_causal_mask": 2,
+      "decoder/layer_00": 1,
+      "schedule_impress_period": 28,
+      "decoder/layer_01": 1,
+      "decoder/layer_02": 1,
+      "decoder/layer_03": 1,
+      "decoder/layer_04": 1,
+      "decoder/layer_05": 1,
+      "decoder/layer_06": 1,
+      "decoder/layer_07": 1,
+      "decoder/layer_08": 1,
+      "decoder/layer_09": 1,
+      "decoder/layer_10": 1,
+      "decoder/layer_11": 1,
+      "decoder/layer_12": 1,
+      "decoder/layer_13": 1,
+      "decoder/layer_14": 1,
+      "decoder/layer_15": 1,
+      "decoder/layer_16": 1,
+      "decoder/layer_17": 1,
+      "decoder/layer_18": 1,
+      "decoder/layer_19": 1,
+      "decoder/layer_20": 1,
+      "decoder/layer_21": 1,
+      "decoder/layer_22": 1,
+      "decoder/layer_23": 1,
+      "decoder/layer_24": 1,
+      "decoder/layer_25": 1,
+      "decoder/layer_26": 1,
+      "decoder/layer_27": 1
+    },
+    "gpu_overlap_cpu_phase_ms": {
+      "other_control_and_sync": 5.126299,
+      "selector_control_and_sync": 0.0,
+      "selector_ready_wait": 0.178435,
+      "selector_score_enqueue": 1.076437,
+      "score_preparation": 0.0,
+      "selection_decision": 0.0,
+      "prefetch_scheduling": 0.329739,
+      "event_harvest": 0.906541,
+      "payload_resolve_other": 0.281028,
+      "payload_wait_and_gather": 8.43466,
+      "cache_score_maintenance": 0.104546,
+      "payload_layout_cast": 0.909328,
+      "attention_mask": 0.009376,
+      "decoder_enqueue": 24.02577
+    },
+    "cuda_api_hotspots": [
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 1582,
+        "cpu_elapsed_ms": 13.402384000000016
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 1.970449
+      },
+      {
+        "thread": "worker",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 136,
+        "cpu_elapsed_ms": 1.8116450000000004
+      },
+      {
+        "thread": "main",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 96,
+        "cpu_elapsed_ms": 1.5551649999999992
+      },
+      {
+        "thread": "main",
+        "name": "cudaDeviceSynchronize_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 1.510269
+      },
+      {
+        "thread": "main",
+        "name": "cuLaunchKernel",
+        "calls": 120,
+        "cpu_elapsed_ms": 0.991839
+      },
+      {
+        "thread": "main",
+        "name": "cudaMalloc_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.5565249999999999
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamSynchronize_v3020",
+        "calls": 94,
+        "cpu_elapsed_ms": 0.4968040000000001
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.46571999999999997
+      },
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernelExC_v11060",
+        "calls": 60,
+        "cpu_elapsed_ms": 0.4385090000000001
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventQuery_v3020",
+        "calls": 90,
+        "cpu_elapsed_ms": 0.39295900000000006
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.35885800000000023
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetName",
+        "calls": 1582,
+        "cpu_elapsed_ms": 0.3498869999999997
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.3480780000000001
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.23200200000000004
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 36,
+        "cpu_elapsed_ms": 0.21023200000000003
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventQuery_v3020",
+        "calls": 110,
+        "cpu_elapsed_ms": 0.205806
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 104,
+        "cpu_elapsed_ms": 0.20459599999999994
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetFunction",
+        "calls": 120,
+        "cpu_elapsed_ms": 0.12209200000000002
+      },
+      {
+        "thread": "worker",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.1100369999999999
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 63,
+        "cpu_elapsed_ms": 0.10775199999999997
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 96,
+        "cpu_elapsed_ms": 0.10564899999999997
+      },
+      {
+        "thread": "worker",
+        "name": "cuKernelGetName",
+        "calls": 136,
+        "cpu_elapsed_ms": 0.03925899999999999
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.0196
+      }
+    ]
+  },
+  {
+    "request": 4,
+    "wall_ms": 395.261151,
+    "cpu_partition_ms": {
+      "other_control_and_sync": 15.547746999999996,
+      "selector_control_and_sync": 44.639607000000005,
+      "selector_ready_wait": 1.278388,
+      "selector_score_enqueue": 6.752137,
+      "score_preparation": 2.8594730000000004,
+      "selection_decision": 16.395239999999998,
+      "prefetch_scheduling": 10.940635999999998,
+      "event_harvest": 1.218747,
+      "payload_resolve_other": 12.33958,
+      "payload_wait_and_gather": 140.95669800000002,
+      "cache_score_maintenance": 45.840604000000006,
+      "payload_layout_cast": 6.337409,
+      "attention_mask": 0.21882200000000002,
+      "decoder_enqueue": 89.93606299999999
+    },
+    "gpu_busy_union_ms": 38.860551,
+    "gpu_no_activity_ms": 356.4006,
+    "kernel_union_ms": 35.380667,
+    "copy_union_ms": 3.957138,
+    "kernel_copy_overlap_ms": 0.477254,
+    "gpu_category_union_ms": {
+      "payload_or_other": 7.062625,
+      "selector_index": 0.731214,
+      "selector_score": 0.992815,
+      "cache_layout": 0.882185,
+      "attention_mask": 0.008448,
+      "decoder": 29.927082,
+      "selector_control": 0.0
+    },
+    "stream_busy_union_ms": {
+      "7": 34.691336,
+      "45": 0.731214,
+      "13": 4.181819
+    },
+    "copy_kinds": {
+      "1": {
+        "calls": 208,
+        "bytes": 93670208,
+        "sum_ms": 3.941745999999999
+      },
+      "2": {
+        "calls": 12,
+        "bytes": 19784,
+        "sum_ms": 0.015392
+      }
+    },
+    "gpu_overlaps_ms": {
+      "decoder__selector_index": 0.077793,
+      "decoder__payload_or_other": 0.644424,
+      "selector_score__payload_or_other": 0.0,
+      "selector_control__selector_index": 0.0
+    },
+    "sync_api_calls_and_ms": {
+      "cudaEventSynchronize_v3020": [
+        36,
+        0.23024699999999998
+      ],
+      "cudaStreamSynchronize_v3020": [
+        94,
+        0.506653
+      ],
+      "cudaDeviceSynchronize_v3020": [
+        1,
+        1.454711
+      ]
+    },
+    "kernel_count": 1898,
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_256x64_ldg8_f2f_tn",
+        "calls": 56,
+        "sum_ms": 11.992205000000004
+      },
+      {
+        "name": "Kernel2",
+        "calls": 120,
+        "sum_ms": 6.478680999999999
+      },
+      {
+        "name": "fmha_cutlassF_bf16_aligned_64x128_rf_sm80",
+        "calls": 28,
+        "sum_ms": 5.139978
+      },
+      {
+        "name": "elementwise_kernel",
+        "calls": 546,
+        "sum_ms": 3.513869000000006
+      },
+      {
+        "name": "CatArrayBatchedCopy",
+        "calls": 177,
+        "sum_ms": 1.9486930000000002
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_32x6_tn",
+        "calls": 1,
+        "sum_ms": 1.306738
+      },
+      {
+        "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x5_tn",
+        "calls": 32,
+        "sum_ms": 1.301429
+      },
+      {
+        "name": "vectorized_elementwise_kernel",
+        "calls": 444,
+        "sum_ms": 0.9962110000000024
+      },
+      {
+        "name": "unrolled_elementwise_kernel",
+        "calls": 138,
+        "sum_ms": 0.9241409999999999
+      },
+      {
+        "name": "reduce_kernel",
+        "calls": 77,
+        "sum_ms": 0.5339900000000001
+      },
+      {
+        "name": "vectorized_gather_kernel",
+        "calls": 75,
+        "sum_ms": 0.4283579999999999
+      },
+      {
+        "name": "index_elementwise_kernel",
+        "calls": 56,
+        "sum_ms": 0.381258
+      },
+      {
+        "name": "CatArrayBatchedCopy_vectorized",
+        "calls": 60,
+        "sum_ms": 0.31754099999999996
+      },
+      {
+        "name": "splitKreduce_kernel",
+        "calls": 60,
+        "sum_ms": 0.12563600000000008
+      },
+      {
+        "name": "indexSelectSmallIndex",
+        "calls": 12,
+        "sum_ms": 0.11129900000000001
+      }
+    ],
+    "main_nvtx_counts": {
+      "resolve_impress_speculation": 28,
+      "configure_online_layer_selection": 4,
+      "load_selector_keys": 4,
+      "_load_selector_keys_sync": 1,
+      "index/H2D_and_dequantize": 1,
+      "qwen_online_prefix_head_scores": 4,
+      "prepare_impress_block_scores": 4,
+      "select_promixed_gqa_blocks": 8,
+      "schedule_impress_missing": 28,
+      "schedule_range": 4,
+      "schedule": 53,
+      "resolve_deferred_impress_compute": 28,
+      "resolve": 28,
+      "_resolve_entry": 31,
+      "metadata/source_counts": 31,
+      "_update_loaded_layer_score": 28,
+      "_cache_layout": 56,
+      "schedule_impress_next": 28,
+      "prefetch_selector_keys": 4,
+      "_layer_causal_mask": 2,
+      "decoder/layer_00": 1,
+      "schedule_impress_period": 28,
+      "decoder/layer_01": 1,
+      "decoder/layer_02": 1,
+      "decoder/layer_03": 1,
+      "decoder/layer_04": 1,
+      "decoder/layer_05": 1,
+      "decoder/layer_06": 1,
+      "decoder/layer_07": 1,
+      "decoder/layer_08": 1,
+      "decoder/layer_09": 1,
+      "decoder/layer_10": 1,
+      "decoder/layer_11": 1,
+      "decoder/layer_12": 1,
+      "decoder/layer_13": 1,
+      "decoder/layer_14": 1,
+      "decoder/layer_15": 1,
+      "decoder/layer_16": 1,
+      "decoder/layer_17": 1,
+      "decoder/layer_18": 1,
+      "decoder/layer_19": 1,
+      "decoder/layer_20": 1,
+      "decoder/layer_21": 1,
+      "decoder/layer_22": 1,
+      "decoder/layer_23": 1,
+      "decoder/layer_24": 1,
+      "decoder/layer_25": 1,
+      "decoder/layer_26": 1,
+      "decoder/layer_27": 1
+    },
+    "gpu_overlap_cpu_phase_ms": {
+      "other_control_and_sync": 5.174431,
+      "selector_control_and_sync": 0.0,
+      "selector_ready_wait": 0.174914,
+      "selector_score_enqueue": 0.992815,
+      "score_preparation": 0.0,
+      "selection_decision": 0.0,
+      "prefetch_scheduling": 0.362625,
+      "event_harvest": 0.930019,
+      "payload_resolve_other": 0.291687,
+      "payload_wait_and_gather": 7.879929,
+      "cache_score_maintenance": 0.036928,
+      "payload_layout_cast": 1.00526,
+      "attention_mask": 0.008448,
+      "decoder_enqueue": 22.003495
+    },
+    "cuda_api_hotspots": [
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 1582,
+        "cpu_elapsed_ms": 15.934247999999984
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 2.0910030000000006
+      },
+      {
+        "thread": "worker",
+        "name": "cudaLaunchKernel_v7000",
+        "calls": 136,
+        "cpu_elapsed_ms": 1.9947449999999993
+      },
+      {
+        "thread": "main",
+        "name": "cudaMemcpyAsync_v3020",
+        "calls": 96,
+        "cpu_elapsed_ms": 1.675028
+      },
+      {
+        "thread": "main",
+        "name": "cudaDeviceSynchronize_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 1.454711
+      },
+      {
+        "thread": "main",
+        "name": "cuLaunchKernel",
+        "calls": 120,
+        "cpu_elapsed_ms": 1.1866820000000005
+      },
+      {
+        "thread": "main",
+        "name": "cudaLaunchKernelExC_v11060",
+        "calls": 60,
+        "cpu_elapsed_ms": 0.554059
+      },
+      {
+        "thread": "main",
+        "name": "cudaMalloc_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.546863
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamSynchronize_v3020",
+        "calls": 94,
+        "cpu_elapsed_ms": 0.506653
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetName",
+        "calls": 1582,
+        "cpu_elapsed_ms": 0.41638900000000023
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.4148870000000001
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventQuery_v3020",
+        "calls": 90,
+        "cpu_elapsed_ms": 0.39973300000000006
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventRecordWithFlags_v11010",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.39542000000000005
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 124,
+        "cpu_elapsed_ms": 0.31630299999999995
+      },
+      {
+        "thread": "worker",
+        "name": "cudaMalloc_v3020",
+        "calls": 1,
+        "cpu_elapsed_ms": 0.292465
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 140,
+        "cpu_elapsed_ms": 0.27308400000000005
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventCreateWithFlags_v3020",
+        "calls": 65,
+        "cpu_elapsed_ms": 0.24009899999999995
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 36,
+        "cpu_elapsed_ms": 0.23024699999999998
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventQuery_v3020",
+        "calls": 109,
+        "cpu_elapsed_ms": 0.22256499999999993
+      },
+      {
+        "thread": "main",
+        "name": "cuKernelGetFunction",
+        "calls": 120,
+        "cpu_elapsed_ms": 0.133067
+      },
+      {
+        "thread": "worker",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 125,
+        "cpu_elapsed_ms": 0.12289800000000001
+      },
+      {
+        "thread": "main",
+        "name": "cudaStreamIsCapturing_v10000",
+        "calls": 96,
+        "cpu_elapsed_ms": 0.11726
+      },
+      {
+        "thread": "main",
+        "name": "cudaEventDestroy_v3020",
+        "calls": 61,
+        "cpu_elapsed_ms": 0.110137
+      },
+      {
+        "thread": "worker",
+        "name": "cuKernelGetName",
+        "calls": 136,
+        "cpu_elapsed_ms": 0.04306599999999999
+      },
+      {
+        "thread": "worker",
+        "name": "cudaEventSynchronize_v3020",
+        "calls": 3,
+        "cpu_elapsed_ms": 0.017618
+      }
+    ]
+  }
+]

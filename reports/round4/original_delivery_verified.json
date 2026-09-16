@@ -1,0 +1,19 @@
+{
+  "followup_pairs": 4,
+  "followup_exact_all": true,
+  "patch_applies_to_baseline": true,
+  "patched_files_match_live_source": true,
+  "profile_groups_verified": 16,
+  "cpu_partitions_close": true,
+  "gpu_unions_consistent": true,
+  "svg_geometry_valid": true,
+  "formal_groups": 16,
+  "formal_samples": 10528,
+  "exact_all": true,
+  "profiles_exact_all": true,
+  "original_files": 258,
+  "original_unchanged": true,
+  "frozen_source_unchanged": true,
+  "baseline_snapshot_unchanged": true,
+  "staging_bound_all": true
+}

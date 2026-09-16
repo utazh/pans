@@ -1,0 +1,11 @@
+{
+  "tests_passed": 307,
+  "subtests_passed": 87,
+  "warnings": 1,
+  "portable_entry_smoke_samples": 2,
+  "smoke_semantic_fields_exact": true,
+  "smoke_task": "trec",
+  "smoke_budget_pct": 25,
+  "core_python_files_unchanged": 72,
+  "credential_pattern_scan_matches": 0
+}

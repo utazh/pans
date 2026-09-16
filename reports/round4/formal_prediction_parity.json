@@ -1,0 +1,194 @@
+[
+  {
+    "key": "k005/sst2",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/sst2",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/subj",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/subj",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/trec",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/trec",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/rte",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/rte",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/sst2",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/sst2",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/subj",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/subj",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/trec",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/trec",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/rte",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/rte",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/sst2",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/sst2",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/subj",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/subj",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/trec",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/trec",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/rte",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/rte",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/sst2",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/sst2",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/subj",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/subj",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/trec",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/trec",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/rte",
+    "profiler": "nsys",
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/rte",
+    "profiler": "viztracer",
+    "exact": true,
+    "differences": []
+  }
+]

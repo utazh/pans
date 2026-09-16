@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pans-prism"
+version = "0.1.0"
+description = "Fixed-P8 ProMixed KV selection and TTFT experiments"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2,<3", "torch>=2.10", "transformers>=4.57,<5", "requests", "psutil", "tqdm", "safetensors", "sentencepiece"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

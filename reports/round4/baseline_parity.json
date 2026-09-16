@@ -1,0 +1,98 @@
+[
+  {
+    "key": "k005/sst2",
+    "samples": 867,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/subj",
+    "samples": 998,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/trec",
+    "samples": 495,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k005/rte",
+    "samples": 272,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/sst2",
+    "samples": 867,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/subj",
+    "samples": 998,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/trec",
+    "samples": 495,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k010/rte",
+    "samples": 272,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/sst2",
+    "samples": 867,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/subj",
+    "samples": 998,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/trec",
+    "samples": 495,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k025/rte",
+    "samples": 272,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/sst2",
+    "samples": 867,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/subj",
+    "samples": 998,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/trec",
+    "samples": 495,
+    "exact": true,
+    "differences": []
+  },
+  {
+    "key": "k050/rte",
+    "samples": 272,
+    "exact": true,
+    "differences": []
+  }
+]

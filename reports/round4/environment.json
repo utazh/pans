@@ -1,0 +1,14 @@
+{
+  "python": "3.10",
+  "torch": "2.10.0+cu130",
+  "numpy": "2.2.6",
+  "transformers": "4.57.6",
+  "gpu": "NVIDIA GeForce RTX 3090 24 GiB",
+  "driver": "580.95.05",
+  "nsight_systems": "2025.5.1",
+  "OMP_NUM_THREADS": 4,
+  "exclusive_host": false,
+  "formal_warmup_samples": 32,
+  "profile_warmup_samples": 4,
+  "profile_measured_samples": 4
+}
