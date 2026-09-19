@@ -4,6 +4,7 @@ import argparse,functools,json,os,sys,time,threading,importlib.util
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser()
+p.add_argument('--max-tokens',type=int,default=1)
 p.add_argument('--task',choices=['sst2','subj','trec','rte'],required=True)
 p.add_argument('--output',type=Path,required=True)
 p.add_argument('--samples',type=int,default=1000000)
@@ -11,7 +12,7 @@ p.add_argument('--warmup',type=int,default=32)
 p.add_argument('--profile',choices=['none','viztracer','nsys','torch'],default='none')
 p.add_argument('--period',type=int,choices=[1,2,4,8],default=8)
 p.add_argument('--timing',choices=['deferred','sync'],default='deferred')
-p.add_argument('--budget',type=int,choices=[5,10,25,50],default=25)
+p.add_argument('--budget',type=int,choices=[5,10,25,50,100],default=25)
 p.add_argument('--variant',choices=['optimized','baseline'],default='optimized')
 p.add_argument('--model-path',default=os.environ.get('PANS_MODEL_PATH','Qwen/Qwen2.5-7B-Instruct'))
 p.add_argument('--bundle-dir',type=Path,default=Path(os.environ.get('PANS_BUNDLE_DIR',ROOT/'data/paper_task_bundles_full_eval_strict')))
@@ -97,7 +98,7 @@ argv=[
 '--plan',str(ROOT/'configs/round2'/f'qwen25_k{a.budget:03d}_uniform.json'),
 '--flexgen-root',str(CODE_ROOT/'vendor/flexgen'),'--flexgen-kv-dir',str(a.pcache_dir),
 '--reuse-flexgen-kv','--tasks',a.task,'--store-tasks','sst2,subj,trec,rte',
-'--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens','1',
+'--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens',str(a.max_tokens),
 '--accuracy-scoring','label_continuation_loglikelihood','--dtype','bfloat16','--device','cuda',
 '--gpu-cache-mb','55','--cpu-cache-mb','131','--cache-type','CKLFU',
 '--online-selection','--probe-query-heads','0,7,14,21','--selector-kv-head-ids','0,1,2,3',
@@ -109,7 +110,7 @@ argv=[
 '--no-impress-value-ordered-prefetch','--no-defer-cache-score-updates',
 '--impress-known-period-prefetch' if a.period>1 else '--no-impress-known-period-prefetch',
 '--period-size','8','--subperiod-size','4','--expected-keep-ratio',str(a.budget/100),
-'--warmup-passes','1' if a.warmup else '0','--warmup-samples-per-task',str(a.warmup),
+'--warmup-passes','1' if a.warmup else '0','--warmup-samples-per-task',str(max(1,a.warmup)),
 '--selector-index-dir',str(a.selector_index_dir)]
 sys.argv=[runner.__file__]+argv
 try:

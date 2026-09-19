@@ -1,5 +1,10 @@
 # pans
 
+## LayerKV v1
+
+跨层共享 prefix K/V 的最新研究实现见 [运行说明](README_LAYERKV.md) 与 [实测报告](EXPERIMENT_REPORT_ZH.md)。当前 query/生成 token 的 KV 仍逐层独立。严格校准门限默认开启；报告中的共享配置为诊断实验，尚未证明稳定加速。
+
+
 固定 P8 的 ProMixed KV 选择、缓存与 TTFT 实验代码。当前版本对应第四轮 host gather 与元数据优化。
 
 - 模型：Qwen2.5-7B-Instruct；BF16 计算、FP16 KV。

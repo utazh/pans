@@ -1,0 +1,18 @@
+{
+  "NOTICE.md": "e75c47a98432eb662936576f8895b763f81a439e0260928dc705c660fac329f6",
+  "README_ZH.md": "a9581f4f6fe59bcf5ae436897891241b85d3baa061abe5dc0e2a010ff2d931db",
+  "TEST_RESULTS.md": "85ba9c73b341e1685a15d3a26a1087468f2183921bdd0437fcf380ed21339260",
+  "docs/DESIGN_ZH.md": "28813110130b40a1e5b85b37d32fa70e18f3feba18aea6d43ed54ed9c2dc6281",
+  "docs/SOURCES.md": "d233b10d784f6bde6ebed0992993cab6a9807f6f27460d23dbcd358d26cf62fa",
+  "scripts/bench_sharedkv.py": "50b943da9098d02d43995a2d569ccb60b6a3c93ccdc931bbc0170c5e3f468160",
+  "scripts/compile_sharedkv.py": "8a4cda5b768fa4e4b40c18df65b26747b83ffe16c895205726f796fba2d994c6",
+  "scripts/run_sharedkv.py": "0d0731bc34f018c1afc0fb9b368ca4f319823f336b73dfbc00a0b133b30eecc9",
+  "src/contiguous_fuxian/sharedkv/__init__.py": "5114886e4c17b7b4264fae67384e1e0a0a7dea66d33270f9bf92e9326188f5a3",
+  "src/contiguous_fuxian/sharedkv/collect.py": "921f7b9f5a86dd61f7d4048b9a3ac0ba991a2032664ca3cb81a784702f09c61b",
+  "src/contiguous_fuxian/sharedkv/compile.py": "dc351e0949e168287348971231d4ad2dda41cc7e75a8a479f2fe4bff1e4b0c60",
+  "src/contiguous_fuxian/sharedkv/core.py": "5c6ba103a1afdba4a62a5181c9a9cb4d343eb0f289f129ccb91973b04a16e326",
+  "src/contiguous_fuxian/sharedkv/fit.py": "f6d19b47ba800c8dc0c8f770bc62fa57864b85e5c2494dc691375eef9a854507",
+  "src/contiguous_fuxian/sharedkv/io.py": "1db04929113bce7a789a6c3ca1c98b03e3a952d74eb291b4c2d3a790eca4781d",
+  "src/contiguous_fuxian/sharedkv/runtime.py": "638a049fb6f71f824e1fb2ba6c87d3bd90a330bd6fb8154c76134be2bbbc369b",
+  "tests/test_sharedkv.py": "530138d030cad42b00a42a6a3fc1ec37064819153745850f9e48a3eb8f9e13e1"
+}

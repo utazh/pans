@@ -24,3 +24,8 @@ logs/
 *.npz
 *.jsonl
 publication/
+
+# Small, curated LayerKV experiment summaries.
+!docs/layerkv/results/
+!docs/layerkv/results/*.json
+!docs/layerkv/results/*.csv

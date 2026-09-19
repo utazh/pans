@@ -1,0 +1,41 @@
+{
+  "samples": 4,
+  "details": [
+    {
+      "query_hash": "7abd7f4e4b074a4e6ea3577433816a5f2c50647389e9e810f18a18a8676c99bf",
+      "query_tokens": 687,
+      "original_completion": "Type: LOC",
+      "shared_completion": "Type: LOC",
+      "logits_kl": 0.0014360647182911634
+    },
+    {
+      "query_hash": "d75eecddda395d7eb953ef07bff4d7f2e517726223c4953351c6706f688a92df",
+      "query_tokens": 687,
+      "original_completion": "Type: LOC",
+      "shared_completion": "Type: LOC",
+      "logits_kl": 0.017888985574245453
+    },
+    {
+      "query_hash": "e0f108eef3894bca349ebf4ed671d872ec2b73e07861d46a49216f496225725e",
+      "query_tokens": 696,
+      "original_completion": "ENTY\n\nThe",
+      "shared_completion": "Type: ENTY",
+      "logits_kl": 0.04222787171602249
+    },
+    {
+      "query_hash": "f6d199180f14122e3759d8a214c505c17ab88032f78f0e878006a66e79167aed",
+      "query_tokens": 692,
+      "original_completion": "Type: DESC",
+      "shared_completion": "Type: DESC",
+      "logits_kl": 0.005069555249065161
+    }
+  ],
+  "query_token_range": [
+    687,
+    696
+  ],
+  "mean_logits_kl": 0.016655619314406067,
+  "generation_exact_match": 0.75,
+  "private_cache_bounded": true,
+  "scope": "Artificial neutral-padding stress cases, not a natural task-quality benchmark."
+}

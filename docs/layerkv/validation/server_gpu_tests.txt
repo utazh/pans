@@ -1,0 +1,13 @@
+.................................... [ 10%]
+.................................................................... [ 30%]
+...................................... [ 41%]
+........................................................................ [ 62%]
+........................................................... [ 79%]
+..........................................................ss...........  [100%]
+=============================== warnings summary ===============================
+tests/test_round3_optimizations.py::Round3Tests::test_copy_mixed_sources_tail_and_order
+  /home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1537: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+    return torch.from_numpy(data[0 if want_key else 1])
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+342 passed, 2 skipped, 1 warning, 87 subtests passed in 7.38s

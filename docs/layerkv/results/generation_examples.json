@@ -1,0 +1,42 @@
+[
+  {
+    "query_hash": "40a4dadcf5dead3adbdffc53b88e2690965f0d16ecd9d58d99dab9c05f4a3807",
+    "original": "Type: ENTY\n\nLabels: A",
+    "shared": "Type: ENTY\n\nLabels: A"
+  },
+  {
+    "query_hash": "8e3e4c5ea9127908c2a483af6f160d5d6c460c16eb6c88c453c6edb3ec5f076e",
+    "original": "Type: ENTY\n\nThe question asks",
+    "shared": "Type: ENTY\n\nThe question asks"
+  },
+  {
+    "query_hash": "a4f89b35d7bf3e44ce368e791f649b311f9615a7a8e39c2d67d40dcd5dd12e1a",
+    "original": "Type: HUM",
+    "shared": "Type: HUM"
+  },
+  {
+    "query_hash": "bfcb4cc4d4b2fe059b0466453f900a93b0180a2394bb08c6e014572fbb9aee19",
+    "original": "Type: HUM",
+    "shared": "Type: HUM"
+  },
+  {
+    "query_hash": "c43470da3629c0076bfbe62102c57444782d4993d8e9826fb6511a0704e5325e",
+    "original": "Type: NUM",
+    "shared": "Type: NUM"
+  },
+  {
+    "query_hash": "d23c25e1d2fe9fbf1f1196e1ffbe833a21b6c3888373926c6f04cbbd6af9b66a",
+    "original": "Type: LOC",
+    "shared": "Type: LOC"
+  },
+  {
+    "query_hash": "d9341771f957232970db86fe69c7eb222792bb20dce3206c7bb7434cc8bd8195",
+    "original": "Type: NUM",
+    "shared": "Type: NUM"
+  },
+  {
+    "query_hash": "fdaa54b44bd1742137bf22a49dc94b84c13aefe8088f03e49f6d04d1880d5c43",
+    "original": "Type: LOC",
+    "shared": "Type: LOC"
+  }
+]

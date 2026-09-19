@@ -1,0 +1,6 @@
+{
+  "fit": 32,
+  "validation": 32,
+  "test": 128,
+  "pairwise_disjoint": true
+}

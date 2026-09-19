@@ -1,0 +1,11 @@
+{
+  "n": 16,
+  "prediction_agreement": 1.0,
+  "original_accuracy": 0.75,
+  "identity_accuracy": 0.75,
+  "selection_agreement": 0.0,
+  "mean_logits_kl": 0.000344839883624104,
+  "mean_logits_rmse": 0.06149447336792946,
+  "max_logits_diff": 0.5,
+  "greedy_agreement": 1
+}
