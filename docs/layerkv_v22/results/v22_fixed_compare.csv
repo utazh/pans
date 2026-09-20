@@ -1,0 +1,4 @@
+variant,n,accuracy_pct,delta_pp,baseline_right_student_wrong,baseline_wrong_student_right,first_token_mean_kl,label_mean_kl,whole_plan_exact_fraction,physical_payload_bytes,host_payload_source_bytes
+v22_fixed_diag19_s200,32,68.75,-6.25,2,0,0.015706876857620955,0.058153092487060576,1,68132864,10977792
+v22_fixed_identity,32,75.0,0.0,0,0,0.0,0.0,1,70647808,13359104
+v22_fixed_map19_s200,32,71.875,-3.125,1,0,0.019121948301801694,0.021146136987908903,1,68132864,10977792

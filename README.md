@@ -1,5 +1,23 @@
 # pans
 
+## LayerKV v2.2：GQA 组对齐
+
+本分支 v2.2 基于 v2（b48c45d），发布最新头对齐代码与服务器实测报告。
+新增按真实读取误差搜索 4×4 GQA 组匹配、24 种一对一排列、等条件校准及 200 步 reader 蒸馏。
+运行时只路由短 Q、prefix 输出和 LSE，保持 source K/V 物理共享及当前 query/generated KV 逐层独立。
+
+- [v2.2 发布说明与变更](docs/layerkv_v22/RELEASE_ZH.md)
+- [完整实测报告](EXPERIMENT_REPORT_V22_ZH.md)
+- [方法与运行说明](README_HEADALIGN_V22.md) · [服务器运行记录](README_LAYERKV_V22_SERVER.md)
+- [结果摘要](docs/layerkv_v22/results) · [校准报告](docs/layerkv_v22/calibration) · [验证记录](docs/layerkv_v22/validation)
+
+本轮局部平均误差下降，但未观察到分类准确率收益或头对齐带来的稳定加速。
+18→19：同编号 68.00% / 249.0 ms，头对齐 66.86% / 273.3 ms；
+26→27：同编号 72.00% / 301.7 ms，头对齐 71.43% / 278.5 ms。
+准确率来自此前已观察过的 175 条 TREC 回归数据；TTFT 来自同一 32 条请求的四轮配对计时。
+不同轮次的绝对 TTFT 不直接比较。所有 reader 仍是 diagnostic-only 候选。
+
+
 ## LayerKV v2（SharedKV v2.1 实验实现）
 
 本分支 v2 基于已发布的 v1（59312f2），对应服务器最新完成的 SharedKV v2.1 实验。

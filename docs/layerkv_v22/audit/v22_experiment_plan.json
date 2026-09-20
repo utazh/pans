@@ -1,0 +1,31 @@
+{
+  "purpose": "exploratory controlled v22 head alignment, not final held-out certification",
+  "data": {
+    "fit": 64,
+    "edge_fit": 48,
+    "assignment": 16,
+    "val": 64,
+    "regression": 175,
+    "regression_directory": "data/v21_splits/holdout",
+    "fresh_final_test": false
+  },
+  "pairs": [
+    [
+      18,
+      19
+    ],
+    [
+      26,
+      27
+    ]
+  ],
+  "s0": "both search and identity equal workflow",
+  "s200_condition": "nonidentity assignment and lower independent local output error; same 200 steps for both maps",
+  "combination_condition": "must meet local and full model quality gates first",
+  "timing": "strong hybrid identity and equal mapped/unmapped readers, no logits/traces, paired ABBA order",
+  "thresholds": [
+    0.03,
+    0.08,
+    0.03
+  ]
+}

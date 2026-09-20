@@ -1,0 +1,1065 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "physical_private": {
+    "v22_bridge_v21.extra.jsonl": {
+      "requests_including_warmup": 10,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_bridge_v22.extra.jsonl": {
+      "requests_including_warmup": 10,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_decode_identity.extra.jsonl": {
+      "requests_including_warmup": 10,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_decode_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 10,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_decode_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 10,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_fixed_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_fixed_identity.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_fixed_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_profile_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_profile_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_diag19_s0.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_diag27_s0.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_diag27_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_identity.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_map19_s0.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_map27_s0.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_reg_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b0_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b0_diag27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b0_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b0_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b1_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b1_diag27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b1_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b1_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b2_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b2_diag27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b2_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b2_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b3_diag19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b3_diag27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b3_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_time_b3_map27_s200.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    },
+    "v22_viz_map19_s200.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "resolve_count": true,
+      "private_tail_native": true,
+      "prefix_bytes": true
+    }
+  },
+  "runtime": {
+    "v22_bridge_v21.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_bridge_v22.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_decode_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_decode_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_decode_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_fixed_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_fixed_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_fixed_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_profile_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_profile_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_diag19_s0.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_diag27_s0.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_diag27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_map19_s0.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_map27_s0.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_reg_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b0_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b0_diag27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b0_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b0_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b0_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b1_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b1_diag27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b1_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b1_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b1_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b2_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b2_diag27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b2_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b2_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b2_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b3_diag19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b3_diag27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b3_identity.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b3_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_time_b3_map27_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    },
+    "v22_viz_map19_s200.extra.jsonl.v21.jsonl": {
+      "selector_4": true
+    }
+  },
+  "routes": {
+    "v22_bridge_v22.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_decode_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_decode_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_decode_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_fixed_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_fixed_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_fixed_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_profile_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_profile_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_reg_diag19_s0.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_reg_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_reg_diag27_s0.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_reg_diag27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_reg_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_reg_map19_s0.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_reg_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_reg_map27_s0.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_reg_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_time_b0_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b0_diag27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b0_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_time_b0_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_time_b0_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_time_b1_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b1_diag27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b1_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_time_b1_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_time_b1_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_time_b2_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b2_diag27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b2_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_time_b2_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_time_b2_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_time_b3_diag19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b3_diag27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "v22_time_b3_identity.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        0
+      ],
+      "maps": {}
+    },
+    "v22_time_b3_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    },
+    "v22_time_b3_map27_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      }
+    },
+    "v22_viz_map19_s200.extra.jsonl.v22.jsonl": {
+      "no_prefix_reorder": true,
+      "resident_bytes": [
+        448
+      ],
+      "maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+    }
+  },
+  "bundles": {
+    "v22_diag19_s0": {
+      "head_maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_diag19_s200": {
+      "head_maps": {
+        "19": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_diag27_s0": {
+      "head_maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_diag27_s200": {
+      "head_maps": {
+        "27": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_map19_s0": {
+      "head_maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_map19_s200": {
+      "head_maps": {
+        "19": [
+          1,
+          0,
+          3,
+          2
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_map27_s0": {
+      "head_maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    },
+    "v22_map27_s200": {
+      "head_maps": {
+        "27": [
+          0,
+          3,
+          2,
+          1
+        ]
+      },
+      "local_gate": false,
+      "diagnostic_only": true,
+      "calibration_hashes": 128
+    }
+  },
+  "fit": 64,
+  "assignment_split": [
+    48,
+    16
+  ],
+  "val": 64,
+  "regression": 175,
+  "fresh_final_test": false,
+  "calibration_regression_overlap": 0,
+  "prior_files_checked": 472,
+  "changed_prior_files": [],
+  "original_files_modified_after_snapshot": []
+}

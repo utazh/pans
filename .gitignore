@@ -36,3 +36,8 @@ publication/
 !docs/layerkv_v2/results/*.csv
 artifacts/
 *.zip
+
+# Curated v2.2 report snapshots.
+!docs/layerkv_v22/results/
+!docs/layerkv_v22/results/*.json
+!docs/layerkv_v22/results/*.csv

@@ -1,0 +1,262 @@
+{
+  "head_map": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "assignment": {
+    "permutation": [
+      1,
+      0,
+      3,
+      2
+    ],
+    "identity_cost": 3.159981982995732,
+    "matched_cost": 2.0174769165314816,
+    "assignment_set_size": 24,
+    "relative_cost_reduction": 0.3615542976549286,
+    "identity_is_selected": false,
+    "cost_matrix": [
+      [
+        0.838832536135986,
+        0.3342925221121136,
+        0.7126609074284892,
+        0.7881655432896322
+      ],
+      [
+        0.39424361084751625,
+        0.9567350373317113,
+        1.7615930492143028,
+        1.472694892224778
+      ],
+      [
+        1.2146662090358582,
+        0.8025558607570813,
+        0.6862989116030618,
+        0.8490419614575091
+      ],
+      [
+        0.9357220595670513,
+        0.4895923112154409,
+        0.43989882211434267,
+        0.6781154979249735
+      ]
+    ],
+    "edge_reports": {
+      "0:0": {
+        "output_relative_rmse": 0.3700057661954951,
+        "joint_attention_kl": 0.7019282691180706,
+        "prefix_mass_p95": 0.5252413749694824,
+        "requests": 16
+      },
+      "0:1": {
+        "output_relative_rmse": 0.16492348196451265,
+        "joint_attention_kl": 0.3070927672088146,
+        "prefix_mass_p95": 0.25540733337402344,
+        "requests": 16
+      },
+      "0:2": {
+        "output_relative_rmse": 0.19618400361283053,
+        "joint_attention_kl": 0.6741727441549301,
+        "prefix_mass_p95": 0.34086495637893677,
+        "requests": 16
+      },
+      "0:3": {
+        "output_relative_rmse": 0.19494431139531201,
+        "joint_attention_kl": 0.7501622587442398,
+        "prefix_mass_p95": 0.39291632175445557,
+        "requests": 16
+      },
+      "1:0": {
+        "output_relative_rmse": 0.21930509583906818,
+        "joint_attention_kl": 0.34614888578653336,
+        "prefix_mass_p95": 0.2824128270149231,
+        "requests": 16
+      },
+      "1:1": {
+        "output_relative_rmse": 0.41217262007541267,
+        "joint_attention_kl": 0.7868487685918808,
+        "prefix_mass_p95": 0.6361881494522095,
+        "requests": 16
+      },
+      "1:2": {
+        "output_relative_rmse": 0.4756433560070649,
+        "joint_attention_kl": 1.5353564471006393,
+        "prefix_mass_p95": 0.7723428606987,
+        "requests": 16
+      },
+      "1:3": {
+        "output_relative_rmse": 0.47927721469490303,
+        "joint_attention_kl": 1.2429882436990738,
+        "prefix_mass_p95": 0.7420603036880493,
+        "requests": 16
+      },
+      "2:0": {
+        "output_relative_rmse": 0.256536481143832,
+        "joint_attention_kl": 1.1488552428781986,
+        "prefix_mass_p95": 0.24004530906677246,
+        "requests": 16
+      },
+      "2:1": {
+        "output_relative_rmse": 0.25108008307600554,
+        "joint_attention_kl": 0.7395146526396275,
+        "prefix_mass_p95": 0.18499398231506348,
+        "requests": 16
+      },
+      "2:2": {
+        "output_relative_rmse": 0.21150894193277275,
+        "joint_attention_kl": 0.6415628790855408,
+        "prefix_mass_p95": 0.16379602253437042,
+        "requests": 16
+      },
+      "2:3": {
+        "output_relative_rmse": 0.2547751823319813,
+        "joint_attention_kl": 0.7841315679252148,
+        "prefix_mass_p95": 0.2158472090959549,
+        "requests": 16
+      },
+      "3:0": {
+        "output_relative_rmse": 0.2659123405700129,
+        "joint_attention_kl": 0.8650126866996288,
+        "prefix_mass_p95": 0.3594924807548523,
+        "requests": 16
+      },
+      "3:1": {
+        "output_relative_rmse": 0.2475836574891675,
+        "joint_attention_kl": 0.4282946437597275,
+        "prefix_mass_p95": 0.2511795163154602,
+        "requests": 16
+      },
+      "3:2": {
+        "output_relative_rmse": 0.22105244958568884,
+        "joint_attention_kl": 0.39103463664650917,
+        "prefix_mass_p95": 0.24677033722400665,
+        "requests": 16
+      },
+      "3:3": {
+        "output_relative_rmse": 0.28480819406312313,
+        "joint_attention_kl": 0.5969997905194759,
+        "prefix_mass_p95": 0.3928314745426178,
+        "requests": 16
+      }
+    },
+    "edge_fit_query_hashes": [
+      "41a170e5b586a4d720fb2473f1c9ef25f00158ec75d02fa199253c98cbee2b79",
+      "042b402aad70656c27f46075f8d473063b43a1924e1186c2df8a701089bec067",
+      "00cda67c2006fc3b87f413a5e9ee75037b9656434a3f609cdea7347726744887",
+      "c2c1b6f046b3f15fd6fee3f548ed4e7a7219371dee7cd12bb107263b011e929e",
+      "46a4a729882bf303afb7677f4318f3ea50273189ca8b37c02a8ab6582f47a49a",
+      "25f311cdad7e27442e53f5264e1a61ac9f8291fb586dba0bdf1226118596ce24",
+      "7b375388b6f102a7adac7fb56694b671a684ca54e23a62e3bc4e6b7754cd7551",
+      "8ada31c36b7f96f6b9c29b00d3a1930c0539fb28d6e7e248a2b35f0f33326d4f",
+      "32aa1594f56d5716fd0054b0add04ca268652141e5d5ca4cc8abe5b168bf0f22",
+      "b1296cdf9901d3c6bb7ec312386080657a7792dc8043fddb01d464efbf9305df",
+      "cdf7340bb1a0347c3b4416679c7d22fc493e47213912e0a452e0241e8ae372a4",
+      "014b206919db92500868aafc314fc3a6a1d321e4410caa8c5cef03ff544b2fd1",
+      "7de0cbd548f564861e1b57d1d1169e12e90510ab86028b83c57e00eb491d657a",
+      "f0fd8a068f76e6049612c909e5869dd2ce0684fb5603714d9b2782fdd48bc763",
+      "e861430a0233e4840f75778bbbef7d3c3060cde2fc300e1fac6d7290b85d4425",
+      "cf5d46f993a30e6713cb84f815c0637a0b9c557c325f8f7b4200a3971eb2072c",
+      "336db4686cd86bcd7080124beb1755165047cc5930c368c099179dc606a05d03",
+      "a85a850c939393c70f10f5b01f7d2a16a0f72a84a153ced19f5c6624122b9c2d",
+      "3cf50a04eb7c6590ed9f5aaab0c1989bc8e42e9cc9b62f7ad1a0b9ed4bf84be6",
+      "130ace1d4db6a591fe0b1cafbd41cb81a93162190f3d01b7debf49871bdf8985",
+      "d10cabc935b2d304f48e66ae4761c7dae30de08e1925c844486d02d674a688a9",
+      "bc8a70a6873390e7cbd5cead23ac153cd47d7efbb4b7b8ce0fc674e3b93d1fee",
+      "148af59b3e77ac06ffdde8248d087a93de9d7638b0696a554fc7bd5f53fce08c",
+      "da8226aae9870002cf845352a9ef2161e02e5cfb6f01e7ae7b28b5c6b8a50017",
+      "2f00c8f021eb3e15de706ee67325b7b9e8d8e86221f38fe83204a87be372221d",
+      "1dfba048ea95b2f0f3c4d3205d79b278d367dd81039922ad7322627897d8ecd0",
+      "7800b3affef157dd9c325394662d876fe3e2e1760d1b1b8fc33ab4671e5fd18d",
+      "b535120900384231be01468b5b733c2b356a40e912f96e5401187584ca1c584c",
+      "9c3270a9ef4e096f28a6286cf2804bffb927072a0d1ed728109aa2e58d7c7b92",
+      "374f02335291aece07c73446c96888c4649bd8ffa7ab0e034fd13f99624f173a",
+      "8c48a4c2cad88ca84b5e006d842a2b568b5f35c244a7ffa070b7f1142b2555a4",
+      "1ff9b85ffc5ac36c730e48308325158f5b30beb841ae22eac20239509472ed56",
+      "c0f54075c0a0b919654856654cf5e353cb719395c8b4239bfdae5f7f98e50bb6",
+      "cd4612e2ff1c3caebafa679a9925e34fb63e46b38db9dfc452226f363f57121a",
+      "0f8056da9e31e9d931b5e1ec2f66d3bf5d31c554d554e90fbeb9831bc313d0a6",
+      "7f36423523646252b51548943f36cf2971fd36aac962aecd204c5b5041af636e",
+      "b52c8e3babae68f0a902cfa208ef3c877f252fb885ac80ff227ae68a2b42681c",
+      "3afeefbf22514810c3f86a04f0cb64a326e569f12da68228be765fb9c71fc265",
+      "bf49b696efa62c83eb5bfa250b9b3d3fd2e4bd4512d5a472fdc189e63a7de4b0",
+      "e1515480ccf218753b5706c05249d3e33e022131139e02aa3e6b4a52c15b2136",
+      "d9cb103a896edc74c05487224926ef48145e8bb9bab0309ded026aaa87ae62fe",
+      "2358f73357a1815ed1b9d57a5a494300fab0413a34f5afc3cb136f26c246c680",
+      "437b99d5ac1063150df92082a0849c0865dc1af440e85a746093b2cb31e4bd1e",
+      "24afdbd24fe68e572ee753f125d6bfe4fc03089c97b696425e4c15743f2f9279",
+      "d461ba9b2fe2d3c1dc57157c3e84147ab5ac06b5cfc97300e4b1926b71713400",
+      "59a776c66a25d9ef540848db3dbd94e7a473e139e0b7b806496347138316964c",
+      "221f775517bf3b6d3dfd0460ca76047f6f078823a25310f950e028c04778eaff",
+      "0fac7b603a7b67d227b5887d2fe7ea360cd4a26a1d94cde1e1846155663359dd"
+    ],
+    "assignment_query_hashes": [
+      "4144b85e575b74b421ee516d16863cd44e19e40f19ba61aa3afce53821356230",
+      "0246f4641307adbe8ce661f8748ec93bd1df2f0333cda343e6a12f289db93648",
+      "21d9693e9fbde2ba60d0ba6a910dfe27a1a305a86e8a47292dd037c2d069e636",
+      "633194d2e7a486997b9c916dd6d856bf1fe3505ecdb939d317437f25f9ed4e7e",
+      "b78446218a8009a8dab9c1bdd4738d6074fda3f67260eb2dc83ae48f2042b42c",
+      "cc6710f053be36b8c11146901f0825db4af5a83bdee203abd1a7ff0c2770fdd8",
+      "e0cfd158e210acf7dd46cddff3f362a8768c138c28bdf699de1bfffefa45405b",
+      "f40d217cf60dcbfff00fb4e997e47206ede884f286f7c142fccc02cf0ecfb01f",
+      "5a0f1bd210dae721801216faf5cadcdf3afc0eb464d974dca95df269f1d532cd",
+      "e7f7248ab2b12fc878144f64c7387f8c2a49782f02e3e38fbab20de28b916790",
+      "d51f56d142e3b36236417e347ecdfb7b88c20fe03ee6aa93c24552ab07935948",
+      "609826b3f3ed35c47c0772b13107bcd0d76e00bf2f4f586469ad4dc39ae09b01",
+      "3113dd687aeb7e842871464a29485926545361b21e4bf09592af6f141125a718",
+      "607a3f8c8a4200e21d7df05b6e1f70eece6ab6b0d2619951110c78a095350f2e",
+      "136f208cda951ca3f5f4a8a47f71accc2e4892b556fc59d523ce4915e7903d70",
+      "6c7003c06f130e9e73b88a481a6f98ab5119abaf914942e0c017f9790a0fcd72"
+    ],
+    "cost_definition": "per-group output relative MSE + kl_weight * joint attention KL",
+    "kl_weight": 1.0
+  },
+  "final": {
+    "output_relative_rmse": 0.2845115206152304,
+    "max_request_output_relative_rmse": 0.36481535209550836,
+    "prefix_mass_p95": 0.5544264316558838,
+    "mean_joint_attention_kl": 0.6662574429064989,
+    "mean_post_projection_update_relative_rmse": 0.2774055890125159,
+    "requests": 64
+  },
+  "history": [
+    {
+      "step": 0,
+      "output_relative_rmse": 0.2845115206152304,
+      "max_request_output_relative_rmse": 0.36481535209550836,
+      "prefix_mass_p95": 0.5544264316558838,
+      "mean_joint_attention_kl": 0.6662574429064989,
+      "mean_post_projection_update_relative_rmse": 0.2774055890125159,
+      "requests": 64
+    }
+  ],
+  "local_gate_passed": false,
+  "args": {
+    "store_root": "runtime_data/prefix_store",
+    "task": "trec",
+    "teacher_fit": "runtime_data/v21_teacher_fit",
+    "teacher_val": "runtime_data/v21_teacher_val",
+    "student_fit": "runtime_data/v21_teacher_fit",
+    "student_val": "runtime_data/v21_teacher_val",
+    "output": "assets/v22_diag19_s0/trec.pt",
+    "source": 18,
+    "target": 19,
+    "mapping": "identity",
+    "carry": null,
+    "initial_reader": null,
+    "device": "cuda",
+    "steps": 0,
+    "eval_every": 20,
+    "lr": 0.0001,
+    "ridge": 0.001,
+    "tokens": 8192,
+    "seed": 22,
+    "key_mode": "dense",
+    "rank": 16,
+    "kl_weight": 1.0,
+    "post_weight": 1.0,
+    "trust_weight": 0.001,
+    "bf16_ste": false
+  }
+}

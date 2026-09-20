@@ -1,0 +1,19 @@
+{
+  "original_package_sha256": "15ceb02ec6da8c01d99c6dd87c343105f21096565e596611467759557a836758",
+  "installed_package_files_unchanged": {
+    "scripts/bench_headalign_v22.py": true,
+    "scripts/budget_frontier_v22.py": true,
+    "scripts/compile_headalign_v22.py": true,
+    "scripts/install_sharedkv_v22.py": true,
+    "scripts/run_sharedkv_v22.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/__init__.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/budget.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/calibrate.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/guard.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/matching.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/ops.py": true,
+    "src/contiguous_fuxian/sharedkv_v22/runtime.py": true,
+    "tests/test_headalign_v22.py": true
+  },
+  "server_additions": "new orchestration, analysis, reports and six Qwen geometry CUDA tests only"
+}
