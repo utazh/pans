@@ -1,0 +1,101 @@
+--- upstream/scripts/bench_sharedkv_v21.py
++++ scripts/bench_sharedkv_v21.py
+@@ -16,6 +16,7 @@
+ def main():
+     p=argparse.ArgumentParser(description=__doc__)
+     p.add_argument("--selected-tokens",type=int,default=2048);p.add_argument("--query-tokens",type=int,default=64)
++    p.add_argument("--private-tokens",type=int,help="Private cache length; defaults to query length. Use query=1/private=42 for decode geometry.")
+     p.add_argument("--iterations",type=int,default=40);p.add_argument("--warmup",type=int,default=10)
+     p.add_argument("--backend",choices=["flash2","vllm2"],default="vllm2");p.add_argument("--adapter");p.add_argument("--consumer",type=int);p.add_argument("--compile",action="store_true")
+     p.add_argument("--output",required=True)
+@@ -23,6 +24,8 @@
+     if not torch.cuda.is_available():raise RuntimeError("CUDA required; no CPU latency fallback")
+     if min(a.selected_tokens,a.query_tokens,a.iterations,a.warmup)<=0:raise ValueError("Positive sizes required")
+     if Path(a.output).exists():raise FileExistsError(a.output)
++    private_tokens=a.query_tokens if a.private_tokens is None else a.private_tokens
++    if private_tokens<a.query_tokens:raise ValueError("Private length must cover current query")
+     torch.manual_seed(13);h,hq,d=4,28,128
+     if a.adapter:
+         bundle=load_safe(a.adapter)
+@@ -36,7 +39,7 @@
+     packed=pack(reader)
+     def rand(n,heads):return torch.randn(1,n,heads,d,device="cuda",dtype=torch.bfloat16)*.3
+     q=rand(a.query_tokens,hq);pk,pv=rand(a.selected_tokens,h),rand(a.selected_tokens,h)
+-    tk,tv=rand(a.query_tokens,h),rand(a.query_tokens,h)
++    tk,tv=rand(private_tokens,h),rand(private_tokens,h)
+     with torch.inference_mode():
+         qr,off=prepare_query(q,packed.A_transposed,packed.bk_float)
+         up,lp=attention_with_lse(qr,pk,pv,backend=a.backend)
+@@ -85,7 +88,7 @@
+     import importlib.metadata
+     backend_version=importlib.metadata.version("vllm" if a.backend=="vllm2" else "flash-attn")
+     report={"scope":"synthetic/resident microbench; not TTFT, not H2D, not real Qwen quality",
+-        "args":vars(a),"torch":torch.__version__,"backend_version":backend_version,
++        "args":vars(a),"private_tokens_effective":private_tokens,"torch":torch.__version__,"backend_version":backend_version,
+         "gpu":torch.cuda.get_device_name(),"reader_parity_max_abs":parity,
+         "compile_and_probe_ms_excluded":compiled_ms,"results":result,
+         "warning":"Component times cannot be summed to infer overlapped model critical path"}
+--- upstream/scripts/compare_layerkv_v21.py
++++ scripts/compare_layerkv_v21.py
+@@ -8,7 +8,7 @@
+ import argparse,json,sys,statistics
+ from pathlib import Path
+ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+-from contiguous_fuxian.sharedkv_v21.audit import paired_quality
++from contiguous_fuxian.sharedkv_v21.audit import paired_quality,mean_label_scores
+ 
+ def index(root):
+     out={}
+@@ -56,7 +56,7 @@
+             if ax is not None and ay is not None:
+                 if set(ax)!=set(ay):raise ValueError('Different label continuation sets')
+                 if len(ax)<2:raise ValueError('At least two labels required for a margin')
+-                keys=sorted(ax);xx=torch.tensor([sum(ax[k]) for k in keys]);yy=torch.tensor([sum(ay[k]) for k in keys])
++                keys=sorted(ax);xx=torch.tensor([mean_label_scores(ax)[k] for k in keys]);yy=torch.tensor([mean_label_scores(ay)[k] for k in keys])
+                 vals=xx.sort(descending=True).values
+                 labels.append({'query_hash':h,'teacher_label_margin':float(vals[0]-vals[1]),
+                     'label_score_max_abs_delta':float((xx-yy).abs().max()),'label_argmax_agreement':bool(xx.argmax()==yy.argmax()),
+@@ -64,6 +64,6 @@
+         result['captures']={'n':len(bp),'warning':'Capture count may include warmup; scored accuracy n is separate',
+             'first_token_full_vocab_mean_kl':statistics.mean(kl),
+             'token_jaccard_by_layer':{k:{'mean':statistics.mean(v),'min':min(v)} for k,v in jac.items()},
+-            'label_continuation_diagnostics':labels}
++            'label_score_reduction':'mean per token, matching original runner','label_continuation_diagnostics':labels}
+     Path(a.output).parent.mkdir(parents=True,exist_ok=True);Path(a.output).write_text(json.dumps(result,indent=2))
+ if __name__=='__main__':main()
+--- upstream/scripts/run_sharedkv_v21.py
++++ scripts/run_sharedkv_v21.py
+@@ -36,7 +36,7 @@
+         a.stats.with_suffix(a.stats.suffix+'.context.json').write_text(json.dumps({
+             'args':{k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},
+             'fixed_ids':bool(a.selection_plan or a.replay_dir),'selector_compute_preserved':True,
+-            'formal_latency_eligible':not a.diagnostic,
++            'formal_latency_eligible':not a.diagnostic and a.logits is None,
+             'warning':'No automatic quality or speed certification. Fixed plans are only controlled diagnostics.'},indent=2))
+     import contiguous_fuxian.flexgen_qwen_reprefill as runner
+     if a.mode!='original':
+--- upstream/src/contiguous_fuxian/sharedkv_v21/audit.py
++++ src/contiguous_fuxian/sharedkv_v21/audit.py
+@@ -174,3 +174,10 @@
+     Path(a.output).write_text(json.dumps(result,indent=2))
+ 
+ if __name__=="__main__":main()
++
++
++def mean_label_scores(token_logprobs):
++    """Match the original runner: mean continuation log probability per token."""
++    if any(not values for values in token_logprobs.values()):
++        raise ValueError("Empty label token sequence")
++    return {key:sum(values)/len(values) for key,values in token_logprobs.items()}
+--- upstream/src/contiguous_fuxian/sharedkv_v21/runtime.py
++++ src/contiguous_fuxian/sharedkv_v21/runtime.py
+@@ -40,6 +40,9 @@
+     # them for attention. Retain buffers to model their lifetime, not free early.
+     cfg['shadow_buffers'][lid]=(k.to(device=device,dtype=dtype).contiguous(),
+                                 v.to(device=device,dtype=dtype).contiguous())
++    # Match normal RequestState.resolve ownership: release the old FP16 view
++    # instead of retaining both FP16 and BF16 shadow copies.
++    loader._loaded[lid]=cfg['shadow_buffers'][lid]
+ 
+ 
+ def decoder_logits(*,model,input_ids,cache,position_start,loader,period_size,subperiod_size,

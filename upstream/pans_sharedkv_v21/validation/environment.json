@@ -1,0 +1,8 @@
+{
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "cuda_available": false,
+  "tests_passed": 33,
+  "tests_skipped": 2,
+  "scope": "CPU synthetic/mocked integration and mathematical tests only; no Qwen/GPU performance tests executed"
+}

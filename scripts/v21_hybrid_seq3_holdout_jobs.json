@@ -1,0 +1,32 @@
+[
+  [
+    "--mode",
+    "shared",
+    "--adapters",
+    "assets/v21_seq3",
+    "--allow-candidate",
+    "--layout",
+    "hybrid",
+    "--metadata-cache",
+    "--packed-ops",
+    "--logits",
+    "results/v21_hold_hybrid_seq3_logits",
+    "--stats",
+    "results/v21_hold_hybrid_seq3.extra.jsonl",
+    "--",
+    "--task",
+    "trec",
+    "--budget",
+    "25",
+    "--period",
+    "8",
+    "--samples",
+    "175",
+    "--warmup",
+    "4",
+    "--bundle-dir",
+    "data/v21_splits/holdout",
+    "--output",
+    "results/v21_hold_hybrid_seq3"
+  ]
+]

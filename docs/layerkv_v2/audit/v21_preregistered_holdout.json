@@ -1,0 +1,18 @@
+{
+  "split": "data/v21_splits/holdout",
+  "n": 175,
+  "variants": [
+    "original",
+    "identity",
+    "old_dense1",
+    "old_dense3",
+    "refit2_s200",
+    "refit19_s200",
+    "refit27_s200",
+    "seq3",
+    "hybrid_identity",
+    "hybrid_refit27_s200"
+  ],
+  "selection_policy": "All listed comparisons fixed before inspecting holdout. No tuning against this split. All failed-local-gate readers remain diagnostic candidates.",
+  "sequential_policy": "Sequential diagnostic rollout uses target 2 then 19 then 27 with freshly collected student states. Passing status is never overridden."
+}

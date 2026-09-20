@@ -1,0 +1,100 @@
+{
+  "source": "utazh/pans v1 @59312f2bd2504079fed03b53f283d8ade931fee2",
+  "published_comparisons": [
+    {
+      "baseline": "identity",
+      "student": "dense1",
+      "n": 128,
+      "mean_ttft_ms": {
+        "baseline": 292.4573662585317,
+        "student": 279.05919857130357,
+        "delta": -13.398167687228124,
+        "reduction_pct": 4.581237894136054
+      },
+      "mean_physical_prefetch_bytes": {
+        "baseline": 70647808.0,
+        "student": 68132864.0,
+        "delta": -2514944.0,
+        "reduction_pct": 3.5598330241187384
+      },
+      "mean_host_source_payload_bytes": {
+        "baseline": 13332224.0,
+        "student": 10947392.0,
+        "delta": -2384832.0,
+        "reduction_pct": 17.88772825899115
+      },
+      "mean_selector_bytes": {
+        "baseline": 5690880.0,
+        "student": 5690880.0,
+        "delta": 0.0,
+        "reduction_pct": 0.0
+      },
+      "host_payload_plus_selector_proxy_reduction_pct": 12.536502980796405,
+      "warning": "Source-counter proxy, NOT hardware H2D. Selector addition assumes its source is host; verify native metrics."
+    },
+    {
+      "baseline": "identity_fixed_v2",
+      "student": "dense1_fixed_v2",
+      "n": 32,
+      "mean_ttft_ms": {
+        "baseline": 245.34909749490907,
+        "student": 288.613808741502,
+        "delta": 43.264711246592924,
+        "reduction_pct": -17.633939430932962
+      },
+      "mean_physical_prefetch_bytes": {
+        "baseline": 70647808.0,
+        "student": 68132864.0,
+        "delta": -2514944.0,
+        "reduction_pct": 3.5598330241187384
+      },
+      "mean_host_source_payload_bytes": {
+        "baseline": 13411072.0,
+        "student": 11055744.0,
+        "delta": -2355328.0,
+        "reduction_pct": 17.562563231336018
+      },
+      "mean_selector_bytes": {
+        "baseline": 5690880.0,
+        "student": 5690880.0,
+        "delta": 0.0,
+        "reduction_pct": 0.0
+      },
+      "host_payload_plus_selector_proxy_reduction_pct": 12.33030006566868,
+      "warning": "Source-counter proxy, NOT hardware H2D. Selector addition assumes its source is host; verify native metrics."
+    },
+    {
+      "baseline": "original",
+      "student": "identity",
+      "n": 128,
+      "mean_ttft_ms": {
+        "baseline": 343.94107141997665,
+        "student": 292.4573662585317,
+        "delta": -51.48370516144496,
+        "reduction_pct": 14.968757569106852
+      },
+      "mean_physical_prefetch_bytes": {
+        "baseline": 73958656.0,
+        "student": 70647808.0,
+        "delta": -3310848.0,
+        "reduction_pct": 4.476620018622296
+      },
+      "mean_host_source_payload_bytes": {
+        "baseline": 16598080.0,
+        "student": 13332224.0,
+        "delta": -3265856.0,
+        "reduction_pct": 19.676107116003777
+      },
+      "mean_selector_bytes": {
+        "baseline": 5690880.0,
+        "student": 5690880.0,
+        "delta": 0.0,
+        "reduction_pct": 0.0
+      },
+      "host_payload_plus_selector_proxy_reduction_pct": 14.652348068281338,
+      "warning": "Source-counter proxy, NOT hardware H2D. Selector addition assumes its source is host; verify native metrics."
+    }
+  ],
+  "whole_plan_exact_matches_identity_vs_original": 3,
+  "note": "Whole-plan exact hash fraction is not token/head/layer overlap. Fixed 32 and online128 are separate experiments."
+}

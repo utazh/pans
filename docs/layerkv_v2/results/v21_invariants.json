@@ -1,0 +1,1324 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "physical_and_private": {
+    "v21_fixed_demand.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_fixed_identity.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_fixed_shadow.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_fixed_shared.extra.jsonl": {
+      "requests_including_warmup": 36,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_hybrid_refit27_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_hybrid_seq3.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_identity.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_old_dense1.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_old_dense3.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_refit19_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_refit27_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_refit2_s200.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_hold_seq3.extra.jsonl": {
+      "requests_including_warmup": 179,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_dense3.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_dense7.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_direct27.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_hybrid27.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_identity.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated11.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated14.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated19.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated2.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated23.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated27.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_isolated7.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit19_s0.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit19_s200.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit27_s0.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit27_s200.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit2_s0.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_refit2_s200.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_seq2.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_reg_seq3.extra.jsonl": {
+      "requests_including_warmup": 132,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_demand_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_demand_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_hybrid_seq3.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_hybrid_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_meta_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_meta_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_packed_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_split_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b0_split_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_demand_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_demand_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_hybrid_seq3.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_hybrid_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_meta_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_meta_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_packed_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_split_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b1_split_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_demand_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_demand_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_hybrid_seq3.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_hybrid_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_meta_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_meta_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_packed_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_split_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b2_split_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_demand_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_demand_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_hybrid_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_hybrid_seq3.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_hybrid_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_meta_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_meta_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_packed_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_split_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    },
+    "v21_time_b3_split_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "source_pointer_alias": true,
+      "distinct_physical_sources": true,
+      "resolve_count": true,
+      "private_tail_bounded": true,
+      "prefix_buffer_bytes": true
+    }
+  },
+  "v21_runtime": {
+    "v21_fixed_demand.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_fixed_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_fixed_shadow.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        1
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_fixed_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_hold_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_hybrid_refit27_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_hold_hybrid_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        399360
+      ]
+    },
+    "v21_hold_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_old_dense1.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_old_dense3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_refit19_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_refit27_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_refit2_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_hold_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_dense3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_dense7.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_direct27.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_hybrid27.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_reg_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated11.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated14.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated19.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated2.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated23.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated27.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_isolated7.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit19_s0.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit19_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit27_s0.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit27_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit2_s0.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_refit2_s200.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_seq2.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_reg_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_demand_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_demand_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b0_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_hybrid_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        399360
+      ]
+    },
+    "v21_time_b0_hybrid_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b0_meta_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_meta_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_packed_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b0_split_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b0_split_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_demand_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_demand_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b1_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_hybrid_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        399360
+      ]
+    },
+    "v21_time_b1_hybrid_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b1_meta_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_meta_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_packed_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b1_split_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b1_split_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_demand_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_demand_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b2_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_hybrid_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        399360
+      ]
+    },
+    "v21_time_b2_hybrid_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b2_meta_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_meta_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_packed_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b2_split_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b2_split_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_demand_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_demand_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b3_hybrid_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_hybrid_seq3.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        399360
+      ]
+    },
+    "v21_time_b3_hybrid_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b3_meta_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_meta_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_packed_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        133120
+      ]
+    },
+    "v21_time_b3_split_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    },
+    "v21_time_b3_split_shared.extra.jsonl.v21.jsonl": {
+      "selector_calls_always_4": true,
+      "shadow_resolve_calls": [
+        0
+      ],
+      "packed_extra_bytes": [
+        0
+      ]
+    }
+  },
+  "fixed_mathematics": {
+    "shadow": {
+      "n": 32,
+      "logits_bitwise_equal": true,
+      "selection_exact": true,
+      "label_token_logprobs_exact": true,
+      "max_logit_abs_diff": 0.0
+    },
+    "demand": {
+      "n": 32,
+      "logits_bitwise_equal": true,
+      "selection_exact": true,
+      "label_token_logprobs_exact": true,
+      "max_logit_abs_diff": 0.0
+    }
+  },
+  "tokenized_split_sizes": {
+    "old_fit": 32,
+    "old_val": 32,
+    "reg": 128,
+    "fit": 64,
+    "val": 64,
+    "holdout": 175
+  },
+  "tokenized_pairwise_overlap": {
+    "old_fit__old_val": 0,
+    "old_fit__reg": 0,
+    "old_fit__fit": 0,
+    "old_fit__val": 0,
+    "old_fit__holdout": 0,
+    "old_val__reg": 0,
+    "old_val__fit": 0,
+    "old_val__val": 0,
+    "old_val__holdout": 0,
+    "reg__fit": 0,
+    "reg__val": 0,
+    "reg__holdout": 0,
+    "fit__val": 0,
+    "fit__holdout": 0,
+    "val__holdout": 0
+  }
+}

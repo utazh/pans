@@ -1,0 +1,972 @@
+{
+  "scope": "No profiler or logits dumping. Four repeated blocks of the same 32 regression queries, eight warmups per variant, fresh Pcache store. Frozen model reused. Forward/reverse/reverse/forward order. Device 2. Four blocks give limited run-to-run confidence; other users on GPUs0/1 may cause host contention.",
+  "variants": {
+    "original": {
+      "mean_ttft_ms": 274.02877009808435,
+      "mean_p95_ttft_ms": 324.56664655765053,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 278.48002286918927,
+          "p95_ttft_ms": 352.5408795103431,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 73242624,
+          "host_payload_source_bytes": 16000768,
+          "cuda_peak_allocated_bytes": 15804846592
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 291.9020379486028,
+          "p95_ttft_ms": 349.58991965977475,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 73616384,
+          "host_payload_source_bytes": 16372480,
+          "cuda_peak_allocated_bytes": 17084198400
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 234.23812392138643,
+          "p95_ttft_ms": 255.11358955409375,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 72802304,
+          "host_payload_source_bytes": 15560448,
+          "cuda_peak_allocated_bytes": 17701065216
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 291.4948956531589,
+          "p95_ttft_ms": 341.0221975063905,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 73562112,
+          "host_payload_source_bytes": 16318208,
+          "cuda_peak_allocated_bytes": 17750820352
+        }
+      ]
+    },
+    "split_identity": {
+      "mean_ttft_ms": 219.99553060595645,
+      "mean_p95_ttft_ms": 254.4489300053101,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 209.22523893386824,
+          "p95_ttft_ms": 235.3559174342081,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 15776432640,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 214.4509058780386,
+          "p95_ttft_ms": 237.4727851478383,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 16898886144,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 234.47649176523555,
+          "p95_ttft_ms": 294.8749949224293,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 17467861504,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 221.82948584668338,
+          "p95_ttft_ms": 250.0920225167647,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 17687706112,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "split_shared": {
+      "mean_ttft_ms": 211.4600527784205,
+      "mean_p95_ttft_ms": 234.8915847018361,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 205.0029142992571,
+          "p95_ttft_ms": 226.2031378922984,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 15823674368,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 205.83700526185567,
+          "p95_ttft_ms": 229.63268468156457,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16813765120,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 205.90750070550712,
+          "p95_ttft_ms": 227.80949915759265,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17441333760,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 229.09279084706213,
+          "p95_ttft_ms": 255.92101707588878,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17728568832,
+          "selector_calls_prefill": [
+            4
+          ],
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "meta_identity": {
+      "mean_ttft_ms": 211.76677862058568,
+      "mean_p95_ttft_ms": 238.7908082746435,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 204.97660512046423,
+          "p95_ttft_ms": 231.95833823410794,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 15879220224,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 212.06550254282774,
+          "p95_ttft_ms": 244.04109910828993,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 16791180288,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 218.76646960299695,
+          "p95_ttft_ms": 247.55062172189355,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 17409565696,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 211.2585372160538,
+          "p95_ttft_ms": 231.61317403428257,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 17784683520,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "meta_shared": {
+      "mean_ttft_ms": 214.02404915716033,
+      "mean_p95_ttft_ms": 226.9786694610957,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 242.24439435784006,
+          "p95_ttft_ms": 227.91658856440336,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 15902130176,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 205.4767063309555,
+          "p95_ttft_ms": 226.36813623830676,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16720092160,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 206.41531056025997,
+          "p95_ttft_ms": 229.14600275689736,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17328454656,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 201.9597853795858,
+          "p95_ttft_ms": 224.48395028477535,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17849211904,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "packed_shared": {
+      "mean_ttft_ms": 206.889785002204,
+      "mean_p95_ttft_ms": 232.3378577362746,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 202.394993211783,
+          "p95_ttft_ms": 226.43298185430467,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16017359872,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 208.3213313453598,
+          "p95_ttft_ms": 243.86545561719683,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16622977024,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 212.80893534276402,
+          "p95_ttft_ms": 232.10745673859492,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17268401152,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 204.03388010890922,
+          "p95_ttft_ms": 226.94553673500195,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17928004608,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        }
+      ]
+    },
+    "hybrid_identity": {
+      "mean_ttft_ms": 203.5950408262579,
+      "mean_p95_ttft_ms": 229.91981873346958,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 207.8569486766355,
+          "p95_ttft_ms": 238.57483140891418,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13472000,
+          "cuda_peak_allocated_bytes": 16054277632,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 218,
+          "cu_seqlens_cache_misses": 6,
+          "cu_seqlens_resident_bytes": 48,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 196.66367489116965,
+          "p95_ttft_ms": 216.78576993290335,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13472000,
+          "cuda_peak_allocated_bytes": 16552408576,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 218,
+          "cu_seqlens_cache_misses": 6,
+          "cu_seqlens_resident_bytes": 48,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 199.9157366080908,
+          "p95_ttft_ms": 220.05016821203753,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13472000,
+          "cuda_peak_allocated_bytes": 17220154880,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 218,
+          "cu_seqlens_cache_misses": 6,
+          "cu_seqlens_resident_bytes": 48,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 209.94380312913563,
+          "p95_ttft_ms": 244.26850538002327,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13472000,
+          "cuda_peak_allocated_bytes": 17942163456,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 218,
+          "cu_seqlens_cache_misses": 6,
+          "cu_seqlens_resident_bytes": 48,
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "hybrid_shared": {
+      "mean_ttft_ms": 206.89134958956856,
+      "mean_p95_ttft_ms": 242.4213406542549,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 196.07518505654298,
+          "p95_ttft_ms": 217.21192306140438,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11099648,
+          "cuda_peak_allocated_bytes": 16115650560,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 224,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 195.0829932684428,
+          "p95_ttft_ms": 215.8687650691718,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11099648,
+          "cuda_peak_allocated_bytes": 16530954752,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 224,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 237.67344043881167,
+          "p95_ttft_ms": 316.0982179106213,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11099648,
+          "cuda_peak_allocated_bytes": 17155172864,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 224,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 198.7337795944768,
+          "p95_ttft_ms": 220.50645657582209,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11099648,
+          "cuda_peak_allocated_bytes": 18023165440,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 224,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 133120
+        }
+      ]
+    },
+    "hybrid_seq3": {
+      "mean_ttft_ms": 206.94511099645752,
+      "mean_p95_ttft_ms": 239.18072414235212,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 249.46912012819666,
+          "p95_ttft_ms": 302.06164887640625,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 63102976,
+          "host_payload_source_bytes": 6869504,
+          "cuda_peak_allocated_bytes": 16187996672,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 240,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 399360
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 191.40469924604986,
+          "p95_ttft_ms": 214.44289119681343,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 63102976,
+          "host_payload_source_bytes": 6869504,
+          "cuda_peak_allocated_bytes": 16468192768,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 240,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 399360
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 195.13637772615766,
+          "p95_ttft_ms": 221.1738849640824,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 63102976,
+          "host_payload_source_bytes": 6869504,
+          "cuda_peak_allocated_bytes": 17113236992,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 240,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 399360
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 191.77024688542588,
+          "p95_ttft_ms": 219.0444715321064,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 63102976,
+          "host_payload_source_bytes": 6869504,
+          "cuda_peak_allocated_bytes": 18109022720,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 240,
+          "cu_seqlens_cache_misses": 8,
+          "cu_seqlens_resident_bytes": 64,
+          "packed_reader_extra_storage_bytes": 399360
+        }
+      ]
+    },
+    "demand_identity": {
+      "mean_ttft_ms": 237.98384363726655,
+      "mean_p95_ttft_ms": 283.95718719402794,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 261.5380491843098,
+          "p95_ttft_ms": 337.96254482585937,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 16048985088,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 224.5842846969026,
+          "p95_ttft_ms": 274.96790669392794,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 16222823424,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 230.73671787278727,
+          "p95_ttft_ms": 257.65274150762707,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 16857166848,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 235.07632279506652,
+          "p95_ttft_ms": 265.24555574869737,
+          "accuracy_pct": 81.25,
+          "physical_payload_bytes": 70647808,
+          "host_payload_source_bytes": 13470464,
+          "cuda_peak_allocated_bytes": 17952801792,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 0
+        }
+      ]
+    },
+    "demand_shared": {
+      "mean_ttft_ms": 255.4192492953007,
+      "mean_p95_ttft_ms": 296.3976152066607,
+      "blocks": [
+        {
+          "block": 0,
+          "mean_ttft_ms": 242.6200078552938,
+          "p95_ttft_ms": 279.40541326534003,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16093122560,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 1,
+          "mean_ttft_ms": 238.27323284785962,
+          "p95_ttft_ms": 278.1792088644579,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16150794240,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 2,
+          "mean_ttft_ms": 307.8683087733225,
+          "p95_ttft_ms": 345.5600823042914,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 16785121280,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        },
+        {
+          "block": 3,
+          "mean_ttft_ms": 232.91544770472683,
+          "p95_ttft_ms": 282.44575639255345,
+          "accuracy_pct": 78.125,
+          "physical_payload_bytes": 68132864,
+          "host_payload_source_bytes": 11115776,
+          "cuda_peak_allocated_bytes": 17996103680,
+          "selector_calls_prefill": [
+            4
+          ],
+          "cu_seqlens_cache_hits": 443,
+          "cu_seqlens_cache_misses": 5,
+          "cu_seqlens_resident_bytes": 40,
+          "packed_reader_extra_storage_bytes": 133120
+        }
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "baseline": "original",
+      "student": "hybrid_seq3",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 274.02877009808435,
+      "student_mean_ms": 206.94511099645752,
+      "relative_latency_change_pct": -24.48051680034008,
+      "delta_per_block_ms": [
+        -29.010902740992606,
+        -100.49733870255295,
+        -39.10174619522877,
+        -99.72464876773302
+      ],
+      "block_bootstrap_delta95_ms": [
+        -100.11099373514298,
+        -34.05632446811069
+      ]
+    },
+    {
+      "baseline": "hybrid_identity",
+      "student": "hybrid_seq3",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 203.5950408262579,
+      "student_mean_ms": 206.94511099645752,
+      "relative_latency_change_pct": 1.6454576479878247,
+      "delta_per_block_ms": [
+        41.61217145156115,
+        -5.25897564511979,
+        -4.779358881933149,
+        -18.173556243709754
+      ],
+      "block_bootstrap_delta95_ms": [
+        -14.825006903265603,
+        29.894384677390917
+      ]
+    },
+    {
+      "baseline": "original",
+      "student": "hybrid_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 274.02877009808435,
+      "student_mean_ms": 206.89134958956856,
+      "relative_latency_change_pct": -24.500135691768786,
+      "delta_per_block_ms": [
+        -82.40483781264629,
+        -96.81904468016,
+        3.4353165174252354,
+        -92.76111605868209
+      ],
+      "block_bootstrap_delta95_ms": [
+        -94.79008036942105,
+        -20.613791626601596
+      ]
+    },
+    {
+      "baseline": "original",
+      "student": "hybrid_identity",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 274.02877009808435,
+      "student_mean_ms": 203.5950408262579,
+      "relative_latency_change_pct": -25.703041781567602,
+      "delta_per_block_ms": [
+        -70.62307419255376,
+        -95.23836305743316,
+        -34.32238731329562,
+        -81.55109252402326
+      ],
+      "block_bootstrap_delta95_ms": [
+        -89.08454084121331,
+        -46.12956361597753
+      ]
+    },
+    {
+      "baseline": "hybrid_identity",
+      "student": "hybrid_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 203.5950408262579,
+      "student_mean_ms": 206.89134958956856,
+      "relative_latency_change_pct": 1.6190515986701515,
+      "delta_per_block_ms": [
+        -11.781763620092534,
+        -1.5806816227268428,
+        37.75770383072086,
+        -11.21002353465883
+      ],
+      "block_bootstrap_delta95_ms": [
+        -11.495893577375682,
+        25.515771989375935
+      ]
+    },
+    {
+      "baseline": "split_identity",
+      "student": "split_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 219.99553060595645,
+      "student_mean_ms": 211.4600527784205,
+      "relative_latency_change_pct": -3.8798414695179417,
+      "delta_per_block_ms": [
+        -4.222324634611141,
+        -8.613900616182946,
+        -28.568991059728432,
+        7.26330500037875
+      ],
+      "block_bootstrap_delta95_ms": [
+        -22.48232445344911,
+        3.2940035962383263
+      ]
+    },
+    {
+      "baseline": "meta_identity",
+      "student": "meta_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 211.76677862058568,
+      "student_mean_ms": 214.02404915716033,
+      "relative_latency_change_pct": 1.0659228757589512,
+      "delta_per_block_ms": [
+        37.26778923737584,
+        -6.58879621187225,
+        -12.351159042736981,
+        -9.298751836468
+      ],
+      "block_bootstrap_delta95_ms": [
+        -10.910568335020798,
+        25.626153968914878
+      ]
+    },
+    {
+      "baseline": "meta_shared",
+      "student": "packed_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 214.02404915716033,
+      "student_mean_ms": 206.889785002204,
+      "relative_latency_change_pct": -3.3333936924618945,
+      "delta_per_block_ms": [
+        -39.84940114605706,
+        2.8446250144043006,
+        6.393624782504048,
+        2.0740947293234058
+      ],
+      "block_bootstrap_delta95_ms": [
+        -29.17589460594172,
+        5.313742269208888
+      ]
+    },
+    {
+      "baseline": "packed_shared",
+      "student": "hybrid_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 206.889785002204,
+      "student_mean_ms": 206.89134958956856,
+      "relative_latency_change_pct": 0.0007562419597206826,
+      "delta_per_block_ms": [
+        -6.319808155240025,
+        -13.238338076916989,
+        24.86450509604765,
+        -5.300100514432415
+      ],
+      "block_bootstrap_delta95_ms": [
+        -11.253778686295846,
+        17.068426783225732
+      ]
+    },
+    {
+      "baseline": "split_shared",
+      "student": "meta_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 211.4600527784205,
+      "student_mean_ms": 214.02404915716033,
+      "relative_latency_change_pct": 1.212520447739851,
+      "delta_per_block_ms": [
+        37.241480058582965,
+        -0.3602989309001714,
+        0.5078098547528498,
+        -27.133005467476323
+      ],
+      "block_bootstrap_delta95_ms": [
+        -20.22280163691903,
+        27.84103531121218
+      ]
+    },
+    {
+      "baseline": "meta_identity",
+      "student": "demand_identity",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 211.76677862058568,
+      "student_mean_ms": 237.98384363726655,
+      "relative_latency_change_pct": 12.380159526179968,
+      "delta_per_block_ms": [
+        56.561444063845556,
+        12.51878215407487,
+        11.970248269790318,
+        23.817785579012707
+      ],
+      "block_bootstrap_delta95_ms": [
+        12.244515211932594,
+        45.550778586402885
+      ]
+    },
+    {
+      "baseline": "packed_shared",
+      "student": "demand_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 206.889785002204,
+      "student_mean_ms": 255.4192492953007,
+      "relative_latency_change_pct": 23.45667491151373,
+      "delta_per_block_ms": [
+        40.225014643510804,
+        29.951901502499823,
+        95.05937343055848,
+        28.881567595817614
+      ],
+      "block_bootstrap_delta95_ms": [
+        29.41673454915872,
+        78.78250544854382
+      ]
+    },
+    {
+      "baseline": "demand_identity",
+      "student": "demand_shared",
+      "n_blocks": 4,
+      "queries_per_block": 32,
+      "baseline_mean_ms": 237.98384363726655,
+      "student_mean_ms": 255.4192492953007,
+      "relative_latency_change_pct": 7.326298034167844,
+      "delta_per_block_ms": [
+        -18.918041329015978,
+        13.688948150957003,
+        77.13159090053523,
+        -2.1608750903396867
+      ],
+      "block_bootstrap_delta95_ms": [
+        -10.766293959022732,
+        57.3084744028165
+      ]
+    }
+  ]
+}

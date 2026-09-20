@@ -1,5 +1,22 @@
 # pans
 
+## LayerKV v2（SharedKV v2.1 实验实现）
+
+本分支 v2 基于已发布的 v1（59312f2），对应服务器最新完成的 SharedKV v2.1 实验。
+当前层独立计算 Q 和当前 query 的 K/V；历史 prefix 使用物理共享 K/V，并通过层专属 Q/输出变换近似原层行为。
+
+- [v2 发布说明与复现边界](docs/layerkv_v2/RELEASE_ZH.md)
+- [运行与校准说明](README_LAYERKV_V21.md)
+- [完整实验报告](EXPERIMENT_REPORT_V21_ZH.md)
+- [轻量结果快照](docs/layerkv_v2/results) · [审计](docs/layerkv_v2/audit) · [验证日志](docs/layerkv_v2/validation)
+
+Qwen2.5-7B / TREC：独立 175 条 holdout；TTFT 为四轮配对测量。
+原系统为 70.29% / 274.0 ms，优化后无共享为 70.86% / 203.6 ms，
+单对共享 26→27 为 72.00% / 206.9 ms，三对共享为 69.14% / 206.9 ms。
+运行时优化带来主要延迟收益；尚未证明跨层共享本身稳定加速。
+所有新 reader 仍为 diagnostic-only 候选，未通过严格局部误差门限。
+
+
 ## LayerKV v1
 
 跨层共享 prefix K/V 的最新研究实现见 [运行说明](README_LAYERKV.md) 与 [实测报告](EXPERIMENT_REPORT_ZH.md)。当前 query/生成 token 的 KV 仍逐层独立。严格校准门限默认开启；报告中的共享配置为诊断实验，尚未证明稳定加速。

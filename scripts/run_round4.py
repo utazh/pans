@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Fixed P8 / uniform exact configurable budget; separate formal and profiler runs."""
-import argparse,functools,json,os,sys,time,threading,importlib.util
+import argparse,functools,json,os,sys,time,threading
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser()
+p.add_argument('--bundle-dir',type=Path,default=ROOT/'data/paper_task_bundles_full_eval_strict')
 p.add_argument('--max-tokens',type=int,default=1)
 p.add_argument('--task',choices=['sst2','subj','trec','rte'],required=True)
 p.add_argument('--output',type=Path,required=True)
@@ -14,11 +15,6 @@ p.add_argument('--period',type=int,choices=[1,2,4,8],default=8)
 p.add_argument('--timing',choices=['deferred','sync'],default='deferred')
 p.add_argument('--budget',type=int,choices=[5,10,25,50,100],default=25)
 p.add_argument('--variant',choices=['optimized','baseline'],default='optimized')
-p.add_argument('--model-path',default=os.environ.get('PANS_MODEL_PATH','Qwen/Qwen2.5-7B-Instruct'))
-p.add_argument('--bundle-dir',type=Path,default=Path(os.environ.get('PANS_BUNDLE_DIR',ROOT/'data/paper_task_bundles_full_eval_strict')))
-p.add_argument('--store-root',type=Path,default=Path(os.environ.get('PANS_STORE_ROOT',ROOT/'runtime_data/prefix_store')))
-p.add_argument('--pcache-dir',type=Path,default=Path(os.environ.get('PANS_PCACHE_DIR',ROOT/'runtime_data/pcache_c16')))
-p.add_argument('--selector-index-dir',type=Path,default=Path(os.environ.get('PANS_SELECTOR_INDEX_DIR',ROOT/'assets/selector_index_k4_g32')))
 a=p.parse_args()
 CODE_ROOT=ROOT if a.variant=='optimized' else ROOT/'audit/round4_baseline'
 a.output=a.output.resolve()
@@ -70,7 +66,7 @@ if a.profile!='none':
         if capture and state['profile'] is None:
             if a.profile=='viztracer':
                 from viztracer import VizTracer
-                tracer=VizTracer(tracer_entries=5000000,exclude_files=[str(Path(importlib.util.find_spec(name).origin).parent) for name in ['torch','transformers','numpy']],ignore_c_function=True)
+                tracer=VizTracer(tracer_entries=5000000,exclude_files=['/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/torch', '/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/transformers', '/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/numpy'],ignore_c_function=True)
                 tracer.start();state['profile']=tracer
             elif a.profile=='nsys':
                 torch.cuda.cudart().cudaProfilerStart();state['profile']=True
@@ -87,16 +83,16 @@ if a.profile!='none':
 if a.profile == 'viztracer':
     from viztracer import VizTracer
     tracer = VizTracer(tracer_entries=10000000,
-                      exclude_files=[str(Path(importlib.util.find_spec(name).origin).parent) for name in ['torch','transformers','numpy']],
+                      exclude_files=['/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/torch', '/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/transformers', '/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/numpy'],
                       ignore_c_function=True, min_duration=5)
     tracer.start()
     state['profile'] = tracer
 argv=[
-'--model-path',a.model_path,
+'--model-path','/data1/llm/Qwen/Qwen2.5-7B-Instruct',
 '--bundle-dir',str(a.bundle_dir),
-'--store-root',str(a.store_root),
+'--store-root',str(ROOT/'runtime_data/prefix_store'),
 '--plan',str(ROOT/'configs/round2'/f'qwen25_k{a.budget:03d}_uniform.json'),
-'--flexgen-root',str(CODE_ROOT/'vendor/flexgen'),'--flexgen-kv-dir',str(a.pcache_dir),
+'--flexgen-root',str(CODE_ROOT/'vendor/flexgen'),'--flexgen-kv-dir',str(ROOT/'runtime_data/pcache_c16'),
 '--reuse-flexgen-kv','--tasks',a.task,'--store-tasks','sst2,subj,trec,rte',
 '--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens',str(a.max_tokens),
 '--accuracy-scoring','label_continuation_loglikelihood','--dtype','bfloat16','--device','cuda',
@@ -111,7 +107,7 @@ argv=[
 '--impress-known-period-prefetch' if a.period>1 else '--no-impress-known-period-prefetch',
 '--period-size','8','--subperiod-size','4','--expected-keep-ratio',str(a.budget/100),
 '--warmup-passes','1' if a.warmup else '0','--warmup-samples-per-task',str(max(1,a.warmup)),
-'--selector-index-dir',str(a.selector_index_dir)]
+'--selector-index-dir',str(ROOT/'assets/selector_index_k4_g32')]
 sys.argv=[runner.__file__]+argv
 try:
     runner.main()

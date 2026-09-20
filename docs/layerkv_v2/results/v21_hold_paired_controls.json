@@ -1,0 +1,110 @@
+{
+  "identity__refit2_s200": {
+    "n": 175,
+    "baseline_correct": 125,
+    "student_correct": 126,
+    "delta_pp": 0.5714285714285714,
+    "paired_bootstrap_95pct_delta_pp": [
+      -2.857142857142857,
+      4.0
+    ],
+    "baseline_right_student_wrong": 5,
+    "baseline_wrong_student_right": 6,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": false,
+    "harm_rate_exact_one_sided_upper95_pp": 5.913216800769172,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  },
+  "identity__refit27_s200": {
+    "n": 175,
+    "baseline_correct": 125,
+    "student_correct": 126,
+    "delta_pp": 0.5714285714285714,
+    "paired_bootstrap_95pct_delta_pp": [
+      0.0,
+      1.7142857142857144
+    ],
+    "baseline_right_student_wrong": 0,
+    "baseline_wrong_student_right": 1,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": true,
+    "harm_rate_exact_one_sided_upper95_pp": 1.6972781630711253,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  },
+  "identity__seq3": {
+    "n": 175,
+    "baseline_correct": 125,
+    "student_correct": 121,
+    "delta_pp": -2.2857142857142856,
+    "paired_bootstrap_95pct_delta_pp": [
+      -5.714285714285714,
+      1.1428571428571428
+    ],
+    "baseline_right_student_wrong": 7,
+    "baseline_wrong_student_right": 3,
+    "mcnemar_exact_two_sided_p": 0.3437499999999998,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": false,
+    "harm_rate_exact_one_sided_upper95_pp": 7.3815880330154435,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  },
+  "old_dense3__seq3": {
+    "n": 175,
+    "baseline_correct": 99,
+    "student_correct": 121,
+    "delta_pp": 12.571428571428573,
+    "paired_bootstrap_95pct_delta_pp": [
+      6.2857142857142865,
+      19.428571428571427
+    ],
+    "baseline_right_student_wrong": 8,
+    "baseline_wrong_student_right": 30,
+    "mcnemar_exact_two_sided_p": 0.00047198674292303535,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": true,
+    "harm_rate_exact_one_sided_upper95_pp": 8.097015319995027,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  },
+  "hybrid_identity__hybrid_refit27_s200": {
+    "n": 175,
+    "baseline_correct": 124,
+    "student_correct": 126,
+    "delta_pp": 1.1428571428571428,
+    "paired_bootstrap_95pct_delta_pp": [
+      0.0,
+      2.857142857142857
+    ],
+    "baseline_right_student_wrong": 0,
+    "baseline_wrong_student_right": 2,
+    "mcnemar_exact_two_sided_p": 0.5,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": true,
+    "harm_rate_exact_one_sided_upper95_pp": 1.6972781630711253,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  },
+  "hybrid_identity__hybrid_seq3": {
+    "n": 175,
+    "baseline_correct": 124,
+    "student_correct": 121,
+    "delta_pp": -1.7142857142857144,
+    "paired_bootstrap_95pct_delta_pp": [
+      -6.2857142857142865,
+      2.2857142857142856
+    ],
+    "baseline_right_student_wrong": 9,
+    "baseline_wrong_student_right": 6,
+    "mcnemar_exact_two_sided_p": 0.60723876953125,
+    "noninferiority_margin_pp": 1.0,
+    "bootstrap_descriptive_lower_exceeds_margin": false,
+    "harm_rate_exact_one_sided_upper95_pp": 8.802660036094625,
+    "conservative_noninferiority_supported": false,
+    "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization"
+  }
+}

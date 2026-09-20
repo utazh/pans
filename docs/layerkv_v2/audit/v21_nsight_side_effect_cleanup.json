@@ -1,0 +1,18 @@
+{
+  "new_automatic_bytecode_files_removed": [
+    {
+      "path": "/home/panzihang/src/prism_pans/runtime_tools/nsight-2025.5.1/opt/nvidia/nsight-systems-cli/2025.5.1/target-linux-x64/python/lib/__pycache__/kernel_helper.cpython-312.pyc",
+      "sha256": "19185c4d0720dbda3f686c96637537bf7beb01eef773c8853014ae32cb625861",
+      "mtime": 1789838665.1990101,
+      "note": "New file birth and mtime both 2026-09-20 01:24:25 +0800, confirmed by stat before removal"
+    },
+    {
+      "path": "/home/panzihang/src/prism_pans/runtime_tools/nsight-2025.5.1/opt/nvidia/nsight-systems-cli/2025.5.1/target-linux-x64/python/lib/__pycache__/nsysstats.cpython-312.pyc",
+      "sha256": "aa4603e9ab34a6d4e0a3650fcd656320fe012f440b54842f569c49cf4bf000c0",
+      "mtime": 1789838665.1510093,
+      "note": "New file birth and mtime both 2026-09-20 01:24:25 +0800, confirmed by stat before removal"
+    }
+  ],
+  "no_original_file_overwritten": true,
+  "followup": "Use copied tool installation within prism_layerkv and PYTHONDONTWRITEBYTECODE=1"
+}
