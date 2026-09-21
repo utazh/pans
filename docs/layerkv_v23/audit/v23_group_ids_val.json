@@ -1,0 +1,647 @@
+{
+  "queries": 64,
+  "all_compatible": true,
+  "rows": [
+    {
+      "query": "04be660fd4cd8e7fac153800025c59627464e669dac9bd626b2f46b09bbab76c",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "0c021cb1d562ec2de7583dfd8a6fce7a8ea67e7f8c59c381ea4fba4d94238f8d",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "0cd74dfbccd4ad25246aedb4626aa91889a5058482b49bcea940c1c3051b5f31",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "0fb8a41de0eeafdf6b0e3237fb55d3abecc4030762a3cb31990ce8472ee7afd7",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "1ca90a217489e042a394abee974f049dbf353cc87edc591987efd5f5e7fedd60",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "1da6c9754e2e05f2efddafbade38e45a0e8e8ef3099cc40ca510dfb1b4753268",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "1e2c398178db568256b98ec866af3cc97ae0565ee0379e61498c86ffd738a6e5",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "1f0136467e248728d3bffbac86fda0432380071df056ea3eb653d104ed3e9a7e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "2486159268c9c173175a9084d087bffdf4dec246d048880e1efa3d5becf5cf0e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "254eb755d84881138d15533596b6fb3b78416c4a3d3bc81cf093030d1ffb2be6",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "26146052fe719202dad4e386e98b84016c7d72a52906f6e60c5021587b8979a0",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "30a5d5bf64143446a6d5ee737d7923950ba1374d161887570e445c9a93cbb135",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "351b47148cef54eee83569e75c663b047bdd4425155158a8fce05680cf7577a7",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "391b62b3c7cfcea0ebecfd861513129b7934aab8ef2a6f5a2a7689a00bb764cb",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "3bdd5ae07e885de3307dcc05ee6db00c265312840a261b4905d5cab7bdb4dc5e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "3e5a73dfad15ebd4102ef6d1f265508f7b53f943274fec032d9e25af0ea62034",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "3f71c9eac94bbd159f77406637013e992deb0b8729366fe1d6297e5732c24107",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "40beef63895bf4fa182a804dc9ff1a4aebd8b90c09fdf7b6b2e3b0c0224a2a1f",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "41962f8679de38464580690acbc1b6726fcd64badc34304d400d4553f7c9e41c",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "5425b8e794df36f30bfb490794828f69d369d057e59c0f668a2bdc6667889629",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "569998781a7ff23c070ef8aa333cca899c0b4014102e10195a2157d350c94253",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "57914044deaff8fbf7b2ff1adb7457ccc47dcb954d8da0113dec61345854bfca",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "5836a648d260dea6a7379da8a814f328f0cb6c18d946e0549c99f8b4cc23337e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "58f3c4e2eca364fc4967e62b9d62ae19725d08557790d9649849e0b081e656b1",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "5d0025ffcdab7f5e6f3c00f2c46e6b6aef50e4e6c949b75bf25642ea05615f07",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "5fdda79604853af84d4c82acc2163c1d86b3ef87d1adffc4a5583cc9218e6c42",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "6934e27794619364bba844068ed4eee72ed5deeb1c4656284ad98ae77885f671",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "696105aca539fd23f08b958ad79b95f33583a4795fd049efa2d6002909d55343",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "6ffa07a93b3093f3aee12733f6e6b3d09ff65c6cde8b8f88b6bc9e7eff9b8c0d",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "72d195da4924ae5125daed6d4b9e3c6f7caefb8746e13a5e193e791eaacbb49e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "754ca0f35dbc17a6af6aabe79e3d4f3c74134aa7a77d9682b58f043254d2af51",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "77be11088af2750bcfa1f3072fc17abb628c5f8d041e6ad6a66342b03fc07a73",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "77eeeab56d7eb67112dc3d0870a9e5812eaba5cd6656d1184dad86a5a07d3ea0",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "824f6500726a4b206c564c26ea0f873ddb8ad7ab13399e380bac98b42827f094",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "8e613f989bcc50a46887ff2c501b7a1dfd79722adc3f4b8e04bb78473651c905",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "93b3a4ede80f086ec91250024abc03cef68af7a425a8f325c3408f27b8396d8a",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "950c0e6b3fe97e460614099ac9695a172997bd03473103e6b5f4dc45247a69e3",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "9da2f3dca9efe24d5f7efb769bc4a0ddc694d6ee3347dc1c9fd337d5139ccada",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "9e36daa6ebff1713ba4538f33419ffed41de58a70306c0ae90a7cb93a7a64b87",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "9f876e56fdbe12f0bb897eed91cc7c19f3a25f72549e77ddfd370de3c09b0224",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "a57688280acd37c62c845f069fc58487756820bacf6a1ea870cdadb27d03db7b",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ab076818305a9658179e39be0842a81434f1d62cb67138bb22bf236741d6673a",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ae9fb1886b1ca9bae6afc1be3056392ea8e0a8380ec010fdf0a34d30f602c592",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "b46a90d54d39d349167ad0173e3d796acf0ea3cdd97dccf31b045684a35ec622",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "b84a1cf65d7a4ec9609862504813e8e11d06487649900692069764c89fd88ee0",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "bafd63576a3a4d450dd09f538cc6c8a73a72d8e1254ff66c4c20e56f8230c2a5",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "bd862ef09c6d3f2a3e85bf96f26bebe312172fca8b5b27a5c76899d0af3b3de1",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "c1d59ff1161d3bac582343361cc250ae6d3f0cacb1c93de47a59dd3566e9d58b",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "c4f36ba5178c7ccd121d12acf2fcfe56067a4989837b3aad06f6bbc2a28cb576",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ca720653ef064271dae19656480909a0d3000817fdaec84a7a0b743340bb5269",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ca731f63c6b76f4df5c09274d39accf56c4d3d9ed1a49951c7e90e53a3ee8d85",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ccb3c7c4c8e3c575f3763ff9d66493f1211ec8784fac08dfc780f40dcce85ad1",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ccf86944a2b37d3a548ea991f370947ebb06b114817549a724176cbeba61a8cd",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "d0087323518dbe0d097a5273eee5d85fb3a05944187e4939fd7f56773d5a3e1e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "d111aad8d8a8505cdd319d3c76fb4bfc1cdd5b59b9d41d6b762bfc725558fa2a",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "d2113062910b7d9e351b5242dc2fdd6aecbe63a5fea6498e75488ac460d73281",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "da8fb00744e5750924e42376a7c045ec9da178246ce8f43604f83af5a707182e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "dcc7b26d615abebe473c15611a8c2e9389a845c04bcd4601ab4b91b552a4314e",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "e51a8230e21551e3380681e4df1e2d7ad8d454733f957cc8bcee92fe2427bd21",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "e5d205c5b587decee022e28b7777887c1147fbc162702294736f8b720e3424da",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ec27815ae82dad4760af4afc529196c9237b98d61225c6bbe2a189379a9307b7",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "ef9426cba2e2582050a07caf6ec326a322fdd5837636ed2d4a4c51da940694da",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "f39a5192dc0a4ee4b62cb6d24cf0e85069cc8f5eea62cd3b0012d943a30d6396",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    },
+    {
+      "query": "fe528237338c411fe32e40f3c71866d39e017202276477a93e26746c9b625bcb",
+      "incompatible_consumers": [],
+      "counts": {
+        "24": 1244,
+        "25": 1228,
+        "26": 1228,
+        "27": 1228
+      }
+    }
+  ],
+  "note": "A failed equality check is a contract failure, not model approximation error. Preserve exceptions or change selection in BOTH baselines explicitly."
+}

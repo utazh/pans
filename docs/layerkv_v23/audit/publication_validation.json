@@ -1,0 +1,13 @@
+{
+  "base_commit": "fddabb7015c66c870a11810069bfbe20d5a34bbf",
+  "cpu_tests": {
+    "passed": 441,
+    "skipped": 25,
+    "subtests_passed": 87
+  },
+  "gpu_experiments_rerun": false,
+  "guard_passed": true,
+  "identical_source_test_files": 38,
+  "source_artifacts_verified": 109,
+  "publication_root": "/home/panzihang/src/prism_layerkv/publication/github_v23_20260921"
+}

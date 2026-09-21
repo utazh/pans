@@ -1,0 +1,729 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "runtime_physical_private": {
+    "v23_cold_b00_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b00_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b01_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b01_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b02_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b02_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b03_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b03_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b04_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b04_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b05_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b05_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b06_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b06_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b07_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b07_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b08_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b08_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b09_identity.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_b09_joint.extra.jsonl": {
+      "requests_including_warmup": 58,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_probe8_0.extra.jsonl": {
+      "requests_including_warmup": 16,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_probe8_1.extra.jsonl": {
+      "requests_including_warmup": 16,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_cold_probe_identity.extra.jsonl": {
+      "requests_including_warmup": 4,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_control_page-hot_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_control_page-hot_joint.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_control_ssd-cold_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_control_ssd-cold_joint.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_decode_identity.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_decode_joint.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_dev_identity.extra.jsonl": {
+      "requests_including_warmup": 136,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_dev_independent.extra.jsonl": {
+      "requests_including_warmup": 136,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_dev_joint.extra.jsonl": {
+      "requests_including_warmup": 136,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_dev_query.extra.jsonl": {
+      "requests_including_warmup": 136,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_failed_precondition_b00_identity.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_full_identity.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_full_independent.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_full_joint.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_full_query.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_profile_nsys_cold_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_profile_nsys_cold_joint.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_profile_viztracer_cold_joint.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_profile_viztracer_warm_joint.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_smoke2_page-hot_preserve.extra.jsonl": {
+      "requests_including_warmup": 3,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_smoke2_ssd-cold_native.extra.jsonl": {
+      "requests_including_warmup": 3,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_smoke2_ssd-cold_preserve.extra.jsonl": {
+      "requests_including_warmup": 3,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_smoke_ssd-cold_native.extra.jsonl": {
+      "requests_including_warmup": 1,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b0_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b1_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b2_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b3_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b4_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b4_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b5_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b5_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b6_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b6_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b7_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v23_time_b7_joint.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    }
+  },
+  "actual_private_storage": {
+    "identity": {
+      "queries": 8,
+      "decoder_calls": 93,
+      "all_layers_have_distinct_K_and_V_storage": true,
+      "max_private_growth": 15
+    },
+    "joint": {
+      "queries": 8,
+      "decoder_calls": 93,
+      "all_layers_have_distinct_K_and_V_storage": true,
+      "max_private_growth": 15
+    }
+  },
+  "selector_audit": {
+    "v23_cold_b00_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b00_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b01_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b01_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b02_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b02_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b03_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b03_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b04_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b04_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b05_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b05_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b06_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b06_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b07_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b07_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b08_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b08_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b09_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_b09_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_probe8_0.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_probe8_1.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_cold_probe_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_control_page-hot_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_control_page-hot_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_control_ssd-cold_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_control_ssd-cold_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_decode_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_decode_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_dev_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_dev_independent.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_dev_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_dev_query.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_failed_precondition_b00_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_full_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_full_independent.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_full_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_full_query.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_profile_nsys_cold_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_profile_nsys_cold_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_profile_viztracer_cold_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_profile_viztracer_warm_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_smoke2_page-hot_preserve.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_smoke2_ssd-cold_native.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_smoke2_ssd-cold_preserve.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_smoke_ssd-cold_native.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b0_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b0_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b1_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b1_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b2_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b2_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b3_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b3_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b4_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b4_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b5_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b5_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b6_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b6_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b7_identity.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    },
+    "v23_time_b7_joint.extra.jsonl.v21.jsonl": {
+      "selector_calls_four": true
+    }
+  },
+  "bundles": {
+    "joint": {
+      "calibration_queries": 128,
+      "local_gate_passed": false,
+      "diagnostic_only": true,
+      "reader_bytes_bf16": 528384
+    },
+    "independent": {
+      "calibration_queries": 128,
+      "local_gate_passed": false,
+      "diagnostic_only": true,
+      "reader_bytes_bf16": 528384
+    },
+    "query": {
+      "calibration_queries": 128,
+      "local_gate_passed": false,
+      "diagnostic_only": true,
+      "reader_bytes_bf16": 528384
+    }
+  },
+  "training_test_overlap": 0,
+  "query_full_validation_reader_unchanged": true,
+  "prior_files_checked": 561,
+  "changed_prior_files": [],
+  "original_files_modified_after_snapshot": []
+}

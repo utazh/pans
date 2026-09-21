@@ -1,0 +1,15 @@
+{
+  "status": "candidate_verify_actual_equal_IDs",
+  "period": 8,
+  "groups": [
+    {
+      "start": 24,
+      "end": 28,
+      "source": 26,
+      "native": [
+        24
+      ]
+    }
+  ],
+  "independent_sources": 26
+}

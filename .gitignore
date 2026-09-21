@@ -41,3 +41,9 @@ artifacts/
 !docs/layerkv_v22/results/
 !docs/layerkv_v22/results/*.json
 !docs/layerkv_v22/results/*.csv
+
+# Curated v2.3 report snapshots.
+!docs/layerkv_v23/results/
+!docs/layerkv_v23/results/*.json
+!docs/layerkv_v23/results/*.csv
+runtime_deps_plot/

@@ -1,5 +1,35 @@
 # pans
 
+## LayerKV v2.3：多消费者联合校准与冷缓存实验
+
+本分支基于 [v2.2](https://github.com/utazh/pans/tree/v2.2)（`fddabb7015c66c870a11810069bfbe20d5a34bbf`），发布服务器完成的 v2.3 代码与报告。
+第 26 层的 prefix KV 同时供第 25、26、27 层使用；消费者 25、27 各自训练 Q/输出读取变换。当前 query 和生成 token 的 KV 继续逐层独立。
+校准使用冻结的真实四层 attention、残差、norm 和 MLP，并包含所有候选标签的实际续写分支。
+
+- [v2.3 发布说明与复现边界](docs/layerkv_v23/RELEASE_ZH.md)
+- [完整实测报告](EXPERIMENT_REPORT_V23_ZH.md) · [服务器运行说明](README_LAYERKV_V23_SERVER.md)
+- [结果与配对统计](docs/layerkv_v23/results/v23_final_analysis.json) · [校准报告](docs/layerkv_v23/calibration)
+- [验证记录](docs/layerkv_v23/validation) · [源码与数据审计](docs/layerkv_v23/audit)
+
+Qwen2.5-7B-Instruct，25% 精确块预算，TREC 完整官方测试 500 条：
+
+| 指标 | 优化后无共享 | 联合共享 |
+|---|---:|---:|
+| 准确率 | 68.60%（343/500） | 68.40%（342/500） |
+| SSD 冷缓存平均 TTFT，完整500条 | 2067.87 ms | 1962.81 ms |
+| 普通缓存平均 TTFT，8轮×同32条 | 269.15 ms | 227.92 ms |
+
+冷缓存 TTFT 平均下降 **5.08%**，配对批次 bootstrap 95% 区间为下降 2.87%～7.35%；1000个正式请求均通过逐请求冷状态验收。
+所选 prefix KV 减少 **7.12%**，计入 reader 与 packed 参数后该部分净减少约5.99%。
+普通缓存虽然平均下降15.32%，但顺序敏感，共享先运行的子组区间跨零，**尚未证明顺序无关的稳定加速**。
+准确率下降0.2个百分点，未通过预设非劣验收；开发集下降3.125个百分点，因此没有继续扩大至14/7/4物理source。
+所有 reader 仍为 diagnostic-only；500条是历史上已观察的回归数据，服务器也非整机独占环境。
+
+![v2.3 实验汇总](docs/layerkv_v23/figures/v23_summary.png)
+
+算法、入口和测试文件与服务器实验版本逐字节一致。模型、checkpoint、原始数据、KV cache 和大型 profiler 文件保留在服务器。
+历史版本说明如下；本分支优先使用 v2.3 发布说明。
+
 ## LayerKV v2.2：GQA 组对齐
 
 本分支 v2.2 基于 v2（b48c45d），发布最新头对齐代码与服务器实测报告。

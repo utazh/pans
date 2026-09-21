@@ -1,0 +1,175 @@
+{
+  "history": [
+    {
+      "step": 0,
+      "validation_objective": 0.2621220722794533,
+      "queries": 64,
+      "group_update_relative_rmse": 0.354608568479307,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.34632647704953956,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.9227143031188896,
+          "max_request_or_branch_rmse": 1.0438778031344036,
+          "prefix_mass_p95": 0.689827024936676,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.7795613211219581,
+          "max_request_or_branch_rmse": 0.8990676047287407,
+          "prefix_mass_p95": 0.16433101892471313,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 50,
+      "validation_objective": 0.10702019061136525,
+      "queries": 64,
+      "group_update_relative_rmse": 0.24055796838365495,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1960382780525833,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.6708218400531701,
+          "max_request_or_branch_rmse": 0.8086593434700424,
+          "prefix_mass_p95": 0.42129606008529663,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.6114568831473752,
+          "max_request_or_branch_rmse": 0.774284649229861,
+          "prefix_mass_p95": 0.1480799913406372,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 100,
+      "validation_objective": 0.06964484199124854,
+      "queries": 64,
+      "group_update_relative_rmse": 0.20485847751842812,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.13672124400424462,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.565117372383478,
+          "max_request_or_branch_rmse": 0.6922960043753461,
+          "prefix_mass_p95": 0.3078822195529938,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5574030729344451,
+          "max_request_or_branch_rmse": 0.7285057572172841,
+          "prefix_mass_p95": 0.18261413276195526,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 150,
+      "validation_objective": 0.055464948280132376,
+      "queries": 64,
+      "group_update_relative_rmse": 0.18646918202284724,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.11637340024268872,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.5081679258469944,
+          "max_request_or_branch_rmse": 0.6233210227427018,
+          "prefix_mass_p95": 0.2597135901451111,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5211811671915786,
+          "max_request_or_branch_rmse": 0.6912271875464198,
+          "prefix_mass_p95": 0.17900580167770386,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 200,
+      "validation_objective": 0.046302828821353614,
+      "queries": 64,
+      "group_update_relative_rmse": 0.1717501395032741,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1037495513446629,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.47079608184603894,
+          "max_request_or_branch_rmse": 0.575393715445607,
+          "prefix_mass_p95": 0.24214807152748108,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.4846675781651086,
+          "max_request_or_branch_rmse": 0.6510041369342071,
+          "prefix_mass_p95": 0.17686259746551514,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    }
+  ],
+  "best_step": 200,
+  "report": {
+    "validation_objective": 0.046302828821353614,
+    "queries": 64,
+    "group_update_relative_rmse": 0.1717501395032741,
+    "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+    "suffix_group_update_relative_rmse": 0.1037495513446629,
+    "local_diagnostics": {
+      "25": {
+        "output_relative_rmse": 0.47079608184603894,
+        "max_request_or_branch_rmse": 0.575393715445607,
+        "prefix_mass_p95": 0.24214807152748108,
+        "old_local_gate_passed": false
+      },
+      "27": {
+        "output_relative_rmse": 0.4846675781651086,
+        "max_request_or_branch_rmse": 0.6510041369342071,
+        "prefix_mass_p95": 0.17686259746551514,
+        "old_local_gate_passed": false
+      }
+    },
+    "end_to_end_validated": false
+  },
+  "args": {
+    "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "store_root": "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "task": "trec",
+    "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "student_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "student_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "output": "/home/panzihang/src/prism_layerkv/assets/v23_independent/trec.pt",
+    "start": 24,
+    "end": 28,
+    "source": 26,
+    "native_layers": "24",
+    "carry": null,
+    "initial_bundle": null,
+    "device": "cuda",
+    "steps": 200,
+    "lr": 0.0001,
+    "ridge": 0.001,
+    "eval_every": 50,
+    "seed": 23,
+    "last_weight": 0.5,
+    "suffix_weight": 1.0,
+    "intermediate_weight": 0.1,
+    "trust_weight": 0.001,
+    "independent_layers": true,
+    "logit_weight": 0.0,
+    "query_only": false,
+    "no_bf16_ste": false,
+    "max_sequence": 1024,
+    "max_identity_replay_error": 0.02
+  },
+  "unique_sources": 26
+}

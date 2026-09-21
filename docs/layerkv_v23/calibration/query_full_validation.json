@@ -1,0 +1,83 @@
+{
+  "history": [
+    {
+      "step": 0,
+      "validation_objective": 0.05139488767599687,
+      "queries": 64,
+      "group_update_relative_rmse": 0.13886343053309247,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1784016301389784,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.5318055483362654,
+          "max_request_or_branch_rmse": 0.6294496620331661,
+          "prefix_mass_p95": 0.2714492678642273,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.3938130174871989,
+          "max_request_or_branch_rmse": 0.5363077831754062,
+          "prefix_mass_p95": 0.15376493334770203,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    }
+  ],
+  "best_step": 0,
+  "report": {
+    "validation_objective": 0.05139488767599687,
+    "queries": 64,
+    "group_update_relative_rmse": 0.13886343053309247,
+    "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+    "suffix_group_update_relative_rmse": 0.1784016301389784,
+    "local_diagnostics": {
+      "25": {
+        "output_relative_rmse": 0.5318055483362654,
+        "max_request_or_branch_rmse": 0.6294496620331661,
+        "prefix_mass_p95": 0.2714492678642273,
+        "old_local_gate_passed": false
+      },
+      "27": {
+        "output_relative_rmse": 0.3938130174871989,
+        "max_request_or_branch_rmse": 0.5363077831754062,
+        "prefix_mass_p95": 0.15376493334770203,
+        "old_local_gate_passed": false
+      }
+    },
+    "end_to_end_validated": false
+  },
+  "args": {
+    "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "store_root": "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "task": "trec",
+    "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "student_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "student_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "output": "/home/panzihang/src/prism_layerkv/assets/v23_query_full_validation/trec.pt",
+    "start": 24,
+    "end": 28,
+    "source": 26,
+    "native_layers": "24",
+    "carry": null,
+    "initial_bundle": "/home/panzihang/src/prism_layerkv/assets/v23_query/trec.pt",
+    "device": "cuda",
+    "steps": 0,
+    "lr": 0.0001,
+    "ridge": 0.001,
+    "eval_every": 50,
+    "seed": 23,
+    "last_weight": 0.5,
+    "suffix_weight": 1.0,
+    "intermediate_weight": 0.1,
+    "trust_weight": 0.001,
+    "independent_layers": false,
+    "logit_weight": 0.0,
+    "query_only": false,
+    "no_bf16_ste": false,
+    "max_sequence": 1024,
+    "max_identity_replay_error": 0.02
+  },
+  "unique_sources": 26
+}

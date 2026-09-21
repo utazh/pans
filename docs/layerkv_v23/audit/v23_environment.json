@@ -1,0 +1,9 @@
+{
+  "time": 1789911272.2933676,
+  "matplotlib_available": false,
+  "commands": {
+    "nvidia-smi --query-gpu=index,name,driver_version,memory.total --format=csv,noheader": "0, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n1, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n2, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n3, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n",
+    "lsblk -d -o NAME,MODEL,ROTA,SIZE,TRAN": "NAME   MODEL            ROTA   SIZE TRAN\nloop0                      0     4K \nloop1                      0    74M \nloop2                      0  63.8M \nloop3                      0  66.8M \nloop4                      0  63.8M \nloop6                      0    74M \nloop7                      0   1.9M \nloop8                      0  66.8M \nloop9                      0   1.9M \nloop10                     0 261.1M \nloop11                     0 531.4M \nloop12                     0 531.5M \nloop13                     0 606.1M \nloop14                     0 614.5M \nloop15                     0  91.7M \nloop16                     0 115.3M \nloop17                     0 115.3M \nloop18                     0   395M \nloop19                     0   402M \nloop20                     0 260.8M \nloop21                     0  50.1M \nloop22                     0  50.3M \nsda    INTEL SSDSC2KB96    0 894.3G sata\nsdb    WUH721816ALE6L4     1  14.6T sata\nsdc    WUH721816ALE6L4     1  14.6T sata\n",
+    "uname -a": "Linux k8s-master 5.15.0-161-generic #171-Ubuntu SMP Sat Oct 11 08:17:01 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\n"
+  }
+}

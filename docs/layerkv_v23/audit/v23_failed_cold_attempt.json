@@ -1,0 +1,26 @@
+{
+  "renamed": [
+    {
+      "original": "/home/panzihang/src/prism_layerkv/results/v23_cold_b00_identity.extra.jsonl.context.json",
+      "preserved": "/home/panzihang/src/prism_layerkv/results/v23_failed_precondition_b00_identity.extra.jsonl.context.json"
+    },
+    {
+      "original": "/home/panzihang/src/prism_layerkv/results/v23_cold_b00_identity.extra.jsonl",
+      "preserved": "/home/panzihang/src/prism_layerkv/results/v23_failed_precondition_b00_identity.extra.jsonl"
+    },
+    {
+      "original": "/home/panzihang/src/prism_layerkv/results/v23_cold_b00_identity.cold.jsonl",
+      "preserved": "/home/panzihang/src/prism_layerkv/results/v23_failed_precondition_b00_identity.cold.jsonl"
+    },
+    {
+      "original": "/home/panzihang/src/prism_layerkv/results/v23_cold_b00_identity.extra.jsonl.v21.jsonl",
+      "preserved": "/home/panzihang/src/prism_layerkv/results/v23_failed_precondition_b00_identity.extra.jsonl.v21.jsonl"
+    },
+    {
+      "original": "/home/panzihang/src/prism_layerkv/results/v23_cold_b00_identity",
+      "preserved": "/home/panzihang/src/prism_layerkv/results/v23_failed_precondition_b00_identity"
+    }
+  ],
+  "reason": "First measured cold request failed zero-page precondition after warm-suite jobs; excluded. Fresh cold-only process with identical warmup8 verified. Exact residual-page owner not established.",
+  "time": 1789910524.0995166
+}

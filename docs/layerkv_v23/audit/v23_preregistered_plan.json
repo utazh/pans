@@ -1,0 +1,37 @@
+{
+  "dataset": "TREC official test500; historical regression",
+  "budget_percent": 25,
+  "period": 8,
+  "prefix_tokens": 4940,
+  "group": {
+    "start": 24,
+    "end": 28,
+    "source": 26,
+    "native": [
+      24
+    ],
+    "consumers": [
+      25,
+      27
+    ]
+  },
+  "calibration": "official training split fit64,val64; dev128 separate",
+  "training": {
+    "steps": 200,
+    "seed": 23,
+    "lr": 0.0001,
+    "eval_every": 50
+  },
+  "arms": [
+    "identity",
+    "independent_full_suffix",
+    "joint_query_only",
+    "joint_full_suffix"
+  ],
+  "main_latency": "identity vs joint_full_suffix, warm/native and per-request SSD-cold/native; full500 plus four paired32 repetitions",
+  "cold_controls": "page-hot/preserve and SSD-cold/preserve",
+  "decision": "No test-driven reader selection; group expansion only if development quality supports it; failed local gates remain diagnostic",
+  "cold_full500_design": "10 disjoint blocks x 50 queries per arm, balanced ABBA order across blocks, same original test500 order. Each measured request independently cold; full500 covered per arm. Replaces redundant four cold32 repeats; 4x32 warm repetitions retained.",
+  "phase_isolation": "Full cold phase resumed in a fresh process after first precondition failure; failed attempt excluded and preserved. Identical two consecutive cold-only warmup8 probes passed.",
+  "timing_confirmation": "Retain first4 blocks; add4 paired32 ABBA warm blocks in a fresh process due block0 identity 322.8ms versus other identity blocks216.9-226.4ms. Report all8 and first4/last4 sensitivity, no outlier removal."
+}

@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "fit": 64,
+    "val": 64,
+    "dev": 128,
+    "test500": 500
+  },
+  "prefix_sha256": "b67ac86d2014b838287bcfa021b5bea5b3865a22c6e3b8ed98f5e47cf6e0a70d",
+  "raw_sha256": {
+    "train_5500.label": "9e4c8bdcaffb96ed61041bd64b564183d52793a8e91d84fc3a8646885f466ec3",
+    "TREC_10.label": "033f22c028c2bbba9ca682f68ffe204dc1aa6e1cf35dd6207f2d4ca67f0d0e8e"
+  },
+  "calibration": "official training, excludes prompt demonstrations and normalized test duplicates",
+  "test": "complete official 500; historically observed, regression not fresh generalization",
+  "strict495_excluded_uids": [
+    "trec-0",
+    "trec-32",
+    "trec-33",
+    "trec-34",
+    "trec-35"
+  ],
+  "seed": 20260923
+}

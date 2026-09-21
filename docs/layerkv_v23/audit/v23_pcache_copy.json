@@ -1,0 +1,9 @@
+{
+  "source": "/home/panzihang/src/prism_layerkv/runtime_data/pcache_c16",
+  "destination": "/home/panzihang/src/prism_layerkv/runtime_data/v23_pcache_ssd",
+  "files": 67313,
+  "bytes": 1649270954,
+  "independent_inodes": true,
+  "fsync_completed": true,
+  "time": 1789908180.9676287
+}

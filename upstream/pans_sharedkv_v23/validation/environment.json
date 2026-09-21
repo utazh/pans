@@ -1,0 +1,8 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "torch": "2.10.0+cpu",
+  "cuda_available": false,
+  "tests_base": "Pure dependency modules extracted from prior additive v1/v21/v22 artifacts; latest source interfaces audited via GitHub connector; no complete repository or real Qwen loaded locally.",
+  "server_results_reproduced": false
+}

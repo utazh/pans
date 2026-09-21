@@ -1,0 +1,553 @@
+{
+  "scope": "Eight first prefill calls identified as the first v21 decoder inside each greedy completion; excludes label decoding and warmup. Self time subtracts traced direct children on the same thread, and includes untraced library/C calls and blocking waits. Threads overlap; sums are not a critical path. Profiled times must not be used as formal TTFT.",
+  "trace_events": 57646,
+  "overflow": false,
+  "prefill_count": 8,
+  "mean_profiled_prefill_ms": 291.53661743092295,
+  "main_thread_by_self": [
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 291.53661743092295,
+      "self_ms_per_prefill": 47.56016170093591
+    },
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 17.875,
+      "inclusive_ms_per_prefill": 45.247568177696145,
+      "self_ms_per_prefill": 45.247568177696145
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 31.557700802876518,
+      "self_ms_per_prefill": 21.577338545276724
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 28.713823079259935,
+      "self_ms_per_prefill": 19.66095864551532
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 18.806596659573387,
+      "self_ms_per_prefill": 18.806596659573387
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 96.625,
+      "inclusive_ms_per_prefill": 17.45126609043714,
+      "self_ms_per_prefill": 13.974697436759557
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 53.17948921065233,
+      "self_ms_per_prefill": 13.922548169387511
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 1777.875,
+      "inclusive_ms_per_prefill": 32.4266782012658,
+      "self_ms_per_prefill": 8.539237887376473
+    },
+    {
+      "function": "_ordered_chunk_counts (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:401)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 6.830262839999126,
+      "self_ms_per_prefill": 6.830262839999126
+    },
+    {
+      "function": "apply_rope (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:55)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 11.97966221412021,
+      "self_ms_per_prefill": 6.530843569332895
+    },
+    {
+      "function": "rotate_half (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:47)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 5.448818644787325,
+      "self_ms_per_prefill": 5.448818644787325
+    },
+    {
+      "function": "qwen_online_prefix_head_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:730)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.065361431131646,
+      "self_ms_per_prefill": 4.975258944902478
+    },
+    {
+      "function": "_validate_score_rows (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:24)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 4.759800154433105,
+      "self_ms_per_prefill": 4.754888679312069
+    },
+    {
+      "function": "_record_physical_access (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2229)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 7.5406583467762935,
+      "self_ms_per_prefill": 4.5522943498652
+    },
+    {
+      "function": "gather_prefetched_tokens (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:190)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 4.496680345080471,
+      "self_ms_per_prefill": 4.496680345080471
+    },
+    {
+      "function": "_siftup (/home/panzihang/src/prism_layerkv/vendor/flexgen/myheap.py:13)",
+      "calls_per_prefill": 544.25,
+      "inclusive_ms_per_prefill": 4.439389719744706,
+      "self_ms_per_prefill": 4.436029692818494
+    },
+    {
+      "function": "flash_attn_varlen_func (/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/vllm/vllm_flash_attn/flash_attn_interface.py:176)",
+      "calls_per_prefill": 30.0,
+      "inclusive_ms_per_prefill": 4.016333150690902,
+      "self_ms_per_prefill": 3.8826267332406266
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:216)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 3.1731152627540045,
+      "self_ms_per_prefill": 3.1731152627540045
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:1004)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 3.142063018260824,
+      "self_ms_per_prefill": 3.142063018260824
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:1016)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 3.1272727403451195,
+      "self_ms_per_prefill": 3.1272727403451195
+    },
+    {
+      "function": "resolve (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/runtime.py:46)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 135.0990115897404,
+      "self_ms_per_prefill": 3.095177566879033
+    },
+    {
+      "function": "<setcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1350)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 3.058811395694192,
+      "self_ms_per_prefill": 3.058811395694192
+    },
+    {
+      "function": "_storage_positions (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1255)",
+      "calls_per_prefill": 46.0,
+      "inclusive_ms_per_prefill": 3.004244704568737,
+      "self_ms_per_prefill": 3.004244704568737
+    },
+    {
+      "function": "_prefetch_source_chunk_counts (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:252)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 2.988363996911091,
+      "self_ms_per_prefill": 2.988363996911091
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1367)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 2.567695411573617,
+      "self_ms_per_prefill": 2.567695411573617
+    },
+    {
+      "function": "<genexpr> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:520)",
+      "calls_per_prefill": 16.0,
+      "inclusive_ms_per_prefill": 2.49085534885391,
+      "self_ms_per_prefill": 2.4866944902809394
+    },
+    {
+      "function": "_submit_positions (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1703)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 3.2695611373967326,
+      "self_ms_per_prefill": 2.3910979920269546
+    },
+    {
+      "function": "attention (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/backend.py:33)",
+      "calls_per_prefill": 30.0,
+      "inclusive_ms_per_prefill": 6.951923688805626,
+      "self_ms_per_prefill": 2.353170768096187
+    },
+    {
+      "function": "to_disk (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:397)",
+      "calls_per_prefill": 17.5,
+      "inclusive_ms_per_prefill": 2.3213770940168654,
+      "self_ms_per_prefill": 2.3213770940168654
+    },
+    {
+      "function": "prepare_impress_block_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:498)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.800941636857149,
+      "self_ms_per_prefill": 2.251993608062877
+    }
+  ],
+  "main_thread_by_inclusive": [
+    {
+      "function": "call (/home/panzihang/src/prism_layerkv/scripts/profile_layerkv_v23.py:22)",
+      "calls_per_prefill": 134.0,
+      "inclusive_ms_per_prefill": 337.403027402375,
+      "self_ms_per_prefill": 1.7171419433354236
+    },
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 291.53661743092295,
+      "self_ms_per_prefill": 47.56016170093591
+    },
+    {
+      "function": "resolve (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/runtime.py:46)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 135.0990115897404,
+      "self_ms_per_prefill": 3.095177566879033
+    },
+    {
+      "function": "resolve (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2052)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 131.5906425805566,
+      "self_ms_per_prefill": 0.40880195365661204
+    },
+    {
+      "function": "configure_online_layer_selection (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:820)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 80.98363842495618,
+      "self_ms_per_prefill": 1.7390123413725769
+    },
+    {
+      "function": "_resolve_entry (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2216)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 72.55959094646512,
+      "self_ms_per_prefill": 0.8326422332008698
+    },
+    {
+      "function": "_update_loaded_layer_score (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2004)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 53.52640862397092,
+      "self_ms_per_prefill": 0.26622270574228163
+    },
+    {
+      "function": "update_impress_score (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:582)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 53.260185918228615,
+      "self_ms_per_prefill": 0.0806967075762582
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 53.17948921065233,
+      "self_ms_per_prefill": 13.922548169387511
+    },
+    {
+      "function": "result (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:95)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 45.379693706914566,
+      "self_ms_per_prefill": 0.5008993677880016
+    },
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 17.875,
+      "inclusive_ms_per_prefill": 45.247568177696145,
+      "self_ms_per_prefill": 45.247568177696145
+    },
+    {
+      "function": "result (/usr/lib/python3.10/concurrent/futures/_base.py:430)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 44.89938065044032,
+      "self_ms_per_prefill": 0.24825572254965395
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 1777.875,
+      "inclusive_ms_per_prefill": 32.4266782012658,
+      "self_ms_per_prefill": 8.539237887376473
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 31.557700802876518,
+      "self_ms_per_prefill": 21.577338545276724
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 28.713823079259935,
+      "self_ms_per_prefill": 19.66095864551532
+    },
+    {
+      "function": "insert (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2522)",
+      "calls_per_prefill": 58.375,
+      "inclusive_ms_per_prefill": 18.896044470368217,
+      "self_ms_per_prefill": 0.47532370097144344
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 18.806596659573387,
+      "self_ms_per_prefill": 18.806596659573387
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:829)",
+      "calls_per_prefill": 100.75,
+      "inclusive_ms_per_prefill": 17.55019547232074,
+      "self_ms_per_prefill": 0.09892938188360609
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 96.625,
+      "inclusive_ms_per_prefill": 17.45126609043714,
+      "self_ms_per_prefill": 13.974697436759557
+    },
+    {
+      "function": "apply_rope (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:55)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 11.97966221412021,
+      "self_ms_per_prefill": 6.530843569332895
+    },
+    {
+      "function": "dispatch (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/ops.py:80)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 10.041446367428884,
+      "self_ms_per_prefill": 0.16461939595247882
+    },
+    {
+      "function": "native_attention (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/ops.py:71)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 8.373369273397,
+      "self_ms_per_prefill": 1.82307231219118
+    },
+    {
+      "function": "_record_physical_access (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2229)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 7.5406583467762935,
+      "self_ms_per_prefill": 4.5522943498652
+    },
+    {
+      "function": "attention (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/backend.py:33)",
+      "calls_per_prefill": 30.0,
+      "inclusive_ms_per_prefill": 6.951923688805626,
+      "self_ms_per_prefill": 2.353170768096187
+    },
+    {
+      "function": "_ordered_chunk_counts (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:401)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 6.830262839999126,
+      "self_ms_per_prefill": 6.830262839999126
+    },
+    {
+      "function": "prepare_impress_block_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:498)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.800941636857149,
+      "self_ms_per_prefill": 2.251993608062877
+    },
+    {
+      "function": "rotate_half (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:47)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 5.448818644787325,
+      "self_ms_per_prefill": 5.448818644787325
+    },
+    {
+      "function": "qwen_online_prefix_head_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:730)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.065361431131646,
+      "self_ms_per_prefill": 4.975258944902478
+    },
+    {
+      "function": "_validate_score_rows (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:24)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 4.759800154433105,
+      "self_ms_per_prefill": 4.754888679312069
+    },
+    {
+      "function": "update (/home/panzihang/src/prism_layerkv/vendor/flexgen/myheap.py:101)",
+      "calls_per_prefill": 594.375,
+      "inclusive_ms_per_prefill": 4.539805092719448,
+      "self_ms_per_prefill": 0.8538443841553871
+    }
+  ],
+  "all_threads_by_self": [
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 20.875,
+      "inclusive_ms_per_prefill": 120.19156170009735,
+      "self_ms_per_prefill": 120.19156170009735
+    },
+    {
+      "function": "_gather_host_parts (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:80)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 49.73074139200863,
+      "self_ms_per_prefill": 49.73074139200863
+    },
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 291.53661743092295,
+      "self_ms_per_prefill": 47.56016170093591
+    },
+    {
+      "function": "_batch_copy_chunk_sources (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1553)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 159.68830374461277,
+      "self_ms_per_prefill": 33.66078618143817
+    },
+    {
+      "function": "flush_gpu (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1615)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 38.781749924857536,
+      "self_ms_per_prefill": 32.34833356473648
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 31.557700802876518,
+      "self_ms_per_prefill": 21.577338545276724
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 28.713823079259935,
+      "self_ms_per_prefill": 19.66095864551532
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 18.806596659573387,
+      "self_ms_per_prefill": 18.806596659573387
+    },
+    {
+      "function": "flush_host (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1587)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 70.96968529385082,
+      "self_ms_per_prefill": 15.156535988273854
+    },
+    {
+      "function": "prefetch_by_chunk (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1830)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 180.7473718386661,
+      "self_ms_per_prefill": 15.099617539293284
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 96.625,
+      "inclusive_ms_per_prefill": 17.45126609043714,
+      "self_ms_per_prefill": 13.974697436759557
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 53.17948921065233,
+      "self_ms_per_prefill": 13.922548169387511
+    },
+    {
+      "function": "_chunk_source_readonly (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1530)",
+      "calls_per_prefill": 40.0,
+      "inclusive_ms_per_prefill": 15.186122494751064,
+      "self_ms_per_prefill": 13.058884384498068
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 1777.875,
+      "inclusive_ms_per_prefill": 32.4266782012658,
+      "self_ms_per_prefill": 8.539237887376473
+    },
+    {
+      "function": "load_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/quantized_key_index.py:331)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 7.56446092994162,
+      "self_ms_per_prefill": 7.56446092994162
+    },
+    {
+      "function": "_ordered_chunk_counts (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:401)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 6.830262839999126,
+      "self_ms_per_prefill": 6.830262839999126
+    },
+    {
+      "function": "apply_rope (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:55)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 11.97966221412021,
+      "self_ms_per_prefill": 6.530843569332895
+    },
+    {
+      "function": "rotate_half (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:47)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 5.448818644787325,
+      "self_ms_per_prefill": 5.448818644787325
+    },
+    {
+      "function": "qwen_online_prefix_head_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:730)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.065361431131646,
+      "self_ms_per_prefill": 4.975258944902478
+    },
+    {
+      "function": "finish_slot (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1576)",
+      "calls_per_prefill": 104.0,
+      "inclusive_ms_per_prefill": 5.511781070740578,
+      "self_ms_per_prefill": 4.94011474405075
+    },
+    {
+      "function": "_validate_score_rows (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:24)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 4.759800154433105,
+      "self_ms_per_prefill": 4.754888679312069
+    },
+    {
+      "function": "_prefetch_chunks_direct_pinned (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1679)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 165.49128812333277,
+      "self_ms_per_prefill": 4.6715766107118775
+    },
+    {
+      "function": "_record_physical_access (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2229)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 7.5406583467762935,
+      "self_ms_per_prefill": 4.5522943498652
+    },
+    {
+      "function": "gather_prefetched_tokens (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:190)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 4.496680345080471,
+      "self_ms_per_prefill": 4.496680345080471
+    },
+    {
+      "function": "_siftup (/home/panzihang/src/prism_layerkv/vendor/flexgen/myheap.py:13)",
+      "calls_per_prefill": 544.25,
+      "inclusive_ms_per_prefill": 4.439389719744706,
+      "self_ms_per_prefill": 4.436029692818494
+    },
+    {
+      "function": "positions (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1583)",
+      "calls_per_prefill": 104.0,
+      "inclusive_ms_per_prefill": 4.433895290130716,
+      "self_ms_per_prefill": 4.433895290130716
+    },
+    {
+      "function": "flash_attn_varlen_func (/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/vllm/vllm_flash_attn/flash_attn_interface.py:176)",
+      "calls_per_prefill": 30.0,
+      "inclusive_ms_per_prefill": 4.016333150690902,
+      "self_ms_per_prefill": 3.8826267332406266
+    },
+    {
+      "function": "call (/home/panzihang/src/prism_layerkv/scripts/profile_layerkv_v23.py:22)",
+      "calls_per_prefill": 244.0,
+      "inclusive_ms_per_prefill": 564.3036610324405,
+      "self_ms_per_prefill": 3.580488330639631
+    },
+    {
+      "function": "uncache (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:109)",
+      "calls_per_prefill": 78.0,
+      "inclusive_ms_per_prefill": 3.282429669913726,
+      "self_ms_per_prefill": 3.282429669913726
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:216)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 3.1731152627540045,
+      "self_ms_per_prefill": 3.1731152627540045
+    }
+  ]
+}
