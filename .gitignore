@@ -47,3 +47,10 @@ artifacts/
 !docs/layerkv_v23/results/*.json
 !docs/layerkv_v23/results/*.csv
 runtime_deps_plot/
+
+# Curated v2.4 publication evidence.
+!docs/layerkv_v24/results/
+!docs/layerkv_v24/results/*.json
+!docs/layerkv_v24/results/*.csv
+runtime_deps_v24/
+publish_v24/

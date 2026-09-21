@@ -1,0 +1,9 @@
+{
+  "time": 1789984475.4272594,
+  "trigger": "Strict cold failure after mixed warm/cold process retained file mappings; original four warm blocks show +14.7697% shared latency.",
+  "change": "Add four ABBA paired32 ordinary-cache blocks, each arm in a fresh process, after main cold timing; add warm Nsight and VizTracer identity/shared diagnostics.",
+  "scope": "Post hoc confirmation retained separately; no replacement/exclusion of original warm results or changes to quality gate, readers, cold protocol, or main cold sample counts.",
+  "samples": 32,
+  "paired_blocks": 4,
+  "warmup": 8
+}

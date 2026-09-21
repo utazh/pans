@@ -1,0 +1,38 @@
+{
+  "paired_blocks": 4,
+  "distinct_query_ids": 32,
+  "baseline_mean_ms": 247.1747119252541,
+  "shared_mean_ms": 283.681747958326,
+  "relative_change_pct": 14.769729374302543,
+  "block_bootstrap_delta95_ms": [
+    6.470017340689083,
+    63.67485461305478
+  ],
+  "block_bootstrap_relative95_pct": [
+    2.517486215484954,
+    26.424926356432255
+  ],
+  "per_block": [
+    {
+      "identity_ms": 244.66606255737133,
+      "shared_ms": 272.070796614571,
+      "delta_ms": 27.404734057199676
+    },
+    {
+      "identity_ms": 262.9997206895496,
+      "shared_ms": 254.51049773255363,
+      "delta_ms": -8.489222956995945
+    },
+    {
+      "identity_ms": 242.0198702457128,
+      "shared_ms": 317.7847650440526,
+      "delta_ms": 75.76489479833981
+    },
+    {
+      "identity_ms": 239.01319420838263,
+      "shared_ms": 290.3609324421268,
+      "delta_ms": 51.34773823374417
+    }
+  ],
+  "limitation": "Four repeated blocks on the same 32 queries; bootstrap across blocks is exploratory, not 128 independent query samples."
+}

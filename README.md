@@ -1,5 +1,45 @@
 # pans
 
+## LayerKV v2.4：最终评分校准与 SSD 冷恢复
+
+本分支基于 [v2.3](https://github.com/utazh/pans/tree/v2.3)（`3868c6b64332f89cc0b301c75b53c35630302f0e`），发布服务器完成的 v2.4 代码、实测报告及轻量证据。
+
+**本轮实际停在 G26：第 26 层的 prefix KV 服务第 25、26、27 层，独立来源从 28 份减到 26 份。** query 和生成 token 的 KV 仍 28 层独立；28 层都参与模型计算。虽然实现了更少来源数的拓扑规划，三个种子均未通过新开发集非劣门限，因此未执行 G24 及后续扩层。
+
+- [发布说明与复现边界](docs/layerkv_v24/RELEASE_ZH.md)
+- [完整实测报告](EXPERIMENT_REPORT_V24_ZH.md) · [服务器运行说明](README_LAYERKV_V24_SERVER.md)
+- [统计结果](docs/layerkv_v24/results/v24_final_analysis.json) · [质量表](docs/layerkv_v24/results/v24_quality_table.csv)
+- [校准报告](docs/layerkv_v24/calibration) · [验证记录](docs/layerkv_v24/validation) · [源码与数据审计](docs/layerkv_v24/audit)
+- [真实模型回放修复](docs/sharedkv_v24/SERVER_REPLAY_REPAIR.md) · [冷缓存进程隔离](docs/sharedkv_v24/SERVER_COLD_ISOLATION.md)
+
+新增最终候选完整续写得分校准、候选 KL、中心化得分/逐 token 误差及教师 margin 约束；主干冻结，仅训练读取器。
+旧组目标、新评分目标、去 margin 目标各训练三个种子，共九个模型。新评分配方的三种子开发集平均候选 KL 从 0.015899 降至 0.006628（下降 58.3%）；新旧每步计算量不同，不能把全部变化归因于单一损失项。
+
+Qwen2.5-7B-Instruct，25% 精确块预算，固定 4,940-token prefix，主计时 checkpoint 预先固定 seed24：
+
+| 指标 | 优化后无共享 | 评分校准共享 |
+|---|---:|---:|
+| 历史完整 TREC 500 条准确率 | 68.60%（343/500） | 68.80%（344/500） |
+| 新最终留出集 768 条准确率 | 76.04%（584/768） | 75.78%（582/768） |
+| SSD 冷缓存 TTFT / 原读策略 | 2168.22 ms | 2098.87 ms（−3.20%） |
+| SSD 冷缓存 TTFT / 读后保留文件页 | 1717.56 ms | 1582.05 ms（−7.89%） |
+
+每种冷策略是 **4 轮 × 同一批 32 条配对请求**，共 512 次正式冷认证全部通过，不能称作完整 500 条计时。冷准备在 TTFT 外；认证覆盖应用 payload 和操作系统文件页，不声称清空 SSD 设备内部缓存。
+原读策略和保留页策略的四轮块 bootstrap 95% 下降区间分别为 1.48%–5.30% 和 7.20%–8.57%，属于少量重复配对块的探索性区间。
+
+普通缓存原同进程实验慢 14.77%，事后独立进程复核快 12.60%，**尚不能宣称不受运行条件影响的稳定加速**。两个结果全部保留。
+所选 prefix KV 减少 7.12%；计入读取器及 packed 副本后，该局部缓冲净减少 5.99%，不是总显存或持久磁盘占用降幅。
+新留出集来自 TREC 训练池排除历史问题后的划分；官方 500 条已被历史实验观察，不重新视为全新验收集。
+
+![v2.4 实测汇总](docs/layerkv_v24/figures/v24_results.png)
+
+服务器完整回归：**510 passed，4 skipped，87 subtests passed**。物理共享、28 层私有生成 KV、数据隔离、评分回放及原工程保护审计全部通过。
+新 v24 算法、入口与测试文件与服务器交付逐字节一致；保留 v2.3 已发布的历史路径兼容处理。模型、读取器权重、原始数据、KV 缓存和原始 profiler 文件保留在服务器。
+安装 v24 额外依赖可使用 `python -m pip install -r requirements-v24.txt`；真实 GPU 回放还依赖报告记录的 vLLM/CUDA 环境。
+服务器调度脚本含实测路径，使用前须按发布说明准备输入并调整路径，不能在空克隆中直接重跑服务器编排。
+
+以下保留历史版本说明；本分支以 v2.4 发布说明为准。
+
 ## LayerKV v2.3：多消费者联合校准与冷缓存实验
 
 本分支基于 [v2.2](https://github.com/utazh/pans/tree/v2.2)（`fddabb7015c66c870a11810069bfbe20d5a34bbf`），发布服务器完成的 v2.3 代码与报告。

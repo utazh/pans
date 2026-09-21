@@ -1,0 +1,267 @@
+{
+  "history": [
+    {
+      "step": 0,
+      "validation_objective": 0.2621220722794533,
+      "queries": 64,
+      "group_update_relative_rmse": 0.354608568479307,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.34632647704953956,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.9227143031188896,
+          "max_request_or_branch_rmse": 1.0438778031344036,
+          "prefix_mass_p95": 0.689827024936676,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.7795613211219581,
+          "max_request_or_branch_rmse": 0.8990676047287407,
+          "prefix_mass_p95": 0.16433101892471313,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 25,
+      "validation_objective": 0.15311765344813466,
+      "queries": 64,
+      "group_update_relative_rmse": 0.273310866788961,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.25530516332946723,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.7922204404958552,
+          "max_request_or_branch_rmse": 0.9274200007342872,
+          "prefix_mass_p95": 0.5946308970451355,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.6582303267356856,
+          "max_request_or_branch_rmse": 0.8079512050327522,
+          "prefix_mass_p95": 0.12084239721298218,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 50,
+      "validation_objective": 0.10450725481496193,
+      "queries": 64,
+      "group_update_relative_rmse": 0.23116500215837732,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.19597386623111865,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.7188952510831048,
+          "max_request_or_branch_rmse": 0.8548480856874073,
+          "prefix_mass_p95": 0.4536958336830139,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.6010566967413864,
+          "max_request_or_branch_rmse": 0.7643012154143073,
+          "prefix_mass_p95": 0.14573073387145996,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 75,
+      "validation_objective": 0.08317769362474792,
+      "queries": 64,
+      "group_update_relative_rmse": 0.2114767743041739,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1638252562455212,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.6798377584900537,
+          "max_request_or_branch_rmse": 0.8107852979391339,
+          "prefix_mass_p95": 0.38029903173446655,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5720092347427099,
+          "max_request_or_branch_rmse": 0.7392522735201346,
+          "prefix_mass_p95": 0.15069842338562012,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 100,
+      "validation_objective": 0.07168033839843702,
+      "queries": 64,
+      "group_update_relative_rmse": 0.19908819848205894,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1480376406107098,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.6499128166732834,
+          "max_request_or_branch_rmse": 0.7772774950574568,
+          "prefix_mass_p95": 0.3494096100330353,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5517950712732167,
+          "max_request_or_branch_rmse": 0.7215607274961798,
+          "prefix_mass_p95": 0.1529550552368164,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 125,
+      "validation_objective": 0.06259509135270491,
+      "queries": 64,
+      "group_update_relative_rmse": 0.18955698021454737,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.1312608251270528,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.6183224532086153,
+          "max_request_or_branch_rmse": 0.7423384583230892,
+          "prefix_mass_p95": 0.321250855922699,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5353016183334177,
+          "max_request_or_branch_rmse": 0.7051466439647119,
+          "prefix_mass_p95": 0.15688568353652954,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 150,
+      "validation_objective": 0.05666232113435399,
+      "queries": 64,
+      "group_update_relative_rmse": 0.18202495301375166,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.12255674235833189,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.5951687537329846,
+          "max_request_or_branch_rmse": 0.7148019479954738,
+          "prefix_mass_p95": 0.29992181062698364,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5197800714135477,
+          "max_request_or_branch_rmse": 0.6891917392123796,
+          "prefix_mass_p95": 0.15706521272659302,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 175,
+      "validation_objective": 0.05136853469593916,
+      "queries": 64,
+      "group_update_relative_rmse": 0.1746983149787411,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.11300941032823177,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.5738259768936468,
+          "max_request_or_branch_rmse": 0.689775407931604,
+          "prefix_mass_p95": 0.2894730865955353,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.5048692896403736,
+          "max_request_or_branch_rmse": 0.6743933948126047,
+          "prefix_mass_p95": 0.15878599882125854,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    },
+    {
+      "step": 200,
+      "validation_objective": 0.04644760516384849,
+      "queries": 64,
+      "group_update_relative_rmse": 0.1664115657331422,
+      "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+      "suffix_group_update_relative_rmse": 0.10650048932681482,
+      "local_diagnostics": {
+        "25": {
+          "output_relative_rmse": 0.5557688609807254,
+          "max_request_or_branch_rmse": 0.6649628214637274,
+          "prefix_mass_p95": 0.2756577134132385,
+          "old_local_gate_passed": false
+        },
+        "27": {
+          "output_relative_rmse": 0.4840482770267052,
+          "max_request_or_branch_rmse": 0.6485589173395868,
+          "prefix_mass_p95": 0.1605018973350525,
+          "old_local_gate_passed": false
+        }
+      },
+      "end_to_end_validated": false
+    }
+  ],
+  "best_step": 200,
+  "report": {
+    "validation_objective": 0.04644760516384849,
+    "queries": 64,
+    "group_update_relative_rmse": 0.1664115657331422,
+    "max_identity_group_replay_relative_rmse": 0.012491092085838318,
+    "suffix_group_update_relative_rmse": 0.10650048932681482,
+    "local_diagnostics": {
+      "25": {
+        "output_relative_rmse": 0.5557688609807254,
+        "max_request_or_branch_rmse": 0.6649628214637274,
+        "prefix_mass_p95": 0.2756577134132385,
+        "old_local_gate_passed": false
+      },
+      "27": {
+        "output_relative_rmse": 0.4840482770267052,
+        "max_request_or_branch_rmse": 0.6485589173395868,
+        "prefix_mass_p95": 0.1605018973350525,
+        "old_local_gate_passed": false
+      }
+    },
+    "end_to_end_validated": false
+  },
+  "args": {
+    "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "store_root": "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "task": "trec",
+    "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "student_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_fit",
+    "student_val": "/home/panzihang/src/prism_layerkv/runtime_data/v23_teacher_val",
+    "output": "/home/panzihang/src/prism_layerkv/assets/v24_group_s25/trec.pt",
+    "start": 24,
+    "end": 28,
+    "source": 26,
+    "native_layers": "24",
+    "carry": null,
+    "initial_bundle": null,
+    "device": "cuda",
+    "steps": 200,
+    "lr": 0.0001,
+    "ridge": 0.001,
+    "eval_every": 25,
+    "seed": 25,
+    "last_weight": 0.5,
+    "suffix_weight": 1.0,
+    "intermediate_weight": 0.1,
+    "trust_weight": 0.001,
+    "independent_layers": false,
+    "logit_weight": 0.0,
+    "query_only": false,
+    "no_bf16_ste": false,
+    "max_sequence": 1024,
+    "max_identity_replay_error": 0.02
+  },
+  "unique_sources": 26
+}

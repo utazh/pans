@@ -1,0 +1,62 @@
+{
+  "chosen_G": 26,
+  "primary_seed": 24,
+  "last_all_seed_admitted_G": null,
+  "stages": [
+    {
+      "G": 26,
+      "all_seed_dev_gate_passed": false,
+      "seeds": {
+        "24": {
+          "n": 768,
+          "baseline_correct": 582,
+          "student_correct": 580,
+          "harmful": 7,
+          "beneficial": 5,
+          "net_delta_pp": -0.2604166666666667,
+          "conservative_one_sided_lower_pp": -1.6571683344719292,
+          "noninferiority_margin_pp": 1.0,
+          "conservative_bound_passes": false,
+          "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+          "deployment_status": "diagnostic_report_only_no_auto_promotion"
+        },
+        "25": {
+          "n": 768,
+          "baseline_correct": 582,
+          "student_correct": 585,
+          "harmful": 6,
+          "beneficial": 9,
+          "net_delta_pp": 0.390625,
+          "conservative_one_sided_lower_pp": -1.1554296024056405,
+          "noninferiority_margin_pp": 1.0,
+          "conservative_bound_passes": false,
+          "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+          "deployment_status": "diagnostic_report_only_no_auto_promotion"
+        },
+        "26": {
+          "n": 768,
+          "baseline_correct": 582,
+          "student_correct": 581,
+          "harmful": 7,
+          "beneficial": 6,
+          "net_delta_pp": -0.13020833333333334,
+          "conservative_one_sided_lower_pp": -1.5816587836220655,
+          "noninferiority_margin_pp": 1.0,
+          "conservative_bound_passes": false,
+          "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+          "deployment_status": "diagnostic_report_only_no_auto_promotion"
+        }
+      }
+    }
+  ],
+  "diagnostic_if_no_stage_passes": true,
+  "final768_previously_unseen": true,
+  "final_quality_variants": [
+    "identity",
+    "v24_score_g26_s24",
+    "v24_score_g26_s25",
+    "v24_score_g26_s26"
+  ],
+  "reason": "Deepest stage passing all three predeclared development comparisons; G26 diagnostic retained if none passes",
+  "time": 1789982068.4311166
+}

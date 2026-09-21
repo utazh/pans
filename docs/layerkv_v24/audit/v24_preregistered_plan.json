@@ -1,0 +1,51 @@
+{
+  "task": "Qwen2.5-7B-Instruct TREC fixed prefix 4940 tokens; 25% exact budget; online P8 evaluation",
+  "seeds": [
+    24,
+    25,
+    26
+  ],
+  "fit": 64,
+  "validation": 64,
+  "development": 768,
+  "final_holdout": 768,
+  "historical_regression": 500,
+  "stage1": {
+    "G": 26,
+    "methods": [
+      "v23 group boundary",
+      "v24 final score + margin",
+      "v24 final score without margin"
+    ],
+    "steps": 200,
+    "initialization": "same affine ridge from native prefix; no legacy checkpoint provenance injection",
+    "validation": "own objective, checkpoints every25 updates; record all compute and peak memory"
+  },
+  "admission": {
+    "comparison": "each v24 full-margin seed vs identity on fresh dev768",
+    "margin": 0.01,
+    "alpha": 0.05,
+    "rule": "all three full-margin seeds must pass supplied conservative paired bound; no test-driven selection; later ladder stages same rule",
+    "limitation": "Per-comparison conservative bounds, not familywise model-selection certification; repeated development use reported, final768 not used for choices"
+  },
+  "ladder": [
+    26,
+    24,
+    22,
+    20,
+    18,
+    16
+  ],
+  "stop": "Stop main expansion at failed development gate; retain all failures. Do not evaluate final768 until topology/training frozen.",
+  "performance": {
+    "primary_seed": 24,
+    "cold": [
+      "native",
+      "preserve"
+    ],
+    "design": "four paired32 repetitions per policy, balanced ABBA; same requests and exact mincore certification; no profiler or restore audit in formal TTFT",
+    "warm": "four paired32 repetitions, order sensitivity reported"
+  },
+  "diagnostic": "8 restore-audit requests per identity/shared x native/preserve, distinct from formal timing",
+  "no_claims": "No automatic quality deployment status or general-generation guarantee"
+}

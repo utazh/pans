@@ -1,0 +1,22 @@
+{
+  "README_ZH.md": "1514b42a9ba9affbc12da8f8353816db7e77becff132492de0d2027790c12a97",
+  "TEST_RESULTS.md": "1ec440f4fc6d2d7e58a8f15091c6b7320591e8845efe330db96634a0aabf048f",
+  "docs/AUDIT_V23_AND_PLAN_ZH.md": "20b2c9c4f829cae85056d2c9b8fd882ca4fed7abb7d467b41797440694c33204",
+  "docs/SOURCES.md": "cb5b31ba6c11bf7c9bedfaf39a8845170d32726f3cfe89227127fb1279a307f2",
+  "scripts/audit_quality_v24.py": "db7b54909280acc5f81e1d878ff2a26b87dd19eddd3381111efd75bb6d924f45",
+  "scripts/install_sharedkv_v24.py": "64431ca4e284c7bf89fe7815d4b7830e01d51a8b944ff0565dc5cc0a907701c7",
+  "scripts/plan_sources_v24.py": "99a4c5b88e17707ccb41196d930cf517f845b902ae3b68c622f4fbef1fe9de85",
+  "scripts/run_sharedkv_v24.py": "9c68a58ab07b960a6298dc7100149210ce8464c35f22e4c08916d154fde6a39b",
+  "scripts/train_budget_sharedkv_v24.py": "44016551bb08db50a7cb06d5606ac9d57c4e408e9ada58d359903fe825caf374",
+  "src/contiguous_fuxian/sharedkv_v24/__init__.py": "603fd964eda644de460d6eb8ff76a0363a019f69f633ae30487e1ef5fcd0833f",
+  "src/contiguous_fuxian/sharedkv_v24/capture.py": "229ee4ca6bce8b9b0668f2be825b398ffd7006edeeef1ae420124542804e3684",
+  "src/contiguous_fuxian/sharedkv_v24/guard.py": "54c24ac87eb2bb9f8dd09ded84ee5883fac2926b1548d690ebf43a333141a52d",
+  "src/contiguous_fuxian/sharedkv_v24/records.py": "13ab1e8fda3b382b967b4589187e70d62e55360fe25dfbd99c968f7276e4bc15",
+  "src/contiguous_fuxian/sharedkv_v24/replay.py": "cdeb223bb7b71a5780a98296b82912ebdd730ebce6592eed7b4f5154639cb60f",
+  "src/contiguous_fuxian/sharedkv_v24/restore_audit.py": "e5785525acb87149117b426f925fb477041c978d48b8057fc740e9aeab8923d3",
+  "src/contiguous_fuxian/sharedkv_v24/topology.py": "9c0fe2d8a4ff0a32fb43cb7cdba4a4e5ae9f25b7454c265f6ce8c98c195c3fc1",
+  "src/contiguous_fuxian/sharedkv_v24/train.py": "25210ee3357c5353d3850036d6fface95022f9f438d2b3166bc36bb3d6b57706",
+  "tests/test_sharedkv_v24.py": "c5e0fb3c9d98a9ff532da263bc8273949ba8bd3edc5b3c0bcc684f441b5088aa",
+  "validation/environment.json": "0aec5c004a49a10e3159f7b543657ab896faa62a38d30940669a7229712d9f76",
+  "validation/pytest_cpu.txt": "368c26b6ad2daef0f667efa96725588241c3e4e3392591cf9107a550b0f0a5ce"
+}

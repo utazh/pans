@@ -1,0 +1,1579 @@
+{
+  "v24_dev_group_s24": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 580,
+    "harmful": 9,
+    "beneficial": 7,
+    "net_delta_pp": -0.2604166666666667,
+    "conservative_one_sided_lower_pp": -1.8456677186731378,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9739583333333334,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.18376174163967263,
+    "online_score_fidelity": {
+      "candidate_kl": 0.01610161626255734,
+      "centered_score_mse": 0.14392278464518268,
+      "per_label_mean_token_mse": 0.23209034254970437,
+      "sufficient_decision_preservation_bound": 0.8307291666666666,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-5231",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -1.125
+      },
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -1.125
+      },
+      {
+        "uid": "trec-v24-dev768-2773",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 1.4688403380132513
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.0498908132722136
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.5030236244153912
+      },
+      {
+        "uid": "trec-v24-dev768-2757",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.4375832580408314
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.6695764658970802
+      },
+      {
+        "uid": "trec-v24-dev768-4182",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.9905963540395533
+      },
+      {
+        "uid": "trec-v24-dev768-1665",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.437916576859152
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.305159807412565
+      },
+      {
+        "uid": "trec-v24-dev768-4835",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.8120557055481186
+      },
+      {
+        "uid": "trec-v24-dev768-1657",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.5000000596021437
+      },
+      {
+        "uid": "trec-v24-dev768-4063",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.6804114580318128
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.8747342215574463
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.6850339763586817
+      },
+      {
+        "uid": "trec-v24-dev768-2249",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.6249989271618972
+      },
+      {
+        "uid": "trec-v24-dev768-3978",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.686982573079149
+      },
+      {
+        "uid": "trec-v24-dev768-2138",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.37500071524937084
+      },
+      {
+        "uid": "trec-v24-dev768-3055",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "NUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6194779876350367
+      },
+      {
+        "uid": "trec-v24-dev768-5439",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.9349215030681535
+      }
+    ]
+  },
+  "v24_dev_group_s25": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 581,
+    "harmful": 9,
+    "beneficial": 8,
+    "net_delta_pp": -0.13020833333333334,
+    "conservative_one_sided_lower_pp": -1.7621236898219035,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.97265625,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.17009816415090076,
+    "online_score_fidelity": {
+      "candidate_kl": 0.015718124281847767,
+      "centered_score_mse": 0.13218095762244622,
+      "per_label_mean_token_mse": 0.22071680160250307,
+      "sufficient_decision_preservation_bound": 0.8333333333333334,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-5231",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.875
+      },
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -1.125
+      },
+      {
+        "uid": "trec-v24-dev768-2773",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 1.1250951072433963
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.112517231842503
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.5674513578321694
+      },
+      {
+        "uid": "trec-v24-dev768-2757",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.4375776578235673
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.5445767043156593
+      },
+      {
+        "uid": "trec-v24-dev768-3534",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.12535846199261869
+      },
+      {
+        "uid": "trec-v24-dev768-4182",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.9298980832199959
+      },
+      {
+        "uid": "trec-v24-dev768-1665",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.3752422928860142
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.43113869390799664
+      },
+      {
+        "uid": "trec-v24-dev768-4835",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.8745302529896435
+      },
+      {
+        "uid": "trec-v24-dev768-1657",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.4999998807886641
+      },
+      {
+        "uid": "trec-v24-dev768-4063",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.679876208324913
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.968468847393524
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.6850984679222165
+      },
+      {
+        "uid": "trec-v24-dev768-2249",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.5625019072522548
+      },
+      {
+        "uid": "trec-v24-dev768-3978",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.8744617125485092
+      },
+      {
+        "uid": "trec-v24-dev768-2138",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.31250149009565575
+      },
+      {
+        "uid": "trec-v24-dev768-3055",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "NUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6968416574181902
+      },
+      {
+        "uid": "trec-v24-dev768-5439",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.934910774230957
+      }
+    ]
+  },
+  "v24_dev_group_s26": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 581,
+    "harmful": 8,
+    "beneficial": 7,
+    "net_delta_pp": -0.13020833333333334,
+    "conservative_one_sided_lower_pp": -1.6749187408399024,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9752604166666666,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.17106416270399072,
+    "online_score_fidelity": {
+      "candidate_kl": 0.015878178560884172,
+      "centered_score_mse": 0.13824166617764963,
+      "per_label_mean_token_mse": 0.22660414919692298,
+      "sufficient_decision_preservation_bound": 0.828125,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-5231",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -1.0
+      },
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -1.125
+      },
+      {
+        "uid": "trec-v24-dev768-2773",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 1.3125716857466614
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.0450389331090264
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.4789648055964335
+      },
+      {
+        "uid": "trec-v24-dev768-2757",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.43754820978210773
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.5445767043156593
+      },
+      {
+        "uid": "trec-v24-dev768-4182",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.9318972230521467
+      },
+      {
+        "uid": "trec-v24-dev768-1665",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.43810927868617
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.42083704459582805
+      },
+      {
+        "uid": "trec-v24-dev768-4835",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.8118375519370602
+      },
+      {
+        "uid": "trec-v24-dev768-1657",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.5624994635610392
+      },
+      {
+        "uid": "trec-v24-dev768-4063",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.7429328561065631
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.9372556187663577
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.6850278355923365
+      },
+      {
+        "uid": "trec-v24-dev768-2249",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "HUM",
+        "gold_margin_change": 0.562501549642576
+      },
+      {
+        "uid": "trec-v24-dev768-3978",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.7495053425445803
+      },
+      {
+        "uid": "trec-v24-dev768-3055",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "NUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6883800033483567
+      },
+      {
+        "uid": "trec-v24-dev768-5439",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.9356032013915865
+      }
+    ]
+  },
+  "v24_dev_identity": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 582,
+    "harmful": 0,
+    "beneficial": 0,
+    "net_delta_pp": 0.0,
+    "conservative_one_sided_lower_pp": -0.47917114011379974,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": true,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 1,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": 0.0,
+    "online_score_fidelity": {
+      "candidate_kl": 0.0,
+      "centered_score_mse": 0.0,
+      "per_label_mean_token_mse": 0.0,
+      "sufficient_decision_preservation_bound": 1,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": []
+  },
+  "v24_dev_nomargin_g26_s24": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 581,
+    "harmful": 7,
+    "beneficial": 6,
+    "net_delta_pp": -0.13020833333333334,
+    "conservative_one_sided_lower_pp": -1.5816587836220655,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9778645833333334,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.0043275784423488966,
+    "online_score_fidelity": {
+      "candidate_kl": 0.006191584164962746,
+      "centered_score_mse": 0.07204631749069014,
+      "per_label_mean_token_mse": 0.1544050793288972,
+      "sufficient_decision_preservation_bound": 0.8619791666666666,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.25
+      },
+      {
+        "uid": "trec-v24-dev768-1614",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.18694293721364375
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.9820867426024051
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6560825274937088
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -1.0594773285956762
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.34575510020818
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.1695764658970802
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.8737665994922281
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.24008881454574293
+      },
+      {
+        "uid": "trec-v24-dev768-1960",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": 0.2189657877170248
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.352793276056218
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.8121094387897756
+      },
+      {
+        "uid": "trec-v24-dev768-4049",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "DESC",
+        "student_prediction": "NUM",
+        "gold_margin_change": 0.7500004768371582
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 0.3094855535746319
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.4369032382610385
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.7810881316800078
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.24999076177311963
+      }
+    ]
+  },
+  "v24_dev_nomargin_g26_s25": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 586,
+    "harmful": 6,
+    "beneficial": 10,
+    "net_delta_pp": 0.5208333333333334,
+    "conservative_one_sided_lower_pp": -1.0665293734254289,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9752604166666666,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": 0.13606058950343253,
+    "online_score_fidelity": {
+      "candidate_kl": 0.007550634514486034,
+      "centered_score_mse": 0.06744553643485414,
+      "per_label_mean_token_mse": 0.14936430977972975,
+      "sufficient_decision_preservation_bound": 0.87109375,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1758",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.5530817386461422
+      },
+      {
+        "uid": "trec-v24-dev768-1614",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 0.0629866690860581
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.2771100750687765
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.3748339045851026
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -1.0594490163184673
+      },
+      {
+        "uid": "trec-v24-dev768-2319",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "HUM",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.3125075697899433
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.5549133419574446
+      },
+      {
+        "uid": "trec-v24-dev768-2757",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.34399521826708224
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.0445764658970802
+      },
+      {
+        "uid": "trec-v24-dev768-3534",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.18889373443471413
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 1.310094593482063
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.5227785651550221
+      },
+      {
+        "uid": "trec-v24-dev768-272",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.4204815604916803
+      },
+      {
+        "uid": "trec-v24-dev768-1960",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": 0.25020720741304103
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.16584920859122576
+      },
+      {
+        "uid": "trec-v24-dev768-260",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": 0.37510251726416755
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.6244046687725131
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.3748450491366384
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.1874904041812897
+      }
+    ]
+  },
+  "v24_dev_nomargin_g26_s26": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 578,
+    "harmful": 9,
+    "beneficial": 5,
+    "net_delta_pp": -0.5208333333333334,
+    "conservative_one_sided_lower_pp": -2.0011647090990996,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9765625,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.028576283747294668,
+    "online_score_fidelity": {
+      "candidate_kl": 0.00573577027368741,
+      "centered_score_mse": 0.07044866287882391,
+      "per_label_mean_token_mse": 0.16728313527164484,
+      "sufficient_decision_preservation_bound": 0.86328125,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.25
+      },
+      {
+        "uid": "trec-v24-dev768-1614",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.061958791630786436
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.1019713038695045
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.49985898796876427
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -0.7482383243659569
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.34563070532772144
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.4195764658970802
+      },
+      {
+        "uid": "trec-v24-dev768-3534",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.18889075441529712
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.8737696993921418
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.2409123747384001
+      },
+      {
+        "uid": "trec-v24-dev768-272",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.2407486424435774
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.22808557723419653
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.2183445182745345
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 0.372294305710966
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.2494037150981967
+      },
+      {
+        "uid": "trec-v24-dev768-3978",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.3432009284661035
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6560852695802168
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.3124903445802829
+      }
+    ]
+  },
+  "v24_dev_score_g26_s24": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 580,
+    "harmful": 7,
+    "beneficial": 5,
+    "net_delta_pp": -0.2604166666666667,
+    "conservative_one_sided_lower_pp": -1.6571683344719292,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9791666666666666,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.018169548208575304,
+    "online_score_fidelity": {
+      "candidate_kl": 0.006408243089692159,
+      "centered_score_mse": 0.07372967854976907,
+      "per_label_mean_token_mse": 0.16453592663477423,
+      "sufficient_decision_preservation_bound": 0.8567708333333334,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1429",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.25
+      },
+      {
+        "uid": "trec-v24-dev768-1614",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.24948084572042717
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.8615249157010112
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.6560799059079727
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -1.0594821565427992
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.3169466852743881
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.2945767043156593
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.7491844878095435
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.17680048488182365
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.3840255734776292
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.874588223407045
+      },
+      {
+        "uid": "trec-v24-dev768-4049",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "DESC",
+        "student_prediction": "NUM",
+        "gold_margin_change": 0.7500004768371582
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 0.3094846594685805
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.3119041919353549
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.7498218052314769
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.2499881393433725
+      }
+    ]
+  },
+  "v24_dev_score_g26_s25": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 585,
+    "harmful": 6,
+    "beneficial": 9,
+    "net_delta_pp": 0.390625,
+    "conservative_one_sided_lower_pp": -1.1554296024056405,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9752604166666666,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": 0.1336617383465814,
+    "online_score_fidelity": {
+      "candidate_kl": 0.007937743717443048,
+      "centered_score_mse": 0.06800446256594604,
+      "per_label_mean_token_mse": 0.15053241223471436,
+      "sufficient_decision_preservation_bound": 0.8763020833333334,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1758",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.4905130692641251
+      },
+      {
+        "uid": "trec-v24-dev768-962",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.5476377003628841
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.277074015510152
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.40610458253649995
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -1.059217988702585
+      },
+      {
+        "uid": "trec-v24-dev768-2319",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "HUM",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.12506818771362305
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.6205799579308859
+      },
+      {
+        "uid": "trec-v24-dev768-2757",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.34396852797362953
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.0445767043156593
+      },
+      {
+        "uid": "trec-v24-dev768-3534",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.18889975400543335
+      },
+      {
+        "uid": "trec-v24-dev768-1920",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.7707954646784856
+      },
+      {
+        "uid": "trec-v24-dev768-3044",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.05865299576180405
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 1.3104559763232828
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.6361325325742655
+      },
+      {
+        "uid": "trec-v24-dev768-272",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.42043405515323684
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "HUM",
+        "gold_margin_change": -0.19708496307384848
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.6869041919353549
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.5622958251879027
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.18748760294852218
+      }
+    ]
+  },
+  "v24_dev_score_g26_s26": {
+    "n": 768,
+    "baseline_correct": 582,
+    "student_correct": 581,
+    "harmful": 7,
+    "beneficial": 6,
+    "net_delta_pp": -0.13020833333333334,
+    "conservative_one_sided_lower_pp": -1.5816587836220655,
+    "noninferiority_margin_pp": 1.0,
+    "conservative_bound_passes": false,
+    "assumption": "Independent query sample, fixed predeclared comparison; not corrected for topology/model selection",
+    "deployment_status": "diagnostic_report_only_no_auto_promotion",
+    "prediction_agreement": 0.9778645833333334,
+    "selection_plan_exact_agreement": 1,
+    "mean_gold_margin_change": -0.02151733994254588,
+    "online_score_fidelity": {
+      "candidate_kl": 0.00553851127726178,
+      "centered_score_mse": 0.06717413406503157,
+      "per_label_mean_token_mse": 0.1587475091966882,
+      "sufficient_decision_preservation_bound": 0.875,
+      "scope": "Against paired online identity scores; softmax of mean candidate logprob is an auxiliary distribution, not full-vocabulary KL or calibrated class probability."
+    },
+    "flips": [
+      {
+        "uid": "trec-v24-dev768-1614",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.06193030070153327
+      },
+      {
+        "uid": "trec-v24-dev768-208",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 1.1019668942462886
+      },
+      {
+        "uid": "trec-v24-dev768-5307",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.4998496923217317
+      },
+      {
+        "uid": "trec-v24-dev768-2539",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "NUM",
+        "gold_margin_change": -0.7491577858418168
+      },
+      {
+        "uid": "trec-v24-dev768-2319",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "HUM",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.1875004768371582
+      },
+      {
+        "uid": "trec-v24-dev768-1812",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.34559917447154476
+      },
+      {
+        "uid": "trec-v24-dev768-2496",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": -0.2945764658970802
+      },
+      {
+        "uid": "trec-v24-dev768-3534",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.31375962435322435
+      },
+      {
+        "uid": "trec-v24-dev768-928",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": 0.8112728580999828
+      },
+      {
+        "uid": "trec-v24-dev768-3362",
+        "baseline_correct": false,
+        "student_correct": true,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "DESC",
+        "gold_margin_change": 0.2931781378683809
+      },
+      {
+        "uid": "trec-v24-dev768-5442",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.2906187783646601
+      },
+      {
+        "uid": "trec-v24-dev768-3919",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.124603331583785
+      },
+      {
+        "uid": "trec-v24-dev768-3493",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": 0.37229668980216957
+      },
+      {
+        "uid": "trec-v24-dev768-4560",
+        "baseline_correct": false,
+        "student_correct": false,
+        "baseline_prediction": "ENTY",
+        "student_prediction": "LOC",
+        "gold_margin_change": -0.3744041919353549
+      },
+      {
+        "uid": "trec-v24-dev768-3978",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "LOC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -1.4369285755092278
+      },
+      {
+        "uid": "trec-v24-dev768-3495",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "DESC",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.5935920041047211
+      },
+      {
+        "uid": "trec-v24-dev768-3327",
+        "baseline_correct": true,
+        "student_correct": false,
+        "baseline_prediction": "HUM",
+        "student_prediction": "ENTY",
+        "gold_margin_change": -0.3749899869600881
+      }
+    ]
+  }
+}

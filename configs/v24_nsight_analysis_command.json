@@ -1,0 +1,4 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "scripts/analyze_v24_nsight.py"
+]

@@ -1,0 +1,1304 @@
+{
+  "all_passed": true,
+  "profiler_completeness": {
+    "nsight_variants": [
+      "nsys_native_identity",
+      "nsys_native_shared",
+      "nsys_preserve_identity",
+      "nsys_preserve_shared",
+      "nsys_warm_identity",
+      "nsys_warm_shared"
+    ],
+    "requests_each": 8,
+    "viztracer": {
+      "native_identity": {
+        "prefill_count": 8,
+        "overflow": false
+      },
+      "native_shared": {
+        "prefill_count": 8,
+        "overflow": false
+      },
+      "warm_identity": {
+        "prefill_count": 8,
+        "overflow": false
+      },
+      "warm_shared": {
+        "prefill_count": 8,
+        "overflow": false
+      }
+    }
+  },
+  "score_records_consistency": {
+    "v24_capture_fit": {
+      "requests": 64,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_capture_val": {
+      "requests": 64,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_cold_fresh_probe": {
+      "requests": 2,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b0_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b0_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b1_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b1_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b2_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b2_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b3_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_confirm_warm_b3_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_group_s24": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_group_s25": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_group_s26": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_identity": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_nomargin_g26_s24": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_nomargin_g26_s25": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_nomargin_g26_s26": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_score_g26_s24": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_score_g26_s25": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_dev_score_g26_s26": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_final768_identity": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_final768_score_g26_s24": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_final768_score_g26_s25": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_final768_score_g26_s26": {
+      "requests": 768,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_private_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_private_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_native_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_native_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_preserve_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_preserve_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_warm_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_nsys_warm_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_viz_native_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_viz_native_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_viz_warm_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_profile_viz_warm_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_restore_native_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_restore_native_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_restore_preserve_identity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_restore_preserve_shared": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_shared_replay_early_verified": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_shared_replay_parity": {
+      "requests": 8,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_test500_identity": {
+      "requests": 500,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_test500_score_g26_s24": {
+      "requests": 500,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_test500_score_g26_s25": {
+      "requests": 500,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_test500_score_g26_s26": {
+      "requests": 500,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b0_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b0_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b1_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b1_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b2_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b2_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b3_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_native_b3_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b0_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b0_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b1_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b1_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b2_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b2_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b3_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_preserve_b3_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b0_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b0_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b1_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b1_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b2_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b2_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b3_identity": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    },
+    "v24_time_warm_b3_shared": {
+      "requests": 32,
+      "mean_candidate_scoring_prediction_and_correctness_consistent": true
+    }
+  },
+  "prior_files_checked": 617,
+  "changed_prior_files": [],
+  "original_files_modified": [],
+  "physical_private_runtime": {
+    "v24_capture_fit.extra.jsonl": {
+      "requests_including_warmup": 64,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_capture_val.extra.jsonl": {
+      "requests_including_warmup": 64,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_cold_fresh_probe.extra.jsonl": {
+      "requests_including_warmup": 3,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b0_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b1_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b2_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_confirm_warm_b3_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_group_s24.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_group_s25.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_group_s26.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_identity.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_nomargin_g26_s24.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_nomargin_g26_s25.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_nomargin_g26_s26.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_score_g26_s24.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_score_g26_s25.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_dev_score_g26_s26.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_final768_identity.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_final768_score_g26_s24.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_final768_score_g26_s25.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_final768_score_g26_s26.extra.jsonl": {
+      "requests_including_warmup": 776,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_private_identity.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_private_shared.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_native_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_native_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_preserve_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_preserve_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_warm_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_nsys_warm_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_viz_native_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_viz_native_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_viz_warm_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_profile_viz_warm_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_rejected_warm_to_cold_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_restore_native_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_restore_native_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_restore_preserve_identity.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_restore_preserve_shared.extra.jsonl": {
+      "requests_including_warmup": 12,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_shared_replay_early_dev.extra.jsonl": {
+      "requests_including_warmup": 1,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_shared_replay_early_verified.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_shared_replay_parity.extra.jsonl": {
+      "requests_including_warmup": 8,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_test500_identity.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_test500_score_g26_s24.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_test500_score_g26_s25.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_test500_score_g26_s26.extra.jsonl": {
+      "requests_including_warmup": 508,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b0_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b1_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b2_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_native_b3_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b0_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b1_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b2_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_preserve_b3_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b0_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b0_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b1_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b1_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b2_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b2_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b3_identity.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    },
+    "v24_time_warm_b3_shared.extra.jsonl": {
+      "requests_including_warmup": 40,
+      "alias": true,
+      "unique_sources": true,
+      "physical_resolves": true,
+      "private_tail": true,
+      "buffer_bytes": true
+    }
+  },
+  "selector_calls": {
+    "v24_capture_fit.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 64
+    },
+    "v24_capture_val.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 64
+    },
+    "v24_cold_fresh_probe.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 3
+    },
+    "v24_confirm_warm_b0_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b0_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b1_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b1_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b2_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b2_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b3_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_confirm_warm_b3_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_dev_group_s24.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_group_s25.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_group_s26.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_nomargin_g26_s24.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_nomargin_g26_s25.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_nomargin_g26_s26.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_score_g26_s24.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_score_g26_s25.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_dev_score_g26_s26.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_final768_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_final768_score_g26_s24.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_final768_score_g26_s25.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_final768_score_g26_s26.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 776
+    },
+    "v24_private_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 8
+    },
+    "v24_private_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 8
+    },
+    "v24_profile_nsys_native_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_nsys_native_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_nsys_preserve_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_nsys_preserve_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_nsys_warm_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_nsys_warm_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_viz_native_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_viz_native_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_viz_warm_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_profile_viz_warm_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_rejected_warm_to_cold_b0_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 8
+    },
+    "v24_restore_native_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_restore_native_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_restore_preserve_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_restore_preserve_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 12
+    },
+    "v24_shared_replay_early_dev.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 1
+    },
+    "v24_shared_replay_early_verified.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 8
+    },
+    "v24_shared_replay_parity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 8
+    },
+    "v24_test500_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 508
+    },
+    "v24_test500_score_g26_s24.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 508
+    },
+    "v24_test500_score_g26_s25.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 508
+    },
+    "v24_test500_score_g26_s26.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 508
+    },
+    "v24_time_native_b0_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b0_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b1_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b1_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b2_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b2_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b3_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_native_b3_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b0_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b0_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b1_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b1_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b2_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b2_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b3_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_preserve_b3_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b0_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b0_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b1_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b1_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b2_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b2_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b3_identity.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    },
+    "v24_time_warm_b3_shared.extra.jsonl.v21.jsonl": {
+      "all_four_selector_calls": true,
+      "rows": 40
+    }
+  },
+  "bundles": {
+    "v24_group_s24": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_group_s25": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_group_s26": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_nomargin_g26_s24": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_nomargin_g26_s25": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_nomargin_g26_s26": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_score_g26_s24": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_score_g26_s25": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_score_g26_s26": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    },
+    "v24_smoke_fa2": {
+      "unique_sources": 26,
+      "consumers": 2,
+      "diagnostic_only": true,
+      "local_gate_passed": false,
+      "calibration_queries": 128,
+      "reader_bytes_bf16": 528384
+    }
+  },
+  "actual_private_decode": {
+    "identity": {
+      "queries": 8,
+      "decoder_calls": 93,
+      "all_28_layers_distinct_K_and_V_storage": true,
+      "max_private_growth": 15
+    },
+    "shared": {
+      "queries": 8,
+      "decoder_calls": 105,
+      "all_28_layers_distinct_K_and_V_storage": true,
+      "max_private_growth": 15
+    }
+  },
+  "shared_scorer_replay_parity": {
+    "n": 8,
+    "max_token_error": 0.0,
+    "max_mean_score_error": 4.7667163016740233e-07
+  },
+  "all_nine_G26_initializations_identical": true,
+  "final_dev_calibration_overlap": 0
+}

@@ -1,0 +1,553 @@
+{
+  "scope": "Eight first prefill calls identified as the first v21 decoder inside each greedy completion; excludes label decoding and warmup. Self time subtracts traced direct children on the same thread, and includes untraced library/C calls and blocking waits. Threads overlap; sums are not a critical path. Profiled times must not be used as formal TTFT.",
+  "trace_events": 471137,
+  "overflow": false,
+  "prefill_count": 8,
+  "mean_profiled_prefill_ms": 1979.6785930148553,
+  "main_thread_by_self": [
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1411.708097774782,
+      "self_ms_per_prefill": 1034.397613928118
+    },
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 7.0,
+      "inclusive_ms_per_prefill": 244.3811935712446,
+      "self_ms_per_prefill": 244.3811935712446
+    },
+    {
+      "function": "__new__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:214)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 250.9439272088546,
+      "self_ms_per_prefill": 213.6146379326076
+    },
+    {
+      "function": "uncache (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:109)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 114.98917489587834,
+      "self_ms_per_prefill": 114.98917489587834
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:829)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1461.6810623498172,
+      "self_ms_per_prefill": 49.97296457505154
+    },
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 1979.6785930148553,
+      "self_ms_per_prefill": 39.922333243684534
+    },
+    {
+      "function": "insert (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2522)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1491.9269472672918,
+      "self_ms_per_prefill": 25.86326389606838
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 37.62690330949615,
+      "self_ms_per_prefill": 25.363247635292364
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 36.50944255665196,
+      "self_ms_per_prefill": 25.115791570802447
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1511.3892033026157,
+      "self_ms_per_prefill": 19.354368100673806
+    },
+    {
+      "function": "abspath (/usr/lib/python3.10/posixpath.py:374)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 37.07212326109956,
+      "self_ms_per_prefill": 19.1628294709716
+    },
+    {
+      "function": "normpath (/usr/lib/python3.10/posixpath.py:335)",
+      "calls_per_prefill": 2241.625,
+      "inclusive_ms_per_prefill": 17.86825130442723,
+      "self_ms_per_prefill": 17.86825130442723
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1535.1982025588322,
+      "self_ms_per_prefill": 16.363586785004337
+    },
+    {
+      "function": "__getitem__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:357)",
+      "calls_per_prefill": 1667.0,
+      "inclusive_ms_per_prefill": 11.377381741928602,
+      "self_ms_per_prefill": 10.67053627617595
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 9.390584267659904,
+      "self_ms_per_prefill": 9.390584267659904
+    },
+    {
+      "function": "_unique1d (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/lib/_arraysetops_impl.py:339)",
+      "calls_per_prefill": 78.0,
+      "inclusive_ms_per_prefill": 7.297309962391121,
+      "self_ms_per_prefill": 6.658035855861955
+    },
+    {
+      "function": "gather_prefetched_tokens (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:190)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 6.294520693921174,
+      "self_ms_per_prefill": 6.294520693921174
+    },
+    {
+      "function": "_validate_score_rows (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:24)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 5.6879811430510525,
+      "self_ms_per_prefill": 5.665472494999715
+    },
+    {
+      "function": "qwen_online_prefix_head_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:730)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.498166615549355,
+      "self_ms_per_prefill": 5.397974394944187
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:1016)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 4.436857994219683,
+      "self_ms_per_prefill": 4.436857994219683
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:1004)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 4.413338103954823,
+      "self_ms_per_prefill": 4.413338103954823
+    },
+    {
+      "function": "_storage_positions (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1255)",
+      "calls_per_prefill": 51.125,
+      "inclusive_ms_per_prefill": 4.170600821786501,
+      "self_ms_per_prefill": 4.170600821786501
+    },
+    {
+      "function": "rotate_half (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:47)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 4.0727485734848345,
+      "self_ms_per_prefill": 4.0727485734848345
+    },
+    {
+      "function": "apply_rope (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:55)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 8.08936464311735,
+      "self_ms_per_prefill": 4.01661606963251
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:216)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 3.7313876132486126,
+      "self_ms_per_prefill": 3.730426379812732
+    },
+    {
+      "function": "_record_physical_access (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2229)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 11.647853119601175,
+      "self_ms_per_prefill": 3.614226965457586
+    },
+    {
+      "function": "<setcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1350)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 3.536245010677212,
+      "self_ms_per_prefill": 3.536245010677212
+    },
+    {
+      "function": "flash_attn_varlen_func (/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/vllm/vllm_flash_attn/flash_attn_interface.py:176)",
+      "calls_per_prefill": 30.0,
+      "inclusive_ms_per_prefill": 3.6867449131672205,
+      "self_ms_per_prefill": 3.495697601434951
+    },
+    {
+      "function": "_submit_positions (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1703)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 5.539855978883251,
+      "self_ms_per_prefill": 3.2675741578047797
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1367)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 3.236118532262982,
+      "self_ms_per_prefill": 3.236118532262982
+    }
+  ],
+  "main_thread_by_inclusive": [
+    {
+      "function": "call (/home/panzihang/src/prism_layerkv/scripts/profile_layerkv_v24.py:22)",
+      "calls_per_prefill": 134.0,
+      "inclusive_ms_per_prefill": 2239.4304302985006,
+      "self_ms_per_prefill": 2.0258759409191263
+    },
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 1979.6785930148553,
+      "self_ms_per_prefill": 39.922333243684534
+    },
+    {
+      "function": "resolve (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/runtime.py:46)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1814.2458414003804,
+      "self_ms_per_prefill": 3.088171896299329
+    },
+    {
+      "function": "resolve (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2052)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1810.524990083248,
+      "self_ms_per_prefill": 0.5196678311465771
+    },
+    {
+      "function": "_update_loaded_layer_score (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2004)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1535.7828100764293,
+      "self_ms_per_prefill": 0.4467535717042768
+    },
+    {
+      "function": "update_impress_score (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:582)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1535.3360565047258,
+      "self_ms_per_prefill": 0.13785394589308883
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1535.1982025588322,
+      "self_ms_per_prefill": 16.363586785004337
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1511.3892033026157,
+      "self_ms_per_prefill": 19.354368100673806
+    },
+    {
+      "function": "insert (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2522)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1491.9269472672918,
+      "self_ms_per_prefill": 25.86326389606838
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:829)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1461.6810623498172,
+      "self_ms_per_prefill": 49.97296457505154
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1411.708097774782,
+      "self_ms_per_prefill": 1034.397613928118
+    },
+    {
+      "function": "_resolve_entry (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2216)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 267.248900261177,
+      "self_ms_per_prefill": 1.6971852630526651
+    },
+    {
+      "function": "__new__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:214)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 250.9439272088546,
+      "self_ms_per_prefill": 213.6146379326076
+    },
+    {
+      "function": "result (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:95)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 244.51327761086344,
+      "self_ms_per_prefill": 0.674718636804826
+    },
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 7.0,
+      "inclusive_ms_per_prefill": 244.3811935712446,
+      "self_ms_per_prefill": 244.3811935712446
+    },
+    {
+      "function": "result (/usr/lib/python3.10/concurrent/futures/_base.py:430)",
+      "calls_per_prefill": 29.0,
+      "inclusive_ms_per_prefill": 243.87132829573616,
+      "self_ms_per_prefill": 0.378289675862647
+    },
+    {
+      "function": "uncache (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:109)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 114.98917489587834,
+      "self_ms_per_prefill": 114.98917489587834
+    },
+    {
+      "function": "configure_online_layer_selection (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:820)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 99.35668491051665,
+      "self_ms_per_prefill": 2.2420380992755398
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 37.62690330949615,
+      "self_ms_per_prefill": 25.363247635292364
+    },
+    {
+      "function": "abspath (/usr/lib/python3.10/posixpath.py:374)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 37.07212326109956,
+      "self_ms_per_prefill": 19.1628294709716
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 36.50944255665196,
+      "self_ms_per_prefill": 25.115791570802447
+    },
+    {
+      "function": "normpath (/usr/lib/python3.10/posixpath.py:335)",
+      "calls_per_prefill": 2241.625,
+      "inclusive_ms_per_prefill": 17.86825130442723,
+      "self_ms_per_prefill": 17.86825130442723
+    },
+    {
+      "function": "_record_physical_access (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:2229)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 11.647853119601175,
+      "self_ms_per_prefill": 3.614226965457586
+    },
+    {
+      "function": "__getitem__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:357)",
+      "calls_per_prefill": 1667.0,
+      "inclusive_ms_per_prefill": 11.377381741928602,
+      "self_ms_per_prefill": 10.67053627617595
+    },
+    {
+      "function": "dispatch (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/ops.py:80)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 9.51175188181012,
+      "self_ms_per_prefill": 0.1785540959322052
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 9.390584267659904,
+      "self_ms_per_prefill": 9.390584267659904
+    },
+    {
+      "function": "apply_rope (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv/core.py:55)",
+      "calls_per_prefill": 56.0,
+      "inclusive_ms_per_prefill": 8.08936464311735,
+      "self_ms_per_prefill": 4.01661606963251
+    },
+    {
+      "function": "unique (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/lib/_arraysetops_impl.py:145)",
+      "calls_per_prefill": 78.0,
+      "inclusive_ms_per_prefill": 7.70234003115756,
+      "self_ms_per_prefill": 0.4050300687664375
+    },
+    {
+      "function": "native_attention (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/ops.py:71)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 7.603187137027265,
+      "self_ms_per_prefill": 1.488800774650929
+    },
+    {
+      "function": "_ordered_chunk_counts (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:401)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 7.442125255415476,
+      "self_ms_per_prefill": 2.3401264015359837
+    }
+  ],
+  "all_threads_by_self": [
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:374)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1411.708097774782,
+      "self_ms_per_prefill": 1034.397613928118
+    },
+    {
+      "function": "_gather_host_parts (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:80)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 953.8273200770989,
+      "self_ms_per_prefill": 953.7951250733456
+    },
+    {
+      "function": "wait (/usr/lib/python3.10/threading.py:288)",
+      "calls_per_prefill": 10.0,
+      "inclusive_ms_per_prefill": 625.7884782297928,
+      "self_ms_per_prefill": 625.7884782297928
+    },
+    {
+      "function": "__new__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:214)",
+      "calls_per_prefill": 8036.0,
+      "inclusive_ms_per_prefill": 523.6970559011281,
+      "self_ms_per_prefill": 445.756376006333
+    },
+    {
+      "function": "uncache (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:109)",
+      "calls_per_prefill": 8036.0,
+      "inclusive_ms_per_prefill": 198.97078212158237,
+      "self_ms_per_prefill": 198.97078212158237
+    },
+    {
+      "function": "flush_host (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1587)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 1026.0381116819824,
+      "self_ms_per_prefill": 61.94618252779959
+    },
+    {
+      "function": "_batch_copy_chunk_sources (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1553)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 1510.97560690771,
+      "self_ms_per_prefill": 59.725419143917776
+    },
+    {
+      "function": "to (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:829)",
+      "calls_per_prefill": 4062.0,
+      "inclusive_ms_per_prefill": 1461.6810623498172,
+      "self_ms_per_prefill": 49.97296457505154
+    },
+    {
+      "function": "_chunk_source_readonly (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1530)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 418.5103773429395,
+      "self_ms_per_prefill": 47.678198536096836
+    },
+    {
+      "function": "normpath (/usr/lib/python3.10/posixpath.py:335)",
+      "calls_per_prefill": 5305.25,
+      "inclusive_ms_per_prefill": 41.68619315324416,
+      "self_ms_per_prefill": 41.68619315324416
+    },
+    {
+      "function": "decoder_logits (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v21/runtime.py:48)",
+      "calls_per_prefill": 1.0,
+      "inclusive_ms_per_prefill": 1979.6785930148553,
+      "self_ms_per_prefill": 39.922333243684534
+    },
+    {
+      "function": "abspath (/usr/lib/python3.10/posixpath.py:374)",
+      "calls_per_prefill": 8036.0,
+      "inclusive_ms_per_prefill": 77.11257024261882,
+      "self_ms_per_prefill": 35.33238136348962
+    },
+    {
+      "function": "insert (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2522)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1491.9269472672918,
+      "self_ms_per_prefill": 25.86326389606838
+    },
+    {
+      "function": "select_promixed_gqa_blocks (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:99)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 37.62690330949615,
+      "self_ms_per_prefill": 25.363247635292364
+    },
+    {
+      "function": "configure_impress_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1331)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 36.50944255665196,
+      "self_ms_per_prefill": 25.115791570802447
+    },
+    {
+      "function": "__getitem__ (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/_core/memmap.py:357)",
+      "calls_per_prefill": 3729.0,
+      "inclusive_ms_per_prefill": 25.474824630795187,
+      "self_ms_per_prefill": 23.473053755920937
+    },
+    {
+      "function": "update_score (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2492)",
+      "calls_per_prefill": 4018.0,
+      "inclusive_ms_per_prefill": 1511.3892033026157,
+      "self_ms_per_prefill": 19.354368100673806
+    },
+    {
+      "function": "prefetch_by_chunk (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1830)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1542.3931190791825,
+      "self_ms_per_prefill": 17.43934856948847
+    },
+    {
+      "function": "update_impress_layer_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:739)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1535.1982025588322,
+      "self_ms_per_prefill": 16.363586785004337
+    },
+    {
+      "function": "_unique1d (/home/panzihang/src/prism_layerkv/runtime_deps_plot/numpy/lib/_arraysetops_impl.py:339)",
+      "calls_per_prefill": 104.0,
+      "inclusive_ms_per_prefill": 10.194803922856506,
+      "self_ms_per_prefill": 9.555529816327335
+    },
+    {
+      "function": "_logical_segment (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:1267)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 9.390584267659904,
+      "self_ms_per_prefill": 9.390584267659904
+    },
+    {
+      "function": "finish_slot (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1576)",
+      "calls_per_prefill": 52.0,
+      "inclusive_ms_per_prefill": 7.8053779495754565,
+      "self_ms_per_prefill": 7.018275286263231
+    },
+    {
+      "function": "load_layer (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/quantized_key_index.py:331)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 7.014892646606172,
+      "self_ms_per_prefill": 7.014892646606172
+    },
+    {
+      "function": "_run_prefetch (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:2270)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1550.209248915952,
+      "self_ms_per_prefill": 6.9673069456206855
+    },
+    {
+      "function": "_prefetch_chunks_direct_pinned (/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1679)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 1521.1395045707618,
+      "self_ms_per_prefill": 6.804759625828624
+    },
+    {
+      "function": "gather_prefetched_tokens (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_pcache.py:190)",
+      "calls_per_prefill": 26.0,
+      "inclusive_ms_per_prefill": 6.294520693921174,
+      "self_ms_per_prefill": 6.294520693921174
+    },
+    {
+      "function": "_validate_score_rows (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/promixed.py:24)",
+      "calls_per_prefill": 8.0,
+      "inclusive_ms_per_prefill": 5.6879811430510525,
+      "self_ms_per_prefill": 5.665472494999715
+    },
+    {
+      "function": "qwen_online_prefix_head_scores (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:730)",
+      "calls_per_prefill": 4.0,
+      "inclusive_ms_per_prefill": 5.498166615549355,
+      "self_ms_per_prefill": 5.397974394944187
+    },
+    {
+      "function": "call (/home/panzihang/src/prism_layerkv/scripts/profile_layerkv_v24.py:22)",
+      "calls_per_prefill": 244.0,
+      "inclusive_ms_per_prefill": 4723.89695774044,
+      "self_ms_per_prefill": 4.7647864297362705
+    },
+    {
+      "function": "<listcomp> (/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py:1016)",
+      "calls_per_prefill": 28.0,
+      "inclusive_ms_per_prefill": 4.436857994219683,
+      "self_ms_per_prefill": 4.436857994219683
+    }
+  ]
+}

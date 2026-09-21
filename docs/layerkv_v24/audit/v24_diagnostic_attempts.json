@@ -1,0 +1,24 @@
+{
+  "attempts": [
+    {
+      "name": "v24_shared_replay_early",
+      "status": "rejected",
+      "reason": "Existing inference leakage guard rejects calibration validation queries. Guard unchanged; no quality rows accepted."
+    },
+    {
+      "name": "v24_shared_replay_early_dev",
+      "status": "diagnostic_wrapper_failed_after_first_query",
+      "reason": "Wrapper replaced caller-provided score dictionary instead of preserving it. First parity check passed; original caller received an empty dictionary and rejected scoring. No formal/training scorer was modified."
+    },
+    {
+      "name": "v24_shared_replay_early_verified",
+      "status": "completed",
+      "change": "Use existing label_token_logprobs_out dictionary when provided; run eight already evaluated development requests.",
+      "queries": 8,
+      "max_token_error": 0.0,
+      "max_mean_score_error": 4.768098733620718e-07
+    }
+  ],
+  "formal_results_affected": false,
+  "old_source_files_changed": false
+}

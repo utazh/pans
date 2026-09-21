@@ -1,0 +1,50 @@
+{
+  "kind": "score",
+  "status": "completed",
+  "args": [
+    "--model-path",
+    "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "--store-root",
+    "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "--task",
+    "trec",
+    "--teacher-fit",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_fit",
+    "--teacher-val",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_val",
+    "--plan",
+    "/home/panzihang/src/prism_layerkv/configs/v24_ladder/g26.json",
+    "--steps",
+    "200",
+    "--eval-every",
+    "25",
+    "--seed",
+    "25",
+    "--device",
+    "cuda",
+    "--output",
+    "/home/panzihang/src/prism_layerkv/assets/v24_score_g26_s25/trec.pt"
+  ],
+  "initial_reader_tensor_sha256": [
+    {
+      "A": "00d8c4f0eb3db1d4a13c031ca154175e8b52522a548b3e8fbf4bf841fffde3b4",
+      "B": "fb41ce29f2603a4e10734afa06bcefcaabb6b8b1d460791a52bc43039564e149",
+      "bk": "7b56f7899024c10a16961234c503ec9dc62617a32f253d078c15e7b91a9e2ebe",
+      "bv": "735c2dcd7e4862255d1dcefa28a24a25e0b481ac59a1a965d41a53203aa359b5"
+    },
+    {
+      "A": "9f36f5ef14c1c362e0fb1e03343f40b0a11216d1345eef5b8cadb175b2b669b7",
+      "B": "aee4c5b7877d4c37190e9fdc18a35c7275d98a91b30e9e71d6d786ef9ea9b0f5",
+      "bk": "3515a4b8b6bd9eb9a47e6de1f158720deb2b7f5c787d48279393fd5c4b2b4c27",
+      "bv": "0115aef82b03fd55712a8a0a00cb3da61dd9b931ccb07153a2a6e955e44cacec"
+    }
+  ],
+  "forward_calls_including_validation": {
+    "branch_no_grad": 5424,
+    "branch_grad": 1200
+  },
+  "wall_seconds_total_including_load": 398.87872391496785,
+  "cuda_peak_allocated": 15745202688,
+  "cuda_peak_reserved": 15802040320,
+  "checkpoint_backward_recomputation_not_in_top_level_forward_count": true
+}

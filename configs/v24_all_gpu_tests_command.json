@@ -1,0 +1,9 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-m",
+  "pytest",
+  "-q",
+  "tests",
+  "-p",
+  "no:cacheprovider"
+]

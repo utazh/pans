@@ -1,0 +1,5 @@
+{
+  "restored_v23_sha256": "76190542fbffbc671462619ab7ae8cc17342d72bc0ed590d4eff3bbf03da2637",
+  "v24_records_moved": 2,
+  "reason": "Initial capture used old suite telemetry path; restored old log exactly from verified archive. New v24 suite writes separate telemetry."
+}

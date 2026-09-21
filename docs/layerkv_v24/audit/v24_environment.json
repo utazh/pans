@@ -1,0 +1,25 @@
+{
+  "time": 1789980273.863777,
+  "python": "3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-161-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "torch": "2.10.0+cu130",
+    "transformers": "4.57.6",
+    "vllm": "0.19.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pytest": "9.0.3"
+  },
+  "gpu": "0, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB, 00000000:31:00.0\n1, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB, 00000000:4B:00.0\n2, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB, 00000000:B1:00.0\n3, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB, 00000000:CA:00.0\n",
+  "storage": "NAME   ROTA MODEL              SIZE\nloop0     0                      4K\nloop1     0                     74M\nloop2     0                   63.8M\nloop3     0                   66.8M\nloop4     0                   63.8M\nloop5     0                  261.3M\nloop6     0                     74M\nloop7     0                    1.9M\nloop8     0                   66.8M\nloop9     0                    1.9M\nloop11    0                  531.4M\nloop12    0                  531.5M\nloop13    0                  606.1M\nloop14    0                  614.5M\nloop15    0                   91.7M\nloop16    0                  115.3M\nloop17    0                  115.3M\nloop18    0                    395M\nloop19    0                    402M\nloop20    0                  260.8M\nloop21    0                   50.1M\nloop22    0                   50.3M\nsda       0 INTEL SSDSC2KB96 894.3G\nsdb       1 WUH721816ALE6L4   14.6T\nsdc       1 WUH721816ALE6L4   14.6T\n",
+  "experiment_gpus": [
+    2,
+    3
+  ],
+  "other_gpus_not_managed": [
+    0,
+    1
+  ],
+  "isolated_dependency_root": "/home/panzihang/src/prism_layerkv/runtime_deps_v24",
+  "formal_runs_sequential": true
+}

@@ -1,0 +1,32 @@
+{
+  "reason": "Warm-to-cold mixed suite retained old Pcache mmap references; strict mincore rejected first trial. No accepted cold timing exists. Restart cold arms in fresh processes, each with the original warmup and unchanged ColdController.",
+  "rejected_mappings": 19928,
+  "rejected_resident_pages": 7884,
+  "target_pages": 69160,
+  "preserved_failed_artifacts": [
+    [
+      "/home/panzihang/src/prism_layerkv/results/v24_time_native_b0_identity",
+      "/home/panzihang/src/prism_layerkv/results/v24_rejected_warm_to_cold_b0_identity"
+    ],
+    [
+      "/home/panzihang/src/prism_layerkv/results/v24_time_native_b0_identity.cold.jsonl",
+      "/home/panzihang/src/prism_layerkv/results/v24_rejected_warm_to_cold_b0_identity.cold.jsonl"
+    ],
+    [
+      "/home/panzihang/src/prism_layerkv/results/v24_time_native_b0_identity.extra.jsonl",
+      "/home/panzihang/src/prism_layerkv/results/v24_rejected_warm_to_cold_b0_identity.extra.jsonl"
+    ],
+    [
+      "/home/panzihang/src/prism_layerkv/results/v24_time_native_b0_identity.extra.jsonl.context.json",
+      "/home/panzihang/src/prism_layerkv/results/v24_rejected_warm_to_cold_b0_identity.extra.jsonl.context.json"
+    ],
+    [
+      "/home/panzihang/src/prism_layerkv/results/v24_time_native_b0_identity.extra.jsonl.v21.jsonl",
+      "/home/panzihang/src/prism_layerkv/results/v24_rejected_warm_to_cold_b0_identity.extra.jsonl.v21.jsonl"
+    ]
+  ],
+  "cold_algorithm_changed": false,
+  "formal_warm_runs_preserved": true,
+  "fresh_process_probe_passed": true,
+  "probe_requests": 2
+}
