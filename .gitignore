@@ -54,3 +54,9 @@ runtime_deps_plot/
 !docs/layerkv_v24/results/*.csv
 runtime_deps_v24/
 publish_v24/
+
+# Curated v2.5 publication evidence.
+!docs/layerkv_v25/results/
+!docs/layerkv_v25/results/*.json
+!docs/layerkv_v25/results/*.csv
+publish_v25/

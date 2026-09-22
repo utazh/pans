@@ -1,0 +1,1973 @@
+{
+  "all_passed": true,
+  "prior_files_checked": 4025,
+  "changed_prior_files": [],
+  "original_files_modified": [],
+  "physical_runtime": {
+    "v25_bridge_v25_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_bridge_v25_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_contract_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_contract_preflight.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_contract_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_contract_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g14_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g14_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g16_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g16_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g20_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g20_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g22_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g22_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g24_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g24_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g26_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_g26_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_dev_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 768,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r0_s25.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r0_s26.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r4_s25.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_g16_r4_s26.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 1536,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_parity_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_final_parity_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_native_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_native_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_preserve_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_preserve_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_warm_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_nsys_warm_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_viz_native_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_viz_native_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_viz_warm_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_profile_viz_warm_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_native_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_native_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_native_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_preserve_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_preserve_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_restore_preserve_shared.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 12,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_smoke_r4_online_parity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 8,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g14_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g14_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r0_s25.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r0_s26.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r4_s25.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g16_r4_s26.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g20_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g20_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g22_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g22_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g24_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g24_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g26_r0_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_g26_r4_s24.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_test500_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 500,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b0_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b0_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b0_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b1_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b1_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b1_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b2_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b2_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b2_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b3_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b3_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_native_b3_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g14_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g14_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g20_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g20_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g22_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g22_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g24_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g24_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g26_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_g26_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b0_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g14_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g14_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g20_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g20_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g22_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g22_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g24_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g24_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g26_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_g26_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b1_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b2_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b2_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b2_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b3_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b3_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_preserve_b3_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 24,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b0_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b0_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b0_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b1_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b1_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b1_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b2_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b2_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b2_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b3_g16_r0.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b3_g16_r4.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    },
+    "v25_time_warm_b3_identity.extra.jsonl.v25.jsonl": {
+      "requests_including_warmup": 40,
+      "base_plus_repair_accounting_verified": true,
+      "distinct_native_buffers_and_shared_sources": true
+    }
+  },
+  "scoring": {
+    "v25_bridge_v24_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_bridge_v24_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_bridge_v25_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_bridge_v25_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_contract_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_contract_preflight": {
+      "n": 1,
+      "all_task_scores_consistent": true
+    },
+    "v25_contract_r0": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_contract_r4": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g14_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g14_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g16_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g16_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g20_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g20_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g22_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g22_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g24_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g24_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g26_r0_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_g26_r4_s24": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_dev_identity": {
+      "n": 768,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r0_s24": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r0_s25": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r0_s26": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r4_s24": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r4_s25": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_g16_r4_s26": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_identity": {
+      "n": 1536,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_parity_r0": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_final_parity_r4": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_native_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_native_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_preserve_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_preserve_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_warm_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_nsys_warm_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_viz_native_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_viz_native_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_viz_warm_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_profile_viz_warm_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_native_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_native_r0": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_native_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_preserve_identity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_preserve_r0": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_restore_preserve_shared": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_smoke_r4_online_parity": {
+      "n": 8,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g14_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g14_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r0_s25": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r0_s26": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r4_s25": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g16_r4_s26": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g20_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g20_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g22_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g22_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g24_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g24_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g26_r0_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_g26_r4_s24": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_test500_identity": {
+      "n": 500,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b0_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b0_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b0_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b1_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b1_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b1_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b2_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b2_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b2_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b3_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b3_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_native_b3_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g14_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g14_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g20_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g20_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g22_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g22_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g24_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g24_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g26_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_g26_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b0_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g14_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g14_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g20_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g20_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g22_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g22_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g24_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g24_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g26_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_g26_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b1_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b2_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b2_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b2_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b3_g16_r0": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b3_g16_r4": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_preserve_b3_identity": {
+      "n": 16,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b0_g16_r0": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b0_g16_r4": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b0_identity": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b1_g16_r0": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b1_g16_r4": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b1_identity": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b2_g16_r0": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b2_g16_r4": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b2_identity": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b3_g16_r0": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b3_g16_r4": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    },
+    "v25_time_warm_b3_identity": {
+      "n": 32,
+      "all_task_scores_consistent": true
+    }
+  },
+  "bundles": {
+    "v25_g14_r0_s24": {
+      "G": 14,
+      "R": 0,
+      "consumers": 14,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g14_r4_s24": {
+      "G": 14,
+      "R": 4,
+      "consumers": 14,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r0_s24": {
+      "G": 16,
+      "R": 0,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r0_s25": {
+      "G": 16,
+      "R": 0,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r0_s26": {
+      "G": 16,
+      "R": 0,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r4_s24": {
+      "G": 16,
+      "R": 4,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r4_s25": {
+      "G": 16,
+      "R": 4,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g16_r4_s26": {
+      "G": 16,
+      "R": 4,
+      "consumers": 12,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g20_r0_s24": {
+      "G": 20,
+      "R": 0,
+      "consumers": 8,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g20_r4_s24": {
+      "G": 20,
+      "R": 4,
+      "consumers": 8,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g22_r0_s24": {
+      "G": 22,
+      "R": 0,
+      "consumers": 6,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g22_r4_s24": {
+      "G": 22,
+      "R": 4,
+      "consumers": 6,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g24_r0_s24": {
+      "G": 24,
+      "R": 0,
+      "consumers": 4,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g24_r4_s24": {
+      "G": 24,
+      "R": 4,
+      "consumers": 4,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g26_r0_s24": {
+      "G": 26,
+      "R": 0,
+      "consumers": 2,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_g26_r4_s24": {
+      "G": 26,
+      "R": 4,
+      "consumers": 2,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    },
+    "v25_smoke_g24_r4": {
+      "G": 24,
+      "R": 4,
+      "consumers": 4,
+      "calibration_queries": 128,
+      "diagnostic_only": true
+    }
+  },
+  "initializations": {
+    "26": {
+      "R0_R4_exact_same_initialization": true
+    },
+    "24": {
+      "R0_R4_exact_same_initialization": true
+    },
+    "22": {
+      "R0_R4_exact_same_initialization": true
+    },
+    "20": {
+      "R0_R4_exact_same_initialization": true
+    },
+    "16": {
+      "R0_R4_exact_same_initialization": true
+    },
+    "14": {
+      "R0_R4_exact_same_initialization": true
+    }
+  },
+  "actual_contracts": {
+    "identity": {
+      "n": 8,
+      "max_private_growth": 15,
+      "decoder_calls": 93,
+      "all_passed": true
+    },
+    "r0": {
+      "n": 8,
+      "max_private_growth": 15,
+      "decoder_calls": 152,
+      "all_passed": true
+    },
+    "r4": {
+      "n": 8,
+      "max_private_growth": 15,
+      "decoder_calls": 152,
+      "all_passed": true
+    }
+  },
+  "widest_G14_R4_preflight": {
+    "query_hash": "ff1e493276b4aec5f296725d6c9590039abe287fa9dc96d1e1b420d093487622",
+    "query_tokens": 44,
+    "max_tokens": 16,
+    "sources": [
+      0,
+      2,
+      2,
+      2,
+      4,
+      6,
+      6,
+      6,
+      8,
+      10,
+      10,
+      10,
+      12,
+      14,
+      14,
+      14,
+      16,
+      18,
+      18,
+      18,
+      20,
+      22,
+      22,
+      22,
+      24,
+      26,
+      26,
+      26
+    ],
+    "layer_calls": 532,
+    "decoder_calls": 19,
+    "max_private_growth": 15,
+    "verified_backend_source_view_calls": 532,
+    "admissions": [
+      {
+        "layer": 0,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 2,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 1,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 3,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 4,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 6,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 5,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 7,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 8,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 10,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 9,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 11,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 12,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 14,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 13,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 15,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 16,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 18,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 17,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 19,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 20,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 22,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 21,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 23,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 24,
+        "tokens": 1244,
+        "consumer": false
+      },
+      {
+        "layer": 26,
+        "tokens": 1228,
+        "consumer": false
+      },
+      {
+        "layer": 25,
+        "tokens": 60,
+        "consumer": true
+      },
+      {
+        "layer": 27,
+        "tokens": 60,
+        "consumer": true
+      }
+    ],
+    "native_policy": {
+      "blocks": 4,
+      "chunk_size": 16,
+      "rule": "last_selected_blocks"
+    },
+    "native_values_checked": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+    ],
+    "all_28_private": true,
+    "support_partition_exact": true,
+    "native_values_equal_stored_layer": true,
+    "all_backend_prefixes_source_views": true,
+    "cache_admission_only_native_repairs": true,
+    "formal_timing_eligible": false
+  },
+  "shared_scorer_replay_parity": {
+    "0": {
+      "n": 8,
+      "max_token_error": 0.0,
+      "max_mean_score_error": 4.7497451305389404e-07
+    },
+    "4": {
+      "n": 8,
+      "max_token_error": 0.0,
+      "max_mean_score_error": 4.470348358154297e-07
+    }
+  },
+  "profiler_completeness": {
+    "nsight_variants": [
+      "nsys_native_identity",
+      "nsys_native_shared",
+      "nsys_preserve_identity",
+      "nsys_preserve_shared",
+      "nsys_warm_identity",
+      "nsys_warm_shared"
+    ],
+    "viztracer": {
+      "native_identity": {
+        "requests": 8,
+        "overflow": false
+      },
+      "native_shared": {
+        "requests": 8,
+        "overflow": false
+      },
+      "warm_identity": {
+        "requests": 8,
+        "overflow": false
+      },
+      "warm_shared": {
+        "requests": 8,
+        "overflow": false
+      }
+    }
+  },
+  "selector": {
+    "v25_bridge_v24_identity.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_bridge_v24_shared.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_bridge_v25_identity.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_bridge_v25_shared.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_contract_identity.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_contract_preflight.extra.jsonl.v21.jsonl": {
+      "n": 1,
+      "four_P8_selector_calls": true
+    },
+    "v25_contract_r0.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_contract_r4.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g14_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g14_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g16_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g16_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g20_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g20_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g22_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g22_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g24_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g24_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g26_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_g26_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_dev_identity.extra.jsonl.v21.jsonl": {
+      "n": 768,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r0_s25.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r0_s26.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r4_s25.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_g16_r4_s26.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_identity.extra.jsonl.v21.jsonl": {
+      "n": 1536,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_parity_r0.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_final_parity_r4.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_native_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_native_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_preserve_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_preserve_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_warm_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_nsys_warm_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_viz_native_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_viz_native_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_viz_warm_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_profile_viz_warm_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_native_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_native_r0.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_native_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_preserve_identity.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_preserve_r0.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_restore_preserve_shared.extra.jsonl.v21.jsonl": {
+      "n": 12,
+      "four_P8_selector_calls": true
+    },
+    "v25_smoke_r4_online_parity.extra.jsonl.v21.jsonl": {
+      "n": 8,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g14_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g14_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r0_s25.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r0_s26.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r4_s25.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g16_r4_s26.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g20_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g20_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g22_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g22_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g24_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g24_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g26_r0_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_g26_r4_s24.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_test500_identity.extra.jsonl.v21.jsonl": {
+      "n": 500,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b0_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b0_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b0_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b1_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b1_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b1_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b2_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b2_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b2_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b3_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b3_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_native_b3_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g14_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g14_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g20_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g20_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g22_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g22_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g24_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g24_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g26_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_g26_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b0_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g14_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g14_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g20_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g20_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g22_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g22_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g24_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g24_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g26_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_g26_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b1_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b2_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b2_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b2_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b3_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b3_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_preserve_b3_identity.extra.jsonl.v21.jsonl": {
+      "n": 24,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b0_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b0_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b0_identity.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b1_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b1_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b1_identity.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b2_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b2_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b2_identity.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b3_g16_r0.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b3_g16_r4.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    },
+    "v25_time_warm_b3_identity.extra.jsonl.v21.jsonl": {
+      "n": 40,
+      "four_P8_selector_calls": true
+    }
+  },
+  "final_no_calibration_overlap": true,
+  "frozen_checkpoints_unchanged": true
+}

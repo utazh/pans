@@ -1,0 +1,16 @@
+{
+  "2": {
+    "root": "/home/panzihang/src/prism_layerkv/runtime_data/v25_pcache_gpu2",
+    "files": 67313,
+    "bytes": 1649270954,
+    "independent_inodes": true,
+    "fsync_complete": true
+  },
+  "3": {
+    "root": "/home/panzihang/src/prism_layerkv/runtime_data/v25_pcache_gpu3",
+    "files": 67313,
+    "bytes": 1649270954,
+    "independent_inodes": true,
+    "fsync_complete": true
+  }
+}

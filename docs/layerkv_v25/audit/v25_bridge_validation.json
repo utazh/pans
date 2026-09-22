@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "queries": 8,
+    "max_first_token_full_vocab_logit_error": 0.0,
+    "max_continuation_token_score_error": 0.0,
+    "selection_hash_exact": true
+  },
+  "shared": {
+    "queries": 8,
+    "max_first_token_full_vocab_logit_error": 0.0,
+    "max_continuation_token_score_error": 0.0,
+    "selection_hash_exact": true
+  },
+  "r4_online_replay": {
+    "queries": 8,
+    "max_token_error": 0.0,
+    "max_mean_score_error": 4.766461643157527e-07
+  }
+}

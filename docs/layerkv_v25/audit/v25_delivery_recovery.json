@@ -1,0 +1,9 @@
+{
+  "time": 1790015748.15374,
+  "cause": "Report generator was edited while the first archive snapshot was being formed; per-member SHA validation rejected that archive. Experiment data and checkpoints passed independent invariant validation.",
+  "rejected_archive": {
+    "sha256": "afc98c88758689f5b2236b2380b82e91cc454bf2f111325a00870bf220a7c4e3",
+    "bytes": 84948962
+  },
+  "action": "Remove only generated rejected v25 archive; regenerate final report and build a new frozen archive. Final completion is attested by audit/v25_archive_validation.json."
+}

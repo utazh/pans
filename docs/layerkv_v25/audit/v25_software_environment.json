@@ -1,0 +1,51 @@
+{
+  "python": "3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]",
+  "executable": "/home/panzihang/venvs/vllm-stable/bin/python",
+  "platform": "Linux-5.15.0-161-generic-x86_64-with-glibc2.35",
+  "packages": {
+    "torch": {
+      "version": "2.10.0+cu130",
+      "location": "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+    },
+    "vllm": {
+      "version": "0.19.0",
+      "location": "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+    },
+    "transformers": {
+      "version": "4.57.6",
+      "location": "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+    },
+    "numpy": {
+      "version": "2.2.6",
+      "location": "/home/panzihang/src/prism_layerkv/runtime_deps_plot"
+    },
+    "scipy": {
+      "version": "1.15.3",
+      "location": "/home/panzihang/src/prism_layerkv/runtime_deps_v24"
+    },
+    "viztracer": {
+      "version": "1.1.1",
+      "location": "/home/panzihang/src/prism_layerkv/runtime_deps"
+    },
+    "pytest": {
+      "version": "9.0.3",
+      "location": "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+    },
+    "safetensors": {
+      "version": "0.8.0",
+      "location": "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+    },
+    "matplotlib": {
+      "version": "3.10.9",
+      "location": "/home/panzihang/src/prism_layerkv/runtime_deps_plot"
+    }
+  },
+  "experiment_pythonpath": "src:runtime_deps_v24",
+  "profile_plot_pythonpath": "src:runtime_deps_v24:runtime_deps_plot:runtime_deps",
+  "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+  "required_external_server_data": [
+    "runtime_data/prefix_store",
+    "assets/selector_index_k4_g32"
+  ],
+  "nsight_binary": "runtime_tools/nsight-2025.5.1/opt/nvidia/nsight-systems-cli/2025.5.1/target-linux-x64/nsys"
+}

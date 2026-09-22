@@ -1,0 +1,162 @@
+[
+  {
+    "path": "profiles/v25/nsys_native_identity/command.json",
+    "bytes": 1223
+  },
+  {
+    "path": "profiles/v25/nsys_native_identity/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_native_identity.nsys-rep",
+    "bytes": 34103720
+  },
+  {
+    "path": "profiles/v25/nsys_native_identity.sqlite",
+    "bytes": 137162752
+  },
+  {
+    "path": "profiles/v25/nsys_native_shared/command.json",
+    "bytes": 1341
+  },
+  {
+    "path": "profiles/v25/nsys_native_shared/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_native_shared.nsys-rep",
+    "bytes": 32442004
+  },
+  {
+    "path": "profiles/v25/nsys_native_shared.sqlite",
+    "bytes": 127717376
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_identity/command.json",
+    "bytes": 1231
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_identity/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_identity.nsys-rep",
+    "bytes": 34774213
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_identity.sqlite",
+    "bytes": 132911104
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_shared/command.json",
+    "bytes": 1349
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_shared/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_shared.nsys-rep",
+    "bytes": 29315200
+  },
+  {
+    "path": "profiles/v25/nsys_preserve_shared.sqlite",
+    "bytes": 115875840
+  },
+  {
+    "path": "profiles/v25/nsys_warm_identity/command.json",
+    "bytes": 947
+  },
+  {
+    "path": "profiles/v25/nsys_warm_identity/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_warm_identity.nsys-rep",
+    "bytes": 4550413
+  },
+  {
+    "path": "profiles/v25/nsys_warm_identity.sqlite",
+    "bytes": 13611008
+  },
+  {
+    "path": "profiles/v25/nsys_warm_shared/command.json",
+    "bytes": 1067
+  },
+  {
+    "path": "profiles/v25/nsys_warm_shared/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/nsys_warm_shared.nsys-rep",
+    "bytes": 4432601
+  },
+  {
+    "path": "profiles/v25/nsys_warm_shared.sqlite",
+    "bytes": 12189696
+  },
+  {
+    "path": "profiles/v25/viztracer_native_identity/command.json",
+    "bytes": 1224
+  },
+  {
+    "path": "profiles/v25/viztracer_native_identity/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/viztracer_native_identity/validated.json",
+    "bytes": 128
+  },
+  {
+    "path": "profiles/v25/viztracer_native_identity/viztracer.json",
+    "bytes": 90908406
+  },
+  {
+    "path": "profiles/v25/viztracer_native_shared/command.json",
+    "bytes": 1342
+  },
+  {
+    "path": "profiles/v25/viztracer_native_shared/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/viztracer_native_shared/validated.json",
+    "bytes": 128
+  },
+  {
+    "path": "profiles/v25/viztracer_native_shared/viztracer.json",
+    "bytes": 59193689
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_identity/command.json",
+    "bytes": 950
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_identity/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_identity/validated.json",
+    "bytes": 127
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_identity/viztracer.json",
+    "bytes": 16536544
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_shared/command.json",
+    "bytes": 1070
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_shared/profile_requests.json",
+    "bytes": 1377
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_shared/validated.json",
+    "bytes": 127
+  },
+  {
+    "path": "profiles/v25/viztracer_warm_shared/viztracer.json",
+    "bytes": 10655679
+  }
+]

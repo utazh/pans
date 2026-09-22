@@ -1,0 +1,59 @@
+{
+  "version": "v25-server-exploration-20260925",
+  "status": "registered_before_v25_development_or_final_evaluation",
+  "scope": "Qwen2.5-7B-Instruct, fixed prefix4940, 25% exact block budget, online P8. Freeze backbone; retain per-layer query/generation KV.",
+  "grid": {
+    "G": [
+      26,
+      24,
+      22,
+      20,
+      16,
+      14
+    ],
+    "R": [
+      0,
+      4
+    ],
+    "seed": 24,
+    "steps": 200,
+    "eval_every": 25,
+    "priority": [
+      24,
+      22,
+      26,
+      20,
+      16,
+      14
+    ],
+    "initial": "assets/v24_score_g26_s24/trec.pt",
+    "loss": "Unchanged v24 score/centered/token/margin objective"
+  },
+  "exploration": "Run all legal grid points regardless of previous statistical noninferiority results; candidates remain unvalidated. Stop only failing numerical/storage contracts, not quality stop rules.",
+  "data": {
+    "fit": 64,
+    "val": 64,
+    "explore768": "Previously observed v24 dev; structure selection only.",
+    "final1536": "New unused train5500 pool holdout; exclude all earlier bundled questions/prefix examples; unopened for evaluation until selected G and checkpoints frozen.",
+    "test500": "Historically observed regression, not structural selection."
+  },
+  "selection": {
+    "rule": "Among successfully trained expanded G in [24,22,20,16,14], select smallest G where at least one R seed24 development accuracy is within 1 percentage point of contemporaneous v25 identity. This point-estimate screening is not NI certification. If none, select G24 as predefined diagnostic fallback. Retain BOTH R0 and R4 at selected G.",
+    "replicates": "Add seeds25 and26 to both R using identical frozen v24 seed24 initializer; no further selection from final1536 or test500.",
+    "primary_timing_seed": 24
+  },
+  "final_acceptance": {
+    "margin_pp": 1,
+    "paired_method": "Unchanged conservative paired benefit-minus-harm beta bound",
+    "alpha_per_R": 0.025,
+    "rule": "For each of two preselected R routes, require all three fixed seeds to meet the bound; intersection across seeds, Bonferroni across two routes. No automatic deployment. Report R4-vs-R0 descriptively; no best-seed selection."
+  },
+  "timing": {
+    "curve": "All seed24 G/R plus identity: SSD-cold/preserve, 2 repeated blocks of 16 fixed historical queries, forward/reverse arm order. Exploratory curve, no strong interval claim from only two blocks.",
+    "selected": "Selected G R0/R4 and identity receive two further preserve blocks (4 total), four native cold blocks of16, and four ordinary-cache blocks of32; balanced cyclic arm order and fresh process per arm, runtime warmup8 retained. Exact cache cold controller unchanged; R4 files included.",
+    "isolation": "No own training/evaluation concurrent with formal timing; independent server-only Pcache copies. Other pre-existing GPU jobs are not stopped.",
+    "profile": "Separate Nsight/VizTracer 8-query diagnostic captures for identity and selected R4; excluded from formal TTFT."
+  },
+  "accounting": "Use v25 total base+native repair bytes, reader resident+packed bytes separately, hardware H2D separately, all current-query KV private. No persistent SSD copies deleted, no claim total model memory reduction.",
+  "constraints": "Preserve original prism_pans and all existing implementations/results. All artifacts server-side. No 14B run: current single-GPU BF16 implementation and 24GiB GPUs cannot hold full14B weights."
+}

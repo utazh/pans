@@ -1,0 +1,15 @@
+{
+  "visual_review_passed": true,
+  "image_sha256": "6595c32e37b4090a3cbf47b30d30bb27d7004856e278513ad31bd474a5340d98",
+  "dimensions": [
+    2720,
+    1530
+  ],
+  "checks": [
+    "All six panels readable without overlap or clipped labels",
+    "R0/R4 colors and identity references consistent",
+    "Coverage, quality, resource, and TTFT values checked against final analysis",
+    "Fresh-holdout lower bounds and limited timing sample sizes labeled"
+  ],
+  "local_files_written": false
+}

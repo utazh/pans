@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "native_blocks": 4,
+  "args": [
+    "--model-path",
+    "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "--store-root",
+    "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "--task",
+    "trec",
+    "--teacher-fit",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_fit",
+    "--teacher-val",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_val",
+    "--plan",
+    "/home/panzihang/src/prism_layerkv/configs/v25_explore/g24.json",
+    "--initial",
+    "/home/panzihang/src/prism_layerkv/assets/v24_score_g26_s24/trec.pt",
+    "--steps",
+    "200",
+    "--eval-every",
+    "25",
+    "--seed",
+    "24",
+    "--device",
+    "cuda",
+    "--output",
+    "/home/panzihang/src/prism_layerkv/assets/v25_g24_r4_s24/trec.pt"
+  ],
+  "initial_reader_tensor_sha256": [
+    {
+      "A": "972ebec2bc2cd3e04aa5186f0f45f5c9f8309c0e7e1df793bd4d370d89d5aed6",
+      "B": "b64774dfb5c728497de1e8091dff145ae824e1568f01b51a11d0a14d3b9ec5c4",
+      "bk": "acda7fa72c195816905fe99a3d48ad420529d43950a3e828f4e1c5aae2f0c8a3",
+      "bv": "3baf10f0e4849ccb8786be338890d253b24d683e0b8a0ae9abc714a7dbc8eb4b"
+    },
+    {
+      "A": "e8d0f40e5d3fd02103e290c19ff8361859900b55a0c1cc4ce3ee133e524fd7ee",
+      "B": "36b8fb2ce086505ffaa530d366c274265afd2c557f0760f9f7965cc65c48dcff",
+      "bk": "5cd73863c5a09209c6165fab823f0b25a5bf3ccf19dd60088da18ac5cb5035c4",
+      "bv": "b371a92bec84b8ae2410eb96b0af324b14fb397e0d2ad8ae7e4a0819dc3bddd7"
+    },
+    {
+      "A": "61a540068002dba1ebb6bd6608275f4d667a6e93abf84944f77c7dd433f11dd6",
+      "B": "d9c67d40a8d487fa365c059069d52218db7b31e5fbe6753c24b8da2b3cdf1a81",
+      "bk": "43e37c50ff4e225ef011cf112a7f5b7893b4bace211cbbfb8adc40cce380e9f5",
+      "bv": "eceff3c0038fc4eb08e11b92abcbab183f6e26a8dedb3e22fc3f82eb68de1ed5"
+    },
+    {
+      "A": "7f29cfd8fcabf18430592590cc704861eae1d14e51899f92387a53ee1aa17791",
+      "B": "34b8663e19d8e227f1931511679e69ed180a46b64ae5e2d1d641ac1ea8bd4a1b",
+      "bk": "43f700f7c3e2b4ded44515e16fad6b788e4ecb79b175ef61ed2757c8adad73e9",
+      "bv": "4ebe433e064f0990cc90268cf11d3a5eb507bd367d0e1cc69c7aed1111601ed6"
+    }
+  ],
+  "forward_calls_including_validation": {
+    "branch_no_grad": 5424,
+    "branch_grad": 1200
+  },
+  "wall_seconds_total_including_load": 452.48689554887824,
+  "cuda_peak_allocated": 15755307520,
+  "cuda_peak_reserved": 15812526080,
+  "checkpoint_backward_recomputation_not_in_top_level_forward_count": true
+}

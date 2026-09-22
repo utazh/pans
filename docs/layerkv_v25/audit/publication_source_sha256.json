@@ -1,0 +1,1202 @@
+{
+  "src/contiguous_fuxian/sharedkv_v25/__init__.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/__init__.py",
+    "sha256": "f2c2854358cee1292730e96f493ea18e780066f3f14004eabf86a9f3b4bdcaff"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/attention.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/attention.py",
+    "sha256": "203484c2225576f5b2563dc58aa3faee70a83ddd1ebd846dd21ab0acbaa555a3"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/geometry.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/geometry.py",
+    "sha256": "6475148bb683c0feb878a6eb8f05120f4dd573bdee0495973d4c243b865b1da8"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/guard.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/guard.py",
+    "sha256": "1dc288561f61bf75498b6e279f0b6fea689a09014ab0adf29875f3f43d3c33eb"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/policy.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/policy.py",
+    "sha256": "fe9c97c5a5b71b1801f7d1ca09b7c6227c7ec584d19834d6e6a63223ae4865fb"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/replay.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/replay.py",
+    "sha256": "83f6267c4d5e34b12b23dfe857ed89d55d3d7c65d695bb8ebfce33c771d2c2a7"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/runtime.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/runtime.py",
+    "sha256": "f456b56b4afd9092c6308722c556f10455a38fa22b14fdbc0cdfd1173ff16c5f"
+  },
+  "src/contiguous_fuxian/sharedkv_v25/train.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v25/train.py",
+    "sha256": "ffd88182dd38e1c3e3f7ffb847102794acde1a2da228a8b7f1d0619c0edf7884"
+  },
+  "scripts/analyze_v25_nsight.py": {
+    "source": "scripts/analyze_v25_nsight.py",
+    "sha256": "a69b46e3495ac41ac1b3f49e6f618036b4192ebc924da64dd40172d0f64e8c09"
+  },
+  "scripts/analyze_v25_results.py": {
+    "source": "scripts/analyze_v25_results.py",
+    "sha256": "76f0cecc2cbe5ab6e6621da493436fe1aeafc0cddf01fd4547a9460e6cade688"
+  },
+  "scripts/analyze_v25_viz.py": {
+    "source": "scripts/analyze_v25_viz.py",
+    "sha256": "327a86c2fd86d5bb90b3d42a160529252810aeed23dab91f62c12d4a7dd75091"
+  },
+  "scripts/archive_v25.py": {
+    "source": "scripts/archive_v25.py",
+    "sha256": "4f2b0e07f5446023c08684440227cc722abaa7f38c783ccfac65ed56c50d67af"
+  },
+  "scripts/audit_v25_contracts.py": {
+    "source": "scripts/audit_v25_contracts.py",
+    "sha256": "b191928bbcb903ff3be8aab01e273ca09ddc0cb4f5c92cdadef4ad425d8810b6"
+  },
+  "scripts/audit_v25_decode.py": {
+    "source": "scripts/audit_v25_decode.py",
+    "sha256": "80f8134f7a760c8c463c49daee17153253eeb9652bcdcdcffc4f250c42eb24a0"
+  },
+  "scripts/audit_v25_restore.py": {
+    "source": "scripts/audit_v25_restore.py",
+    "sha256": "e2f71df419653ffcabf36d5334d0d7a690a826258a792536bc3e9c4752b2217a"
+  },
+  "scripts/audit_v25_shared_replay.py": {
+    "source": "scripts/audit_v25_shared_replay.py",
+    "sha256": "f7ad37cd7fcb979d6822f1c6c8f97ca40af07529af997a4ff75fca18691d2efb"
+  },
+  "scripts/check_v25_invariants.py": {
+    "source": "scripts/check_v25_invariants.py",
+    "sha256": "1dc58dacba43057902295e6ff321836380f82a0b93ff9f5ccb979eab688ac605"
+  },
+  "scripts/inspect_model_v25.py": {
+    "source": "scripts/inspect_model_v25.py",
+    "sha256": "83d6c4900d067ff6d22a6e2961e30e31f8189f3180307d16b0ad9fea4acb99ad"
+  },
+  "scripts/install_sharedkv_v25.py": {
+    "source": "scripts/install_sharedkv_v25.py",
+    "sha256": "a5364080b89c4bf1c9bad1432fa00c73b777a71d3199535d8e00385a5d10f841"
+  },
+  "scripts/plan_exploration_v25.py": {
+    "source": "scripts/plan_exploration_v25.py",
+    "sha256": "b109bfaa6771b018e27d114c7f2be25c49e81588bfb14f5d36cf4d68e09774bd"
+  },
+  "scripts/plot_v25_results.py": {
+    "source": "scripts/plot_v25_results.py",
+    "sha256": "7a566d55b92bcacefd54737f96de83e8652503ec5489d539e4ffaae6ed9689dd"
+  },
+  "scripts/prepare_v25_data.py": {
+    "source": "scripts/prepare_v25_data.py",
+    "sha256": "b3b96f95882f37493db9bfe21fecd4189ba90fa0c3635d648681d6315530e994"
+  },
+  "scripts/prepare_v25_environment.py": {
+    "source": "scripts/prepare_v25_environment.py",
+    "sha256": "227afaa8077eefdc6229e0ed39c06b8398e52e58c13b1dd71d11759964ae9051"
+  },
+  "scripts/profile_layerkv_v25.py": {
+    "source": "scripts/profile_layerkv_v25.py",
+    "sha256": "c5487aadf72e2835c87286b29487803fd636e869ea7d1b842ffe728dc8526f1f"
+  },
+  "scripts/run_layerkv_v25_suite.py": {
+    "source": "scripts/run_layerkv_v25_suite.py",
+    "sha256": "c1cf4f8294bf1c61cfe3d732786faa0e6a06308578acbe718210910e2287bf2e"
+  },
+  "scripts/run_native_prefix_v25.py": {
+    "source": "scripts/run_native_prefix_v25.py",
+    "sha256": "a0038e45d8a36a2ace62b6b280d4f9bb9e06a0f00ca49eedb16e5144f79059a2"
+  },
+  "scripts/run_v25_delivery_wait.py": {
+    "source": "scripts/run_v25_delivery_wait.py",
+    "sha256": "a43b4a8d196083813c0ab7e788bbe3538a2cb2e0e225b4b68d556ad218fd98ff"
+  },
+  "scripts/run_v25_diagnostics_wait.py": {
+    "source": "scripts/run_v25_diagnostics_wait.py",
+    "sha256": "f88085772ee5d4f51050121f7e7be07cb7180ac6eec81118981264d1e0d7333d"
+  },
+  "scripts/run_v25_experiment_pipeline.py": {
+    "source": "scripts/run_v25_experiment_pipeline.py",
+    "sha256": "bb85d8ae7f4dee9b34cab265d7815f2b34e438c2f9f3b6859a4dbac4431d30ba"
+  },
+  "scripts/run_v25_timing.py": {
+    "source": "scripts/run_v25_timing.py",
+    "sha256": "5a672b79fd2b4add54092693b94fc037f5ffb54afad4a3130fa62b13d1af512a"
+  },
+  "scripts/start_v25_grid_when_verified.py": {
+    "source": "scripts/start_v25_grid_when_verified.py",
+    "sha256": "8614279e3bbdbac608e766259622ed8895c243b5170d4c5384ce0dc3653e5a83"
+  },
+  "scripts/train_instrumented_v25.py": {
+    "source": "scripts/train_instrumented_v25.py",
+    "sha256": "adc41e24268787415c3a95af4ed3b75a578a12582742bdd33f2611a5b818f7fb"
+  },
+  "scripts/train_native_prefix_v25.py": {
+    "source": "scripts/train_native_prefix_v25.py",
+    "sha256": "5551891efee98862a402cdd7a05328f76c006f5efd364ca83e0e70cdbbb91d8c"
+  },
+  "scripts/train_v25_grid_worker.py": {
+    "source": "scripts/train_v25_grid_worker.py",
+    "sha256": "ee403895ee305ae972a77572350b4e6e255c76be5ad7c79f1193d636771867ce"
+  },
+  "scripts/train_v25_replicates.py": {
+    "source": "scripts/train_v25_replicates.py",
+    "sha256": "5d6bc6b2537cdecc02ee1d50394df238683ce7f9404a22caa08071593284880c"
+  },
+  "scripts/v25_common.py": {
+    "source": "scripts/v25_common.py",
+    "sha256": "ab3382de02c52183298a97ff397dd9a08cf6a7d82cabe6ed118bd3a2aa868f6c"
+  },
+  "scripts/v25_environment.py": {
+    "source": "scripts/v25_environment.py",
+    "sha256": "2d7021861e9122b283d71c443dde1151de809be1b74d40989f144e02935f6d1e"
+  },
+  "scripts/verify_v25_bridge.py": {
+    "source": "scripts/verify_v25_bridge.py",
+    "sha256": "2acea0e9ab6bb0eba806ab592bd5906d418414fc662d5363ecb328cdf3e50f5d"
+  },
+  "scripts/write_v25_report.py": {
+    "source": "scripts/write_v25_report.py",
+    "sha256": "d877106058283f0e1b6d5d62facae14453012f1473753cbc28b2b1dbfa8a33db"
+  },
+  "tests/test_sharedkv_v25.py": {
+    "source": "tests/test_sharedkv_v25.py",
+    "sha256": "2adc8345bd7da15d0f399fcdff4a6d02bc835b0c347537b0ddd3409682a66bad"
+  },
+  "configs/v25_all_gpu_tests_command.json": {
+    "source": "configs/v25_all_gpu_tests_command.json",
+    "sha256": "5a74b8b84f91368f49ad5e85465fddb68205bd923f345385ee8101aebba09471"
+  },
+  "configs/v25_bridge_jobs.json": {
+    "source": "configs/v25_bridge_jobs.json",
+    "sha256": "0bd73496a18ce2e8c5a6b07d584753d40f0a5f6f9db71b1079d88ac579e79213"
+  },
+  "configs/v25_contract_identity_command.json": {
+    "source": "configs/v25_contract_identity_command.json",
+    "sha256": "d7614acf1dfc28edde45378cf4fef3e7e941cd38e7196123822ec216103615e5"
+  },
+  "configs/v25_contract_preflight_command.json": {
+    "source": "configs/v25_contract_preflight_command.json",
+    "sha256": "184ee157d399a872cd7b0dbc14bedb6d70e7f41815867cb6df7b621da8f7a9b1"
+  },
+  "configs/v25_contract_r0_command.json": {
+    "source": "configs/v25_contract_r0_command.json",
+    "sha256": "76ac98ed1b59ce692fdfc28be6d37c2aacf4ea1f494af22ddb8e0af8c8cb6d69"
+  },
+  "configs/v25_contract_r4_command.json": {
+    "source": "configs/v25_contract_r4_command.json",
+    "sha256": "2f8b4dcf4846952f4f09d7c72a33dc8e7065d418c0ea08f43bb62991c5dc17e1"
+  },
+  "configs/v25_development_r0_command.json": {
+    "source": "configs/v25_development_r0_command.json",
+    "sha256": "3b97b07f1433a4cb01609aeb1097d1b41970dd641254d8114786908dcc8b53c1"
+  },
+  "configs/v25_development_r0_jobs.json": {
+    "source": "configs/v25_development_r0_jobs.json",
+    "sha256": "600b6484c392a584b3a8d74a2bc80e48d2c8a3775c44e2a086a407c47631d0c4"
+  },
+  "configs/v25_development_r4_command.json": {
+    "source": "configs/v25_development_r4_command.json",
+    "sha256": "11776b65ac0903a8a54362eb5b1286743179f576ba4ddee370244b8b65377903"
+  },
+  "configs/v25_development_r4_jobs.json": {
+    "source": "configs/v25_development_r4_jobs.json",
+    "sha256": "d4abec3e70a8cdaa56323fd45d09d0ca632fed697757fdbe3318fa90830823e1"
+  },
+  "configs/v25_final_parity_r0_command.json": {
+    "source": "configs/v25_final_parity_r0_command.json",
+    "sha256": "b77c9381b4a3325609ca5ed2c7b029bec9d3b6ef15f709fcb8e1051370cfa98b"
+  },
+  "configs/v25_final_parity_r4_command.json": {
+    "source": "configs/v25_final_parity_r4_command.json",
+    "sha256": "099677a1b82c8e25ce16418262574b4091d072b3c3d477f100666b73f3c4e350"
+  },
+  "configs/v25_final_quality_r0_command.json": {
+    "source": "configs/v25_final_quality_r0_command.json",
+    "sha256": "35a032b108fba3c7733d1ab3377404178c0f34cb56c7be0d5bc16eec2a1ae287"
+  },
+  "configs/v25_final_quality_r0_jobs.json": {
+    "source": "configs/v25_final_quality_r0_jobs.json",
+    "sha256": "79872c9635cc4fb9f9358bee340d1897e0edd02e6b3775074ea8f3bd805fa894"
+  },
+  "configs/v25_final_quality_r4_command.json": {
+    "source": "configs/v25_final_quality_r4_command.json",
+    "sha256": "bdc178ef3b58434cefbd2df7775e0dac82d06bee1fde377c27432e43e4fb3f5a"
+  },
+  "configs/v25_final_quality_r4_jobs.json": {
+    "source": "configs/v25_final_quality_r4_jobs.json",
+    "sha256": "6618d2b620cd69aec626650e58c4708b0e92bd754d40e6ea57e47f478d3deec5"
+  },
+  "configs/v25_formal_timing_driver_command.json": {
+    "source": "configs/v25_formal_timing_driver_command.json",
+    "sha256": "d8a414b003199390a06b00b00e593cbc0b64300e0a279480b9688369b7293334"
+  },
+  "configs/v25_g14_r0_s24_command.json": {
+    "source": "configs/v25_g14_r0_s24_command.json",
+    "sha256": "472d52d23b251e794b76c0bc3ed7fe26532ecc1228f97d4916ded3570e15aa79"
+  },
+  "configs/v25_g14_r4_s24_command.json": {
+    "source": "configs/v25_g14_r4_s24_command.json",
+    "sha256": "8329a064d72265153ee66a359fc9bc6372477b7fc2389328dc4c4f12296883fd"
+  },
+  "configs/v25_g16_r0_s24_command.json": {
+    "source": "configs/v25_g16_r0_s24_command.json",
+    "sha256": "077f07c0d62773af5cda535de36334bd00ac6e1c0d4616aea930660115ddd7ee"
+  },
+  "configs/v25_g16_r0_s25_command.json": {
+    "source": "configs/v25_g16_r0_s25_command.json",
+    "sha256": "7fbc40f3f20e4d7d6fff792c5e303fd93e4b5c863aa9ceb5cdaefa08fd46c68f"
+  },
+  "configs/v25_g16_r0_s26_command.json": {
+    "source": "configs/v25_g16_r0_s26_command.json",
+    "sha256": "46a3c5c1779897ce8da4b9ecf6c220140feca13ff984ebdfdc26c6498cc09ea4"
+  },
+  "configs/v25_g16_r4_s24_command.json": {
+    "source": "configs/v25_g16_r4_s24_command.json",
+    "sha256": "a7d5468cdf5ac6f5683803a0b0aa315881c7dc1ef9160eff61627fec93955791"
+  },
+  "configs/v25_g16_r4_s25_command.json": {
+    "source": "configs/v25_g16_r4_s25_command.json",
+    "sha256": "6e573816eeae438abe24a3f54c87ba119fbeb2c921c12f797f2963b4ae1796eb"
+  },
+  "configs/v25_g16_r4_s26_command.json": {
+    "source": "configs/v25_g16_r4_s26_command.json",
+    "sha256": "db8008eb8b0c216a6b9f52ea2c705df8f77c608e97e80ad2a5b3c882b171cbb5"
+  },
+  "configs/v25_g20_r0_s24_command.json": {
+    "source": "configs/v25_g20_r0_s24_command.json",
+    "sha256": "a787b648bfd775524d8794b74ad56a5ed9597aed5a6e223f1121593c3015cc97"
+  },
+  "configs/v25_g20_r4_s24_command.json": {
+    "source": "configs/v25_g20_r4_s24_command.json",
+    "sha256": "1f5aba62d5ebe3de51697d29e616e55d4a467dbf9a6ea1ca2c72b488e11c051b"
+  },
+  "configs/v25_g22_r0_s24_command.json": {
+    "source": "configs/v25_g22_r0_s24_command.json",
+    "sha256": "4e93a89ab173272930d380489afc18ff6d9be324d00b34c0f8af894dc24d0211"
+  },
+  "configs/v25_g22_r4_s24_command.json": {
+    "source": "configs/v25_g22_r4_s24_command.json",
+    "sha256": "ef16e9c5ce31e663e5425e0468c6c5c31d460b15b9ad9c957f1c7be2e2584ed6"
+  },
+  "configs/v25_g24_r0_s24_command.json": {
+    "source": "configs/v25_g24_r0_s24_command.json",
+    "sha256": "f1081c02ef131d31439bf75b0283dac62eebd4e5233681fa96f3e5dea4cc7ab0"
+  },
+  "configs/v25_g24_r4_s24_command.json": {
+    "source": "configs/v25_g24_r4_s24_command.json",
+    "sha256": "7186c03998f6e1f9db5b815b9b9db1bbfe49f11724e36065085c3276bd6c4526"
+  },
+  "configs/v25_g26_r0_s24_command.json": {
+    "source": "configs/v25_g26_r0_s24_command.json",
+    "sha256": "6d95d6fabaf780264b8de9ca0a5d9df9f1eee7fda5dc01b6b4417eb0fea738b0"
+  },
+  "configs/v25_g26_r4_s24_command.json": {
+    "source": "configs/v25_g26_r4_s24_command.json",
+    "sha256": "5d3a2393f0942e51ff2c25af1ea5d236e5f5019cbc1b0951f3a80ee61397fad1"
+  },
+  "configs/v25_nsight_analysis_command.json": {
+    "source": "configs/v25_nsight_analysis_command.json",
+    "sha256": "2e82ae5fdaad86eb8aa0687233cfdf9c555cd0be97bd26b0ce5f85dd58f505ca"
+  },
+  "configs/v25_profile_nsys_native_identity_command.json": {
+    "source": "configs/v25_profile_nsys_native_identity_command.json",
+    "sha256": "efafc86dadd67ffe9ec3125ed7f4947e1a4e6bccd59ed55b388a5addae039f7e"
+  },
+  "configs/v25_profile_nsys_native_shared_command.json": {
+    "source": "configs/v25_profile_nsys_native_shared_command.json",
+    "sha256": "f720279c7b39e8f947cfa09b742248ffef1347a80894fba4a0996e36f4186173"
+  },
+  "configs/v25_profile_nsys_preserve_identity_command.json": {
+    "source": "configs/v25_profile_nsys_preserve_identity_command.json",
+    "sha256": "5f8bc25dee3bf9bb9633c9b4f52010b75c3ec8678b27b7020d338a853d32f1e5"
+  },
+  "configs/v25_profile_nsys_preserve_shared_command.json": {
+    "source": "configs/v25_profile_nsys_preserve_shared_command.json",
+    "sha256": "f810a8b10ca53adea94daf17d344ee60f46f80199b11b9f63969cce989eba935"
+  },
+  "configs/v25_profile_nsys_warm_identity_command.json": {
+    "source": "configs/v25_profile_nsys_warm_identity_command.json",
+    "sha256": "405d5ec86de1a37cbc0d3a2909c95bc56239b82a659bfdcf8499981210f75aa6"
+  },
+  "configs/v25_profile_nsys_warm_shared_command.json": {
+    "source": "configs/v25_profile_nsys_warm_shared_command.json",
+    "sha256": "d6edebde56f54f6ba0c39cbd4a29d7c395f435ccb176751bd6fc19502bab2f8b"
+  },
+  "configs/v25_profile_viz_native_identity_command.json": {
+    "source": "configs/v25_profile_viz_native_identity_command.json",
+    "sha256": "72bb24625284d7577997bde10039ddb539320845bc21c26d4cbe2ee6470e91b1"
+  },
+  "configs/v25_profile_viz_native_shared_command.json": {
+    "source": "configs/v25_profile_viz_native_shared_command.json",
+    "sha256": "7f98cb83df64164d2efe42dbb415d8af824badf0db993e400cc15854f4fdfa1f"
+  },
+  "configs/v25_profile_viz_warm_identity_command.json": {
+    "source": "configs/v25_profile_viz_warm_identity_command.json",
+    "sha256": "9b4626fd3e4b4fb90305ef00c14da4b2fb3fb74db090eb5b86bce862b1451607"
+  },
+  "configs/v25_profile_viz_warm_shared_command.json": {
+    "source": "configs/v25_profile_viz_warm_shared_command.json",
+    "sha256": "fee4422ebe8948691dfff5d342863b65a5e5655286a0cdd3c61f28925287d853"
+  },
+  "configs/v25_replicates_r0_command.json": {
+    "source": "configs/v25_replicates_r0_command.json",
+    "sha256": "ed1006a6734f92465648fb4e8f216d3bfee589221b08958b97925f5446c4f31d"
+  },
+  "configs/v25_replicates_r4_command.json": {
+    "source": "configs/v25_replicates_r4_command.json",
+    "sha256": "fe82e9caee1f46ddb8fad1393a8df22684f4fa1c283bb9cd533043849df02b76"
+  },
+  "configs/v25_restore_native_identity_command.json": {
+    "source": "configs/v25_restore_native_identity_command.json",
+    "sha256": "99e9e1cfcce0e3b891d1d760e729909273edf06d4a0fb38cda87761637c0e663"
+  },
+  "configs/v25_restore_native_r0_command.json": {
+    "source": "configs/v25_restore_native_r0_command.json",
+    "sha256": "e994666cb5218128f190cf17327e9842ed012d8688dbb9a3bdd318832797ae01"
+  },
+  "configs/v25_restore_native_shared_command.json": {
+    "source": "configs/v25_restore_native_shared_command.json",
+    "sha256": "80347105a13bc32add35d563935091d0be4835b4a0cda133a3e770fb308aeb4f"
+  },
+  "configs/v25_restore_preserve_identity_command.json": {
+    "source": "configs/v25_restore_preserve_identity_command.json",
+    "sha256": "f119d866458afa69a99cdd4cf34bc2ef11b4b33cd29fd523d4e8a1045ed0eb5f"
+  },
+  "configs/v25_restore_preserve_r0_command.json": {
+    "source": "configs/v25_restore_preserve_r0_command.json",
+    "sha256": "271a0cb2c29e76f8ec38df4ed363a5e63a46d39e0fa5dbb4e1a2f315e5fd2ba8"
+  },
+  "configs/v25_restore_preserve_shared_command.json": {
+    "source": "configs/v25_restore_preserve_shared_command.json",
+    "sha256": "c27260515eb5fe84eb7e48821ba51e78a6d59325548924817c605d2fe607244f"
+  },
+  "configs/v25_smoke_g24_r4_command.json": {
+    "source": "configs/v25_smoke_g24_r4_command.json",
+    "sha256": "e55c78dca3c49d88e8b5776a8ccab0ccf2931b1807a27a6981e53e39549d9c63"
+  },
+  "configs/v25_smoke_r4_online_parity_command.json": {
+    "source": "configs/v25_smoke_r4_online_parity_command.json",
+    "sha256": "1a6f74b6ccdf4ba1e9aeebac546ced1e1d044459fba5b20bca7ddccf338fa164"
+  },
+  "configs/v25_time_native_b0_g16_r0_command.json": {
+    "source": "configs/v25_time_native_b0_g16_r0_command.json",
+    "sha256": "77e54c07cd8bea9ecd89db55cd463160bab7d64d0d97554392c329bcc309e895"
+  },
+  "configs/v25_time_native_b0_g16_r0_jobs.json": {
+    "source": "configs/v25_time_native_b0_g16_r0_jobs.json",
+    "sha256": "21e4c42a3fa32e562dc4814d29aa40118758c3491726f738e53ec40479dff378"
+  },
+  "configs/v25_time_native_b0_g16_r4_command.json": {
+    "source": "configs/v25_time_native_b0_g16_r4_command.json",
+    "sha256": "403e183308480ab7351b6c12f62f440c8dc3c5110b9091c39e44149b0cb451aa"
+  },
+  "configs/v25_time_native_b0_g16_r4_jobs.json": {
+    "source": "configs/v25_time_native_b0_g16_r4_jobs.json",
+    "sha256": "bc5de6b9e16c933d4ec3ace946cd5c1844a27a85ae4ba6e5856af10a57bc9d14"
+  },
+  "configs/v25_time_native_b0_identity_command.json": {
+    "source": "configs/v25_time_native_b0_identity_command.json",
+    "sha256": "3fde33460c931543bdc9f85f7d16ac52997fe781278c36296b57e52c94466e19"
+  },
+  "configs/v25_time_native_b0_identity_jobs.json": {
+    "source": "configs/v25_time_native_b0_identity_jobs.json",
+    "sha256": "607199cb5aafa5a36af305a792292d2dc151afd6dcece93d044521cff6367102"
+  },
+  "configs/v25_time_native_b1_g16_r0_command.json": {
+    "source": "configs/v25_time_native_b1_g16_r0_command.json",
+    "sha256": "ad74c4d11103f22e1cdd84087db5ce054ef1d876c75d7abbede2871e428df64b"
+  },
+  "configs/v25_time_native_b1_g16_r0_jobs.json": {
+    "source": "configs/v25_time_native_b1_g16_r0_jobs.json",
+    "sha256": "0160893e746b048d21c4ce45125da9c0454d82b2c243929bc1d520a16aaa713a"
+  },
+  "configs/v25_time_native_b1_g16_r4_command.json": {
+    "source": "configs/v25_time_native_b1_g16_r4_command.json",
+    "sha256": "00e88a897e17d5cb546dd185c53d6f429bb990f32d199b955ee961b5b470e7af"
+  },
+  "configs/v25_time_native_b1_g16_r4_jobs.json": {
+    "source": "configs/v25_time_native_b1_g16_r4_jobs.json",
+    "sha256": "459ef9f65ecb370eb05801366e8354dafa1cafed33c07c9a5d59759d18391a32"
+  },
+  "configs/v25_time_native_b1_identity_command.json": {
+    "source": "configs/v25_time_native_b1_identity_command.json",
+    "sha256": "ae50a5a5d35919041815152e3b13686f06027f28f6046262d0e9c84ed8a694e3"
+  },
+  "configs/v25_time_native_b1_identity_jobs.json": {
+    "source": "configs/v25_time_native_b1_identity_jobs.json",
+    "sha256": "e9dcb814d4ff824aa44a80dd67dc147d01d93f9784e75cfd7c8a0e743d4d4007"
+  },
+  "configs/v25_time_native_b2_g16_r0_command.json": {
+    "source": "configs/v25_time_native_b2_g16_r0_command.json",
+    "sha256": "2925a2ed69f9f7c75b6180bd4c73db6d6033051389c20eb795632fc9c718b4fd"
+  },
+  "configs/v25_time_native_b2_g16_r0_jobs.json": {
+    "source": "configs/v25_time_native_b2_g16_r0_jobs.json",
+    "sha256": "5dc91d807fa8a0961553f4dd211aa2c703c2bd8102ccbecdaace7f555c22e3ab"
+  },
+  "configs/v25_time_native_b2_g16_r4_command.json": {
+    "source": "configs/v25_time_native_b2_g16_r4_command.json",
+    "sha256": "9d7fc86ce445d0d58ad8eded7e99b718eae65037572d903d52118fc227111fa3"
+  },
+  "configs/v25_time_native_b2_g16_r4_jobs.json": {
+    "source": "configs/v25_time_native_b2_g16_r4_jobs.json",
+    "sha256": "3eaa7f14bfaf38f5f1f1d9b2ec444e15f2adafd4dda39c033f864b256c85f8e6"
+  },
+  "configs/v25_time_native_b2_identity_command.json": {
+    "source": "configs/v25_time_native_b2_identity_command.json",
+    "sha256": "f1b87c0a53de86846e3e23ab669d8fb269893502c14e5eafc6c7626ae67d60f1"
+  },
+  "configs/v25_time_native_b2_identity_jobs.json": {
+    "source": "configs/v25_time_native_b2_identity_jobs.json",
+    "sha256": "6e15a4ace415fcf31ea9bc3c4aa663db570f971472c5261f0eb7e6cdddef94c1"
+  },
+  "configs/v25_time_native_b3_g16_r0_command.json": {
+    "source": "configs/v25_time_native_b3_g16_r0_command.json",
+    "sha256": "2516956b1549edd60f05519d2ee8ce513c2eda57d3805811c0e1939a27524de2"
+  },
+  "configs/v25_time_native_b3_g16_r0_jobs.json": {
+    "source": "configs/v25_time_native_b3_g16_r0_jobs.json",
+    "sha256": "1633ecbc603799c262d84a81a0ce494a3942a9a392fdc105d80cd73fcdf7d9b7"
+  },
+  "configs/v25_time_native_b3_g16_r4_command.json": {
+    "source": "configs/v25_time_native_b3_g16_r4_command.json",
+    "sha256": "2c0ecb414eeaa2e096cf2b265150b3125e631365f0b3be9794955535580d97d5"
+  },
+  "configs/v25_time_native_b3_g16_r4_jobs.json": {
+    "source": "configs/v25_time_native_b3_g16_r4_jobs.json",
+    "sha256": "3665a5982de6bce2c1366d830f91276dcca27bd5342e5741aba7dffbf080da9a"
+  },
+  "configs/v25_time_native_b3_identity_command.json": {
+    "source": "configs/v25_time_native_b3_identity_command.json",
+    "sha256": "02a5adc7b37f4fce0d425112d6e377344308fcb13b2f0a1583f59b1af2ec0493"
+  },
+  "configs/v25_time_native_b3_identity_jobs.json": {
+    "source": "configs/v25_time_native_b3_identity_jobs.json",
+    "sha256": "2408deafb087dd3abe007a6ee4ec4f30ded1c4e5a332e42dffa362df7f62a07e"
+  },
+  "configs/v25_time_preserve_b0_g14_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g14_r0_command.json",
+    "sha256": "d36200a3db0e1b80b628a109e0807cd35cd3deb4d405e5e9f2cf017969d47ac1"
+  },
+  "configs/v25_time_preserve_b0_g14_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g14_r0_jobs.json",
+    "sha256": "e9d9ec2bde8358aa779e9545e1e0ff87b53bb2080170a235db8abed7215c7c8b"
+  },
+  "configs/v25_time_preserve_b0_g14_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g14_r4_command.json",
+    "sha256": "4839e3201b1bc4a4b17e75155d7d6f8eb99ae9a01688954d29cb72c696fc0f3e"
+  },
+  "configs/v25_time_preserve_b0_g14_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g14_r4_jobs.json",
+    "sha256": "422bd2626468dd5a2aebad9d472dcfdc2ed98fe9e3b728d08972af6f2b817997"
+  },
+  "configs/v25_time_preserve_b0_g16_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g16_r0_command.json",
+    "sha256": "932c1f8a211c5a1dee4d88bac13fc2e9f6d3c04bdc336db969a98186bc5db843"
+  },
+  "configs/v25_time_preserve_b0_g16_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g16_r0_jobs.json",
+    "sha256": "80b29b8e86417f7b42ba5528b157e39c1f93fd27b820e68b62957a0e782b163b"
+  },
+  "configs/v25_time_preserve_b0_g16_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g16_r4_command.json",
+    "sha256": "69ee835725b9885643007e57a331abdd2c8d9ffc860362d4f178393fad891e2f"
+  },
+  "configs/v25_time_preserve_b0_g16_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g16_r4_jobs.json",
+    "sha256": "14f6d3a04cfeb242a3baeea9691ed72ba8cfcb2283d4937f2b43440fe1fb002e"
+  },
+  "configs/v25_time_preserve_b0_g20_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g20_r0_command.json",
+    "sha256": "4c7cb2004122392a6317c7d22d42033cf054310cd38196aa02a43b5d51aad68f"
+  },
+  "configs/v25_time_preserve_b0_g20_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g20_r0_jobs.json",
+    "sha256": "6c34b15b336e03007dc26fb58d0f295c3329554fd6ff94b2ae9fc6dfd5002f0a"
+  },
+  "configs/v25_time_preserve_b0_g20_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g20_r4_command.json",
+    "sha256": "55d6c55b295ce9f7f856a4b26677a41b0ef9b15ebfa085f8b5c4c676c2a7ef26"
+  },
+  "configs/v25_time_preserve_b0_g20_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g20_r4_jobs.json",
+    "sha256": "2025a6d07431d4d6c06dfd214cc925504b43ad9f75915667567d63030d32838d"
+  },
+  "configs/v25_time_preserve_b0_g22_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g22_r0_command.json",
+    "sha256": "962be33bbf1384d88006ededdad8ad1e13d5ff643d3be7037e5389fb147128c7"
+  },
+  "configs/v25_time_preserve_b0_g22_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g22_r0_jobs.json",
+    "sha256": "d00f1a3b510e7f1f453185ed0bf6475f2b40551fd44bd8354852d3e7e9fcba19"
+  },
+  "configs/v25_time_preserve_b0_g22_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g22_r4_command.json",
+    "sha256": "1ee01730bba5621db4f336fc6b579330649f65c5fc4420a722e24dc8ddf5254b"
+  },
+  "configs/v25_time_preserve_b0_g22_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g22_r4_jobs.json",
+    "sha256": "365d6532c03b6a68b1f4be4e42bf78c6f5e2c6c70b37e817c6cb06c8518af862"
+  },
+  "configs/v25_time_preserve_b0_g24_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g24_r0_command.json",
+    "sha256": "0477f3f96564028435608896264fb7b4f27d4cc83c48106e5a7db50a302d5f9a"
+  },
+  "configs/v25_time_preserve_b0_g24_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g24_r0_jobs.json",
+    "sha256": "376be5da96364342c88a126cc99ebfa5402669b72afcfb1cb7a1cf452842c84a"
+  },
+  "configs/v25_time_preserve_b0_g24_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g24_r4_command.json",
+    "sha256": "e412bdbfddf2e0a66fb32a150ce2ffa5a91eac4d55822338eb8e2b550c2c341d"
+  },
+  "configs/v25_time_preserve_b0_g24_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g24_r4_jobs.json",
+    "sha256": "c86cc45804c6107552db53c7a4bdcacfc907ab3ffae2eb751ea18cad65a64a04"
+  },
+  "configs/v25_time_preserve_b0_g26_r0_command.json": {
+    "source": "configs/v25_time_preserve_b0_g26_r0_command.json",
+    "sha256": "e2dac32693d4229451bd6cde6cf08c82db6c62f8aaadce09a7c7122ebff64171"
+  },
+  "configs/v25_time_preserve_b0_g26_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g26_r0_jobs.json",
+    "sha256": "5942abff8a2ff02288bb08da2fc2f5faa4f9314caaf6cd4ad6398d8bfb9d66be"
+  },
+  "configs/v25_time_preserve_b0_g26_r4_command.json": {
+    "source": "configs/v25_time_preserve_b0_g26_r4_command.json",
+    "sha256": "2558dbdf48b239e6312c946a7b3814f318ec202337bc6671ddd37019ae0b0d14"
+  },
+  "configs/v25_time_preserve_b0_g26_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_g26_r4_jobs.json",
+    "sha256": "ef17182b480577bdfa3ed3f248cd4061997e95690a367000bb4df8bb95ee95a1"
+  },
+  "configs/v25_time_preserve_b0_identity_command.json": {
+    "source": "configs/v25_time_preserve_b0_identity_command.json",
+    "sha256": "63ddb94ed5c16ca3049b3dcac5f11303f3dba54be2d9a799e1f5e0db9299b716"
+  },
+  "configs/v25_time_preserve_b0_identity_jobs.json": {
+    "source": "configs/v25_time_preserve_b0_identity_jobs.json",
+    "sha256": "6b22a114746e51c07aa6a748800b2fdd573ee5f0af4576b5649614e1e5956810"
+  },
+  "configs/v25_time_preserve_b1_g14_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g14_r0_command.json",
+    "sha256": "e63b32094b905fafc8312ebdcea22be656930343c69010522fa2264ace414a05"
+  },
+  "configs/v25_time_preserve_b1_g14_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g14_r0_jobs.json",
+    "sha256": "a4c73b839aa43418eb32fadbead6727c63cfdc201046614fca71c602dacc0040"
+  },
+  "configs/v25_time_preserve_b1_g14_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g14_r4_command.json",
+    "sha256": "e06b125057ca97b666342ec36252bc48cb52dc84f24dd081f705c83ee0f5da7a"
+  },
+  "configs/v25_time_preserve_b1_g14_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g14_r4_jobs.json",
+    "sha256": "de376fea48b58549544e90576a8ebb6e1d018ce5d068c33ebd25ee381e9e201e"
+  },
+  "configs/v25_time_preserve_b1_g16_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g16_r0_command.json",
+    "sha256": "7240f5f337a78f22fd419368af9c7b4710d0f7df82a4f375bf28e7b1bdbb650f"
+  },
+  "configs/v25_time_preserve_b1_g16_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g16_r0_jobs.json",
+    "sha256": "dee1f90bef2aac5dfb40ad1660b59260decf338bae204c97e53e9c4f9e60664c"
+  },
+  "configs/v25_time_preserve_b1_g16_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g16_r4_command.json",
+    "sha256": "9b6cce3927d4258e0fc909fd3eb64cd831924f9f507a1d58fddc64162fc65f1b"
+  },
+  "configs/v25_time_preserve_b1_g16_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g16_r4_jobs.json",
+    "sha256": "26701711306dccc0101bf470dcc285bf6c64ed2b35db1fb4b63d9a62e5e79ad2"
+  },
+  "configs/v25_time_preserve_b1_g20_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g20_r0_command.json",
+    "sha256": "ff187d7c815970dbe06c0808852db414595b22bd69f4c53235d2f7a41cc5cbeb"
+  },
+  "configs/v25_time_preserve_b1_g20_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g20_r0_jobs.json",
+    "sha256": "d322d991050b76145299b0177033b4b3552e9c4632ea295caf421e0209af7119"
+  },
+  "configs/v25_time_preserve_b1_g20_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g20_r4_command.json",
+    "sha256": "a9ad22718e9d07df34f28ea76979afc8724a664b8ae7d7117bd80d1cdfce0e1b"
+  },
+  "configs/v25_time_preserve_b1_g20_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g20_r4_jobs.json",
+    "sha256": "6b54bacfbda8585f13cd73e751fead4913c2c56b8f9e6beba2acb86ad726478d"
+  },
+  "configs/v25_time_preserve_b1_g22_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g22_r0_command.json",
+    "sha256": "ae828114d73bbde5285d93b02d62bab19900697f396797b6c3681352a3044377"
+  },
+  "configs/v25_time_preserve_b1_g22_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g22_r0_jobs.json",
+    "sha256": "224da4b91b43d6af724490734bfcd7f11b34704dcb1fc5c0094a179f9decf27f"
+  },
+  "configs/v25_time_preserve_b1_g22_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g22_r4_command.json",
+    "sha256": "f6b989941b23244127bf6ef293cb6ba05708c640099bc24b61129ea420e3a49c"
+  },
+  "configs/v25_time_preserve_b1_g22_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g22_r4_jobs.json",
+    "sha256": "6527ba658dacde68d2f863b76c0240d798db7491d228473909fb9bdcbbef7d44"
+  },
+  "configs/v25_time_preserve_b1_g24_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g24_r0_command.json",
+    "sha256": "539ad6e79c914862015f868a61774e601ebf2a3071e367a32f17dc3bf2bb19b1"
+  },
+  "configs/v25_time_preserve_b1_g24_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g24_r0_jobs.json",
+    "sha256": "cff071bcb4d74581b72b8ee83bfe8697de05a35a39bf558fa2f608cc372cc70e"
+  },
+  "configs/v25_time_preserve_b1_g24_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g24_r4_command.json",
+    "sha256": "58d70873c96c90b23d32cd77526df2e4948b260d8751263c3399ef8222d62ec7"
+  },
+  "configs/v25_time_preserve_b1_g24_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g24_r4_jobs.json",
+    "sha256": "6fcd896f4402b00674a347dd401d726ad9d966cc1f0910b1396468202c304ff2"
+  },
+  "configs/v25_time_preserve_b1_g26_r0_command.json": {
+    "source": "configs/v25_time_preserve_b1_g26_r0_command.json",
+    "sha256": "1216caaea63efd3125e971db241fdff52b2a73b9fab63cb0247597a8cdb8e7fb"
+  },
+  "configs/v25_time_preserve_b1_g26_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g26_r0_jobs.json",
+    "sha256": "4eaa254bb0b433f27a8e4a3b048e84a6a42cb375043b6ce0e60e7d7a77c6a756"
+  },
+  "configs/v25_time_preserve_b1_g26_r4_command.json": {
+    "source": "configs/v25_time_preserve_b1_g26_r4_command.json",
+    "sha256": "e51f315bee4e15ddc3e2d1b3419eaa2490aa1438b92a355f8d00f09013e7e406"
+  },
+  "configs/v25_time_preserve_b1_g26_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_g26_r4_jobs.json",
+    "sha256": "6c59b0f6314821ab2bb03d4017acaa3e984b6ab8e0e6ff519d3f7ec8a3381248"
+  },
+  "configs/v25_time_preserve_b1_identity_command.json": {
+    "source": "configs/v25_time_preserve_b1_identity_command.json",
+    "sha256": "65650b05d8e91a4d4114e7665eed94e2d5f5bad070ece9078ece9a7a852ca943"
+  },
+  "configs/v25_time_preserve_b1_identity_jobs.json": {
+    "source": "configs/v25_time_preserve_b1_identity_jobs.json",
+    "sha256": "40bf3ecccf2deaaae37779c6dce16a293bc20345b061440757502a296d4f40d7"
+  },
+  "configs/v25_time_preserve_b2_g16_r0_command.json": {
+    "source": "configs/v25_time_preserve_b2_g16_r0_command.json",
+    "sha256": "4eabaf3d47f3304c229bda4a3efaea7e1e1f4aa6d9b9d3a4da5e1f74048c5cc5"
+  },
+  "configs/v25_time_preserve_b2_g16_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b2_g16_r0_jobs.json",
+    "sha256": "02fd3296ad0077d99b8aa407d41af4186a6317462e06b54ff93389e9643ff67d"
+  },
+  "configs/v25_time_preserve_b2_g16_r4_command.json": {
+    "source": "configs/v25_time_preserve_b2_g16_r4_command.json",
+    "sha256": "2bc5568fd460a9c6d922b11c339e925cde5dce207f3085c590c4544f3bdafe56"
+  },
+  "configs/v25_time_preserve_b2_g16_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b2_g16_r4_jobs.json",
+    "sha256": "fe0cc875da7796bff18bdf1e99af44310e9d15afdba31a0f0fb2a6291a196aa6"
+  },
+  "configs/v25_time_preserve_b2_identity_command.json": {
+    "source": "configs/v25_time_preserve_b2_identity_command.json",
+    "sha256": "9f3483baf04c7b3c70afb2e7b22b26c43d9ce815aa9a045b5ff38c2dc1edf653"
+  },
+  "configs/v25_time_preserve_b2_identity_jobs.json": {
+    "source": "configs/v25_time_preserve_b2_identity_jobs.json",
+    "sha256": "fb87c669fa0420d3fcf877c938001b91bf1bf6aafce3fe73423fa6c19f5bf0e6"
+  },
+  "configs/v25_time_preserve_b3_g16_r0_command.json": {
+    "source": "configs/v25_time_preserve_b3_g16_r0_command.json",
+    "sha256": "93968ee11a046e80bcd22291b44b977154847fc8c72b4b422bddf959b65b8638"
+  },
+  "configs/v25_time_preserve_b3_g16_r0_jobs.json": {
+    "source": "configs/v25_time_preserve_b3_g16_r0_jobs.json",
+    "sha256": "2b3cadbeac303efc0f7eadd67628a9be3665dbad31ce4a86ea840a357d8c8101"
+  },
+  "configs/v25_time_preserve_b3_g16_r4_command.json": {
+    "source": "configs/v25_time_preserve_b3_g16_r4_command.json",
+    "sha256": "56a509d65060ffc029516517c3864b83af564aa8de2835f184fa49afa4d85c88"
+  },
+  "configs/v25_time_preserve_b3_g16_r4_jobs.json": {
+    "source": "configs/v25_time_preserve_b3_g16_r4_jobs.json",
+    "sha256": "e5baea38a7f4c504d6bfe57052d06f5d77c63200b4d5d57a95ef0325775f6ea2"
+  },
+  "configs/v25_time_preserve_b3_identity_command.json": {
+    "source": "configs/v25_time_preserve_b3_identity_command.json",
+    "sha256": "107891c4b010f85e572fd39eab286e56818953468d3eb23230cef35d67fd647c"
+  },
+  "configs/v25_time_preserve_b3_identity_jobs.json": {
+    "source": "configs/v25_time_preserve_b3_identity_jobs.json",
+    "sha256": "9638e08ce54e4ece9ec452e14afd5f10ecccb62e5c639e5c789684107651a2d8"
+  },
+  "configs/v25_time_warm_b0_g16_r0_command.json": {
+    "source": "configs/v25_time_warm_b0_g16_r0_command.json",
+    "sha256": "6ed7c7e81ee29de26c89c37143168b5cbcf0c92699c4aed0ab567491e82ef80f"
+  },
+  "configs/v25_time_warm_b0_g16_r0_jobs.json": {
+    "source": "configs/v25_time_warm_b0_g16_r0_jobs.json",
+    "sha256": "713e929614966a9177857e509b154a9c07c703c384b968e88b177e56a69990b6"
+  },
+  "configs/v25_time_warm_b0_g16_r4_command.json": {
+    "source": "configs/v25_time_warm_b0_g16_r4_command.json",
+    "sha256": "2b52bae50142b3217cf3e750a3d767bdf315cb2035998155af5281e022adf8c2"
+  },
+  "configs/v25_time_warm_b0_g16_r4_jobs.json": {
+    "source": "configs/v25_time_warm_b0_g16_r4_jobs.json",
+    "sha256": "1770e24af01266bc32407c8a6b1c00abf5afaad8c897febb2e5daeb589d1bf7a"
+  },
+  "configs/v25_time_warm_b0_identity_command.json": {
+    "source": "configs/v25_time_warm_b0_identity_command.json",
+    "sha256": "4f08bfaa71085aad3cb4ef5e50e08cb9959887f3990057992ac62561b8bc45cd"
+  },
+  "configs/v25_time_warm_b0_identity_jobs.json": {
+    "source": "configs/v25_time_warm_b0_identity_jobs.json",
+    "sha256": "9e277c57e483b8aeed395fbd69da3c2b0fc7c5f13fc0daf06b7e2f1a6ba851ad"
+  },
+  "configs/v25_time_warm_b1_g16_r0_command.json": {
+    "source": "configs/v25_time_warm_b1_g16_r0_command.json",
+    "sha256": "e339989969f5f60ddeebcbc53833c7d12e10b8c30fbc354e5d0ddc4e96f817dd"
+  },
+  "configs/v25_time_warm_b1_g16_r0_jobs.json": {
+    "source": "configs/v25_time_warm_b1_g16_r0_jobs.json",
+    "sha256": "59da9ac2a62b8a42a093ec497620b97a63e5846c76d5ef1245180c76ffb6e908"
+  },
+  "configs/v25_time_warm_b1_g16_r4_command.json": {
+    "source": "configs/v25_time_warm_b1_g16_r4_command.json",
+    "sha256": "e3d1ca1459d97274b4ade7a0ec1784eacb54e34f7cc1a06db60d48f6596ac2e1"
+  },
+  "configs/v25_time_warm_b1_g16_r4_jobs.json": {
+    "source": "configs/v25_time_warm_b1_g16_r4_jobs.json",
+    "sha256": "191bbdb39cf28ad5368147694afef892d9f877555a9d94c05f2ba59b4d357f74"
+  },
+  "configs/v25_time_warm_b1_identity_command.json": {
+    "source": "configs/v25_time_warm_b1_identity_command.json",
+    "sha256": "676d4c831a33332ffc30d9faeeba6c99d8f65b8e51ce80cb59898b4da960b7fe"
+  },
+  "configs/v25_time_warm_b1_identity_jobs.json": {
+    "source": "configs/v25_time_warm_b1_identity_jobs.json",
+    "sha256": "36af59acdd28c5dbfdaff0eb4233c9f55c5bc441be9dfd7e6bf73ec44568f1d4"
+  },
+  "configs/v25_time_warm_b2_g16_r0_command.json": {
+    "source": "configs/v25_time_warm_b2_g16_r0_command.json",
+    "sha256": "051f43d40a8629522f7145f79d956010513901282e068237bebd3712063d7f00"
+  },
+  "configs/v25_time_warm_b2_g16_r0_jobs.json": {
+    "source": "configs/v25_time_warm_b2_g16_r0_jobs.json",
+    "sha256": "af63cb0540363be1bf4a18f50273d07eba7e19b47bdc426a8015dc0bf3c68003"
+  },
+  "configs/v25_time_warm_b2_g16_r4_command.json": {
+    "source": "configs/v25_time_warm_b2_g16_r4_command.json",
+    "sha256": "13344abc0fce167728aff2cbc1af099917f84101215532857372a07555a4080d"
+  },
+  "configs/v25_time_warm_b2_g16_r4_jobs.json": {
+    "source": "configs/v25_time_warm_b2_g16_r4_jobs.json",
+    "sha256": "9b937a0d53e08b16677eefb5782b852274a61b60c4ba287cfc9a6b71c3b06502"
+  },
+  "configs/v25_time_warm_b2_identity_command.json": {
+    "source": "configs/v25_time_warm_b2_identity_command.json",
+    "sha256": "88de4f5b78e25de8fdd3adee90df168a42d71cc90b933a6030a922dc15a7f93c"
+  },
+  "configs/v25_time_warm_b2_identity_jobs.json": {
+    "source": "configs/v25_time_warm_b2_identity_jobs.json",
+    "sha256": "3aaae69ab97528e110c894c2438eefbdbaf1b26c4330d55d0e3a949c581614de"
+  },
+  "configs/v25_time_warm_b3_g16_r0_command.json": {
+    "source": "configs/v25_time_warm_b3_g16_r0_command.json",
+    "sha256": "d33cde2099f71df8080de55c07e8b537197217cef553567835b78d8d84cc20ca"
+  },
+  "configs/v25_time_warm_b3_g16_r0_jobs.json": {
+    "source": "configs/v25_time_warm_b3_g16_r0_jobs.json",
+    "sha256": "7d7f08f43fdc2e632984590f92483e30a294e26515d6f7439ea45113d9cc583d"
+  },
+  "configs/v25_time_warm_b3_g16_r4_command.json": {
+    "source": "configs/v25_time_warm_b3_g16_r4_command.json",
+    "sha256": "a456fd7c693ebba85885114d0d32c1a29a7e0205e42d64e3eb5555b378133d20"
+  },
+  "configs/v25_time_warm_b3_g16_r4_jobs.json": {
+    "source": "configs/v25_time_warm_b3_g16_r4_jobs.json",
+    "sha256": "6d10891a03f30b503d9688eef8d99377ed7fd46f81b65d9c8790f4b88b9a03b5"
+  },
+  "configs/v25_time_warm_b3_identity_command.json": {
+    "source": "configs/v25_time_warm_b3_identity_command.json",
+    "sha256": "cc7266a5e03147e4ffbaf8ba48afc65f422eb922a0610a1b5f858797d151a16e"
+  },
+  "configs/v25_time_warm_b3_identity_jobs.json": {
+    "source": "configs/v25_time_warm_b3_identity_jobs.json",
+    "sha256": "bf8c51cfa9e5991279f71c932aba6fd92d4859f21b273a7c57ec88ceaf945666"
+  },
+  "configs/v25_viz_analysis_command.json": {
+    "source": "configs/v25_viz_analysis_command.json",
+    "sha256": "6ffbcc26b2d8754846970b9725fc7148235ba5bac9074c644630ed40561f945e"
+  },
+  "configs/v25_explore/g14.json": {
+    "source": "configs/v25_explore/g14.json",
+    "sha256": "043ac9777f8969453a6ea8dbbaba365e825527dec8de0c6a145d0c3881df131b"
+  },
+  "configs/v25_explore/g16.json": {
+    "source": "configs/v25_explore/g16.json",
+    "sha256": "8efe0a1a2d9d2c3a857bb2461a56c2b16f7c55242a8b6aa056c9c5ae5a2b1016"
+  },
+  "configs/v25_explore/g20.json": {
+    "source": "configs/v25_explore/g20.json",
+    "sha256": "98522abf9288f1d03d1134a37214b3d25febed04537ad3b16464b4c66d681496"
+  },
+  "configs/v25_explore/g22.json": {
+    "source": "configs/v25_explore/g22.json",
+    "sha256": "4196b31c9bf0c969de27bc72f6ebcee77aa26f8928a461ddd0045894ed658f47"
+  },
+  "configs/v25_explore/g24.json": {
+    "source": "configs/v25_explore/g24.json",
+    "sha256": "c8ba121a8752723e81a8c95b3399001871f8647a8afc2ee92a9fee9658afcdbf"
+  },
+  "configs/v25_explore/g26.json": {
+    "source": "configs/v25_explore/g26.json",
+    "sha256": "5953d37e06f259e492e5746ec03b12f33053b887dc7a8fcbd09fee7d3881abd6"
+  },
+  "configs/v25_explore/study.json": {
+    "source": "configs/v25_explore/study.json",
+    "sha256": "05e014dd8d466e52068cd423569adfb75e391b05f97ca26a705c3d9f33382e06"
+  },
+  "docs/sharedkv_v25_package/NOTICE.md": {
+    "source": "docs/sharedkv_v25_package/NOTICE.md",
+    "sha256": "79d76cc07a6d81556fe6a8254b9ccad8431175d04a828ce5c974a5a0520aae58"
+  },
+  "docs/sharedkv_v25_package/README_ZH.md": {
+    "source": "docs/sharedkv_v25_package/README_ZH.md",
+    "sha256": "4749141525b2aeb245f870e2b891810a878c2141fa7779d2d50c035e86f4a5bf"
+  },
+  "docs/sharedkv_v25_package/TEST_RESULTS.md": {
+    "source": "docs/sharedkv_v25_package/TEST_RESULTS.md",
+    "sha256": "134c6a255e09b2e6aeb2e6b4d6d9d3d81d052550b625584a37bb05d7816f07ee"
+  },
+  "upstream/pans_sharedkv_v25/MANIFEST.sha256.json": {
+    "source": "upstream/pans_sharedkv_v25/MANIFEST.sha256.json",
+    "sha256": "8c0ea28d6f57202fe57f3dfffa8de3fe3d3875b57ce5cad45733e5c0b9c578a6"
+  },
+  "upstream/pans_sharedkv_v25/NOTICE.md": {
+    "source": "upstream/pans_sharedkv_v25/NOTICE.md",
+    "sha256": "79d76cc07a6d81556fe6a8254b9ccad8431175d04a828ce5c974a5a0520aae58"
+  },
+  "upstream/pans_sharedkv_v25/README_ZH.md": {
+    "source": "upstream/pans_sharedkv_v25/README_ZH.md",
+    "sha256": "4749141525b2aeb245f870e2b891810a878c2141fa7779d2d50c035e86f4a5bf"
+  },
+  "upstream/pans_sharedkv_v25/TEST_RESULTS.md": {
+    "source": "upstream/pans_sharedkv_v25/TEST_RESULTS.md",
+    "sha256": "134c6a255e09b2e6aeb2e6b4d6d9d3d81d052550b625584a37bb05d7816f07ee"
+  },
+  "upstream/pans_sharedkv_v25/docs/AUDIT_V24_AND_PLAN_ZH.md": {
+    "source": "upstream/pans_sharedkv_v25/docs/AUDIT_V24_AND_PLAN_ZH.md",
+    "sha256": "ce95eb2f9627a724abd2d3726f55cf2cbb4fd62a914f1917cb19a7a4137bb383"
+  },
+  "upstream/pans_sharedkv_v25/docs/SOURCES.md": {
+    "source": "upstream/pans_sharedkv_v25/docs/SOURCES.md",
+    "sha256": "d151f1195ca852053db28a3f514b154877ae43b9d2cde55b52a5826aab8a6500"
+  },
+  "upstream/pans_sharedkv_v25/scripts/inspect_model_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/scripts/inspect_model_v25.py",
+    "sha256": "83d6c4900d067ff6d22a6e2961e30e31f8189f3180307d16b0ad9fea4acb99ad"
+  },
+  "upstream/pans_sharedkv_v25/scripts/install_sharedkv_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/scripts/install_sharedkv_v25.py",
+    "sha256": "a5364080b89c4bf1c9bad1432fa00c73b777a71d3199535d8e00385a5d10f841"
+  },
+  "upstream/pans_sharedkv_v25/scripts/plan_exploration_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/scripts/plan_exploration_v25.py",
+    "sha256": "b109bfaa6771b018e27d114c7f2be25c49e81588bfb14f5d36cf4d68e09774bd"
+  },
+  "upstream/pans_sharedkv_v25/scripts/run_native_prefix_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/scripts/run_native_prefix_v25.py",
+    "sha256": "a0038e45d8a36a2ace62b6b280d4f9bb9e06a0f00ca49eedb16e5144f79059a2"
+  },
+  "upstream/pans_sharedkv_v25/scripts/train_native_prefix_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/scripts/train_native_prefix_v25.py",
+    "sha256": "5551891efee98862a402cdd7a05328f76c006f5efd364ca83e0e70cdbbb91d8c"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/__init__.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/__init__.py",
+    "sha256": "f2c2854358cee1292730e96f493ea18e780066f3f14004eabf86a9f3b4bdcaff"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/attention.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/attention.py",
+    "sha256": "203484c2225576f5b2563dc58aa3faee70a83ddd1ebd846dd21ab0acbaa555a3"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/geometry.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/geometry.py",
+    "sha256": "6475148bb683c0feb878a6eb8f05120f4dd573bdee0495973d4c243b865b1da8"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/guard.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/guard.py",
+    "sha256": "1dc288561f61bf75498b6e279f0b6fea689a09014ab0adf29875f3f43d3c33eb"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/policy.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/policy.py",
+    "sha256": "fe9c97c5a5b71b1801f7d1ca09b7c6227c7ec584d19834d6e6a63223ae4865fb"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/replay.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/replay.py",
+    "sha256": "83f6267c4d5e34b12b23dfe857ed89d55d3d7c65d695bb8ebfce33c771d2c2a7"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/runtime.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/runtime.py",
+    "sha256": "f456b56b4afd9092c6308722c556f10455a38fa22b14fdbc0cdfd1173ff16c5f"
+  },
+  "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/train.py": {
+    "source": "upstream/pans_sharedkv_v25/src/contiguous_fuxian/sharedkv_v25/train.py",
+    "sha256": "ffd88182dd38e1c3e3f7ffb847102794acde1a2da228a8b7f1d0619c0edf7884"
+  },
+  "upstream/pans_sharedkv_v25/tests/test_sharedkv_v25.py": {
+    "source": "upstream/pans_sharedkv_v25/tests/test_sharedkv_v25.py",
+    "sha256": "2adc8345bd7da15d0f399fcdff4a6d02bc835b0c347537b0ddd3409682a66bad"
+  },
+  "figures/v25_coverage_quality_latency.pdf": {
+    "source": "figures/v25_coverage_quality_latency.pdf",
+    "sha256": "aa9ad67ff07a6f3b8c4a87cb347f02d19f07c731359b0a9d12b74d5bb2eeb931"
+  },
+  "figures/v25_coverage_quality_latency.png": {
+    "source": "figures/v25_coverage_quality_latency.png",
+    "sha256": "6595c32e37b4090a3cbf47b30d30bb27d7004856e278513ad31bd474a5340d98"
+  },
+  "EXPERIMENT_REPORT_V25_ZH.md": {
+    "source": "EXPERIMENT_REPORT_V25_ZH.md",
+    "sha256": "af4c227a65dcfdadf60921df1de2388f756a995736585d138bb7b16f08ac9d6b"
+  },
+  "README_LAYERKV_V25_SERVER.md": {
+    "source": "README_LAYERKV_V25_SERVER.md",
+    "sha256": "0fdb8c2a023a3271cf1b609c9c5136f5adf0f94bf4fe14bbfc8945933bcf9b0e"
+  },
+  "docs/layerkv_v25/audit/v25_final_invariants.json": {
+    "source": "audit/v25_final_invariants.json",
+    "sha256": "abe84899c8b188fbf82a2e31085ea61533b68f427f35007caba73476d67be658"
+  },
+  "docs/layerkv_v25/audit/v25_g22_r0_s24_compute.json": {
+    "source": "audit/v25_g22_r0_s24_compute.json",
+    "sha256": "649c1f0794673efe94f82f64dded666cd3209b53b3a7543dfb1e8e59df7f722c"
+  },
+  "docs/layerkv_v25/audit/v25_software_environment.json": {
+    "source": "audit/v25_software_environment.json",
+    "sha256": "e8b6848fab5a03e00f5d92247f408e3e911668a1edd9f22c7c3aa7861d2cabda"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r0_s26_compute.json": {
+    "source": "audit/v25_g16_r0_s26_compute.json",
+    "sha256": "9c700e7769b16e503818149df9484d0f4a78e11f25ef062a7ac553af133e71e4"
+  },
+  "docs/layerkv_v25/audit/v25_g14_r0_s24_compute.json": {
+    "source": "audit/v25_g14_r0_s24_compute.json",
+    "sha256": "554047ed790e69e4525050cc391638c7427a9929860378db8b4e1ce750fe4c1e"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r4_s24_compute.json": {
+    "source": "audit/v25_g16_r4_s24_compute.json",
+    "sha256": "25c4388233b9b778b1123f4f9c0f9f9d3bc53ab42d2ed61a104ec1f47ac7ad89"
+  },
+  "docs/layerkv_v25/audit/v25_g26_r0_s24_compute.json": {
+    "source": "audit/v25_g26_r0_s24_compute.json",
+    "sha256": "11949ed9692df4a89a7bc7ef954a9149f1aaecc22676a0747fda2a7e92550b9e"
+  },
+  "docs/layerkv_v25/audit/v25_pcache_copies.json": {
+    "source": "audit/v25_pcache_copies.json",
+    "sha256": "816ab58b67ce7fee90db20a00997edc9d778b19124da66a7f2979324c1699137"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r4_s25_compute.json": {
+    "source": "audit/v25_g16_r4_s25_compute.json",
+    "sha256": "a1351a0f1ea5285656992709687117e289d82749864c2eb0f6e8e9dc67d29e10"
+  },
+  "docs/layerkv_v25/audit/v25_smoke_g24_r4_compute.json": {
+    "source": "audit/v25_smoke_g24_r4_compute.json",
+    "sha256": "e60c66c6beec89dba739cdb64edc7e80f93363cbb2b6e7c3b4465f5110eb2193"
+  },
+  "docs/layerkv_v25/audit/v25_structural_selection.json": {
+    "source": "audit/v25_structural_selection.json",
+    "sha256": "e23a22cbeef4d6a611d8c740111d7124503ac38e91568313a1a65af1d2ea1539"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r0_s24_compute.json": {
+    "source": "audit/v25_g16_r0_s24_compute.json",
+    "sha256": "53d2c5d262c26e3d8f2923f10b22766380e0a0fbba6ac33e7a1022279bffe21f"
+  },
+  "docs/layerkv_v25/audit/v25_g20_r4_s24_compute.json": {
+    "source": "audit/v25_g20_r4_s24_compute.json",
+    "sha256": "57d548b75c53227bc8deb6810cc03d6828905b7c2c814f5f85553e930da3a81f"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r0_s25_compute.json": {
+    "source": "audit/v25_g16_r0_s25_compute.json",
+    "sha256": "0b7f9e1e45a216187e47f0be7e7ae56062bd56119a72042570fbf64452f8386e"
+  },
+  "docs/layerkv_v25/audit/v25_data_isolation.json": {
+    "source": "audit/v25_data_isolation.json",
+    "sha256": "4f6a4b8dd033a0ca322b6f15a553f433e5aa47c330f8cfb1121965ab5ed82ee8"
+  },
+  "docs/layerkv_v25/audit/v25_g24_r4_s24_compute.json": {
+    "source": "audit/v25_g24_r4_s24_compute.json",
+    "sha256": "f1fc5eb932968b2b06f47ede224a8aa31ad2dc78be12af34953c5acbf6e11c6e"
+  },
+  "docs/layerkv_v25/audit/v25_delivery_recovery.json": {
+    "source": "audit/v25_delivery_recovery.json",
+    "sha256": "86e22b02bca4ac5a27b28edd6af325521586f1ea504192398d8429b7255b6bb0"
+  },
+  "docs/layerkv_v25/audit/v25_g22_r4_s24_compute.json": {
+    "source": "audit/v25_g22_r4_s24_compute.json",
+    "sha256": "0dd12e4bc92abb9404692cff1e0a40353495f8040e88d796cfcade36aca6ca9d"
+  },
+  "docs/layerkv_v25/audit/v25_before.json": {
+    "source": "audit/v25_before.json",
+    "sha256": "5f4c55a1c275d7509cd765edb21d83ec3a075309822a511eb5937611f93d1903"
+  },
+  "docs/layerkv_v25/audit/v25_frozen_selection.json": {
+    "source": "audit/v25_frozen_selection.json",
+    "sha256": "ee0be71db1b5e8c4cd7d3592d1b24cc76c8ff3ccef159da258b208dca801f7b3"
+  },
+  "docs/layerkv_v25/audit/v25_g20_r0_s24_compute.json": {
+    "source": "audit/v25_g20_r0_s24_compute.json",
+    "sha256": "5235760ae8c18a41827101ccd582cdd9c19ec50a714874cae7008333ed708689"
+  },
+  "docs/layerkv_v25/audit/v25_archive_validation.json": {
+    "source": "audit/v25_archive_validation.json",
+    "sha256": "ef660e3175a5b2e4f873c565546c7e6bbba6e4ef08c3d5c18d42a316d0ef46ef"
+  },
+  "docs/layerkv_v25/audit/v25_preregistered_plan.json": {
+    "source": "audit/v25_preregistered_plan.json",
+    "sha256": "ea6954d0df95473cdf8fb9c954d0fc661b6ef4d706f9ad811dd291f894adf2a4"
+  },
+  "docs/layerkv_v25/audit/v25_g24_r0_s24_compute.json": {
+    "source": "audit/v25_g24_r0_s24_compute.json",
+    "sha256": "674cc0e68541d9398359406bdc0fc5cee11c96a2c12c2656850bf0b12d62f9c9"
+  },
+  "docs/layerkv_v25/audit/v25_bridge_validation.json": {
+    "source": "audit/v25_bridge_validation.json",
+    "sha256": "a87a2f11dec8c26a1768a9e22ed538aa8d81c45ecb302c983a125fc3c3243b78"
+  },
+  "docs/layerkv_v25/audit/v25_g26_r4_s24_compute.json": {
+    "source": "audit/v25_g26_r4_s24_compute.json",
+    "sha256": "a179c2dbd684660c3b3e2b6f62bef1b00c91d829f7835b27f89538bb3ce1a4e1"
+  },
+  "docs/layerkv_v25/audit/v25_delivery_manifest.json": {
+    "source": "audit/v25_delivery_manifest.json",
+    "sha256": "1cc1cf97efc5c0c093d5a81f90fd6d99b348ef6cd24a0d7e7220f34f9dd1b7bd"
+  },
+  "docs/layerkv_v25/audit/v25_formal_timing_manifest.json": {
+    "source": "audit/v25_formal_timing_manifest.json",
+    "sha256": "98553e06faf043ce7aaccbcb47f2c3712523425559c329ab3c27760b386cb64d"
+  },
+  "docs/layerkv_v25/audit/v25_g14_r4_s24_compute.json": {
+    "source": "audit/v25_g14_r4_s24_compute.json",
+    "sha256": "53877655ca33dc25cf468ce9d9612faf8c59c37efc9be60133b023a94ea4e000"
+  },
+  "docs/layerkv_v25/audit/v25_figure_review.json": {
+    "source": "audit/v25_figure_review.json",
+    "sha256": "d9f3f41f5f95ededb3c8245472adecea8c6d3878df4bc02cf9f088ca01867eff"
+  },
+  "docs/layerkv_v25/audit/v25_g16_r4_s26_compute.json": {
+    "source": "audit/v25_g16_r4_s26_compute.json",
+    "sha256": "396bb9407de8d6d391a22fe79cb5c09263bce318884e927a6e198dae7a5af1ef"
+  },
+  "docs/layerkv_v25/audit/v25_raw_profile_inventory.json": {
+    "source": "audit/v25_raw_profile_inventory.json",
+    "sha256": "cd97dc88931894b471e736a3163debff1a7a8e728777d4cdbbfe3542fa75a917"
+  },
+  "docs/layerkv_v25/results/v25_final_analysis.json": {
+    "source": "results/v25_final_analysis.json",
+    "sha256": "849ecbf1c6e2d27bffdb8a7aa6473b1c1015fb9a91f1e3d900243350f664ab64"
+  },
+  "docs/layerkv_v25/results/v25_nsight_summary.json": {
+    "source": "results/v25_nsight_summary.json",
+    "sha256": "61bbbcf5e62040a881a42166a8bd786aa606d445946c0d1f09228406da59e76b"
+  },
+  "docs/layerkv_v25/results/v25_viz_warm_shared_summary.json": {
+    "source": "results/v25_viz_warm_shared_summary.json",
+    "sha256": "26366dc33f88412f8be4fde00122a12974669f8b47b0fae5890183846bc62483"
+  },
+  "docs/layerkv_v25/results/v25_viz_native_identity_summary.json": {
+    "source": "results/v25_viz_native_identity_summary.json",
+    "sha256": "37bd5a00d92998d01c0c46ecb69ef8fff17f4e686de4a8d94ee33763576e7fca"
+  },
+  "docs/layerkv_v25/results/v25_viz_warm_identity_summary.json": {
+    "source": "results/v25_viz_warm_identity_summary.json",
+    "sha256": "ebb561dff14be4fd22fc3996935a14d2f713fc7dddfb2d4d210c8c6caa6e71ff"
+  },
+  "docs/layerkv_v25/results/v25_viz_native_shared_summary.json": {
+    "source": "results/v25_viz_native_shared_summary.json",
+    "sha256": "28c6ba29b0dfe5522dae501183173dfc8768750f64195838c610346460068faa"
+  },
+  "docs/layerkv_v25/results/v25_quality_table.csv": {
+    "source": "results/v25_quality_table.csv",
+    "sha256": "251c186cfa8637db9eea2fa58d2bf70e362afb810f3d33d92b6cad08f344e534"
+  },
+  "docs/layerkv_v25/calibration/v25_g14_r4_s24.report.json": {
+    "source": "assets/v25_g14_r4_s24/trec.pt.report.json",
+    "sha256": "4bc7677588cc512260e62bf2cd7129988766880322536bdba9ac802bff99b130"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r0_s24.report.json": {
+    "source": "assets/v25_g16_r0_s24/trec.pt.report.json",
+    "sha256": "d066e14cb79977a5e573aae871fa043b07d6f96dcc05499c1b46dbca4b0791f9"
+  },
+  "docs/layerkv_v25/calibration/v25_g24_r0_s24.report.json": {
+    "source": "assets/v25_g24_r0_s24/trec.pt.report.json",
+    "sha256": "77bbe187a8cf71e8404e51dbd348ddd3ba156b0e7454fa810bb728357019e12e"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r4_s25.report.json": {
+    "source": "assets/v25_g16_r4_s25/trec.pt.report.json",
+    "sha256": "4881493cc0fa8aef63d527c27c68cef6fb227a8c5779a3a91e9e8b48bd58c778"
+  },
+  "docs/layerkv_v25/calibration/v25_g22_r0_s24.report.json": {
+    "source": "assets/v25_g22_r0_s24/trec.pt.report.json",
+    "sha256": "4991861027a4be68da66dda63fd371c998cbb43b8c5fa181c532e63a00f1edd4"
+  },
+  "docs/layerkv_v25/calibration/v25_g26_r4_s24.report.json": {
+    "source": "assets/v25_g26_r4_s24/trec.pt.report.json",
+    "sha256": "6aed3dc6103b53a70d842a8654b091643eb183626cd42055e147d1d0701afba0"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r0_s26.report.json": {
+    "source": "assets/v25_g16_r0_s26/trec.pt.report.json",
+    "sha256": "8561dd9bb437167d008e28c6823bf8b2075146bfc1e842cecd39919f93852bb1"
+  },
+  "docs/layerkv_v25/calibration/v25_g20_r4_s24.report.json": {
+    "source": "assets/v25_g20_r4_s24/trec.pt.report.json",
+    "sha256": "7278e86ec570a85bc2d38afd72b96e964cd37003a5e34c18f8baa3d3850a5c7d"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r0_s25.report.json": {
+    "source": "assets/v25_g16_r0_s25/trec.pt.report.json",
+    "sha256": "5e2949c2d2261dcbbea7a2f18ab0481d03d7227e41e8d9d459236ed800619da5"
+  },
+  "docs/layerkv_v25/calibration/v25_g24_r4_s24.report.json": {
+    "source": "assets/v25_g24_r4_s24/trec.pt.report.json",
+    "sha256": "ecc1ecc3354506bbc387da0b8e7b9fd583bd0307a417ac724e5d4af342ab8887"
+  },
+  "docs/layerkv_v25/calibration/v25_smoke_g24_r4.report.json": {
+    "source": "assets/v25_smoke_g24_r4/trec.pt.report.json",
+    "sha256": "7516c21849b797c5657de41f10f5d801e662539036a68358a8f3e42802ef4382"
+  },
+  "docs/layerkv_v25/calibration/v25_g14_r0_s24.report.json": {
+    "source": "assets/v25_g14_r0_s24/trec.pt.report.json",
+    "sha256": "f914d3310ced0771ea9903c856dec65a6a4285ef45c134af431c6def26c324aa"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r4_s24.report.json": {
+    "source": "assets/v25_g16_r4_s24/trec.pt.report.json",
+    "sha256": "a379a05470312d2b8c78e1d6098baaee6ed45baaff4ca1582c5b38805f66f4e1"
+  },
+  "docs/layerkv_v25/calibration/v25_g26_r0_s24.report.json": {
+    "source": "assets/v25_g26_r0_s24/trec.pt.report.json",
+    "sha256": "ccc11919e085c567ad962fc0809a2634c446076f99224e155a723294c5fa9f00"
+  },
+  "docs/layerkv_v25/calibration/v25_g16_r4_s26.report.json": {
+    "source": "assets/v25_g16_r4_s26/trec.pt.report.json",
+    "sha256": "938863196a9a741d394a0f5379409a566aae555376eea7597fcc628b635a18af"
+  },
+  "docs/layerkv_v25/calibration/v25_g22_r4_s24.report.json": {
+    "source": "assets/v25_g22_r4_s24/trec.pt.report.json",
+    "sha256": "4cea43dd93125374100f1b7aa82adccb4080209934464cf315dd0a3851705cce"
+  },
+  "docs/layerkv_v25/calibration/v25_g20_r0_s24.report.json": {
+    "source": "assets/v25_g20_r0_s24/trec.pt.report.json",
+    "sha256": "9e6ebba9ee1366ee24ff5ea04dfc210d5b97de068bc53c9ab0873188166d2060"
+  },
+  "docs/layerkv_v25/validation/server_all_tests.txt": {
+    "source": "logs/v25_all_gpu_tests.log",
+    "sha256": "57697b107ccce627168848fc9115af1499aa4708ad9bae2ff7c25592aa45e53d"
+  },
+  "docs/layerkv_v25/figures/v25_coverage_quality_latency.png": {
+    "source": "figures/v25_coverage_quality_latency.png",
+    "sha256": "6595c32e37b4090a3cbf47b30d30bb27d7004856e278513ad31bd474a5340d98"
+  },
+  "docs/layerkv_v25/figures/v25_coverage_quality_latency.pdf": {
+    "source": "figures/v25_coverage_quality_latency.pdf",
+    "sha256": "aa9ad67ff07a6f3b8c4a87cb347f02d19f07c731359b0a9d12b74d5bb2eeb931"
+  }
+}

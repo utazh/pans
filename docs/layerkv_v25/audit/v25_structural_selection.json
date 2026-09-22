@@ -1,0 +1,36 @@
+{
+  "chosen_G": 16,
+  "R": [
+    0,
+    4
+  ],
+  "seeds": [
+    24,
+    25,
+    26
+  ],
+  "baseline_dev_correct": 582,
+  "dev_counts": {
+    "g26_r0": 582,
+    "g26_r4": 582,
+    "g24_r0": 574,
+    "g24_r4": 583,
+    "g22_r0": 559,
+    "g22_r4": 551,
+    "g20_r0": 578,
+    "g20_r4": 578,
+    "g16_r0": 551,
+    "g16_r4": 580,
+    "g14_r0": 552,
+    "g14_r4": 567
+  },
+  "point_screen_eligible_G": [
+    24,
+    20,
+    16
+  ],
+  "fallback_used": false,
+  "final1536_evaluated": false,
+  "seed24_timing_fixed": true,
+  "scope": "Research selection, not noninferiority certification; both R retained."
+}

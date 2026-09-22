@@ -1,0 +1,20 @@
+{
+  "base_commit": "a6be130c921024a4cd358ccf5841e4a46f547ae2",
+  "version": "v2.5",
+  "source_files_verified": 300,
+  "all_source_sha256_match": true,
+  "pinned_interfaces_verified": 11,
+  "cpu_test_returncode": 0,
+  "cpu_test_summary": "522 passed, 29 skipped, 87 subtests passed in 9.97s",
+  "server_gpu_tests": "547 passed, 4 skipped, 87 subtests passed",
+  "credential_pattern_hits": [],
+  "scope": "Publication CPU validation only; no model training or GPU evaluation rerun. Historical runtime paths retained; scientific results copied unchanged.",
+  "git_text_normalization": {
+    "docs/layerkv_v25/results/v25_quality_table.csv": {
+      "source_line_endings": "CRLF",
+      "git_blob_line_endings": "LF",
+      "data_unchanged": true,
+      "scope": "Source SHA manifest records copied server bytes before standard Git text normalization."
+    }
+  }
+}

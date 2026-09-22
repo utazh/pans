@@ -1,5 +1,40 @@
 # pans
 
+## LayerKV v2.5：扩大共享范围与少量本层 KV 保留
+
+基于 [v2.4](https://github.com/utazh/pans/tree/v2.4)（`a6be130c921024a4cd358ccf5841e4a46f547ae2`），发布服务器已经完成的代码、报告和验证记录。
+
+**已测试 G=26、24、22、20、16、14 × R=0/4 的全部 12 个配置。** G 是完整 prefix KV 来源数；R4 只保留原选择集合中的最后4个本层块，其余由层专属 Q/输出变换读取共享 prefix KV。预算仍为25%，当前 query 和生成 token 的 KV 始终28层独立。G14 有14个共享消费者；预先按开发集规则选定的主配置 G16/R4 有12个消费者与16份完整来源，另有12份小型本层保留区。
+
+- [完整实测报告](EXPERIMENT_REPORT_V25_ZH.md) · [发布说明与复现边界](docs/layerkv_v25/RELEASE_ZH.md)
+- [统计分析](docs/layerkv_v25/results/v25_final_analysis.json) · [质量表](docs/layerkv_v25/results/v25_quality_table.csv)
+- [校准报告](docs/layerkv_v25/calibration) · [审计](docs/layerkv_v25/audit) · [验证记录](docs/layerkv_v25/validation)
+- [方法与运行文档](docs/sharedkv_v25_package/README_ZH.md) · [服务器运行说明](README_LAYERKV_V25_SERVER.md)
+
+Qwen2.5-7B-Instruct / RTX 3090，25% 精确块预算，4940-token prefix；主计时固定种子24：
+
+| 指标 | 无共享 | G16/R4 |
+|---|---:|---:|
+| 历史完整 TREC 500条，种子24 | 68.60% | 73.00% |
+| 新留出1536条，种子24/25/26 | 73.24% | 74.22% / 73.05% / 74.48% |
+| SSD-cold/native TTFT | 2045.01 ms | 1417.24 ms（−30.70%） |
+| SSD-cold/preserve TTFT | 1802.65 ms | 1147.36 ms（−36.35%） |
+| 普通缓存 TTFT | 254.52 ms | 194.33 ms（−23.65%） |
+
+每种主冷测4轮重复同16题，普通缓存4轮重复同32题；各轮均下降，但属于有限重复请求实验，不是完整500条计时。覆盖率曲线另有两轮整网格16题对照。704个正式冷请求全部通过认证；认证范围是应用缓存和OS文件页，不含SSD设备内部缓存。模型/内核预热、冷态准备及标签评分不计入TTFT。
+
+**严格三种子非劣验收仍未通过；所有读取器保持 diagnostic-only。** 新留出集三种子均值为73.91%，不能把同一1536题的三次训练结果合成4608个独立样本。历史500条与开发768条是已观察数据。
+
+G16/R4 的实际 selected prefix KV 减少40.63%；计入 resident/packed reader 后，这部分净减少33.88%，不是模型总显存或持久磁盘占用降幅。Nsight 冷态 H2D 约135.10→89.90 MB/请求（各8条），直接拷贝只省约2.9 ms；恢复诊断与 VizTracer 支持主机恢复、文件访问和等待减少是主要时间收益来源。
+
+![v2.5 覆盖率、质量与延迟](figures/v25_coverage_quality_latency.png)
+
+服务器完整回归：**547 passed、4 skipped、87 subtests passed**。物理共享、本层保留区、28层私有KV、数据隔离及4025个旧文件保护审计通过。最终在线/回放逐token评分误差为0。公开副本的CPU验证记录单独保留；发布没有新增模型实验。
+
+模型、读取器checkpoint、原始问题/teacher/KV、全量逐请求记录和原始profiler继续保留在服务器。新v25实现、入口、测试及完整报告按源文件哈希发布；历史路径兼容处理沿用v2.4。安装依赖及复现边界见发布说明。
+
+以下保留历史版本说明；本分支以 v2.5 发布说明为准。
+
 ## LayerKV v2.4：最终评分校准与 SSD 冷恢复
 
 本分支基于 [v2.3](https://github.com/utazh/pans/tree/v2.3)（`3868c6b64332f89cc0b301c75b53c35630302f0e`），发布服务器完成的 v2.4 代码、实测报告及轻量证据。

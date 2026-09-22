@@ -1,0 +1,45 @@
+{
+  "chosen_G": 16,
+  "R": [
+    0,
+    4
+  ],
+  "seeds": [
+    24,
+    25,
+    26
+  ],
+  "baseline_dev_correct": 582,
+  "dev_counts": {
+    "g26_r0": 582,
+    "g26_r4": 582,
+    "g24_r0": 574,
+    "g24_r4": 583,
+    "g22_r0": 559,
+    "g22_r4": 551,
+    "g20_r0": 578,
+    "g20_r4": 578,
+    "g16_r0": 551,
+    "g16_r4": 580,
+    "g14_r0": 552,
+    "g14_r4": 567
+  },
+  "point_screen_eligible_G": [
+    24,
+    20,
+    16
+  ],
+  "fallback_used": false,
+  "final1536_evaluated": false,
+  "seed24_timing_fixed": true,
+  "scope": "Research selection, not noninferiority certification; both R retained.",
+  "checkpoint_sha256": {
+    "g16_r0_s24": "246782d4c96f557c895845d2e165bf39868c410ba4371bbd21eba98f7524a57f",
+    "g16_r0_s25": "9bcc267bbd611d1282abd43106df2431e2b1f70930fe53334e215ab098259c2f",
+    "g16_r0_s26": "00a9751f6314df7dbbd01d5ace945a47c8a9aaa8a80ab1bdfcff82e7629796a0",
+    "g16_r4_s24": "2109a57c4b49f5b880c2fca5bdd8837be511dea2689a90bc1ba472cf646c552a",
+    "g16_r4_s25": "4fa9b332392c0c45692ada778d8da15dc73ceffab6ca0cf6ce29726f1f7085da",
+    "g16_r4_s26": "c64167445aace907dcfa1954b9d37eca7fd2e6d594d13fa489c1c6fb96037b10"
+  },
+  "frozen_before_final1536": true
+}
