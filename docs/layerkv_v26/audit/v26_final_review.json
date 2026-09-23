@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "review_time": "2026-09-23 08:15:45",
+  "matrix_cells": 20,
+  "matrix_cold_certificates": 5120,
+  "primary_cold_certificates": 512,
+  "protected_files_unchanged": 4877,
+  "report_sha256": "e4be46345982cd784e649f2210450e7400764056c4d6bb09b972bb606ec04657",
+  "figure_visual_review": "1530px preview inspected in conversation: all labels, values and legend readable; full 180dpi figure retained on server",
+  "limitations": [
+    "15/16 main quality cells decline",
+    "single-run matrix timing",
+    "historical evaluation, not new final NI certification",
+    "SUBJ boundary repair and recalibration sensitivity",
+    "source-proxy diagnostic improvement does not establish a new runtime method"
+  ]
+}

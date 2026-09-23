@@ -1,0 +1,1602 @@
+{
+  "src/contiguous_fuxian/sharedkv_v26/analysis.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/analysis.py",
+    "sha256": "54481ba9c45c984dcadbe5c5558f07cd57c143752e7f2f0ec991f840e4d37c77"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/__init__.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/__init__.py",
+    "sha256": "1a3508f76517ff09775b545bb4d8c4733fb61b2086e9a2abf9e1b49b65005ddb"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/direct.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/direct.py",
+    "sha256": "269cc1ef4ae11d271c56953a6a661297b881d9bf581f877c93e8eb2fd3caf481"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/admission.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/admission.py",
+    "sha256": "f93b3ec001933fffc8217dce02f7bb65f774892ad7b01d64b92d5a3f02e16efd"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/control.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/control.py",
+    "sha256": "450273e879cc91855523a60b5327f23af80887746a42a69da3e45a8b7f5465d4"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/study.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/study.py",
+    "sha256": "e13a3bbee057980749549f79c2724893c0a27d14f30c42336fe767db740fa078"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/guard.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/guard.py",
+    "sha256": "bde602c6526cdf06a1c91c9cdfb60990405d1fd8cfd08c37c2451a83d0d96b8c"
+  },
+  "src/contiguous_fuxian/sharedkv_v26/integration.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v26/integration.py",
+    "sha256": "09e37492c4ba3fe5a22447c126dadd8d96b5202072354600b6b71d1afa88571c"
+  },
+  "docs/v26/AUDIT_V25_ZH.md": {
+    "source": "docs/v26/AUDIT_V25_ZH.md",
+    "sha256": "578b57071329127e8e9183e8200b56e21ade52996635b291f76d6cbc4f7b6c1f"
+  },
+  "docs/v26/SOURCES.md": {
+    "source": "docs/v26/SOURCES.md",
+    "sha256": "66f1e85b888e6ff14b218e03691cdd2a312fb3bf2a3532a836eaa78f90add8cf"
+  },
+  "docs/v26/README_ZH.md": {
+    "source": "docs/v26/README_ZH.md",
+    "sha256": "6ee3e41142e39bbbe100defc43cbb342805648e659e2d5ca54aa6fa951e6a442"
+  },
+  "docs/v26/NOTICE.md": {
+    "source": "docs/v26/NOTICE.md",
+    "sha256": "3bc5ad2603eaa2ee6873e63e24359c6e85c8e40220145661007732216ea9a279"
+  },
+  "docs/v26/TEST_RESULTS.md": {
+    "source": "docs/v26/TEST_RESULTS.md",
+    "sha256": "054b06c0d689966a7fdda1fb0ec66e3f4d1c698c17bc9760ee771780966034b6"
+  },
+  "docs/v26/MANUSCRIPT_OUTLINE_ZH.md": {
+    "source": "docs/v26/MANUSCRIPT_OUTLINE_ZH.md",
+    "sha256": "177192ff0b92095bac0523e5e7d5e9fe6625ef8a071b1e8ab2fba3bee66320f5"
+  },
+  "tests/test_sharedkv_v26.py": {
+    "source": "tests/test_sharedkv_v26.py",
+    "sha256": "a53b44c5bf137f0f5b67801ea93796bd6a9c4c5c8c49ed6e07ee450071c280f2"
+  },
+  "scripts/write_v26_report.py": {
+    "source": "scripts/write_v26_report.py",
+    "sha256": "065697b64243dc72403817ab9d80de9d6555ce9a5bba5bf6b9b2c45818ef6f30"
+  },
+  "scripts/v26_quality_worker.py": {
+    "source": "scripts/v26_quality_worker.py",
+    "sha256": "b41c5bd5b88347a7e5394e3f13658c53c1b77793ab54092139618d2d186ef731"
+  },
+  "scripts/run_evidence_v26.py": {
+    "source": "scripts/run_evidence_v26.py",
+    "sha256": "b7e22bd496ff98976c62a4a17638fe955a759dae7ce626adbc9a6f28305ec937"
+  },
+  "scripts/audit_quality_v26.py": {
+    "source": "scripts/audit_quality_v26.py",
+    "sha256": "aa23c912aaa4a86e23b3e5649a206c5f7e082d5efb17e0a42396a7b4c77b63c6"
+  },
+  "scripts/v26_formal_sequence2.py": {
+    "source": "scripts/v26_formal_sequence2.py",
+    "sha256": "7c02e88d945ca3a03f7991f8318ac34c1152bfedfb6d4759612da7b3f1981554"
+  },
+  "scripts/v26_probe_worker.py": {
+    "source": "scripts/v26_probe_worker.py",
+    "sha256": "8b619659280206825fd57908963e865869cd2ee71edbe2d492cd076549e03680"
+  },
+  "scripts/analyze_v26_results.py": {
+    "source": "scripts/analyze_v26_results.py",
+    "sha256": "25d51bb22cc25bbf75fe5b9db91af0f6a79ae00e637924a6f49696a4514e68fc"
+  },
+  "scripts/analyze_primary_v26.py": {
+    "source": "scripts/analyze_primary_v26.py",
+    "sha256": "ce1e200f6ceef809af69e1484cc722ee81085d7d35517dd790dab32ddfdf7aa4"
+  },
+  "scripts/prepare_v26_caches.py": {
+    "source": "scripts/prepare_v26_caches.py",
+    "sha256": "7de27b77f49fdc3979b298d0a3ad42f71a68e8bb75a7ded4bd31f7f73f7d53fa"
+  },
+  "scripts/v26_diagnostics_sequence.py": {
+    "source": "scripts/v26_diagnostics_sequence.py",
+    "sha256": "1bfbda52a304ecdd4bfaa6d5f52696ce1a56fe852304e019a55d073866fe7f89"
+  },
+  "scripts/check_v26_invariants.py": {
+    "source": "scripts/check_v26_invariants.py",
+    "sha256": "b6b91b4c34c11aff15beea4a0af70f86038da4a557a89cfdec1b278c8830944c"
+  },
+  "scripts/v26_formal_sequence.py": {
+    "source": "scripts/v26_formal_sequence.py",
+    "sha256": "3a746d517117f2e7a547d9ff1285afea7da2a69c935ba39953d9e97687237c19"
+  },
+  "scripts/v26_training_worker.py": {
+    "source": "scripts/v26_training_worker.py",
+    "sha256": "3e67c7d8604a066c74702d5e1c9c17cff450718827bdb5caa0b5bfb7371bd501"
+  },
+  "scripts/v26_common.py": {
+    "source": "scripts/v26_common.py",
+    "sha256": "9a01597639a02d9aab4fc933bb05cf6c21612ca2cc4bf698054e77274328eb7d"
+  },
+  "scripts/export_direct_v26.py": {
+    "source": "scripts/export_direct_v26.py",
+    "sha256": "dce79f75284871ab21c82292e6eff413e4112ee3b6130c2a98a083afcf27834d"
+  },
+  "scripts/analyze_primary_complete_interim_v26.py": {
+    "source": "scripts/analyze_primary_complete_interim_v26.py",
+    "sha256": "5232c2203b698838968ce822ed1ae7b837b41b7e248c470460f76aa097eba014"
+  },
+  "scripts/v26_gpu3_sequence.py": {
+    "source": "scripts/v26_gpu3_sequence.py",
+    "sha256": "9d557683837dde32e948a52ae31cc8385cece1faa7059cf5fc92a763bb66ed23"
+  },
+  "scripts/v26_gpu2_sequence.py": {
+    "source": "scripts/v26_gpu2_sequence.py",
+    "sha256": "d7b257445d715d949dfffc0dc77a2183453fe924153169573ad08e64d7ac0d08"
+  },
+  "scripts/plot_v26_results.py": {
+    "source": "scripts/plot_v26_results.py",
+    "sha256": "61f3e7e91a14af788c7703b3b77ca7388b64d384a0c098d6ecdb26dfebd79450"
+  },
+  "scripts/analyze_primary_cold_interim_v26.py": {
+    "source": "scripts/analyze_primary_cold_interim_v26.py",
+    "sha256": "d7dd792cc57eefb288282af302a45ab3e6fb7cea666ff47f0e2126914856a819"
+  },
+  "scripts/v26_diagnostics_sequence3.py": {
+    "source": "scripts/v26_diagnostics_sequence3.py",
+    "sha256": "367119d0c30999187022caaba292d270e4dbc35635d43baae075e42995c1d7d3"
+  },
+  "scripts/v26_diagnostics_sequence2.py": {
+    "source": "scripts/v26_diagnostics_sequence2.py",
+    "sha256": "b40ad52890b78d57d99bc6a974470aadd6fb7595cd71256e11993647c6e8152b"
+  },
+  "scripts/prepare_v26_data.py": {
+    "source": "scripts/prepare_v26_data.py",
+    "sha256": "620a5fb8d25a3ee3a1efc4acfe1283b1e29afa6f1da5b884abd0b2d658826243"
+  },
+  "scripts/copy_p1_gpu2_v26.py": {
+    "source": "scripts/copy_p1_gpu2_v26.py",
+    "sha256": "4563d1fc8951e61de305c4fc382a9d122f1ae1f23f6239037dffb7886c3a15bb"
+  },
+  "scripts/analyze_v26_nsight.py": {
+    "source": "scripts/analyze_v26_nsight.py",
+    "sha256": "deaacbbac712b9bdfd6b7f94f283ff9a2a76cc434a571bf3f96b890b78b8a767"
+  },
+  "scripts/build_prefix_v26.py": {
+    "source": "scripts/build_prefix_v26.py",
+    "sha256": "85940165bdb44cb1054cfba4060c5f7fe6d65c43db88a3b66b50d0ee1d27cbb3"
+  },
+  "scripts/v26_delivery_sequence2.py": {
+    "source": "scripts/v26_delivery_sequence2.py",
+    "sha256": "11685acbf2bba022d8473adb92b7ce713f8c54662aa3c7d8fcdac86dbbb2f771"
+  },
+  "scripts/analyze_v26_viz.py": {
+    "source": "scripts/analyze_v26_viz.py",
+    "sha256": "d347bc5239c0397cf5da96a1c935fc41e24c9ebd4279380f15bb4cc82069b575"
+  },
+  "scripts/status_results_v26.py": {
+    "source": "scripts/status_results_v26.py",
+    "sha256": "4dcea0fa225a88a8b6afaa85f1f484c79e8a29326fc8003627dcc493020954af"
+  },
+  "scripts/analyze_study_v26.py": {
+    "source": "scripts/analyze_study_v26.py",
+    "sha256": "c96cfda1a26cfdaebfc29ffeb7dd80cab604dd84409172c2f4c1b2c120093fcf"
+  },
+  "scripts/v26_subj_canonical_sequence.py": {
+    "source": "scripts/v26_subj_canonical_sequence.py",
+    "sha256": "61e39b8f714e608cde76e250cbf045b5f9fa74d65c8c4deebdecd3fc0b52faff"
+  },
+  "scripts/collect_teacher_v26.py": {
+    "source": "scripts/collect_teacher_v26.py",
+    "sha256": "6ac40947744449d29f802da5f4b29347d5de87c5a0849a43985603f355d69b96"
+  },
+  "scripts/audit_proxy_v26.py": {
+    "source": "scripts/audit_proxy_v26.py",
+    "sha256": "7c76f10f152008870c22c0348ed3380d3fd0f2cf59dfec2ca6de9c2899b626a1"
+  },
+  "scripts/v26_formal_sequence3.py": {
+    "source": "scripts/v26_formal_sequence3.py",
+    "sha256": "dfc7284e23c88b8284ac1eb81f41b233dee2bd2064fd02c681b152325cc62e9c"
+  },
+  "scripts/v26_delivery_sequence.py": {
+    "source": "scripts/v26_delivery_sequence.py",
+    "sha256": "94794a57c3072e233e4c24ea1f036be32d3572989d940da34c67726446df4c96"
+  },
+  "scripts/audit_admission_v26.py": {
+    "source": "scripts/audit_admission_v26.py",
+    "sha256": "7ad99e7667a7aacd6e4849e574399c3d220bfc4ac054d5e973228222aae49a68"
+  },
+  "scripts/train_subj_canonical_v26.py": {
+    "source": "scripts/train_subj_canonical_v26.py",
+    "sha256": "a37a6e4f3b518c7e0af44f94e7666c5fb3e28e11b3fcd2a0a4b887e730f45ac5"
+  },
+  "scripts/v26_gpu3_sequence2.py": {
+    "source": "scripts/v26_gpu3_sequence2.py",
+    "sha256": "aa9436c2800052bd69cde40b68e3ea898361118a0856132230c68eadcd7978a8"
+  },
+  "scripts/check_admission_v26.py": {
+    "source": "scripts/check_admission_v26.py",
+    "sha256": "179787fe9004b47d20a130bb6f4413ffe38fdecffa8c7845d5143e95ba72e328"
+  },
+  "scripts/prepare_subj_canonical_v26.py": {
+    "source": "scripts/prepare_subj_canonical_v26.py",
+    "sha256": "62a4a7ce6693d1985a3f634c5b7f2e97602b923305f3384f6b0a4f99c6e58078"
+  },
+  "scripts/install_sharedkv_v26.py": {
+    "source": "scripts/install_sharedkv_v26.py",
+    "sha256": "37ba2b4b25ff7af48b2f534d9ae19abe79c1e027a3449896139b97b36ba560d2"
+  },
+  "scripts/archive_v26.py": {
+    "source": "scripts/archive_v26.py",
+    "sha256": "0dfe3e0edb66832fc12b9f1ce9aff90a36cbf00e2d5825c2528b97119a09f43d"
+  },
+  "scripts/plan_study_v26.py": {
+    "source": "scripts/plan_study_v26.py",
+    "sha256": "9ce5cc3750adb0f2dda17451aa4589d1010c6b3213a7138c881775937767e3fa"
+  },
+  "scripts/prepare_v26_full_eval.py": {
+    "source": "scripts/prepare_v26_full_eval.py",
+    "sha256": "628d12ca3a74a6dce29e6b0dc00c349edd7ed3b5317ede87e3e70d17ead6897a"
+  },
+  "scripts/profile_layerkv_v26.py": {
+    "source": "scripts/profile_layerkv_v26.py",
+    "sha256": "1e8239ef936b311b9d226916b4bea2bb65f298f7acedb6b69534a4ffb1740f37"
+  },
+  "scripts/run_study_v26.py": {
+    "source": "scripts/run_study_v26.py",
+    "sha256": "b4df43c8d15611e59e69368374a169683a57ac2cce4e9e29a60edfca7681c9ba"
+  },
+  "scripts/v26_audit_worker.py": {
+    "source": "scripts/v26_audit_worker.py",
+    "sha256": "a59c1c4053c27c83bc769e25c1d01517cda3e802b1be2764dccdcac67c496d6a"
+  },
+  "configs/v26_p0_subj_b25_canonical_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_capture_val_command.json",
+    "sha256": "77c3d5d62715220448844125013f1f27a31e41f1c8c63e637927d8a890ab2640"
+  },
+  "configs/v26_p0_sst2_b25_quality_S_command.json": {
+    "source": "configs/v26_p0_sst2_b25_quality_S_command.json",
+    "sha256": "422bff71836a0d0f11b65e1cc372217c61d040fe31b817094b06e78f5ad484c4"
+  },
+  "configs/v26_p0_rte_b5_train_command.json": {
+    "source": "configs/v26_p0_rte_b5_train_command.json",
+    "sha256": "e18026f2bbbaaf06e61a7221af8a00a3b78f4af669180c06bb5fd3adfbb2e651"
+  },
+  "configs/v26_p0_subj_b50_canonical_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_timing_warm_S_command.json",
+    "sha256": "b6722a65b8d18d32795e2d30b7d0c779f40d7355a1dee4959a2e150953c60c83"
+  },
+  "configs/v26_prefix_p1_build_command.json": {
+    "source": "configs/v26_prefix_p1_build_command.json",
+    "sha256": "5791dc435b1780a0370f7b3fbf815d91fa94d5632d8e8efb537c79b3ff5b4090"
+  },
+  "configs/v26_probe_I_original_command.json": {
+    "source": "configs/v26_probe_I_original_command.json",
+    "sha256": "bee58cc1cfe619272ce4e38c526aad4b58e066af88ac976cc3c33b2a99e254a3"
+  },
+  "configs/v26_p1_subj_b25_canonical_timing_warm_I_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_timing_warm_I_command.json",
+    "sha256": "84ba8d7e029e30e1955bc1ca49b1299d99800e33becdf0e485d481ece043bc79"
+  },
+  "configs/v26_p0_rte_b50_quality_I_command.json": {
+    "source": "configs/v26_p0_rte_b50_quality_I_command.json",
+    "sha256": "88cff1c4aa5501848174d101048810a5b171400e30383970d3529c31c5c46719"
+  },
+  "configs/v26_p0_sst2_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_sst2_b25_timing_warm_I_command.json",
+    "sha256": "08e4b8c26cf69340d9562827c54f7c7a8f13c3cffe8a26bbc66005658365c32c"
+  },
+  "configs/v26_p0_subj_b50_canonical_train_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_train_command.json",
+    "sha256": "b5232a41e289a9c20650a849b6b3d0b5970d54c7b069056effeb52495a6b09f5"
+  },
+  "configs/v26_p0_subj_b25_plan.json": {
+    "source": "configs/v26_p0_subj_b25_plan.json",
+    "sha256": "e27c519950296f29799f96dfe3876d3e8f3150826fdbef007a41c70ee59b3133"
+  },
+  "configs/v26_admission_compare_command.json": {
+    "source": "configs/v26_admission_compare_command.json",
+    "sha256": "8a550e110ce73d2728584868d5f8c39acc5a15e38abc6e98ed2cafc3ccf3c384"
+  },
+  "configs/v26_p1_trec_b25_capture_val_command.json": {
+    "source": "configs/v26_p1_trec_b25_capture_val_command.json",
+    "sha256": "26042506249e694b16a81962afd5655ac1836d4969a4be207cfc10ced32ece54"
+  },
+  "configs/v26_p0_sst2_b10_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_sst2_b10_timing_preserve_S_command.json",
+    "sha256": "f9477fc4bc05fd871032a592967e8262aae65d17d42ee5a2a1de6ecff1de16e4"
+  },
+  "configs/v26_p1_subj_b25_canonical_quality_S_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_quality_S_command.json",
+    "sha256": "8b64fe517d5bebc893005479264700d137f50244abb7ac540cad436c490f7f28"
+  },
+  "configs/v26_p1_trec_b25_quality_I_command.json": {
+    "source": "configs/v26_p1_trec_b25_quality_I_command.json",
+    "sha256": "7283e630368d9ba5daaa4189d18ce56bea0479b66f69ac066f81086e86ea41ae"
+  },
+  "configs/v26_profile_viztracer_S_original_command.json": {
+    "source": "configs/v26_profile_viztracer_S_original_command.json",
+    "sha256": "4d54d26185df78296f9dd6d2838fb41d48eb58be235ce97c45a4eca5ea08641b"
+  },
+  "configs/v26_profile_nsys_I_original_export_command.json": {
+    "source": "configs/v26_profile_nsys_I_original_export_command.json",
+    "sha256": "a74f39cf897fe680e244706ac9f5b7a8fd6f4fd08be4aa0da8c8c97ccad92681"
+  },
+  "configs/v26_p0_sst2_b25_plan.json": {
+    "source": "configs/v26_p0_sst2_b25_plan.json",
+    "sha256": "8e92e7dc5b27ec3f6a24c113131ff0400f899df868c908033f5e783fa3d1d7b3"
+  },
+  "configs/v26_p0_subj_b5_canonical_train_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_train_command.json",
+    "sha256": "80163cfb4a3b5297ffa7621eb53ab10ea102a992a8dcde170f9befb9b1c57cfa"
+  },
+  "configs/v26_p0_sst2_b5_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_sst2_b5_timing_warm_S_command.json",
+    "sha256": "1d19591b6414215dcf6c5c6b9f2324331a52d92cfc7a271d0643bbc518c5d46d"
+  },
+  "configs/v26_p0_rte_b5_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_rte_b5_timing_warm_S_command.json",
+    "sha256": "273426ffeef9a657a6cceb889cb9619a0a2db0052a1b8a7ab52c6394a2e95220"
+  },
+  "configs/v26_p0_sst2_b10_capture_val_command.json": {
+    "source": "configs/v26_p0_sst2_b10_capture_val_command.json",
+    "sha256": "23cc5d71af08d51ed948e347f6b584482cf9b76a43043033228bcb02bc9e62d7"
+  },
+  "configs/v26_p0_trec_b50_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_trec_b50_timing_warm_I_command.json",
+    "sha256": "527e60e4e8ace1091b0635503e94cf769a8a1ac7fae2150739498521fe98d429"
+  },
+  "configs/v26_p0_subj_b5_canonical_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_capture_val_command.json",
+    "sha256": "ceb4f829a5017a177131db9fe6696bf6f434f1fb97fe633ed75ca549dab265f9"
+  },
+  "configs/v26_p0_rte_b10_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_rte_b10_timing_warm_I_command.json",
+    "sha256": "25c35fa4f2499b1176e30fc0cff580665b8c2a78841d183fdc04e90213bdc214"
+  },
+  "configs/v26_p0_sst2_b10_plan.json": {
+    "source": "configs/v26_p0_sst2_b10_plan.json",
+    "sha256": "abcad852bae2f2f19a937980365844a62c20f5a6e6f02b95ec53514ba7caeb7a"
+  },
+  "configs/v26_p1_trec_b25_plan.json": {
+    "source": "configs/v26_p1_trec_b25_plan.json",
+    "sha256": "fc9d721c44ab32af1c3949b8ddb3506a3e445ebc7d0ea99e367bc0dccea337ff"
+  },
+  "configs/v26_p0_trec_b50_train_command.json": {
+    "source": "configs/v26_p0_trec_b50_train_command.json",
+    "sha256": "c5d25e5212ac9599000f645b36ae5e5e02e932ae5b8ccc26fa24e96d2676aae1"
+  },
+  "configs/v26_p1_subj_b25_canonical_quality_I_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_quality_I_command.json",
+    "sha256": "c1bee267bdb491e450dd686bac119bd6d3f509f9f91a80c03e8debae11185fd8"
+  },
+  "configs/v26_p0_rte_b50_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_rte_b50_timing_warm_S_command.json",
+    "sha256": "35360486cf26a8cce5014aaba37cddb7a39d8d547bf6db697dc257c4e35c9321"
+  },
+  "configs/v26_p0_sst2_b10_capture_fit_command.json": {
+    "source": "configs/v26_p0_sst2_b10_capture_fit_command.json",
+    "sha256": "abeb867b55d4d9320b95161a5a36edae4b5100a07bd12179fb27155b5f8df356"
+  },
+  "configs/v26_audit3_cold_I_reuse-prefetch_command.json": {
+    "source": "configs/v26_audit3_cold_I_reuse-prefetch_command.json",
+    "sha256": "56fd6ba5b0e0ec61ab969cf00e084672b52638a6103c73ece02c4eb42b71bd2b"
+  },
+  "configs/v26_p0_subj_b50_canonical_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_capture_val_command.json",
+    "sha256": "167e302793d450b26444e23060460b67de5b89148e1d86e5f649b203e7959aab"
+  },
+  "configs/v26_p0_trec_b5_train_command.json": {
+    "source": "configs/v26_p0_trec_b5_train_command.json",
+    "sha256": "9a5e14693d08ba4e4aa42e04f7dd4e53e5d94435b630b095c7acb5cb038ba88b"
+  },
+  "configs/v26_p0_sst2_b5_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_sst2_b5_timing_preserve_S_command.json",
+    "sha256": "223d292adc631f59a644cbe43214b958a73f9aa614f9618828ec603bc8d08e52"
+  },
+  "configs/v26_p0_sst2_b10_quality_I_command.json": {
+    "source": "configs/v26_p0_sst2_b10_quality_I_command.json",
+    "sha256": "f00cf26284b786b4265c93bb49d0226ccc1f11169c957c18f1609f0d43d9bca7"
+  },
+  "configs/v26_profile_nsys_I_reuse-prefetch_export_command.json": {
+    "source": "configs/v26_profile_nsys_I_reuse-prefetch_export_command.json",
+    "sha256": "9ef26239af3a483237b2cd51922ba4b7fa978f7667935d677e61f2666e328cd9"
+  },
+  "configs/v26_audit3_cold_S_original_command.json": {
+    "source": "configs/v26_audit3_cold_S_original_command.json",
+    "sha256": "7f383d0ac48323cec85ff68c9fa4d09b61d5329147fe9a80fe3827c9ed0121bb"
+  },
+  "configs/v26_p0_trec_b25_quality_I_command.json": {
+    "source": "configs/v26_p0_trec_b25_quality_I_command.json",
+    "sha256": "f473ae3088bb1f96670bc521623bec719dc109b7779020cd99c659bc2d39eb28"
+  },
+  "configs/v26_p0_sst2_b25_capture_fit_command.json": {
+    "source": "configs/v26_p0_sst2_b25_capture_fit_command.json",
+    "sha256": "bc1a3bd58dd906c088414a4e41d51dabc8669cf48877d3bd891043ed01817ac2"
+  },
+  "configs/v26_p0_trec_b10_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_trec_b10_timing_preserve_S_command.json",
+    "sha256": "29f9cb1a52ab037edc91afee1aa175766030bb29acff2a8d3c4008e2a6738c13"
+  },
+  "configs/v26_audit3_warm_S_original_command.json": {
+    "source": "configs/v26_audit3_warm_S_original_command.json",
+    "sha256": "358b1e426e4b87dcc950bbccb5fae6d3633d4b40fa761d304dc46acb2b4fccff"
+  },
+  "configs/v26_p0_sst2_b50_quality_I_command.json": {
+    "source": "configs/v26_p0_sst2_b50_quality_I_command.json",
+    "sha256": "4219857d501cbb354cd538a5a42c365cc6e2218cfff10856e6f449d3df4f11df"
+  },
+  "configs/v26_p0_subj_b25_train_command.json": {
+    "source": "configs/v26_p0_subj_b25_train_command.json",
+    "sha256": "59dc2154b6c3427fb115d204b09363202fe2461a81fc48d90175596752b55ee3"
+  },
+  "configs/v26_subj_canonical_p0_training_worker_command.json": {
+    "source": "configs/v26_subj_canonical_p0_training_worker_command.json",
+    "sha256": "ae08626315fa5e9755124c4b1fe8b6f1ec4f0e226e9b86935f46973544d933e0"
+  },
+  "configs/v26_p1_subj_b25_canonical_timing_preserve_S_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_timing_preserve_S_command.json",
+    "sha256": "9577d52a6fd7b2c3e3a564abe3f4e282572435123c6499efd1cfa11ba89700ef"
+  },
+  "configs/v26_p0_subj_b50_canonical_plan.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_plan.json",
+    "sha256": "b67e37363b9639d1047166c5387e9f397c5e5c89d33e7fc864cab6a848282c6b"
+  },
+  "configs/v26_p0_subj_b5_canonical_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_timing_preserve_S_command.json",
+    "sha256": "e737e59f35b52ff8df16b8d1b841203ed23a5a091d28060e57b0da78caa670b9"
+  },
+  "configs/v26_p0_trec_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_trec_b25_timing_warm_S_command.json",
+    "sha256": "4bf6225dec50b2f58916fb36b845681ccdeab23fd59441414e13b50964c71ed0"
+  },
+  "configs/v26_p0_trec_b5_plan.json": {
+    "source": "configs/v26_p0_trec_b5_plan.json",
+    "sha256": "f9189c7e4f760f18e254594d901561671efce8b5120e07961a3be5980cce7dcf"
+  },
+  "configs/v26_p0_subj_b10_canonical_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_timing_preserve_S_command.json",
+    "sha256": "8ec7cf7387ecb9836dbd8276c7f4c0a94a26aa9f3d5a059d041e80306f16d0a8"
+  },
+  "configs/v26_p0_subj_b5_plan.json": {
+    "source": "configs/v26_p0_subj_b5_plan.json",
+    "sha256": "a31ea439efc966aaf6d4103051b931d8505024fc7f3291157c3fd085851d7d27"
+  },
+  "configs/v26_p0_rte_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_rte_b25_timing_preserve_I_command.json",
+    "sha256": "e1eee53320853f91b5bb2d5f0c9196f01c56482902844dd6d66608f01fc8e02a"
+  },
+  "configs/v26_p0_subj_b10_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b10_capture_val_command.json",
+    "sha256": "3a98b09f891c234301ce665031a4a1aa1fabbd4f3b35400ed6740f62c3a881d3"
+  },
+  "configs/v26_p0_rte_b50_quality_S_command.json": {
+    "source": "configs/v26_p0_rte_b50_quality_S_command.json",
+    "sha256": "112689d089022c335ef5c3f52691108c2e0775b47e4b683569997599c792a8ab"
+  },
+  "configs/v26_p0_trec_b5_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_trec_b5_timing_warm_S_command.json",
+    "sha256": "1faa98eed85114ca70fad897b20a41bad29a1709d16c737ad02774d82e6d53e2"
+  },
+  "configs/v26_profile_viztracer_S_reuse-prefetch_command.json": {
+    "source": "configs/v26_profile_viztracer_S_reuse-prefetch_command.json",
+    "sha256": "1b77a073c0c1e5bcb4b4b51a14a34cbbb0e5aeaadd84c7a10eb0f0d728a56e52"
+  },
+  "configs/v26_profile_nsys_I_original_command.json": {
+    "source": "configs/v26_profile_nsys_I_original_command.json",
+    "sha256": "c25c94016c638d3d799140c4e00bcb37ff3e6e99b884483e9831677b291dfa2d"
+  },
+  "configs/v26_p1_rte_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p1_rte_b25_timing_warm_I_command.json",
+    "sha256": "128ddd6fb6de55e809373636a18bf594ece6b087ea50c7e00da8bd6dbe98cae7"
+  },
+  "configs/v26_p0_rte_b10_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_rte_b10_timing_preserve_I_command.json",
+    "sha256": "e027f6fc9622feaed6bd5938b85e2f80dff833242c43366befdf398795825d21"
+  },
+  "configs/v26_p0_trec_b50_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_trec_b50_timing_warm_S_command.json",
+    "sha256": "a4a1e6deb3cb3607fa5b06a883fcfc39a521fcaa3ba0bcba9f3df83408130bf8"
+  },
+  "configs/v26_p0_subj_b5_canonical_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_capture_fit_command.json",
+    "sha256": "20f1e3e54b06baf7eb73ada9ab3cb538f6c9bc07d5e0935ac2694fe1685f7cb0"
+  },
+  "configs/v26_p0_trec_b10_quality_I_command.json": {
+    "source": "configs/v26_p0_trec_b10_quality_I_command.json",
+    "sha256": "32d2ff1032de9b99d47960e95e3eb4c3263245dd656228e8f1c9124cc4af38f1"
+  },
+  "configs/v26_p1_rte_b25_train_command.json": {
+    "source": "configs/v26_p1_rte_b25_train_command.json",
+    "sha256": "310c8b8010b1d51f6179eef5847a53d8ac62c8b9fdad5e69849de9b1d6a8f9d3"
+  },
+  "configs/v26_audit_warm_I_original_command.json": {
+    "source": "configs/v26_audit_warm_I_original_command.json",
+    "sha256": "03c2bf4dd01c758e8e850276e81d724f2a8b2d37cd63517965553b10b5801fff"
+  },
+  "configs/v26_p0_rte_b25_capture_val_command.json": {
+    "source": "configs/v26_p0_rte_b25_capture_val_command.json",
+    "sha256": "19c3dd9c547f4d71bf2e7a185d912b84bd9899298d79031e7c444975347c5f44"
+  },
+  "configs/v26_p0_trec_b5_quality_S_command.json": {
+    "source": "configs/v26_p0_trec_b5_quality_S_command.json",
+    "sha256": "017f2f82876e97ea7b911ad212be88413c13e009ca4e49ddf7bdb62da5d94214"
+  },
+  "configs/v26_p1_sst2_b25_capture_fit_command.json": {
+    "source": "configs/v26_p1_sst2_b25_capture_fit_command.json",
+    "sha256": "8c0da91726eceb8a9ea0959d78753b12ba139c5b92c4cf4e47d32e5b5566b571"
+  },
+  "configs/v26_p0_rte_b10_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_rte_b10_timing_preserve_S_command.json",
+    "sha256": "eb7dc7bd8733b186504b80764e7d7fda78229dd7896091db3abc99e0047a46e7"
+  },
+  "configs/v26_p0_sst2_b50_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_sst2_b50_timing_preserve_S_command.json",
+    "sha256": "b598eb76e61d50a8b506d66f3e2712629a42f05fa11b8e4beea2ab3e54647f23"
+  },
+  "configs/v26_profile_nsys_I_reuse-prefetch_command.json": {
+    "source": "configs/v26_profile_nsys_I_reuse-prefetch_command.json",
+    "sha256": "6c2d0ffd5821796d5c0f485d1aff10b660563ad93d595151437558226391042f"
+  },
+  "configs/v26_p0_sst2_b50_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_sst2_b50_timing_warm_S_command.json",
+    "sha256": "c76bf508d157ead970f0411dd7b96b7e6ae8ee15a813eee7902dda1111a2341e"
+  },
+  "configs/v26_p0_subj_b50_plan.json": {
+    "source": "configs/v26_p0_subj_b50_plan.json",
+    "sha256": "7709df93886c327577966e7ff433c1f54320aa5be0172f74b2522f795e1d5428"
+  },
+  "configs/v26_p0_rte_b50_plan.json": {
+    "source": "configs/v26_p0_rte_b50_plan.json",
+    "sha256": "05221faef18c0700f0b35ffd638c94981cb36c4c9aead70cf8335b7546acf8d9"
+  },
+  "configs/v26_p0_rte_b10_train_command.json": {
+    "source": "configs/v26_p0_rte_b10_train_command.json",
+    "sha256": "85dd90b544f38f0e5ff4655226f8fc9e14dbc86c22b368e6ef263f6c2deb641b"
+  },
+  "configs/v26_p0_sst2_b10_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_sst2_b10_timing_preserve_I_command.json",
+    "sha256": "6867f58762712316b6dadc0bd0573f01611d7c8ce76ef3a41ebcb41691be1bd7"
+  },
+  "configs/v26_p1_trec_b25_quality_S_command.json": {
+    "source": "configs/v26_p1_trec_b25_quality_S_command.json",
+    "sha256": "34bb0369026f040d0c2f3fcdfda3967d0b9375d5c7efb09184fa177fc20231ef"
+  },
+  "configs/v26_profile_nsys_S_original_command.json": {
+    "source": "configs/v26_profile_nsys_S_original_command.json",
+    "sha256": "11c509cd29b860d5e1cb56cf172264bdc4490d5e9b26954a038e284d786433b6"
+  },
+  "configs/v26_p0_sst2_b5_plan.json": {
+    "source": "configs/v26_p0_sst2_b5_plan.json",
+    "sha256": "eb6c23a8387cc684224214ab8ab4b5be4422bff5cb6ccd18e95b9a129982a0f3"
+  },
+  "configs/v26_p1_subj_b25_canonical_capture_fit_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_capture_fit_command.json",
+    "sha256": "086d2cef36efd6bacd72d2b63b2e554900bf7031f69896e051b776c33880fc20"
+  },
+  "configs/v26_p0_trec_b50_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_trec_b50_timing_preserve_S_command.json",
+    "sha256": "9e375d8d8bb9bfd09c72654f0c6112dbf852ec98564a7e7e03569cb134038f9e"
+  },
+  "configs/v26_p0_trec_b10_capture_val_command.json": {
+    "source": "configs/v26_p0_trec_b10_capture_val_command.json",
+    "sha256": "7ed38f4f60a12d997c6dba8aa0f353fa04bf53fb7337ab525baa8af01f3c43b4"
+  },
+  "configs/v26_p0_rte_b10_plan.json": {
+    "source": "configs/v26_p0_rte_b10_plan.json",
+    "sha256": "f842b118f064131371ff3228a8b29aa6a6aa816fddf00a3ab60278c3f44c13cf"
+  },
+  "configs/v26_p0_subj_b5_canonical_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_timing_preserve_I_command.json",
+    "sha256": "1b7c0d1de2e9b240220d952bf857ce33e612a3598b715120f9da17716801a03b"
+  },
+  "configs/v26_p0_sst2_b25_train_command.json": {
+    "source": "configs/v26_p0_sst2_b25_train_command.json",
+    "sha256": "4f981ce00dddcd8971f34a434469ea4fd55bbd607724127a29869b47134ab135"
+  },
+  "configs/v26_p0_subj_b5_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b5_capture_val_command.json",
+    "sha256": "d55f33a462a4c42af2fcbb7bcf9e577012e29fcb0fda1955b0892385610f5025"
+  },
+  "configs/v26_p1_subj_b25_canonical_timing_warm_S_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_timing_warm_S_command.json",
+    "sha256": "e05d9db73a4ae306797ba38b58a451254acbd3aa19f6f932f632643ee9856d00"
+  },
+  "configs/v26_p0_trec_b50_capture_val_command.json": {
+    "source": "configs/v26_p0_trec_b50_capture_val_command.json",
+    "sha256": "506cbc81d28ab3989e6034ebb6966560f0b660aedcb55ea93092564fe8a8b472"
+  },
+  "configs/v26_p0_trec_b5_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_trec_b5_timing_preserve_S_command.json",
+    "sha256": "161a720c2c900438e121c72afc9734bc3f2cbce371258213b9e66376c58ce4f2"
+  },
+  "configs/v26_p1_sst2_b25_quality_I_command.json": {
+    "source": "configs/v26_p1_sst2_b25_quality_I_command.json",
+    "sha256": "b34dc688dbb32228183fcade03eff44fcedb1297546616e188c0d1395739688b"
+  },
+  "configs/v26_profile_nsys_S_reuse-prefetch_export_command.json": {
+    "source": "configs/v26_profile_nsys_S_reuse-prefetch_export_command.json",
+    "sha256": "30c5ae10a0d12ad1ee1c0f5910e3ddb31b129bdf001ac2cef5a5fd2f0bb4be42"
+  },
+  "configs/v26_p0_subj_b5_canonical_quality_I_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_quality_I_command.json",
+    "sha256": "7e1ce37d046c50ec47a8bab2785739f97afa3c73880d91df190ecacc17ca76bc"
+  },
+  "configs/v26_final_invariants_command.json": {
+    "source": "configs/v26_final_invariants_command.json",
+    "sha256": "44fda09b08fb24b1d4c6c4888982744d6345f18a39522ee623e5acd4e5126d1a"
+  },
+  "configs/v26_p0_subj_b10_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b10_capture_fit_command.json",
+    "sha256": "e0c079a9eddc6e570d5f7ad0c50182c66a1766faf962fd22d1220485458de04a"
+  },
+  "configs/v26_p0_subj_b25_canonical_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_timing_preserve_I_command.json",
+    "sha256": "12458d860b72ad729b19230927b6a60a81550ee8f57c06df865ea5ffc7ac385d"
+  },
+  "configs/v26_probe_S_reuse-prefetch_command.json": {
+    "source": "configs/v26_probe_S_reuse-prefetch_command.json",
+    "sha256": "89208cfcbf6e1832cc415a8057f09aced9c163386277053c8a6298e2b6603b27"
+  },
+  "configs/v26_p0_trec_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_trec_b25_timing_preserve_I_command.json",
+    "sha256": "51a5b54546ef5328545b84d424f10405680febc94d7e07b5fb51fc254541d507"
+  },
+  "configs/v26_p1_rte_b25_plan.json": {
+    "source": "configs/v26_p1_rte_b25_plan.json",
+    "sha256": "1e427d967c5b8c253dc05bb4a337942736432857cdd1e7a98265db1bd763057b"
+  },
+  "configs/v26_p0_rte_b5_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_rte_b5_timing_warm_I_command.json",
+    "sha256": "7f051098821e1b417c264b29d6581bc7ce92c6bbe12f32ffb482db4f21ecd3f3"
+  },
+  "configs/v26_p0_rte_b50_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_rte_b50_timing_warm_I_command.json",
+    "sha256": "5553768129375a9c137a199fac2cee79f11c8e72954a44f27ef67ec83e541613"
+  },
+  "configs/v26_p0_trec_b50_quality_S_command.json": {
+    "source": "configs/v26_p0_trec_b50_quality_S_command.json",
+    "sha256": "0980696b238b7b5cf27f5e1eb44c7b66dfbff9350af2598b388c45b75896d14b"
+  },
+  "configs/v26_p0_subj_b25_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b25_capture_val_command.json",
+    "sha256": "981ca8df82b36cd0820dd0a88aa78beb51d130b809ec9a3ed05ad25f4989e717"
+  },
+  "configs/v26_p0_subj_b25_canonical_quality_I_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_quality_I_command.json",
+    "sha256": "a6e469b4ef0771f8c1c7ec3d0ebe7e4ef6fbf69b4fb9e199fca7878ee16bd391"
+  },
+  "configs/v26_p0_subj_b10_train_command.json": {
+    "source": "configs/v26_p0_subj_b10_train_command.json",
+    "sha256": "54fdef19c5261da34aa81ea733feddd73da0330d4adb4d91cd18f2346ae14191"
+  },
+  "configs/v26_p1_sst2_b25_plan.json": {
+    "source": "configs/v26_p1_sst2_b25_plan.json",
+    "sha256": "25dcafbfde1786950b4b5c362f65dfc8cbb85883e93950a3fd5cd3af5fa34147"
+  },
+  "configs/v26_p1_subj_b25_canonical_plan.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_plan.json",
+    "sha256": "653fdd3f5a5a5d89f2b0268cb731668e622bf74c5448d98848ffe41e86128fe3"
+  },
+  "configs/v26_p0_sst2_b10_train_command.json": {
+    "source": "configs/v26_p0_sst2_b10_train_command.json",
+    "sha256": "668397e26a322a5f8f190569e6a179dd2c9e704d78c7b5e39559997541c4e09f"
+  },
+  "configs/v26_p0_trec_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_trec_b25_timing_preserve_S_command.json",
+    "sha256": "039bf85cdc185149e31a19df844a5f02d68187c75da74d7a8436587a40a8e820"
+  },
+  "configs/v26_p0_subj_b25_canonical_train_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_train_command.json",
+    "sha256": "41778ca19e0da79fc79c4b6ad81261200f5b90b3b4c78db7757796acda56bf8d"
+  },
+  "configs/v26_p0_subj_b10_canonical_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_capture_val_command.json",
+    "sha256": "04a1ccaf562cfe3ca25b67f40fbd2d84a88092241c4814a18051e63c6086dd7f"
+  },
+  "configs/v26_p0_trec_b5_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_trec_b5_timing_preserve_I_command.json",
+    "sha256": "27c9cc369c16c14186b0f2542fa3f07435a338cc11ca6c91c3a09500762cbc20"
+  },
+  "configs/v26_p1_rte_b25_quality_I_command.json": {
+    "source": "configs/v26_p1_rte_b25_quality_I_command.json",
+    "sha256": "d2a9e14754094d0648f64fa56f66b9b1a8288ccce93cdeceb48343b8e09c7d22"
+  },
+  "configs/v26_p0_subj_b50_train_command.json": {
+    "source": "configs/v26_p0_subj_b50_train_command.json",
+    "sha256": "a497e8deaabf68416d2c25c1358f20ed837d53e5cf702e1779140068c3ace689"
+  },
+  "configs/v26_profile_viztracer_I_original_command.json": {
+    "source": "configs/v26_profile_viztracer_I_original_command.json",
+    "sha256": "a111795626b1b244956488b0fd909b86d30d071f818131c486fbd4c80117ebcb"
+  },
+  "configs/v26_p0_rte_b25_plan.json": {
+    "source": "configs/v26_p0_rte_b25_plan.json",
+    "sha256": "a81a8f10d23e3a3cdb7f1164dd38cdc48495d6f3c8764067dcdd3be4e69428f6"
+  },
+  "configs/v26_p0_subj_b25_canonical_plan.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_plan.json",
+    "sha256": "5ebcd039e4e56566a7b43c94df098f2f51f8dedacdbf0b79d5390aa8915d7ce0"
+  },
+  "configs/v26_p1_rte_b25_capture_val_command.json": {
+    "source": "configs/v26_p1_rte_b25_capture_val_command.json",
+    "sha256": "70e4fbf80e8e790589a97f14bfc3ed5bab3ba5333d8a156a42546ee20c76c5d0"
+  },
+  "configs/v26_p0_sst2_b50_plan.json": {
+    "source": "configs/v26_p0_sst2_b50_plan.json",
+    "sha256": "7c338e436b8a060b5311a3ff620064de5a2d34c414c068dba8002bdd3c5871dd"
+  },
+  "configs/v26_p0_rte_b5_capture_fit_command.json": {
+    "source": "configs/v26_p0_rte_b5_capture_fit_command.json",
+    "sha256": "c079ff9589b1090d17770013a6ef207842ddefe6f8feaf1ef7e560c1ca14b631"
+  },
+  "configs/v26_primary_analysis_command.json": {
+    "source": "configs/v26_primary_analysis_command.json",
+    "sha256": "c28301538cc8bf8b7671dc941849245d40e7c7ddf3ec30123696225d257304f6"
+  },
+  "configs/v26_p0_subj_b50_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b50_capture_fit_command.json",
+    "sha256": "7217691b3f43a7e9247895c0ade4723af73afcf57e9767b6bda0ddf7d724c9f9"
+  },
+  "configs/v26_p1_training_worker_command.json": {
+    "source": "configs/v26_p1_training_worker_command.json",
+    "sha256": "e5a0257a7784a2d28ada793cc78b234286c5f2127743f6049ccc7975774f5fd1"
+  },
+  "configs/v26_p1_subj_b25_plan.json": {
+    "source": "configs/v26_p1_subj_b25_plan.json",
+    "sha256": "e2d662358275fafd5b5164208e313a13a8f04d4a6cde1d6eb1acc36d071de911"
+  },
+  "configs/v26_audit3_warm_I_reuse-prefetch_command.json": {
+    "source": "configs/v26_audit3_warm_I_reuse-prefetch_command.json",
+    "sha256": "f0c93ba12a3a17b1d2b3d278fe24e96a0203903e2cdaf73a55495126e48460da"
+  },
+  "configs/v26_p0_trec_b10_train_command.json": {
+    "source": "configs/v26_p0_trec_b10_train_command.json",
+    "sha256": "c581b9a0ee10c0ea6350247d2c1c5ae294f22fae46406f87e869e9355b6f2b05"
+  },
+  "configs/v26_plot_command.json": {
+    "source": "configs/v26_plot_command.json",
+    "sha256": "8e465ccb59bcbe2ddff8ca9090ad1eb322443d5535821ae3df69c1fce7d421d1"
+  },
+  "configs/v26_p0_rte_b5_quality_I_command.json": {
+    "source": "configs/v26_p0_rte_b5_quality_I_command.json",
+    "sha256": "8ea191938ab35d83fd30a6affe4b734095f0e662514352b442ae498a65cbe1b2"
+  },
+  "configs/v26_nsight_analysis_command.json": {
+    "source": "configs/v26_nsight_analysis_command.json",
+    "sha256": "d25a300d47e91bf7debcf44232776732cb7e3cc50c317fdd62df0ea1fcc3ee8a"
+  },
+  "configs/v26_p0_trec_b50_plan.json": {
+    "source": "configs/v26_p0_trec_b50_plan.json",
+    "sha256": "a9c79412f7743e066e07542503ef2d760d9a31158f7c99cca82650330dc67be9"
+  },
+  "configs/v26_p0_sst2_b50_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_sst2_b50_timing_warm_I_command.json",
+    "sha256": "fe06c6b0ca6cfbe2aee4a0b8c5e38f281f06ace2dfd6dcd0103a9be426ad8da4"
+  },
+  "configs/v26_p0_sst2_b5_capture_fit_command.json": {
+    "source": "configs/v26_p0_sst2_b5_capture_fit_command.json",
+    "sha256": "7b9d7e93cadce2d3473a6680dce0954241a7ad381da7de901859f1040a711cbb"
+  },
+  "configs/v26_p1_subj_b25_canonical_capture_val_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_capture_val_command.json",
+    "sha256": "368c4db69488c40980af08d5250e4bdf4ede58c6c07e5fe68524c195d1ac095f"
+  },
+  "configs/v26_p0_sst2_b25_capture_val_command.json": {
+    "source": "configs/v26_p0_sst2_b25_capture_val_command.json",
+    "sha256": "0f745666ca5de56e48097d081f36cb7917720c17673af73a43b0d6091516dd54"
+  },
+  "configs/v26_p1_trec_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p1_trec_b25_timing_preserve_S_command.json",
+    "sha256": "29b73e2a8b507325d0fe7374ed34ee4ab6e18623d8215bac8c609065ed6ee746"
+  },
+  "configs/v26_p0_subj_b5_canonical_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_timing_warm_I_command.json",
+    "sha256": "708eed77095342085a467bf1bf28cb65b438a4c67f70cf27ac023858a21a9252"
+  },
+  "configs/v26_p0_rte_b5_capture_val_command.json": {
+    "source": "configs/v26_p0_rte_b5_capture_val_command.json",
+    "sha256": "c905fc419f0e703076968cff4ab0ea1b23df6d012e078a7023c4354383ffaecf"
+  },
+  "configs/v26_p0_subj_b50_canonical_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_timing_preserve_S_command.json",
+    "sha256": "857bbbfa606deec3b6bba1815595c5a515c465b2dcaf61431d84e66ce8748ce8"
+  },
+  "configs/v26_p0_trec_b10_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_trec_b10_timing_preserve_I_command.json",
+    "sha256": "a2a37f6ef3edf5a4ed1efbfa1609004c55e4c9241661994dbe0c1ef71bb4dbd7"
+  },
+  "configs/v26_p0_subj_b25_canonical_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_timing_warm_S_command.json",
+    "sha256": "eb5e83176f881dded33dfeb44e6d3a6061b58ebe963b309ecf8ae5848b9d4cb9"
+  },
+  "configs/v26_p0_rte_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_rte_b25_timing_warm_S_command.json",
+    "sha256": "9dcf20cf93e529076027ed49d7e1fbd8fc267ac3d0afedd18c453d7d5dc0f7df"
+  },
+  "configs/v26_p0_trec_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_trec_b25_timing_warm_I_command.json",
+    "sha256": "d756890cd9466ba74b49b2e686a04ef31c515dda78fd14aba3b5a295f10c2034"
+  },
+  "configs/v26_p0_subj_b50_canonical_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_capture_fit_command.json",
+    "sha256": "43c1b5c709ddd5b213a78c5d213c338d17e60106241f9f4a8d889670bd964e69"
+  },
+  "configs/v26_p0_subj_b50_canonical_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_timing_preserve_I_command.json",
+    "sha256": "9cf1446f2217b1f4c114d36b4934a0c6400ec5d5ad8e1f08f5e20d8cef5c060d"
+  },
+  "configs/v26_p1_subj_b25_quality_S_command.json": {
+    "source": "configs/v26_p1_subj_b25_quality_S_command.json",
+    "sha256": "009f17534a72bff454d1a57e82ca2e4ec4a862e4c93319b28c9c5eaef8f8cf09"
+  },
+  "configs/v26_p1_rte_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p1_rte_b25_timing_preserve_I_command.json",
+    "sha256": "d7d0bd53aa93844d3359c88e19ad2335b66b4e113e4df6948a9dffcc0767d539"
+  },
+  "configs/v26_p1_trec_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p1_trec_b25_timing_preserve_I_command.json",
+    "sha256": "93cadbb98b0e80493f47d9505bc2a3098c64bdc233ccde45f8fb92ecd6b214af"
+  },
+  "configs/v26_matrix_analysis_command.json": {
+    "source": "configs/v26_matrix_analysis_command.json",
+    "sha256": "75c4a2322e7006873ddea75302b0b710c0384921b1af4212de8967badb84043e"
+  },
+  "configs/v26_probe_S_original_command.json": {
+    "source": "configs/v26_probe_S_original_command.json",
+    "sha256": "d472f4f02dccf52a0586f7ca9d7c90641b6a74d587d46ed9773284740c1933c4"
+  },
+  "configs/v26_p0_sst2_b10_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_sst2_b10_timing_warm_S_command.json",
+    "sha256": "f52d1107d373e18c583981d65607e73f9c1b9673ff9b13c952f69df1968ebc5d"
+  },
+  "configs/v26_p0_trec_b25_quality_S_command.json": {
+    "source": "configs/v26_p0_trec_b25_quality_S_command.json",
+    "sha256": "d6233d7429272944479db857f6c2acb1bab96b641dae999e1cb78f6db80c3a2a"
+  },
+  "configs/v26_p1_sst2_b25_capture_val_command.json": {
+    "source": "configs/v26_p1_sst2_b25_capture_val_command.json",
+    "sha256": "68a055b9d53d960c2f759291d0058b1d47ed41b8dcdd385772f633170f0fec64"
+  },
+  "configs/v26_p0_rte_b50_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_rte_b50_timing_preserve_I_command.json",
+    "sha256": "61d83a633f864fc01b753a893fa06de9ddf1fce2091a08d491bad378a051de6d"
+  },
+  "configs/v26_p0_sst2_b5_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_sst2_b5_timing_warm_I_command.json",
+    "sha256": "19464e7c9f3be6563e39021cfb3261633827e2d685f5f8e54e364edeca7480ce"
+  },
+  "configs/v26_p0_sst2_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_sst2_b25_timing_warm_S_command.json",
+    "sha256": "5dd56287c8426e6b392312656fb51cee0790c881b419f31753d4e41ff6bf5c72"
+  },
+  "configs/v26_p0_sst2_b10_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_sst2_b10_timing_warm_I_command.json",
+    "sha256": "7f8f63e5036b8f9c49ff170fea39f71bbe9dcef8cfc7dc0e38f5033f3452fb78"
+  },
+  "configs/v26_p1_subj_b25_canonical_timing_preserve_I_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_timing_preserve_I_command.json",
+    "sha256": "86c729314f1f71b3b8ff244ec97df7aafb10d2ac040f5b5298a1e62a0154d434"
+  },
+  "configs/v26_p1_rte_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p1_rte_b25_timing_warm_S_command.json",
+    "sha256": "e72b6b42e8355e67b6e45c3e12111ffbf4c6c997996a19a55627c3798ced1b20"
+  },
+  "configs/v26_p0_rte_b10_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_rte_b10_timing_warm_S_command.json",
+    "sha256": "ba15429b8dab9e08c8b2081c44117a731e44f7ae691c94b778a54bc078bb63f0"
+  },
+  "configs/v26_p0_sst2_b50_quality_S_command.json": {
+    "source": "configs/v26_p0_sst2_b50_quality_S_command.json",
+    "sha256": "af4febea80ffaaefc2982c8bfcc95ff2879504633f27603038b0c4ea9b98b0fb"
+  },
+  "configs/v26_profile_nsys_S_original_export_command.json": {
+    "source": "configs/v26_profile_nsys_S_original_export_command.json",
+    "sha256": "d34205310505140507d56b43d88ee2ed55c675fca1179ce5b81af9a486e6e08a"
+  },
+  "configs/v26_p0_sst2_b5_quality_S_command.json": {
+    "source": "configs/v26_p0_sst2_b5_quality_S_command.json",
+    "sha256": "d7af7993f0378effe57b8eb889146e2712e221226e68698e2dc89fd3451ec67c"
+  },
+  "configs/v26_p1_subj_b25_train_command.json": {
+    "source": "configs/v26_p1_subj_b25_train_command.json",
+    "sha256": "ca14e166aa06636a7301e429c24e9f0427b25d60156cf77007135644be899d50"
+  },
+  "configs/v26_p0_rte_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_rte_b25_timing_warm_I_command.json",
+    "sha256": "1c166ffd070b3460dd7dbd7349eaf0cdfada078bdc23897cd09adae604a14f59"
+  },
+  "configs/v26_p0_sst2_b5_train_command.json": {
+    "source": "configs/v26_p0_sst2_b5_train_command.json",
+    "sha256": "2dff96eef6bf932ec3e41c296f1c10c8d060ee870f003fbfe87e8bf8973f5c96"
+  },
+  "configs/v26_p0_sst2_b10_quality_S_command.json": {
+    "source": "configs/v26_p0_sst2_b10_quality_S_command.json",
+    "sha256": "46feb38f76b93e539a9840b7e843b293cc7187dc3c6a1eb2f51746e41f4ba9f0"
+  },
+  "configs/v26_p1_sst2_b25_train_command.json": {
+    "source": "configs/v26_p1_sst2_b25_train_command.json",
+    "sha256": "5b71ed2fd2b1fffe1f2653b28df68aab46dd4fbe72a8c4b02c38830472fc27b1"
+  },
+  "configs/v26_p0_trec_b10_capture_fit_command.json": {
+    "source": "configs/v26_p0_trec_b10_capture_fit_command.json",
+    "sha256": "476b62793bdd16a088881dbcab66541010040870245fa32bf61898f9e7ad132e"
+  },
+  "configs/v26_audit2_warm_I_original_command.json": {
+    "source": "configs/v26_audit2_warm_I_original_command.json",
+    "sha256": "ea4dcd7bbc2b900b51fa33afc2457b95b7190dfd45ce59bf1c12b6f227862c26"
+  },
+  "configs/v26_p0_subj_b10_canonical_quality_S_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_quality_S_command.json",
+    "sha256": "675c59b2341333e89c4412e2c60631479c6725e27b07f97900b1f22cec4ac503"
+  },
+  "configs/v26_p0_subj_b25_canonical_quality_S_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_quality_S_command.json",
+    "sha256": "7aa5e12518bc4bb2868710a44fb5025088c28e91eb6a7a1ab3176f3e874fd544"
+  },
+  "configs/v26_p0_subj_b10_canonical_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_capture_fit_command.json",
+    "sha256": "b4306a6a5882552fd4b44a040687a486974ebe77e5f1f58013926cf372499860"
+  },
+  "configs/v26_p0_trec_b5_capture_val_command.json": {
+    "source": "configs/v26_p0_trec_b5_capture_val_command.json",
+    "sha256": "f5f938d8613262385b834e189c496c6bf1ac4fe92eaea12502715603aad2477a"
+  },
+  "configs/v26_p0_subj_b25_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b25_capture_fit_command.json",
+    "sha256": "b36e750c148719c1861055e9d2a64af41e0264e6beb2067c365d3d95561857d9"
+  },
+  "configs/v26_p0_trec_b5_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_trec_b5_timing_warm_I_command.json",
+    "sha256": "96c64552108722e914fa7882fd16fbcf53130a51ca883c248e64804c1e4bff94"
+  },
+  "configs/v26_p1_sst2_b25_quality_S_command.json": {
+    "source": "configs/v26_p1_sst2_b25_quality_S_command.json",
+    "sha256": "42ddc6833309c74badcfe957e9327acdadd82f9aed8e1287d90c5d223a5238ab"
+  },
+  "configs/v26_p0_rte_b10_capture_fit_command.json": {
+    "source": "configs/v26_p0_rte_b10_capture_fit_command.json",
+    "sha256": "494036aa04d1c4f9251d2a4a495abc2229c309f2ba5e82c2a7250fd690a6baad"
+  },
+  "configs/v26_p1_rte_b25_capture_fit_command.json": {
+    "source": "configs/v26_p1_rte_b25_capture_fit_command.json",
+    "sha256": "e9c954a6cdf51304e1d23b57de733d0be1437f4a643dee4e436e385a8adfb891"
+  },
+  "configs/v26_p1_rte_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p1_rte_b25_timing_preserve_S_command.json",
+    "sha256": "09859d2fd619a41be35a61545877d1b1f88b435e80b47cd28b016c97e025c242"
+  },
+  "configs/v26_p0_rte_b5_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_rte_b5_timing_preserve_S_command.json",
+    "sha256": "400fbdf8a20e8f574617dcfddc5f2765f725547f39ff871d3a587fb55304bad2"
+  },
+  "configs/v26_p0_trec_b10_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_trec_b10_timing_warm_I_command.json",
+    "sha256": "eb703e41c092f6d1d5b9b37d12929dcb5c9f927aa3537c1202e3657cdbcb9fc6"
+  },
+  "configs/v26_p0_rte_b50_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_rte_b50_timing_preserve_S_command.json",
+    "sha256": "24ac665b54a210f89b9157af72ad3d9a5e4ac64b936de904ba124d74942db84c"
+  },
+  "configs/v26_report_command.json": {
+    "source": "configs/v26_report_command.json",
+    "sha256": "3605e5783f539feaeaef6cdba23881978efbf02306c5c2d5a78f233e61ab7dbb"
+  },
+  "configs/v26_p0_sst2_b50_capture_val_command.json": {
+    "source": "configs/v26_p0_sst2_b50_capture_val_command.json",
+    "sha256": "6750262794eb43a3b0ac432dfd63d0494b0281db86e7fc26ff10a33f6b57ae71"
+  },
+  "configs/v26_p0_sst2_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_sst2_b25_timing_preserve_I_command.json",
+    "sha256": "6e6898c83b6a7c73d5d72503aaff1413d7411759a4d11b84182482c1911c8847"
+  },
+  "configs/v26_p1_trec_b25_train_command.json": {
+    "source": "configs/v26_p1_trec_b25_train_command.json",
+    "sha256": "2ba7eff54af0119b8149722fd58365e38afe868c007b99be420285bcc469f484"
+  },
+  "configs/v26_protocol_scope_clarification.json": {
+    "source": "configs/v26_protocol_scope_clarification.json",
+    "sha256": "43698641dd04f4fb90b62cb2de67669a5da4edeeb1812ba80a1a859d7f386e03"
+  },
+  "configs/v26_mechanism_proxy_command.json": {
+    "source": "configs/v26_mechanism_proxy_command.json",
+    "sha256": "402bea54200fa54794a515eea8f63c010460009bbdb73c71f039c848b22f209c"
+  },
+  "configs/v26_p0_subj_b5_canonical_quality_S_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_quality_S_command.json",
+    "sha256": "7574b545e7f04efa56f52fbd183954500bc6dae8c5a6129609fb75ddcd7d3e0a"
+  },
+  "configs/v26_p0_rte_b25_quality_S_command.json": {
+    "source": "configs/v26_p0_rte_b25_quality_S_command.json",
+    "sha256": "c986e94ce0b242b5aaa282abdfc254f2c289a7b4e186fbd1946e3fe1cf42678b"
+  },
+  "configs/v26_audit3_cold_S_reuse-prefetch_command.json": {
+    "source": "configs/v26_audit3_cold_S_reuse-prefetch_command.json",
+    "sha256": "b617657fee6f11d85e86e8c436828c816c6deaf2275fb0e4f2f78dea490fb4f8"
+  },
+  "configs/v26_p1_sst2_b25_timing_preserve_I_command.json": {
+    "source": "configs/v26_p1_sst2_b25_timing_preserve_I_command.json",
+    "sha256": "af2a4b92db5c5bd52f3cd4ab8a48b9a78ccb28d3556d36e9d975a2f711a0e803"
+  },
+  "configs/v26_p1_trec_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p1_trec_b25_timing_warm_S_command.json",
+    "sha256": "cc355dd5f70c0c03e25f18f717f37e0f7f5e3db03cb9f797974f0b26ebd410b8"
+  },
+  "configs/v26_p0_rte_b5_plan.json": {
+    "source": "configs/v26_p0_rte_b5_plan.json",
+    "sha256": "c384bb85f961cf8a7f5b59f8c552fb8a4362e9eecf7adb54673992ede7990a1d"
+  },
+  "configs/v26_p0_subj_b50_canonical_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_timing_warm_I_command.json",
+    "sha256": "3c9f613ac34c903c5baadb5b79eab99a46f9ddaa36bd00706e0d0a1083957a06"
+  },
+  "configs/v26_p1_subj_b25_canonical_train_command.json": {
+    "source": "configs/v26_p1_subj_b25_canonical_train_command.json",
+    "sha256": "403b6a4aebe4897be4e565619ff07d4d6a96aee1882e5695e11a09b71259e41a"
+  },
+  "configs/v26_p0_rte_b5_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_rte_b5_timing_preserve_I_command.json",
+    "sha256": "1916d7c75a1a232c9c01a6b4414933520384e77138a43d7d934541476f564cd7"
+  },
+  "configs/v26_p0_subj_b50_capture_val_command.json": {
+    "source": "configs/v26_p0_subj_b50_capture_val_command.json",
+    "sha256": "d21f79aa4e8454b90432b213df28879f1206e47273cef099a4aedc2ff5f2f5aa"
+  },
+  "configs/v26_p0_subj_b10_canonical_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_timing_warm_I_command.json",
+    "sha256": "2b1401610c4555aa1bcc87258311d6e58b61df4a0902d08c2a67c97c44591135"
+  },
+  "configs/v26_audit3_warm_I_original_command.json": {
+    "source": "configs/v26_audit3_warm_I_original_command.json",
+    "sha256": "06e6ac408e24db650bb4baa95692bcbd5af9fbc97672b8003b8ee8dd1c3eabfc"
+  },
+  "configs/v26_p0_trec_b5_capture_fit_command.json": {
+    "source": "configs/v26_p0_trec_b5_capture_fit_command.json",
+    "sha256": "53cd8ff97c3eecc1c14ac27d4a8acc59839ae75d7a50ccaaf4fc232cdc260e14"
+  },
+  "configs/v26_p1_subj_b25_capture_fit_command.json": {
+    "source": "configs/v26_p1_subj_b25_capture_fit_command.json",
+    "sha256": "6f1ebdff0ff88a21d5e57844f6c54e76eee75498c9765b4ccbf47af45fa685f1"
+  },
+  "configs/v26_p0_trec_b50_quality_I_command.json": {
+    "source": "configs/v26_p0_trec_b50_quality_I_command.json",
+    "sha256": "f2195a7aca95cb9febd5c17ee145f3d4e2fadcd1d035eabe673d3d973e601c48"
+  },
+  "configs/v26_prefix_p1_index_retry_command.json": {
+    "source": "configs/v26_prefix_p1_index_retry_command.json",
+    "sha256": "7e460b7cb423360c102046f59caa7e137c26d80c4ad9a2a144214359d50e8862"
+  },
+  "configs/v26_p0_rte_b5_quality_S_command.json": {
+    "source": "configs/v26_p0_rte_b5_quality_S_command.json",
+    "sha256": "160c9f957a5325713bd7e3c46f4cabf24a04f08cf6fddb8dea80c7fbd35e626d"
+  },
+  "configs/v26_p0_subj_b10_canonical_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_timing_warm_S_command.json",
+    "sha256": "c5c610f06b856efb71668910095efd43a4162df93147216c97b5b519790b9cb0"
+  },
+  "configs/v26_probe_I_reuse-prefetch_command.json": {
+    "source": "configs/v26_probe_I_reuse-prefetch_command.json",
+    "sha256": "b5934614f76f91635e1355c873406239c5247c9ad5122e4f9eff29bec4bf4c96"
+  },
+  "configs/v26_p0_rte_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_rte_b25_timing_preserve_S_command.json",
+    "sha256": "c385967b82f56c1c5cc0a302f70746568a5dcfb4552f9af7a1ef116b8b0a549a"
+  },
+  "configs/v26_p0_subj_b25_canonical_timing_warm_I_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_timing_warm_I_command.json",
+    "sha256": "8213f72b878481388b9f2f33dad87a53117ec1244ebc822c5f5c209c032c4245"
+  },
+  "configs/v26_p0_rte_b50_capture_val_command.json": {
+    "source": "configs/v26_p0_rte_b50_capture_val_command.json",
+    "sha256": "2c905e96767b55edd52b7efcf3f0db2dcb170cd7b31d2358671410dc58890da2"
+  },
+  "configs/v26_p0_rte_b10_quality_S_command.json": {
+    "source": "configs/v26_p0_rte_b10_quality_S_command.json",
+    "sha256": "4c67cc54506fd1734c7b5d2bb22dbb494d01f5abb7763344d2fb38446c026299"
+  },
+  "configs/v26_p0_subj_b10_plan.json": {
+    "source": "configs/v26_p0_subj_b10_plan.json",
+    "sha256": "2248c3abcf92f69770130d78e16da2ff885f7beee8d1085cc3583e1677894187"
+  },
+  "configs/v26_p0_subj_b10_canonical_plan.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_plan.json",
+    "sha256": "cf9334e7e65905983338bf8b484b172f1f74a1413120d03cb0d39cd1919ee2cf"
+  },
+  "configs/v26_audit3_warm_S_reuse-prefetch_command.json": {
+    "source": "configs/v26_audit3_warm_S_reuse-prefetch_command.json",
+    "sha256": "72286e251dd7b7038e7e03d69637dc42cb74ce4453fca896bb4b86fb001b8147"
+  },
+  "configs/v26_p1_trec_b25_capture_fit_command.json": {
+    "source": "configs/v26_p1_trec_b25_capture_fit_command.json",
+    "sha256": "7f56126f67df8f4729e7f43215fa91969442da276117c65c67bd7ceba0b75100"
+  },
+  "configs/v26_p0_subj_b25_canonical_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_timing_preserve_S_command.json",
+    "sha256": "2e0339357cd80a4327d48c351d27542bbce99a9cb5c5bdbc5ae417abbb05b8ef"
+  },
+  "configs/v26_p0_rte_b50_train_command.json": {
+    "source": "configs/v26_p0_rte_b50_train_command.json",
+    "sha256": "faa7c1bba1f5b8f42ba67146663e4063c5788efdd24e4370185c3a742831bf8b"
+  },
+  "configs/v26_p1_subj_b25_capture_val_command.json": {
+    "source": "configs/v26_p1_subj_b25_capture_val_command.json",
+    "sha256": "b550923f22148e6fa426703721633b75ee22e32908a6fb1403fe8a42e4d515cb"
+  },
+  "configs/v26_profile_nsys_S_reuse-prefetch_command.json": {
+    "source": "configs/v26_profile_nsys_S_reuse-prefetch_command.json",
+    "sha256": "4220a506a6ba671617732e84e22e29713c5ea205d916f6a2e1f0ab9af3164667"
+  },
+  "configs/v26_p1_sst2_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p1_sst2_b25_timing_preserve_S_command.json",
+    "sha256": "36619dd4af4faf6ad0988b2b2662f65d4c7d13c6b0c9d72593723e7e1c16f7ce"
+  },
+  "configs/v26_p0_trec_b50_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_trec_b50_timing_preserve_I_command.json",
+    "sha256": "76805f75d34b82c7a1b183a2411d9103bf5b2aa9da97924d3e0eb33a994ef734"
+  },
+  "configs/v26_p0_trec_b50_capture_fit_command.json": {
+    "source": "configs/v26_p0_trec_b50_capture_fit_command.json",
+    "sha256": "4d22e7cfeda224f733fa9d3c97837182df921748f9c28b970b09ab584bf440bd"
+  },
+  "configs/v26_p0_subj_b50_canonical_quality_I_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_quality_I_command.json",
+    "sha256": "deaf530c15f284b03b293d7ba97de410c576a84cbb7b0462f1fbca96ff0e6f1c"
+  },
+  "configs/v26_p0_rte_b10_capture_val_command.json": {
+    "source": "configs/v26_p0_rte_b10_capture_val_command.json",
+    "sha256": "1a72b8082eb54db48f1cebc6575a2c01caf6722d40a4855ddcd9237625dc2f0e"
+  },
+  "configs/v26_p1_rte_b25_quality_S_command.json": {
+    "source": "configs/v26_p1_rte_b25_quality_S_command.json",
+    "sha256": "a1d0f10b9843b996aa807b2b2fa35371bc64a77a2acb7f92b4353491bc96d22f"
+  },
+  "configs/v26_p0_rte_b50_capture_fit_command.json": {
+    "source": "configs/v26_p0_rte_b50_capture_fit_command.json",
+    "sha256": "6e704c939acf1cbb350de838364223667f2706b1f633da3674b32d43e421b154"
+  },
+  "configs/v26_p0_trec_b10_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_trec_b10_timing_warm_S_command.json",
+    "sha256": "c26841a6897ac18af63b459c71858336750bcab743bd3cba6076bea61b271050"
+  },
+  "configs/v26_p0_sst2_b50_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_sst2_b50_timing_preserve_I_command.json",
+    "sha256": "b9521f9c08d3a3663f2c695cf06e99a4cbde754396dd979e279c6c5f723ceb0a"
+  },
+  "configs/v26_quality_gpu3_command.json": {
+    "source": "configs/v26_quality_gpu3_command.json",
+    "sha256": "1ac59653f35a5a25805bc3acbcdfdf285527f0fca1ebd21a62b34fca1582e704"
+  },
+  "configs/v26_p0_sst2_b5_quality_I_command.json": {
+    "source": "configs/v26_p0_sst2_b5_quality_I_command.json",
+    "sha256": "09f2f8c30aa8c91701e0b09029fe56d7ecc7b0b39287e3e7825ad3095f3549ee"
+  },
+  "configs/v26_p0_sst2_b50_train_command.json": {
+    "source": "configs/v26_p0_sst2_b50_train_command.json",
+    "sha256": "ee44919b241a2088385c36cbf3e76444d0e4120d62b2af42f3ee12440a688d42"
+  },
+  "configs/v26_p0_trec_b10_quality_S_command.json": {
+    "source": "configs/v26_p0_trec_b10_quality_S_command.json",
+    "sha256": "551f822598b78bc7c8d711a766186bbb5a3e97c60b7a9b2caf59207b18d48745"
+  },
+  "configs/v26_p0_subj_b5_canonical_plan.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_plan.json",
+    "sha256": "5835516580397ed40ff8dc5354118a2964cf200ffb12073cdb56f56ab3defd24"
+  },
+  "configs/v26_p0_subj_b5_canonical_timing_warm_S_command.json": {
+    "source": "configs/v26_p0_subj_b5_canonical_timing_warm_S_command.json",
+    "sha256": "309223ac8f16b23750cc8f5d0762572f16ba415352c1cbc86251dd2b5113ffef"
+  },
+  "configs/v26_prefix_p1_index_command.json": {
+    "source": "configs/v26_prefix_p1_index_command.json",
+    "sha256": "7e460b7cb423360c102046f59caa7e137c26d80c4ad9a2a144214359d50e8862"
+  },
+  "configs/v26_p0_subj_b10_canonical_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_timing_preserve_I_command.json",
+    "sha256": "6f0f3bb0dfe7bbaf7d347a4285138366f2ebc126ca32ad0de0650749695fc5cd"
+  },
+  "configs/v26_p1_sst2_b25_timing_warm_S_command.json": {
+    "source": "configs/v26_p1_sst2_b25_timing_warm_S_command.json",
+    "sha256": "150d5d61ea076d0531fe82d69b2bfe1636024816c4ce30b2b71d914d1e3a3760"
+  },
+  "configs/v26_p0_rte_b25_quality_I_command.json": {
+    "source": "configs/v26_p0_rte_b25_quality_I_command.json",
+    "sha256": "ea18cb307112c42bb5099f5b9550435e367fc6928b568750560e10be20c720df"
+  },
+  "configs/v26_p0_subj_b10_canonical_train_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_train_command.json",
+    "sha256": "ef1385a90ef43df5f8b6637ab846bafe48733d369015c4fa1804abae7f865395"
+  },
+  "configs/v26_p0_subj_b25_canonical_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b25_canonical_capture_fit_command.json",
+    "sha256": "0259c949e34707618fc6cf0e3dd858631c9fe8cea3669bb1404829a153047a2d"
+  },
+  "configs/v26_p0_rte_b10_quality_I_command.json": {
+    "source": "configs/v26_p0_rte_b10_quality_I_command.json",
+    "sha256": "63387d12deba2c01fa91b78a183aa36dfa45e9be94f2819d38c655bf1396ab92"
+  },
+  "configs/v26_p1_sst2_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p1_sst2_b25_timing_warm_I_command.json",
+    "sha256": "69b97be28a8e7a170ea864720464964b19a8d8262532fc88482c9797f1e76206"
+  },
+  "configs/v26_export_direct_command.json": {
+    "source": "configs/v26_export_direct_command.json",
+    "sha256": "9c44ed94ed5fe8707986fe4e2189ba69feb8d6f1cd8ffff8f3d454cd14b918bd"
+  },
+  "configs/v26_p0_rte_b25_train_command.json": {
+    "source": "configs/v26_p0_rte_b25_train_command.json",
+    "sha256": "65203086037d6747c57952a3bf2cb93804aaa0c33952a8cdd0849dea811fa2b1"
+  },
+  "configs/v26_p0_subj_b10_canonical_quality_I_command.json": {
+    "source": "configs/v26_p0_subj_b10_canonical_quality_I_command.json",
+    "sha256": "f9444f1126dbe58a89e92f82c2a63b3a6047e643de3065b08b58231f34d9cd33"
+  },
+  "configs/v26_protocol.json": {
+    "source": "configs/v26_protocol.json",
+    "sha256": "c5a4b70399201428f876e4cdfaea209cf868fd7569fc833312cd09fb03e405c9"
+  },
+  "configs/v26_p0_subj_b5_train_command.json": {
+    "source": "configs/v26_p0_subj_b5_train_command.json",
+    "sha256": "ff0fd289e96a74ca60e1d7ef81c53a88683dd15bf2f9e6d060814e884a9ad0e8"
+  },
+  "configs/v26_profile_viztracer_I_reuse-prefetch_command.json": {
+    "source": "configs/v26_profile_viztracer_I_reuse-prefetch_command.json",
+    "sha256": "f2c179d3dbf6e530194edfc6e73c7021e3859b202e2d15848b65e05f517f3553"
+  },
+  "configs/v26_p0_sst2_b5_capture_val_command.json": {
+    "source": "configs/v26_p0_sst2_b5_capture_val_command.json",
+    "sha256": "2748982b16c5a77004b77cbd552058574c5376a292b268f605def0139b4f42b7"
+  },
+  "configs/v26_p0_sst2_b50_capture_fit_command.json": {
+    "source": "configs/v26_p0_sst2_b50_capture_fit_command.json",
+    "sha256": "be5be5605c3553d8e5c98bf57a1eb694f2ffd04d960b63d969f14ff6a65f6acf"
+  },
+  "configs/v26_p0_trec_b10_plan.json": {
+    "source": "configs/v26_p0_trec_b10_plan.json",
+    "sha256": "065a2a21c6ce0277adfdc7c81eaf27c6e5d5fef8d1b4a4b36e060884860d382c"
+  },
+  "configs/v26_p0_subj_b5_capture_fit_command.json": {
+    "source": "configs/v26_p0_subj_b5_capture_fit_command.json",
+    "sha256": "02e1e60153c301fd53766d96ecf99bced9f7aeb41f56e8107445b7ea51deaa77"
+  },
+  "configs/v26_p0_trec_b5_quality_I_command.json": {
+    "source": "configs/v26_p0_trec_b5_quality_I_command.json",
+    "sha256": "951482e791ca54f5f6d0cca9a9fb5b90828dd60a5bb52b72429a25ddc32932f0"
+  },
+  "configs/v26_audit3_cold_I_original_command.json": {
+    "source": "configs/v26_audit3_cold_I_original_command.json",
+    "sha256": "e08853051384b14a42c8d7bdad9078e4b3202a45ed6cade6c2262b8a55066a8c"
+  },
+  "configs/v26_p0_sst2_b25_quality_I_command.json": {
+    "source": "configs/v26_p0_sst2_b25_quality_I_command.json",
+    "sha256": "fb44bcae43d334e4c7c46856d0bb88ef5bfd1ccbfa15dbab96ad1f7bc55605ed"
+  },
+  "configs/v26_p0_sst2_b25_timing_preserve_S_command.json": {
+    "source": "configs/v26_p0_sst2_b25_timing_preserve_S_command.json",
+    "sha256": "00cd95ba03ad83a4da4bb5adc6fafae62c15d937d8c5086003350a84bbb0d027"
+  },
+  "configs/v26_p0_sst2_b5_timing_preserve_I_command.json": {
+    "source": "configs/v26_p0_sst2_b5_timing_preserve_I_command.json",
+    "sha256": "c23d2a2ec0ce872b47dc0cc6640578cc9a3f1fb069c805da910c930727cf02a6"
+  },
+  "configs/v26_mechanism_direct_command.json": {
+    "source": "configs/v26_mechanism_direct_command.json",
+    "sha256": "09c3cb96c594d1524df9da08ac704ba7b91d2915b7afd3d56ebc3c26c1ed309b"
+  },
+  "configs/v26_p1_subj_b25_quality_I_command.json": {
+    "source": "configs/v26_p1_subj_b25_quality_I_command.json",
+    "sha256": "aaa9e475ba9449563fd8b3076bf4e392600b77f1ed265c6cbdb8ec917378cd5c"
+  },
+  "configs/v26_p0_subj_b50_canonical_quality_S_command.json": {
+    "source": "configs/v26_p0_subj_b50_canonical_quality_S_command.json",
+    "sha256": "fbdcfb51813b5a5c28a43cacededa5c48ddb1ac776ca9895c178824e7237ceab"
+  },
+  "configs/v26_subj_canonical_p1_training_worker_command.json": {
+    "source": "configs/v26_subj_canonical_p1_training_worker_command.json",
+    "sha256": "becbff3c2e83321f99252e2ccfff95ec6ae156ced8ff0d324b9bbbe88c52a52c"
+  },
+  "configs/v26_p0_rte_b25_capture_fit_command.json": {
+    "source": "configs/v26_p0_rte_b25_capture_fit_command.json",
+    "sha256": "dd2b24be2107fc45069f2ebc82a35178fd3d44274086924a2b600aad263d5586"
+  },
+  "configs/v26_quality_gpu2_command.json": {
+    "source": "configs/v26_quality_gpu2_command.json",
+    "sha256": "80ccd35eea54f1e9054ffc73ab4e009a8f7881289aa5918e09930c0c2eb846a2"
+  },
+  "configs/v26_primary_study_command.json": {
+    "source": "configs/v26_primary_study_command.json",
+    "sha256": "7adf24ac9a871ab0558bf9c7109a4d921dea3ceffd8e82767b2645f0ba490574"
+  },
+  "configs/v26_p1_trec_b25_timing_warm_I_command.json": {
+    "source": "configs/v26_p1_trec_b25_timing_warm_I_command.json",
+    "sha256": "d53fd088ec584c19471e135ea3c420593d3cf48afa261288c715eb209d04b83a"
+  },
+  "configs/v26/evidence_study.example.json": {
+    "source": "configs/v26/evidence_study.example.json",
+    "sha256": "86f011aa4736e4253abfea745e1b4c29442730073b90ff35d8867dd7cbd05230"
+  },
+  "EXPERIMENT_REPORT_V26_ZH.md": {
+    "source": "EXPERIMENT_REPORT_V26_ZH.md",
+    "sha256": "e4be46345982cd784e649f2210450e7400764056c4d6bb09b972bb606ec04657"
+  },
+  "README_LAYERKV_V26_SERVER.md": {
+    "source": "README_LAYERKV_V26_SERVER.md",
+    "sha256": "3113ecb58e6cd90b2f21a82be8c2dda6f8d164e5f8a451dd1b17a1f60424b221"
+  },
+  "docs/layerkv_v26/results/v26_matrix.csv": {
+    "source": "results/v26_matrix.csv",
+    "sha256": "ab3f4cf65f4d12a938bb0b74a914973c5c725c4ea1c3d5b16c7207118b57021a"
+  },
+  "docs/layerkv_v26/results/v26_matrix_analysis.json": {
+    "source": "results/v26_matrix_analysis.json",
+    "sha256": "7da4b4482d0478176cba1e748d0d6f40b1f87fad17be202a2f316221509d0c70"
+  },
+  "docs/layerkv_v26/results/v26_primary_analysis.json": {
+    "source": "results/v26_primary_analysis.json",
+    "sha256": "957702e72780c6ae56f8065e996b28d72c52eb23ade32787c1f507bea85da72b"
+  },
+  "docs/layerkv_v26/results/v26_mechanism_analysis.json": {
+    "source": "results/v26_mechanism_analysis.json",
+    "sha256": "d0b1a5d35aed28db28d1cdb9a79c782bdd897270627fc8942f7ba79ff4acc59f"
+  },
+  "docs/layerkv_v26/results/v26_offline_costs.json": {
+    "source": "results/v26_offline_costs.json",
+    "sha256": "de32e065e6a905bba685e5e181cdba6658020ef395101ae002595c519abb22bc"
+  },
+  "docs/layerkv_v26/results/v26_nsight_summary.json": {
+    "source": "results/v26_nsight_summary.json",
+    "sha256": "5b1e6bae67738ac4e7513385acb54547c127a5a90860af648d7e9e7c067aa2e0"
+  },
+  "docs/layerkv_v26/results/v26_subj_parser_sensitivity.json": {
+    "source": "results/v26_subj_parser_sensitivity.json",
+    "sha256": "4998f5d663d60c4b85264367ec875e7eb1a7ef08846eedd08d018c9211c6fbf7"
+  },
+  "docs/layerkv_v26/results/v26_run_cost_summary.json": {
+    "source": "results/v26_run_cost_summary.json",
+    "sha256": "f11e543efa14317f97f69bd6d37f944f3716ad557936d445797284c14aee0d2e"
+  },
+  "docs/layerkv_v26/results/v26_viz_original_S_summary.json": {
+    "source": "results/v26_viz_original_S_summary.json",
+    "sha256": "956b1a93a641bfb8a673b657a3013fa0035f2fa4acae7d4f29032151a2b4b553"
+  },
+  "docs/layerkv_v26/results/v26_viz_original_I_summary.json": {
+    "source": "results/v26_viz_original_I_summary.json",
+    "sha256": "91d9ddcfd18adb69e7b0410371bfeb09409e336947688692043ecc69bc74a0e6"
+  },
+  "docs/layerkv_v26/results/v26_viz_reuse-prefetch_S_summary.json": {
+    "source": "results/v26_viz_reuse-prefetch_S_summary.json",
+    "sha256": "09595486e45d75bc00d50fae5298654fac983711d4e1b70a798ac11223b819d4"
+  },
+  "docs/layerkv_v26/results/v26_viz_reuse-prefetch_I_summary.json": {
+    "source": "results/v26_viz_reuse-prefetch_I_summary.json",
+    "sha256": "f0ddbfa35655a65782451163d1f63bbf1eecf7aad1d0eb95bb4d46259af64e57"
+  },
+  "docs/layerkv_v26/figures/v26_matrix.png": {
+    "source": "results/v26_matrix.png",
+    "sha256": "83b64141ae7a4d384f0c1a56888d3b258a5f9233c3c2e73d6c36da8edca43d3b"
+  },
+  "docs/layerkv_v26/audit/v26_final_review.json": {
+    "source": "audit/v26_final_review.json",
+    "sha256": "bb1614a37b22bc1d07f08610a803a29f3a504df27cbe84fe9394be56ee6d7c39"
+  },
+  "docs/layerkv_v26/audit/v26_final_invariants.json": {
+    "source": "audit/v26_final_invariants.json",
+    "sha256": "f00a75cf87bea828e306d0f622a4576fbea4f4f3817b91cd6b5c3b5ae738358d"
+  },
+  "docs/layerkv_v26/audit/v26_runtime_versions.json": {
+    "source": "audit/v26_runtime_versions.json",
+    "sha256": "c7ebe41736ff35b9fcaaa9cd8f793994a32af8012d478b4854424f0823555ae5"
+  },
+  "docs/layerkv_v26/audit/v26_archive.json": {
+    "source": "audit/v26_archive.json",
+    "sha256": "dc27dd102baefe86e0c69e60b6d139f4148b5fbe493abbc011759fdd0a651670"
+  },
+  "docs/layerkv_v26/audit/v26_admission_gpu_parity.json": {
+    "source": "audit/v26_admission_gpu_parity.json",
+    "sha256": "e1d9e08d8619ef2d6e34fbe3fda8ca65a450260c9f151f2dfd41a45177ebd131"
+  },
+  "docs/layerkv_v26/audit/v26_subj_canonical_correction.json": {
+    "source": "audit/v26_subj_canonical_correction.json",
+    "sha256": "d0114c0e6bea81dc83578180b8fc9af11c23fb8f2bb98e1b85d0d180bf806ce0"
+  },
+  "docs/layerkv_v26/audit/v26_subj_canonical_pipeline_amendment.json": {
+    "source": "audit/v26_subj_canonical_pipeline_amendment.json",
+    "sha256": "1a5b9c7f6012e38179e36b1243d3a7409e203ff94e3d58b5a4320e78266e11dd"
+  },
+  "docs/layerkv_v26/audit/v26_data.json": {
+    "source": "audit/v26_data.json",
+    "sha256": "79847f8195c8e9ba3e0d6075c60233d8908d5af7ed135dc22e7f6005e07db17c"
+  },
+  "docs/layerkv_v26/audit/v26_p0_subj_b25_canonical_frozen.json": {
+    "source": "audit/v26_p0_subj_b25_canonical_frozen.json",
+    "sha256": "d4a67bf8eba0f160329400ce7a8e7e9113a749b59365b10236f082c67131a466"
+  },
+  "docs/layerkv_v26/audit/v26_p0_trec_b25_frozen.json": {
+    "source": "audit/v26_p0_trec_b25_frozen.json",
+    "sha256": "8de1dfc25dc6236a113ce57ba6ffe9c575b47c2a5bae90e13b4dc0255a99e3e8"
+  },
+  "docs/layerkv_v26/audit/v26_p0_rte_b25_frozen.json": {
+    "source": "audit/v26_p0_rte_b25_frozen.json",
+    "sha256": "44d896280b321aba4cf3f4b52188937d3dc3e8a6bd084c2a107225de026dc77a"
+  },
+  "docs/layerkv_v26/audit/v26_p0_sst2_b50_frozen.json": {
+    "source": "audit/v26_p0_sst2_b50_frozen.json",
+    "sha256": "d6a8bcf572588f2581172bb6d0a2ebb1f2dfb4fc2a593ec088678fdc607d7d27"
+  },
+  "docs/layerkv_v26/audit/v26_p0_rte_b50_frozen.json": {
+    "source": "audit/v26_p0_rte_b50_frozen.json",
+    "sha256": "79545db94edf6b5329bfc958f773b191867906a76ae5804bdd0e7f82adfc93b4"
+  },
+  "docs/layerkv_v26/audit/v26_p0_sst2_b10_frozen.json": {
+    "source": "audit/v26_p0_sst2_b10_frozen.json",
+    "sha256": "dcaf55b4ffe3a2a01e40869c3af5657c0875cab831afe8ac276c961fa9ec8f2e"
+  },
+  "docs/layerkv_v26/audit/v26_p0_subj_b10_canonical_frozen.json": {
+    "source": "audit/v26_p0_subj_b10_canonical_frozen.json",
+    "sha256": "6df6fb0647857ccdec1d7c5104838c293921e65a657d247870cc8ecae1476684"
+  },
+  "docs/layerkv_v26/audit/v26_p1_trec_b25_frozen.json": {
+    "source": "audit/v26_p1_trec_b25_frozen.json",
+    "sha256": "153be85782abdb77fd0fce02327794c1eeb7c21b9197652e09c142e3d4dd6f62"
+  },
+  "docs/layerkv_v26/audit/v26_p0_rte_b10_frozen.json": {
+    "source": "audit/v26_p0_rte_b10_frozen.json",
+    "sha256": "3c0ffddaf0b6544bda44e15dab94d5f7edfb65ca3ab2de27f7c87fecd78758d5"
+  },
+  "docs/layerkv_v26/audit/v26_p0_sst2_b25_frozen.json": {
+    "source": "audit/v26_p0_sst2_b25_frozen.json",
+    "sha256": "9a43c9fc5407bbde1c95c1a3a135cf109187738e1c4a17c51ecd98148e57c350"
+  },
+  "docs/layerkv_v26/audit/v26_p1_subj_b25_frozen.json": {
+    "source": "audit/v26_p1_subj_b25_frozen.json",
+    "sha256": "c455ef41995426b3dea38ede865dbcc716967df5bf63f62bcb28ffe5dc290b26"
+  },
+  "docs/layerkv_v26/audit/v26_p0_rte_b5_frozen.json": {
+    "source": "audit/v26_p0_rte_b5_frozen.json",
+    "sha256": "298db87326693657ea1ca00bfc5790b83cdd40a92d35f722f10757ecbca21d03"
+  },
+  "docs/layerkv_v26/audit/v26_p0_subj_b50_canonical_frozen.json": {
+    "source": "audit/v26_p0_subj_b50_canonical_frozen.json",
+    "sha256": "b37975beb46fa9c52cef1ed66023fcbcc3531a3af312ca39fbe94f7e695a0627"
+  },
+  "docs/layerkv_v26/audit/v26_p0_trec_b10_frozen.json": {
+    "source": "audit/v26_p0_trec_b10_frozen.json",
+    "sha256": "f8acaf479732e168972c27d212817031ada613fd117a594a960384e570e6fd22"
+  },
+  "docs/layerkv_v26/audit/v26_p0_trec_b5_frozen.json": {
+    "source": "audit/v26_p0_trec_b5_frozen.json",
+    "sha256": "fc603e62e5b112b4ed4df656c4d933dd892cbbb8a4c51fa436c7365514bb3173"
+  },
+  "docs/layerkv_v26/audit/v26_p1_rte_b25_frozen.json": {
+    "source": "audit/v26_p1_rte_b25_frozen.json",
+    "sha256": "6f174831b4f5b364d3c0e3d6b1863f667c3ec3cb7ba1872a09f97188c8d25c84"
+  },
+  "docs/layerkv_v26/audit/v26_p0_subj_b5_canonical_frozen.json": {
+    "source": "audit/v26_p0_subj_b5_canonical_frozen.json",
+    "sha256": "c70c773ad0e1c80eb2ba57fd035bb2b2fb6f2b00c3a5d9998a9b0e18ce163d7b"
+  },
+  "docs/layerkv_v26/audit/v26_p0_sst2_b5_frozen.json": {
+    "source": "audit/v26_p0_sst2_b5_frozen.json",
+    "sha256": "d6e749e03cf4c7a4d122889a141f33a61bd26977e290b831ea86e9d17b5571be"
+  },
+  "docs/layerkv_v26/audit/v26_p1_subj_b25_canonical_frozen.json": {
+    "source": "audit/v26_p1_subj_b25_canonical_frozen.json",
+    "sha256": "17507b334cf5fb9a05f30c099f9f1d5cba1a63996586ced3cfbcdd252d28c8de"
+  },
+  "docs/layerkv_v26/audit/v26_p1_sst2_b25_frozen.json": {
+    "source": "audit/v26_p1_sst2_b25_frozen.json",
+    "sha256": "a8d105616cc02913044a4d5c97227df5aaf78f25277ec9b6297f0b05f241167f"
+  },
+  "docs/layerkv_v26/audit/v26_p0_trec_b50_frozen.json": {
+    "source": "audit/v26_p0_trec_b50_frozen.json",
+    "sha256": "b2e7fd9e390243df99e16fcf3c76c63f479c4ae291aa8ec16e2a1ffd6f705cf8"
+  },
+  "docs/layerkv_v26/validation/v26_full_gpu_tests.txt": {
+    "source": "logs/v26_full_gpu_tests.log",
+    "sha256": "6361fcd5d79ba117261ccda17f5c3deb63e66d0e8662aae65e4562355ce9bd0a"
+  },
+  "docs/layerkv_v26/validation/v26_package_cpu_tests.txt": {
+    "source": "logs/v26_package_cpu_tests.log",
+    "sha256": "1118066cb3dd873979c6f619eb7d08da3d0176187d426602fea9e325a7912f0d"
+  },
+  "docs/layerkv_v26/validation/v26_entry_logging_cpu_tests.txt": {
+    "source": "logs/v26_entry_logging_cpu_tests.log",
+    "sha256": "63b6616e8e1926bd0fc668cb27a4114635b601827019e5f16bb434ea6a2db12e"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b50_canonical/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b50_canonical/subj.pt.report.json",
+    "sha256": "9753c1d54008e64c5d69d054c01a9c15307e80359ab3b0e280239480fbeccad5"
+  },
+  "docs/layerkv_v26/calibration/v26_p1_sst2_b25/sst2.pt.report.json": {
+    "source": "assets/v26_p1_sst2_b25/sst2.pt.report.json",
+    "sha256": "c7486514f853d2d21018ab3b1aaca7c71e5a5e41de569e99ba1e2251a9f9d5ae"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b10/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b10/subj.pt.report.json",
+    "sha256": "b1d78ed2ecd26b3c3a2d636068a63470347518dffa8e5e66d711804ca34264ea"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b5/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b5/subj.pt.report.json",
+    "sha256": "3679554e7ac39b0ea924ddda4c3dcec3dca4a022b2da8d9de66d537548f0fc69"
+  },
+  "docs/layerkv_v26/calibration/v26_selector_p1/manifest.json": {
+    "source": "assets/v26_selector_p1/manifest.json",
+    "sha256": "f49673d24257e523e51c1d0630c67f58bbf1bc449f63e2b62a69254e86d862c2"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_trec_b5/trec.pt.report.json": {
+    "source": "assets/v26_p0_trec_b5/trec.pt.report.json",
+    "sha256": "39fa3967240704b5701cfab396bdb7f28b2b4a3e3d20d2630eff93c1c063aef5"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_sst2_b5/sst2.pt.report.json": {
+    "source": "assets/v26_p0_sst2_b5/sst2.pt.report.json",
+    "sha256": "084a11499dc4c5818f3d4d9d9e5db8a8149176441f5757349587d6da4188cfee"
+  },
+  "docs/layerkv_v26/calibration/v26_p1_trec_b25/trec.pt.report.json": {
+    "source": "assets/v26_p1_trec_b25/trec.pt.report.json",
+    "sha256": "8a1f6320bec2e98497c5abdd4ba7828a85510cee7e2af22bac62af9b4965d49c"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_trec_b50/trec.pt.report.json": {
+    "source": "assets/v26_p0_trec_b50/trec.pt.report.json",
+    "sha256": "9b16772c5a3e34fc235eaf8847bb84584499f01648e88eba0e1ee412979b72db"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b25/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b25/subj.pt.report.json",
+    "sha256": "1fc3032ba677bd5bb582c2166c8f3b9659a2e74247806a6af7f0601c20b4b2e7"
+  },
+  "docs/layerkv_v26/calibration/v26_p1_subj_b25/subj.pt.report.json": {
+    "source": "assets/v26_p1_subj_b25/subj.pt.report.json",
+    "sha256": "5d36d00406e568525d9464fa5ce59e2d9ea27199190ab21f70793980b3d0bad8"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b50/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b50/subj.pt.report.json",
+    "sha256": "714bc90daebd7a6f75b75052486cbf1ec6de5d5952e73a760a6593f9c4d452e4"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_rte_b5/rte.pt.report.json": {
+    "source": "assets/v26_p0_rte_b5/rte.pt.report.json",
+    "sha256": "c3f0eec30b706f33b6062c6669a485b9712df0662a54e00cbb37d0b90f38c2e5"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_sst2_b25/sst2.pt.report.json": {
+    "source": "assets/v26_p0_sst2_b25/sst2.pt.report.json",
+    "sha256": "467c104d8e4cbb45d8e619ca9ad5ff8cc002e330efbd5ad00c27be3960d3a4eb"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_rte_b50/rte.pt.report.json": {
+    "source": "assets/v26_p0_rte_b50/rte.pt.report.json",
+    "sha256": "40caba662fdcf80a0db3c3e2485ed260ef5d5bf085ed2d5911183549265ef77b"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_rte_b10/rte.pt.report.json": {
+    "source": "assets/v26_p0_rte_b10/rte.pt.report.json",
+    "sha256": "00f725294038cfd48c0730193d86120c23a6fe9ddca395802993b094810abc20"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_rte_b25/rte.pt.report.json": {
+    "source": "assets/v26_p0_rte_b25/rte.pt.report.json",
+    "sha256": "a83cba6617fef7721a8214ff974f38f1a2953f327247e5606f92a415eaf1b10b"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b10_canonical/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b10_canonical/subj.pt.report.json",
+    "sha256": "b45c5e8d6a989fd5ba184b2a9d10f313fd91aafe92fc35f2e1926142be1c0e3c"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b5_canonical/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b5_canonical/subj.pt.report.json",
+    "sha256": "e478e5f12d5b79077a7fc375fd8fa70e1f4443a3abcd49bf6c0973f8ba98e21f"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_sst2_b10/sst2.pt.report.json": {
+    "source": "assets/v26_p0_sst2_b10/sst2.pt.report.json",
+    "sha256": "36933770ffb60eb511bfe3b6e75ab0360b864afa6d0c31355a2a9825a513cb0f"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_subj_b25_canonical/subj.pt.report.json": {
+    "source": "assets/v26_p0_subj_b25_canonical/subj.pt.report.json",
+    "sha256": "08e938a6e91030917062bd389c2e8577db1faab8b860421c79039833e4018cf6"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_trec_b10/trec.pt.report.json": {
+    "source": "assets/v26_p0_trec_b10/trec.pt.report.json",
+    "sha256": "b636e895b29e9b7ccc5ec6405b9a2d2742a1316a464ebe128e51702d2df9bad7"
+  },
+  "docs/layerkv_v26/calibration/v26_p0_sst2_b50/sst2.pt.report.json": {
+    "source": "assets/v26_p0_sst2_b50/sst2.pt.report.json",
+    "sha256": "0670ece9ed27e78cb39ce47cd8de9f26a0aca806c40cdf15e691f25de6db3de9"
+  },
+  "docs/layerkv_v26/calibration/v26_p1_rte_b25/rte.pt.report.json": {
+    "source": "assets/v26_p1_rte_b25/rte.pt.report.json",
+    "sha256": "6cb54f50a8204562bde1a9bd7afed2b10e77efbebeeaee500fa6a4e834b90e48"
+  },
+  "docs/layerkv_v26/calibration/v26_p1_subj_b25_canonical/subj.pt.report.json": {
+    "source": "assets/v26_p1_subj_b25_canonical/subj.pt.report.json",
+    "sha256": "367df0842ba8d58207ac3c55b95c200b2a6420eabd02b82fc768089decada633"
+  }
+}

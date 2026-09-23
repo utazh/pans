@@ -1,0 +1,2748 @@
+{
+  "matrix": [
+    {
+      "prefix": "p0",
+      "task": "sst2",
+      "budget": 5,
+      "n": 872,
+      "identity_accuracy": 92.77522935779817,
+      "shared_accuracy": 90.94036697247707,
+      "delta_pp": -1.834862385321101,
+      "harmful": 28,
+      "beneficial": 12,
+      "ni_lower_pp": -4.176199691107374,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 29.955268244420697,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": -15.44568518852942,
+      "preserve_identity_ms": 351.33323151057994,
+      "preserve_shared_ms": 256.12551762969815,
+      "preserve_delta_pct": -27.09897764909117,
+      "warm_identity_ms": 100.82719166166498,
+      "warm_shared_ms": 103.82538044723333,
+      "warm_delta_pct": 2.9735914847544676,
+      "reader_build_seconds": 333.80902007967234,
+      "cold_payback_requests": 3507,
+      "active_source_groups": 3,
+      "participating_layers": 15,
+      "max_source_distance": 3
+    },
+    {
+      "prefix": "p0",
+      "task": "sst2",
+      "budget": 10,
+      "n": 872,
+      "identity_accuracy": 93.11926605504587,
+      "shared_accuracy": 91.85779816513761,
+      "delta_pp": -1.261467889908257,
+      "harmful": 25,
+      "beneficial": 14,
+      "ni_lower_pp": -3.6048365920647902,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 36.79638865969992,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 14.488578034756841,
+      "preserve_identity_ms": 587.7146376406017,
+      "preserve_shared_ms": 417.861709735007,
+      "preserve_delta_pct": -28.90057810836131,
+      "warm_identity_ms": 130.72622451545612,
+      "warm_shared_ms": 117.95546418943559,
+      "warm_delta_pct": -9.769088316713848,
+      "reader_build_seconds": 361.3382569276728,
+      "cold_payback_requests": 2128,
+      "active_source_groups": 3,
+      "participating_layers": 15,
+      "max_source_distance": 3
+    },
+    {
+      "prefix": "p0",
+      "task": "sst2",
+      "budget": 25,
+      "n": 872,
+      "identity_accuracy": 93.80733944954129,
+      "shared_accuracy": 92.43119266055047,
+      "delta_pp": -1.3761467889908257,
+      "harmful": 20,
+      "beneficial": 8,
+      "ni_lower_pp": -3.361428566404006,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.59990910468111,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 31.783063172246628,
+      "preserve_identity_ms": 1471.1892112627538,
+      "preserve_shared_ms": 898.9514527529536,
+      "preserve_delta_pct": -38.896272085807105,
+      "warm_identity_ms": 223.2784586631169,
+      "warm_shared_ms": 167.98392185410194,
+      "warm_delta_pct": -24.76483272953953,
+      "reader_build_seconds": 392.6057413928211,
+      "cold_payback_requests": 687,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "sst2",
+      "budget": 50,
+      "n": 872,
+      "identity_accuracy": 93.80733944954129,
+      "shared_accuracy": 92.77522935779817,
+      "delta_pp": -1.0321100917431192,
+      "harmful": 19,
+      "beneficial": 10,
+      "ni_lower_pp": -3.0757963177443655,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 41.645979086737384,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 37.26773489806665,
+      "preserve_identity_ms": 2891.7436042302143,
+      "preserve_shared_ms": 1700.5891783064726,
+      "preserve_delta_pct": -41.19156429294942,
+      "warm_identity_ms": 396.41646676500386,
+      "warm_shared_ms": 302.4689597041288,
+      "warm_delta_pct": -23.69919388756554,
+      "reader_build_seconds": 413.52057093172334,
+      "cold_payback_requests": 348,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "subj",
+      "budget": 5,
+      "n": 1003,
+      "identity_accuracy": 54.53639082751745,
+      "shared_accuracy": 50.94715852442672,
+      "delta_pp": -3.5892323030907276,
+      "harmful": 50,
+      "beneficial": 14,
+      "ni_lower_pp": -6.052014432984974,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 31.0163828420193,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": -7.228394306402806,
+      "preserve_identity_ms": 391.4280715634959,
+      "preserve_shared_ms": 305.3088177493919,
+      "preserve_delta_pct": -22.001297318844458,
+      "warm_identity_ms": 116.54986765097419,
+      "warm_shared_ms": 117.86769957325305,
+      "warm_delta_pct": 1.130702203991607,
+      "reader_build_seconds": 438.7655823349487,
+      "cold_payback_requests": 5095,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "subj",
+      "budget": 10,
+      "n": 1003,
+      "identity_accuracy": 52.94117647058823,
+      "shared_accuracy": 49.55134596211366,
+      "delta_pp": -3.389830508474576,
+      "harmful": 78,
+      "beneficial": 44,
+      "ni_lower_pp": -6.823588759709179,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 36.91780703432839,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 17.93709705731503,
+      "preserve_identity_ms": 695.6952071905107,
+      "preserve_shared_ms": 489.43445775148575,
+      "preserve_delta_pct": -29.648148687409602,
+      "warm_identity_ms": 144.57813249828178,
+      "warm_shared_ms": 137.37648567257565,
+      "warm_delta_pct": -4.981145281975275,
+      "reader_build_seconds": 458.19735913793556,
+      "cold_payback_requests": 2222,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 3
+    },
+    {
+      "prefix": "p0",
+      "task": "subj",
+      "budget": 25,
+      "n": 1003,
+      "identity_accuracy": 55.03489531405783,
+      "shared_accuracy": 51.34596211365902,
+      "delta_pp": -3.688933200398804,
+      "harmful": 152,
+      "beneficial": 115,
+      "ni_lower_pp": -8.563838921950232,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.51889351792445,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 32.960561457850076,
+      "preserve_identity_ms": 1645.4429499062826,
+      "preserve_shared_ms": 985.2605457981554,
+      "preserve_delta_pct": -40.12186530962549,
+      "warm_identity_ms": 236.94583503856848,
+      "warm_shared_ms": 220.74454446374148,
+      "warm_delta_pct": -6.837550266367776,
+      "reader_build_seconds": 474.23128473269753,
+      "cold_payback_requests": 719,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p0",
+      "task": "subj",
+      "budget": 50,
+      "n": 1003,
+      "identity_accuracy": 84.64606181455633,
+      "shared_accuracy": 78.06580259222333,
+      "delta_pp": -6.580259222333001,
+      "harmful": 99,
+      "beneficial": 33,
+      "ni_lower_pp": -10.029240562950168,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 41.690432978999226,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 37.918071039668135,
+      "preserve_identity_ms": 3112.9987458461983,
+      "preserve_shared_ms": 1893.637674567799,
+      "preserve_delta_pct": -39.16998273466839,
+      "warm_identity_ms": 363.8372004170378,
+      "warm_shared_ms": 282.7484174631536,
+      "warm_delta_pct": -22.287106118049106,
+      "reader_build_seconds": 522.9395258310251,
+      "cold_payback_requests": 429,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p0",
+      "task": "trec",
+      "budget": 5,
+      "n": 500,
+      "identity_accuracy": 42.8,
+      "shared_accuracy": 38.2,
+      "delta_pp": -4.6,
+      "harmful": 67,
+      "beneficial": 44,
+      "ni_lower_pp": -11.012196881674658,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 31.690140845070424,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": -2.464788732394374,
+      "preserve_identity_ms": 384.18092379106383,
+      "preserve_shared_ms": 315.53061429622176,
+      "preserve_delta_pct": -17.869265557854053,
+      "warm_identity_ms": 127.981899493534,
+      "warm_shared_ms": 114.84957260290685,
+      "warm_delta_pct": -10.261081404945582,
+      "reader_build_seconds": 936.9586272616871,
+      "cold_payback_requests": 13649,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "trec",
+      "budget": 10,
+      "n": 500,
+      "identity_accuracy": 64.8,
+      "shared_accuracy": 59.8,
+      "delta_pp": -5.0,
+      "harmful": 51,
+      "beneficial": 26,
+      "ni_lower_pp": -10.421014890922892,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 37.76223776223776,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 20.804195804195803,
+      "preserve_identity_ms": 708.1984576489049,
+      "preserve_shared_ms": 478.1695255660452,
+      "preserve_delta_pct": -32.48085753342581,
+      "warm_identity_ms": 140.27691111186869,
+      "warm_shared_ms": 156.63470271101687,
+      "warm_delta_pct": 11.661071996447859,
+      "reader_build_seconds": 869.2031006170437,
+      "cold_payback_requests": 3779,
+      "active_source_groups": 3,
+      "participating_layers": 15,
+      "max_source_distance": 3
+    },
+    {
+      "prefix": "p0",
+      "task": "trec",
+      "budget": 25,
+      "n": 500,
+      "identity_accuracy": 68.6,
+      "shared_accuracy": 73.0,
+      "delta_pp": 4.4,
+      "harmful": 17,
+      "beneficial": 39,
+      "ni_lower_pp": -0.3599029735035224,
+      "exploratory_ni_pass": true,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.63079777365491,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 33.88218923933209,
+      "preserve_identity_ms": 1569.5917747725616,
+      "preserve_shared_ms": 989.9060894313152,
+      "preserve_delta_pct": -36.93225809782575,
+      "warm_identity_ms": 250.43649913095578,
+      "warm_shared_ms": 195.66168139499496,
+      "warm_delta_pct": -21.87173911392145,
+      "reader_build_seconds": null,
+      "cold_payback_requests": null,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p0",
+      "task": "trec",
+      "budget": 50,
+      "n": 500,
+      "identity_accuracy": 62.6,
+      "shared_accuracy": 59.8,
+      "delta_pp": -2.8,
+      "harmful": 33,
+      "beneficial": 19,
+      "ni_lower_pp": -7.39312458503184,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 41.768927992590875,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 38.400092614031024,
+      "preserve_identity_ms": 3536.6882536218327,
+      "preserve_shared_ms": 2076.071326728197,
+      "preserve_delta_pct": -41.299001273235056,
+      "warm_identity_ms": 356.8943053960538,
+      "warm_shared_ms": 294.1426605775632,
+      "warm_delta_pct": -17.58269713742102,
+      "reader_build_seconds": 999.3256809480954,
+      "cold_payback_requests": 685,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "rte",
+      "budget": 5,
+      "n": 277,
+      "identity_accuracy": 88.4476534296029,
+      "shared_accuracy": 83.39350180505416,
+      "delta_pp": -5.054151624548736,
+      "harmful": 20,
+      "beneficial": 6,
+      "ni_lower_pp": -10.81312988378248,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 34.412759787336874,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 6.283228612856451,
+      "preserve_identity_ms": 558.7678562878864,
+      "preserve_shared_ms": 386.20661313871096,
+      "preserve_delta_pct": -30.88245703601623,
+      "warm_identity_ms": 141.7647819234844,
+      "warm_shared_ms": 133.25161821921938,
+      "warm_delta_pct": -6.005133001833906,
+      "reader_build_seconds": 772.808950515464,
+      "cold_payback_requests": 4479,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p0",
+      "task": "rte",
+      "budget": 10,
+      "n": 277,
+      "identity_accuracy": 85.5595667870036,
+      "shared_accuracy": 81.5884476534296,
+      "delta_pp": -3.9711191335740073,
+      "harmful": 20,
+      "beneficial": 9,
+      "ni_lower_pp": -10.16895387767046,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 38.59229111802729,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 24.658846061766816,
+      "preserve_identity_ms": 933.2632240257226,
+      "preserve_shared_ms": 629.4657302605629,
+      "preserve_delta_pct": -32.55217670044893,
+      "warm_identity_ms": 196.37775800947566,
+      "warm_shared_ms": 179.75433396895824,
+      "warm_delta_pct": -8.465023844357821,
+      "reader_build_seconds": 821.4012166024186,
+      "cold_payback_requests": 2704,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 3
+    },
+    {
+      "prefix": "p0",
+      "task": "rte",
+      "budget": 25,
+      "n": 277,
+      "identity_accuracy": 87.36462093862816,
+      "shared_accuracy": 85.5595667870036,
+      "delta_pp": -1.8050541516245486,
+      "harmful": 17,
+      "beneficial": 12,
+      "ni_lower_pp": -8.138881634894267,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 41.17030401219861,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 35.62374916611074,
+      "preserve_identity_ms": 2280.2666881234472,
+      "preserve_shared_ms": 1322.3741941674234,
+      "preserve_delta_pct": -42.00791508050861,
+      "warm_identity_ms": 366.03874473439646,
+      "warm_shared_ms": 221.28958315261116,
+      "warm_delta_pct": -39.544765045792516,
+      "reader_build_seconds": 844.8113538308535,
+      "cold_payback_requests": 882,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p0",
+      "task": "rte",
+      "budget": 50,
+      "n": 277,
+      "identity_accuracy": 88.8086642599278,
+      "shared_accuracy": 87.36462093862816,
+      "delta_pp": -1.444043321299639,
+      "harmful": 15,
+      "beneficial": 11,
+      "ni_lower_pp": -7.493856236031242,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 42.01512772941345,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 39.24646781789639,
+      "preserve_identity_ms": 4570.159113736736,
+      "preserve_shared_ms": 2677.274591045716,
+      "preserve_delta_pct": -41.41835055592463,
+      "warm_identity_ms": 792.0894087110355,
+      "warm_shared_ms": 469.0212849582167,
+      "warm_delta_pct": -40.786825350757624,
+      "reader_build_seconds": 939.082183880033,
+      "cold_payback_requests": 497,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p1",
+      "task": "sst2",
+      "budget": 25,
+      "n": 872,
+      "identity_accuracy": 92.77522935779817,
+      "shared_accuracy": 92.54587155963303,
+      "delta_pp": -0.22935779816513763,
+      "harmful": 19,
+      "beneficial": 17,
+      "ni_lower_pp": -2.517523633352312,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.59990910468111,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 31.783063172246628,
+      "preserve_identity_ms": 1124.2666048838146,
+      "preserve_shared_ms": 734.4289821685379,
+      "preserve_delta_pct": -34.674837891815145,
+      "warm_identity_ms": 224.53625883827044,
+      "warm_shared_ms": 158.66370018557063,
+      "warm_delta_pct": -29.337158725952882,
+      "reader_build_seconds": 387.8415493918583,
+      "cold_payback_requests": 995,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    },
+    {
+      "prefix": "p1",
+      "task": "subj",
+      "budget": 25,
+      "n": 1003,
+      "identity_accuracy": 63.90827517447657,
+      "shared_accuracy": 64.10767696909272,
+      "delta_pp": 0.19940179461615154,
+      "harmful": 139,
+      "beneficial": 141,
+      "ni_lower_pp": -4.802749695336682,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.519480519480524,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 32.96103896103896,
+      "preserve_identity_ms": 1182.0873125288927,
+      "preserve_shared_ms": 781.1908833482448,
+      "preserve_delta_pct": -33.91428238266021,
+      "warm_identity_ms": 219.82887059493805,
+      "warm_shared_ms": 195.67928288597614,
+      "warm_delta_pct": -10.985630615125396,
+      "reader_build_seconds": 465.3084028472658,
+      "cold_payback_requests": 1161,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p1",
+      "task": "trec",
+      "budget": 25,
+      "n": 500,
+      "identity_accuracy": 69.2,
+      "shared_accuracy": 74.2,
+      "delta_pp": 5.0,
+      "harmful": 17,
+      "beneficial": 42,
+      "ni_lower_pp": 0.14352689810230995,
+      "exploratory_ni_pass": true,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 40.96329202712181,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 34.15945756371288,
+      "preserve_identity_ms": 1416.4550095738377,
+      "preserve_shared_ms": 949.4990949187923,
+      "preserve_delta_pct": -32.96651933869303,
+      "warm_identity_ms": 312.05546667115414,
+      "warm_shared_ms": 211.5887186882901,
+      "warm_delta_pct": -32.19515717977679,
+      "reader_build_seconds": 987.5410110694356,
+      "cold_payback_requests": 2115,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 1
+    },
+    {
+      "prefix": "p1",
+      "task": "rte",
+      "budget": 25,
+      "n": 277,
+      "identity_accuracy": 87.00361010830325,
+      "shared_accuracy": 85.1985559566787,
+      "delta_pp": -1.8050541516245486,
+      "harmful": 14,
+      "beneficial": 9,
+      "ni_lower_pp": -7.515362020644856,
+      "exploratory_ni_pass": false,
+      "source_count": 16,
+      "native_blocks": 4,
+      "selected_kv_reduction_pct": 41.45291284987582,
+      "reader_packed_unique_bytes": 4767744,
+      "net_selected_plus_reader_reduction_pct": 35.85792322125158,
+      "preserve_identity_ms": 1709.1752126689244,
+      "preserve_shared_ms": 1036.3966946370056,
+      "preserve_delta_pct": -39.362758893592684,
+      "warm_identity_ms": 375.8014027334866,
+      "warm_shared_ms": 257.11751995004306,
+      "warm_delta_pct": -31.58154331521018,
+      "reader_build_seconds": 840.822500247974,
+      "cold_payback_requests": 1250,
+      "active_source_groups": 6,
+      "participating_layers": 18,
+      "max_source_distance": 4
+    }
+  ],
+  "detail": {
+    "v26_p0_sst2_b5": {
+      "full_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 809,
+        "student_correct": 793,
+        "harmful": 28,
+        "beneficial": 12,
+        "net_delta_pp": -1.834862385321101,
+        "discordant_fraction": 0.045871559633027525,
+        "conservative_lower_pp": -4.176199691107374,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 809,
+        "student_correct": 793,
+        "harmful": 28,
+        "beneficial": 12,
+        "net_delta_pp": -1.834862385321101,
+        "discordant_fraction": 0.045871559633027525,
+        "conservative_lower_pp": -4.176199691107374,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 351.33323151057994,
+          "shared_ms": 256.12551762969815,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 10583488,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 7403200,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 100.82719166166498,
+          "shared_ms": 103.82538044723333,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b5/sst2.pt",
+        "sha256": "7eca0a9e1711e8ce3372861f0ab85fff563853712bc32dd372292a1309aa171d",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        12,
+        12,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "12": [
+          10,
+          11,
+          13,
+          14
+        ],
+        "20": [
+          17,
+          18,
+          19,
+          21,
+          22,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_sst2_b10": {
+      "full_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 812,
+        "student_correct": 801,
+        "harmful": 25,
+        "beneficial": 14,
+        "net_delta_pp": -1.261467889908257,
+        "discordant_fraction": 0.04472477064220184,
+        "conservative_lower_pp": -3.6048365920647902,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 812,
+        "student_correct": 801,
+        "harmful": 25,
+        "beneficial": 14,
+        "net_delta_pp": -1.261467889908257,
+        "discordant_fraction": 0.04472477064220184,
+        "conservative_lower_pp": -3.6048365920647902,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 587.7146376406017,
+          "shared_ms": 417.861709735007,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 21491904,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 13553856,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 130.72622451545612,
+          "shared_ms": 117.95546418943559,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b10/sst2.pt",
+        "sha256": "8ccd9804256a0264e86d3245f9362cf8ff39c91dcfe2c6cfbcc94b9e6dc7783f",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "12": [
+          9,
+          10,
+          11,
+          13,
+          14
+        ],
+        "20": [
+          17,
+          18,
+          19,
+          21,
+          22
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_sst2_b25": {
+      "full_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 818,
+        "student_correct": 806,
+        "harmful": 20,
+        "beneficial": 8,
+        "net_delta_pp": -1.3761467889908257,
+        "discordant_fraction": 0.03211009174311927,
+        "conservative_lower_pp": -3.361428566404006,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 818,
+        "student_correct": 806,
+        "harmful": 20,
+        "beneficial": 8,
+        "net_delta_pp": -1.3761467889908257,
+        "discordant_fraction": 0.03211009174311927,
+        "conservative_lower_pp": -3.361428566404006,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1471.1892112627538,
+          "shared_ms": 898.9514527529536,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 54169600,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 32178176,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 223.2784586631169,
+          "shared_ms": 167.98392185410194,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b25/sst2.pt",
+        "sha256": "ce7caf19e88663e601bd557300edc4b59d63f379b8a6ca533345cd20007d1fcb",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        7,
+        8,
+        12,
+        12,
+        15,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        23,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          5
+        ],
+        "12": [
+          9,
+          10,
+          13,
+          14
+        ],
+        "15": [
+          11
+        ],
+        "20": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "23": [
+          19
+        ],
+        "26": [
+          25
+        ]
+      }
+    },
+    "v26_p0_sst2_b50": {
+      "full_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 818,
+        "student_correct": 809,
+        "harmful": 19,
+        "beneficial": 10,
+        "net_delta_pp": -1.0321100917431192,
+        "discordant_fraction": 0.033256880733944956,
+        "conservative_lower_pp": -3.0757963177443655,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 818,
+        "student_correct": 809,
+        "harmful": 19,
+        "beneficial": 10,
+        "net_delta_pp": -1.0321100917431192,
+        "discordant_fraction": 0.033256880733944956,
+        "conservative_lower_pp": -3.0757963177443655,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 2891.7436042302143,
+          "shared_ms": 1700.5891783064726,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 108959744,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 63602688,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 396.41646676500386,
+          "shared_ms": 302.4689597041288,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b50/sst2.pt",
+        "sha256": "60d65fc39e8ba308cfdf694b1692c5c5f767fb90effe00f71535cc3ceb4e9ca8",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        6,
+        7,
+        8,
+        13,
+        12,
+        13,
+        12,
+        13,
+        12,
+        13,
+        16,
+        21,
+        20,
+        21,
+        20,
+        21,
+        20,
+        21,
+        24,
+        27,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "7": [
+          5
+        ],
+        "12": [
+          10,
+          14
+        ],
+        "13": [
+          9,
+          11,
+          15
+        ],
+        "20": [
+          18,
+          22
+        ],
+        "21": [
+          17,
+          19,
+          23
+        ],
+        "27": [
+          25
+        ]
+      }
+    },
+    "v26_p0_subj_b5_canonical": {
+      "full_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 547,
+        "student_correct": 511,
+        "harmful": 50,
+        "beneficial": 14,
+        "net_delta_pp": -3.5892323030907276,
+        "discordant_fraction": 0.06380857427716849,
+        "conservative_lower_pp": -6.052014432984974,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 547,
+        "student_correct": 511,
+        "harmful": 50,
+        "beneficial": 14,
+        "net_delta_pp": -3.5892323030907276,
+        "discordant_fraction": 0.06380857427716849,
+        "conservative_lower_pp": -6.052014432984974,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 391.4280715634959,
+          "shared_ms": 305.3088177493919,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 12463040,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 8600960,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 116.54986765097419,
+          "shared_ms": 117.86769957325305,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b5_canonical/subj.pt",
+        "sha256": "032dfc4600f2a4ffc6ec00894a28d96bf240098a347a8fa77939f8803e3f5f87",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        7,
+        8,
+        12,
+        12,
+        15,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        23,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          5
+        ],
+        "12": [
+          9,
+          10,
+          13,
+          14
+        ],
+        "15": [
+          11
+        ],
+        "20": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "23": [
+          19
+        ],
+        "26": [
+          25
+        ]
+      }
+    },
+    "v26_p0_subj_b10_canonical": {
+      "full_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 531,
+        "student_correct": 497,
+        "harmful": 78,
+        "beneficial": 44,
+        "net_delta_pp": -3.389830508474576,
+        "discordant_fraction": 0.12163509471585245,
+        "conservative_lower_pp": -6.823588759709179,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 531,
+        "student_correct": 497,
+        "harmful": 78,
+        "beneficial": 44,
+        "net_delta_pp": -3.389830508474576,
+        "discordant_fraction": 0.12163509471585245,
+        "conservative_lower_pp": -6.823588759709179,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 695.6952071905107,
+          "shared_ms": 489.43445775148575,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 25100288,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 15847616,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 144.57813249828178,
+          "shared_ms": 137.37648567257565,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b10_canonical/subj.pt",
+        "sha256": "d71585a06e6e6eafa6390f142399f4ac1b39d55e82cf8a003be6eaa450194e7c",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        5,
+        6,
+        7,
+        8,
+        12,
+        12,
+        13,
+        12,
+        13,
+        12,
+        13,
+        16,
+        20,
+        20,
+        21,
+        20,
+        21,
+        20,
+        21,
+        24,
+        27,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          4
+        ],
+        "12": [
+          9,
+          10,
+          14
+        ],
+        "13": [
+          11,
+          15
+        ],
+        "20": [
+          17,
+          18,
+          22
+        ],
+        "21": [
+          19,
+          23
+        ],
+        "27": [
+          25
+        ]
+      }
+    },
+    "v26_p0_subj_b25_canonical": {
+      "full_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 552,
+        "student_correct": 515,
+        "harmful": 152,
+        "beneficial": 115,
+        "net_delta_pp": -3.688933200398804,
+        "discordant_fraction": 0.2662013958125623,
+        "conservative_lower_pp": -8.563838921950232,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 552,
+        "student_correct": 515,
+        "harmful": 152,
+        "beneficial": 115,
+        "net_delta_pp": -3.688933200398804,
+        "discordant_fraction": 0.2662013958125623,
+        "conservative_lower_pp": -8.563838921950232,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1645.4429499062826,
+          "shared_ms": 985.2605457981554,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 63078400,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 37520896,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 236.94583503856848,
+          "shared_ms": 220.74454446374148,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b25_canonical/subj.pt",
+        "sha256": "45ba594ae84a2d03d8e31e8cd4b85a11a7f4c2f37171cc6393e0fcbd4f5b4405",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_subj_b50_canonical": {
+      "full_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 849,
+        "student_correct": 783,
+        "harmful": 99,
+        "beneficial": 33,
+        "net_delta_pp": -6.580259222333001,
+        "discordant_fraction": 0.13160518444666003,
+        "conservative_lower_pp": -10.029240562950168,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 849,
+        "student_correct": 783,
+        "harmful": 99,
+        "beneficial": 33,
+        "net_delta_pp": -6.580259222333001,
+        "discordant_fraction": 0.13160518444666003,
+        "conservative_lower_pp": -10.029240562950168,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 3112.9987458461983,
+          "shared_ms": 1893.637674567799,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 126386176,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 73695232,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 363.8372004170378,
+          "shared_ms": 282.7484174631536,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b50_canonical/subj.pt",
+        "sha256": "fe4d520a679bc98ddeb6d39d54dfe29a32c4542348cb36c6d7801aab4be778b6",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_trec_b5": {
+      "full_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 214,
+        "student_correct": 191,
+        "harmful": 67,
+        "beneficial": 44,
+        "net_delta_pp": -4.6,
+        "discordant_fraction": 0.222,
+        "conservative_lower_pp": -11.012196881674658,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 214,
+        "student_correct": 191,
+        "harmful": 67,
+        "beneficial": 44,
+        "net_delta_pp": -4.6,
+        "discordant_fraction": 0.222,
+        "conservative_lower_pp": -11.012196881674658,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 384.18092379106383,
+          "shared_ms": 315.53061429622176,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 13959168,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 9535488,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 127.981899493534,
+          "shared_ms": 114.84957260290685,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b5/trec.pt",
+        "sha256": "a75f18ead5e3daea51aeec6da9937fff003c4738ab62590a6b86d95c6baec73d",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        6,
+        7,
+        8,
+        13,
+        12,
+        13,
+        12,
+        13,
+        13,
+        13,
+        16,
+        21,
+        20,
+        21,
+        20,
+        21,
+        20,
+        21,
+        24,
+        27,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "7": [
+          5
+        ],
+        "12": [
+          10
+        ],
+        "13": [
+          9,
+          11,
+          14,
+          15
+        ],
+        "20": [
+          18,
+          22
+        ],
+        "21": [
+          17,
+          19,
+          23
+        ],
+        "27": [
+          25
+        ]
+      }
+    },
+    "v26_p0_trec_b10": {
+      "full_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 324,
+        "student_correct": 299,
+        "harmful": 51,
+        "beneficial": 26,
+        "net_delta_pp": -5.0,
+        "discordant_fraction": 0.154,
+        "conservative_lower_pp": -10.421014890922892,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 324,
+        "student_correct": 299,
+        "harmful": 51,
+        "beneficial": 26,
+        "net_delta_pp": -5.0,
+        "discordant_fraction": 0.154,
+        "conservative_lower_pp": -10.421014890922892,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 708.1984576489049,
+          "shared_ms": 478.1695255660452,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 28114944,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 17498112,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 140.27691111186869,
+          "shared_ms": 156.63470271101687,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b10/trec.pt",
+        "sha256": "7280571db394d99e5f922a30e95fe63bddf8981618ee383978ecb0d4a1ec3b14",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        12,
+        12,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "12": [
+          9,
+          10,
+          11,
+          13,
+          14
+        ],
+        "20": [
+          17,
+          18,
+          19,
+          21,
+          22
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_trec_b25": {
+      "full_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 343,
+        "student_correct": 365,
+        "harmful": 17,
+        "beneficial": 39,
+        "net_delta_pp": 4.4,
+        "discordant_fraction": 0.112,
+        "conservative_lower_pp": -0.3599029735035224,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": true,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 343,
+        "student_correct": 365,
+        "harmful": 17,
+        "beneficial": 39,
+        "net_delta_pp": 4.4,
+        "discordant_fraction": 0.112,
+        "conservative_lower_pp": -0.3599029735035224,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": true,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1569.5917747725616,
+          "shared_ms": 989.9060894313152,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 70647808,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 41943040,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 250.43649913095578,
+          "shared_ms": 195.66168139499496,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v25_g16_r4_s24/trec.pt",
+        "sha256": "2109a57c4b49f5b880c2fca5bdd8837be511dea2689a90bc1ba472cf646c552a",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_trec_b50": {
+      "full_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 313,
+        "student_correct": 299,
+        "harmful": 33,
+        "beneficial": 19,
+        "net_delta_pp": -2.8,
+        "discordant_fraction": 0.104,
+        "conservative_lower_pp": -7.39312458503184,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 313,
+        "student_correct": 299,
+        "harmful": 33,
+        "beneficial": 19,
+        "net_delta_pp": -2.8,
+        "discordant_fraction": 0.104,
+        "conservative_lower_pp": -7.39312458503184,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 3536.6882536218327,
+          "shared_ms": 2076.071326728197,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 141524992,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 82411520,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 356.8943053960538,
+          "shared_ms": 294.1426605775632,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b50/trec.pt",
+        "sha256": "769ec4c8309c55c84f134a59b4740b2031b8b097c5e506a355409ab18f01f11b",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        6,
+        7,
+        8,
+        13,
+        12,
+        13,
+        12,
+        13,
+        12,
+        13,
+        16,
+        21,
+        20,
+        21,
+        20,
+        21,
+        20,
+        21,
+        24,
+        27,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "7": [
+          5
+        ],
+        "12": [
+          10,
+          14
+        ],
+        "13": [
+          9,
+          11,
+          15
+        ],
+        "20": [
+          18,
+          22
+        ],
+        "21": [
+          17,
+          19,
+          23
+        ],
+        "27": [
+          25
+        ]
+      }
+    },
+    "v26_p0_rte_b5": {
+      "full_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 245,
+        "student_correct": 231,
+        "harmful": 20,
+        "beneficial": 6,
+        "net_delta_pp": -5.054151624548736,
+        "discordant_fraction": 0.09386281588447654,
+        "conservative_lower_pp": -10.81312988378248,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 245,
+        "student_correct": 231,
+        "harmful": 20,
+        "beneficial": 6,
+        "net_delta_pp": -5.054151624548736,
+        "discordant_fraction": 0.09386281588447654,
+        "conservative_lower_pp": -10.81312988378248,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 558.7678562878864,
+          "shared_ms": 386.20661313871096,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 17006592,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 11173888,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 141.7647819234844,
+          "shared_ms": 133.25161821921938,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b5/rte.pt",
+        "sha256": "15d2dbedc004f07c4b67348ddd77b266f94ebfa2a1225d12602b9a4225049b4d",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        7,
+        8,
+        12,
+        12,
+        15,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        23,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          5
+        ],
+        "12": [
+          9,
+          10,
+          13,
+          14
+        ],
+        "15": [
+          11
+        ],
+        "20": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "23": [
+          19
+        ],
+        "26": [
+          25
+        ]
+      }
+    },
+    "v26_p0_rte_b10": {
+      "full_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 237,
+        "student_correct": 226,
+        "harmful": 20,
+        "beneficial": 9,
+        "net_delta_pp": -3.9711191335740073,
+        "discordant_fraction": 0.10469314079422383,
+        "conservative_lower_pp": -10.16895387767046,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 237,
+        "student_correct": 226,
+        "harmful": 20,
+        "beneficial": 9,
+        "net_delta_pp": -3.9711191335740073,
+        "discordant_fraction": 0.10469314079422383,
+        "conservative_lower_pp": -10.16895387767046,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 933.2632240257226,
+          "shared_ms": 629.4657302605629,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 34275328,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 21069824,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 196.37775800947566,
+          "shared_ms": 179.75433396895824,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b10/rte.pt",
+        "sha256": "7ec2ac537401c3d0e32413ff923bdb4c52ba46c221b919849bda1c7b3daf5258",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        5,
+        6,
+        7,
+        8,
+        12,
+        12,
+        13,
+        12,
+        13,
+        12,
+        13,
+        16,
+        20,
+        20,
+        21,
+        20,
+        21,
+        20,
+        21,
+        24,
+        27,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          4
+        ],
+        "12": [
+          9,
+          10,
+          14
+        ],
+        "13": [
+          11,
+          15
+        ],
+        "20": [
+          17,
+          18,
+          22
+        ],
+        "21": [
+          19,
+          23
+        ],
+        "27": [
+          25
+        ]
+      }
+    },
+    "v26_p0_rte_b25": {
+      "full_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 242,
+        "student_correct": 237,
+        "harmful": 17,
+        "beneficial": 12,
+        "net_delta_pp": -1.8050541516245486,
+        "discordant_fraction": 0.10469314079422383,
+        "conservative_lower_pp": -8.138881634894267,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 242,
+        "student_correct": 237,
+        "harmful": 17,
+        "beneficial": 12,
+        "net_delta_pp": -1.8050541516245486,
+        "discordant_fraction": 0.10469314079422383,
+        "conservative_lower_pp": -8.138881634894267,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 2280.2666881234472,
+          "shared_ms": 1322.3741941674234,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 86016000,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 50626560,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 366.03874473439646,
+          "shared_ms": 221.28958315261116,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b25/rte.pt",
+        "sha256": "84922bfe876549a9dcc33f5b92ff801c860830e84498c2223b4d0b50106b171e",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p0_rte_b50": {
+      "full_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 246,
+        "student_correct": 242,
+        "harmful": 15,
+        "beneficial": 11,
+        "net_delta_pp": -1.444043321299639,
+        "discordant_fraction": 0.09386281588447654,
+        "conservative_lower_pp": -7.493856236031242,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 246,
+        "student_correct": 242,
+        "harmful": 15,
+        "beneficial": 11,
+        "net_delta_pp": -1.444043321299639,
+        "discordant_fraction": 0.09386281588447654,
+        "conservative_lower_pp": -7.493856236031242,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 4570.159113736736,
+          "shared_ms": 2677.274591045716,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 172261376,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 99909632,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 792.0894087110355,
+          "shared_ms": 469.0212849582167,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b50/rte.pt",
+        "sha256": "88c96968e6ace176fed1540a414aa723845373756ea1e4d5b8bf40b74cf55d1c",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p1_sst2_b25": {
+      "full_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 809,
+        "student_correct": 807,
+        "harmful": 19,
+        "beneficial": 17,
+        "net_delta_pp": -0.22935779816513763,
+        "discordant_fraction": 0.04128440366972477,
+        "conservative_lower_pp": -2.517523633352312,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 872,
+        "baseline_correct": 809,
+        "student_correct": 807,
+        "harmful": 19,
+        "beneficial": 17,
+        "net_delta_pp": -0.22935779816513763,
+        "discordant_fraction": 0.04128440366972477,
+        "conservative_lower_pp": -2.517523633352312,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1124.2666048838146,
+          "shared_ms": 734.4289821685379,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 54155008,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 32178176,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 224.53625883827044,
+          "shared_ms": 158.66370018557063,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p1_sst2_b25/sst2.pt",
+        "sha256": "3cf9cb101351a292a9614e66ddb2ff92f3cd165ae300fff9ccfd50c35ed37867",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        7,
+        8,
+        12,
+        12,
+        15,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        23,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          5
+        ],
+        "12": [
+          9,
+          10,
+          13,
+          14
+        ],
+        "15": [
+          11
+        ],
+        "20": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "23": [
+          19
+        ],
+        "26": [
+          25
+        ]
+      }
+    },
+    "v26_p1_subj_b25_canonical": {
+      "full_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 641,
+        "student_correct": 643,
+        "harmful": 139,
+        "beneficial": 141,
+        "net_delta_pp": 0.19940179461615154,
+        "discordant_fraction": 0.27916251246261214,
+        "conservative_lower_pp": -4.802749695336682,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 1003,
+        "baseline_correct": 641,
+        "student_correct": 643,
+        "harmful": 139,
+        "beneficial": 141,
+        "net_delta_pp": 0.19940179461615154,
+        "discordant_fraction": 0.27916251246261214,
+        "conservative_lower_pp": -4.802749695336682,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1182.0873125288927,
+          "shared_ms": 781.1908833482448,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 63078400,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 37519360,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 219.82887059493805,
+          "shared_ms": 195.67928288597614,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p1_subj_b25_canonical/subj.pt",
+        "sha256": "8d8aeeba4fbc20a38df7d3ab226203d676a5a24ed6ae80b8c84d1c546f6429c6",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p1_trec_b25": {
+      "full_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 346,
+        "student_correct": 371,
+        "harmful": 17,
+        "beneficial": 42,
+        "net_delta_pp": 5.0,
+        "discordant_fraction": 0.118,
+        "conservative_lower_pp": 0.14352689810230995,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": true,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 500,
+        "baseline_correct": 346,
+        "student_correct": 371,
+        "harmful": 17,
+        "beneficial": 42,
+        "net_delta_pp": 5.0,
+        "discordant_fraction": 0.118,
+        "conservative_lower_pp": 0.14352689810230995,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": true,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1416.4550095738377,
+          "shared_ms": 949.4990949187923,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 70285056,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 41484288,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 312.05546667115414,
+          "shared_ms": 211.5887186882901,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p1_trec_b25/trec.pt",
+        "sha256": "b4444b41249125101d54fb736e066e0110402eeb999149d997ab59cf2b976a1f",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        6,
+        8,
+        10,
+        10,
+        10,
+        12,
+        14,
+        14,
+        14,
+        16,
+        18,
+        18,
+        18,
+        20,
+        22,
+        22,
+        22,
+        24,
+        26,
+        26,
+        26
+      ],
+      "shared_groups": {
+        "6": [
+          5,
+          7
+        ],
+        "10": [
+          9,
+          11
+        ],
+        "14": [
+          13,
+          15
+        ],
+        "18": [
+          17,
+          19
+        ],
+        "22": [
+          21,
+          23
+        ],
+        "26": [
+          25,
+          27
+        ]
+      }
+    },
+    "v26_p1_rte_b25": {
+      "full_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 241,
+        "student_correct": 236,
+        "harmful": 14,
+        "beneficial": 9,
+        "net_delta_pp": -1.8050541516245486,
+        "discordant_fraction": 0.08303249097472924,
+        "conservative_lower_pp": -7.515362020644856,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "clean_quality": {
+        "n_unique_queries": 277,
+        "baseline_correct": 241,
+        "student_correct": 236,
+        "harmful": 14,
+        "beneficial": 9,
+        "net_delta_pp": -1.8050541516245486,
+        "discordant_fraction": 0.08303249097472924,
+        "conservative_lower_pp": -7.515362020644856,
+        "margin_pp": 1.0,
+        "alpha_per_route": 0.025,
+        "legacy_bound_passes": false,
+        "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+      },
+      "timing": {
+        "preserve": {
+          "n": 128,
+          "identity_ms": 1709.1752126689244,
+          "shared_ms": 1036.3966946370056,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI",
+          "I_mean_process_read_bytes": 85354752,
+          "I_cold_certified": 128,
+          "S_mean_process_read_bytes": 50006272,
+          "S_cold_certified": 128
+        },
+        "warm": {
+          "n": 128,
+          "identity_ms": 375.8014027334866,
+          "shared_ms": 257.11751995004306,
+          "scope": "descriptive single fresh process per arm; no independent repeated-process CI"
+        }
+      },
+      "frozen": {
+        "checkpoint": "/home/panzihang/src/prism_layerkv/assets/v26_p1_rte_b25/rte.pt",
+        "sha256": "823358e742a45786e970d5f8e99eec0490a64eac5d0daa7ee516763d059115d3",
+        "selection": "fixed seed/graph/budget; validation checkpoint only"
+      },
+      "source_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        6,
+        7,
+        8,
+        12,
+        12,
+        15,
+        12,
+        12,
+        12,
+        15,
+        16,
+        20,
+        20,
+        23,
+        20,
+        20,
+        20,
+        23,
+        24,
+        26,
+        26,
+        27
+      ],
+      "shared_groups": {
+        "6": [
+          5
+        ],
+        "12": [
+          9,
+          10,
+          13,
+          14
+        ],
+        "15": [
+          11
+        ],
+        "20": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "23": [
+          19
+        ],
+        "26": [
+          25
+        ]
+      }
+    }
+  }
+}

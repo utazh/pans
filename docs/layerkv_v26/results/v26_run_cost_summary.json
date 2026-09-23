@@ -1,0 +1,33 @@
+{
+  "categories": {
+    "matrix_timing": {
+      "runs": 80,
+      "process_wall_seconds": 25319.195350170135
+    },
+    "teacher_capture_including_superseded_SUBJ": {
+      "runs": 48,
+      "process_wall_seconds": 4331.120579004288
+    },
+    "full_quality_including_legacy_SUBJ": {
+      "runs": 42,
+      "process_wall_seconds": 10812.415580511093
+    },
+    "profilers_and_exports": {
+      "runs": 12,
+      "process_wall_seconds": 908.9158947467804
+    },
+    "reader_training_including_superseded_SUBJ": {
+      "runs": 24,
+      "process_wall_seconds": 10378.676480054855
+    },
+    "mechanism_evaluation": {
+      "runs": 2,
+      "process_wall_seconds": 463.2021279335022
+    },
+    "primary_study_serial_total": {
+      "runs": 1,
+      "process_wall_seconds": 6103.741394519806
+    }
+  },
+  "scope": "Wall-clock process time including model load/CPU wait; not GPU kernel time. Concurrent processes overlap, so sums are not total elapsed time. Includes discarded legacy SUBJ calibration. Excludes manual preparation, prior-version R&D and setup/audit runs not represented here. Reader deployment table separately excludes experimental repeats."
+}

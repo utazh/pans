@@ -1,0 +1,82 @@
+{
+  "sst2-p0": {
+    "prefix_tokens": 3811,
+    "eval_count": 868,
+    "eval_unique": 868,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "ca642ee0f97a402ab1d528cd7fc3e9f5275dc0df502b864fc12f554376359bdf",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "sst2-p1": {
+    "prefix_tokens": 3811,
+    "eval_count": 868,
+    "eval_unique": 868,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "e4835f887ed6a69bfafda1cdb530daf266ce5bb4f964d918fb90f214c26469c0",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "subj-p0": {
+    "prefix_tokens": 4412,
+    "eval_count": 999,
+    "eval_unique": 999,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "1e68faa21963d2e31401cb591406c3efa94268ae27b737410a604236586f167d",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "subj-p1": {
+    "prefix_tokens": 4412,
+    "eval_count": 999,
+    "eval_unique": 999,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "99aa5314934540b117b84386118a73dd06d5fe59caa19dde2ab85b35cd2441f4",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "trec-p0": {
+    "prefix_tokens": 4940,
+    "eval_count": 496,
+    "eval_unique": 496,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "b67ac86d2014b838287bcfa021b5bea5b3865a22c6e3b8ed98f5e47cf6e0a70d",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "trec-p1": {
+    "prefix_tokens": 4930,
+    "eval_count": 496,
+    "eval_unique": 496,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "f2dd16ed68faeab65c68a3ea7e5efd28ad845d408136ab5e0f808ae837aec937",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "rte-p0": {
+    "prefix_tokens": 6011,
+    "eval_count": 273,
+    "eval_unique": 273,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "2538fbefd9ab6c2fdd9f78a25c166bbf9523bc2ccfc8cb0bd1efe443add916b0",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  },
+  "rte-p1": {
+    "prefix_tokens": 5986,
+    "eval_count": 273,
+    "eval_unique": 273,
+    "fit": 64,
+    "val": 64,
+    "prefix_sha256": "557192b8f876cecba2773a240ead26491fee352ef2206b4fdff69a4690f867da",
+    "eval_demo_overlap": 0,
+    "fresh_holdout": false
+  }
+}

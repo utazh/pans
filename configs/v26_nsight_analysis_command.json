@@ -1,0 +1,5 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/analyze_v26_nsight.py"
+]

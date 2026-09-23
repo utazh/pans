@@ -1,0 +1,1774 @@
+{
+  "passed": true,
+  "comparisons": {
+    "warm-I": [
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15477921280,
+        "reuse_peak": 15488816640,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15481357824,
+        "reuse_peak": 15531664896,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15504774656,
+        "reuse_peak": 15509018112,
+        "reuse_registry_backing_peak": 0
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15508162048,
+        "reuse_peak": 15508178432,
+        "reuse_registry_backing_peak": 0
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15504763392,
+        "reuse_peak": 15521574400,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15491638784,
+        "reuse_peak": 15516009984,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15505114624,
+        "reuse_peak": 15505147392,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15500602880,
+        "reuse_peak": 15506468352,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15497422336,
+        "reuse_peak": 15502468608,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15502764544,
+        "reuse_peak": 15505246720,
+        "reuse_registry_backing_peak": 2547712
+      }
+    ],
+    "warm-S": [
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15450865664,
+        "reuse_peak": 15450988544,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 380,
+        "original_peak": 15454926848,
+        "reuse_peak": 15440951296,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15453251584,
+        "reuse_peak": 15450736640,
+        "reuse_registry_backing_peak": 0
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15454803968,
+        "reuse_peak": 15457351680,
+        "reuse_registry_backing_peak": 0
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 120,
+        "original_peak": 15452413952,
+        "reuse_peak": 15452413952,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 112,
+        "original_peak": 15438133248,
+        "reuse_peak": 15454410752,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 38,
+        "original_peak": 15459997696,
+        "reuse_peak": 15451863040,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 48,
+        "original_peak": 15452291072,
+        "reuse_peak": 15454838784,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 32,
+        "original_peak": 15451625472,
+        "reuse_peak": 15454173184,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 28,
+        "original_peak": 15449493504,
+        "reuse_peak": 15452008448,
+        "reuse_registry_backing_peak": 2547712
+      }
+    ],
+    "cold-I": [
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15477921280,
+        "reuse_peak": 15488816640,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 0,
+        "original_peak": 15481357824,
+        "reuse_peak": 15531664896,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15491315200,
+        "reuse_peak": 15488800256,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15492990464,
+        "reuse_peak": 15490475520,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15490477568,
+        "reuse_peak": 15487962624,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15489926656,
+        "reuse_peak": 15487411712,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15489926656,
+        "reuse_peak": 15487411712,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15490477568,
+        "reuse_peak": 15487962624,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15489811968,
+        "reuse_peak": 15487297024,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 3564,
+        "original_peak": 15490058752,
+        "reuse_peak": 15487543808,
+        "reuse_registry_backing_peak": 2547712
+      }
+    ],
+    "v26_audit3_cold_I_original_cold_log": [
+      {
+        "mode": "ssd-cold",
+        "request_index": 1,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "ff1e493276b4aec5f296725d6c9590039abe287fa9dc96d1e1b420d093487622",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 10,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 69160,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2574.8287739697844,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3758
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 1862.4008551705629,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 2,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0b2e79e756cb5a9412cd16a501425169aa59c08c7c0d620072d1a5d50d20a74",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2276.018235133961,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 4830
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 1851.053364109248,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 3,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0fd8a068f76e6049612c909e5869dd2ce0684fb5603714d9b2782fdd48bc763",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2388.919688994065,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3711
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 2039.6056130994111,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 4,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "184ea291c4d50dcb166f9754d411a73ce7f9c22bc26d6e4e2812379b8f41b9ed",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 3144.974920898676,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 4034
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 2005.0159359816462,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 5,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f6ec07c7c9951351dc0f13eef6b05c30cd59a4872fa90c178c3255f48666f65c",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2277.1545369178057,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 5311
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 2008.422426879406,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 6,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "0246f4641307adbe8ce661f8748ec93bd1df2f0333cda343e6a12f289db93648",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2291.498157894239,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3897
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 2022.6132511161268,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 7,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f776c20195d03967001db3a2e9ec83324ff8b7c4c13e48166789b977052ec59d",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2295.3143941704184,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3746
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 1990.5817990656942,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 8,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "686d8fbaeb0bad70602e62eba5fc08812c06822429bdff0175b4ae423f2ac262",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2292.692726943642,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3729
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 8652,
+        "logits_ready_ms": 2022.335830843076,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      }
+    ],
+    "v26_audit3_cold_I_reuse-prefetch_cold_log": [
+      {
+        "mode": "ssd-cold",
+        "request_index": 1,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "ff1e493276b4aec5f296725d6c9590039abe287fa9dc96d1e1b420d093487622",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 10,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 20360,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2529.490846209228,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 4096
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2283.3986561745405,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 2,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0b2e79e756cb5a9412cd16a501425169aa59c08c7c0d620072d1a5d50d20a74",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2388.103225035593,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 4121
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2314.1660769470036,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 3,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0fd8a068f76e6049612c909e5869dd2ce0684fb5603714d9b2782fdd48bc763",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2372.502929996699,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 3818
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2417.6964899525046,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 4,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "184ea291c4d50dcb166f9754d411a73ce7f9c22bc26d6e4e2812379b8f41b9ed",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2423.9706571679562,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 5935
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2423.7215779721737,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 5,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f6ec07c7c9951351dc0f13eef6b05c30cd59a4872fa90c178c3255f48666f65c",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 3041.2899530492723,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 7999
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2572.600208921358,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 6,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "0246f4641307adbe8ce661f8748ec93bd1df2f0333cda343e6a12f289db93648",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2597.1421259455383,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 4761
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2424.4907510001212,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 7,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f776c20195d03967001db3a2e9ec83324ff8b7c4c13e48166789b977052ec59d",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2378.130830824375,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 5606
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2406.2564009800553,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 8,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "686d8fbaeb0bad70602e62eba5fc08812c06822429bdff0175b4ae423f2ac262",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 17248,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2542.3183729872108,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 70647808,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 4326,
+          "minor_faults": 1510
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5088,
+        "logits_ready_ms": 2397.7419801522046,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      }
+    ],
+    "cold-S": [
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15450865664,
+        "reuse_peak": 15450988544,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 380,
+        "original_peak": 15454926848,
+        "reuse_peak": 15440951296,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15429958656,
+        "reuse_peak": 15437814784,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15431633920,
+        "reuse_peak": 15439490048,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15429121024,
+        "reuse_peak": 15436977152,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15428570112,
+        "reuse_peak": 15436426240,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15428570112,
+        "reuse_peak": 15436426240,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15429121024,
+        "reuse_peak": 15436977152,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15428455424,
+        "reuse_peak": 15436311552,
+        "reuse_registry_backing_peak": 2547712
+      },
+      {
+        "max_logit_error": 0.0,
+        "promotions_verified": 2574,
+        "original_peak": 15428702208,
+        "reuse_peak": 15436558336,
+        "reuse_registry_backing_peak": 2547712
+      }
+    ],
+    "v26_audit3_cold_S_original_cold_log": [
+      {
+        "mode": "ssd-cold",
+        "request_index": 1,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "ff1e493276b4aec5f296725d6c9590039abe287fa9dc96d1e1b420d093487622",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 12,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 19640,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2473.1955390889198,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 128,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 3448
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1195.2431588433683,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 2,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0b2e79e756cb5a9412cd16a501425169aa59c08c7c0d620072d1a5d50d20a74",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2280.9709010180086,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 5828
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1309.0885300189257,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 3,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0fd8a068f76e6049612c909e5869dd2ce0684fb5603714d9b2782fdd48bc763",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2199.877832084894,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 2896
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1217.6683801226318,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 4,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "184ea291c4d50dcb166f9754d411a73ce7f9c22bc26d6e4e2812379b8f41b9ed",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2199.482396012172,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 2710
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1250.772373052314,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 5,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f6ec07c7c9951351dc0f13eef6b05c30cd59a4872fa90c178c3255f48666f65c",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2208.8115150108933,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 3237
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1241.8806480709463,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 6,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "0246f4641307adbe8ce661f8748ec93bd1df2f0333cda343e6a12f289db93648",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2231.162211159244,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 3179
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1267.3592630308121,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 7,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f776c20195d03967001db3a2e9ec83324ff8b7c4c13e48166789b977052ec59d",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2201.9692650064826,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 5537
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1178.3728289883584,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 8,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "686d8fbaeb0bad70602e62eba5fc08812c06822429bdff0175b4ae423f2ac262",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2210.6527220457792,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 5248
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 5148,
+        "logits_ready_ms": 1236.6972940508276,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      }
+    ],
+    "v26_audit3_cold_S_reuse-prefetch_cold_log": [
+      {
+        "mode": "ssd-cold",
+        "request_index": 1,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "ff1e493276b4aec5f296725d6c9590039abe287fa9dc96d1e1b420d093487622",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 12,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 12168,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 3438.2790718227625,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 128,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 6580
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1459.2397050000727,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 2,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0b2e79e756cb5a9412cd16a501425169aa59c08c7c0d620072d1a5d50d20a74",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2302.784248953685,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 128,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 5855
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1512.4645631294698,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 3,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f0fd8a068f76e6049612c909e5869dd2ce0684fb5603714d9b2782fdd48bc763",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2962.1987310238183,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 5913
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1465.789896203205,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 4,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "184ea291c4d50dcb166f9754d411a73ce7f9c22bc26d6e4e2812379b8f41b9ed",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2251.7807851545513,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 7033
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1490.493122022599,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 5,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f6ec07c7c9951351dc0f13eef6b05c30cd59a4872fa90c178c3255f48666f65c",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2239.4634389784187,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 2150
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1447.8559528943151,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 6,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "0246f4641307adbe8ce661f8748ec93bd1df2f0333cda343e6a12f289db93648",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2269.9577079620212,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 129,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 6808
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1501.5310619492084,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 7,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "f776c20195d03967001db3a2e9ec83324ff8b7c4c13e48166789b977052ec59d",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2239.9130479898304,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 2048
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1478.459379868582,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      },
+      {
+        "mode": "ssd-cold",
+        "request_index": 8,
+        "task": "trec",
+        "status": "completed",
+        "runtime_read_advice": "preserve",
+        "query_hash": "686d8fbaeb0bad70602e62eba5fc08812c06822429bdff0175b4ae423f2ac262",
+        "payload_tokens_reset": 67312,
+        "persisted_flags_content_validated": 0,
+        "target_payload_chunks_k_plus_v": 17304,
+        "application_payload_empty": true,
+        "gpu_mib_after": 0.0,
+        "cpu_mib_after": 0.0,
+        "page_before": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 10240,
+          "bytes": 283279360
+        },
+        "page_after": {
+          "files": 17304,
+          "pages": 69160,
+          "resident": 0,
+          "bytes": 283279360
+        },
+        "files_checked": 17304,
+        "file_bytes": 283279360,
+        "setup_ms_outside_ttft": 2285.7255509588867,
+        "cold_condition": "payload only; model/readers/K4 index/metadata warm",
+        "physical_ssd_controller_cold_claim": false,
+        "io_first_decoder": {
+          "rchar": 130,
+          "wchar": 0,
+          "syscr": 2,
+          "syscw": 0,
+          "read_bytes": 41943040,
+          "write_bytes": 0,
+          "cancelled_write_bytes": 0,
+          "major_faults": 2574,
+          "minor_faults": 4343
+        },
+        "measured": true,
+        "native_read_dontneed_suppressed_calls": 2574,
+        "logits_ready_ms": 1770.286322105676,
+        "io_scope": "first decoder interval; process storage accounting, NOT hardware H2D/SSD bytes"
+      }
+    ]
+  },
+  "scope": "8 measured + 2 warmup per arm, warm and SSD-cold/preserve; exact whole-vocabulary last-query logits, every candidate token, IDs, full cache residency/scores/heap order/value hashes; verified independent block storage, all 28 private KV"
+}

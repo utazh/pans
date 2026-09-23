@@ -1,0 +1,8 @@
+{
+  "path": "/home/panzihang/src/prism_layerkv/artifacts/pans_sharedkv_v26_server_impl.zip",
+  "bytes": 282218693,
+  "files": 5264,
+  "sha256": "223ac0a9e1574182aebb807db8ce14d762297e367be2ad294130fdbfa971673a",
+  "verified": true,
+  "excluded": "Model weights, physical prefix/cache stores, teacher tensors and raw profiler traces remain on server; archive includes derived evidence, scripts, evaluation/calibration bundles and exported readers."
+}

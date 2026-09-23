@@ -1,0 +1,65 @@
+{
+  "version": "v26",
+  "status": "preregistered_before_matrix_outcomes",
+  "model": "Qwen2.5-7B-Instruct",
+  "main_method": "G16/R4 seed24",
+  "tasks": [
+    "sst2",
+    "subj",
+    "trec",
+    "rte"
+  ],
+  "primary_prefix": "p0",
+  "primary_budgets": [
+    5,
+    10,
+    25,
+    50
+  ],
+  "replication_prefix": "p1",
+  "replication_budgets": [
+    25
+  ],
+  "training": {
+    "fit": 64,
+    "validation": 64,
+    "steps": 200,
+    "eval_every": 25,
+    "seed": 24,
+    "losses": "unchanged v25",
+    "backbone_frozen": true
+  },
+  "topology_rule": "Retain historical G16 if native selection plans match. Otherwise within each P8 window partition nonleaders by identical native selections; largest class first, late windows first, median owned source; stop after 12 consumers. No gold or quality-based selection; exact existing allocator and online selector unchanged.",
+  "quality": {
+    "dataset_status": "historical full cleaned evaluation bundles; no fresh holdout claims",
+    "noninferiority_margin": 0.01,
+    "alpha_per_route": 0.025,
+    "do_not_select_seed": true
+  },
+  "timing": {
+    "blocks": 8,
+    "block_size": 16,
+    "warmup": 4,
+    "conditions": [
+      "preserve",
+      "warm"
+    ],
+    "arms": [
+      "I-original",
+      "S-original",
+      "I-reuse",
+      "S-reuse"
+    ],
+    "disjoint_blocks": true,
+    "fresh_process_per_arm": true,
+    "serial_formal_timing": true,
+    "training_not_concurrent_with_formal_timing": true
+  },
+  "mechanisms": [
+    "learned/native",
+    "unit-reader/native",
+    "learned/source-proxy quality only"
+  ],
+  "original_protected": true,
+  "all_artifacts_server_only": true
+}

@@ -1,0 +1,9 @@
+{
+  "p1_payload_files_equal_prepared_prefix": 67256,
+  "protected_files_unchanged": 4877,
+  "v25_archive_unchanged": true,
+  "independent_p0_cache_copies_verified": 2,
+  "files_per_copy": 67313,
+  "payload_bytes_per_copy": 1649270954,
+  "admission_parity_passed": true
+}

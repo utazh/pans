@@ -1,0 +1,16 @@
+{
+  "publication_cpu_tests": {
+    "passed": 574,
+    "skipped": 31,
+    "subtests_passed": 87
+  },
+  "server_gpu_tests": {
+    "passed": 601,
+    "skipped": 4,
+    "subtests_passed": 87
+  },
+  "base_interface_guard": "passed: all 6 v26 pinned interfaces",
+  "secret_scan": "no findings in staged new/changed files",
+  "source_report_sha256": "e4be46345982cd784e649f2210450e7400764056c4d6bb09b972bb606ec04657",
+  "scope": "Publication validation only; no model experiments rerun."
+}

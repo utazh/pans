@@ -1,0 +1,5 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/check_v26_invariants.py"
+]

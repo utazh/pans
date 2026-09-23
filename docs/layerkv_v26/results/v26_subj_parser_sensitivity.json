@@ -1,0 +1,50 @@
+{
+  "I": {
+    "comparison": {
+      "n_unique_queries": 1003,
+      "baseline_correct": 643,
+      "student_correct": 641,
+      "scope": "Descriptive totals: two query texts differ, so no paired interval on this full set."
+    },
+    "unchanged_query_comparison": {
+      "n_unique_queries": 1001,
+      "baseline_correct": 641,
+      "student_correct": 641,
+      "harmful": 0,
+      "beneficial": 0,
+      "net_delta_pp": 0.0,
+      "discordant_fraction": 0.0,
+      "conservative_lower_pp": -0.43680810471511866,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": true,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "unchanged_token_scores_exact": true,
+    "scope": "Parser correction plus refitting 3 corrected calibration/validation records; not a pure inference ablation. Two full-eval records repaired; membership and seed unchanged; retraining numeric variability is not separately isolated."
+  },
+  "S": {
+    "comparison": {
+      "n_unique_queries": 1003,
+      "baseline_correct": 713,
+      "student_correct": 643,
+      "scope": "Descriptive totals: two query texts differ, so no paired interval on this full set."
+    },
+    "unchanged_query_comparison": {
+      "n_unique_queries": 1001,
+      "baseline_correct": 712,
+      "student_correct": 643,
+      "harmful": 93,
+      "beneficial": 24,
+      "net_delta_pp": -6.893106893106893,
+      "discordant_fraction": 0.11688311688311688,
+      "conservative_lower_pp": -10.108638504655756,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": false,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "unchanged_token_scores_exact": false,
+    "scope": "Parser correction plus refitting 3 corrected calibration/validation records; not a pure inference ablation. Two full-eval records repaired; membership and seed unchanged; retraining numeric variability is not separately isolated."
+  }
+}

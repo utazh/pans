@@ -1,0 +1,195 @@
+{
+  "v26_p0_sst2_b5": {
+    "teacher_capture_seconds": 141.62399458885193,
+    "initial_fit_training_validation_model_loading_seconds": 192.1850254908204,
+    "total_seconds": 333.80902007967234,
+    "gpu_peak_allocated": 15602327552,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_sst2_b10": {
+    "teacher_capture_seconds": 156.2147979736328,
+    "initial_fit_training_validation_model_loading_seconds": 205.12345895403996,
+    "total_seconds": 361.3382569276728,
+    "gpu_peak_allocated": 15608962048,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_sst2_b25": {
+    "teacher_capture_seconds": 167.29014229774475,
+    "initial_fit_training_validation_model_loading_seconds": 225.31559909507632,
+    "total_seconds": 392.6057413928211,
+    "gpu_peak_allocated": 15644530176,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_sst2_b50": {
+    "teacher_capture_seconds": 184.9620497226715,
+    "initial_fit_training_validation_model_loading_seconds": 228.55852120905183,
+    "total_seconds": 413.52057093172334,
+    "gpu_peak_allocated": 15725905920,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_subj_b5_canonical": {
+    "teacher_capture_seconds": 154.04322266578674,
+    "initial_fit_training_validation_model_loading_seconds": 284.72235966916196,
+    "total_seconds": 438.7655823349487,
+    "gpu_peak_allocated": 15682538496,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_subj_b10_canonical": {
+    "teacher_capture_seconds": 156.4867603778839,
+    "initial_fit_training_validation_model_loading_seconds": 301.71059876005165,
+    "total_seconds": 458.19735913793556,
+    "gpu_peak_allocated": 15696476160,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_subj_b25_canonical": {
+    "teacher_capture_seconds": 172.8244287967682,
+    "initial_fit_training_validation_model_loading_seconds": 301.40685593592934,
+    "total_seconds": 474.23128473269753,
+    "gpu_peak_allocated": 15769378816,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_subj_b50_canonical": {
+    "teacher_capture_seconds": 215.76529693603516,
+    "initial_fit_training_validation_model_loading_seconds": 307.17422889498994,
+    "total_seconds": 522.9395258310251,
+    "gpu_peak_allocated": 15884664832,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_trec_b5": {
+    "teacher_capture_seconds": 170.33757209777832,
+    "initial_fit_training_validation_model_loading_seconds": 766.6210551639087,
+    "total_seconds": 936.9586272616871,
+    "gpu_peak_allocated": 15700438016,
+    "forward_counts": {
+      "branch_no_grad": 5424,
+      "branch_grad": 1200
+    }
+  },
+  "v26_p0_trec_b10": {
+    "teacher_capture_seconds": 159.7363498210907,
+    "initial_fit_training_validation_model_loading_seconds": 709.466750795953,
+    "total_seconds": 869.2031006170437,
+    "gpu_peak_allocated": 15707622400,
+    "forward_counts": {
+      "branch_no_grad": 5424,
+      "branch_grad": 1200
+    }
+  },
+  "v26_p0_trec_b25": {
+    "status": "reused frozen historical v25 checkpoint; prior G26 initialization/search costs not repeated or counted as zero"
+  },
+  "v26_p0_trec_b50": {
+    "teacher_capture_seconds": 213.73270845413208,
+    "initial_fit_training_validation_model_loading_seconds": 785.5929724939633,
+    "total_seconds": 999.3256809480954,
+    "gpu_peak_allocated": 15905363456,
+    "forward_counts": {
+      "branch_no_grad": 5424,
+      "branch_grad": 1200
+    }
+  },
+  "v26_p0_rte_b5": {
+    "teacher_capture_seconds": 170.71370720863342,
+    "initial_fit_training_validation_model_loading_seconds": 602.0952433068305,
+    "total_seconds": 772.808950515464,
+    "gpu_peak_allocated": 15864849920,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_rte_b10": {
+    "teacher_capture_seconds": 185.2502200603485,
+    "initial_fit_training_validation_model_loading_seconds": 636.1509965420701,
+    "total_seconds": 821.4012166024186,
+    "gpu_peak_allocated": 15876728320,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_rte_b25": {
+    "teacher_capture_seconds": 207.45331859588623,
+    "initial_fit_training_validation_model_loading_seconds": 637.3580352349672,
+    "total_seconds": 844.8113538308535,
+    "gpu_peak_allocated": 15993185280,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p0_rte_b50": {
+    "teacher_capture_seconds": 286.98539185523987,
+    "initial_fit_training_validation_model_loading_seconds": 652.0967920247931,
+    "total_seconds": 939.082183880033,
+    "gpu_peak_allocated": 16217310720,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p1_sst2_b25": {
+    "teacher_capture_seconds": 169.28371500968933,
+    "initial_fit_training_validation_model_loading_seconds": 218.55783438216895,
+    "total_seconds": 387.8415493918583,
+    "gpu_peak_allocated": 15644530176,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p1_subj_b25_canonical": {
+    "teacher_capture_seconds": 173.01135325431824,
+    "initial_fit_training_validation_model_loading_seconds": 292.2970495929476,
+    "total_seconds": 465.3084028472658,
+    "gpu_peak_allocated": 15769378816,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  },
+  "v26_p1_trec_b25": {
+    "teacher_capture_seconds": 189.31407523155212,
+    "initial_fit_training_validation_model_loading_seconds": 798.2269358378835,
+    "total_seconds": 987.5410110694356,
+    "gpu_peak_allocated": 15794436096,
+    "forward_counts": {
+      "branch_no_grad": 5424,
+      "branch_grad": 1200
+    }
+  },
+  "v26_p1_rte_b25": {
+    "teacher_capture_seconds": 199.4265661239624,
+    "initial_fit_training_validation_model_loading_seconds": 641.3959341240115,
+    "total_seconds": 840.822500247974,
+    "gpu_peak_allocated": 15993102848,
+    "forward_counts": {
+      "branch_no_grad": 1808,
+      "branch_grad": 400
+    }
+  }
+}

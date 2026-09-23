@@ -1,0 +1,119 @@
+{
+  "reason": "Legacy latin1 str.splitlines treats 21 CP1252 ellipsis bytes 0x85 as boundaries. Reconnect fragments to unique physical-LF source records, preserve frozen membership/UIDs and prefix. Custom evaluation remains 1003; not a standard 1000 split.",
+  "raw_sha256": {
+    "plot.tok.gt9.5000": "5ddc9b44dc60d64d651347fcd7bdd489b0c70661e3f768215c16eea36f51204a",
+    "quote.tok.gt9.5000": "73a2dcf8dc3cbcc7f068a70ef9f021c86b2a8e4dac81566b7fd015b3e938f2c5"
+  },
+  "prefixes": {
+    "p0": {
+      "repairs": {
+        "fit": [
+          {
+            "uid": "subj-v26-fit-29",
+            "fragment": ". . isn't that the basis for the entire plot ?",
+            "canonical": "\" one look at a girl in tight pants and big tits and you turn stupid ? \" um . . isn't that the basis for the entire plot ?"
+          },
+          {
+            "uid": "subj-v26-fit-31",
+            "fragment": "director and co-writer hilary birmingham's maiden feature",
+            "canonical": "director and co-writer hilary birmingham's maiden feature is a strong , polished , professional indie effort that bodes well for bigger success ."
+          }
+        ],
+        "val": [
+          {
+            "uid": "subj-v26-val-43",
+            "fragment": "or any other john woo flick for that matter .",
+            "canonical": "disappointing in comparison to other recent war movies or any other john woo flick for that matter ."
+          }
+        ],
+        "eval": [
+          {
+            "uid": "subj-84",
+            "fragment": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in",
+            "canonical": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in and making you sweat ."
+          },
+          {
+            "uid": "subj-295",
+            "fragment": "with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two .",
+            "canonical": "the delicious trimmings arrive early and stay late , filling nearly every minute with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two ."
+          }
+        ],
+        "full_eval": [
+          {
+            "uid": "subj-v26-raw-eval-180",
+            "fragment": "with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two .",
+            "canonical": "the delicious trimmings arrive early and stay late , filling nearly every minute with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two ."
+          },
+          {
+            "uid": "subj-v26-raw-eval-771",
+            "fragment": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in",
+            "canonical": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in and making you sweat ."
+          }
+        ]
+      },
+      "counts": {
+        "fit": 64,
+        "val": 64,
+        "eval": 999,
+        "full_eval": 1003
+      },
+      "canonical_query_disjoint": true,
+      "prefix_unchanged": true
+    },
+    "p1": {
+      "repairs": {
+        "fit": [
+          {
+            "uid": "subj-v26-fit-29",
+            "fragment": ". . isn't that the basis for the entire plot ?",
+            "canonical": "\" one look at a girl in tight pants and big tits and you turn stupid ? \" um . . isn't that the basis for the entire plot ?"
+          },
+          {
+            "uid": "subj-v26-fit-31",
+            "fragment": "director and co-writer hilary birmingham's maiden feature",
+            "canonical": "director and co-writer hilary birmingham's maiden feature is a strong , polished , professional indie effort that bodes well for bigger success ."
+          }
+        ],
+        "val": [
+          {
+            "uid": "subj-v26-val-43",
+            "fragment": "or any other john woo flick for that matter .",
+            "canonical": "disappointing in comparison to other recent war movies or any other john woo flick for that matter ."
+          }
+        ],
+        "eval": [
+          {
+            "uid": "subj-84",
+            "fragment": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in",
+            "canonical": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in and making you sweat ."
+          },
+          {
+            "uid": "subj-295",
+            "fragment": "with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two .",
+            "canonical": "the delicious trimmings arrive early and stay late , filling nearly every minute with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two ."
+          }
+        ],
+        "full_eval": [
+          {
+            "uid": "subj-v26-raw-eval-180",
+            "fragment": "with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two .",
+            "canonical": "the delicious trimmings arrive early and stay late , filling nearly every minute with a lighthearted glow , some impudent snickers , and a glorious dose of humankind's liberating ability to triumph over a scrooge or two ."
+          },
+          {
+            "uid": "subj-v26-raw-eval-771",
+            "fragment": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in",
+            "canonical": "if the plot seems a bit on the skinny side , that's because panic room is interested in nothing more than sucking you in and making you sweat ."
+          }
+        ]
+      },
+      "counts": {
+        "fit": 64,
+        "val": 64,
+        "eval": 999,
+        "full_eval": 1003
+      },
+      "canonical_query_disjoint": true,
+      "prefix_unchanged": true
+    }
+  }
+}

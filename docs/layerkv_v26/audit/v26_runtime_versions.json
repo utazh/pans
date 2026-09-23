@@ -1,0 +1,31 @@
+{
+  "python": "3.10.12 (main, Nov  4 2025, 08:48:33) [GCC 11.4.0]",
+  "platform": "Linux-5.15.0-161-generic-x86_64-with-glibc2.35",
+  "versions": {
+    "torch": "2.10.0+cu130",
+    "transformers": "4.57.6",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "vllm": "0.19.0",
+    "flash-attn": "not discoverable in this metadata path",
+    "triton": "3.6.0",
+    "safetensors": "0.8.0",
+    "viztracer": "1.1.1",
+    "pytest": "9.0.3"
+  },
+  "cuda_runtime": "13.0",
+  "cudnn": 91501,
+  "gpus": "index, name, driver_version, memory.total [MiB]\n0, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n1, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n2, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n3, NVIDIA GeForce RTX 3090, 580.95.05, 24576 MiB\n",
+  "pythonpath": [
+    "",
+    "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/nvidia_cutlass_dsl/dsl_packages",
+    "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages/nvidia_cutlass_dsl/dsl_packages",
+    "/home/panzihang/src/prism_layerkv/src",
+    "/home/panzihang/src/prism_layerkv/runtime_deps_v24",
+    "/home/panzihang/src/prism_layerkv/runtime_deps",
+    "/usr/lib/python310.zip",
+    "/usr/lib/python3.10",
+    "/usr/lib/python3.10/lib-dynload",
+    "/home/panzihang/venvs/vllm-stable/lib/python3.10/site-packages"
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/run_study_v26.py",
+  "--manifest",
+  "/home/panzihang/src/prism_layerkv/results/v26_primary_study/study.json",
+  "--execute"
+]

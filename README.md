@@ -1,5 +1,36 @@
 # pans
 
+## LayerKV v2.6：四数据集、四预算与冷恢复机制验证
+
+基于 [v2.5](https://github.com/utazh/pans/tree/v2.5)（5e523ec7f48b99b54cf449ace7b8f95e94c7e8db），发布服务器完成的实验实现、报告和轻量证据。本轮继续使用 G16/R4：16 个完整 prefix KV 来源、12 个共享消费者，每个消费者保留原选择集合最后 4 个本层块；当前 query / decode KV 仍逐层独立。
+
+**冷恢复收益明确，但质量泛化不足：主矩阵 16 格冷 TTFT 均下降 17.87%–42.01%，15/16 格准确率下降，普通缓存 3 格变慢。** 不能只展示 TREC 25% 的正结果，也不能把历史评估称为新的最终非劣认证。
+
+- [完整服务器报告](EXPERIMENT_REPORT_V26_ZH.md)
+- [四数据集×四预算及第二前缀结果 CSV](docs/layerkv_v26/results/v26_matrix.csv)
+- [主矩阵分析](docs/layerkv_v26/results/v26_matrix_analysis.json) · [八块四臂主研究](docs/layerkv_v26/results/v26_primary_analysis.json)
+- [机制对照](docs/layerkv_v26/results/v26_mechanism_analysis.json) · [Nsight](docs/layerkv_v26/results/v26_nsight_summary.json)
+- [发布与复现边界](docs/layerkv_v26/RELEASE_ZH.md) · [服务器运行说明](README_LAYERKV_V26_SERVER.md)
+- [审计](docs/layerkv_v26/audit) · [验证记录](docs/layerkv_v26/validation)
+
+Qwen2.5-7B / TREC 25% 主研究，固定历史 seed24 checkpoint：
+
+| 指标 | 无跨层共享 | G16/R4 |
+|---|---:|---:|
+| 完整 TREC 500 条准确率 | 68.60% | 73.00% |
+| SSD-cold/preserve，reuse-prefetch 晋升 TTFT | 1745.57 ms | 1062.24 ms（−39.15%） |
+| 普通缓存，同晋升策略 TTFT | 261.93 ms | 201.68 ms（−23.00%） |
+
+主研究为 8×16 不同请求块、四臂独立进程；矩阵每格 128 条配对请求、每臂一次独立进程，是描述性计时，数值与主研究不同。完整准确率使用 SST-2 872、SUBJ 自定义 1003、TREC 500、RTE 277 条，另有四个第二前缀 25% 复核。SUBJ 修正旧解析器的 0x85 换行问题后重新校准，不能称为标准 1000 条划分。
+
+机制对照：单位读取器 TREC 准确率 16.80%；原生小块内容改用 source 预测后为 76.80%。后者仍加载原生小块，只是内容干预，不是新的省 IO 方法；它不支持“真实原生内容必不可少”的解释。
+
+服务器完整回归 **601 passed、4 skipped、87 subtests passed**；5632 次正式冷认证通过。冷态认证覆盖应用缓存及 OS 文件页，不覆盖 SSD 设备内部缓存。已有模型实测未因发布重新运行，公开副本的 CPU 验证单独记录。
+
+![v2.6 主矩阵](docs/layerkv_v26/figures/v26_matrix.png)
+
+下面保留历史发布说明；当前结果与限制以 v2.6 报告为准。
+
 ## LayerKV v2.5：扩大共享范围与少量本层 KV 保留
 
 基于 [v2.4](https://github.com/utazh/pans/tree/v2.4)（`a6be130c921024a4cd358ccf5841e4a46f547ae2`），发布服务器已经完成的代码、报告和验证记录。

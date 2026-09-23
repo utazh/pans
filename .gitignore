@@ -60,3 +60,9 @@ publish_v24/
 !docs/layerkv_v25/results/*.json
 !docs/layerkv_v25/results/*.csv
 publish_v25/
+
+# Curated v2.6 publication evidence.
+!docs/layerkv_v26/results/
+!docs/layerkv_v26/results/*.json
+!docs/layerkv_v26/results/*.csv
+publish_v26/

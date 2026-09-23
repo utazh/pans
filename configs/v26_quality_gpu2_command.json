@@ -1,0 +1,7 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/v26_quality_worker.py",
+  "--gpu",
+  "2"
+]

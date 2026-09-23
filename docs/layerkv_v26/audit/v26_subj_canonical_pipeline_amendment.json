@@ -1,0 +1,6 @@
+{
+  "stopped_waiting_formal2_pid": 37773,
+  "new_formal3_pid": 25805,
+  "reason": "Data integrity correction; preserve all previous outputs. Refit 5 SUBJ readers before formal timing. No quality-based graph/seed changes.",
+  "new_training_count": 5
+}

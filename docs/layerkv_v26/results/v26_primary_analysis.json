@@ -1,0 +1,1066 @@
+{
+  "preserve/shared/original": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 1729.2032170589664,
+    "student_ms": 1093.9187938656687,
+    "delta_pct": -36.73856357229032,
+    "block_bootstrap95_pct": [
+      -37.829040637680855,
+      -35.939020655577714
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 1909.1319408471463,
+        "student_ms": 1146.2290180352284,
+        "delta_pct": -39.96072280229056
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 1744.6840900811367,
+        "student_ms": 1122.9509075346868,
+        "delta_pct": -35.63586015835888
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 1731.5670842508553,
+        "student_ms": 1093.2755173416808,
+        "delta_pct": -36.86207555656584
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 1711.931530808215,
+        "student_ms": 1097.8511958237505,
+        "delta_pct": -35.87061304341728
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 1681.8508620926877,
+        "student_ms": 1083.2019492954714,
+        "delta_pct": -35.594649102972866
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 1703.3402154920623,
+        "student_ms": 1078.447134437738,
+        "delta_pct": -36.68633402598345
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 1658.4142687352141,
+        "student_ms": 1062.6130476157414,
+        "delta_pct": -35.92595845028873
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 1692.7057441644138,
+        "student_ms": 1066.7815808410523,
+        "delta_pct": -36.97773020982701
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "right_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 1909.1319408471463,
+          "student_ms": 1146.2290180352284,
+          "delta_pct": -39.96072280229056
+        },
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 1744.6840900811367,
+          "student_ms": 1122.9509075346868,
+          "delta_pct": -35.63586015835888
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 1703.3402154920623,
+          "student_ms": 1078.447134437738,
+          "delta_pct": -36.68633402598345
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 1658.4142687352141,
+          "student_ms": 1062.6130476157414,
+          "delta_pct": -35.92595845028873
+        }
+      ],
+      "left_first": [
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 1731.5670842508553,
+          "student_ms": 1093.2755173416808,
+          "delta_pct": -36.86207555656584
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 1711.931530808215,
+          "student_ms": 1097.8511958237505,
+          "delta_pct": -35.87061304341728
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 1681.8508620926877,
+          "student_ms": 1083.2019492954714,
+          "delta_pct": -35.594649102972866
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 1692.7057441644138,
+          "student_ms": 1066.7815808410523,
+          "delta_pct": -36.97773020982701
+        }
+      ]
+    }
+  },
+  "preserve/shared/reuse": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 1745.5702561892394,
+    "student_ms": 1062.238992055427,
+    "delta_pct": -39.146591877980065,
+    "block_bootstrap95_pct": [
+      -40.0266944246213,
+      -38.1730434656846
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 1795.7121992949396,
+        "student_ms": 1142.4355679628206,
+        "delta_pct": -36.379806941703606
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 1775.8204678975744,
+        "student_ms": 1084.3559472705238,
+        "delta_pct": -38.93774923349588
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 1773.7811662518652,
+        "student_ms": 1076.6672713652952,
+        "delta_pct": -39.30100894912674
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 1717.6159655791707,
+        "student_ms": 1062.62626053649,
+        "delta_pct": -38.133652584081666
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 1744.990616774885,
+        "student_ms": 1028.7483969586901,
+        "delta_pct": -41.04562012717084
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 1711.5104177210014,
+        "student_ms": 1036.0318839811953,
+        "delta_pct": -39.46680819151859
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 1751.014847875922,
+        "student_ms": 1058.8077016727766,
+        "delta_pct": -39.53176907910467
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 1694.1163681185571,
+        "student_ms": 1008.2389066956239,
+        "delta_pct": -40.485852939644964
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "left_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 1795.7121992949396,
+          "student_ms": 1142.4355679628206,
+          "delta_pct": -36.379806941703606
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 1773.7811662518652,
+          "student_ms": 1076.6672713652952,
+          "delta_pct": -39.30100894912674
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 1744.990616774885,
+          "student_ms": 1028.7483969586901,
+          "delta_pct": -41.04562012717084
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 1711.5104177210014,
+          "student_ms": 1036.0318839811953,
+          "delta_pct": -39.46680819151859
+        }
+      ],
+      "right_first": [
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 1775.8204678975744,
+          "student_ms": 1084.3559472705238,
+          "delta_pct": -38.93774923349588
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 1717.6159655791707,
+          "student_ms": 1062.62626053649,
+          "delta_pct": -38.133652584081666
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 1751.014847875922,
+          "student_ms": 1058.8077016727766,
+          "delta_pct": -39.53176907910467
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 1694.1163681185571,
+          "student_ms": 1008.2389066956239,
+          "delta_pct": -40.485852939644964
+        }
+      ]
+    }
+  },
+  "preserve/admission/I": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 1729.2032170589664,
+    "student_ms": 1745.5702561892394,
+    "delta_pct": 0.9465075572846926,
+    "block_bootstrap95_pct": [
+      -1.549327812907464,
+      3.0702726995043506
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 1909.1319408471463,
+        "student_ms": 1795.7121992949396,
+        "delta_pct": -5.940906394446399
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 1744.6840900811367,
+        "student_ms": 1775.8204678975744,
+        "delta_pct": 1.7846427323693792
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 1731.5670842508553,
+        "student_ms": 1773.7811662518652,
+        "delta_pct": 2.4379120153622758
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 1711.931530808215,
+        "student_ms": 1717.6159655791707,
+        "delta_pct": 0.3320480211187027
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 1681.8508620926877,
+        "student_ms": 1744.990616774885,
+        "delta_pct": 3.75418273434982
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 1703.3402154920623,
+        "student_ms": 1711.5104177210014,
+        "delta_pct": 0.479657684039303
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 1658.4142687352141,
+        "student_ms": 1751.014847875922,
+        "delta_pct": 5.583682007953872
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 1692.7057441644138,
+        "student_ms": 1694.1163681185571,
+        "delta_pct": 0.08333545029941547
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "right_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 1909.1319408471463,
+          "student_ms": 1795.7121992949396,
+          "delta_pct": -5.940906394446399
+        },
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 1744.6840900811367,
+          "student_ms": 1775.8204678975744,
+          "delta_pct": 1.7846427323693792
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 1731.5670842508553,
+          "student_ms": 1773.7811662518652,
+          "delta_pct": 2.4379120153622758
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 1681.8508620926877,
+          "student_ms": 1744.990616774885,
+          "delta_pct": 3.75418273434982
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 1703.3402154920623,
+          "student_ms": 1711.5104177210014,
+          "delta_pct": 0.479657684039303
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 1658.4142687352141,
+          "student_ms": 1751.014847875922,
+          "delta_pct": 5.583682007953872
+        }
+      ],
+      "left_first": [
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 1711.931530808215,
+          "student_ms": 1717.6159655791707,
+          "delta_pct": 0.3320480211187027
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 1692.7057441644138,
+          "student_ms": 1694.1163681185571,
+          "delta_pct": 0.08333545029941547
+        }
+      ]
+    }
+  },
+  "preserve/admission/S": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 1093.9187938656687,
+    "student_ms": 1062.238992055427,
+    "delta_pct": -2.8959920962955854,
+    "block_bootstrap95_pct": [
+      -4.138737996479058,
+      -1.6214302155274611
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 1146.2290180352284,
+        "student_ms": 1142.4355679628206,
+        "delta_pct": -0.33095044818444164
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 1122.9509075346868,
+        "student_ms": 1084.3559472705238,
+        "delta_pct": -3.4369231998657934
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 1093.2755173416808,
+        "student_ms": 1076.6672713652952,
+        "delta_pct": -1.5191272202608963
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 1097.8511958237505,
+        "student_ms": 1062.62626053649,
+        "delta_pct": -3.20853458294319
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 1083.2019492954714,
+        "student_ms": 1028.7483969586901,
+        "delta_pct": -5.027091427614083
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 1078.447134437738,
+        "student_ms": 1036.0318839811953,
+        "delta_pct": -3.9329930139465286
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 1062.6130476157414,
+        "student_ms": 1058.8077016727766,
+        "delta_pct": -0.35811210407241667
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 1066.7815808410523,
+        "student_ms": 1008.2389066956239,
+        "delta_pct": -5.487784490923941
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "left_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 1146.2290180352284,
+          "student_ms": 1142.4355679628206,
+          "delta_pct": -0.33095044818444164
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 1078.447134437738,
+          "student_ms": 1036.0318839811953,
+          "delta_pct": -3.9329930139465286
+        }
+      ],
+      "right_first": [
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 1122.9509075346868,
+          "student_ms": 1084.3559472705238,
+          "delta_pct": -3.4369231998657934
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 1093.2755173416808,
+          "student_ms": 1076.6672713652952,
+          "delta_pct": -1.5191272202608963
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 1097.8511958237505,
+          "student_ms": 1062.62626053649,
+          "delta_pct": -3.20853458294319
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 1083.2019492954714,
+          "student_ms": 1028.7483969586901,
+          "delta_pct": -5.027091427614083
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 1062.6130476157414,
+          "student_ms": 1058.8077016727766,
+          "delta_pct": -0.35811210407241667
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 1066.7815808410523,
+          "student_ms": 1008.2389066956239,
+          "delta_pct": -5.487784490923941
+        }
+      ]
+    }
+  },
+  "warm/shared/original": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 249.2143459203362,
+    "student_ms": 190.83175216292148,
+    "delta_pct": -23.426658502266672,
+    "block_bootstrap95_pct": [
+      -28.257743451016456,
+      -18.022530600280902
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 226.94316698471084,
+        "student_ms": 195.28021462610923,
+        "delta_pct": -13.951930247247645
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 284.58812880853657,
+        "student_ms": 190.97451186098624,
+        "delta_pct": -32.894420909078434
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 237.81430297822226,
+        "student_ms": 181.5524786215974,
+        "delta_pct": -23.657880813744413
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 236.5849075576989,
+        "student_ms": 211.82084822794423,
+        "delta_pct": -10.467303085981994
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 253.0740264483029,
+        "student_ms": 190.11167000280693,
+        "delta_pct": -24.879027424949008
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 276.6052013321314,
+        "student_ms": 188.25367676618043,
+        "delta_pct": -31.941382208450808
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 236.0853503778344,
+        "student_ms": 185.7133717421675,
+        "delta_pct": -21.33634236730524
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 242.01968287525233,
+        "student_ms": 182.94724545557983,
+        "delta_pct": -24.408112893082766
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "left_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 226.94316698471084,
+          "student_ms": 195.28021462610923,
+          "delta_pct": -13.951930247247645
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 236.5849075576989,
+          "student_ms": 211.82084822794423,
+          "delta_pct": -10.467303085981994
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 253.0740264483029,
+          "student_ms": 190.11167000280693,
+          "delta_pct": -24.879027424949008
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 242.01968287525233,
+          "student_ms": 182.94724545557983,
+          "delta_pct": -24.408112893082766
+        }
+      ],
+      "right_first": [
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 284.58812880853657,
+          "student_ms": 190.97451186098624,
+          "delta_pct": -32.894420909078434
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 237.81430297822226,
+          "student_ms": 181.5524786215974,
+          "delta_pct": -23.657880813744413
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 276.6052013321314,
+          "student_ms": 188.25367676618043,
+          "delta_pct": -31.941382208450808
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 236.0853503778344,
+          "student_ms": 185.7133717421675,
+          "delta_pct": -21.33634236730524
+        }
+      ]
+    }
+  },
+  "warm/shared/reuse": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 261.9317587050318,
+    "student_ms": 201.67644933826523,
+    "delta_pct": -23.00420142431895,
+    "block_bootstrap95_pct": [
+      -27.994028986080004,
+      -16.418121310587107
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 251.91161944530904,
+        "student_ms": 207.08287620800547,
+        "delta_pct": -17.79542497325577
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 248.16369521431625,
+        "student_ms": 194.85580282344017,
+        "delta_pct": -21.480939161886248
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 265.3692242165562,
+        "student_ms": 195.2492164564319,
+        "delta_pct": -26.423564362875183
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 257.2731742693577,
+        "student_ms": 192.16219725785777,
+        "delta_pct": -25.308109637319042
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 259.0513536706567,
+        "student_ms": 250.06509074592032,
+        "delta_pct": -3.4689117803881397
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 282.4787866848055,
+        "student_ms": 189.44252835353836,
+        "delta_pct": -32.935661974178096
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 275.0717768067261,
+        "student_ms": 196.79403587360866,
+        "delta_pct": -28.457205548978514
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 256.1344393325271,
+        "student_ms": 187.75984698731918,
+        "delta_pct": -26.694806260098613
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "left_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 251.91161944530904,
+          "student_ms": 207.08287620800547,
+          "delta_pct": -17.79542497325577
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 265.3692242165562,
+          "student_ms": 195.2492164564319,
+          "delta_pct": -26.423564362875183
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 275.0717768067261,
+          "student_ms": 196.79403587360866,
+          "delta_pct": -28.457205548978514
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 256.1344393325271,
+          "student_ms": 187.75984698731918,
+          "delta_pct": -26.694806260098613
+        }
+      ],
+      "right_first": [
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 248.16369521431625,
+          "student_ms": 194.85580282344017,
+          "delta_pct": -21.480939161886248
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 257.2731742693577,
+          "student_ms": 192.16219725785777,
+          "delta_pct": -25.308109637319042
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 259.0513536706567,
+          "student_ms": 250.06509074592032,
+          "delta_pct": -3.4689117803881397
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 282.4787866848055,
+          "student_ms": 189.44252835353836,
+          "delta_pct": -32.935661974178096
+        }
+      ]
+    }
+  },
+  "warm/admission/I": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 249.2143459203362,
+    "student_ms": 261.9317587050318,
+    "delta_pct": 5.103001890894698,
+    "block_bootstrap95_pct": [
+      -1.3172179209900325,
+      10.690037960166753
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 226.94316698471084,
+        "student_ms": 251.91161944530904,
+        "delta_pct": 11.002072806307627
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 284.58812880853657,
+        "student_ms": 248.16369521431625,
+        "delta_pct": -12.798999644403908
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 237.81430297822226,
+        "student_ms": 265.3692242165562,
+        "delta_pct": 11.586738431311773
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 236.5849075576989,
+        "student_ms": 257.2731742693577,
+        "delta_pct": 8.74454204421864
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 253.0740264483029,
+        "student_ms": 259.0513536706567,
+        "delta_pct": 2.3618888537243032
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 276.6052013321314,
+        "student_ms": 282.4787866848055,
+        "delta_pct": 2.123454412421366
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 236.0853503778344,
+        "student_ms": 275.0717768067261,
+        "delta_pct": 16.51369996761649
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 242.01968287525233,
+        "student_ms": 256.1344393325271,
+        "delta_pct": 5.832069643918247
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "right_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 226.94316698471084,
+          "student_ms": 251.91161944530904,
+          "delta_pct": 11.002072806307627
+        },
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 284.58812880853657,
+          "student_ms": 248.16369521431625,
+          "delta_pct": -12.798999644403908
+        },
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 237.81430297822226,
+          "student_ms": 265.3692242165562,
+          "delta_pct": 11.586738431311773
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 276.6052013321314,
+          "student_ms": 282.4787866848055,
+          "delta_pct": 2.123454412421366
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 236.0853503778344,
+          "student_ms": 275.0717768067261,
+          "delta_pct": 16.51369996761649
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 242.01968287525233,
+          "student_ms": 256.1344393325271,
+          "delta_pct": 5.832069643918247
+        }
+      ],
+      "left_first": [
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 236.5849075576989,
+          "student_ms": 257.2731742693577,
+          "delta_pct": 8.74454204421864
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 253.0740264483029,
+          "student_ms": 259.0513536706567,
+          "delta_pct": 2.3618888537243032
+        }
+      ]
+    }
+  },
+  "warm/admission/S": {
+    "paired_run_blocks": 8,
+    "unique_query_keys": 128,
+    "request_pairs_including_repeats": 128,
+    "baseline_ms": 190.83175216292148,
+    "student_ms": 201.67644933826523,
+    "delta_pct": 5.682857832843857,
+    "block_bootstrap95_pct": [
+      -1.0353506160639458,
+      14.204176300571532
+    ],
+    "per_block": [
+      {
+        "block": 0,
+        "n": 16,
+        "baseline_ms": 195.28021462610923,
+        "student_ms": 207.08287620800547,
+        "delta_pct": 6.043961803551912
+      },
+      {
+        "block": 1,
+        "n": 16,
+        "baseline_ms": 190.97451186098624,
+        "student_ms": 194.85580282344017,
+        "delta_pct": 2.032360719046733
+      },
+      {
+        "block": 2,
+        "n": 16,
+        "baseline_ms": 181.5524786215974,
+        "student_ms": 195.2492164564319,
+        "delta_pct": 7.544230703334032
+      },
+      {
+        "block": 3,
+        "n": 16,
+        "baseline_ms": 211.82084822794423,
+        "student_ms": 192.16219725785777,
+        "delta_pct": -9.28079135483937
+      },
+      {
+        "block": 4,
+        "n": 16,
+        "baseline_ms": 190.11167000280693,
+        "student_ms": 250.06509074592032,
+        "delta_pct": 31.53589716098344
+      },
+      {
+        "block": 5,
+        "n": 16,
+        "baseline_ms": 188.25367676618043,
+        "student_ms": 189.44252835353836,
+        "delta_pct": 0.6315157333338872
+      },
+      {
+        "block": 6,
+        "n": 16,
+        "baseline_ms": 185.7133717421675,
+        "student_ms": 196.79403587360866,
+        "delta_pct": 5.966540819055743
+      },
+      {
+        "block": 7,
+        "n": 16,
+        "baseline_ms": 182.94724545557983,
+        "student_ms": 187.75984698731918,
+        "delta_pct": 2.630595240586908
+      }
+    ],
+    "note": "Exploratory run-block uncertainty; not quality NI, not GPU causal decomposition. Temporal blocks can remain correlated.",
+    "order_strata": {
+      "right_first": [
+        {
+          "block": 0,
+          "n": 16,
+          "baseline_ms": 195.28021462610923,
+          "student_ms": 207.08287620800547,
+          "delta_pct": 6.043961803551912
+        },
+        {
+          "block": 1,
+          "n": 16,
+          "baseline_ms": 190.97451186098624,
+          "student_ms": 194.85580282344017,
+          "delta_pct": 2.032360719046733
+        },
+        {
+          "block": 3,
+          "n": 16,
+          "baseline_ms": 211.82084822794423,
+          "student_ms": 192.16219725785777,
+          "delta_pct": -9.28079135483937
+        },
+        {
+          "block": 4,
+          "n": 16,
+          "baseline_ms": 190.11167000280693,
+          "student_ms": 250.06509074592032,
+          "delta_pct": 31.53589716098344
+        },
+        {
+          "block": 5,
+          "n": 16,
+          "baseline_ms": 188.25367676618043,
+          "student_ms": 189.44252835353836,
+          "delta_pct": 0.6315157333338872
+        },
+        {
+          "block": 7,
+          "n": 16,
+          "baseline_ms": 182.94724545557983,
+          "student_ms": 187.75984698731918,
+          "delta_pct": 2.630595240586908
+        }
+      ],
+      "left_first": [
+        {
+          "block": 2,
+          "n": 16,
+          "baseline_ms": 181.5524786215974,
+          "student_ms": 195.2492164564319,
+          "delta_pct": 7.544230703334032
+        },
+        {
+          "block": 6,
+          "n": 16,
+          "baseline_ms": 185.7133717421675,
+          "student_ms": 196.79403587360866,
+          "delta_pct": 5.966540819055743
+        }
+      ]
+    }
+  }
+}

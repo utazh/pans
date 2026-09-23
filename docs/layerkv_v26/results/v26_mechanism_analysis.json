@@ -1,0 +1,95 @@
+{
+  "learned_native": {
+    "vs_identity": {
+      "n_unique_queries": 500,
+      "baseline_correct": 343,
+      "student_correct": 365,
+      "harmful": 17,
+      "beneficial": 39,
+      "net_delta_pp": 4.4,
+      "discordant_fraction": 0.112,
+      "conservative_lower_pp": -0.3599029735035224,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": true,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "vs_learned_native": {
+      "n_unique_queries": 500,
+      "baseline_correct": 365,
+      "student_correct": 365,
+      "harmful": 0,
+      "beneficial": 0,
+      "net_delta_pp": 0.0,
+      "discordant_fraction": 0.0,
+      "conservative_lower_pp": -0.8725760901595844,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": true,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "diagnostic_only": false
+  },
+  "unit_native": {
+    "vs_identity": {
+      "n_unique_queries": 500,
+      "baseline_correct": 343,
+      "student_correct": 84,
+      "harmful": 272,
+      "beneficial": 13,
+      "net_delta_pp": -51.8,
+      "discordant_fraction": 0.57,
+      "conservative_lower_pp": -58.179722841072575,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": false,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "vs_learned_native": {
+      "n_unique_queries": 500,
+      "baseline_correct": 365,
+      "student_correct": 84,
+      "harmful": 289,
+      "beneficial": 8,
+      "net_delta_pp": -56.2,
+      "discordant_fraction": 0.594,
+      "conservative_lower_pp": -62.168519673961434,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": false,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "diagnostic_only": true
+  },
+  "learned_proxy": {
+    "vs_identity": {
+      "n_unique_queries": 500,
+      "baseline_correct": 343,
+      "student_correct": 384,
+      "harmful": 16,
+      "beneficial": 57,
+      "net_delta_pp": 8.2,
+      "discordant_fraction": 0.146,
+      "conservative_lower_pp": 2.9665810384063533,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": true,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "vs_learned_native": {
+      "n_unique_queries": 500,
+      "baseline_correct": 365,
+      "student_correct": 384,
+      "harmful": 10,
+      "beneficial": 29,
+      "net_delta_pp": 3.8,
+      "discordant_fraction": 0.078,
+      "conservative_lower_pp": -0.21328473866552775,
+      "margin_pp": 1.0,
+      "alpha_per_route": 0.025,
+      "legacy_bound_passes": true,
+      "status": "Analysis only. Original failed preregistration is not overwritten; seed/route decisions must be predeclared. Same queries across seeds are not independent."
+    },
+    "diagnostic_only": true
+  }
+}
