@@ -1,0 +1,36 @@
+{
+  "I_vs_native": {
+    "mean_first_token_kl": 0.11085795827239053,
+    "max_logit_difference": 14.21875
+  },
+  "I_vs_proxy": {
+    "mean_first_token_kl": 0.0779103658569511,
+    "max_logit_difference": 13.03125
+  },
+  "I_vs_r0": {
+    "mean_first_token_kl": 0.08129777853173437,
+    "max_logit_difference": 13.0625
+  },
+  "proxy_vs_r0": {
+    "mean_first_token_kl": 0.0001527394387359493,
+    "max_logit_difference": 0.5
+  },
+  "I": {
+    "n": 16,
+    "correct": 12
+  },
+  "native": {
+    "n": 16,
+    "correct": 13
+  },
+  "proxy": {
+    "n": 16,
+    "correct": 13
+  },
+  "r0": {
+    "n": 16,
+    "correct": 13
+  },
+  "fixed_support_verified": true,
+  "quality_certified": false
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "path": "assets/v27_clf_r384_576/trec.pt",
+    "bytes": 187864529,
+    "sha256": "ab1d3680bfcdbafe05a23c1ee8aaa0dfbf7f152407465c71653601b7ec0cedd2",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_clf_bf16_384_576/trec.pt",
+    "bytes": 93946065,
+    "sha256": "1a6e965ddafea61d2b467f374da3e0d192e3bc3d2db38a93ba2dc1df47ad6ef2",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_kvsharer_g24/trec.pt",
+    "bytes": 485642067,
+    "sha256": "e0ebb68bcdb0b95d937c6f33e7d156828aa4d9f8c3726886ff77dc7876bbad99",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_kvsharer_g16/trec.pt",
+    "bytes": 323764163,
+    "sha256": "41830e5496983c06ffbf4c706db12154c8d81e881d70fafd80b5fcaca7dfcde3",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_kvsharer_g20/trec.pt",
+    "bytes": 404703147,
+    "sha256": "e89abab8e07e448dc23d282f19e132797de51ae97afad761cce0c9a9177aca7a",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_clf_bf16_256_384/trec.pt",
+    "bytes": 62639825,
+    "sha256": "24d801298f0fe550a727e631f360534edc13098eae9e382a57f63ab8250fd040",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_frozen_r0/trec.pt",
+    "bytes": 6385619,
+    "sha256": "5e5912c766168ca122a8dd9064930017e36cc7f91341bb99bc2e18de5062228e",
+    "included_in_archive": true
+  },
+  {
+    "path": "assets/v27_clf_full64/trec.pt",
+    "bytes": 1602906641,
+    "sha256": "bf4207e6cccfe854dc5074ace7a5c505361ebd3039f93bc6c9036ec6815abc43",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_clf_r256_384/trec.pt",
+    "bytes": 125252049,
+    "sha256": "4d103176ccf64069d7158947511db833df4ee5a8f4750bc768778043d5c01c59",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_direct_identity/trec.pt",
+    "bytes": 566580603,
+    "sha256": "53cda2ef1e93edc6cb03e31c53291e6a8bc2922393bbe5cd4e0b3d9634f440c7",
+    "included_in_archive": false
+  },
+  {
+    "path": "assets/v27_clf_full/trec.pt",
+    "bytes": 801466833,
+    "sha256": "5abe312b0090f5c198fd34a25e515efc9905b71c065394a8e4a5f8ab9041d86b",
+    "included_in_archive": false
+  }
+]

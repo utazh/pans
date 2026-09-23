@@ -1,5 +1,36 @@
 # pans
 
+## LayerKV v2.7：冻结 R0 验证与层间共享质量比较
+
+基于 [v2.6](https://github.com/utazh/pans/tree/v2.6)（`11fde71c36ceecded60d560620900dec5c3a5d76`），发布服务器完成的代码、结果报告与轻量证据。本轮没有重新训练读取器，也没有撰写论文。
+
+**冻结 G16/R4 读取器，只将推理时本层原生 prefix 保留块数从 4 改为 0，在当前 TREC/25% 回归集上取得 76.80% 准确率。** G16 有16个完整 prefix KV 来源、12个消费者；所有28层仍保留各自 Q、当前 query 和生成 token 的 KV。
+
+| 配置 | 完整 TREC 500条准确率 | SSD-cold/preserve TTFT |
+|---|---:|---:|
+| 同后端 P8 无共享 | 68.60% | 1880.14 ms |
+| 原 G16/R4 | 73.00% | 1124.85 ms |
+| 冻结 reader → G16/R0 | 76.80% | 1115.93 ms |
+
+冷测为三个不重叠请求块×32条×三臂，共288次冷认证，全部通过。每臂每块独立进程，执行顺序轮换；这是有限重复计时，不是完整500条冷测。R0 比无共享平均降低40.65%，但相对R4仅降低0.79%，块间方向不一致，不能宣称额外稳定加速。R0 selected prefix KV 减少42.72%，计入 reader/packed 后该部分净减少约35.97%，不是总显存或现有SSD文件占用降幅。
+
+层间基线完整500条质量：KVSharer-Prefix G24/G20/G16 为55.60%/48.00%/37.20%；xKV-CLF/P8 秩384/576为FP32 69.80%、BF16 69.40%。这是固定prefix适配版质量比较，**尚未接入外部方法真实SSD因子/来源恢复，不是官方系统速度复现**，质量桥接耗时不可作为TTFT。
+
+**TREC是已观察回归数据，以上结果不证明跨任务泛化或最终非劣性。** v2.6四数据集×四预算中15/16格准确率下降的事实仍保留；本轮没有重新完成该矩阵。
+
+- [完整服务器报告](EXPERIMENT_REPORT_V27_ZH.md) · [服务器运行说明](README_LAYERKV_V27_SERVER.md)
+- [质量CSV](docs/layerkv_v27/results/v27_quality.csv) · [质量分析](docs/layerkv_v27/results/v27_quality_analysis.json)
+- [冷恢复计时](docs/layerkv_v27/results/v27_cold_analysis.json) · [资源记账](docs/layerkv_v27/results/v27_representation_accounting_final.json)
+- [基线适配边界](docs/sharedkv_v27/BASELINES_ZH.md) · [发布与复现说明](docs/layerkv_v27/RELEASE_ZH.md)
+- [审计](docs/layerkv_v27/audit) · [验证日志](docs/layerkv_v27/validation)
+
+服务器完整回归：**656 passed、4 skipped、87 subtests passed**。FP32全秩重建模型评分门限失败如实保留；FP64全秩桥接在两张卡上均与原路径标签评分完全一致。发布副本CPU验证：**628 passed、32 skipped、87 subtests passed**（CUDA禁用，未重跑模型实验）。
+
+![v2.7质量对比](docs/layerkv_v27/figures/v27_quality.png)
+
+以下保留历史版本说明；当前发布范围以v2.7报告为准。
+
+
 ## LayerKV v2.6：四数据集、四预算与冷恢复机制验证
 
 基于 [v2.5](https://github.com/utazh/pans/tree/v2.5)（5e523ec7f48b99b54cf449ace7b8f95e94c7e8db），发布服务器完成的实验实现、报告和轻量证据。本轮继续使用 G16/R4：16 个完整 prefix KV 来源、12 个共享消费者，每个消费者保留原选择集合最后 4 个本层块；当前 query / decode KV 仍逐层独立。

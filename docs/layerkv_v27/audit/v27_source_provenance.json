@@ -1,0 +1,31 @@
+{
+  "kvsharer_commit": "39e5c19176940f8d0089829fa8aab7992f85cb37",
+  "xkv_commit": "05d91ecb0d698279aa4220fda5d7a5108036d692",
+  "files": {
+    "xkv_readme.md": {
+      "bytes": 13220,
+      "sha256": "4ddaac89f310e7e1e3e0543c797f44829e5b8dc36e64df549d37e436b6244b70"
+    },
+    "xKV_SR_models_kv_cache_xkv.py": {
+      "bytes": 83457,
+      "sha256": "9a28c9c8b9a296f559cd8b013600bf6b85a63cec975756c8c3b851d3ac917cf2"
+    },
+    "kvsharer_test_llama.ipynb": {
+      "bytes": 10292,
+      "sha256": "3f1e31cd7eae50ae353e8cd848c3fae743ba9be38eac41f316ecf6799cc7f093"
+    },
+    "xKV_customized_cache_merge_utils.py": {
+      "bytes": 1579,
+      "sha256": "c3fa15e2f5c23726921eff4c8c30ce00f578b223452f596cca3deca358505116"
+    },
+    "xkv_tree.json": {
+      "bytes": 51392,
+      "sha256": "c75877ca6318b6abfe41ba541a5e822b5606c24f78ce45cd610c78851774c6ae"
+    },
+    "efficiency_svd_svd_api.py": {
+      "bytes": 3809,
+      "sha256": "c86a667d22b38d39491aab61f8b3e132a5fbdeb42e84438434707f92f469e7fa"
+    }
+  },
+  "syntax_checked": 39
+}

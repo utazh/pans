@@ -1,0 +1,18 @@
+{
+  "external_quality_arms": 7,
+  "full_quality_arms": 11,
+  "requests_per_quality_arm": 500,
+  "prior_parity": {
+    "I": {
+      "prediction_equal": 500,
+      "max_label_score_difference": 0.0
+    },
+    "native": {
+      "prediction_equal": 500,
+      "max_label_score_difference": 0.0
+    }
+  },
+  "cold_certified_requests": 288,
+  "syntax_checked": 41,
+  "passed": true
+}

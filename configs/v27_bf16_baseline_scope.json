@@ -1,0 +1,17 @@
+{
+  "pre_results_amendment": true,
+  "motivation": "author xKV-SR svd returns BF16 U and SVh; compare a realistic factor dtype as well as supplied FP32 reference",
+  "ranks": [
+    [
+      256,
+      384
+    ],
+    [
+      384,
+      576
+    ]
+  ],
+  "svd": "exact FP64 decomposition of observed prefix; no quality fitting",
+  "selection": "same online P8, not landmark SR",
+  "performance_eligible": false
+}

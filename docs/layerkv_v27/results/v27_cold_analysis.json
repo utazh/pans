@@ -1,0 +1,43 @@
+{
+  "certified_cold_requests": 288,
+  "unique_queries": 96,
+  "blocks": 3,
+  "cache_condition": "ssd-cold/preserve",
+  "admission": "reuse-prefetch",
+  "scope": "Latin-square position balance, three disjoint blocks; no stable/general speed certification",
+  "arms": {
+    "I": {
+      "mean_ms": 1880.140691449924,
+      "median_ms": 1884.2251914320514,
+      "block_means_ms": [
+        1948.5571416444145,
+        1876.1408486170694,
+        1815.7240840882878
+      ],
+      "delta_pct": 0.0,
+      "n": 96
+    },
+    "native": {
+      "mean_ms": 1124.849487566583,
+      "median_ms": 1122.8321155067533,
+      "block_means_ms": [
+        1135.80056434148,
+        1118.576297601976,
+        1120.1716007562936
+      ],
+      "delta_pct": -40.172057725152285,
+      "n": 96
+    },
+    "r0": {
+      "mean_ms": 1115.9279695226967,
+      "median_ms": 1126.5314529882744,
+      "block_means_ms": [
+        1148.9905366543098,
+        1132.0324442203855,
+        1066.7609276933945
+      ],
+      "delta_pct": -40.646571046653044,
+      "n": 96
+    }
+  }
+}

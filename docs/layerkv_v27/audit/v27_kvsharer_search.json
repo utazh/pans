@@ -1,0 +1,164 @@
+{
+  "history": [
+    {
+      "source": 0,
+      "consumer": 27,
+      "distance": 230.00854873657227,
+      "cosine": 0.907290389140447,
+      "min_cosine": 0.8939703702926636,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 26,
+      "distance": 155.35758018493652,
+      "cosine": 0.8226202527681986,
+      "min_cosine": 0.795741617679596,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 3,
+      "distance": 148.42640471458435,
+      "cosine": 0.7935450951258342,
+      "min_cosine": 0.7574205994606018,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 25,
+      "distance": 147.62288856506348,
+      "cosine": 0.7321751197179158,
+      "min_cosine": 0.6925162076950073,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 24,
+      "distance": 145.41884422302246,
+      "cosine": 0.7179433425267537,
+      "min_cosine": 0.6869839429855347,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 23,
+      "distance": 145.15038204193115,
+      "cosine": 0.6524805366992951,
+      "min_cosine": 0.6250119209289551,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 22,
+      "distance": 144.2581491470337,
+      "cosine": 0.5652331531047821,
+      "min_cosine": 0.5238326787948608,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 1,
+      "distance": 143.5158532857895,
+      "cosine": 0.5418909728527069,
+      "min_cosine": 0.5083593130111694,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 21,
+      "distance": 143.30881547927856,
+      "cosine": 0.520590290427208,
+      "min_cosine": 0.4773709177970886,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 16,
+      "distance": 143.30277824401855,
+      "cosine": 0.5100392311811447,
+      "min_cosine": 0.45489633083343506,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 18,
+      "distance": 142.93178939819336,
+      "cosine": 0.5219187964995702,
+      "min_cosine": 0.4700336456298828,
+      "accepted": true
+    },
+    {
+      "source": 0,
+      "consumer": 13,
+      "distance": 142.928236246109,
+      "cosine": 0.5215989162524541,
+      "min_cosine": 0.46973487734794617,
+      "accepted": true
+    }
+  ],
+  "identity_logprob_max_error": 0.0,
+  "sources": [
+    0,
+    0,
+    2,
+    0,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    0,
+    14,
+    15,
+    0,
+    17,
+    0,
+    19,
+    20,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "achieved_sources": 16,
+  "fit_hashes": [
+    "03bd95c6fdc3c334e6f567446b674ebf16602ea872831e5cff2140d78a5c8f0b",
+    "0def25b556a9d52ed03d7d2621f7996d0a3f0e8f3a34090bb7666a25f9106fb0",
+    "10043816317f4c719ce8afd6aa0762f9a181694ef1afa8443476a29d909d69ca",
+    "171d0a633dad49200c7c5119aece50b55f8970689e261ef0a0b0f8b0e415bfac",
+    "1faa73728a96edcebd0e3e6dcb1c2481f5fcb9f6f5b9cbba7bad3afcf74bdf3c",
+    "209abcf7fd2ed58c6b07fd81f459094d8a00e9138649b1754491124ec285f6c2",
+    "254f5c4360ddea589205b0f57cfd712f7ab2de41dee8d7bfba74e7dec4b34588",
+    "25aac3c61e9d9902cac602f3373832468fee082a87c3fd277e1ea8ebc0a2258d",
+    "2e0786dd65e1057104438ed1e8fb3d4032e3739f3c96732d8c7cbfe461d3841c",
+    "2f4faf25860d077b7313a84767b01ad47768ef6484c15a3801af2ca80c1c6c8e",
+    "31b5c2a85a15b1537ecec24a9c2a024139ebec27ce423daa4cba080c27f7ed9a",
+    "37e69f684969222352400bc790e80c214813f8ebc57573c580d7b4a123b0015b",
+    "3949505d4484fde73af31b788389d63ee5007df5db35161dad32d68b5e51288e",
+    "39eb1423a33e523040492a5336114a91de25c4aebcf4a7bb14e9ddc469bd4991",
+    "3a296b2def7b9291c8537198297355917cb98be8ce18a8f2f41d6db9d9024307",
+    "3ace709010db47f776c2109ded80bb022ac7002b9cfa2da00183b6f0070a381b",
+    "467f809acadcb3e67164f114716c326ccd55258f4225aa52b1b9c069e5a33953",
+    "472f928d88e3e0c908f22a13b31512f496fd5f96a80f325aea8ecfdad850d9e0",
+    "4b78102011ebcb972afd16f1a8c882bc4d1307b0dc591dbbcc1ccfdb4d2d28f5",
+    "4d88055892df7c67c6c0d3ea436d07c7f77611b468528b4dbacf74240cec07c1",
+    "50e1560f7de8847cc6417f91dda510c5f4607b2cf7be9c75ca05dfb04edb2ffe",
+    "532d9c4bc01ed2ba5af67cabe563f0a7a0f16a4c747827d2c38184130cdbe8e9",
+    "58fba5903247030a98fd2db208c374934c6d05c04bf4260bf2416a4d022b028e",
+    "6563bd5abee4bcdefcb60959ced9f39b37b384a3f18d1c579ad29cb17aee155d",
+    "70292ae48b7c2fd8a452ff9d48ec066fbd1d707b626df4d9cf4cf4c6f11887ec",
+    "7119698c296585ca95eae2925efaea0c45b17d417a6991b5ec512ac1972af703",
+    "736b6df450d1551a2d1f4f32c76826e7e1bf6ecbb52e07825157146955982023",
+    "779ec55e54e51307a837227de26b21c113026dd7b1f7d2d6c5b5f63384bef575",
+    "79810efc7668f0816872d58d94a7bc13d12302a2c66969e6c1319c3ffd97f162",
+    "7dabbde965d27604485398b68881548640cb19f8ffdedc5ea992cb17b98b08fe"
+  ]
+}

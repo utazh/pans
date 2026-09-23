@@ -1,0 +1,54 @@
+{
+  "status": "edit_and_freeze_before_new_results",
+  "base_commit": "11fde71c36ceecded60d560620900dec5c3a5d76",
+  "primary_scope": "prefix-hit reprefill, not initial prefill/decode-only",
+  "tasks": [
+    "sst2",
+    "subj",
+    "trec",
+    "rte"
+  ],
+  "budgets": [
+    25,
+    50
+  ],
+  "topology": {
+    "requested_sources": [
+      16,
+      20,
+      24,
+      28
+    ],
+    "max_distance": 1,
+    "max_consumers_per_source": 2,
+    "protect_first": 4,
+    "infeasible": "report_not_widen"
+  },
+  "frozen_intervention": [
+    "trained_R4_native",
+    "trained_R4_source_proxy_quality_only",
+    "trained_R4_frozen_R0"
+  ],
+  "compare": {
+    "executor_control": "P8 identity",
+    "external_system": "ContiguousKV faithful reproduction required",
+    "external_sharing": [
+      "KVSharer-Prefix declared adaptation",
+      "xKV-CLF+P8 quality; SSD performance still pending"
+    ]
+  },
+  "selection": "development_only_freeze_before_final",
+  "seed_primary": 24,
+  "confirm_seeds": [
+    24,
+    25,
+    26
+  ],
+  "quality_margin_pp": 1.0,
+  "note": "A user-chosen study target, not inherited certification. Preregister statistical rule separately; no posthoc reinterpretation of v25 failures.",
+  "cold": "reuse existing v23 SSD-cold/preserve verification",
+  "timing_blocks": 8,
+  "queries_per_block": 16,
+  "profile_separate": true,
+  "budgets_net_bytes_required": true
+}

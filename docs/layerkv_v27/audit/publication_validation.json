@@ -1,0 +1,18 @@
+{
+  "base_commit": "11fde71c36ceecded60d560620900dec5c3a5d76",
+  "server_files_verified": 244,
+  "python_syntax_files": 60,
+  "publication_cpu_tests": {
+    "passed": 628,
+    "skipped": 32,
+    "subtests_passed": 87,
+    "cuda_visible_devices": ""
+  },
+  "server_gpu_experiments_rerun": false,
+  "server_tests": {
+    "passed": 656,
+    "skipped": 4,
+    "subtests_passed": 87
+  },
+  "protected_original_project_modified": false
+}

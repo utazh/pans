@@ -1,0 +1,1 @@
+{"blocks": 3, "queries_per_block": 32, "arms": ["I", "native", "r0"], "formal_cold_requests": 288, "scope": "three disjoint request blocks, Latin-square order; exploratory, not broad speed certification"}

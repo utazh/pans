@@ -1,0 +1,8 @@
+{
+  "path": "/home/panzihang/src/prism_layerkv/artifacts/pans_sharedkv_v27_server_impl.zip",
+  "bytes": 31514236,
+  "sha256": "42de8454ab10dfa24718658a6d1905b727f6f40ac43f659b397d35ee8d87251b",
+  "files": 1784,
+  "crc_and_manifest_verified": true,
+  "excluded": "model weights, prefix stores/cache copies, full external factor/source tensors and raw logits remain on server; see checkpoint inventory"
+}

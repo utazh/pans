@@ -1,0 +1,8 @@
+{
+  "n": 16,
+  "prediction_agreement": 16,
+  "max_label_score_difference": 0.0,
+  "quality_only": true,
+  "precision": "float64",
+  "full32_bridge_failed_retained": true
+}
