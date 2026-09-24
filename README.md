@@ -1,5 +1,44 @@
 # pans
 
+## LayerKV v3：四数据集四预算的冻结 R0/R4 与层间基线比较
+
+本发布基于 [v2.7](https://github.com/utazh/pans/tree/v2.7)，对应服务器 v2.8 实验实现。保留 sharedkv_v28 模块和脚本名以便追溯；公开分支与 VERSION 为 v3。
+
+**完整质量评估已完成，TTFT 尚未完成。** 48个 I/R4/R0 主方法臂、112个 KVSharer-Prefix/xKV-CLF 外部质量臂完成，共106080条质量评估请求。四任务为 SST-2、SUBJ、TREC、RTE，预算为5%、10%、25%、50%。读取器沿用已有R4权重；R0只改变推理保留策略，没有新增训练。
+
+- R0相对R4：9/16格提高、7/16格下降；相对无共享I：仍有13/16格下降。
+- R0在14/16格高于KVSharer-Prefix G16；xKV-CLF 256/384 BF16在11/16格高于R0。不能宣称全面优于xKV。
+- xKV两档秩、FP32/BF16因子均来自同一FP64 master。所有16格的direct identity/FP64 full-rank接入验证通过，完整标签评分最大差为0。
+- 所有评估划分已经被观察，不能据此宣称泛化或最终非劣认证。相同token预算不等于相同实际资源。
+
+| TREC / 25% | I | R4 | R0 |
+|---|---:|---:|---:|
+| 完整500条准确率 | 68.60% | 73.00% | 76.80% |
+
+**以上仅是矩阵中的一格。** 其他任务的完整正负结果均在报告和CSV中公开，不按测试结果逐格选取最优方法。
+
+本次39个计时臂成功，1个失败。仅SST-2/5%完成全部六块×16条×三臂的冷热计时：
+
+| 条件 | I | R4 | R0 |
+|---|---:|---:|---:|
+| SSD-cold/preserve TTFT | 342.68 ms | 256.22 ms | 221.43 ms |
+| 普通缓存 TTFT | 113.98 ms | 119.59 ms | 95.64 ms |
+
+该格R0准确率同时下降4.36个百分点。SST-2/10%冷测因53368页中仍有1页驻留而停止；失败请求不计入有效冷结果。其余计时未补齐，外部基线只比较质量，其桥接耗时不得用作系统速度结果。
+
+- [完整结果报告](EXPERIMENT_REPORT_V3_ZH.md) · [服务器执行说明](README_LAYERKV_V3_SERVER.md)
+- [主质量矩阵](docs/layerkv_v3/results/v28_accuracy_matrix.csv) · [全部方法质量表](docs/layerkv_v3/results/quality.csv)
+- [配对分析与未完成项](docs/layerkv_v3/results/analysis.json) · [已完成计时](docs/layerkv_v3/results/timing.csv)
+- [质量与部分计时审核](docs/layerkv_v3/audit/v28_quality_and_partial_timing_audit.json)
+- [基线协议](docs/sharedkv_v28/BASELINE_PROTOCOL_ZH.md) · [发布及复现范围](docs/layerkv_v3/RELEASE_ZH.md)
+- [测试记录](docs/layerkv_v3/validation)
+
+
+本次发布副本独立CPU回归：**680 passed、33 skipped、87 subtests passed**，退出码0；禁用CUDA，没有重跑模型实验。58个源文件逐字节哈希一致，19个v28 Python文件语法检查通过。见 [验证记录](docs/layerkv_v3/validation/publication_cpu_tests.log)。
+
+以下保留历史版本说明；当前发布范围以v3报告为准。
+
+
 ## LayerKV v2.7：冻结 R0 验证与层间共享质量比较
 
 基于 [v2.6](https://github.com/utazh/pans/tree/v2.6)（`11fde71c36ceecded60d560620900dec5c3a5d76`），发布服务器完成的代码、结果报告与轻量证据。本轮没有重新训练读取器，也没有撰写论文。

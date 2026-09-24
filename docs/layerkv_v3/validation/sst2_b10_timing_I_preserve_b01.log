@@ -1,0 +1,63 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 102.97it/s]
+/home/panzihang/src/prism_layerkv/vendor/flexgen/my_pcache_fast.py:1538: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  return torch.from_numpy(data[:])
+Traceback (most recent call last):
+  File "/home/panzihang/src/prism_layerkv/scripts/run_evidence_v26.py", line 58, in <module>
+    if __name__ == '__main__': main()
+  File "/home/panzihang/src/prism_layerkv/scripts/run_evidence_v26.py", line 53, in main
+    runpy.run_path(str(ROOT/'scripts/run_native_prefix_v25.py'), run_name='__main__')
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_native_prefix_v25.py", line 41, in <module>
+    if __name__=='__main__':main()
+  File "/home/panzihang/src/prism_layerkv/scripts/run_native_prefix_v25.py", line 39, in main
+    runpy.run_path(str(ROOT/'scripts/run_sharedkv_v23.py'),run_name='__main__')
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_sharedkv_v23.py", line 83, in <module>
+    if __name__=='__main__':main()
+  File "/home/panzihang/src/prism_layerkv/scripts/run_sharedkv_v23.py", line 77, in main
+    runpy.run_path(str(ROOT/'scripts/run_sharedkv_v21.py'),run_name='__main__')
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_sharedkv_v21.py", line 74, in <module>
+    if __name__=='__main__':main()
+  File "/home/panzihang/src/prism_layerkv/scripts/run_sharedkv_v21.py", line 73, in main
+    runpy.run_path(str(ROOT/'scripts/run_round4.py'),run_name='__main__')
+  File "/usr/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/usr/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_round4.py", line 113, in <module>
+    runner.main()
+  File "/home/panzihang/src/prism_layerkv/scripts/run_sharedkv_v23.py", line 58, in cache_main
+    return old_main(*args,**kwargs)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_native_prefix_v25.py", line 35, in execute_main
+    return old_main(*pa,**kw)
+  File "/home/panzihang/src/prism_layerkv/scripts/run_evidence_v26.py", line 46, in effective_main
+    return old_main(*pa, **kw)
+  File "/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py", line 2960, in main
+    summary = run_flexgen_reprefill(
+  File "/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py", line 2130, in run_flexgen_reprefill
+    result = execute(row)
+  File "/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/flexgen_qwen_reprefill.py", line 1974, in execute
+    generation_prediction, ttft_ms, latency_ms, metrics = greedy_flexgen_completion(
+  File "/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v23/cold.py", line 282, in complete
+    pages=prepare_pages(paths,self.root,self.mode)
+  File "/home/panzihang/src/prism_layerkv/src/contiguous_fuxian/sharedkv_v23/cold.py", line 100, in prepare_pages
+    raise RuntimeError(f"Cold precondition FAILED: {after['resident']}/{after['pages']} pages remain resident; no timed trial")
+RuntimeError: Cold precondition FAILED: 1/53368 pages remain resident; no timed trial

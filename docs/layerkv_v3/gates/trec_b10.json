@@ -1,0 +1,30 @@
+{
+  "parity": {
+    "direct_identity": {
+      "max_label_score_difference": 0.0,
+      "threshold": 0.05,
+      "passed": true,
+      "n": 16,
+      "scope": "Full-rank functional parity on fixed identity selection; not approximate model quality"
+    },
+    "clf_full64": {
+      "max_label_score_difference": 0.0,
+      "threshold": 0.05,
+      "passed": true,
+      "n": 16,
+      "scope": "Full-rank functional parity on fixed identity selection; not approximate model quality"
+    }
+  },
+  "artifact_sha256": {
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/clf_256_384_bf16.pt": "a954b464fb63937687fd546e74a3275268f69e87b57f4d4ed3e9219e9ec7f337",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/clf_256_384_fp32.pt": "4f220b7f3e32563efb552bf0f8cc7c4a8edaa79861826d413d363fc7951ffb62",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/clf_384_576_bf16.pt": "61129b53be5e8df290caa312509a86520569f69bf7db4c1ba28b7735dd52d24b",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/clf_384_576_fp32.pt": "6c298d52c9b3813d5526e601e8fd03181cd90a4282ca17df6934b04c867c09df",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/clf_full64.pt": "cc98920b0c0bc264561afd4826e08d648b9a1b15196458369367d3bc5a0f652d",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/direct_identity.pt": "306cd752bbf08f5dbd61bad76878a26bb8b962e7bbf93d578b3ef91bf1ae98b1",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/kvsharer_g16.pt": "71348de24579bcba889e4dc723fd08b4e7e6db256f7337de6a9db3c131331beb",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/kvsharer_g20.pt": "e33c4034f486cab6a517aaee7c7a10406bdc27821fcc7a5178bd18569210bf44",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/trec_b10/kvsharer_g24.pt": "501889df74a2ceab0609ff2301f924afaac194299d92699ab2c92c91bc8dd600"
+  },
+  "all_structural_gates_passed": true
+}

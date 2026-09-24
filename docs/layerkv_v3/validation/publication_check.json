@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-24T05:44:15.331500+00:00",
+  "cpu_regression": {
+    "passed": 680,
+    "skipped": 33,
+    "subtests_passed": 87,
+    "exit": 0,
+    "seconds": 12.52,
+    "cuda_visible_devices": ""
+  },
+  "source_manifest_verified": 58,
+  "v28_python_ast_valid": 19,
+  "existing_publication_compatibility_differences": [
+    "scripts/finalize_v22_delivery.py",
+    "scripts/round4_workflow.py",
+    "tests/test_prism_max_runner.py"
+  ],
+  "model_experiments_rerun": false,
+  "scope": "Isolated publication checkout validation; no experiment or original source mutation."
+}

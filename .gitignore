@@ -71,3 +71,8 @@ publish_v26/
 !docs/layerkv_v27/results/
 !docs/layerkv_v27/results/*.json
 !docs/layerkv_v27/results/*.csv
+
+# Curated v3 experiment evidence.
+!docs/layerkv_v3/results/
+!docs/layerkv_v3/results/*.json
+!docs/layerkv_v3/results/*.csv

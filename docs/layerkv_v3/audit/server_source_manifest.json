@@ -1,0 +1,234 @@
+{
+  "src/contiguous_fuxian/sharedkv_v28/common.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/common.py",
+    "sha256": "e909371b25659c4b9cbecaacd165b189ddd66f3ba2ab636bbcdcb93ab46fb39f"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/__init__.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/__init__.py",
+    "sha256": "f87c106a7695d79a3e562890c983c90305fca3996cf539fe89f363ce47277978"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/factors.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/factors.py",
+    "sha256": "ad5e197344961751be712095617fd27d208cc440bc717376836dcf573e83a3e5"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/execute.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/execute.py",
+    "sha256": "f016097d68b1464750694d21446689e20317177625b74128b09faf77b126a6a3"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/protocol.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/protocol.py",
+    "sha256": "e92b93b74e2f0d8f0cce1a22a9d3a2bffd1f1215ba7b1030ac6eb25ce3f0e29d"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/analyze.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/analyze.py",
+    "sha256": "dcd20294e0cff7d3a9076b486bb54d91d4e02f5465303c23741028ce29a6ad8c"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/kvsharer.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/kvsharer.py",
+    "sha256": "88d41bbceb7841d2d19a011654d790e823b8836a88ae5a79e307563168a42d2f"
+  },
+  "src/contiguous_fuxian/sharedkv_v28/resources.py": {
+    "source": "src/contiguous_fuxian/sharedkv_v28/resources.py",
+    "sha256": "86b0790c35a68af8a17f1a05dbec24239b147ef11953e61ecc02cea78b682893"
+  },
+  "scripts/install_sharedkv_v28.py": {
+    "source": "scripts/install_sharedkv_v28.py",
+    "sha256": "8acd132f010741dce224395c4bd2f04b45ee95908d1df8e7937db25f661d5f2d"
+  },
+  "scripts/v28_finish_sequence.py": {
+    "source": "scripts/v28_finish_sequence.py",
+    "sha256": "37eb5d2060130217fb3c64c0a684418aaaf90ac604a8aec2fbd95ad4001c3e7d"
+  },
+  "scripts/v28_external_sequence.py": {
+    "source": "scripts/v28_external_sequence.py",
+    "sha256": "41e7f96e7b06a7e004dc6197dee364f3f38ad94416cfa63b8c764c3c4d6b2dce"
+  },
+  "scripts/matrix_v28.py": {
+    "source": "scripts/matrix_v28.py",
+    "sha256": "3b33a1949d780d1785c922bb622ffb550aabd2e743c64b6e170527c1a7d4e2a0"
+  },
+  "scripts/v28_main_sequence.py": {
+    "source": "scripts/v28_main_sequence.py",
+    "sha256": "9ffa40e24cb9a278a3d52025bffa090639072c261b5a4dfb5b875410f7e34da2"
+  },
+  "scripts/v28_write_report.py": {
+    "source": "scripts/v28_write_report.py",
+    "sha256": "a9e4d447942bdc28768c4d254ee30f72c1cd4a9413ec12f0b9bf718af53ec635"
+  },
+  "scripts/v28_external_sequence_attempt2.py": {
+    "source": "scripts/v28_external_sequence_attempt2.py",
+    "sha256": "7b9243e8681434e905448a1e1bf8b2dbd44366254c24d1889367b8ed5218861d"
+  },
+  "scripts/v28_factors_sequence.py": {
+    "source": "scripts/v28_factors_sequence.py",
+    "sha256": "a285eaf0a90973ad2638fe32620eb606d45efb7309fb9ca9003021f21f64b7c5"
+  },
+  "scripts/v28_final_results_audit.py": {
+    "source": "scripts/v28_final_results_audit.py",
+    "sha256": "c341201660c84d54ec3f1f83d8898c13c5fceee1be8608ee871b0b3eccbb150f"
+  },
+  "tests/test_sharedkv_v28.py": {
+    "source": "tests/test_sharedkv_v28.py",
+    "sha256": "e728d8f832a9cec4d0448aa8aa0473dd6bd3d8b2e441c9136178d55a21404d1e"
+  },
+  "tests/test_sharedkv_v28_server_artifacts.py": {
+    "source": "tests/test_sharedkv_v28_server_artifacts.py",
+    "sha256": "b2c87e1cb1440346f2afaaf38437f21ac035df9e839dc84521b345d96ddb15a3"
+  },
+  "docs/sharedkv_v28/AUDIT_V27_ZH.md": {
+    "source": "docs/sharedkv_v28/AUDIT_V27_ZH.md",
+    "sha256": "a6036deaa870f952341eba5529a2efcc0c610bf73fc648ebf43cc88a7de8fc3b"
+  },
+  "docs/sharedkv_v28/SOURCES.md": {
+    "source": "docs/sharedkv_v28/SOURCES.md",
+    "sha256": "edb3aa73c9181b880b482cc0c7743f0f63b7b92adfefc2204182006f8323c680"
+  },
+  "docs/sharedkv_v28/BASELINE_PROTOCOL_ZH.md": {
+    "source": "docs/sharedkv_v28/BASELINE_PROTOCOL_ZH.md",
+    "sha256": "88529c92ac783e83495d5ac36dddbacbc99a95ea788c0dcbc49a706e0ad01a77"
+  },
+  "docs/sharedkv_v28/README_ZH.md": {
+    "source": "docs/sharedkv_v28/README_ZH.md",
+    "sha256": "25d6d9024596a14664803afd6bb88b9051656adf904a6704c0db217aa87ec6af"
+  },
+  "docs/sharedkv_v28/TEST_RESULTS.md": {
+    "source": "docs/sharedkv_v28/TEST_RESULTS.md",
+    "sha256": "2e1df284262ef001f32349683053867beb52d79b38b9a1f0637d2a92b57da86b"
+  },
+  "configs/v28_spec.json": {
+    "source": "configs/v28_spec.json",
+    "sha256": "1aab481e204d2125c52814533aef457c44721883b4a7f0d58bc188e8459b4be4"
+  },
+  "docs/layerkv_v3/results/v28_accuracy_matrix.csv": {
+    "source": "results/v28_accuracy_matrix.csv",
+    "sha256": "d81ecf2d390b7e93dcc8e2d7f1bcba375ebfd59a6c3ca74c1ece2eebf3561e27"
+  },
+  "docs/layerkv_v3/results/v28_accuracy_review.json": {
+    "source": "results/v28_accuracy_review.json",
+    "sha256": "23db034b973103ae1381c5f9fb4e47a60f09ac3693de6669e43daa80c0061060"
+  },
+  "docs/layerkv_v3/results/timing.csv": {
+    "source": "results/v28_summary_current/timing.csv",
+    "sha256": "2ac0afa413c201ef240779d93bbda8244c4a22dc95c5188600c60de3fcaa4266"
+  },
+  "docs/layerkv_v3/results/quality.csv": {
+    "source": "results/v28_summary_current/quality.csv",
+    "sha256": "140507963a60dcc212566a1134428c24b26442e3712e52fb233ee21628559775"
+  },
+  "docs/layerkv_v3/results/analysis.json": {
+    "source": "results/v28_summary_current/analysis.json",
+    "sha256": "610a2817c436bfd74f6c237531f37a178a8e47d20e20dd7f3f958f68892a3e46"
+  },
+  "docs/layerkv_v3/results/external_theory_only.csv": {
+    "source": "results/v28_summary_current/external_theory_only.csv",
+    "sha256": "d445b2c5af199605efd041fe034b5a2c6ae4cb8dce70b85dabb6b64369f91446"
+  },
+  "docs/layerkv_v3/audit/v28_quality_and_partial_timing_audit.json": {
+    "source": "audit/v28_quality_and_partial_timing_audit.json",
+    "sha256": "6e6338a451149f2ecee1de128a9e5e767e5c08667d9be36102747533fe84f48b"
+  },
+  "docs/layerkv_v3/audit/v28_source_provenance.json": {
+    "source": "audit/v28_source_provenance.json",
+    "sha256": "72e2678facf701a96f80b101b002544624d502b484a768c647b1248bedcc0525"
+  },
+  "docs/layerkv_v3/audit/v28_timing_exit.json": {
+    "source": "audit/v28_timing_exit.json",
+    "sha256": "38f4d25ea9966bdcb876ac236aa7aead8c8ade1eeb373ed9d596d1c6ef25e074"
+  },
+  "docs/layerkv_v3/audit/v28_main_done.json": {
+    "source": "audit/v28_main_done.json",
+    "sha256": "3a32533ff49653d3bf8e7da4ed6775f0d585f5e0bfa129aa14481cd7f352e50f"
+  },
+  "docs/layerkv_v3/audit/v28_external_done.json": {
+    "source": "audit/v28_external_done.json",
+    "sha256": "760a4baca2a7949c674fe98fe94b3708c34ff5f887e99bfe5fb7079e13f3ba50"
+  },
+  "docs/layerkv_v3/audit/v28_factors_done.json": {
+    "source": "audit/v28_factors_done.json",
+    "sha256": "a894ef05d945b871cb0de5105f611ce93864595c88341622179bd05e14eb952f"
+  },
+  "docs/layerkv_v3/audit/v28_main_stage_0.json": {
+    "source": "audit/v28_main_stage_0.json",
+    "sha256": "cdc2c7dbe8fb9cbfaf297817ca13d99bd870928b166fe71f5cd56fb3351fe313"
+  },
+  "docs/layerkv_v3/audit/v28_main_stage_1.json": {
+    "source": "audit/v28_main_stage_1.json",
+    "sha256": "09481bd9e61a82778132fe4cbfca985ec9e8d446c8622ad580d02cc7f5035d25"
+  },
+  "docs/layerkv_v3/gates/rte_b5.json": {
+    "source": "studies/v28_frozen/gates/rte_b5.json",
+    "sha256": "c3e035f891cd6016842a04de6725a2cd13a1d8d76a60af52bc0d7630a5de94a0"
+  },
+  "docs/layerkv_v3/gates/rte_b50.json": {
+    "source": "studies/v28_frozen/gates/rte_b50.json",
+    "sha256": "b10ae7d3964148c67f00ca2c4a69cdb730ad99d88a9e71dd4708ca5286807661"
+  },
+  "docs/layerkv_v3/gates/sst2_b50.json": {
+    "source": "studies/v28_frozen/gates/sst2_b50.json",
+    "sha256": "7b94571673fa0cdcab881cb3d53601cdc19a41446c994ccbc866bb0c57be5c6f"
+  },
+  "docs/layerkv_v3/gates/subj_b50.json": {
+    "source": "studies/v28_frozen/gates/subj_b50.json",
+    "sha256": "23bdddb954066172c08f1e2712baaa7fefc63630edc089ab8c814cb04c6e3b24"
+  },
+  "docs/layerkv_v3/gates/trec_b5.json": {
+    "source": "studies/v28_frozen/gates/trec_b5.json",
+    "sha256": "f5bfb503f36ae558c976fc6237b50c15077fa71aecfe955ae15ec8a2aa248a70"
+  },
+  "docs/layerkv_v3/gates/rte_b10.json": {
+    "source": "studies/v28_frozen/gates/rte_b10.json",
+    "sha256": "73bdb04073e8004aca166714ab89e9de403e5afdf0ad18726379635e17c860f9"
+  },
+  "docs/layerkv_v3/gates/subj_b5.json": {
+    "source": "studies/v28_frozen/gates/subj_b5.json",
+    "sha256": "ca3780dfbb2e005af2dc6f0106165075b0e0ba848239c2628052d83300978f8e"
+  },
+  "docs/layerkv_v3/gates/subj_b25.json": {
+    "source": "studies/v28_frozen/gates/subj_b25.json",
+    "sha256": "4bd796bda3ea0d6b18078b44de3a85d6c6f3095bca2a33157db39922adda1879"
+  },
+  "docs/layerkv_v3/gates/subj_b10.json": {
+    "source": "studies/v28_frozen/gates/subj_b10.json",
+    "sha256": "ea4fcbee14b414f2fc0b5ccaae74eb5edbcfa1e70f4ba9dd1df9e53e5b0f0ad6"
+  },
+  "docs/layerkv_v3/gates/sst2_b5.json": {
+    "source": "studies/v28_frozen/gates/sst2_b5.json",
+    "sha256": "1aaf2b998bf1e0be1876d4960b3a5ca12c2079440ebe2f53a151182262dc46b6"
+  },
+  "docs/layerkv_v3/gates/trec_b25.json": {
+    "source": "studies/v28_frozen/gates/trec_b25.json",
+    "sha256": "bcb690481d44250926398c0a37b42d710601d1bad5119f8399c0019a42702fb9"
+  },
+  "docs/layerkv_v3/gates/sst2_b25.json": {
+    "source": "studies/v28_frozen/gates/sst2_b25.json",
+    "sha256": "96d84df9edb77a2c49e459e7812ddbe79370a854d59fe8d8ee7b61f568c9d04e"
+  },
+  "docs/layerkv_v3/gates/trec_b50.json": {
+    "source": "studies/v28_frozen/gates/trec_b50.json",
+    "sha256": "73ff579eb1c612b094730cb03f2e7c74408c765b6fa7b3200b662bbfdee5798f"
+  },
+  "docs/layerkv_v3/gates/sst2_b10.json": {
+    "source": "studies/v28_frozen/gates/sst2_b10.json",
+    "sha256": "c9a793a08208e42e8723eaf8f6d14a00d65ea3a6a04a8cb63785505096277131"
+  },
+  "docs/layerkv_v3/gates/rte_b25.json": {
+    "source": "studies/v28_frozen/gates/rte_b25.json",
+    "sha256": "d35612b8b2fd26a813cf2bea5c6ca3b7b7a19a9b75f2c9cd014b88069fb4a217"
+  },
+  "docs/layerkv_v3/gates/trec_b10.json": {
+    "source": "studies/v28_frozen/gates/trec_b10.json",
+    "sha256": "60e3a87ad318c1857bf5484e705c363ce22625f20a4911466a031cb45408217d"
+  },
+  "docs/layerkv_v3/validation/v28_regression.log": {
+    "source": "logs/v28_regression.log",
+    "sha256": "15a0c5ec43c91840e7cfac400a2e8a19da10ae7c1eae50c9662742d952b419cf"
+  },
+  "docs/layerkv_v3/validation/v28_server_changes_tests_attempt2.log": {
+    "source": "logs/v28_server_changes_tests_attempt2.log",
+    "sha256": "e9500f88b023ae9cff135cb93f5b0c80fb46c8d82e93522ccd983766c7d23490"
+  },
+  "docs/layerkv_v3/validation/sst2_b10_timing_I_preserve_b01.log": {
+    "source": "studies/v28_frozen/logs/sst2_b10_timing_I_preserve_b01.log",
+    "sha256": "b5e24f16cde6c374d7398434deb9d413a90934384845bd3e468506ead40b2649"
+  }
+}

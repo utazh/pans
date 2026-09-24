@@ -1,0 +1,1 @@
+{"argv": ["/home/panzihang/venvs/vllm-stable/bin/python", "-u", "scripts/matrix_v28.py", "run", "--manifest", "studies/v28_frozen/manifest.json", "--stage", "quality", "--cells", "trec_b25", "--execute"], "returncode": 0, "seconds": 810.791478395462}
