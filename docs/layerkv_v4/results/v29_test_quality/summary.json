@@ -1,0 +1,9 @@
+{
+ "cells": 16,
+ "mean_delta_pp": 1.5568492185154206,
+ "mean_bytes_vs_I": -26.78343162235858,
+ "v28_G16_mean_delta_pp": -1.1353015990117963,
+ "worst_delta_pp": -2.527075812274368,
+ "cells_within_1pp": 12,
+ "non_trec_mean_delta_pp": -0.44086770864610597
+}

@@ -1,0 +1,110 @@
+{
+ "rte_b25|preserve|I_ROW_vs_SEL_ROW": {
+  "rel_pct": 15.289172329951917,
+  "ci": [
+   14.672477838135755,
+   16.029171191606682
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "rte_b25|preserve|I_ROW_vs_XKV384_ROW": {
+  "rel_pct": 141.5291488798946,
+  "ci": [
+   137.25122167181812,
+   145.04731220622975
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "rte_b25|preserve|I_ROW_vs_XKV256_ROW": {
+  "rel_pct": 196.07041415749856,
+  "ci": [
+   191.5522441882197,
+   200.6820293248057
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "sst2_b25|preserve|I_ROW_vs_SEL_ROW": {
+  "rel_pct": 31.42204319041087,
+  "ci": [
+   30.820078564391856,
+   32.18458089206387
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "sst2_b25|preserve|I_ROW_vs_XKV384_ROW": {
+  "rel_pct": 118.19588110952992,
+  "ci": [
+   115.01264659801562,
+   121.22623721399262
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "sst2_b25|preserve|I_ROW_vs_XKV256_ROW": {
+  "rel_pct": 179.64315340314144,
+  "ci": [
+   177.2159100277482,
+   182.09007705355026
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "subj_b25|preserve|I_ROW_vs_G16_ROW": {
+  "rel_pct": 56.047298011878276,
+  "ci": [
+   54.80200623035029,
+   57.48580483410427
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "subj_b25|preserve|I_ROW_vs_XKV384_ROW": {
+  "rel_pct": 131.6621925484095,
+  "ci": [
+   126.45567224211503,
+   136.98970202722762
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "subj_b25|preserve|I_ROW_vs_XKV256_ROW": {
+  "rel_pct": 188.08997885617654,
+  "ci": [
+   181.86194827918948,
+   193.86532981283528
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "trec_b25|preserve|I_ROW_vs_SEL_ROW": {
+  "rel_pct": 63.91127833913092,
+  "ci": [
+   62.46432286230921,
+   65.3712778066798
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "trec_b25|preserve|I_ROW_vs_XKV384_ROW": {
+  "rel_pct": 116.56987498520282,
+  "ci": [
+   115.70363477675478,
+   117.58983895466073
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ },
+ "trec_b25|preserve|I_ROW_vs_XKV256_ROW": {
+  "rel_pct": 185.78429456379538,
+  "ci": [
+   183.97804251966724,
+   187.7110774756957
+  ],
+  "faster_blocks": 0,
+  "blocks": 6
+ }
+}

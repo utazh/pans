@@ -1,0 +1,28 @@
+{
+  "files_scanned": 260,
+  "rule": "v29 A2 fit512/fit64 (rule rev 2): 512 new train-pool queries per pilot task, disjoint from\nevery historical role AND the v29 dev set (same conservative exclusion as prepare_v29_dev.py).\nfit64 = first 64 of fit512 in the frozen shuffled order.",
+  "seed": 2902,
+  "target": 512,
+  "tasks": {
+    "sst2": {
+      "pool": 67349,
+      "in_history": 195,
+      "duplicate": 0,
+      "short": 558,
+      "too_long": 0,
+      "final": 512,
+      "fit512_sha256": "ee637b3f1de171d3bc24b7a08a5b2ac2eabc4688359ae1fe83ebd2c983943955",
+      "fit64_sha256": "9ed6cf54591da6718ce7bd7086627fcba9d45ac57dabcfe26c9d80c1ad9a9899"
+    },
+    "rte": {
+      "pool": 2490,
+      "in_history": 468,
+      "duplicate": 1,
+      "short": 0,
+      "too_long": 3,
+      "final": 512,
+      "fit512_sha256": "a6655e98b787a52ed8632eee54285c4c6e62ee3b365d4bb1e228b9c61c721257",
+      "fit64_sha256": "5e020fba0ddaca1913b14f5f927cde9b5fcf3bf0f0dcecf2607a0fc6c66fab3f"
+    }
+  }
+}

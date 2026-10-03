@@ -1,0 +1,76 @@
+{
+  "files_scanned": 256,
+  "rule": "v29 development set: 500 queries/task from the train pools, disjoint from every\nhistorical data role (all data/*.jsonl incl. eval/timing/fit/val splits, prism_pans\ndata, v28 bundles) and from few-shot demos in every prefix seen in those files.\nExclusion is conservative: any candidate text field appearing anywhere in the\nconcatenated historical texts is rejected. Not a certification set.",
+  "seed": 2901,
+  "target": 500,
+  "tasks": {
+    "sst2": {
+      "pool": 67349,
+      "in_history": 89,
+      "duplicate": 0,
+      "short": 514,
+      "too_long": 0,
+      "subj_contains_used": 0,
+      "final": 500,
+      "labels": {
+        "positive": 264,
+        "negative": 236
+      },
+      "prefix_sha256": "ca642ee0f97a402ab1d528cd7fc3e9f5275dc0df502b864fc12f554376359bdf",
+      "file_sha256": "3863c36573bf0aa5e407c4e4fc69915c5ce25543819370d4387c6bb61120deeb",
+      "historical_texts": 24348
+    },
+    "subj": {
+      "pool": 10000,
+      "in_history": 85,
+      "duplicate": 0,
+      "short": 0,
+      "too_long": 0,
+      "subj_contains_used": 0,
+      "final": 500,
+      "labels": {
+        "subjective": 255,
+        "objective": 245
+      },
+      "prefix_sha256": "1e68faa21963d2e31401cb591406c3efa94268ae27b737410a604236586f167d",
+      "file_sha256": "789f9f758647a5f384285b4b4b906953bc172dc4e67692ec7db456ba2d98b3d3",
+      "historical_texts": 36052
+    },
+    "trec": {
+      "pool": 5452,
+      "in_history": 939,
+      "duplicate": 5,
+      "short": 0,
+      "too_long": 0,
+      "subj_contains_used": 0,
+      "final": 500,
+      "labels": {
+        "DESC": 111,
+        "ENTY": 114,
+        "NUM": 73,
+        "HUM": 126,
+        "LOC": 71,
+        "ABBR": 5
+      },
+      "prefix_sha256": "b67ac86d2014b838287bcfa021b5bea5b3865a22c6e3b8ed98f5e47cf6e0a70d",
+      "file_sha256": "846db89b611b9a04939e509d2b3ce142064be5b6df3014008fb3b6f9223ebfcf",
+      "historical_texts": 29266
+    },
+    "rte": {
+      "pool": 2490,
+      "in_history": 141,
+      "duplicate": 0,
+      "short": 0,
+      "too_long": 1,
+      "subj_contains_used": 0,
+      "final": 500,
+      "labels": {
+        "not_entailment": 255,
+        "entailment": 245
+      },
+      "prefix_sha256": "2538fbefd9ab6c2fdd9f78a25c166bbf9523bc2ccfc8cb0bd1efe443add916b0",
+      "file_sha256": "3758eaf67c69b6f294f208d742a35ebcad224b61b7dc3b663057671d5fdd5b3e",
+      "historical_texts": 9988
+    }
+  }
+}

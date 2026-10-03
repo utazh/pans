@@ -1,0 +1,101 @@
+{
+ "rule_sha256": "9078d892bb1ab4c439612692156b7ef00d7287ddf1e8c77f292db14a001deab3",
+ "cells": {
+  "sst2_b25": {
+   "selected": "XKV_256_384_BF16",
+   "candidates": {
+    "I": {
+     "net": 0,
+     "bytes": 54096052.224,
+     "eligible": true,
+     "disagree": 0
+    },
+    "XKV_256_384_BF16": {
+     "net": -1,
+     "bytes": 8516175.36,
+     "eligible": true,
+     "disagree": 27
+    },
+    "XKV_384_576_BF16": {
+     "net": -7,
+     "bytes": 12770503.68,
+     "eligible": false,
+     "disagree": 29
+    }
+   },
+   "tolerance": 5
+  },
+  "subj_b25": {
+   "selected": "XKV_256_384_BF16",
+   "candidates": {
+    "I": {
+     "net": 0,
+     "bytes": 63078400.0,
+     "eligible": true,
+     "disagree": 0
+    },
+    "XKV_256_384_BF16": {
+     "net": -3,
+     "bytes": 9856071.68,
+     "eligible": true,
+     "disagree": 119
+    },
+    "XKV_384_576_BF16": {
+     "net": 2,
+     "bytes": 14784030.72,
+     "eligible": true,
+     "disagree": 132
+    }
+   },
+   "tolerance": 5
+  },
+  "trec_b25": {
+   "selected": "XKV_384_576_BF16",
+   "candidates": {
+    "I": {
+     "net": 0,
+     "bytes": 70647808.0,
+     "eligible": true,
+     "disagree": 0
+    },
+    "XKV_256_384_BF16": {
+     "net": -15,
+     "bytes": 11158487.04,
+     "eligible": false,
+     "disagree": 108
+    },
+    "XKV_384_576_BF16": {
+     "net": 3,
+     "bytes": 16735580.16,
+     "eligible": true,
+     "disagree": 85
+    }
+   },
+   "tolerance": 5
+  },
+  "rte_b25": {
+   "selected": "XKV_384_576_BF16",
+   "candidates": {
+    "I": {
+     "net": 0,
+     "bytes": 85958656.0,
+     "eligible": true,
+     "disagree": 0
+    },
+    "XKV_256_384_BF16": {
+     "net": -6,
+     "bytes": 13431040.0,
+     "eligible": false,
+     "disagree": 32
+    },
+    "XKV_384_576_BF16": {
+     "net": -5,
+     "bytes": 20146560.0,
+     "eligible": true,
+     "disagree": 31
+    }
+   },
+   "tolerance": 5
+  }
+ }
+}

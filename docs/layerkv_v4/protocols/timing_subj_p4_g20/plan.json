@@ -1,0 +1,65 @@
+{
+ "rule_sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "gpu": "2",
+ "cores": "28-31,60-63",
+ "meta": {
+  "note": "2 arms, alternating order"
+ },
+ "blocks": [
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I_P4",
+    "G20_P4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G20_P4",
+    "I_P4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I_P4",
+    "G20_P4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G20_P4",
+    "I_P4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I_P4",
+    "G20_P4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20_P4",
+    "I_P4"
+   ]
+  }
+ ],
+ "runs": 12
+}

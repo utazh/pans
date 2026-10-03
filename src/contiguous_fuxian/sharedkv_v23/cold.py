@@ -22,6 +22,7 @@ libc.mincore.argtypes=[ctypes.c_void_p,ctypes.c_size_t,ctypes.POINTER(ctypes.c_u
 libc.munmap.argtypes=[ctypes.c_void_p,ctypes.c_size_t]
 
 _LIBC=libc
+COLD_EVICT_ATTEMPTS=5
 
 
 
@@ -84,15 +85,23 @@ def prepare_pages(paths,root,mode):
     unique=sorted(set(str(Path(x)) for x in paths)); checked=audit_files(unique,root)
     root_before=Path(root).stat()
     before=snapshot([p for p,_ in checked]) if mode=='ssd-cold' else None
-    for path,_ in checked:
+    # DONTNEED is advisory; retry a bounded number of times. The strict
+    # resident==0 gate below is unchanged, and every attempt is recorded.
+    attempts=[]
+    for attempt in range(COLD_EVICT_ATTEMPTS if mode=='ssd-cold' else 1):
+        for path,_ in checked:
+            if mode=='ssd-cold':
+                fd=os.open(path,os.O_RDONLY)
+                try:os.posix_fadvise(fd,0,0,os.POSIX_FADV_DONTNEED)
+                finally:os.close(fd)
+            elif mode=='page-hot':
+                with path.open('rb',buffering=0) as f:
+                    while f.read(1024*1024):pass
+        after=snapshot([p for p,_ in checked]) if mode!='app-cold' else None
         if mode=='ssd-cold':
-            fd=os.open(path,os.O_RDONLY)
-            try:os.posix_fadvise(fd,0,0,os.POSIX_FADV_DONTNEED)
-            finally:os.close(fd)
-        elif mode=='page-hot':
-            with path.open('rb',buffering=0) as f:
-                while f.read(1024*1024):pass
-    after=snapshot([p for p,_ in checked]) if mode!='app-cold' else None
+            attempts.append(after['resident'])
+            if after['resident']==0:break
+            time.sleep(0.05*(2**attempt))
     root_after=Path(root).stat()
     if (root_before.st_dev,root_before.st_ino)!=(root_after.st_dev,root_after.st_ino):raise RuntimeError('Cache directory changed')
     if audit_files(unique,root)!=checked:raise RuntimeError('Cache file mutated during preparation')
@@ -101,7 +110,8 @@ def prepare_pages(paths,root,mode):
     if mode=='page-hot' and after['resident']!=after['pages']:
         raise RuntimeError('Page-hot precondition failed under memory pressure')
     return {'page_before':before,'page_after':after,'mode':mode,
-            'files_checked':len(checked),'file_bytes':sum(i[2] for _,i in checked)}
+            'files_checked':len(checked),'file_bytes':sum(i[2] for _,i in checked),
+            'evict_attempt_resident':attempts}
 
 
 def io_snapshot():

@@ -1,0 +1,22 @@
+{
+ "format": "pans-v29-xkv-selection-addendum",
+ "status": "frozen",
+ "frozen_before": "any xKV dev-set run",
+ "purpose": "Give xKV the same dev-set selection opportunity as our method (GPT review 2026-10-02): same dev set, same eligibility and selection rule as configs/v29_selection_rule.json (rev 3), applied separately to the xKV candidate family.",
+ "cells": ["sst2_b25", "subj_b25", "trec_b25", "rte_b25"],
+ "candidates": {
+  "I": "our no-sharing system (existing A0 dev runs studies/v29/a0/runs/devI_<cell>)",
+  "XKV_256_384_BF16": "v28 representation clf_256_384_bf16 via the unified row engine (scripts/v29_rowengine_entry.py --engine xkv), runtime_data/v29_xkv_ssd/<cell>",
+  "XKV_384_576_BF16": "v28 representation clf_384_576_bf16 via the unified row engine, runtime_data/v29_xkv_ssd_r384/<cell>"
+ },
+ "dev_set": "data/v29/p0/dev (500 per task; same files and SHA as rule rev 3)",
+ "eligibility": "correct(candidate) - correct(I) >= -ceil(0.01 * n) on the same dev queries (n = 500 -> at most 5 net fewer); I always eligible",
+ "selection": {
+  "objective": "minimize request-dependent restored bytes among eligible candidates",
+  "bytes": "xKV: mean per-request U-row bytes actually read by the row engine (row log request_bytes, K and V); I: mean_physical_prefetch_kv_bytes of the A0 dev run (identical to the row engine's native bytes for I). Resident right factors / readers are reported separately, never folded into this objective, for both families.",
+  "tie_rule": "same as rule rev 3: within 0.5% of the minimum bytes, larger net correct-count difference, then fixed order I, XKV_256_384_BF16, XKV_384_576_BF16",
+  "no_eligible": "select I"
+ },
+ "reporting": "all candidate points (ours I/G24/G20/G16 and xKV ranks) are shown on the quality-bytes-TTFT plane; the selected point of each family is only a summary. Test-set quality of the xKV ranks is taken from the v28 bridge runs (row engine parity with the bridge verified exact on trec_b25, 32/32).",
+ "not_allowed": "no rank search beyond these two pre-existing ranks; no quality threshold derived from test results"
+}

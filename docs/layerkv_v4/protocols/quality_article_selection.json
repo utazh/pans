@@ -1,0 +1,126 @@
+{
+ "rule": "validation split; >=16 questions; 4000-7000 prefix tokens; sorted by article hash then random.Random(2911).shuffle; f0-f2 formal (12), pilot (4)",
+ "candidates": 46,
+ "sets": {
+  "f0": [
+   {
+    "article_hash": "47209865f4af833e",
+    "prefix_tokens": 6988,
+    "questions": 18,
+    "title": "HOW TO MAKE FRIENDS",
+    "slot": "sst2"
+   },
+   {
+    "article_hash": "b9d0ff8fe9c098e8",
+    "prefix_tokens": 6446,
+    "questions": 17,
+    "title": "The Last Monster",
+    "slot": "subj"
+   },
+   {
+    "article_hash": "956168545a8becca",
+    "prefix_tokens": 5927,
+    "questions": 19,
+    "title": "LOST",
+    "slot": "trec"
+   },
+   {
+    "article_hash": "5d9bf3ece565cda3",
+    "prefix_tokens": 5028,
+    "questions": 20,
+    "title": "New work order",
+    "slot": "rte"
+   }
+  ],
+  "f1": [
+   {
+    "article_hash": "ad2b3b7631e52098",
+    "prefix_tokens": 6390,
+    "questions": 19,
+    "title": "Mr. Meek Plays Polo",
+    "slot": "sst2"
+   },
+   {
+    "article_hash": "a997084785876949",
+    "prefix_tokens": 6217,
+    "questions": 16,
+    "title": "DANGEROUS QUARRY",
+    "slot": "subj"
+   },
+   {
+    "article_hash": "08bff8b77ff218c4",
+    "prefix_tokens": 6781,
+    "questions": 20,
+    "title": "THE MOONS OF MARS",
+    "slot": "trec"
+   },
+   {
+    "article_hash": "ae1c12b78d27157c",
+    "prefix_tokens": 6545,
+    "questions": 19,
+    "title": "THRALLS of the ENDLESS NIGHT",
+    "slot": "rte"
+   }
+  ],
+  "f2": [
+   {
+    "article_hash": "4da84cea7e05a23f",
+    "prefix_tokens": 6212,
+    "questions": 20,
+    "title": "STRANGER FROM SPACE",
+    "slot": "sst2"
+   },
+   {
+    "article_hash": "b7188e5abc2ea1f0",
+    "prefix_tokens": 6672,
+    "questions": 19,
+    "title": "Conspiracy on Callisto",
+    "slot": "subj"
+   },
+   {
+    "article_hash": "a883d1a42bab18d8",
+    "prefix_tokens": 6313,
+    "questions": 19,
+    "title": "OUT OF THE IRON WOMB!",
+    "slot": "trec"
+   },
+   {
+    "article_hash": "53d358342981373e",
+    "prefix_tokens": 6170,
+    "questions": 18,
+    "title": "THE STOKER",
+    "slot": "rte"
+   }
+  ],
+  "pilot": [
+   {
+    "article_hash": "8e4a77ca976be1d5",
+    "prefix_tokens": 6870,
+    "questions": 20,
+    "title": "ONE-SHOT",
+    "slot": "sst2"
+   },
+   {
+    "article_hash": "4261f6337ecc2545",
+    "prefix_tokens": 6190,
+    "questions": 19,
+    "title": "The Happy Castaway",
+    "slot": "subj"
+   },
+   {
+    "article_hash": "7b186cbcdd4cfd62",
+    "prefix_tokens": 5215,
+    "questions": 19,
+    "title": "VIEWPOINT.",
+    "slot": "trec"
+   },
+   {
+    "article_hash": "19d902aed95c6d00",
+    "prefix_tokens": 6372,
+    "questions": 18,
+    "title": "MUCK MAN",
+    "slot": "rte"
+   }
+  ]
+ }
+}

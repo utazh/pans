@@ -4,3 +4,8 @@
 
 # Preserve verbatim audit patch context lines.
 docs/layerkv_v2/audit/*.patch -whitespace
+
+# Preserve v4 snapshot evidence bytes and hashes.
+docs/layerkv_v4/** -text
+scripts/*v29* -text
+configs/v29* -text

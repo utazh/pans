@@ -1,0 +1,1626 @@
+{
+ "format": "pans-v29-selection-rule",
+ "revision": 2,
+ "status": "frozen",
+ "frozen_before": "Any A1 shared-candidate evaluation on the dev set (identity dev runs are allowed before freezing: they are candidate-independent).",
+ "dev_set": {
+  "path": "data/v29/p0/dev",
+  "per_task": 500,
+  "file_sha256": {
+   "sst2": "3863c36573bf0aa5e407c4e4fc69915c5ce25543819370d4387c6bb61120deeb",
+   "subj": "789f9f758647a5f384285b4b4b906953bc172dc4e67692ec7db456ba2d98b3d3",
+   "trec": "846db89b611b9a04939e509d2b3ce142064be5b6df3014008fb3b6f9223ebfcf",
+   "rte": "3758eaf67c69b6f294f208d742a35ebcad224b61b7dc3b663057671d5fdd5b3e"
+  },
+  "membership_audit": "audit/v29_dev_membership.json",
+  "role": "configuration screening only; not a quality certification set"
+ },
+ "candidates": {
+  "set": [
+   "I",
+   "G24",
+   "G20",
+   "G16"
+  ],
+  "construction": "Frozen v28 R0 checkpoint (R4-trained weights, native_policy.blocks=0). G20/G24 keep a subset of consumers via sharedkv_v21.bundles.isolate(bundle, kept_consumers); reverted consumers read their own prefix KV. No reader value changes, no retraining, no new sources. validate_sources (one-hop, same P8 window, leaders native) must pass.",
+  "revert_order_rule": "Label-free, fixed before evaluation: sort consumers by descending |l - s(l)|, ties by ascending layer index. G20 reverts the first 4, G24 the first 8.",
+  "not_monotonic_warning": "Reverting consumers changes downstream hidden states and online P8 selections; every candidate is evaluated end to end."
+ },
+ "eligibility": {
+  "metric": "paired net correct-count difference on the same dev queries: correct(candidate) - correct(I)",
+  "threshold": "correct(candidate) - correct(I) >= -ceil(0.01 * n); for n = 500 at most 5 net fewer correct answers. Integer counts only; no rounded percentages.",
+  "reported_as": "percentage points (1 pp = 0.01 absolute accuracy)",
+  "identity_always_eligible": true
+ },
+ "selection": {
+  "objective": "minimize bytes among eligible candidates",
+  "bytes_field": "summary.json mean_physical_prefetch_kv_bytes",
+  "bytes_definition": "Mean over requests of physical_prefetch_kv_bytes = _physical_tokens x bytes_per_token (K+V), where _physical_tokens accumulates, in flexgen_pcache._resolve_entry/_record_physical_access, the physical prefix token ids resolved for every physically resolved source layer of the first Re-Prefill, from ANY tier (GPU hit, CPU, disk). Verified: for I it equals selected_kv_bytes exactly (sst2_b5: 10,550,380 B), so label-continuation scoring adds nothing; quality runs use warmup 0. Excludes selector index, reader/packed weights, private query/generation KV, and device-level I/O. Not a minimum-total-memory or hardware H2D measure; source count, reader/packed resident bytes and net working set are reported separately.",
+  "missing_bytes": "a candidate whose bytes field is missing or non-finite is invalid for selection; never treated as 0; pause and revise",
+  "tie_rule": "Let B_min be the smallest bytes among eligible candidates. Among eligible candidates with (B - B_min) / B_min < 0.005 choose, in order: larger net correct-count difference; fewer shared consumers; fixed name order I, G24, G20, G16, then any A2 candidate by name.",
+  "no_eligible_shared": "Select I and report the cell as having no qualified compression point.",
+  "recorded_not_used": [
+   "prediction disagreement rate vs I",
+   "harmful/beneficial flips vs I",
+   "mean KL between candidate-label score distributions (softmax over mean label log-prob, T=1) vs I",
+   "I accuracy vs gold"
+  ]
+ },
+ "a2": {
+  "data_size_pilot": {
+   "cells": [
+    "sst2_b5",
+    "rte_b5"
+   ],
+   "arms": [
+    "fit64",
+    "fit512"
+   ],
+   "data": "fit512: 512 new queries per task, disjoint from dev and all historical roles, built with the dev-set exclusion rule (seed 2902). fit64: the first 64 of fit512 in the frozen shuffled order, so fit64 is a subset of fit512 and both arms have identical historical exposure.",
+   "initialization": "Both arms use the compiler default initialization (initial=None, sharedkv_v24.train.initialize): per KV head, affine ridge regression (ridge=0.001) mapping the source layer's cached prefix K/V to the consumer layer's cached prefix K/V, read from the prefix store (read_prefix). It uses no fit/val/dev queries, so fit64 and fit512 start from an identical initialization that has not seen the new data. Same seed (24) for both arms.",
+   "fixed": "same source map (G16), seed, validation set (existing v26 val traces), optimizer, loss, checkpoint-selection rule; both arms perform exactly 512 query updates (fit64: 8 passes, fit512: 1 pass); train with R4, infer with frozen R0",
+   "sampling": "rev 2: epoch-shuffled sampling WITHOUT replacement for both arms (the legacy trainer samples with replacement via rng.randrange, which would cover only ~63% of fit512 in 512 steps). Implemented by scripts/train_v29_epoch.py, which replaces random.Random in sharedkv_v24.train with a seeded epoch-permutation generator; legacy code unchanged. Each pass is a fresh seeded permutation; fit64 = exactly 8 passes, fit512 = exactly 1 pass.",
+   "teacher": "teacher records captured with the same identity capture command as v26 (collect_teacher_v26.py, budget of the cell, P8), separately for fit64 and fit512; plan = v26 cell plan sources with design_query_hashes = the arm's own fit hashes",
+   "switch": "Engineering switch, not a significance claim: enable recalibration only if correct(fit512) - correct(fit64) >= ceil(0.01 * n) (>= 5 of 500) on the dev set, R0 inference, in BOTH pilot cells. Compared arm vs arm under identical training conditions; not vs the old 200-step checkpoint and not only vs I.",
+   "pilot_results_are_candidates": "The pilot fit512 checkpoints (and fit64) are A2 candidates for their cells and go through the same eligibility/selection rule; they are not retrained if the switch fires.",
+   "record": [
+    "processed tokens",
+    "train wall time",
+    "dev net correct-count difference",
+    "bytes"
+   ]
+  },
+  "recalibration": {
+   "max_extra_candidates_per_cell": 1,
+   "max_calibration_runs_per_candidate": 1,
+   "trigger": "cell (other than the two pilots) whose selected configuration after A1 is I or G24",
+   "recipe": "G16 structure retrained with the fit512 recipe, only if the pilot switch fired; otherwise no recalibration",
+   "same_rule": "each A2 candidate is judged once by this eligibility/selection rule; no further tuning on dev"
+  }
+ },
+ "freeze_after_a2": "Record final configuration and checkpoint SHA-256 per cell, then rerun full 16-cell test-set quality for the selected configurations (plus I) before any timing. Old G16 accuracy is never paired with a different configuration's TTFT.",
+ "timing_design": {
+  "arms": "I, G16 (frozen v28 R0), and the selected configuration if its checkpoint or execution config differs from both; a retrained G16 is a different arm from the frozen G16",
+  "ssd_cold_preserve": {
+   "cells": "all 16",
+   "blocks": 6,
+   "queries_per_block": 16
+  },
+  "ordinary_cache": {
+   "cells": "4 tasks x {25%, 50%} = 8 cells, fixed in advance by budget, not by results",
+   "blocks": 6,
+   "queries_per_block": 16,
+   "claim_limit": "not a full ordinary-cache matrix"
+  },
+  "order": "each block runs all arms; 6 blocks cover all 6 orders of 3 arms (Latin/complete balance); 2 arms alternate",
+  "max_runs": 432,
+  "analysis": "paired by block; report per-block direction; no significance guarantee from 6 blocks"
+ },
+ "timing_telemetry": {
+  "exclusive": "GPU2, cores 16-31,48-63; no other job of this user anywhere on the host",
+  "pre_start_gate": [
+   "nvidia-smi: no compute process on GPU2 or GPU3",
+   "NUMA1 (cores 16-31,48-63) TOTAL busy < 2 cores averaged over a 30 s window (/proc/stat; total, not attributed)",
+   "sda TOTAL read+write < 5 MB/s over a 30 s window (/proc/diskstats; total, not attributed)"
+  ],
+  "in_run_sampling": "every 5 s: nvidia-smi compute processes per GPU; per-process CPU time deltas from /proc/<pid>/stat for every process (attributable: owner, pid, cpus_allowed); /proc/<pid>/io for processes of this user; totals from /proc/stat and /proc/diskstats recorded but not used for attribution",
+  "block_flag": "flag only on attributable evidence: a foreign compute process on GPU2/GPU3, or processes outside the timing process tree using >= 2 cores of NUMA1 CPU time over any 30 s window. I/O of other users cannot be attributed without root: recorded as unknown, never used to drop or flag blocks by subtraction of counters",
+  "flagged_block": "keep and mark; rerun the whole paired block (all arms, same queries, same order) once; if the rerun is also flagged, report both and mark the cell interfered",
+  "never": "drop or rerun blocks based on observed TTFT"
+ },
+ "change_control": {
+  "semantic": "changes to candidates, thresholds, byte definition, missing-field handling, data membership or validity: pause affected parts, keep the old rule, publish a new revision number and SHA-256, rerun every affected comparison under one rule (never only the unfavorable arm)",
+  "non_semantic": "path fixes, extra logging, equivalent parsing fixes: record code diff and passing tests, continue; unaffected results are not rerun"
+ },
+ "reporting": {
+  "main_table": "accuracy and change vs I per cell; Full-KV per task listed as a reference (never called an upper bound)",
+  "companion_table": "disagreement rate and label-score KL vs I",
+  "wording": "Task accuracy measures answer quality; disagreement and KL measure fidelity to the no-sharing sparse system; the two can diverge (applies to all tasks). SUBJ/25% is highly sensitive to the selection reuse period: on the dev set, P4 recovers no-sharing accuracy (P8 57.4, P4 85.0, P1 86.8); only 25% was tested."
+ },
+ "cells": {
+  "sst2_b5": {
+   "r0_checkpoint": "studies/v28_frozen/readers/sst2_b5/sst2.pt",
+   "r0_sha256": "52e527b21968f495fec00cfe110b28b5998affa35ec19a55ca67f929d6ed303f",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    12,
+    12,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    17,
+    23,
+    10,
+    14,
+    18,
+    22,
+    11,
+    13,
+    19,
+    21,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      21,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      13,
+      18,
+      19,
+      21,
+      22,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "sst2_b10": {
+   "r0_checkpoint": "studies/v28_frozen/readers/sst2_b10/sst2.pt",
+   "r0_sha256": "06a843cfe90e857c5a1343a5c1e0b6f9be0d2d8fa3d005119e3d55e7a02a6f53",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    23,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    9,
+    17,
+    10,
+    14,
+    18,
+    22,
+    11,
+    13,
+    19,
+    21,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      21,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      13,
+      18,
+      19,
+      21,
+      22,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      9,
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "sst2_b25": {
+   "r0_checkpoint": "studies/v28_frozen/readers/sst2_b25/sst2.pt",
+   "r0_sha256": "f3c2d83f52fcd0f6a2e7b78e2f3e36b4dd446d4d86f8e534142d4c8800af8bf0",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    7,
+    8,
+    12,
+    12,
+    15,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    23,
+    20,
+    20,
+    20,
+    23,
+    24,
+    26,
+    26,
+    27
+   ],
+   "revert_order": [
+    11,
+    19,
+    9,
+    17,
+    10,
+    14,
+    18,
+    22,
+    5,
+    13,
+    21,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      5,
+      13,
+      21,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      5,
+      10,
+      13,
+      14,
+      18,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "sst2_b50": {
+   "r0_checkpoint": "studies/v28_frozen/readers/sst2_b50/sst2.pt",
+   "r0_sha256": "050f79cd817d86a4f37d66f8461451b6ab5e259e635e3df058251c43eaa6355b",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    6,
+    7,
+    8,
+    13,
+    12,
+    13,
+    12,
+    13,
+    12,
+    13,
+    16,
+    21,
+    20,
+    21,
+    20,
+    21,
+    20,
+    21,
+    24,
+    27,
+    26,
+    27
+   ],
+   "revert_order": [
+    9,
+    17,
+    5,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "subj_b5": {
+   "r0_checkpoint": "studies/v28_frozen/readers/subj_b5/subj.pt",
+   "r0_sha256": "8f0d6b087de54abc38e6ee2d6a712f5c65fc696c914fb040a37dd74b7a632038",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    7,
+    8,
+    12,
+    12,
+    15,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    23,
+    20,
+    20,
+    20,
+    23,
+    24,
+    26,
+    26,
+    27
+   ],
+   "revert_order": [
+    11,
+    19,
+    9,
+    17,
+    10,
+    14,
+    18,
+    22,
+    5,
+    13,
+    21,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      5,
+      13,
+      21,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      5,
+      10,
+      13,
+      14,
+      18,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "subj_b10": {
+   "r0_checkpoint": "studies/v28_frozen/readers/subj_b10/subj.pt",
+   "r0_sha256": "5bec92ec8f171420dbac60fb224ab13860b5d985a974ac2b7aeb0ed2ba721db0",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    5,
+    6,
+    7,
+    8,
+    12,
+    12,
+    13,
+    12,
+    13,
+    12,
+    13,
+    16,
+    20,
+    20,
+    21,
+    20,
+    21,
+    20,
+    21,
+    24,
+    27,
+    26,
+    27
+   ],
+   "revert_order": [
+    9,
+    17,
+    4,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      4,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "subj_b25": {
+   "r0_checkpoint": "studies/v28_frozen/readers/subj_b25/subj.pt",
+   "r0_sha256": "80f0d0c91ff2650f833f4d50832f2a354178f71ebb8d7e0e4dd99c5d69df3a4a",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    6,
+    8,
+    10,
+    10,
+    10,
+    12,
+    14,
+    14,
+    14,
+    16,
+    18,
+    18,
+    18,
+    20,
+    22,
+    22,
+    22,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "subj_b50": {
+   "r0_checkpoint": "studies/v28_frozen/readers/subj_b50/subj.pt",
+   "r0_sha256": "2278c05a9e9d571918b940afabceaa237e2a8ff7c8e69f9951f48d58549054dd",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    6,
+    8,
+    10,
+    10,
+    10,
+    12,
+    14,
+    14,
+    14,
+    16,
+    18,
+    18,
+    18,
+    20,
+    22,
+    22,
+    22,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "trec_b5": {
+   "r0_checkpoint": "studies/v28_frozen/readers/trec_b5/trec.pt",
+   "r0_sha256": "55a838e573895394116fb64cd2f662835bcdfa93779be0278cd8e60429a87470",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    6,
+    7,
+    8,
+    13,
+    12,
+    13,
+    12,
+    13,
+    13,
+    13,
+    16,
+    21,
+    20,
+    21,
+    20,
+    21,
+    20,
+    21,
+    24,
+    27,
+    26,
+    27
+   ],
+   "revert_order": [
+    9,
+    17,
+    5,
+    10,
+    11,
+    15,
+    18,
+    19,
+    22,
+    23,
+    25,
+    14
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      14,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "trec_b10": {
+   "r0_checkpoint": "studies/v28_frozen/readers/trec_b10/trec.pt",
+   "r0_sha256": "3a00b1811cb9c3645e143b3ff169622ba70a0eb0dcadcc71926b84fbab15a572",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    23,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    9,
+    17,
+    10,
+    14,
+    18,
+    22,
+    11,
+    13,
+    19,
+    21,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      21,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      13,
+      18,
+      19,
+      21,
+      22,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      9,
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "trec_b25": {
+   "r0_checkpoint": "studies/v28_frozen/readers/trec_b25/trec.pt",
+   "r0_sha256": "5e5912c766168ca122a8dd9064930017e36cc7f91341bb99bc2e18de5062228e",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    6,
+    8,
+    10,
+    10,
+    10,
+    12,
+    14,
+    14,
+    14,
+    16,
+    18,
+    18,
+    18,
+    20,
+    22,
+    22,
+    22,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "trec_b50": {
+   "r0_checkpoint": "studies/v28_frozen/readers/trec_b50/trec.pt",
+   "r0_sha256": "26d9b8a801074a6e42290f79b69743964b7545aeb7e64a0b7059bfe25b11ce91",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    6,
+    7,
+    8,
+    13,
+    12,
+    13,
+    12,
+    13,
+    12,
+    13,
+    16,
+    21,
+    20,
+    21,
+    20,
+    21,
+    20,
+    21,
+    24,
+    27,
+    26,
+    27
+   ],
+   "revert_order": [
+    9,
+    17,
+    5,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "rte_b5": {
+   "r0_checkpoint": "studies/v28_frozen/readers/rte_b5/rte.pt",
+   "r0_sha256": "a380eaa4992de745b3072bf58758a4f9d9c8e3162c7794acbdfa2b3351b2cd8c",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    7,
+    8,
+    12,
+    12,
+    15,
+    12,
+    12,
+    12,
+    15,
+    16,
+    20,
+    20,
+    23,
+    20,
+    20,
+    20,
+    23,
+    24,
+    26,
+    26,
+    27
+   ],
+   "revert_order": [
+    11,
+    19,
+    9,
+    17,
+    10,
+    14,
+    18,
+    22,
+    5,
+    13,
+    21,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      5,
+      13,
+      21,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      5,
+      10,
+      13,
+      14,
+      18,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      9,
+      10,
+      11,
+      13,
+      14,
+      17,
+      18,
+      19,
+      21,
+      22,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "rte_b10": {
+   "r0_checkpoint": "studies/v28_frozen/readers/rte_b10/rte.pt",
+   "r0_sha256": "0c7ecde0d06e02340bb93d5a372da01234952fb1ef7f2ba2652422c5f18310d7",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    5,
+    6,
+    7,
+    8,
+    12,
+    12,
+    13,
+    12,
+    13,
+    12,
+    13,
+    16,
+    20,
+    20,
+    21,
+    20,
+    21,
+    20,
+    21,
+    24,
+    27,
+    26,
+    27
+   ],
+   "revert_order": [
+    9,
+    17,
+    4,
+    10,
+    11,
+    14,
+    15,
+    18,
+    19,
+    22,
+    23,
+    25
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      11,
+      14,
+      15,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      4,
+      9,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      19,
+      22,
+      23,
+      25
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "rte_b25": {
+   "r0_checkpoint": "studies/v28_frozen/readers/rte_b25/rte.pt",
+   "r0_sha256": "0eb7c4b7651ef019b91a629486c63662442c54dba0c2343350444a4935fa3a8e",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    6,
+    8,
+    10,
+    10,
+    10,
+    12,
+    14,
+    14,
+    14,
+    16,
+    18,
+    18,
+    18,
+    20,
+    22,
+    22,
+    22,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  },
+  "rte_b50": {
+   "r0_checkpoint": "studies/v28_frozen/readers/rte_b50/rte.pt",
+   "r0_sha256": "f45613c6f666a76209e6c13a818fc8860dee2b115355f3e55bbc9cfae93f161b",
+   "r0_native_blocks": 0,
+   "parent_sources": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    6,
+    6,
+    8,
+    10,
+    10,
+    10,
+    12,
+    14,
+    14,
+    14,
+    16,
+    18,
+    18,
+    18,
+    20,
+    22,
+    22,
+    22,
+    24,
+    26,
+    26,
+    26
+   ],
+   "revert_order": [
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+   ],
+   "candidates": {
+    "I": {
+     "kept_consumers": [],
+     "physical_sources": 28
+    },
+    "G24": {
+     "kept_consumers": [
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 24
+    },
+    "G20": {
+     "kept_consumers": [
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 20
+    },
+    "G16": {
+     "kept_consumers": [
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+     ],
+     "physical_sources": 16
+    }
+   }
+  }
+ }
+}

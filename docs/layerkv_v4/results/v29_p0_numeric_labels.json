@@ -1,0 +1,38 @@
+{
+ "trec_b25:explicit_vs_readside": {
+  "n": 32,
+  "mean_kl": 0.0008010861412660145,
+  "max_kl": 0.005994015440980578,
+  "mean_abs_margin_change": 0.08563085731667996,
+  "max_abs_margin_change": 0.2505324208109414,
+  "max_abs_score_diff": 0.49971961975097656,
+  "min_teacher_margin": 0.12085554772056639
+ },
+ "trec_b25:direct_vs_unitreader": {
+  "n": 32,
+  "mean_kl": 0.0014763983968683974,
+  "max_kl": 0.005162301610173411,
+  "mean_abs_margin_change": 0.0771675263531506,
+  "max_abs_margin_change": 0.20041584968566895,
+  "max_abs_score_diff": 0.4305419921875,
+  "min_teacher_margin": 0.07416367530822754
+ },
+ "sst2_b25:explicit_vs_readside": {
+  "n": 32,
+  "mean_kl": 8.378371710800295e-06,
+  "max_kl": 0.0001436972891467399,
+  "mean_abs_margin_change": 0.09179696522187442,
+  "max_abs_margin_change": 0.3125,
+  "max_abs_score_diff": 0.2607288360595703,
+  "min_teacher_margin": 3.9375001192092896
+ },
+ "sst2_b25:direct_vs_unitreader": {
+  "n": 32,
+  "mean_kl": 0.0005926719466772333,
+  "max_kl": 0.006023191473648035,
+  "mean_abs_margin_change": 0.09179694205522537,
+  "max_abs_margin_change": 0.3750004768371582,
+  "max_abs_score_diff": 0.7554526329040527,
+  "min_teacher_margin": 0.375
+ }
+}

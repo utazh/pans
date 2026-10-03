@@ -1,0 +1,129 @@
+{
+ "rule_sha256": "9151d971dbd982fb46993b64d24909b7ab53a0213f8087d4b87e4d6a4e166cbd",
+ "rule_revision": 2,
+ "frozen_unix": 1790611840.0696077,
+ "a2_pilot": {
+  "results": {
+   "sst2_b5_A2fit64": {
+    "net": -9,
+    "eligible": false,
+    "bytes_vs_I": -0.4259108123365889
+   },
+   "sst2_b5_A2fit512": {
+    "net": -25,
+    "eligible": false,
+    "bytes_vs_I": -0.42658717062477336
+   },
+   "rte_b5_A2fit64": {
+    "net": -18,
+    "eligible": false,
+    "bytes_vs_I": -0.42967617206379893
+   },
+   "rte_b5_A2fit512": {
+    "net": -21,
+    "eligible": false,
+    "bytes_vs_I": -0.42967617206379893
+   }
+  },
+  "switch_fired": false,
+  "note": "fit512 - fit64 = -16 (sst2_b5), -3 (rte_b5); switch requires >= +5 in both; no recalibration"
+ },
+ "cells": {
+  "sst2_b5": {
+   "config": "G20",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/sst2_b5_G20",
+   "checkpoint_sha256": "6aa9a6df0694921ae120bb8a6b934d754b9d53539de146b8d2a7baeaa07f5877"
+  },
+  "sst2_b10": {
+   "config": "G16",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/readers/sst2_b10",
+   "checkpoint_sha256": "06a843cfe90e857c5a1343a5c1e0b6f9be0d2d8fa3d005119e3d55e7a02a6f53"
+  },
+  "sst2_b25": {
+   "config": "G20",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/sst2_b25_G20",
+   "checkpoint_sha256": "482b001f6fb53aebe9a46c20562126dd5a147afe776ed384663c766e5e6bd499"
+  },
+  "sst2_b50": {
+   "config": "G16",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/readers/sst2_b50",
+   "checkpoint_sha256": "050f79cd817d86a4f37d66f8461451b6ab5e259e635e3df058251c43eaa6355b"
+  },
+  "subj_b5": {
+   "config": "G20",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/subj_b5_G20",
+   "checkpoint_sha256": "3a8426097b674b97da1a7c157b40633426efd28bf14288f2181ebd6d9bac7dfd"
+  },
+  "subj_b10": {
+   "config": "G24",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/subj_b10_G24",
+   "checkpoint_sha256": "fbe1b2d5655ec800fce033e5c747e348ec5949c3e21640019a1d724782f1bb3c"
+  },
+  "subj_b25": {
+   "config": "I",
+   "mode": "identity",
+   "adapter_dir": null,
+   "checkpoint_sha256": null
+  },
+  "subj_b50": {
+   "config": "G24",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/subj_b50_G24",
+   "checkpoint_sha256": "ed666f8dc5fe49c0326ec2433cfa72498a20e7d0381a80744c419535cdce57d0"
+  },
+  "trec_b5": {
+   "config": "G20",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/trec_b5_G20",
+   "checkpoint_sha256": "430e8aafd04a6a1cd3aee4329e59ab9fa20b49f261cd6c700f7e37f7c5960c55"
+  },
+  "trec_b10": {
+   "config": "G16",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/readers/trec_b10",
+   "checkpoint_sha256": "3a00b1811cb9c3645e143b3ff169622ba70a0eb0dcadcc71926b84fbab15a572"
+  },
+  "trec_b25": {
+   "config": "G16",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/readers/trec_b25",
+   "checkpoint_sha256": "5e5912c766168ca122a8dd9064930017e36cc7f91341bb99bc2e18de5062228e"
+  },
+  "trec_b50": {
+   "config": "G16",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/readers/trec_b50",
+   "checkpoint_sha256": "26d9b8a801074a6e42290f79b69743964b7545aeb7e64a0b7059bfe25b11ce91"
+  },
+  "rte_b5": {
+   "config": "G24",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/rte_b5_G24",
+   "checkpoint_sha256": "61368381c1e69bdcc27baa6f049cbe0a8e40fedae137f6192671a43f17a9f886"
+  },
+  "rte_b10": {
+   "config": "G24",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/rte_b10_G24",
+   "checkpoint_sha256": "89f41470003f9777b515d3fc021b62636ba1aa1cd0a6f1a32be5f22a7eb9796b"
+  },
+  "rte_b25": {
+   "config": "G24",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/rte_b25_G24",
+   "checkpoint_sha256": "88c9962725b632aa888630fd4a486aae098191efaa0d6f3b15adcb1cf77d2b71"
+  },
+  "rte_b50": {
+   "config": "G20",
+   "mode": "shared",
+   "adapter_dir": "/home/panzihang/src/prism_layerkv/studies/v29/readers/rte_b50_G20",
+   "checkpoint_sha256": "a9453f798b42eb9de5a1516823691f6974615aa0ba6859f54359a41cc7f73bf8"
+  }
+ }
+}

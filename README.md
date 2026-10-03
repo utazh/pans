@@ -1,5 +1,18 @@
 # pans
 
+## LayerKV v4：开发选择、恢复后端与长文验证
+
+本发布对应服务器 v29 后续实验，基于 v3。新增开发集选择、统一行存储/xKV 真实恢复、QuALITY 长文及 SUBJ P4/P8 对照。
+
+- 四数据集×四预算：selected 准确率宏平均 +1.56 pp；非 TREC −0.44 pp，尚无跨任务非劣认证。
+- 主 Pcache 冷 TTFT 块比率宏平均 −23.51%。新统一行后端上 xKV 比共享更快，完整正负结果均保留。
+- QuALITY 12 篇文章、224 题：25% 预算 I/G24/G20/G16 为 68.75%/66.52%/63.39%/54.02%，广泛共享质量仍下降。
+- 本次独立 CPU 回归 680 passed、33 skipped、87 subtests passed；未重新运行 GPU 实验。
+
+[完整 v4 报告](EXPERIMENT_REPORT_V4_ZH.md) · [复现与发布范围](docs/layerkv_v4/RELEASE_ZH.md) · [结果](docs/layerkv_v4/results) · [逐请求证据](docs/layerkv_v4/evidence) · [测试记录](docs/layerkv_v4/validation)
+
+以下为历史版本记录，当前结论以 v4 报告为准。
+
 ## LayerKV v3：四数据集四预算的冻结 R0/R4 与层间基线比较
 
 本发布基于 [v2.7](https://github.com/utazh/pans/tree/v2.7)，对应服务器 v2.8 实验实现。保留 sharedkv_v28 模块和脚本名以便追溯；公开分支与 VERSION 为 v3。
