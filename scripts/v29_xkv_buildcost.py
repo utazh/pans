@@ -5,7 +5,7 @@ Usage: v29_xkv_buildcost.py   (GPU via CUDA_VISIBLE_DEVICES)"""
 import json, time
 from pathlib import Path
 import torch
-R = Path('/home/panzihang/src/prism_layerkv'); import sys; sys.path.insert(0, str(R / 'src'))
+R = Path('/home/shensicheng/qyd/pans/src'); import sys; sys.path.insert(0, str(R / 'src'))
 from contiguous_fuxian.sharedkv.io import read_prefix
 from contiguous_fuxian.sharedkv_v27.baseline_math import rotary
 out = {}

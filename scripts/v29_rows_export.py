@@ -7,7 +7,7 @@ prefix store cast to FP16 (informational). Usage: v29_rows_export.py <out_dir>""
 import hashlib, json, math, sys
 from pathlib import Path
 import numpy as np, torch
-R = Path('/home/panzihang/src/prism_layerkv'); PC = R / 'runtime_data/v29_pcache_gpu2_ssd'
+R = Path('/home/shensicheng/qyd/pans/src'); PC = R / 'runtime_data/v29_pcache_gpu2_ssd'
 OUT = Path(sys.argv[1]); TASKS = ['sst2', 'subj', 'trec', 'rte']  # --store-tasks order == pid
 OUT.mkdir(parents=True, exist_ok=False); report = {}
 for pid, task in enumerate(TASKS):

@@ -1,5 +1,17 @@
 # pans
 
+## LayerKV v5：A100 与 Qwen2.5 多模型实验
+
+本次发布新服务器的代码快照，新增 7B/14B/32B 环境适配、多模型校准与 S1/S2/S3 开发选择、A100 冷恢复及 CKV/IMPRESS 同块对照，并收录 MiniCache-Prefix 和 KV 相似性辅助脚本。
+
+- [v5 说明与结果边界](docs/layerkv_v5/RELEASE_ZH.md)
+- [质量结果](docs/layerkv_v5/results/quality_summary.json) · [计时块](docs/layerkv_v5/results/timing_blocks.json) · [运行协议](docs/layerkv_v5/protocols)
+- [服务器脚本与环境模板](server_a100) · [来源代码哈希](docs/layerkv_v5/code_manifest.json) · [发布验证](docs/layerkv_v5/validation)
+
+CPU 回归 680 项通过、33 项跳过，87 项子测试通过；本次未重跑 GPU 实验。开发筛选有回退 I 的格子，不把参考共享臂的速度与无共享准确率组合成同一结果。模型和缓存不随仓库发布。
+
+以下保留历史版本记录，当前版本范围以 v5 说明为准。
+
 ## LayerKV v4：开发选择、恢复后端与长文验证
 
 本发布对应服务器 v29 后续实验，基于 v3。新增开发集选择、统一行存储/xKV 真实恢复、QuALITY 长文及 SUBJ P4/P8 对照。

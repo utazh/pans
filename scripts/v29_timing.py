@@ -6,7 +6,7 @@ Telemetry every 5 s; pre-start gate before each block; blocks flagged on attribu
 rerun once (whole block). Never judged by TTFT. Usage: v29_timing.py [--dry-run] [--cells a,b] [--conditions preserve,warm]"""
 from pathlib import Path
 import itertools, json, os, subprocess, sys, threading, time, hashlib
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 GPU, CORES = '2', '28-31,60-63'  # rule rev 3: NUMA1 cores free of the background threads
 TIMING = set(range(28, 32)) | set(range(60, 64))
 BACKGROUND = set(range(0, 12)) | set(range(16, 28))
@@ -34,7 +34,7 @@ def argv(cell, arm, adapter, cond, block, name):
     mode = ['--mode', 'identity' if arm == 'I' else 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl']
     if arm != 'I': mode += ['--adapters', adapter, '--allow-candidate', '--packed-ops']
     return [PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(PCACHE), *cold, '--', *mode, '--',
             '--task', task, '--budget', str(b), '--period', '8', '--max-tokens', '1', '--warmup', '4', '--samples', '16',
             '--profile', 'none', '--bundle-dir', str(R / f'studies/v28_frozen/bundles/{cell}/b{block:02d}'), '--output', str(o)]

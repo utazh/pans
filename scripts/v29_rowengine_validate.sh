@@ -1,14 +1,14 @@
 #!/bin/bash
 # Row-engine acceptance on trec_b25: (1) warm parity, 32 test queries, vs pcache path / quality bridge;
 # (2) one cold block per arm on GPU2 (cores 28-31,60-63), cold certification on the files actually read.
-R=/home/panzihang/src/prism_layerkv; cd $R; P=/home/panzihang/venvs/vllm-stable/bin/python
+R=/home/shensicheng/qyd/pans/src; cd $R; P=/home/shensicheng/qyd/pans/venv/bin/python
 O=$R/studies/v29/rowengine_validate; mkdir -p $O
 export PYTHONPATH=src:runtime_deps_v24 OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1
 G16=$R/studies/v28_frozen/readers/trec_b25
 run () { # gpu cores name engine datadir mode adapters samples warmup bundle cold
   local o=$O/$3; local ad=""; [ "$7" != "-" ] && ad="--adapters $7 --allow-candidate --packed-ops"; local c=""; [ "${11}" = cold ] && c="--row-cold"
   CUDA_VISIBLE_DEVICES=$1 taskset -c $2 $P scripts/v29_rowengine_entry.py --engine $4 --data-dir $5 $c --row-log $o.row.json \
-    --admission reuse-prefetch --audit-jsonl $o.v26.jsonl -- --model-path /data1/llm/Qwen/Qwen2.5-7B-Instruct \
+    --admission reuse-prefetch --audit-jsonl $o.v26.jsonl -- --model-path /home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct \
     --store-root $R/runtime_data/prefix_store --selector-index-dir $R/assets/selector_index_k4_g32 -- --pcache-root $R/runtime_data/v29_pcache_gpu2_ssd -- \
     --mode $6 --backend vllm2 --metadata-cache --layout hybrid --stats $o.extra.jsonl $ad -- --task trec --budget 25 --period 8 \
     --max-tokens 1 --warmup $9 --samples $8 --profile none --bundle-dir ${10} --output $o > $o.log 2>&1
@@ -24,7 +24,7 @@ run 2 28-31,60-63 cold_X xkv $R/runtime_data/v29_xkv_ssd/trec_b25 identity - 16 
 wait
 $P - <<'EOF'
 import json, statistics as st
-R = '/home/panzihang/src/prism_layerkv/studies'
+R = '/home/shensicheng/qyd/pans/src/studies'
 def recs(p): return {r['uid']: r for r in map(json.loads, open(p + '/scored_records.jsonl'))}
 for name, ref in (('par_I', 'v29/test_quality/runs/test_I_trec_b25'), ('par_S', 'v29/test_quality/runs/test_G16_trec_b25'),
                   ('par_X', 'v28_frozen/runs/trec_b25_external_quality_clf_256_384_bf16')):

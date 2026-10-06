@@ -1,0 +1,76 @@
+.................................... [  5%]
+.................................................................... [ 14%]
+................................................ss..ssssss. [ 22%]
+...............ssss................................ [ 30%]
+......................................................F..F................................................................ss....... [ 48%]
+.......................ss.ss.................s.......................... [ 58%]
+......s...................................................ss......ss.... [ 68%]
+..............................s......................................... [ 78%]
+.....ss...........................................................s..... [ 88%]
+............................................s........................... [ 98%]
+....ssss                                                                 [100%]
+=================================== FAILURES ===================================
+_ PrismMaxRunnerTest.test_impress_accepts_matching_reorder_sha_before_output_guard _
+
+self = <tests.test_prism_max_runner.PrismMaxRunnerTest testMethod=test_impress_accepts_matching_reorder_sha_before_output_guard>
+
+    @unittest.skipUnless(shutil.which("bash"), "bash is required")
+    def test_impress_accepts_matching_reorder_sha_before_output_guard(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            kv_dir = root / "kv"
+            kv_dir.mkdir()
+            reorder = root / "reorder.json"
+            reorder.write_text("{}\n", encoding="utf-8")
+            reorder_sha256 = hashlib.sha256(reorder.read_bytes()).hexdigest()
+            (kv_dir / ".contiguous_fuxian_complete").write_text(
+                '{"impress_reorder_sha256": "' + reorder_sha256 + '"}\n',
+                encoding="utf-8",
+            )
+            run_root = root / "results"
+            run_name = "k010_impress_fp16_nodefer"
+            (run_root / "trec" / run_name).mkdir(parents=True)
+            completed = self.run_runner(
+                METHOD="impress",
+                SELECTOR_BACKEND="fp16",
+                IMPRESS_KV_DIR=str(kv_dir),
+                IMPRESS_REORDER=str(reorder),
+                RUN_ROOT=str(run_root),
+                RUN_NAME=run_name,
+            )
+>       self.assertEqual(completed.returncode, 4, completed.stderr)
+E       AssertionError: 2 != 4 : /home/shensicheng/qyd/pans/publication/v5_github/scripts/run_prism_max_cell.sh: line 95: cannot create temp file for here-document: No space left on device
+E       IMPRESS completion marker has invalid reorder provenance: /home/shensicheng/qyd/pans/publication/v5_github/tmpwtm3wq4a/kv/.contiguous_fuxian_complete
+
+tests/test_prism_max_runner.py:274: AssertionError
+_ PrismMaxRunnerTest.test_impress_rejects_reorder_sha_mismatch_before_gpu_work _
+
+self = <tests.test_prism_max_runner.PrismMaxRunnerTest testMethod=test_impress_rejects_reorder_sha_mismatch_before_gpu_work>
+
+    @unittest.skipUnless(shutil.which("bash"), "bash is required")
+    def test_impress_rejects_reorder_sha_mismatch_before_gpu_work(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            kv_dir = root / "kv"
+            kv_dir.mkdir()
+            (kv_dir / ".contiguous_fuxian_complete").write_text(
+                '{"impress_reorder_sha256": "' + "0" * 64 + '"}\n',
+                encoding="utf-8",
+            )
+            reorder = root / "reorder.json"
+            reorder.write_text("{}\n", encoding="utf-8")
+            completed = self.run_runner(
+                METHOD="impress",
+                SELECTOR_BACKEND="fp16",
+                IMPRESS_KV_DIR=str(kv_dir),
+                IMPRESS_REORDER=str(reorder),
+            )
+        self.assertEqual(completed.returncode, 2)
+>       self.assertIn("IMPRESS reorder SHA mismatch", completed.stderr)
+E       AssertionError: 'IMPRESS reorder SHA mismatch' not found in '/home/shensicheng/qyd/pans/publication/v5_github/scripts/run_prism_max_cell.sh: line 95: cannot create temp file for here-document: No space left on device\nIMPRESS completion marker has invalid reorder provenance: /home/shensicheng/qyd/pans/publication/v5_github/tmpdu931ffy/kv/.contiguous_fuxian_complete\n'
+
+tests/test_prism_max_runner.py:248: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_prism_max_runner.py::PrismMaxRunnerTest::test_impress_accepts_matching_reorder_sha_before_output_guard
+FAILED tests/test_prism_max_runner.py::PrismMaxRunnerTest::test_impress_rejects_reorder_sha_mismatch_before_gpu_work
+2 failed, 678 passed, 33 skipped, 87 subtests passed in 13.98s

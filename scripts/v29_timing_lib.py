@@ -3,10 +3,12 @@ attributable-only flags, flagged/failed block rerun once. Used via runpy by v29_
 execute(name, plan, argv_fn, dry, meta): plan = [{cell, cond, block, order}], argv_fn(out, cell, arm, cond, block, run_name)."""
 from pathlib import Path
 import hashlib, json, os, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
-GPU, CORES = '2', '28-31,60-63'
-TIMING = set(range(28, 32)) | set(range(60, 64)); BACKGROUND = set(range(0, 12)) | set(range(16, 28))
-NUMA1 = set(range(16, 32)) | set(range(48, 64)); HZ = os.sysconf('SC_CLK_TCK')
+R = Path(os.environ.get('PANS_ROOT', '/home/shensicheng/qyd/pans/src')); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
+def _cpus(s): return {c for part in s.split(',') if part for c in (range(int(part.split('-')[0]), int(part.split('-')[-1]) + 1))}
+GPU, CORES = os.environ.get('PANS_TIMING_GPU', '2'), os.environ.get('PANS_TIMING_CORES', '28-31,60-63')
+TIMING = _cpus(CORES); BACKGROUND = _cpus(os.environ.get('PANS_BACKGROUND_CPUS', '0-11,16-27'))
+NUMA1 = _cpus(os.environ.get('PANS_NUMA_CPUS', '16-31,48-63')); HZ = os.sysconf('SC_CLK_TCK')
+DISK = os.environ.get('PANS_TIMING_DISK', 'sda'); WATCH_GPUS = tuple(os.environ.get('PANS_WATCH_GPUS', '2,3').split(','))
 sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 def proc_table():
@@ -39,7 +41,7 @@ def totals():
     for l in Path('/proc/stat').read_text().splitlines():
         if l.startswith('cpu') and l[3:4].isdigit():
             f = l.split(); c = int(f[0][3:]); v = list(map(int, f[1:])); cpu[c] = (sum(v) - v[3] - v[4], sum(v))
-    sda = [l.split() for l in Path('/proc/diskstats').read_text().splitlines() if l.split()[2] == 'sda'][0]
+    sda = [l.split() for l in Path('/proc/diskstats').read_text().splitlines() if l.split()[2] == DISK][0]
     return dict(numa1=cpu, sda_bytes=(int(sda[5]) + int(sda[9])) * 512)
 class Telemetry(threading.Thread):
     def __init__(self, log):
@@ -51,13 +53,13 @@ class Telemetry(threading.Thread):
                 now = proc_table(); t = time.time(); dt = t - prev_t
                 ours = (descendants(self.root, now) if self.root else set()) | descendants(os.getpid(), now)
                 foreign = sum(max(0, v['cpu'] - prev[k]['cpu']) for k, v in now.items() if k in prev and k not in ours and v['last_cpu'] in TIMING) / dt
-                fg = [(g, p) for g, p in gpu_procs() if g in ('2', '3') and p not in ours]
+                fg = [(g, p) for g, p in gpu_procs() if g in WATCH_GPUS and p not in ours]
                 f.write(json.dumps(dict(t=t, foreign_timing_cores=foreign, foreign_gpu23=fg, totals=totals())) + '\n'); f.flush()
                 prev, prev_t = now, t
 def gate(window=30):
     a = totals(); time.sleep(window); b = totals()
     def cores(cs): return sum((b['numa1'][c][0] - a['numa1'][c][0]) / max(1, b['numa1'][c][1] - a['numa1'][c][1]) for c in cs)
-    sda = (b['sda_bytes'] - a['sda_bytes']) / window / 1e6; gp = [(g, p) for g, p in gpu_procs() if g in ('2', '3')]
+    sda = (b['sda_bytes'] - a['sda_bytes']) / window / 1e6; gp = [(g, p) for g, p in gpu_procs() if g in WATCH_GPUS]
     bt = cores(TIMING)
     return dict(timing_cores_busy=bt, background_cpus_busy=cores(BACKGROUND), numa1_total_busy_cores=cores(NUMA1),
                 sda_total_MBps=sda, gpu23_procs=gp, passed=bt < 1 and sda < 5 and not gp)

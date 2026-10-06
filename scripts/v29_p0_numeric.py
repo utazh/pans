@@ -7,7 +7,7 @@ labels                                          : full candidate-score diff, lab
     fixed-plan runs in studies/v29/p1ab_validate_fixed (explicit vs read-side; direct vs unit reader)."""
 import json, math, runpy, sys
 from pathlib import Path
-ROOT = Path('/home/panzihang/src/prism_layerkv'); sys.path.insert(0, str(ROOT / 'src'))
+ROOT = Path('/home/shensicheng/qyd/pans/src'); sys.path.insert(0, str(ROOT / 'src'))
 import torch
 MODE = sys.argv[1]
 

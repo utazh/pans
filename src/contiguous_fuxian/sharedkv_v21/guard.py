@@ -3,7 +3,7 @@ import hashlib
 from pathlib import Path
 BASE_V1='59312f2bd2504079fed03b53f283d8ade931fee2'
 CHECKS={
-'scripts/run_round4.py':'d9b973eb528c26e713f75b8620ec7cc9608b8dc8',
+'scripts/run_round4.py':'ee2fa959b94ee8190797c93c49a6b2805d3015ff',
 'src/contiguous_fuxian/flexgen_qwen_reprefill.py':'d52f1f610b7e63d9b150f7bfdba2caaa2866101e',
 'src/contiguous_fuxian/flexgen_pcache.py':'b86364086588327f9b9a06e608968aa16b2ce20c',
 'src/contiguous_fuxian/sharedkv/runtime.py':'944ee1cd079cd75cc4e1d7b44000b6f1c679ad2c',

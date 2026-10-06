@@ -1,0 +1,50 @@
+[
+  {
+    "model": "q7",
+    "study": "a100_timing_q7",
+    "planned": 144,
+    "block_records": 148,
+    "valid_blocks": 144,
+    "done": true
+  },
+  {
+    "model": "q7",
+    "study": "a100_sys_q7",
+    "planned": 48,
+    "block_records": 48,
+    "valid_blocks": 48,
+    "done": true
+  },
+  {
+    "model": "q14",
+    "study": "a100_timing_q14",
+    "planned": 24,
+    "block_records": 27,
+    "valid_blocks": 24,
+    "done": true
+  },
+  {
+    "model": "q14",
+    "study": "a100_sys_q14",
+    "planned": 48,
+    "block_records": 48,
+    "valid_blocks": 48,
+    "done": true
+  },
+  {
+    "model": "q32",
+    "study": "a100_timing_q32",
+    "planned": 24,
+    "block_records": 24,
+    "valid_blocks": 24,
+    "done": true
+  },
+  {
+    "model": "q32",
+    "study": "a100_sys_q32",
+    "planned": 48,
+    "block_records": 53,
+    "valid_blocks": 48,
+    "done": true
+  }
+]

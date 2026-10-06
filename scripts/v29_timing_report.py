@@ -2,7 +2,7 @@
 Writes results/v29_timing/{table.csv,summary.json}. Also audits cold certification."""
 from pathlib import Path
 import csv, json, math, random, statistics as st
-R = Path('/home/panzihang/src/prism_layerkv'); T = R / 'studies/v29/timing'
+R = Path('/home/shensicheng/qyd/pans/src'); T = R / 'studies/v29/timing'
 blocks = [json.loads(l) for l in (T / 'blocks.jsonl').read_text().splitlines()]
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 tq = {r['cell']: r for r in csv.DictReader((R / 'results/v29_test_quality/table.csv').open())}

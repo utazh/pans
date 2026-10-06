@@ -5,7 +5,7 @@
 Usage: v29_p1ab.py quality | timing [--dry-run]"""
 from pathlib import Path
 import json, os, runpy, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())['cells']
 CELLS = ['sst2_b25', 'subj_b25', 'trec_b25', 'rte_b25']
@@ -20,7 +20,7 @@ def evidence(launcher, o, pcache, cold, mode, adapters, cell, samples, warmup, b
     m = ['--mode', mode, '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl']
     if adapters: m += ['--adapters', adapters, '--allow-candidate', '--packed-ops']
     return head + ['--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-                   '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+                   '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
                    '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(pcache), *cold, '--', *m, '--',
                    '--task', task, '--budget', '25', '--period', '8', '--max-tokens', '1', '--warmup', str(warmup), '--samples', str(samples),
                    '--profile', 'none', '--bundle-dir', str(bundle), '--output', str(o)]
@@ -30,7 +30,7 @@ LAUNCH = {'I': ['run_evidence_v26.py'], 'READ': ['run_evidence_v26.py'],
 if sys.argv[1] == 'quality':
     OUT = R / 'studies/v29/p1ab_quality'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'runs').mkdir(); (OUT / 'logs').mkdir()
     GPU = {'sst2': ('0', '0-7,32-39', R / 'runtime_data/v27_pcache_gpu3'), 'subj': ('1', '8-15,40-47', R / 'runtime_data/v27_pcache_gpu2'),
-           'trec': ('2', '28-31,60-63', '/data1/pans/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '48-59', '/data1/pans/pans_kv/pcache_a2_gpu3')}
+           'trec': ('2', '28-31,60-63', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '48-59', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3')}
     jobs = {}
     for cell in CELLS:
         task = cell.split('_')[0]; g, cores, pc = GPU[task]; gname, ad = graph(cell)

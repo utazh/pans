@@ -3,7 +3,7 @@ through the unified row engine (warm, no timing claims). select: same eligibilit
 Usage: v29_xkv_dev.py run | select"""
 from pathlib import Path
 import hashlib, json, math, os, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 rule = R / 'configs/v29_xkv_selection_rule.json'
 assert hashlib.sha256(rule.read_bytes()).hexdigest() == (R / 'audit/v29_xkv_selection_rule.sha256').read_text().split()[0]
 CELLS = ['sst2_b25', 'subj_b25', 'trec_b25', 'rte_b25']
@@ -18,7 +18,7 @@ if sys.argv[1] == 'run':
         for name, root in RANKS.items():
             o = OUT / 'runs' / f'{name}_{cell}'
             argv = [PY, str(R / 'scripts/v29_rowengine_entry.py'), '--engine', 'xkv', '--data-dir', str(root / cell), '--row-log', f'{o}.row.json',
-                    '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct',
+                    '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct',
                     '--store-root', str(R / 'runtime_data/prefix_store'), '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--',
                     '--pcache-root', str(R / 'runtime_data/v29_pcache_gpu2_ssd'), '--', '--mode', 'identity', '--backend', 'vllm2', '--metadata-cache',
                     '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl', '--', '--task', task, '--budget', '25', '--period', '8', '--max-tokens', '1',

@@ -8,8 +8,8 @@ eval    : real questions of each article: I, G24, G20, G16 (syn), G16 (ctl), Ful
 Usage: v29_quality_pipeline.py <set> build|readers|eval|nodoc [--budget 25]"""
 from pathlib import Path
 import copy, json, os, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
-MODEL = '/data1/llm/Qwen/Qwen2.5-7B-Instruct'; SLOTS = ['sst2', 'subj', 'trec', 'rte']
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
+MODEL = '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct'; SLOTS = ['sst2', 'subj', 'trec', 'rte']
 SET, STEP = sys.argv[1], sys.argv[2]
 B = int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 25
 # --steps N : training-budget diagnostic (default 200 = v26 recipe); reader dirs/tags get suffix _s<N> when N != 200.

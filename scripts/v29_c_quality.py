@@ -3,14 +3,14 @@ as our system (v28 frozen test bundles, warmup 0). 4 GPUs, each with its own Pca
 greedily by estimated cost so queues finish together."""
 from pathlib import Path
 import json, os, subprocess, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 OUT = R / 'studies/v29/c_quality'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'runs').mkdir(); (OUT / 'logs').mkdir()
 REORDER = R / 'configs/v29_impress_reorder_p0_fit4.json'
 N = {'sst2': 872, 'subj': 1003, 'trec': 500, 'rte': 277}
-GPUS = {'0': dict(cores='0-7,32-39', c16=R / 'runtime_data/v27_pcache_gpu3', c64='/data1/pans/pans_kv/pcache_impress_q0'),
-        '1': dict(cores='8-15,40-47', c16=R / 'runtime_data/v27_pcache_gpu2', c64='/data1/pans/pans_kv/pcache_impress_q1'),
-        '2': dict(cores='28-31,60-63', c16='/data1/pans/pans_kv/pcache_a2_gpu2', c64='/data1/pans/pans_kv/pcache_impress_q2'),
-        '3': dict(cores='48-59', c16='/data1/pans/pans_kv/pcache_a2_gpu3', c64='/data1/pans/pans_kv/pcache_impress_q3')}
+GPUS = {'0': dict(cores='0-7,32-39', c16=R / 'runtime_data/v27_pcache_gpu3', c64='/home/shensicheng/qyd/pans/work/pans_kv/pcache_impress_q0'),
+        '1': dict(cores='8-15,40-47', c16=R / 'runtime_data/v27_pcache_gpu2', c64='/home/shensicheng/qyd/pans/work/pans_kv/pcache_impress_q1'),
+        '2': dict(cores='28-31,60-63', c16='/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2', c64='/home/shensicheng/qyd/pans/work/pans_kv/pcache_impress_q2'),
+        '3': dict(cores='48-59', c16='/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3', c64='/home/shensicheng/qyd/pans/work/pans_kv/pcache_impress_q3')}
 cost_per_req = {('contigkv', 5): .5, ('contigkv', 10): .7, ('contigkv', 25): 1.3, ('contigkv', 50): 2.5,
                 ('impress', 5): 2.5, ('impress', 10): 4, ('impress', 25): 9, ('impress', 50): 16}
 jobs = sorted([(m, t, b) for m in ('impress', 'contigkv') for t in N for b in (5, 10, 25, 50)],
@@ -22,7 +22,7 @@ for m, t, b in jobs:
     extra = ['--impress-reorder', str(REORDER)] if m == 'impress' else []
     queue[g].append(dict(name=name, argv=[
         PY, str(R / 'scripts/v29_baseline_entry.py'), '--admission', 'original', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-        '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'), '--',
+        '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'), '--',
         '--pcache-root', str(kv), '--', '--mode', 'original', '--', '--method', m, *extra, '--task', t, '--budget', str(b),
         '--warmup', '0', '--samples', str(N[t]), '--bundle-dir', str(R / f'studies/v28_frozen/bundles/{t}_b{b}/eval'),
         '--output', str(o)]))

@@ -2,7 +2,7 @@
 as the cell's A0 identity dev run. Usage: v29_a2_dev.py"""
 from pathlib import Path
 import json, os, subprocess, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 OUT = R / 'studies/v29/a2_dev'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'runs').mkdir(); (OUT / 'logs').mkdir()
 a0 = json.loads((R / 'studies/v29/a0/plan.json').read_text())
 where = {j['task']: g for g, js in a0['jobs'].items() for j in js}
@@ -13,7 +13,7 @@ for cell in ('sst2_b5', 'rte_b5'):
         name = f'dev_A2{arm}_{cell}'; o = OUT / 'runs' / name
         jobs.setdefault(g, []).append(dict(name=name, argv=[
             PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', a0['queues'][g]['pcache'], '--',
             '--mode', 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl',
             '--adapters', str(R / f'studies/v29/readers/{cell}_A2{arm}'), '--allow-candidate', '--packed-ops', '--',

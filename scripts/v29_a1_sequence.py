@@ -3,7 +3,7 @@ Each cell runs on the same GPU/pcache as its A0 identity dev run (paired compari
 Usage: v29_a1_sequence.py [--smoke]"""
 from pathlib import Path
 import json, os, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 SMOKE = '--smoke' in sys.argv
 OUT = R / ('studies/v29/a1_smoke' if SMOKE else 'studies/v29/a1'); OUT.mkdir(parents=True, exist_ok=False)
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())
@@ -16,7 +16,7 @@ def job(name, task, budget, adapter_dir, samples, pcache):
     o = OUT / 'runs' / name
     return dict(name=name, task=task, budget=budget, adapter_dir=adapter_dir, samples=samples, argv=[
         PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-        '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+        '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
         '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--',
         '--pcache-root', str(pcache), '--', '--mode', 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid',
         '--stats', f'{o}.extra.jsonl', '--adapters', adapter_dir, '--allow-candidate', '--packed-ops', '--',

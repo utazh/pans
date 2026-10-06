@@ -1,0 +1,222 @@
+{
+  "heads": {
+    "q7": "2ac246aa7c03e5a5ff66af527ba95ebd182b865f",
+    "q14": "2ac246aa7c03e5a5ff66af527ba95ebd182b865f",
+    "q32": "2ac246aa7c03e5a5ff66af527ba95ebd182b865f"
+  },
+  "files": [
+    {
+      "path": "scripts/prepare_v29_dev.py",
+      "sha256": "8ff1ab1d074d1a47c0e95c3fd0b9f47a0884e6bcd388ab7c660b6d1550ea49e3"
+    },
+    {
+      "path": "scripts/prepare_v29_fit512.py",
+      "sha256": "2b08be7f5458247696de378a38f0f2363a79a7d79f5dacc72a4594e56285241b"
+    },
+    {
+      "path": "scripts/prepare_v29_quality.py",
+      "sha256": "def10b3efcdcd33f6d56ec197f956a56a80c95573906a71ca8efbf6e19c83c91"
+    },
+    {
+      "path": "scripts/run_round4.py",
+      "sha256": "e2a045b9e41266243e8419b39c78842530420347bc32537c068b9ca51c81719b"
+    },
+    {
+      "path": "scripts/run_round4_methods.py",
+      "sha256": "c116a4de7480db5c2277afb11f76b0af76a70c0bb73d4f52a109e622540e6d3d"
+    },
+    {
+      "path": "scripts/v26_common.py",
+      "sha256": "c03a408d48e39f4d262cac342e2109930b7c7b104650b07f2b3d31dea4fd2aef"
+    },
+    {
+      "path": "scripts/v29_a0_sequence.py",
+      "sha256": "7dc0a20ac28c0ea7e2a5b08a8660339cbec3acc3ef6438d8cb4259335c6b216b"
+    },
+    {
+      "path": "scripts/v29_a1_select.py",
+      "sha256": "532ce620a1952909dd8b762c41480eb59bdb5eca99540523bd7810c1e8ab132b"
+    },
+    {
+      "path": "scripts/v29_a1_sequence.py",
+      "sha256": "4ee30156a5440484fbd8d5526fd51ab0a16d0d487641bd42289a4531d2e6d205"
+    },
+    {
+      "path": "scripts/v29_a2_dev.py",
+      "sha256": "37dca090f3f7a45e9bb84e6417967443d5ce8ee9355e9cc5f0b44c83cf735847"
+    },
+    {
+      "path": "scripts/v29_a2_pilot.py",
+      "sha256": "9e34cec67e71e85cf943395ef0eecd2e8dc44b6aa7bf9101d3cc0878dc1575f2"
+    },
+    {
+      "path": "scripts/v29_amortize.py",
+      "sha256": "fb4129230ee45ca1675582cd3e2c6fec3515b2d28adb831a1019f2490b45989d"
+    },
+    {
+      "path": "scripts/v29_build_candidates.py",
+      "sha256": "a765a7fb6bf70857a9861ed02ab0aab693859f7f32ba064b00b7f8032a2cce98"
+    },
+    {
+      "path": "scripts/v29_c_quality.py",
+      "sha256": "3d9fe7d94d5ec9f73955848d6aad5535db4963fd28bbf7550e5dc28476aad7d4"
+    },
+    {
+      "path": "scripts/v29_c_report.py",
+      "sha256": "4bb066f3014b14f2863b0abf505a0c8c6cc8e78f1c9f840bf0ad1eec86354b5d"
+    },
+    {
+      "path": "scripts/v29_crosslayer_report.py",
+      "sha256": "6da04f87a65e568adc20aba2f592a2bbfd7460bf68a4ce7d9b27f89d14176cc7"
+    },
+    {
+      "path": "scripts/v29_fill_impress_head.py",
+      "sha256": "40103c85a5a77df81286f66c738e111d3a0e3be40c68c682d52c9c1881a3a1b5"
+    },
+    {
+      "path": "scripts/v29_freeze_final.py",
+      "sha256": "c7e5a8895b8e8e9b68ce0105be2c533ed236ed06e3b3714e52dac94a0a59fbb2"
+    },
+    {
+      "path": "scripts/v29_p0_numeric.py",
+      "sha256": "a492fd24cc4103128ad5c021f55e33742f9ffa34c19e96cef3c2240d88817588"
+    },
+    {
+      "path": "scripts/v29_p0_test_g.py",
+      "sha256": "dc84c042103432ae14d38843613a1a6cd05b412e74b29bd8e76f44beb50be044"
+    },
+    {
+      "path": "scripts/v29_p1ab.py",
+      "sha256": "189be3c6daa94d582f8f2dd07ff5ab4708c76e36d9d20e75571285a02ff0ff88"
+    },
+    {
+      "path": "scripts/v29_p1ab_validate.sh",
+      "sha256": "5bb54c95d4831ae6a63dba8619098b04e10e8dcfb96f54eecb342e4f87409825"
+    },
+    {
+      "path": "scripts/v29_p1ab_validate_fixed.sh",
+      "sha256": "669f152d79e67bff8e1d4a56d59384c5c6522166a10bb258f3c6888e66317be7"
+    },
+    {
+      "path": "scripts/v29_p1c_report.py",
+      "sha256": "b32e6db9302d0539bc3beecf9836da688b3352faac3fb864b31e199df5bb49a6"
+    },
+    {
+      "path": "scripts/v29_quality_pipeline.py",
+      "sha256": "d0414d184451c0d9661a43e7564445e6bba2bc640306d4c277b65a892bfed62d"
+    },
+    {
+      "path": "scripts/v29_rowengine_validate.sh",
+      "sha256": "a6ef682f2c968374820ad96acbaea4f9fba179efdeb9cd86b2802d98ac6266f7"
+    },
+    {
+      "path": "scripts/v29_rows_export.py",
+      "sha256": "5ee51a23d827696ccf3fc1432e49756113accf6eb6f34b05d1bc86612b4a7357"
+    },
+    {
+      "path": "scripts/v29_subj_p4.py",
+      "sha256": "fa5e1d56e61877c08cecee0b2aac1c0f2b05f833deda2467335ebaa750dc1b94"
+    },
+    {
+      "path": "scripts/v29_test_report.py",
+      "sha256": "9adc93a69ec8c19afda80fee2bd8e02e46e261f4e64fe766a9443ef9589bfc92"
+    },
+    {
+      "path": "scripts/v29_timing.py",
+      "sha256": "5da1bdf22d55503324f42829fc79f14099c86fdc39fedeec2402d3e4d0d7ac36"
+    },
+    {
+      "path": "scripts/v29_timing_c.py",
+      "sha256": "8fff71ad47aa73b63c17a32973622cc6f81975a08accad337c30314bf8fa836f"
+    },
+    {
+      "path": "scripts/v29_timing_lib.py",
+      "sha256": "899823ddbb3d0d4ec21adde080d1fd5e434d8a603b04eb4f3735ced9b738b0ee"
+    },
+    {
+      "path": "scripts/v29_timing_p1c.py",
+      "sha256": "7f14722c2de8592670f1bd9bdb2732efe4ed712a977a750aed2f23ca3b07e342"
+    },
+    {
+      "path": "scripts/v29_timing_quality.py",
+      "sha256": "5ba4a38fbe7c668e6fed341329a014d5157d4659513ab3bbff57d2ab11754f40"
+    },
+    {
+      "path": "scripts/v29_timing_report.py",
+      "sha256": "2690687beb6fb9d596c08447b8bbe335ea611e7cd38acc8e4108b7d173a2ec14"
+    },
+    {
+      "path": "scripts/v29_timing_row.py",
+      "sha256": "d1850c11ef5e566edda0f8a41560ce7dffe5ae9d231af8f3ca1e78907c8bf55f"
+    },
+    {
+      "path": "scripts/v29_timing_row2.py",
+      "sha256": "7479404e4a61acd76d1e6bb9ec02d394eff27b39895524a82b22c7964d949c70"
+    },
+    {
+      "path": "scripts/v29_timing_subj_p4.py",
+      "sha256": "c1cae08e96a0715708712ede47e06f3440129d3c63b8167b6a3d86b53013ec2f"
+    },
+    {
+      "path": "scripts/v29_timing_subj_p4_g20.py",
+      "sha256": "678780848900dd60b5f2f7c7eda55807865c78662b997d8f4ab83e12f6fc4f3a"
+    },
+    {
+      "path": "scripts/v29_timing_xkv.py",
+      "sha256": "bb90f54bc9cf81feb69d4db2f76c0b5a83b7d095e8cd4e4f33da2a771a1bdf7d"
+    },
+    {
+      "path": "scripts/v29_xkv_buildcost.py",
+      "sha256": "fa75fee94f490fbfb9cf0eed6297bb3b0b24762e683206b9ff39d4ff10fd690a"
+    },
+    {
+      "path": "scripts/v29_xkv_dev.py",
+      "sha256": "848200c950cb4e3d11e57aa4d06fb22215ff2cc481b9431e21bd0ced94eae6a8"
+    },
+    {
+      "path": "scripts/v29_xkv_export.py",
+      "sha256": "df8f72f4f5efba29850fa7f78f1bd77114ff0eb2a9fd19b621fc01470e76f68e"
+    },
+    {
+      "path": "scripts/v29a_timing.py",
+      "sha256": "5e484758c783c9c1debb32c51b7324b5840ba6ff9d27f607ef6cb36e7b62ba02"
+    },
+    {
+      "path": "scripts/v29m_pipeline.py",
+      "sha256": "33ef21c448ccf11d53d9b23df3571bbbb8eb54619d354f46637fb24fcdfd9934"
+    },
+    {
+      "path": "scripts/v29m_timing.py",
+      "sha256": "685732fb71fbd88703b8aafa0f24ff4441a2cb2830168a2e72e335e77e00ccfa"
+    },
+    {
+      "path": "scripts/v29m_timing_sys.py",
+      "sha256": "b988b4eb6e17c429ed6282cf5c88593a749dd1d9973c3d73abc2ade168fd69a1"
+    },
+    {
+      "path": "src/contiguous_fuxian/sharedkv_v21/guard.py",
+      "sha256": "0d7a962ddd7ac36ffb4fb9511e3f3fd448c39cffe1e434f7fc75c38a3695a0a0"
+    },
+    {
+      "path": "src/contiguous_fuxian/sharedkv_v27/guard.py",
+      "sha256": "7f0ef0135cd4474adecf358e4318b7c8f4475954745dd806dbe2a87d7d2d34f9"
+    }
+  ],
+  "commits": [
+    "14e1aa37d2ca0f2223b2dacaee9cc0de224ddedc A100: add v29 scripts and local paths",
+    "5cfb28de2507b2fd7fcf5bdb8e5b03728888472f A100 port: env-overridable model path / GQA head ids (defaults unchanged); guard hashes re-audited",
+    "33dda863e753443dd01f66f0dbea8a990876504a A100 port: env-overridable model path / GQA head ids (defaults unchanged); guard hashes re-audited",
+    "a94dbd4b77dc9b891c28c01d413edf68687d2121 A100: local paths in v29 runner scripts only",
+    "a4d47ec37da74ea6e8b3f08222c89648f0a59e46 A100: env-configurable timing GPU/cores/disk (defaults = rev3)",
+    "ca654914e434e1f4ec5fd666a85c5588fb1f2960 A100: stage-B timing driver on configurable timing lib",
+    "9378d3fd03df25c500954d22ea5f9c1808abf79d A100: multi-model RAPS pipeline (v26/v29 recipe, frozen selection rule)",
+    "18a852674d659e727bade3fc14c1a512a1ec7d36 v29m: read bytes from summary tasks (as v29_a1_select)",
+    "7b3393321e56964131092783e4727c193356d2dc v29m: --steps/--tag/--reuse-from",
+    "8af489161e56d10db614e7e27290cf3c09f427a3 v29m: geometry rule requires identical selections (v26 compatibility)",
+    "215b10867114e44b0582debb9a502d8f26c6d4f1 v29m: stash interrupted artifacts instead of failing",
+    "74c73c03fd7b5a38b0b67f0983a6c7aab444538e A100: 14B/32B cold timing driver",
+    "0b3c1b7b9e250e05c17b46de64f1c671eab47721 timing lib: PANS_ROOT override for model worktrees",
+    "ba4650b7235951a73bdc2fa7ba7a1e7a65917967 A100: run_round4_methods model path / CKV selector heads via env (defaults unchanged)",
+    "2ac246aa7c03e5a5ff66af527ba95ebd182b865f A100: P1-c style 4-system timing for all models"
+  ]
+}

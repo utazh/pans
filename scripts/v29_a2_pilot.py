@@ -3,16 +3,16 @@ for arm in fit64, fit512: teacher capture -> plan -> R4 train 512 steps (epoch s
 Dev-set evaluation is a separate step (same GPU/pcache as the A0 identity run)."""
 from pathlib import Path
 import json, os, subprocess, sys, threading, time, hashlib
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
-MODEL = '/data1/llm/Qwen/Qwen2.5-7B-Instruct'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
+MODEL = '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct'
 sys.path.insert(0, str(R / 'src'))
 freeze = json.loads((R / 'audit/v29_rule_freeze.json').read_text())
 rule = json.loads((R / 'configs/v29_selection_rule.json').read_text())
 assert rule['revision'] == 2 and hashlib.sha256((R / 'configs/v29_selection_rule.json').read_bytes()).hexdigest() == freeze['sha256']
 OUT = R / 'studies/v29/a2'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'logs').mkdir()
 N = {'fit64': 64, 'fit512': 512}
-CELLS = {'2': dict(cell='sst2_b5', task='sst2', budget=5, cores='16-23,48-55', pcache='/data1/pans/pans_kv/pcache_a2_gpu2'),
-         '3': dict(cell='rte_b5', task='rte', budget=5, cores='24-31,56-63', pcache='/data1/pans/pans_kv/pcache_a2_gpu3')}
+CELLS = {'2': dict(cell='sst2_b5', task='sst2', budget=5, cores='16-23,48-55', pcache='/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2'),
+         '3': dict(cell='rte_b5', task='rte', budget=5, cores='24-31,56-63', pcache='/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3')}
 
 def sh(name, argv, gpu, cores):
     env = dict(os.environ, CUDA_VISIBLE_DEVICES=gpu, PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS='4', PYTHONPATH='src:runtime_deps_v24')

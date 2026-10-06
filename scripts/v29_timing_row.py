@@ -5,7 +5,7 @@ Part B: trec_b25 same-batch control with 5 arms I_PC, S_PC (pcache path, v23 col
 --row-cold (certification on the files actually read). Usage: v29_timing_row.py [--dry-run]"""
 from pathlib import Path
 import itertools, json, runpy, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 ns = runpy.run_path(str(R / 'scripts/v29_timing_lib.py')); PY = ns['PY']
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())['cells']
@@ -23,7 +23,7 @@ def argv(out, cell, arm, cond, block, name):
     if is_shared:
         ad = man[cell]['G16']['adapter_dir'] if arm in ('S_PC', 'S_ROW', 'G16_ROW') and cell == 'trec_b25' or arm == 'G16_ROW' else shared(cell)[1]
         mode += ['--adapters', ad, '--allow-candidate', '--packed-ops']
-    chain = ['--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct',
+    chain = ['--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct',
              '--store-root', str(R / 'runtime_data/prefix_store'), '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--',
              '--pcache-root', str(C16)]
     if arm in ('I_PC', 'S_PC'):

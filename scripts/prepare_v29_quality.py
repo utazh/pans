@@ -9,9 +9,9 @@ synth  : document-conditioned synthetic calibration MCQs (64 fit + 64 val) gener
 Usage: prepare_v29_quality.py select | bundles | synth <set>"""
 import hashlib, json, random, re, sys
 from pathlib import Path
-R = Path('/home/panzihang/src/prism_layerkv'); D = R / 'data/v29/quality'
-SRC = Path('/data1/pans/datasets/QuALITY/quality_validation.jsonl')
-MODEL = '/data1/llm/Qwen/Qwen2.5-7B-Instruct'
+R = Path('/home/shensicheng/qyd/pans/src'); D = R / 'data/v29/quality'
+SRC = Path('/home/shensicheng/qyd/pans/work/datasets/QuALITY/quality_validation.jsonl')
+MODEL = '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct'
 USER, ASSIST = '<|im_start|>user\n', '<|im_end|>\n<|im_start|>assistant\n'
 SLOTS = ['sst2', 'subj', 'trec', 'rte']; LETTERS = ['A', 'B', 'C', 'D']
 norm = lambda s: ' '.join(s.casefold().split())

@@ -2,7 +2,7 @@
 writes results/v29_a1/{table.csv,selection.json}. Cells with any missing run are 'pending'."""
 from pathlib import Path
 import csv, hashlib, json, math, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 rule_p = R / 'configs/v29_selection_rule.json'
 freeze = json.loads((R / 'audit/v29_rule_freeze.json').read_text())
 assert hashlib.sha256(rule_p.read_bytes()).hexdigest() == freeze['sha256']

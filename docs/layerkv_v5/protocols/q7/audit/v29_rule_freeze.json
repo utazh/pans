@@ -1,0 +1,30 @@
+{
+ "rule": "configs/v29_selection_rule.json",
+ "revision": 3,
+ "sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "frozen_unix": 1790603433.4710062,
+ "draft0": "configs/v29_selection_rule.draft0.json",
+ "revert_orders": "audit/v29_revert_orders.json",
+ "note": "Frozen before any A1 shared-candidate dev evaluation; A0 identity dev runs completed earlier (candidate-independent).",
+ "previous": [
+  {
+   "revision": 1,
+   "sha256": "48317ffaa9a6831f43edec57b538822c70660c9a52a97c452b6af0d3a75586b6",
+   "file": "configs/v29_selection_rule.rev1.json"
+  },
+  {
+   "revision": 2,
+   "sha256": "9151d971dbd982fb46993b64d24909b7ab53a0213f8087d4b87e4d6a4e166cbd",
+   "file": "configs/v29_selection_rule.rev2.json"
+  }
+ ],
+ "rev2_reason": "Legacy trainer samples fit queries with replacement; rev1 wording (fit512 = 1 pass) would not hold. Rev2 adds epoch-shuffled sampling without replacement for both A2 arms and specifies teacher/plan construction. Only a2.data_size_pilot changed; all A1 fields byte-identical in content; A1 runs (launched under rev1) unaffected.",
+ "rev2_unix": 1790604872.1222408,
+ "rev3_unix": 1790636305.5788949,
+ "rev3_changed": [
+  "revision",
+  "timing_environment",
+  "timing_telemetry"
+ ],
+ "rev3_reason": "Background load makes the rev2 NUMA1 gate unsatisfiable; user chose to measure without cleanup. Timing cores moved to the 4 NUMA1 cores free of background threads; gate/flag scoped to those cores. Selection (A1/A2) content unchanged; no timing block had started under rev2."
+}

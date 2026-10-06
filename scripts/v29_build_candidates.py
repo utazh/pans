@@ -4,7 +4,7 @@ dir per candidate (runtime loads <dir>/<task>.pt)."""
 from pathlib import Path
 import hashlib, json, sys
 import torch
-ROOT = Path('/home/panzihang/src/prism_layerkv')
+ROOT = Path('/home/shensicheng/qyd/pans/src')
 sys.path.insert(0, str(ROOT / 'src'))
 from contiguous_fuxian.sharedkv_v21.bundles import isolate
 

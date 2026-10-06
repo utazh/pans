@@ -3,7 +3,7 @@ I + selected config per cell. Pilot A2 candidates are judged by the same rule. 4
 per GPU; I and selected of a cell share GPU/pcache. Usage: v29_freeze_final.py"""
 from pathlib import Path
 import hashlib, json, math, os, subprocess, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 sha = lambda p: hashlib.sha256(Path(p).read_bytes()).hexdigest()
 freeze = json.loads((R / 'audit/v29_rule_freeze.json').read_text())
 assert sha(R / 'configs/v29_selection_rule.json') == freeze['sha256']
@@ -42,7 +42,7 @@ print('FROZEN', sha(R / 'audit/v29_final_selection.json'), flush=True)
 OUT = R / 'studies/v29/test_quality'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'runs').mkdir(); (OUT / 'logs').mkdir()
 N = {'sst2': 872, 'subj': 1003, 'trec': 500, 'rte': 277}
 GPU = {'sst2': ('0', '0-7,32-39', R / 'runtime_data/v27_pcache_gpu3'), 'subj': ('1', '8-15,40-47', R / 'runtime_data/v27_pcache_gpu2'),
-       'trec': ('2', '16-23,48-55', '/data1/pans/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '24-31,56-63', '/data1/pans/pans_kv/pcache_a2_gpu3')}
+       'trec': ('2', '16-23,48-55', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '24-31,56-63', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3')}
 jobs = {}
 for cell, f in final.items():
     task, b = cell.split('_')[0], int(cell.split('_b')[1]); g, cores, pc = GPU[task]
@@ -53,7 +53,7 @@ for cell, f in final.items():
         if arm != 'I': mode += ['--adapters', f['adapter_dir'], '--allow-candidate', '--packed-ops']; mode[1] = 'shared'
         jobs.setdefault(g, dict(cores=cores, jobs=[]))['jobs'].append(dict(name=name, argv=[
             PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(pc), '--', *mode, '--',
             '--task', task, '--budget', str(b), '--period', '8', '--max-tokens', '1', '--warmup', '0', '--samples', str(N[task]),
             '--profile', 'none', '--bundle-dir', str(bundle), '--output', str(o)]))

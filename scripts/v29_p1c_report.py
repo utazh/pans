@@ -2,7 +2,7 @@
 measured in the SAME blocks. Usage: v29_p1c_report.py <study_dir_name> [ref_arm]"""
 from pathlib import Path
 import json, random, statistics as st, sys
-R = Path('/home/panzihang/src/prism_layerkv'); T = R / 'studies/v29' / sys.argv[1]
+R = Path('/home/shensicheng/qyd/pans/src'); T = R / 'studies/v29' / sys.argv[1]
 blocks = [json.loads(l) for l in (T / 'blocks.jsonl').read_text().splitlines()]
 print('blocks', len(blocks), 'flagged', sum(bool(b['flag']) for b in blocks), 'failed', sum(not b['all_ok'] for b in blocks))
 data = {}; cold_bad = 0

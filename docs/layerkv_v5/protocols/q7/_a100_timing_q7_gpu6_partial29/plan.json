@@ -1,0 +1,1468 @@
+{
+ "rule_sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "gpu": "6",
+ "cores": "100-103,228-231",
+ "meta": {
+  "script": "v29a_timing",
+  "arms": {
+   "sst2_b5": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/sst2_b5",
+    "G20": "/home/shensicheng/qyd/pans/src/studies/v29/readers/sst2_b5_G20"
+   },
+   "sst2_b10": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/sst2_b10"
+   },
+   "sst2_b25": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/sst2_b25",
+    "G20": "/home/shensicheng/qyd/pans/src/studies/v29/readers/sst2_b25_G20"
+   },
+   "sst2_b50": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/sst2_b50"
+   },
+   "subj_b5": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/subj_b5",
+    "G20": "/home/shensicheng/qyd/pans/src/studies/v29/readers/subj_b5_G20"
+   },
+   "subj_b10": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/subj_b10",
+    "G24": "/home/shensicheng/qyd/pans/src/studies/v29/readers/subj_b10_G24"
+   },
+   "subj_b25": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/subj_b25"
+   },
+   "subj_b50": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/subj_b50",
+    "G24": "/home/shensicheng/qyd/pans/src/studies/v29/readers/subj_b50_G24"
+   },
+   "trec_b5": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/trec_b5",
+    "G20": "/home/shensicheng/qyd/pans/src/studies/v29/readers/trec_b5_G20"
+   },
+   "trec_b10": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/trec_b10"
+   },
+   "trec_b25": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/trec_b25"
+   },
+   "trec_b50": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/trec_b50"
+   },
+   "rte_b5": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/rte_b5",
+    "G24": "/home/shensicheng/qyd/pans/src/studies/v29/readers/rte_b5_G24"
+   },
+   "rte_b10": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/rte_b10",
+    "G24": "/home/shensicheng/qyd/pans/src/studies/v29/readers/rte_b10_G24"
+   },
+   "rte_b25": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/rte_b25",
+    "G24": "/home/shensicheng/qyd/pans/src/studies/v29/readers/rte_b25_G24"
+   },
+   "rte_b50": {
+    "I": null,
+    "G16": "/home/shensicheng/qyd/pans/src/studies/v28_frozen/readers/rte_b50",
+    "G20": "/home/shensicheng/qyd/pans/src/studies/v29/readers/rte_b50_G20"
+   }
+  },
+  "model": "/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct"
+ },
+ "blocks": [
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b5",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b10",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b5",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b10",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b5",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b10",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b5",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b10",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "sst2_b50",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "subj_b50",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "trec_b50",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "I",
+    "G24",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G24"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "G24",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "G24",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G24",
+    "G16",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "I",
+    "G16",
+    "G20"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "I",
+    "G20",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "G16",
+    "I",
+    "G20"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "G16",
+    "G20",
+    "I"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "G20",
+    "I",
+    "G16"
+   ]
+  },
+  {
+   "cell": "rte_b50",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "G20",
+    "G16",
+    "I"
+   ]
+  }
+ ],
+ "runs": 372
+}

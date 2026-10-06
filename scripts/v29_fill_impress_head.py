@@ -4,7 +4,7 @@ must match byte-for-byte; only then are missing files written. Usage: v29_fill_i
 import hashlib, json, sys
 from pathlib import Path
 import numpy as np, torch
-R = Path('/home/panzihang/src/prism_layerkv'); K = R / 'runtime_data/v29_pcache_impress_c64_ssd'
+R = Path('/home/shensicheng/qyd/pans/src'); K = R / 'runtime_data/v29_pcache_impress_c64_ssd'
 man = json.loads((R / 'configs/v29_impress_reorder_p0_fit4.json').read_text())
 order = ['sst2', 'subj', 'trec', 'rte']  # --store-tasks order == prefix id
 sys.path.insert(0, str(R / 'src'))

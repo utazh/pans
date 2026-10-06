@@ -4,7 +4,7 @@ preserve (SSD-cold, 16 cells) + warm (25%/50% cells), 6 blocks x 16 queries, all
 gate before each block, attributable-only flags, flagged/failed block rerun once. Usage: v29_timing_c.py [--dry-run]"""
 from pathlib import Path
 import itertools, json, os, subprocess, sys, threading, time, hashlib
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 GPU, CORES = '2', '28-31,60-63'
 TIMING = set(range(28, 32)) | set(range(60, 64)); BACKGROUND = set(range(0, 12)) | set(range(16, 28))
 NUMA1 = set(range(16, 32)) | set(range(48, 64))
@@ -26,13 +26,13 @@ def argv(cell, arm, cond, block, name):
     tail = ['--task', task, '--budget', str(b), '--max-tokens', '1', '--warmup', '4', '--samples', '16', '--bundle-dir', bundle, '--output', str(o)]
     if arm == 'I':
         return [PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-                '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+                '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
                 '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(kv), *cold, '--',
                 '--mode', 'identity', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl', '--',
                 '--period', '8', '--profile', 'none', *tail]
     method = ['--method', 'contigkv'] if arm == 'CKV' else ['--method', 'impress', '--impress-reorder', str(REORDER)]
     return [PY, str(R / 'scripts/v29_baseline_entry.py'), '--admission', 'original', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'), '--',
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'), '--',
             '--pcache-root', str(kv), *cold, '--', '--mode', 'original', '--', *method, *tail]
 
 plan = []

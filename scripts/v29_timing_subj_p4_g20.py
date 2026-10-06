@@ -3,7 +3,7 @@
 Usage: v29_timing_subj_p4_g20.py [--dry-run]"""
 from pathlib import Path
 import runpy, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 ns = runpy.run_path(str(R / 'scripts/v29_timing_lib.py')); PY = ns['PY']
 C16 = R / 'runtime_data/v29_pcache_gpu2_ssd'
 def argv(out, cell, arm, cond, block, name):
@@ -11,7 +11,7 @@ def argv(out, cell, arm, cond, block, name):
     mode = ['--mode', 'identity' if arm == 'I_P4' else 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl']
     if arm == 'G20_P4': mode += ['--adapters', str(R / 'studies/v29/subj_p4/readers/G20'), '--allow-candidate', '--packed-ops']
     return [PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(C16),
             '--cold', 'ssd-cold', '--read-advice', 'preserve', '--owned-cache-root', str(C16), '--cold-log', f'{o}.cold.jsonl', '--', *mode, '--',
             '--task', 'subj', '--budget', '25', '--period', '4', '--max-tokens', '1', '--warmup', '4', '--samples', '16', '--profile', 'none',

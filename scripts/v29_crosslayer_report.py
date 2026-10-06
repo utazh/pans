@@ -4,7 +4,7 @@ Every row is bound to its run directory. External baselines are quality bridges 
 Writes results/v29_crosslayer/{table.csv,summary.json}."""
 from pathlib import Path
 import csv, json, statistics as st
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 V28, TQ, P0 = R / 'studies/v28_frozen/runs', R / 'studies/v29/test_quality/runs', R / 'studies/v29/p0_test_g/runs'
 def load(p):

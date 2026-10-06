@@ -1,0 +1,402 @@
+[
+  {
+    "model": "q7",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "I",
+    "n": 500,
+    "correct": 340,
+    "source": "src/studies/v29m/test/trec_b25_test_I/scored_records.jsonl",
+    "sha256": "c9882e7ace30820d6638432ef7ca802f9480e7dacc7c36efd7aa8428b9d29bb0"
+  },
+  {
+    "model": "q7",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S1",
+    "n": 500,
+    "correct": 369,
+    "source": "src/studies/v29m/test/trec_b25_test_S1/scored_records.jsonl",
+    "sha256": "58d9c8b3417b9d650574a78e5f122dbe83d37d6f30db69a497be43afebbd7b92"
+  },
+  {
+    "model": "q7",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S2",
+    "n": 500,
+    "correct": 363,
+    "source": "src/studies/v29m/test/trec_b25_test_S2/scored_records.jsonl",
+    "sha256": "e2f4d84b72c29f2a3562fde4e873244a2956a14c3c52eae39ec1b79045d5138c"
+  },
+  {
+    "model": "q7",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S3",
+    "n": 500,
+    "correct": 395,
+    "source": "src/studies/v29m/test/trec_b25_test_S3/scored_records.jsonl",
+    "sha256": "cf0ca657d1da4f38c983628e6a8f5e97a050312471cd9c26d51c64a83a63c3f8"
+  },
+  {
+    "model": "q14",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "I",
+    "n": 500,
+    "correct": 412,
+    "source": "src_q14/studies/v29m/test/trec_b25_test_I/scored_records.jsonl",
+    "sha256": "987762dd4b8b5db58a6563b22ad0e2165d7840d9dcde79d7927cd17499e2ae41"
+  },
+  {
+    "model": "q14",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S1",
+    "n": 500,
+    "correct": 372,
+    "source": "src_q14/studies/v29m/test/trec_b25_test_S1/scored_records.jsonl",
+    "sha256": "797338d369b537c48caaab8815792aa31c3209356168e540ec53ee3f856a303a"
+  },
+  {
+    "model": "q14",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S2",
+    "n": 500,
+    "correct": 312,
+    "source": "src_q14/studies/v29m/test/trec_b25_test_S2/scored_records.jsonl",
+    "sha256": "b4f637a0cd44d3f706b75adcf420ee6e0fd78d558eb8c39f0d49a60b10aa414a"
+  },
+  {
+    "model": "q14",
+    "study": "v29m",
+    "cell": "trec_b25",
+    "arm": "S3",
+    "n": 500,
+    "correct": 400,
+    "source": "src_q14/studies/v29m/test/trec_b25_test_S3/scored_records.jsonl",
+    "sha256": "8bbac55d28bb7c4d9b048ce6981b660ae3b89e27588d21356b34fbd968650e69"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "I",
+    "n": 872,
+    "correct": 790,
+    "source": "src_q14/studies/v29m_s800/test/sst2_b25_test_I/scored_records.jsonl",
+    "sha256": "8b886c9538ba3c0a8965037902acc57331e9129a92254c5c7c5e9f98b6aff389"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S1",
+    "n": 872,
+    "correct": 791,
+    "source": "src_q14/studies/v29m_s800/test/sst2_b25_test_S1/scored_records.jsonl",
+    "sha256": "7577c29a0c5208e9d6895565bd2b2296361ed93306ca2ab5556f28afccce5842"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S2",
+    "n": 872,
+    "correct": 805,
+    "source": "src_q14/studies/v29m_s800/test/sst2_b25_test_S2/scored_records.jsonl",
+    "sha256": "91b95ca1fb0c5f7149a87aa12d156831f307548dc03d71fdc0d731f3da0e604a"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S3",
+    "n": 872,
+    "correct": 791,
+    "source": "src_q14/studies/v29m_s800/test/sst2_b25_test_S3/scored_records.jsonl",
+    "sha256": "0706a144928bd51cfc7c3a43766f9cc437ec4c1d26a4c894cd915f9a92c7ad75"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "I",
+    "n": 500,
+    "correct": 412,
+    "source": "src_q14/studies/v29m_s800/test/trec_b25_test_I/scored_records.jsonl",
+    "sha256": "987762dd4b8b5db58a6563b22ad0e2165d7840d9dcde79d7927cd17499e2ae41"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S1",
+    "n": 500,
+    "correct": 364,
+    "source": "src_q14/studies/v29m_s800/test/trec_b25_test_S1/scored_records.jsonl",
+    "sha256": "5f455c120c228082bcef064c0dc257461b7a998762a56e2c4368f14010e23e58"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S2",
+    "n": 500,
+    "correct": 345,
+    "source": "src_q14/studies/v29m_s800/test/trec_b25_test_S2/scored_records.jsonl",
+    "sha256": "9470e22e5d34ffe10cf6b9952f12b3a61ca1a7f7dc5e73c79428760e29852980"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S3",
+    "n": 500,
+    "correct": 403,
+    "source": "src_q14/studies/v29m_s800/test/trec_b25_test_S3/scored_records.jsonl",
+    "sha256": "7df7305304a336bd5ecbe283cdfd06c04b67ed16117f2471ce97c7dd934f8c4f"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "I",
+    "n": 1003,
+    "correct": 510,
+    "source": "src_q14/studies/v29m_s800/test/subj_b25_test_I/scored_records.jsonl",
+    "sha256": "028a3e0d58b9b40bb10748a9d0eb32780abe4f8c4aa7e7b6c1a2585695145fb9"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S1",
+    "n": 1003,
+    "correct": 510,
+    "source": "src_q14/studies/v29m_s800/test/subj_b25_test_S1/scored_records.jsonl",
+    "sha256": "779770be3c4502a4665811a71cf9e84c606c9d2ab8bfbfe449e2b1e971b7d851"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S2",
+    "n": 1003,
+    "correct": 552,
+    "source": "src_q14/studies/v29m_s800/test/subj_b25_test_S2/scored_records.jsonl",
+    "sha256": "58a77aeac632c041ac219f4d7166a40b4d021f9573dad8862143964362b3a897"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S3",
+    "n": 1003,
+    "correct": 510,
+    "source": "src_q14/studies/v29m_s800/test/subj_b25_test_S3/scored_records.jsonl",
+    "sha256": "c04afd098012fc690b65eb798199fe1fe688ab883b8f2a76f4de1cd4dd85fafc"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "I",
+    "n": 277,
+    "correct": 253,
+    "source": "src_q14/studies/v29m_s800/test/rte_b25_test_I/scored_records.jsonl",
+    "sha256": "d03b3cf7d087526160231b1d1877df13eef820249c367b3394931027402f6a17"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S1",
+    "n": 277,
+    "correct": 255,
+    "source": "src_q14/studies/v29m_s800/test/rte_b25_test_S1/scored_records.jsonl",
+    "sha256": "47e75cc2923298d9277af7d870cbfc0b4a8d0ac43fad2e68d36c38acdfbc372c"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S2",
+    "n": 277,
+    "correct": 247,
+    "source": "src_q14/studies/v29m_s800/test/rte_b25_test_S2/scored_records.jsonl",
+    "sha256": "2fc127c54f566ba33cbd1406c1ff96ab61131d93cc0dd9f9bdebb464bb871d70"
+  },
+  {
+    "model": "q14",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S3",
+    "n": 277,
+    "correct": 217,
+    "source": "src_q14/studies/v29m_s800/test/rte_b25_test_S3/scored_records.jsonl",
+    "sha256": "9e0d0bc9f4e63b4af87d7a806150e49e972ab6f570e4f87f0a451e88cd9a2626"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "I",
+    "n": 872,
+    "correct": 822,
+    "source": "src_q32/studies/v29m_s800/test/sst2_b25_test_I/scored_records.jsonl",
+    "sha256": "b4f4d050c12e26734ed5977f54d3b43b8f5ceaa8b8047ae64bac2c3a11175620"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S1",
+    "n": 872,
+    "correct": 818,
+    "source": "src_q32/studies/v29m_s800/test/sst2_b25_test_S1/scored_records.jsonl",
+    "sha256": "d1a2786733c20f44e909a64e4e07991dafbbc42b1ed5d72743e2f4b2caaca39c"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S2",
+    "n": 872,
+    "correct": 816,
+    "source": "src_q32/studies/v29m_s800/test/sst2_b25_test_S2/scored_records.jsonl",
+    "sha256": "e7a5812305c5acdeccb6167fd5d345d82bf754719f1baeca11bbec6c4955599d"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "sst2_b25",
+    "arm": "S3",
+    "n": 872,
+    "correct": 823,
+    "source": "src_q32/studies/v29m_s800/test/sst2_b25_test_S3/scored_records.jsonl",
+    "sha256": "57cdd68ac828a8cd264d6e35893a85177726c5bf0b08c8d1b4ce69214e91f670"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "I",
+    "n": 500,
+    "correct": 416,
+    "source": "src_q32/studies/v29m_s800/test/trec_b25_test_I/scored_records.jsonl",
+    "sha256": "f830d2a246fff683daea8749477c0c291bb82592547b60e288b8733c6782b35d"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S1",
+    "n": 500,
+    "correct": 383,
+    "source": "src_q32/studies/v29m_s800/test/trec_b25_test_S1/scored_records.jsonl",
+    "sha256": "9be597aaca01869fc2b06e9d7a285a642d550503a1ea0318a72cc4239f7ba6f2"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S2",
+    "n": 500,
+    "correct": 413,
+    "source": "src_q32/studies/v29m_s800/test/trec_b25_test_S2/scored_records.jsonl",
+    "sha256": "046a33564ce58d78a6d003f4757bdce59dd8ac00b49b66e03c82e171afc5c969"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "trec_b25",
+    "arm": "S3",
+    "n": 500,
+    "correct": 406,
+    "source": "src_q32/studies/v29m_s800/test/trec_b25_test_S3/scored_records.jsonl",
+    "sha256": "82582e063be5387db740d009171e95894cd714b79da81c9ff082a04f4ee73c7a"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "I",
+    "n": 1003,
+    "correct": 650,
+    "source": "src_q32/studies/v29m_s800/test/subj_b25_test_I/scored_records.jsonl",
+    "sha256": "6fd9e39e5ba7a350d7e028ea7c72aed8e364d5f0d7e4f01ae4e5ae7159ca1916"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S1",
+    "n": 1003,
+    "correct": 515,
+    "source": "src_q32/studies/v29m_s800/test/subj_b25_test_S1/scored_records.jsonl",
+    "sha256": "6b9610231a8f8b053d1a131bc42e132911b35b78765041ff0911cdec58f7714b"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S2",
+    "n": 1003,
+    "correct": 565,
+    "source": "src_q32/studies/v29m_s800/test/subj_b25_test_S2/scored_records.jsonl",
+    "sha256": "0466cc3a2cc47cdb9ba6bb714b8e581931ec03ba34e1bc7c38caab3a46cfecfd"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "subj_b25",
+    "arm": "S3",
+    "n": 1003,
+    "correct": 516,
+    "source": "src_q32/studies/v29m_s800/test/subj_b25_test_S3/scored_records.jsonl",
+    "sha256": "cff419a5e6c6d6b81a67db05bb45bc0cc7e147e67031784f9d7846bf0ab8bee7"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "I",
+    "n": 277,
+    "correct": 254,
+    "source": "src_q32/studies/v29m_s800/test/rte_b25_test_I/scored_records.jsonl",
+    "sha256": "389b2dbc009eac5f1dc796ccd988a60ae829aa466f205fdf253e4c395f3d2fc2"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S1",
+    "n": 277,
+    "correct": 254,
+    "source": "src_q32/studies/v29m_s800/test/rte_b25_test_S1/scored_records.jsonl",
+    "sha256": "fb0a4a6aebc2ec02c6b6b4175bc230df6ccb75fb804e204a6ca99a7c315840da"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S2",
+    "n": 277,
+    "correct": 255,
+    "source": "src_q32/studies/v29m_s800/test/rte_b25_test_S2/scored_records.jsonl",
+    "sha256": "ce0bf0ddf6eaa7795227f7c934a3a0b2d8fbf5acc8fc4ce24a02f712810a7e60"
+  },
+  {
+    "model": "q32",
+    "study": "v29m_s800",
+    "cell": "rte_b25",
+    "arm": "S3",
+    "n": 277,
+    "correct": 253,
+    "source": "src_q32/studies/v29m_s800/test/rte_b25_test_S3/scored_records.jsonl",
+    "sha256": "327c4dd4c83dd16e6bc3b739deb3e8e5545e543501d809edbda5aa06dab48571"
+  }
+]

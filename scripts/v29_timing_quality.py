@@ -3,7 +3,7 @@ Each of the 12 articles is one prefix block running all of its real questions (w
 each used by 2 articles. Same protocol/cores/gate/flags as rule rev 3. Usage: v29_timing_quality.py [--dry-run]"""
 from pathlib import Path
 import itertools, json, runpy, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 ns = runpy.run_path(str(R / 'scripts/v29_timing_lib.py')); PY = ns['PY']
 SETS, SLOTS = ['f0', 'f1', 'f2'], ['sst2', 'subj', 'trec', 'rte']
 def n_rows(p): return sum(1 for l in Path(p).read_text().splitlines() if l.strip())
@@ -13,7 +13,7 @@ def argv(out, cell, arm, cond, block, name):
     mode = ['--mode', 'identity' if arm == 'I' else 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl']
     if arm != 'I': mode += ['--adapters', str(R / f'studies/v29/quality/{s}/readers/syn_{arm}'), '--allow-candidate', '--packed-ops']
     return [PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / f'runtime_data/v29_quality_{s}_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / f'runtime_data/v29_quality_{s}_store'),
             '--selector-index-dir', str(R / f'assets/v29_quality_{s}_index'), '--', '--pcache-root', str(pc),
             '--cold', 'ssd-cold', '--read-advice', 'preserve', '--owned-cache-root', str(pc), '--cold-log', f'{o}.cold.jsonl', '--',
             *mode, '--', '--task', slot, '--budget', '25', '--period', '8', '--max-tokens', '1', '--warmup', '4',

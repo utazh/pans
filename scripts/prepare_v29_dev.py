@@ -9,7 +9,7 @@ from transformers import AutoTokenizer
 from contiguous_fuxian.paper_tasks import *
 N,SEED=500,2901
 norm=lambda x:" ".join(x.casefold().split())
-raw=Path("/home/panzihang/src/contiguous_fuxian/data/paper_tasks")
+raw=Path("/home/shensicheng/qyd/pans/work/data_raw")
 tok=AutoTokenizer.from_pretrained(MODEL,local_files_only=True)
 files=sorted({*ROOT.glob("data/**/*.jsonl"),*ROOT.glob("studies/v28_frozen/bundles/**/*.jsonl"),*Path("/home/panzihang/src/prism_pans/data").glob("**/*.jsonl")})
 files=[f for f in files if "/data/v29/" not in str(f)]

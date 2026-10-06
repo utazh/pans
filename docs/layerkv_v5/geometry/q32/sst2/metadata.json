@@ -1,0 +1,10 @@
+{
+  "task": "sst2",
+  "prefix_tokens": 3811,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "layers": 64,
+  "token_hash": "816b715695fa3ba65e0cb04f6d1e202a50a823463b133c8eee1addcd8e98807a",
+  "layout": "token,kv_head,head_dim",
+  "dtype": "bfloat16"
+}

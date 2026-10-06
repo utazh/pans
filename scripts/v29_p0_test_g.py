@@ -3,13 +3,13 @@ Reporting only (same-G comparison with cross-layer baselines); never used for se
 Same GPU/pcache per task as studies/v29/test_quality so runs pair with test_I_<cell>."""
 from pathlib import Path
 import json, os, subprocess, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
 OUT = R / 'studies/v29/p0_test_g'; OUT.mkdir(parents=True, exist_ok=False); (OUT / 'runs').mkdir(); (OUT / 'logs').mkdir()
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())['cells']
 N = {'sst2': 872, 'subj': 1003, 'trec': 500, 'rte': 277}
 GPU = {'sst2': ('0', '0-7,32-39', R / 'runtime_data/v27_pcache_gpu3'), 'subj': ('1', '8-15,40-47', R / 'runtime_data/v27_pcache_gpu2'),
-       'trec': ('2', '28-31,60-63', '/data1/pans/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '48-59', '/data1/pans/pans_kv/pcache_a2_gpu3')}
+       'trec': ('2', '28-31,60-63', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2'), 'rte': ('3', '48-59', '/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3')}
 jobs = {}
 for cell, f in final.items():
     task, b = cell.split('_')[0], int(cell.split('_b')[1]); g, cores, pc = GPU[task]
@@ -18,7 +18,7 @@ for cell, f in final.items():
         name = f'test_{cand}_{cell}'; o = OUT / 'runs' / name
         jobs.setdefault(g, dict(cores=cores, jobs=[]))['jobs'].append(dict(name=name, argv=[
             PY, str(R / 'scripts/run_evidence_v26.py'), '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-            '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+            '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(pc), '--',
             '--mode', 'shared', '--backend', 'vllm2', '--metadata-cache', '--layout', 'hybrid', '--stats', f'{o}.extra.jsonl',
             '--adapters', man[cell][cand]['adapter_dir'], '--allow-candidate', '--packed-ops', '--',

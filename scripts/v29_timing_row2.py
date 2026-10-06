@@ -4,7 +4,7 @@ point; selected points come from configs/v29_selection_rule.json (ours) and resu
 Usage: v29_timing_row2.py [--dry-run]"""
 from pathlib import Path
 import json, runpy, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 ns = runpy.run_path(str(R / 'scripts/v29_timing_lib.py')); PY = ns['PY']
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())['cells']
@@ -21,7 +21,7 @@ def argv(out, cell, arm, cond, block, name):
     if is_shared: mode += ['--adapters', shared(cell)[1], '--allow-candidate', '--packed-ops']
     eng, dd = ('xkv', XKV[arm] / cell) if arm in XKV else ('native', ROWS / task)
     return [PY, str(R / 'scripts/v29_rowengine_entry.py'), '--engine', eng, '--data-dir', str(dd), '--row-cold', '--row-log', f'{o}.row.json',
-            '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct',
+            '--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--', '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct',
             '--store-root', str(R / 'runtime_data/prefix_store'), '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--',
             '--pcache-root', str(C16), '--', *mode, '--', '--task', task, '--budget', '25', '--period', '8', '--max-tokens', '1', '--warmup', '4',
             '--samples', '16', '--profile', 'none', '--bundle-dir', str(R / f'studies/v28_frozen/bundles/{cell}/b{block:02d}'), '--output', str(o)]

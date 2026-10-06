@@ -8,7 +8,7 @@ Usage: v29_xkv_export.py <out_dir> <cell> [<cell> ...]"""
 import hashlib, json, sys
 from pathlib import Path
 import numpy as np, torch
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 REP = 'clf_256_384_bf16'
 if '--rep' in sys.argv:
     i = sys.argv.index('--rep'); REP = sys.argv[i + 1]; del sys.argv[i:i + 2]

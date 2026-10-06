@@ -88,7 +88,7 @@ if a.profile == 'viztracer':
     tracer.start()
     state['profile'] = tracer
 argv=[
-'--model-path','/data1/llm/Qwen/Qwen2.5-7B-Instruct',
+'--model-path',os.environ.get('PANS_MODEL_PATH','/data1/llm/Qwen/Qwen2.5-7B-Instruct'),
 '--bundle-dir',str(a.bundle_dir),
 '--store-root',str(ROOT/'runtime_data/prefix_store'),
 '--plan',str(ROOT/'configs/round2'/f'qwen25_k{a.budget:03d}_uniform.json'),
@@ -97,7 +97,7 @@ argv=[
 '--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens',str(a.max_tokens),
 '--accuracy-scoring','label_continuation_loglikelihood','--dtype','bfloat16','--device','cuda',
 '--gpu-cache-mb','55','--cpu-cache-mb','131','--cache-type','CKLFU',
-'--online-selection','--probe-query-heads','0,7,14,21','--selector-kv-head-ids','0,1,2,3',
+'--online-selection','--probe-query-heads',os.environ.get('PANS_PROBE_QUERY_HEADS','0,7,14,21'),'--selector-kv-head-ids',os.environ.get('PANS_SELECTOR_KV_HEAD_IDS','0,1,2,3'),
 '--impress-selection-block-size','16','--impress-selection-period-size',str(a.period),
 '--promixed-gqa-selection','--promixed-reuse-mode','fixed','--promixed-coverage-fraction','0.5',
 '--no-promixed-adaptive-coverage','--exact-layer-block-budget','--impress-async-prefetch',

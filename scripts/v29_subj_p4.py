@@ -6,8 +6,8 @@ eval   : canonical full test set (1003): I_P4, G24_P4, G20_P4, G16_P4.
 Usage: v29_subj_p4.py readers | eval   (GPU via CUDA_VISIBLE_DEVICES; eval uses GPUs 0-3)"""
 from pathlib import Path
 import json, os, subprocess, sys, threading, time
-R = Path('/home/panzihang/src/prism_layerkv'); PY = '/home/panzihang/venvs/vllm-stable/bin/python'
-MODEL = '/data1/llm/Qwen/Qwen2.5-7B-Instruct'; W = R / 'studies/v29/subj_p4'; sys.path.insert(0, str(R / 'src'))
+R = Path('/home/shensicheng/qyd/pans/src'); PY = '/home/shensicheng/qyd/pans/venv/bin/python'
+MODEL = '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct'; W = R / 'studies/v29/subj_p4'; sys.path.insert(0, str(R / 'src'))
 TAG = 'v29_p0_subj_b25_p4'
 
 def chain(out, mode, bundle, samples, adapters=None, extra_v21=(), lead=('--admission', 'reuse-prefetch'), pcache=R / 'runtime_data/v27_pcache_gpu2'):
@@ -79,8 +79,8 @@ if sys.argv[1] == 'readers':
 else:
     bundle = R / 'studies/v28_frozen/bundles/subj_b25/eval'
     arms = [('I_P4', '0', '0-7,32-39', None, R / 'runtime_data/v27_pcache_gpu3'), ('G24_P4', '1', '8-15,40-47', W / 'readers/G24', R / 'runtime_data/v27_pcache_gpu2'),
-            ('G20_P4', '2', '28-31,60-63', W / 'readers/G20', Path('/data1/pans/pans_kv/pcache_a2_gpu2')),
-            ('G16_P4', '3', '48-59', W / 'readers/G16', Path('/data1/pans/pans_kv/pcache_a2_gpu3'))]
+            ('G20_P4', '2', '28-31,60-63', W / 'readers/G20', Path('/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu2')),
+            ('G16_P4', '3', '48-59', W / 'readers/G16', Path('/home/shensicheng/qyd/pans/work/pans_kv/pcache_a2_gpu3'))]
     def one(a):
         name, g, cores, ad, pc = a; out = W / 'eval' / f'test_{name}'; out.parent.mkdir(parents=True, exist_ok=True)
         sh(f'eval_{name}', [PY, 'scripts/run_evidence_v26.py', *chain(out, 'identity' if ad is None else 'shared', bundle, 1003, adapters=ad, pcache=pc)], g, cores)

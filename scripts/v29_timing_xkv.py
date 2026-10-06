@@ -5,7 +5,7 @@ all 6 orders of 3 arms. Cold for XKV: the U files are evicted and certified resi
 (scripts/v29_xkv_entry.py --xkv-cold), in addition to the unchanged v23 Pcache eviction. Usage: v29_timing_xkv.py [--dry-run]"""
 from pathlib import Path
 import itertools, json, runpy, sys
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 ns = runpy.run_path(str(R / 'scripts/v29_timing_lib.py')); PY = ns['PY']
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 man = json.loads((R / 'studies/v29/readers/manifest.json').read_text())['cells']
@@ -24,7 +24,7 @@ def argv(out, cell, arm, cond, block, name):
     if arm == 'XKV':
         head = [PY, str(R / 'scripts/v29_xkv_entry.py'), '--xkv-dir', str(XKV / cell), '--xkv-log', f'{o}.xkv.json'] + (['--xkv-cold'] if cond == 'preserve' else [])
     return head + ['--admission', 'reuse-prefetch', '--audit-jsonl', f'{o}.v26.jsonl', '--',
-                   '--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
+                   '--model-path', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct', '--store-root', str(R / 'runtime_data/prefix_store'),
                    '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(C16), *cold, '--', *mode, '--',
                    '--task', task, '--budget', '25', '--period', '8', '--max-tokens', '1', '--warmup', '4', '--samples', '16', '--profile', 'none',
                    '--bundle-dir', str(R / f'studies/v28_frozen/bundles/{cell}/b{block:02d}'), '--output', str(o)]

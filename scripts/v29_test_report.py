@@ -2,7 +2,7 @@
 references. Writes results/v29_test_quality/{table.csv,summary.json}."""
 from pathlib import Path
 import csv, json, math
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 T = R / 'studies/v29/test_quality/runs'
 

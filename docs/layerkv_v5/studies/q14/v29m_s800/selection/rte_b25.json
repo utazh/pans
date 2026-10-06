@@ -1,0 +1,36 @@
+{
+ "cell": "rte_b25",
+ "n": 500,
+ "tolerance": 5,
+ "selected": "S1",
+ "candidates": {
+  "I": {
+   "net": 0,
+   "eligible": true,
+   "bytes": 294715392.0,
+   "consumers": 0,
+   "disagree": 0
+  },
+  "S1": {
+   "net": 1,
+   "eligible": true,
+   "bytes": 251736064.0,
+   "consumers": 7,
+   "disagree": 7
+  },
+  "S2": {
+   "net": -8,
+   "eligible": false,
+   "bytes": 214896640.0,
+   "consumers": 13,
+   "disagree": 22
+  },
+  "S3": {
+   "net": -39,
+   "eligible": false,
+   "bytes": 171917312.0,
+   "consumers": 20,
+   "disagree": 79
+  }
+ }
+}

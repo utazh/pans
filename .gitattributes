@@ -9,3 +9,7 @@ docs/layerkv_v2/audit/*.patch -whitespace
 docs/layerkv_v4/** -text
 scripts/*v29* -text
 configs/v29* -text
+
+# Preserve v5 source/evidence snapshots.
+docs/layerkv_v5/** -text
+server_a100/** -text

@@ -1,0 +1,10 @@
+{
+  "task": "trec",
+  "prefix_tokens": 4940,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "layers": 64,
+  "token_hash": "6d6ccbd8dca7a3529e5b7c18a20bfe5094aeeef2dbbe8a3f8b12f1865da97633",
+  "layout": "token,kv_head,head_dim",
+  "dtype": "bfloat16"
+}

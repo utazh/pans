@@ -2,8 +2,8 @@
 from pathlib import Path
 import os,json,subprocess,hashlib,time
 ROOT=Path(__file__).resolve().parents[1]
-PY='/home/panzihang/venvs/vllm-stable/bin/python'
-MODEL='/data1/llm/Qwen/Qwen2.5-7B-Instruct'
+PY=os.environ.get('PANS_PY','/home/panzihang/venvs/vllm-stable/bin/python')
+MODEL=os.environ.get('PANS_MODEL_PATH','/data1/llm/Qwen/Qwen2.5-7B-Instruct')
 def env(gpu):
  return dict(os.environ,CUDA_VISIBLE_DEVICES=str(gpu),PYTHONDONTWRITEBYTECODE='1',OMP_NUM_THREADS='4',PYTHONPATH='src:runtime_deps_v24')
 def launch(name,cmd,gpu):

@@ -4,7 +4,7 @@ Stage C blocks contain I/CKV/IMP; stage B blocks contain I/G16/selected. Our sel
 Writes results/v29_stage_c/{table.csv,summary.json}."""
 from pathlib import Path
 import csv, json, math, random, statistics as st
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 tq = {r['cell']: r for r in csv.DictReader((R / 'results/v29_test_quality/table.csv').open())}
 

@@ -2,13 +2,13 @@
 Quality only (no timing claims). GPU0/GPU1 each run one serial queue pinned to NUMA0 cores."""
 from pathlib import Path
 import json,os,subprocess,threading,time
-R=Path("/home/panzihang/src/prism_layerkv");PY="/home/panzihang/venvs/vllm-stable/bin/python"
+R=Path("/home/shensicheng/qyd/pans/src");PY="/home/shensicheng/qyd/pans/venv/bin/python"
 OUT=R/"studies/v29/a0";OUT.mkdir(parents=True,exist_ok=False)
 N={"sst2":872,"subj":1003,"trec":500,"rte":277}
 def job(name,task,budget,period,bundle,samples,pcache):
     o=OUT/"runs"/name
     return dict(name=name,task=task,budget=budget,period=period,bundle=str(bundle),samples=samples,argv=[PY,str(R/"scripts/run_evidence_v26.py"),"--admission","reuse-prefetch","--audit-jsonl",f"{o}.v26.jsonl","--",
-      "--model-path","/data1/llm/Qwen/Qwen2.5-7B-Instruct","--store-root",str(R/"runtime_data/prefix_store"),"--selector-index-dir",str(R/"assets/selector_index_k4_g32"),"--",
+      "--model-path","/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct","--store-root",str(R/"runtime_data/prefix_store"),"--selector-index-dir",str(R/"assets/selector_index_k4_g32"),"--",
       "--pcache-root",str(pcache),"--","--mode","identity","--backend","vllm2","--metadata-cache","--layout","hybrid","--stats",f"{o}.extra.jsonl","--",
       "--task",task,"--budget",str(budget),"--period",str(period),"--max-tokens","1","--warmup","0","--samples",str(samples),"--profile","none",
       "--bundle-dir",str(bundle),"--output",str(o)])

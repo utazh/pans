@@ -6,7 +6,7 @@ saving  = I - selected TTFT: pcache SSD-cold (stage B, 16 cells), pcache warm (8
 Writes results/v29_amortization.json."""
 import csv, json, os, statistics as st
 from pathlib import Path
-R = Path('/home/panzihang/src/prism_layerkv')
+R = Path('/home/shensicheng/qyd/pans/src')
 final = json.loads((R / 'audit/v29_final_selection.json').read_text())['cells']
 a1 = {json.loads(l)['name']: json.loads(l)['seconds'] for l in (R / 'studies/v29/a1/status.jsonl').read_text().splitlines()}
 a0 = {json.loads(l)['name']: json.loads(l)['seconds'] for l in (R / 'studies/v29/a0/status.jsonl').read_text().splitlines()}
