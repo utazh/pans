@@ -1,0 +1,1 @@
+export PANS_MODEL_PATH=/home/shensicheng/qyd/pans/models/Llama-3.1-8B-Instruct PANS_PY=/home/shensicheng/qyd/pans/venv/bin/python PANS_PROBE_QUERY_HEADS=0,4,8,12,16,20,24,28 PANS_SELECTOR_KV_HEAD_IDS=0,1,2,3,4,5,6,7 TMPDIR=/home/shensicheng/qyd/pans/tmp

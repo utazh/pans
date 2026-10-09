@@ -101,7 +101,9 @@ def stage_plan_train(cell):
     fit, val = load(W / 'teacher' / f'{cell}_fit', task, 'fit'), load(W / 'teacher' / f'{cell}_val', task, 'validation')
     row = next(iter(fit.values())); L = row['geometry']['layers']; sources = geometry_map(L, list(fit.values()) + list(val.values()))
     if L == 28:
-        assert sources == json.loads((ROOT / 'configs/v25_explore/g16.json').read_text())['sources'], 'geometry rule != 7B g16'
+        g16 = json.loads((ROOT / 'configs/v25_explore/g16.json').read_text())['sources']
+        if sources != g16: print('GEOMETRY differs from 7B g16 (selection-incompatible layers kept native):',
+                                 [l for l in range(L) if sources[l] != g16[l]], flush=True)
     for item in list(fit.values()) + list(val.values()): assert_plan(item, sources)
     plan = dict(format=PLAN_FORMAT, **{k: row[k] for k in FIELDS}, sources=sources, unique_sources=len(set(sources)),
                 design_query_hashes=sorted(fit), status='v29m_geometry_only', quality_certified=False)

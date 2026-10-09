@@ -1,0 +1,83 @@
+{
+ "7B/trec_b25": {
+  "selected": "S3",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 1,
+  "cost_full": 2000,
+  "cost_a": 1000,
+  "cost_b": 965
+ },
+ "14B/rte_b25": {
+  "selected": "S1",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 3,
+  "cost_full": 2000,
+  "cost_a": 2000,
+  "cost_b": 1960
+ },
+ "14B/sst2_b25": {
+  "selected": "S3",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 1,
+  "cost_full": 2000,
+  "cost_a": 1000,
+  "cost_b": 984
+ },
+ "14B/subj_b25": {
+  "selected": "S3",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 1,
+  "cost_full": 2000,
+  "cost_a": 1000,
+  "cost_b": 990
+ },
+ "14B/trec_b25": {
+  "selected": "I",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 3,
+  "cost_full": 2000,
+  "cost_a": 2000,
+  "cost_b": 1957
+ },
+ "32B/rte_b25": {
+  "selected": "S1",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 3,
+  "cost_full": 2000,
+  "cost_a": 2000,
+  "cost_b": 1990
+ },
+ "32B/sst2_b25": {
+  "selected": "S3",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 1,
+  "cost_full": 2000,
+  "cost_a": 1000,
+  "cost_b": 990
+ },
+ "32B/subj_b25": {
+  "selected": "I",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 3,
+  "cost_full": 2000,
+  "cost_a": 2000,
+  "cost_b": 1801
+ },
+ "32B/trec_b25": {
+  "selected": "S2",
+  "cheapest_first_matches": true,
+  "byte_gaps_ok": true,
+  "arms_evaluated": 2,
+  "cost_full": 2000,
+  "cost_a": 1500,
+  "cost_b": 1475
+ }
+}

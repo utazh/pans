@@ -1,0 +1,53 @@
+{
+ "args": {
+  "root": "src_l8",
+  "src": "ridge",
+  "to": "mlr_loo",
+  "calib": "loo",
+  "calib_root": null,
+  "cells": "sst2_b25,subj_b25,trec_b25,rte_b25",
+  "ridge": 0.001
+ },
+ "cells": [
+  {
+   "cell": "sst2_b25",
+   "consumers": 14,
+   "calibration": [
+    "subj",
+    "trec",
+    "rte"
+   ],
+   "seconds": 3.0
+  },
+  {
+   "cell": "subj_b25",
+   "consumers": 8,
+   "calibration": [
+    "sst2",
+    "trec",
+    "rte"
+   ],
+   "seconds": 1.7
+  },
+  {
+   "cell": "trec_b25",
+   "consumers": 14,
+   "calibration": [
+    "sst2",
+    "subj",
+    "rte"
+   ],
+   "seconds": 2.7
+  },
+  {
+   "cell": "rte_b25",
+   "consumers": 14,
+   "calibration": [
+    "sst2",
+    "subj",
+    "trec"
+   ],
+   "seconds": 2.6
+  }
+ ]
+}

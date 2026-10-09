@@ -1,0 +1,36 @@
+{
+ "cell": "trec_b25",
+ "n": 500,
+ "tolerance": 5,
+ "selected": "I",
+ "candidates": {
+  "I": {
+   "net": 0,
+   "eligible": true,
+   "bytes": 160825344.0,
+   "consumers": 0,
+   "disagree": 0
+  },
+  "S1": {
+   "net": -13,
+   "eligible": false,
+   "bytes": 135778304.0,
+   "consumers": 5,
+   "disagree": 75
+  },
+  "S2": {
+   "net": -69,
+   "eligible": false,
+   "bytes": 115740672.0,
+   "consumers": 9,
+   "disagree": 139
+  },
+  "S3": {
+   "net": -359,
+   "eligible": false,
+   "bytes": 90693632.0,
+   "consumers": 14,
+   "disagree": 455
+  }
+ }
+}

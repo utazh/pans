@@ -1,0 +1,186 @@
+{
+ "rows": [
+  {
+   "name": "trec_b25_CKV_n1_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 1,
+   "rep": 0,
+   "window_s": 34.2,
+   "n_window": 7,
+   "throughput_rps": 0.20454730930822332,
+   "ttft_mean": 2604.525312781334,
+   "ttft_p50": 2073.0261094868183,
+   "ttft_p95": 4101.475735008717,
+   "sda_read_MBps": 77.78410438372563,
+   "ttft_all_mean": 2532.4348425492644,
+   "cold": {
+    "ok": 8,
+    "total": 8
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n2_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 2,
+   "rep": 0,
+   "window_s": 30.4,
+   "n_window": 13,
+   "throughput_rps": 0.4276637361930948,
+   "ttft_mean": 2170.950335665391,
+   "ttft_p50": 2114.385437220335,
+   "ttft_p95": 2468.811906129122,
+   "sda_read_MBps": 49.268344626159745,
+   "ttft_all_mean": 2202.176010934636,
+   "cold": {
+    "ok": 16,
+    "total": 16
+   }
+  },
+  {
+   "name": "trec_b25_I_n1_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 1,
+   "rep": 0,
+   "window_s": 36.7,
+   "n_window": 7,
+   "throughput_rps": 0.19050549042410744,
+   "ttft_mean": 2959.7681084913866,
+   "ttft_p50": 2016.8957486748695,
+   "ttft_p95": 7419.04182620346,
+   "sda_read_MBps": 13.529023254418124,
+   "ttft_all_mean": 2763.9985070563853,
+   "cold": {
+    "ok": 8,
+    "total": 8
+   }
+  },
+  {
+   "name": "trec_b25_I_n2_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 2,
+   "rep": 0,
+   "window_s": 28.0,
+   "n_window": 13,
+   "throughput_rps": 0.4645627932962046,
+   "ttft_mean": 1691.274127421471,
+   "ttft_p50": 1587.2473269701004,
+   "ttft_p95": 1979.8109591007228,
+   "sda_read_MBps": 34.26299546538159,
+   "ttft_all_mean": 1680.3035466000438,
+   "cold": {
+    "ok": 16,
+    "total": 16
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n1_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 1,
+   "rep": 0,
+   "window_s": 21.4,
+   "n_window": 7,
+   "throughput_rps": 0.32670728739237626,
+   "ttft_mean": 901.5968250376837,
+   "ttft_p50": 885.6215067207813,
+   "ttft_p95": 953.4150671213865,
+   "sda_read_MBps": 13.22364137091976,
+   "ttft_all_mean": 898.1428225524724,
+   "cold": {
+    "ok": 8,
+    "total": 8
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n2_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 2,
+   "rep": 0,
+   "window_s": 22.4,
+   "n_window": 13,
+   "throughput_rps": 0.5793222365852907,
+   "ttft_mean": 953.2345200960452,
+   "ttft_p50": 907.8496135771275,
+   "ttft_p95": 1204.3771088123317,
+   "sda_read_MBps": 24.520676051466463,
+   "ttft_all_mean": 944.495691685006,
+   "cold": {
+    "ok": 16,
+    "total": 16
+   }
+  }
+ ],
+ "summary": {
+  "trec_b25|n1|CKV": {
+   "reps": 1,
+   "throughput_rps": 0.20454730930822332,
+   "ttft_mean": 2604.525312781334,
+   "ttft_p50": 2073.0261094868183,
+   "ttft_p95": 4101.475735008717,
+   "sda_read_MBps": 77.78410438372563,
+   "n_window": 7,
+   "cold_ok": 8,
+   "cold_total": 8
+  },
+  "trec_b25|n1|I": {
+   "reps": 1,
+   "throughput_rps": 0.19050549042410744,
+   "ttft_mean": 2959.7681084913866,
+   "ttft_p50": 2016.8957486748695,
+   "ttft_p95": 7419.04182620346,
+   "sda_read_MBps": 13.529023254418124,
+   "n_window": 7,
+   "cold_ok": 8,
+   "cold_total": 8
+  },
+  "trec_b25|n1|SEL": {
+   "reps": 1,
+   "throughput_rps": 0.32670728739237626,
+   "ttft_mean": 901.5968250376837,
+   "ttft_p50": 885.6215067207813,
+   "ttft_p95": 953.4150671213865,
+   "sda_read_MBps": 13.22364137091976,
+   "n_window": 7,
+   "cold_ok": 8,
+   "cold_total": 8
+  },
+  "trec_b25|n2|CKV": {
+   "reps": 1,
+   "throughput_rps": 0.4276637361930948,
+   "ttft_mean": 2170.950335665391,
+   "ttft_p50": 2114.385437220335,
+   "ttft_p95": 2468.811906129122,
+   "sda_read_MBps": 49.268344626159745,
+   "n_window": 13,
+   "cold_ok": 16,
+   "cold_total": 16
+  },
+  "trec_b25|n2|I": {
+   "reps": 1,
+   "throughput_rps": 0.4645627932962046,
+   "ttft_mean": 1691.274127421471,
+   "ttft_p50": 1587.2473269701004,
+   "ttft_p95": 1979.8109591007228,
+   "sda_read_MBps": 34.26299546538159,
+   "n_window": 13,
+   "cold_ok": 16,
+   "cold_total": 16
+  },
+  "trec_b25|n2|SEL": {
+   "reps": 1,
+   "throughput_rps": 0.5793222365852907,
+   "ttft_mean": 953.2345200960452,
+   "ttft_p50": 907.8496135771275,
+   "ttft_p95": 1204.3771088123317,
+   "sda_read_MBps": 24.520676051466463,
+   "n_window": 13,
+   "cold_ok": 16,
+   "cold_total": 16
+  }
+ }
+}

@@ -1,5 +1,17 @@
 # pans
 
+## LayerKV v6：Llama、跨任务读取器与并发恢复
+
+新增 Llama-3.1-8B 适配、逐前缀/闭式/跨任务 reader 对照，以及 Qwen7B 多进程冷恢复压力实验。根目录保留 Qwen 代码；Llama 实际版本单独以 overlay 保存。
+
+- [v6 改动、结果与限制](docs/layerkv_v6/RELEASE_ZH.md) · [服务器代码使用说明](server_a100/V6_README_ZH.md)
+- [读取器来源结果](docs/layerkv_v6/analysis/reader_sources.txt) · [冷计时主结果](docs/layerkv_v6/analysis/a100_sys_l8_preserve.json) · [并发结果](docs/layerkv_v6/analysis/conc_main.json)
+- [来源和文件哈希](docs/layerkv_v6/snapshot_manifest.json) · [验证日志](docs/layerkv_v6/validation)
+
+逐前缀 Llama 冷恢复更快，但跨任务 reader 仍存在退化和回退。RTE 冷测有 2 个未解决标记块，主统计仅保留 4 块。Qwen CPU 回归 680 项通过；Llama 原样代码 678 项通过、2 项配置校验测试失败，均如实记录。本次只验证发布副本，未重跑 GPU 实验。
+
+以下为历史版本记录；本次发布范围以 v6 报告为准。
+
 ## LayerKV v5：A100 与 Qwen2.5 多模型实验
 
 本次发布新服务器的代码快照，新增 7B/14B/32B 环境适配、多模型校准与 S1/S2/S3 开发选择、A100 冷恢复及 CKV/IMPRESS 同块对照，并收录 MiniCache-Prefix 和 KV 相似性辅助脚本。

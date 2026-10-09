@@ -1,0 +1,86 @@
+{
+  "status": "completed",
+  "native_blocks": 4,
+  "args": [
+    "--model-path",
+    "/home/shensicheng/qyd/pans/models/Llama-3.1-8B-Instruct",
+    "--store-root",
+    "/home/shensicheng/qyd/pans/src_l8/runtime_data/prefix_store",
+    "--task",
+    "subj",
+    "--teacher-fit",
+    "/home/shensicheng/qyd/pans/src_l8/studies/v29m_s800/teacher/subj_b25_fit",
+    "--teacher-val",
+    "/home/shensicheng/qyd/pans/src_l8/studies/v29m_s800/teacher/subj_b25_val",
+    "--plan",
+    "/home/shensicheng/qyd/pans/src_l8/studies/v29m_s800/plans/subj_b25_plan.json",
+    "--steps",
+    "800",
+    "--eval-every",
+    "25",
+    "--seed",
+    "24",
+    "--device",
+    "cuda",
+    "--output",
+    "/home/shensicheng/qyd/pans/src_l8/studies/v29m_s800/ckpt/subj_b25/subj.pt"
+  ],
+  "initial_reader_tensor_sha256": [
+    {
+      "A": "1164c44a662a9d181bc8154799158f075313047dc71bc4164ea5543d05496cda",
+      "B": "7cd2eed712ecec13600e76091a20aa3008fdaa4869a8e70f3fc8a894c4865f27",
+      "bk": "27546ddc6428c66926fca80be30ffafa6f00174c075e152f4179712ac02123f5",
+      "bv": "3227d27de040ea5211202a8307d8740b4901d93366b04835cf57b1ba1b1ff90b"
+    },
+    {
+      "A": "0dc17c318d44c8fd92d702b6cc415b3e17ad450a9520b61606b98cebb28ddb99",
+      "B": "a74dfec1c3403da96d2c646265c1465439d7376603a74614c845a5eefe32c989",
+      "bk": "34e0fcc25558ade86c43e2e059fba7c34ec1396ec16a22656158eb35f2081d6f",
+      "bv": "b2ccbd869d0ab1d788ed3739b8b39c47fc3a4d59192a92808033bd28328fb24f"
+    },
+    {
+      "A": "2bb7c152d8ed6e1f23b30c09026034eb623c8bd69af897a9519dd8d349c9b21d",
+      "B": "17968b74c1a3a62bbb2936cfc6ebc0bbe8093ba5c859ee891bdca44189f40626",
+      "bk": "897c2ca5bc71ff73a7f968e9f340689c2ee5348d964a67e17537dd03addb8081",
+      "bv": "75a33a9873286629708951735d66cc643ef08ed44efdc3706f2bd63608f48d7b"
+    },
+    {
+      "A": "aad1e47def9c8f0c7bf759fc5cc309d650301c1794ea3fe3d02921121ac4e503",
+      "B": "8f0ff041059e53dfb7241176e777ea71cd20a31045f90e5f4560d3ac8d0233c8",
+      "bk": "2556d411372ed39a6356c764b69641a293e01d8e2f46ab649a2f6c18f3243ded",
+      "bv": "486741d0643b7aec517e4f53d64f0081100c6208c1192d9beaecdc1feb020ca0"
+    },
+    {
+      "A": "4b75ccd8a06ef4d1cbae8c724994144f6d8c6975f0e89b6ffc12f084e46662f7",
+      "B": "1355600c218764fa90dcbb99283f7c46fc2f4cb50d3bcb45085439305763cbd8",
+      "bk": "8168e03f96960605c80fca9a3f7ff4074cea06faeb268182a182631aef3a1b57",
+      "bv": "1bbec34b2542e2cd57c139a54a3575e6d791cd7acd246b4e831ced5911b46653"
+    },
+    {
+      "A": "031eda6c6e914398ddea767538c342e138496315c1bb7a66bc525e80ea5d495e",
+      "B": "3e852526b51022e36888f02c7039d9721213c06f5a03fec16d38476f93ee8742",
+      "bk": "0b182022c96f1957150196fb9232f43872b639e3dd9c338137537908f03bdba0",
+      "bv": "124a6b4c84055e2d8cc8e559b6615bcec893c98795aaa31398ae54acabbc75f6"
+    },
+    {
+      "A": "19fd86dbfb1f0430f3216b9510529ae44f46b4e549d2c0d307794e5982f7b97d",
+      "B": "37684e34df0b33dca87d7333769cd8acd9110cbac06749bd06a6a4589d1b61b4",
+      "bk": "e5a48cb12b51a476909e01252bf08551cea670686fa0f8337ddf127a604c2314",
+      "bv": "5f57baf14c21c78b23b369e6322c3b9f8d252ba40aa550693d0dc4337248ea1a"
+    },
+    {
+      "A": "7e856a145c46a7c58ea3580c32930c0d634f72e6f7954982f3bb7e1f92649c26",
+      "B": "f2ef508da4c4b8dbd3ac4450f1e303efd4533d3974bff5c78631196cf38eba5c",
+      "bk": "4edf733a21ad41040fe74fa4c178f79607ec98595a8cea30bc7ff99f41708137",
+      "bv": "8449cc6f172994a6f04531e9e64a41e4125d13593f793a4b704f554c793a31a4"
+    }
+  ],
+  "forward_calls_including_validation": {
+    "branch_no_grad": 6080,
+    "branch_grad": 1600
+  },
+  "wall_seconds_total_including_load": 625.4312828108668,
+  "cuda_peak_allocated": 16945453056,
+  "cuda_peak_reserved": 17079205888,
+  "checkpoint_backward_recomputation_not_in_top_level_forward_count": true
+}

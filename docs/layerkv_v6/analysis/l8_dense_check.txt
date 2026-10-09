@@ -1,0 +1,8 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 107.02it/s]
+sst2 prompt tokens 3824 first ids [128000, 128006, 882, 128007, 271, 1999] ['<|begin_of_text|>', '<|start_header_id|>', 'user', '<|end_header_id|>', 'ĊĊ', 'Class'] tail ['Sent', 'iment', ':ĊĊ', '<|eot_id|>', '<|start_header_id|>', 'assistant', '<|end_header_id|>', 'ĊĊ']
+sst2: dense full-KV label-loglik acc 17/24; last-row top5 next tokens ['Here', 'After', 'I', 'Based', 'Sent']
+trec prompt tokens 4986 first ids [128000, 128006, 882, 128007, 271, 1999] ['<|begin_of_text|>', '<|start_header_id|>', 'user', '<|end_header_id|>', 'ĊĊ', 'Class'] tail ['Ġ?Ċ', 'Type', ':ĊĊ', '<|eot_id|>', '<|start_header_id|>', 'assistant', '<|end_header_id|>', 'ĊĊ']
+trec: dense full-KV label-loglik acc 3/24; last-row top5 next tokens ['Here', 'I', 'It', '1', 'What']
+rte prompt tokens 5922 first ids [128000, 128006, 882, 128007, 271, 5005] ['<|begin_of_text|>', '<|start_header_id|>', 'user', '<|end_header_id|>', 'ĊĊ', 'Dec'] tail ['.Ċ', 'Relation', ':ĊĊ', '<|eot_id|>', '<|start_header_id|>', 'assistant', '<|end_header_id|>', 'ĊĊ']
+rte: dense full-KV label-loglik acc 12/24; last-row top5 next tokens ['Here', 'I', 'It', 'What', 'A']

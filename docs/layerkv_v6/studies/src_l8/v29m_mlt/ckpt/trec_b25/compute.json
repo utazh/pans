@@ -1,0 +1,353 @@
+{
+ "status": "completed",
+ "wall_seconds_total_including_load": 1282.9161100834608,
+ "best_step": 750,
+ "history": [
+  {
+   "step": 0,
+   "objective": 4.075192672059832,
+   "teacher_decision_flips": 58,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 8.075945908203721,
+     "flips": 21
+    },
+    "subj": {
+     "objective": 1.6913511152815772,
+     "flips": 17
+    },
+    "rte": {
+     "objective": 2.458280992694199,
+     "flips": 20
+    }
+   }
+  },
+  {
+   "step": 50,
+   "objective": 2.0133336819484007,
+   "teacher_decision_flips": 49,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 3.58599872069135,
+     "flips": 11
+    },
+    "subj": {
+     "objective": 0.7507184350179159,
+     "flips": 7
+    },
+    "rte": {
+     "objective": 1.7032838901359355,
+     "flips": 31
+    }
+   }
+  },
+  {
+   "step": 100,
+   "objective": 1.6709765688838918,
+   "teacher_decision_flips": 29,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 2.719218092621304,
+     "flips": 7
+    },
+    "subj": {
+     "objective": 0.7977253865312832,
+     "flips": 5
+    },
+    "rte": {
+     "objective": 1.4959862274990883,
+     "flips": 17
+    }
+   }
+  },
+  {
+   "step": 150,
+   "objective": 1.7740945793494802,
+   "teacher_decision_flips": 33,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 3.0240543374966364,
+     "flips": 4
+    },
+    "subj": {
+     "objective": 0.41982834306270433,
+     "flips": 3
+    },
+    "rte": {
+     "objective": 1.8784010574891,
+     "flips": 26
+    }
+   }
+  },
+  {
+   "step": 200,
+   "objective": 1.3328659686764393,
+   "teacher_decision_flips": 31,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.5266556360875256,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.6665699132572627,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 1.8053723566845292,
+     "flips": 26
+    }
+   }
+  },
+  {
+   "step": 250,
+   "objective": 0.993134167866477,
+   "teacher_decision_flips": 20,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.5653003494571749,
+     "flips": 2
+    },
+    "subj": {
+     "objective": 0.3587965930714745,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 1.0553055610707816,
+     "flips": 16
+    }
+   }
+  },
+  {
+   "step": 300,
+   "objective": 0.9168091125178629,
+   "teacher_decision_flips": 20,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.4400911189004546,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.31936654278720766,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 0.9909696758659265,
+     "flips": 15
+    }
+   }
+  },
+  {
+   "step": 350,
+   "objective": 0.881767913378154,
+   "teacher_decision_flips": 18,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.3129186104779893,
+     "flips": 1
+    },
+    "subj": {
+     "objective": 0.4086854974785865,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 0.9236996321778861,
+     "flips": 15
+    }
+   }
+  },
+  {
+   "step": 400,
+   "objective": 0.8438106963391382,
+   "teacher_decision_flips": 24,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.1071444618573878,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.3516191888010667,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 1.07266843835896,
+     "flips": 19
+    }
+   }
+  },
+  {
+   "step": 450,
+   "objective": 1.2703496401047687,
+   "teacher_decision_flips": 38,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.0238736431638245,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.819188907985108,
+     "flips": 3
+    },
+    "rte": {
+     "objective": 1.9679863691653736,
+     "flips": 32
+    }
+   }
+  },
+  {
+   "step": 500,
+   "objective": 0.8621983664325322,
+   "teacher_decision_flips": 20,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.2725719111622311,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.48623076924388897,
+     "flips": 5
+    },
+    "rte": {
+     "objective": 0.8277924188914767,
+     "flips": 12
+    }
+   }
+  },
+  {
+   "step": 550,
+   "objective": 0.8239045596174795,
+   "teacher_decision_flips": 25,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 1.0524315240618307,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.3214666183587269,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 1.097815536431881,
+     "flips": 20
+    }
+   }
+  },
+  {
+   "step": 600,
+   "objective": 0.6620304567385725,
+   "teacher_decision_flips": 17,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 0.7456558278324792,
+     "flips": 4
+    },
+    "subj": {
+     "objective": 0.5481822008950985,
+     "flips": 1
+    },
+    "rte": {
+     "objective": 0.69225334148814,
+     "flips": 12
+    }
+   }
+  },
+  {
+   "step": 650,
+   "objective": 0.6476423524020826,
+   "teacher_decision_flips": 21,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 0.7188950115523767,
+     "flips": 3
+    },
+    "subj": {
+     "objective": 0.48988464525598374,
+     "flips": 4
+    },
+    "rte": {
+     "objective": 0.7341474003978874,
+     "flips": 14
+    }
+   }
+  },
+  {
+   "step": 700,
+   "objective": 0.6763869743502559,
+   "teacher_decision_flips": 18,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 0.7097104141557793,
+     "flips": 4
+    },
+    "subj": {
+     "objective": 0.6576980837344308,
+     "flips": 3
+    },
+    "rte": {
+     "objective": 0.6617524251605573,
+     "flips": 11
+    }
+   }
+  },
+  {
+   "step": 750,
+   "objective": 0.6303632929617322,
+   "teacher_decision_flips": 20,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 0.8385230059247988,
+     "flips": 4
+    },
+    "subj": {
+     "objective": 0.39665504864731815,
+     "flips": 4
+    },
+    "rte": {
+     "objective": 0.6559118243130797,
+     "flips": 12
+    }
+   }
+  },
+  {
+   "step": 800,
+   "objective": 0.6424813009925856,
+   "teacher_decision_flips": 18,
+   "requests": 192,
+   "per_task": {
+    "sst2": {
+     "objective": 0.6789024218614941,
+     "flips": 4
+    },
+    "subj": {
+     "objective": 0.5393216189550003,
+     "flips": 2
+    },
+    "rte": {
+     "objective": 0.7092198621612624,
+     "flips": 12
+    }
+   }
+  }
+ ],
+ "train_cells": [
+  "sst2_b25",
+  "subj_b25",
+  "rte_b25"
+ ],
+ "held_out": "trec_b25"
+}

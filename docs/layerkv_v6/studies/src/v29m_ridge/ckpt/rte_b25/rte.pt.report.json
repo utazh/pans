@@ -1,0 +1,1362 @@
+{
+  "args": {
+    "model_path": "/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct",
+    "store_root": "/home/shensicheng/qyd/pans/src/runtime_data/prefix_store",
+    "task": "rte",
+    "teacher_fit": "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/teacher/rte_b25_fit",
+    "teacher_val": "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/teacher/rte_b25_val",
+    "plan": "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/plans/rte_b25_plan.json",
+    "output": "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/ckpt/rte_b25/rte.pt",
+    "initial": null,
+    "device": "cuda",
+    "steps": 0,
+    "seed": 24,
+    "lr": 0.0001,
+    "ridge": 0.001,
+    "trust_weight": 0.001,
+    "eval_every": 25,
+    "max_sequence": 256,
+    "temperature": 1.0,
+    "score_weight": 1.0,
+    "token_weight": 0.1,
+    "rank_weight": 0.25,
+    "margin_cap": 0.5,
+    "no_checkpoint": false,
+    "max_native_score_error": 0.02,
+    "max_native_token_error": 0.1
+  },
+  "parity": {
+    "objective": 0.0,
+    "candidate_kl": 0.0,
+    "centered_score_mse": 0.0,
+    "token_mse": 0.0,
+    "margin_loss": 0.0,
+    "requests": 64,
+    "teacher_decision_flips": 0,
+    "max_abs_mean_score_error": 0.0,
+    "max_abs_token_logprob_error": 0.0,
+    "query_diagnostics": [
+      {
+        "query_hash": "01a75aa4b98ead770a1dce97ca8ad2b0f347c23172c930919c0563a6b371a6d3",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.8145883083343506,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "051efbd8064d431111ed99c989dae39be338c0bb53548b3588c09278a3029591",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.231330394744873,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "06d2f4ba7d68fc484e0ecf5e4396195bfbf73456232aa89a87a8c25b5af9b87f",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.479592800140381,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "0b45124604bc1ac947e2d22256e6825aa19a2cbe67bcf38655ef88639e91c86d",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.167324066162109,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "0de38db9801b4ab45784b6d5cf5c6f140db724378e620f87a66e197e717a80f0",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.2497382164001465,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1347212ee5e954c9cb242b01535d6303788abffdcaf37630cc8a42b467c86239",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.920011520385742,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1a08839f486c082e6233ae89e9f28b2244d3486b10cee4af2eb37dd8bb9a66aa",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5423593521118164,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1b902ca522faf1ff45ce367d2a0095c94c769e97032a1a94b92ef735189a4796",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.0910422801971436,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1fdc84385f41b6e8bc9b49a1c6e9930bba48bf1d7b6bbf9cfa4a8ef5cf08db04",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.177929162979126,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "205319759b6fbab37dc7aada716b362c7efed4200b865f65819e9364a114104e",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.920297384262085,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "2ccba3b0de8320fb4911b5061c039a416b93259494fd6785cc5158a6fbd7e637",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.3920230865478516,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "2cf1e55e39514674a32d33d7cf3904a5f5212259b75c6d2de1cd937d44054b13",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 1.1350361108779907,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "2dc6b80ba46d6e2685f10e4c90160486924b9b98193e3e42e093b77f5178ef0d",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.3367581367492676,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "3348566d8e3e685c9ce46ad42e165f1fc46da911e82b615fb3442bea6b42568a",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.44770121574401855,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "35d2ac881ce6657d6d3d352f95303341808a4e987aeb54c076baa3253e995d72",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.8434540033340454,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "37091f60a81d09bcb6d2a396f5499f548f879e4ea1280606563c68ff4a6775e4",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.6761441230773926,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "37c0a72712863548ec6842c69ba0fc8d7aad790311182b2ac5b600f068289ded",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.8396220207214355,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "3e024d4c3dfb713178e89e1a85d91b598c38a3427781e77fb3121f3c45855750",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.3568968772888184,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "40e1892e2088062e40720460e29a70e68f3b248ffaa40f91bc3c4b53220670db",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.75608491897583,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "43b6d7a8736fef8b9da6401c3c14921524f7a90f4898faa21d773a8c5c073f67",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.957661509513855,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "49f854969e5944dcc7b5beebc1a1971f63dec55688ff8f9d776ff16fcfd9be18",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.458894729614258,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "4c26c268bca870bc45b1a199d3a93a58d457cbbe5c88bd6a7876ea36ac86def6",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2254841327667236,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "4caa43eeb704c7f73167a71e348dd4e66e68ed3539c0155c7f9d55e24f615aaa",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.7592971324920654,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5083515ee5c10e5a96bc04c2f07fae44662a1b955a50d0311f9e680850c633b7",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.0461196899414062,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5889ba6c5a9fad2008242a41feee29a6c42ad6882d1152fbff694ffbde02c4c8",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.267821311950684,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5d4bbd1b7e8b15f6398c241bfab6648a3f1859ccfd8911dcfbbfafbff995e923",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0871365070343018,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5dcea9565ee4de42dc51c3479567c627ed4aa7820ffd1ee6a67445450c1ad8af",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 4.655359268188477,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "6258c1df1e384ff6fb819711c40c5c38cd09be53ac9ea36ea1b403c9576d4bd5",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.6219754219055176,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "642111713af9c5317f05025da5fba01156175d7944849d49595ae0f3c2596688",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 0.2245790958404541,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "66cc6cc084a63caf6bb3740f4557cc018a4d860b690db7ec208dad905b5e4c2f",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.95963191986084,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "68244f617755fce2146bc38c561eeae8326b839da37857f3b2e587c5c6bcb36e",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.168570518493652,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "6ccc66611a54524bed0d9392d256585310aca00ffc5b8a86a5a8448f00faa956",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.022222012281417847,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "70ed66042c7ae8afd62021c3729750767a6d97dd8d3aac1f5d88089096d97391",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2962534427642822,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "70fa27d54b65250af6891ad5ce65b70f52a242071aed6d70797a6c79d4507366",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.3164288997650146,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "7b31b7d7529de87c2701701047df695d09c49f56aa4c006781a65885e0fc194a",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.58784818649292,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "7f8ae9b72eaec278415fb9083bd5c61f995de793ee71eed3198178f43244aa6e",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.7562742233276367,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8046f80c9e06bd437059ddf827f4faf3a8ee6bedc56a6e386e46874a1981e8f1",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5003223419189453,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "80724bd50bcb389c0fb999e78c9db23dde5f29845f8833cb5b4919aa4d77e74c",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.45941424369812,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8b8b0f999a81addb7dd42074c575c9c4bc0d417f1446a930183710f804f45323",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.64274001121521,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8bfd9025535064a07be06997fad1c590cea09a7f16e10caaa97fd76c74d705b5",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.9568235874176025,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8eca1d9b858d3b415bc9102744802943bd7ae65db4e5b7910e1056ea6128d105",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 1.6717690229415894,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "9ad48c85c4fbae21270bc40271ef736272861273b788c0d04e2a60105b137f26",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.9373303651809692,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a0c92b20dd07422d9a952703001a90280c96793cf071185357351ff4ef0fab68",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0002224445343018,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a3b0734488db98592747107faa8f034864d3750b96190fa44f7c87b2601f19df",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.147725820541382,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a4b7ce4243288f2f2ba7d2728f540684d5bcba800c9722d7f0cec752e71a9190",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.745990037918091,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a55a008fb4aa837333ac4c465bf178c9bbbff8279943a1ff4d5cf1ea9fc33e30",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.043758869171143,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b186a407b7bc99474b069aa54a0dc8d2042a3ec25bfcb8891d2f8882ef9b7aec",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.1639678478240967,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b51047dc301d87856bf1b0ac1931c202df32e16cb8ab3ed4f2c98c598d8cc468",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.9235641956329346,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b87f3a239192f3f7c68128ed80b045094bd16e98d31c907317040312c1372d2e",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.730823278427124,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "ba2caa71acda032af6efb4b74cc8749eddad3e412d8226a3b2a89f59a01cc93e",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.98881196975708,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "bf8a77f7122a7762da44e35b456c230853ae63006b20ea5b89a90bda3fb53e59",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.126370429992676,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c3c2c6c990a5b5bcc743885844dc448b5a0ef59497a15f002b9e6449d5eb3313",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.669187068939209,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c43c5ef5fdbd9497c9fc4600b5e45eba67327d7b559409ef19668ac26125eead",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.143517255783081,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c44e9ee41317fd29c831499bd7ec6bdaf79edf55563082fa5c22119097a4d42a",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.7554209232330322,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c68f936828699a5a4d9047b3b40a77b66d82d38169220a69a60e03a116088688",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.9169106483459473,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c90647a14b7803ec3bb5287dd39de9fa3cb4b874f4db9e0af965f1955ad1ff59",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5949058532714844,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c928c5b1c41614e531f7f831e03362e5947e67cacce66af743d9622459c5a225",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.9611399173736572,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "d2f032ce11362a85276a487144b6ffe2240f466e26cbb3fe8d998598329c18b9",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.7035233974456787,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "de86ec4728d0a6c6ede053ab3e4806d7d982a491ec8a4462b8c4fa982596b41d",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2882816791534424,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "df3b5243315f6a76007e88f3712bc5266554e4f6f35211f2cb8ed555c9543048",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.509410858154297,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "e5a4750beaf00565b91db2aa864deb4dafa58c44e2ddaa7fd95baa965984aa39",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.19842106103897095,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "ecf2f808554ae9fc080d593b50b6f17a48aa97610b3267272c3ce77ce9bc6b51",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.168461322784424,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "fddee48ca74b721f6fd8d7fba3d925b8d0cbb5d15586d7adc54e2aa2a27f1a92",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.6709413528442383,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "ffbfe05da76ae946d0d969dc011fa3b1846ca3ad49faeffb03a1b9cdee50d590",
+        "max_score_error": 0.0,
+        "max_token_logprob_error": 0.0,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0670762062072754,
+        "max_centered_score_error": 0.0,
+        "sufficient_teacher_decision_preservation_bound": true
+      }
+    ],
+    "gold_accuracy_evaluated": false,
+    "decision_margin_bound_fraction": 1.0
+  },
+  "history": [
+    {
+      "step": 0,
+      "objective": 1.0229606833562457,
+      "candidate_kl": 0.1045593700127938,
+      "centered_score_mse": 0.5404959799726612,
+      "token_mse": 3.4440038238158195,
+      "margin_loss": 0.13401977137255017,
+      "requests": 64,
+      "teacher_decision_flips": 7,
+      "max_abs_mean_score_error": 3.602604389190674,
+      "max_abs_token_logprob_error": 14.420463562011719,
+      "gold_accuracy_evaluated": false,
+      "decision_margin_bound_fraction": 0.859375
+    }
+  ],
+  "best_step": 0,
+  "final": {
+    "objective": 1.0229606833562457,
+    "candidate_kl": 0.1045593700127938,
+    "centered_score_mse": 0.5404959799726612,
+    "token_mse": 3.4440038238158195,
+    "margin_loss": 0.13401977137255017,
+    "requests": 64,
+    "teacher_decision_flips": 7,
+    "max_abs_mean_score_error": 3.602604389190674,
+    "max_abs_token_logprob_error": 14.420463562011719,
+    "query_diagnostics": [
+      {
+        "query_hash": "01a75aa4b98ead770a1dce97ca8ad2b0f347c23172c930919c0563a6b371a6d3",
+        "max_score_error": 1.385040521621704,
+        "max_token_logprob_error": 4.155983924865723,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.8145883083343506,
+        "max_centered_score_error": 0.7043615579605103,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "051efbd8064d431111ed99c989dae39be338c0bb53548b3588c09278a3029591",
+        "max_score_error": 1.2605053186416626,
+        "max_token_logprob_error": 5.044388771057129,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.231330394744873,
+        "max_centered_score_error": 0.49786943197250366,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "06d2f4ba7d68fc484e0ecf5e4396195bfbf73456232aa89a87a8c25b5af9b87f",
+        "max_score_error": 0.4863576889038086,
+        "max_token_logprob_error": 1.4569597244262695,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.479592800140381,
+        "max_centered_score_error": 0.24013495445251465,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "0b45124604bc1ac947e2d22256e6825aa19a2cbe67bcf38655ef88639e91c86d",
+        "max_score_error": 0.3065216541290283,
+        "max_token_logprob_error": 0.9204607009887695,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.167324066162109,
+        "max_centered_score_error": 0.15560555458068848,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "0de38db9801b4ab45784b6d5cf5c6f140db724378e620f87a66e197e717a80f0",
+        "max_score_error": 1.225110650062561,
+        "max_token_logprob_error": 4.901890754699707,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.2497382164001465,
+        "max_centered_score_error": 0.628934919834137,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1347212ee5e954c9cb242b01535d6303788abffdcaf37630cc8a42b467c86239",
+        "max_score_error": 0.01635265350341797,
+        "max_token_logprob_error": 0.05884075164794922,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.920011520385742,
+        "max_centered_score_error": 0.009026288986206055,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1a08839f486c082e6233ae89e9f28b2244d3486b10cee4af2eb37dd8bb9a66aa",
+        "max_score_error": 0.5255050659179688,
+        "max_token_logprob_error": 2.102743148803711,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5423593521118164,
+        "max_centered_score_error": 0.23521828651428223,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1b902ca522faf1ff45ce367d2a0095c94c769e97032a1a94b92ef735189a4796",
+        "max_score_error": 0.26344311237335205,
+        "max_token_logprob_error": 1.0558600425720215,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.0910422801971436,
+        "max_centered_score_error": 0.13282686471939087,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "1fdc84385f41b6e8bc9b49a1c6e9930bba48bf1d7b6bbf9cfa4a8ef5cf08db04",
+        "max_score_error": 1.4346214532852173,
+        "max_token_logprob_error": 5.740201950073242,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.177929162979126,
+        "max_centered_score_error": 0.7085392475128174,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "205319759b6fbab37dc7aada716b362c7efed4200b865f65819e9364a114104e",
+        "max_score_error": 1.7384898662567139,
+        "max_token_logprob_error": 5.215782642364502,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.920297384262085,
+        "max_centered_score_error": 0.8735834360122681,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "2ccba3b0de8320fb4911b5061c039a416b93259494fd6785cc5158a6fbd7e637",
+        "max_score_error": 2.336653470993042,
+        "max_token_logprob_error": 9.353116035461426,
+        "teacher_top": 0,
+        "student_top": 1,
+        "teacher_margin": 2.3920230865478516,
+        "max_centered_score_error": 1.2657456398010254,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "2cf1e55e39514674a32d33d7cf3904a5f5212259b75c6d2de1cd937d44054b13",
+        "max_score_error": 1.0555760860443115,
+        "max_token_logprob_error": 3.1669058799743652,
+        "teacher_top": 1,
+        "student_top": 0,
+        "teacher_margin": 1.1350361108779907,
+        "max_centered_score_error": 0.8819931745529175,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "2dc6b80ba46d6e2685f10e4c90160486924b9b98193e3e42e093b77f5178ef0d",
+        "max_score_error": 1.0317455530166626,
+        "max_token_logprob_error": 3.0959525108337402,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.3367581367492676,
+        "max_centered_score_error": 0.5432505011558533,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "3348566d8e3e685c9ce46ad42e165f1fc46da911e82b615fb3442bea6b42568a",
+        "max_score_error": 0.7244642376899719,
+        "max_token_logprob_error": 2.8896677494049072,
+        "teacher_top": 0,
+        "student_top": 1,
+        "teacher_margin": 0.44770121574401855,
+        "max_centered_score_error": 0.7228661775588989,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "35d2ac881ce6657d6d3d352f95303341808a4e987aeb54c076baa3253e995d72",
+        "max_score_error": 0.9297608733177185,
+        "max_token_logprob_error": 3.719907522201538,
+        "teacher_top": 0,
+        "student_top": 1,
+        "teacher_margin": 0.8434540033340454,
+        "max_centered_score_error": 0.8970308303833008,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "37091f60a81d09bcb6d2a396f5499f548f879e4ea1280606563c68ff4a6775e4",
+        "max_score_error": 2.3439102172851562,
+        "max_token_logprob_error": 9.392057418823242,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.6761441230773926,
+        "max_centered_score_error": 1.2316298484802246,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "37c0a72712863548ec6842c69ba0fc8d7aad790311182b2ac5b600f068289ded",
+        "max_score_error": 0.5128588676452637,
+        "max_token_logprob_error": 1.5360660552978516,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.8396220207214355,
+        "max_centered_score_error": 0.2596174478530884,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "3e024d4c3dfb713178e89e1a85d91b598c38a3427781e77fb3121f3c45855750",
+        "max_score_error": 3.2511096000671387,
+        "max_token_logprob_error": 9.753316879272461,
+        "teacher_top": 1,
+        "student_top": 0,
+        "teacher_margin": 3.3568968772888184,
+        "max_centered_score_error": 2.125591993331909,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "40e1892e2088062e40720460e29a70e68f3b248ffaa40f91bc3c4b53220670db",
+        "max_score_error": 0.5467369556427002,
+        "max_token_logprob_error": 1.6389894485473633,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.75608491897583,
+        "max_centered_score_error": 0.26360321044921875,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "43b6d7a8736fef8b9da6401c3c14921524f7a90f4898faa21d773a8c5c073f67",
+        "max_score_error": 0.06167745590209961,
+        "max_token_logprob_error": 0.24408626556396484,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.957661509513855,
+        "max_centered_score_error": 0.042239248752593994,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "49f854969e5944dcc7b5beebc1a1971f63dec55688ff8f9d776ff16fcfd9be18",
+        "max_score_error": 0.8688158988952637,
+        "max_token_logprob_error": 2.608025550842285,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.458894729614258,
+        "max_centered_score_error": 0.436568021774292,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "4c26c268bca870bc45b1a199d3a93a58d457cbbe5c88bd6a7876ea36ac86def6",
+        "max_score_error": 1.1091506481170654,
+        "max_token_logprob_error": 4.439692497253418,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2254841327667236,
+        "max_centered_score_error": 0.5646331310272217,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "4caa43eeb704c7f73167a71e348dd4e66e68ed3539c0155c7f9d55e24f615aaa",
+        "max_score_error": 1.0822339057922363,
+        "max_token_logprob_error": 4.3309526443481445,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.7592971324920654,
+        "max_centered_score_error": 0.5588943362236023,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5083515ee5c10e5a96bc04c2f07fae44662a1b955a50d0311f9e680850c633b7",
+        "max_score_error": 0.13341768085956573,
+        "max_token_logprob_error": 0.5333182215690613,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.0461196899414062,
+        "max_centered_score_error": 0.01920187473297119,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5889ba6c5a9fad2008242a41feee29a6c42ad6882d1152fbff694ffbde02c4c8",
+        "max_score_error": 1.900787353515625,
+        "max_token_logprob_error": 5.711627960205078,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.267821311950684,
+        "max_centered_score_error": 0.9632922410964966,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5d4bbd1b7e8b15f6398c241bfab6648a3f1859ccfd8911dcfbbfafbff995e923",
+        "max_score_error": 1.9141647815704346,
+        "max_token_logprob_error": 7.659692287445068,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0871365070343018,
+        "max_centered_score_error": 0.9929766654968262,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "5dcea9565ee4de42dc51c3479567c627ed4aa7820ffd1ee6a67445450c1ad8af",
+        "max_score_error": 2.1778371334075928,
+        "max_token_logprob_error": 8.736198425292969,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 4.655359268188477,
+        "max_centered_score_error": 1.0912278890609741,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "6258c1df1e384ff6fb819711c40c5c38cd09be53ac9ea36ea1b403c9576d4bd5",
+        "max_score_error": 1.500328540802002,
+        "max_token_logprob_error": 6.008138656616211,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.6219754219055176,
+        "max_centered_score_error": 0.821860671043396,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "642111713af9c5317f05025da5fba01156175d7944849d49595ae0f3c2596688",
+        "max_score_error": 0.3987264037132263,
+        "max_token_logprob_error": 1.1965926885604858,
+        "teacher_top": 1,
+        "student_top": 0,
+        "teacher_margin": 0.2245790958404541,
+        "max_centered_score_error": 0.11276161670684814,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "66cc6cc084a63caf6bb3740f4557cc018a4d860b690db7ec208dad905b5e4c2f",
+        "max_score_error": 0.8538064956665039,
+        "max_token_logprob_error": 2.5575151443481445,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.95963191986084,
+        "max_centered_score_error": 0.427459716796875,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "68244f617755fce2146bc38c561eeae8326b839da37857f3b2e587c5c6bcb36e",
+        "max_score_error": 0.8891177177429199,
+        "max_token_logprob_error": 2.672983169555664,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.168570518493652,
+        "max_centered_score_error": 0.45449721813201904,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "6ccc66611a54524bed0d9392d256585310aca00ffc5b8a86a5a8448f00faa956",
+        "max_score_error": 1.028746247291565,
+        "max_token_logprob_error": 4.112692356109619,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.022222012281417847,
+        "max_centered_score_error": 0.714319109916687,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "70ed66042c7ae8afd62021c3729750767a6d97dd8d3aac1f5d88089096d97391",
+        "max_score_error": 1.3815947771072388,
+        "max_token_logprob_error": 5.526953220367432,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2962534427642822,
+        "max_centered_score_error": 0.6967325210571289,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "70fa27d54b65250af6891ad5ce65b70f52a242071aed6d70797a6c79d4507366",
+        "max_score_error": 0.9903150796890259,
+        "max_token_logprob_error": 3.9628705978393555,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.3164288997650146,
+        "max_centered_score_error": 0.4909422993659973,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "7b31b7d7529de87c2701701047df695d09c49f56aa4c006781a65885e0fc194a",
+        "max_score_error": 1.3225831985473633,
+        "max_token_logprob_error": 3.9811625480651855,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.58784818649292,
+        "max_centered_score_error": 0.6794124841690063,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "7f8ae9b72eaec278415fb9083bd5c61f995de793ee71eed3198178f43244aa6e",
+        "max_score_error": 0.05214262008666992,
+        "max_token_logprob_error": 0.14867591857910156,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.7562742233276367,
+        "max_centered_score_error": 0.030425667762756348,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8046f80c9e06bd437059ddf827f4faf3a8ee6bedc56a6e386e46874a1981e8f1",
+        "max_score_error": 2.128063678741455,
+        "max_token_logprob_error": 8.512622833251953,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5003223419189453,
+        "max_centered_score_error": 1.061989188194275,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "80724bd50bcb389c0fb999e78c9db23dde5f29845f8833cb5b4919aa4d77e74c",
+        "max_score_error": 1.2671663761138916,
+        "max_token_logprob_error": 5.080415725708008,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.45941424369812,
+        "max_centered_score_error": 0.620184063911438,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8b8b0f999a81addb7dd42074c575c9c4bc0d417f1446a930183710f804f45323",
+        "max_score_error": 0.7387597560882568,
+        "max_token_logprob_error": 2.209244728088379,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.64274001121521,
+        "max_centered_score_error": 0.37234270572662354,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8bfd9025535064a07be06997fad1c590cea09a7f16e10caaa97fd76c74d705b5",
+        "max_score_error": 1.2988629341125488,
+        "max_token_logprob_error": 5.196854591369629,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.9568235874176025,
+        "max_centered_score_error": 0.679152250289917,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "8eca1d9b858d3b415bc9102744802943bd7ae65db4e5b7910e1056ea6128d105",
+        "max_score_error": 1.4148578643798828,
+        "max_token_logprob_error": 4.245352268218994,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 1.6717690229415894,
+        "max_centered_score_error": 0.817744255065918,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "9ad48c85c4fbae21270bc40271ef736272861273b788c0d04e2a60105b137f26",
+        "max_score_error": 0.4724085330963135,
+        "max_token_logprob_error": 1.8925395011901855,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.9373303651809692,
+        "max_centered_score_error": 0.13959378004074097,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a0c92b20dd07422d9a952703001a90280c96793cf071185357351ff4ef0fab68",
+        "max_score_error": 1.6409868001937866,
+        "max_token_logprob_error": 6.5649542808532715,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0002224445343018,
+        "max_centered_score_error": 0.8305201530456543,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a3b0734488db98592747107faa8f034864d3750b96190fa44f7c87b2601f19df",
+        "max_score_error": 2.0489349365234375,
+        "max_token_logprob_error": 8.1973876953125,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.147725820541382,
+        "max_centered_score_error": 1.0436875820159912,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a4b7ce4243288f2f2ba7d2728f540684d5bcba800c9722d7f0cec752e71a9190",
+        "max_score_error": 0.9906628131866455,
+        "max_token_logprob_error": 3.966917037963867,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.745990037918091,
+        "max_centered_score_error": 0.5112811326980591,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "a55a008fb4aa837333ac4c465bf178c9bbbff8279943a1ff4d5cf1ea9fc33e30",
+        "max_score_error": 0.6024618148803711,
+        "max_token_logprob_error": 1.8086261749267578,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.043758869171143,
+        "max_centered_score_error": 0.3408374786376953,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b186a407b7bc99474b069aa54a0dc8d2042a3ec25bfcb8891d2f8882ef9b7aec",
+        "max_score_error": 0.986504077911377,
+        "max_token_logprob_error": 3.952686309814453,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.1639678478240967,
+        "max_centered_score_error": 0.4699331521987915,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b51047dc301d87856bf1b0ac1931c202df32e16cb8ab3ed4f2c98c598d8cc468",
+        "max_score_error": 0.48825550079345703,
+        "max_token_logprob_error": 1.46527099609375,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.9235641956329346,
+        "max_centered_score_error": 0.25659382343292236,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "b87f3a239192f3f7c68128ed80b045094bd16e98d31c907317040312c1372d2e",
+        "max_score_error": 0.24492621421813965,
+        "max_token_logprob_error": 0.7385435104370117,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.730823278427124,
+        "max_centered_score_error": 0.1005709171295166,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "ba2caa71acda032af6efb4b74cc8749eddad3e412d8226a3b2a89f59a01cc93e",
+        "max_score_error": 0.9678304195404053,
+        "max_token_logprob_error": 3.872556686401367,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.98881196975708,
+        "max_centered_score_error": 0.47393596172332764,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "bf8a77f7122a7762da44e35b456c230853ae63006b20ea5b89a90bda3fb53e59",
+        "max_score_error": 2.177603006362915,
+        "max_token_logprob_error": 6.53321647644043,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.126370429992676,
+        "max_centered_score_error": 1.0925211906433105,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c3c2c6c990a5b5bcc743885844dc448b5a0ef59497a15f002b9e6449d5eb3313",
+        "max_score_error": 1.6873469352722168,
+        "max_token_logprob_error": 5.0627899169921875,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.669187068939209,
+        "max_centered_score_error": 0.8749977350234985,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c43c5ef5fdbd9497c9fc4600b5e45eba67327d7b559409ef19668ac26125eead",
+        "max_score_error": 0.009246826171875,
+        "max_token_logprob_error": 0.036675769835710526,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 3.143517255783081,
+        "max_centered_score_error": 0.005632758140563965,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c44e9ee41317fd29c831499bd7ec6bdaf79edf55563082fa5c22119097a4d42a",
+        "max_score_error": 3.602604389190674,
+        "max_token_logprob_error": 14.420463562011719,
+        "teacher_top": 0,
+        "student_top": 1,
+        "teacher_margin": 3.7554209232330322,
+        "max_centered_score_error": 1.9291775226593018,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "c68f936828699a5a4d9047b3b40a77b66d82d38169220a69a60e03a116088688",
+        "max_score_error": 1.1417242288589478,
+        "max_token_logprob_error": 4.568263530731201,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.9169106483459473,
+        "max_centered_score_error": 0.5699197053909302,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c90647a14b7803ec3bb5287dd39de9fa3cb4b874f4db9e0af965f1955ad1ff59",
+        "max_score_error": 0.9156103134155273,
+        "max_token_logprob_error": 3.6652517318725586,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.5949058532714844,
+        "max_centered_score_error": 0.4407101273536682,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "c928c5b1c41614e531f7f831e03362e5947e67cacce66af743d9622459c5a225",
+        "max_score_error": 0.7609572410583496,
+        "max_token_logprob_error": 3.0449061393737793,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 1.9611399173736572,
+        "max_centered_score_error": 0.3730515241622925,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "d2f032ce11362a85276a487144b6ffe2240f466e26cbb3fe8d998598329c18b9",
+        "max_score_error": 0.6694316864013672,
+        "max_token_logprob_error": 2.6788339614868164,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 2.7035233974456787,
+        "max_centered_score_error": 0.32574939727783203,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "de86ec4728d0a6c6ede053ab3e4806d7d982a491ec8a4462b8c4fa982596b41d",
+        "max_score_error": 1.8243863582611084,
+        "max_token_logprob_error": 7.306767463684082,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.2882816791534424,
+        "max_centered_score_error": 0.9236224889755249,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "df3b5243315f6a76007e88f3712bc5266554e4f6f35211f2cb8ed555c9543048",
+        "max_score_error": 0.8508262634277344,
+        "max_token_logprob_error": 3.4154529571533203,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.509410858154297,
+        "max_centered_score_error": 0.41868913173675537,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "e5a4750beaf00565b91db2aa864deb4dafa58c44e2ddaa7fd95baa965984aa39",
+        "max_score_error": 0.8182535767555237,
+        "max_token_logprob_error": 3.2720232009887695,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 0.19842106103897095,
+        "max_centered_score_error": 0.4887749254703522,
+        "sufficient_teacher_decision_preservation_bound": false
+      },
+      {
+        "query_hash": "ecf2f808554ae9fc080d593b50b6f17a48aa97610b3267272c3ce77ce9bc6b51",
+        "max_score_error": 1.3135700225830078,
+        "max_token_logprob_error": 3.942441940307617,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 4.168461322784424,
+        "max_centered_score_error": 0.6565314531326294,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "fddee48ca74b721f6fd8d7fba3d925b8d0cbb5d15586d7adc54e2aa2a27f1a92",
+        "max_score_error": 2.2306084632873535,
+        "max_token_logprob_error": 6.692130088806152,
+        "teacher_top": 1,
+        "student_top": 1,
+        "teacher_margin": 2.6709413528442383,
+        "max_centered_score_error": 1.1694711446762085,
+        "sufficient_teacher_decision_preservation_bound": true
+      },
+      {
+        "query_hash": "ffbfe05da76ae946d0d969dc011fa3b1846ca3ad49faeffb03a1b9cdee50d590",
+        "max_score_error": 0.8275306224822998,
+        "max_token_logprob_error": 3.3129491806030273,
+        "teacher_top": 0,
+        "student_top": 0,
+        "teacher_margin": 3.0670762062072754,
+        "max_centered_score_error": 0.4032773971557617,
+        "sufficient_teacher_decision_preservation_bound": true
+      }
+    ],
+    "gold_accuracy_evaluated": false,
+    "decision_margin_bound_fraction": 0.859375
+  },
+  "unique_sources": 16,
+  "training_seconds_including_validation": 17.87145658582449,
+  "explicit_training_branch_forwards": 0,
+  "explicit_training_backward_branches": 0,
+  "activation_checkpoint_recomputation_included_in_walltime_not_forward_count": true,
+  "peak_cuda_allocated": 15796016128,
+  "note": "No deployment or noninferiority certification. Compare train compute as well as optimizer steps."
+}

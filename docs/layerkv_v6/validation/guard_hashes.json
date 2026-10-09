@@ -1,0 +1,62 @@
+[
+  {
+    "variant": "qwen",
+    "module": "sharedkv_v21",
+    "checked": 8,
+    "mismatch": []
+  },
+  {
+    "variant": "qwen",
+    "module": "sharedkv_v24",
+    "checked": 9,
+    "mismatch": []
+  },
+  {
+    "variant": "qwen",
+    "module": "sharedkv_v25",
+    "checked": 11,
+    "mismatch": []
+  },
+  {
+    "variant": "qwen",
+    "module": "sharedkv_v26",
+    "checked": 6,
+    "mismatch": []
+  },
+  {
+    "variant": "qwen",
+    "module": "sharedkv_v27",
+    "checked": 7,
+    "mismatch": []
+  },
+  {
+    "variant": "llama",
+    "module": "sharedkv_v21",
+    "checked": 8,
+    "mismatch": []
+  },
+  {
+    "variant": "llama",
+    "module": "sharedkv_v24",
+    "checked": 9,
+    "mismatch": []
+  },
+  {
+    "variant": "llama",
+    "module": "sharedkv_v25",
+    "checked": 11,
+    "mismatch": []
+  },
+  {
+    "variant": "llama",
+    "module": "sharedkv_v26",
+    "checked": 6,
+    "mismatch": []
+  },
+  {
+    "variant": "llama",
+    "module": "sharedkv_v27",
+    "checked": 7,
+    "mismatch": []
+  }
+]

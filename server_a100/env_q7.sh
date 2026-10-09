@@ -1,0 +1,1 @@
+export PANS_MODEL_PATH=/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct PANS_PY=/home/shensicheng/qyd/pans/venv/bin/python PANS_PROBE_QUERY_HEADS=0,7,14,21 PANS_SELECTOR_KV_HEAD_IDS=0,1,2,3 TMPDIR=/home/shensicheng/qyd/pans/tmp

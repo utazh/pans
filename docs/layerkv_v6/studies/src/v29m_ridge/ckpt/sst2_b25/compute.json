@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "native_blocks": 4,
+  "args": [
+    "--model-path",
+    "/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct",
+    "--store-root",
+    "/home/shensicheng/qyd/pans/src/runtime_data/prefix_store",
+    "--task",
+    "sst2",
+    "--teacher-fit",
+    "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/teacher/sst2_b25_fit",
+    "--teacher-val",
+    "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/teacher/sst2_b25_val",
+    "--plan",
+    "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/plans/sst2_b25_plan.json",
+    "--steps",
+    "0",
+    "--eval-every",
+    "25",
+    "--seed",
+    "24",
+    "--device",
+    "cuda",
+    "--output",
+    "/home/shensicheng/qyd/pans/src/studies/v29m_ridge/ckpt/sst2_b25/sst2.pt"
+  ],
+  "initial_reader_tensor_sha256": [
+    {
+      "A": "3082b0330643572a9043fe7117263cb6e8e48e818485dc2d37d4ffbe6186b0c0",
+      "B": "bb44cada36d1f263235507317a8e0b4f9be987ce932daacd929c97a6fc9e6acf",
+      "bk": "bb2f04a2b54b6515b3c2ac0475ce0fa0b374b89efb0a142f5d98211089d06e57",
+      "bv": "b3011e2c984b4679fccab365b2984f034de43430d96183416d6e834fb36317bb"
+    },
+    {
+      "A": "bebe99b59e131967bce7be80e7fb2ce5f3cfdb6e15d5f3b85bdc78473209ae1e",
+      "B": "2f1dc1e04720b97c0c600885615a2ccd48a80ff6ff68de73a7ea701cbd4c7d6b",
+      "bk": "a3848773045602f643ff6d38b42e3d5df8052d1062f572ef27c68127bf0fba78",
+      "bv": "fc40db1d744129853933e1225eba4222588d7575fc2891bde39370fdc3254bda"
+    },
+    {
+      "A": "43a73b46607703b08c33fadaab85b2bdc3b60b205701492d7dfa2639664d16d7",
+      "B": "ff55726a1766aefb3216078006fe80d8f02f4238a88c9940731644e15121b5e8",
+      "bk": "faed5f64f3dc1a8806b81c94ee6be39e4523a0f7873e07b18d3bd0b8e61d48c2",
+      "bv": "1e86f1b462d6e01600195a06adf0f060379fbe44fb87905e373eee8cf33d674e"
+    },
+    {
+      "A": "d9a6bbb5d6ccb619b7a5169065edeecc9b4ec409d5fac60a92384f9ea0ad6294",
+      "B": "ec27dd8bb9497de806eb50da550748362958755e86b935490ebc97cb1b37d490",
+      "bk": "7ff024d8e923597667aec22887d4dce3b1bafae1cc04785b8683e7178397be7b",
+      "bv": "7cb32cb0be93b20e4a7410585386b41ac0148b3d00f68c1edb2a5d914a69abaf"
+    },
+    {
+      "A": "3d31bffd00a366f95a38370567e8bb714aee3bf29c4716b0da7a3c92d5435492",
+      "B": "117392c49a69976c2bb50c3bea555367e542a2c8a0c11d48b46074f073a29d08",
+      "bk": "8bfa77c74a629c37a53e9dffa431dbf1eb0a96b5d207ace3cd09e1535328bfa4",
+      "bv": "9a78d242f714478ac5878fdc227c2e5a000bb8cea76803529b1164d80d01b698"
+    },
+    {
+      "A": "45b9d28bd20b7ba8dbeaf0d02d61b048f9e4983a105b230179ca73eb8e186071",
+      "B": "864321d65cee1268a9f4deac85d9e453c0d85a14e96b70a616f983a5c1de1d72",
+      "bk": "92fc6b9067f16f7c6d5b769fb10187a00049e5d546e3ae2efa03b317398de6a9",
+      "bv": "ab3061fe1bbc382c980f7881b0657fb9f0acda087dab7a2f7accf994bae8b99e"
+    },
+    {
+      "A": "2c2feea0aed12f5c111dd79a9410bd5b88ae1fb2b2c3bf72a44da30f904a824c",
+      "B": "304a7b1477a2b65b04c5eca3defe7d835897d55cc07cb2bd38719a856082beab",
+      "bk": "483f88097428c5aa2c4bac4fddcb857122d5a3c9bc7f017da9ea67ea847e3904",
+      "bv": "52af33676c6fe0c5d84d3eb668d47255f6093341b7e9cb9260cceea573369ee8"
+    }
+  ],
+  "forward_calls_including_validation": {
+    "branch_no_grad": 384
+  },
+  "wall_seconds_total_including_load": 40.78122942522168,
+  "cuda_peak_allocated": 15576413184,
+  "cuda_peak_reserved": 15730737152,
+  "checkpoint_backward_recomputation_not_in_top_level_forward_count": true
+}

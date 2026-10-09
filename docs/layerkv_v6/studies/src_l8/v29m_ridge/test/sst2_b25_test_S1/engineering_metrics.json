@@ -1,0 +1,9 @@
+{
+  "capacity_bytes": 8388608,
+  "allocated_peak_bytes": 8388608,
+  "allocations": 2,
+  "reuses": 94040,
+  "waits": 7656,
+  "h2d_copies": 141001,
+  "h2d_bytes": 42025214896
+}

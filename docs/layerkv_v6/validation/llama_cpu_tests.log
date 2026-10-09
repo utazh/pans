@@ -1,0 +1,56 @@
+.................................... [  5%]
+.................................................................... [ 14%]
+................................................ss..ssssss. [ 22%]
+...............ssss................................ [ 30%]
+..........................................................................................................................ss....... [ 48%]
+.......................ss.ss.................s.......................... [ 58%]
+......s...................................................ss......ss.... [ 68%]
+....................FF........s......................................... [ 78%]
+.....ss...........................................................s..... [ 88%]
+............................................s........................... [ 98%]
+....ssss                                                                 [100%]
+=================================== FAILURES ===================================
+________________________ test_bad_model_geometry[bad0] _________________________
+
+bad = {'model_type': 'llama'}
+
+    @pytest.mark.parametrize('bad',[dict(model_type='llama'),dict(model_type='qwen2',rope_scaling={'x':1}),dict(model_type='qwen2',use_sliding_window=True)])
+    def test_bad_model_geometry(bad):
+>    with pytest.raises(ValueError):inspect_config(bad)
+
+tests/test_sharedkv_v25.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/contiguous_fuxian/sharedkv_v25/geometry.py:8: in inspect_config
+    hq,hk,L,hidden=(int(c[x]) for x in ('num_attention_heads','num_key_value_heads','num_hidden_layers','hidden_size'))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <tuple_iterator object at 0x7f869616e830>
+
+>   hq,hk,L,hidden=(int(c[x]) for x in ('num_attention_heads','num_key_value_heads','num_hidden_layers','hidden_size'))
+E   KeyError: 'num_attention_heads'
+
+src/contiguous_fuxian/sharedkv_v25/geometry.py:8: KeyError
+________________________ test_bad_model_geometry[bad1] _________________________
+
+bad = {'model_type': 'qwen2', 'rope_scaling': {'x': 1}}
+
+    @pytest.mark.parametrize('bad',[dict(model_type='llama'),dict(model_type='qwen2',rope_scaling={'x':1}),dict(model_type='qwen2',use_sliding_window=True)])
+    def test_bad_model_geometry(bad):
+>    with pytest.raises(ValueError):inspect_config(bad)
+
+tests/test_sharedkv_v25.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/contiguous_fuxian/sharedkv_v25/geometry.py:8: in inspect_config
+    hq,hk,L,hidden=(int(c[x]) for x in ('num_attention_heads','num_key_value_heads','num_hidden_layers','hidden_size'))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <tuple_iterator object at 0x7f86961f7820>
+
+>   hq,hk,L,hidden=(int(c[x]) for x in ('num_attention_heads','num_key_value_heads','num_hidden_layers','hidden_size'))
+E   KeyError: 'num_attention_heads'
+
+src/contiguous_fuxian/sharedkv_v25/geometry.py:8: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_sharedkv_v25.py::test_bad_model_geometry[bad0] - KeyError: ...
+FAILED tests/test_sharedkv_v25.py::test_bad_model_geometry[bad1] - KeyError: ...
+2 failed, 678 passed, 33 skipped, 87 subtests passed in 12.89s

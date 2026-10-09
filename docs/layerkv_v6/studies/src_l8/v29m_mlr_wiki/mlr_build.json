@@ -1,0 +1,73 @@
+{
+ "args": {
+  "root": "src_l8",
+  "src": "ridge",
+  "to": "mlr_wiki",
+  "calib": "wiki",
+  "calib_root": "work/l8/wiki_kv",
+  "cells": "sst2_b25,subj_b25,trec_b25,rte_b25",
+  "ridge": 0.001
+ },
+ "cells": [
+  {
+   "cell": "sst2_b25",
+   "consumers": 14,
+   "calibration": [
+    "wiki0",
+    "wiki1",
+    "wiki2",
+    "wiki3",
+    "wiki4",
+    "wiki5",
+    "wiki6",
+    "wiki7"
+   ],
+   "seconds": 16.9
+  },
+  {
+   "cell": "subj_b25",
+   "consumers": 8,
+   "calibration": [
+    "wiki0",
+    "wiki1",
+    "wiki2",
+    "wiki3",
+    "wiki4",
+    "wiki5",
+    "wiki6",
+    "wiki7"
+   ],
+   "seconds": 7.9
+  },
+  {
+   "cell": "trec_b25",
+   "consumers": 14,
+   "calibration": [
+    "wiki0",
+    "wiki1",
+    "wiki2",
+    "wiki3",
+    "wiki4",
+    "wiki5",
+    "wiki6",
+    "wiki7"
+   ],
+   "seconds": 10.9
+  },
+  {
+   "cell": "rte_b25",
+   "consumers": 14,
+   "calibration": [
+    "wiki0",
+    "wiki1",
+    "wiki2",
+    "wiki3",
+    "wiki4",
+    "wiki5",
+    "wiki6",
+    "wiki7"
+   ],
+   "seconds": 12.2
+  }
+ ]
+}

@@ -1,0 +1,1182 @@
+{
+ "rows": [
+  {
+   "name": "sst2_b25_CKV_n1_r0",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 1,
+   "rep": 0,
+   "window_s": 153.4,
+   "n_window": 47,
+   "throughput_rps": 0.3063582900190973,
+   "ttft_mean": 1516.9754396886267,
+   "ttft_p50": 1521.7168554663658,
+   "ttft_p95": 1604.3165061622858,
+   "sda_read_MBps": 25.407137862265003,
+   "ttft_all_mean": 1517.8799248921375,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n1_r1",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 1,
+   "rep": 1,
+   "window_s": 151.7,
+   "n_window": 47,
+   "throughput_rps": 0.3097242936977205,
+   "ttft_mean": 1484.6559473650252,
+   "ttft_p50": 1480.1777862012386,
+   "ttft_p95": 1556.9627940654755,
+   "sda_read_MBps": 25.775228940257712,
+   "ttft_all_mean": 1482.9556385520846,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n2_r0",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 2,
+   "rep": 0,
+   "window_s": 157.6,
+   "n_window": 92,
+   "throughput_rps": 0.5839183389750864,
+   "ttft_mean": 1649.1761040347426,
+   "ttft_p50": 1659.4793573021889,
+   "ttft_p95": 1824.8594243079424,
+   "sda_read_MBps": 49.01039510566739,
+   "ttft_all_mean": 1653.061931875224,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n2_r1",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 2,
+   "rep": 1,
+   "window_s": 157.7,
+   "n_window": 93,
+   "throughput_rps": 0.5897921488457681,
+   "ttft_mean": 1618.1278656166728,
+   "ttft_p50": 1607.7666245400906,
+   "ttft_p95": 1744.9959181249142,
+   "sda_read_MBps": 49.17589749476847,
+   "ttft_all_mean": 1620.050400107478,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n4_r0",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 4,
+   "rep": 0,
+   "window_s": 164.8,
+   "n_window": 184,
+   "throughput_rps": 1.11619028023653,
+   "ttft_mean": 1794.6898481282203,
+   "ttft_p50": 1797.0523033291101,
+   "ttft_p95": 2028.358593583107,
+   "sda_read_MBps": 92.9976539199941,
+   "ttft_all_mean": 1794.8934685943339,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n4_r1",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 4,
+   "rep": 1,
+   "window_s": 165.3,
+   "n_window": 185,
+   "throughput_rps": 1.1191651229747828,
+   "ttft_mean": 1786.6117629650478,
+   "ttft_p50": 1781.7966118454933,
+   "ttft_p95": 1952.2817365825174,
+   "sda_read_MBps": 92.74076060104456,
+   "ttft_all_mean": 1785.1820153688702,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n8_r0",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 8,
+   "rep": 0,
+   "window_s": 198.3,
+   "n_window": 367,
+   "throughput_rps": 1.8507084081933498,
+   "ttft_mean": 2498.3255261966415,
+   "ttft_p50": 2551.442965865135,
+   "ttft_p95": 2849.779514595866,
+   "sda_read_MBps": 153.6789933639628,
+   "ttft_all_mean": 2491.530277853599,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "sst2_b25_CKV_n8_r1",
+   "cell": "sst2_b25",
+   "arm": "CKV",
+   "n": 8,
+   "rep": 1,
+   "window_s": 190.7,
+   "n_window": 367,
+   "throughput_rps": 1.9242212336742053,
+   "ttft_mean": 2368.196535632217,
+   "ttft_p50": 2381.8136639893055,
+   "ttft_p95": 2604.5819234102964,
+   "sda_read_MBps": 159.86899959767524,
+   "ttft_all_mean": 2363.9310994573557,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "sst2_b25_I_n1_r0",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 1,
+   "rep": 0,
+   "window_s": 140.6,
+   "n_window": 47,
+   "throughput_rps": 0.33418155378935166,
+   "ttft_mean": 1231.4042987183054,
+   "ttft_p50": 1244.4639801979065,
+   "ttft_p95": 1297.5507587194443,
+   "sda_read_MBps": 18.1048692286335,
+   "ttft_all_mean": 1230.4520025694121,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_I_n1_r1",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 1,
+   "rep": 1,
+   "window_s": 139.7,
+   "n_window": 47,
+   "throughput_rps": 0.3364384692268622,
+   "ttft_mean": 1209.3883121108754,
+   "ttft_p50": 1214.4104279577732,
+   "ttft_p95": 1260.4483392089605,
+   "sda_read_MBps": 18.223183329133402,
+   "ttft_all_mean": 1207.4368249935408,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_I_n2_r0",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 2,
+   "rep": 0,
+   "window_s": 142.1,
+   "n_window": 93,
+   "throughput_rps": 0.6544632896307291,
+   "ttft_mean": 1290.9202849672686,
+   "ttft_p50": 1292.4508079886436,
+   "ttft_p95": 1364.5891048014164,
+   "sda_read_MBps": 35.626114797543515,
+   "ttft_all_mean": 1291.3050628267229,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_I_n2_r1",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 2,
+   "rep": 1,
+   "window_s": 142.1,
+   "n_window": 93,
+   "throughput_rps": 0.6542769803270705,
+   "ttft_mean": 1279.6073216263967,
+   "ttft_p50": 1277.5817960500717,
+   "ttft_p95": 1381.5059922635555,
+   "sda_read_MBps": 35.648938814450425,
+   "ttft_all_mean": 1283.2054739895586,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_I_n4_r0",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 4,
+   "rep": 0,
+   "window_s": 147.4,
+   "n_window": 185,
+   "throughput_rps": 1.2547884958964919,
+   "ttft_mean": 1405.2705307264587,
+   "ttft_p50": 1424.840647727251,
+   "ttft_p95": 1518.285047262907,
+   "sda_read_MBps": 67.91641093179503,
+   "ttft_all_mean": 1401.9404211236786,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_I_n4_r1",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 4,
+   "rep": 1,
+   "window_s": 146.3,
+   "n_window": 184,
+   "throughput_rps": 1.257851315039219,
+   "ttft_mean": 1400.3131134516518,
+   "ttft_p50": 1416.431838646531,
+   "ttft_p95": 1567.8349195048213,
+   "sda_read_MBps": 68.4312101646098,
+   "ttft_all_mean": 1396.255729739399,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_I_n8_r0",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 8,
+   "rep": 0,
+   "window_s": 151.7,
+   "n_window": 363,
+   "throughput_rps": 2.392983331622891,
+   "ttft_mean": 1572.8857678261177,
+   "ttft_p50": 1579.728353768587,
+   "ttft_p95": 1704.160150513053,
+   "sda_read_MBps": 129.72634357063146,
+   "ttft_all_mean": 1568.205351155484,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "sst2_b25_I_n8_r1",
+   "cell": "sst2_b25",
+   "arm": "I",
+   "n": 8,
+   "rep": 1,
+   "window_s": 152.0,
+   "n_window": 363,
+   "throughput_rps": 2.3882533560619112,
+   "ttft_mean": 1554.6433321269583,
+   "ttft_p50": 1555.5108115077019,
+   "ttft_p95": 1676.2562647461891,
+   "sda_read_MBps": 130.0271931309198,
+   "ttft_all_mean": 1552.7212362309608,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n1_r0",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 1,
+   "rep": 0,
+   "window_s": 119.0,
+   "n_window": 47,
+   "throughput_rps": 0.3949663340138244,
+   "ttft_mean": 844.5167520103303,
+   "ttft_p50": 845.0984880328178,
+   "ttft_p95": 898.7233255058527,
+   "sda_read_MBps": 15.245978549232769,
+   "ttft_all_mean": 844.7767227577666,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n1_r1",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 1,
+   "rep": 1,
+   "window_s": 123.1,
+   "n_window": 47,
+   "throughput_rps": 0.3819013485660989,
+   "ttft_mean": 917.5492265915617,
+   "ttft_p50": 922.0524281263351,
+   "ttft_p95": 964.7159826010466,
+   "sda_read_MBps": 14.741660913200809,
+   "ttft_all_mean": 915.8498553248743,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n2_r0",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 2,
+   "rep": 0,
+   "window_s": 124.3,
+   "n_window": 94,
+   "throughput_rps": 0.7560201625356986,
+   "ttft_mean": 939.1487222561177,
+   "ttft_p50": 946.7507302761078,
+   "ttft_p95": 1012.406675517559,
+   "sda_read_MBps": 29.182943455248836,
+   "ttft_all_mean": 939.6162664052099,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n2_r1",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 2,
+   "rep": 1,
+   "window_s": 123.1,
+   "n_window": 93,
+   "throughput_rps": 0.7554506226995008,
+   "ttft_mean": 946.3598313591173,
+   "ttft_p50": 944.7498358786106,
+   "ttft_p95": 1026.0466642677784,
+   "sda_read_MBps": 29.160938350559075,
+   "ttft_all_mean": 946.0314145156493,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n4_r0",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 4,
+   "rep": 0,
+   "window_s": 124.1,
+   "n_window": 185,
+   "throughput_rps": 1.490420907295161,
+   "ttft_mean": 973.5907547377251,
+   "ttft_p50": 983.6424775421619,
+   "ttft_p95": 1080.7966329157352,
+   "sda_read_MBps": 57.54532073583314,
+   "ttft_all_mean": 971.6674715164118,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n4_r1",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 4,
+   "rep": 1,
+   "window_s": 123.5,
+   "n_window": 185,
+   "throughput_rps": 1.4980793456285117,
+   "ttft_mean": 962.3500037434939,
+   "ttft_p50": 968.4134908020496,
+   "ttft_p95": 1029.704501479864,
+   "sda_read_MBps": 57.654773982263585,
+   "ttft_all_mean": 961.4185508495817,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n8_r0",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 8,
+   "rep": 0,
+   "window_s": 128.2,
+   "n_window": 363,
+   "throughput_rps": 2.8316788335818597,
+   "ttft_mean": 1113.6076652724553,
+   "ttft_p50": 1138.8716399669647,
+   "ttft_p95": 1274.6583819389343,
+   "sda_read_MBps": 109.09755615453811,
+   "ttft_all_mean": 1114.131684541159,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "sst2_b25_SEL_n8_r1",
+   "cell": "sst2_b25",
+   "arm": "SEL",
+   "n": 8,
+   "rep": 1,
+   "window_s": 127.8,
+   "n_window": 367,
+   "throughput_rps": 2.8721969492147648,
+   "ttft_mean": 1061.847753426928,
+   "ttft_p50": 1062.9844889044762,
+   "ttft_p95": 1153.5666029900312,
+   "sda_read_MBps": 111.01987171084673,
+   "ttft_all_mean": 1060.4518961433012,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n1_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 1,
+   "rep": 0,
+   "window_s": 203.4,
+   "n_window": 47,
+   "throughput_rps": 0.23105952655734005,
+   "ttft_mean": 2075.3733032244318,
+   "ttft_p50": 2076.516278088093,
+   "ttft_p95": 2142.974082008004,
+   "sda_read_MBps": 26.67204366237383,
+   "ttft_all_mean": 2074.7671346956245,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n1_r1",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 1,
+   "rep": 1,
+   "window_s": 204.1,
+   "n_window": 47,
+   "throughput_rps": 0.2303312265154595,
+   "ttft_mean": 2094.2587166866088,
+   "ttft_p50": 2091.8006598949432,
+   "ttft_p95": 2179.732246696949,
+   "sda_read_MBps": 26.558425698302276,
+   "ttft_all_mean": 2094.0154034178704,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n2_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 2,
+   "rep": 0,
+   "window_s": 214.5,
+   "n_window": 93,
+   "throughput_rps": 0.4334810886752987,
+   "ttft_mean": 2299.3235019265962,
+   "ttft_p50": 2304.5409247279167,
+   "ttft_p95": 2474.3260949850082,
+   "sda_read_MBps": 50.13544262010464,
+   "ttft_all_mean": 2297.5642588765672,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n2_r1",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 2,
+   "rep": 1,
+   "window_s": 214.7,
+   "n_window": 93,
+   "throughput_rps": 0.4332559644630526,
+   "ttft_mean": 2315.067228891196,
+   "ttft_p50": 2303.604707121849,
+   "ttft_p95": 2532.4681513011456,
+   "sda_read_MBps": 49.95617762899453,
+   "ttft_all_mean": 2320.060337505614,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n4_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 4,
+   "rep": 0,
+   "window_s": 226.5,
+   "n_window": 184,
+   "throughput_rps": 0.8125201396969347,
+   "ttft_mean": 2579.1346695800516,
+   "ttft_p50": 2611.0979206860065,
+   "ttft_p95": 2813.506461493671,
+   "sda_read_MBps": 94.76395427747495,
+   "ttft_all_mean": 2577.3551781118535,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n4_r1",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 4,
+   "rep": 1,
+   "window_s": 219.1,
+   "n_window": 184,
+   "throughput_rps": 0.8399030658413603,
+   "ttft_mean": 2458.1218863756435,
+   "ttft_p50": 2461.4428617060184,
+   "ttft_p95": 2619.5935832336545,
+   "sda_read_MBps": 97.34257194241599,
+   "ttft_all_mean": 2459.303588140756,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n8_r0",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 8,
+   "rep": 0,
+   "window_s": 252.1,
+   "n_window": 358,
+   "throughput_rps": 1.4198942926749996,
+   "ttft_mean": 3323.7759706631887,
+   "ttft_p50": 3387.534972280264,
+   "ttft_p95": 3699.1164091974497,
+   "sda_read_MBps": 163.7849370047708,
+   "ttft_all_mean": 3297.6650871375264,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_CKV_n8_r1",
+   "cell": "trec_b25",
+   "arm": "CKV",
+   "n": 8,
+   "rep": 1,
+   "window_s": 255.8,
+   "n_window": 354,
+   "throughput_rps": 1.3839747434498884,
+   "ttft_mean": 3433.0100727893705,
+   "ttft_p50": 3563.409101217985,
+   "ttft_p95": 3795.5617928877473,
+   "sda_read_MBps": 160.95404705258187,
+   "ttft_all_mean": 3406.73315768557,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_I_n1_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 1,
+   "rep": 0,
+   "window_s": 177.4,
+   "n_window": 47,
+   "throughput_rps": 0.2649406319259212,
+   "ttft_mean": 1542.2136817682297,
+   "ttft_p50": 1536.2734906375408,
+   "ttft_p95": 1617.4226015806198,
+   "sda_read_MBps": 18.717483554186487,
+   "ttft_all_mean": 1540.709655576696,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_I_n1_r1",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 1,
+   "rep": 1,
+   "window_s": 174.3,
+   "n_window": 47,
+   "throughput_rps": 0.2697129849055983,
+   "ttft_mean": 1509.1155066769174,
+   "ttft_p50": 1521.1866423487663,
+   "ttft_p95": 1584.4997335225344,
+   "sda_read_MBps": 19.07614136859839,
+   "ttft_all_mean": 1509.214710521822,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_I_n2_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 2,
+   "rep": 0,
+   "window_s": 183.2,
+   "n_window": 92,
+   "throughput_rps": 0.5022441683923485,
+   "ttft_mean": 1668.9342283846242,
+   "ttft_p50": 1671.3092029094696,
+   "ttft_p95": 1809.5868730917573,
+   "sda_read_MBps": 35.48244957770231,
+   "ttft_all_mean": 1668.7150005018339,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_I_n2_r1",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 2,
+   "rep": 1,
+   "window_s": 182.7,
+   "n_window": 92,
+   "throughput_rps": 0.5036632795409682,
+   "ttft_mean": 1633.012453701509,
+   "ttft_p50": 1622.9849252849817,
+   "ttft_p95": 1777.9596654698253,
+   "sda_read_MBps": 35.72127275925569,
+   "ttft_all_mean": 1633.0417843225102,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_I_n4_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 4,
+   "rep": 0,
+   "window_s": 188.6,
+   "n_window": 184,
+   "throughput_rps": 0.9756192334869352,
+   "ttft_mean": 1798.7413875880125,
+   "ttft_p50": 1827.5981303304434,
+   "ttft_p95": 1991.4224853739142,
+   "sda_read_MBps": 68.78244140279641,
+   "ttft_all_mean": 1796.8799626105465,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_I_n4_r1",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 4,
+   "rep": 1,
+   "window_s": 186.2,
+   "n_window": 183,
+   "throughput_rps": 0.9826449900542094,
+   "ttft_mean": 1775.3778871942739,
+   "ttft_p50": 1795.380886644125,
+   "ttft_p95": 1944.7539385408163,
+   "sda_read_MBps": 69.52951574942955,
+   "ttft_all_mean": 1773.4651666056986,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_I_n8_r0",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 8,
+   "rep": 0,
+   "window_s": 203.9,
+   "n_window": 364,
+   "throughput_rps": 1.7852214815473424,
+   "ttft_mean": 2177.290731386005,
+   "ttft_p50": 2248.496949672699,
+   "ttft_p95": 2410.9151359647512,
+   "sda_read_MBps": 126.61120326484192,
+   "ttft_all_mean": 2170.777506699475,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_I_n8_r1",
+   "cell": "trec_b25",
+   "arm": "I",
+   "n": 8,
+   "rep": 1,
+   "window_s": 201.9,
+   "n_window": 364,
+   "throughput_rps": 1.8027026966584714,
+   "ttft_mean": 2146.307531324635,
+   "ttft_p50": 2211.861005052924,
+   "ttft_p95": 2375.7724214345217,
+   "sda_read_MBps": 127.85678464051364,
+   "ttft_all_mean": 2141.146592834654,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n1_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 1,
+   "rep": 0,
+   "window_s": 146.0,
+   "n_window": 47,
+   "throughput_rps": 0.3218968549321213,
+   "ttft_mean": 932.8771900147834,
+   "ttft_p50": 930.6196756660938,
+   "ttft_p95": 975.2221424132586,
+   "sda_read_MBps": 13.026676435883454,
+   "ttft_all_mean": 932.6722820599874,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n1_r1",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 1,
+   "rep": 1,
+   "window_s": 161.8,
+   "n_window": 47,
+   "throughput_rps": 0.29047726995180784,
+   "ttft_mean": 959.7072942935406,
+   "ttft_p50": 951.5560865402222,
+   "ttft_p95": 982.0592816919088,
+   "sda_read_MBps": 11.755173589499336,
+   "ttft_all_mean": 959.6322404686362,
+   "cold": {
+    "ok": 48,
+    "total": 48
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n2_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 2,
+   "rep": 0,
+   "window_s": 145.8,
+   "n_window": 92,
+   "throughput_rps": 0.631008438076315,
+   "ttft_mean": 1012.9701923174055,
+   "ttft_p50": 1004.2605865746737,
+   "ttft_p95": 1099.8946545645595,
+   "sda_read_MBps": 25.796267589501213,
+   "ttft_all_mean": 1013.548561410668,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n2_r1",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 2,
+   "rep": 1,
+   "window_s": 148.4,
+   "n_window": 92,
+   "throughput_rps": 0.6198990267623349,
+   "ttft_mean": 974.5504572258695,
+   "ttft_p50": 970.9509629756212,
+   "ttft_p95": 1053.5044018179178,
+   "sda_read_MBps": 25.219646854283233,
+   "ttft_all_mean": 975.0574523738275,
+   "cold": {
+    "ok": 96,
+    "total": 96
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n4_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 4,
+   "rep": 0,
+   "window_s": 146.4,
+   "n_window": 184,
+   "throughput_rps": 1.2568156321917654,
+   "ttft_mean": 950.9679388821772,
+   "ttft_p50": 948.7471580505371,
+   "ttft_p95": 1035.864994674921,
+   "sda_read_MBps": 51.13783902653459,
+   "ttft_all_mean": 950.2256790486475,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n4_r1",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 4,
+   "rep": 1,
+   "window_s": 147.8,
+   "n_window": 183,
+   "throughput_rps": 1.238527243148402,
+   "ttft_mean": 999.9178929122094,
+   "ttft_p50": 1001.9358694553375,
+   "ttft_p95": 1090.3496742248535,
+   "sda_read_MBps": 50.18962038244927,
+   "ttft_all_mean": 998.9770603715442,
+   "cold": {
+    "ok": 192,
+    "total": 192
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n8_r0",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 8,
+   "rep": 0,
+   "window_s": 150.8,
+   "n_window": 362,
+   "throughput_rps": 2.3999398473146676,
+   "ttft_mean": 1123.2844275211432,
+   "ttft_p50": 1135.6710121035576,
+   "ttft_p95": 1243.6776749789715,
+   "sda_read_MBps": 97.22100674689669,
+   "ttft_all_mean": 1118.170682117731,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  },
+  {
+   "name": "trec_b25_SEL_n8_r1",
+   "cell": "trec_b25",
+   "arm": "SEL",
+   "n": 8,
+   "rep": 1,
+   "window_s": 151.2,
+   "n_window": 364,
+   "throughput_rps": 2.40687123175235,
+   "ttft_mean": 1106.2672551987428,
+   "ttft_p50": 1113.5420147329569,
+   "ttft_p95": 1216.96737986058,
+   "sda_read_MBps": 97.59552860900438,
+   "ttft_all_mean": 1107.6665416767355,
+   "cold": {
+    "ok": 384,
+    "total": 384
+   }
+  }
+ ],
+ "summary": {
+  "sst2_b25|n1|CKV": {
+   "reps": 2,
+   "throughput_rps": 0.3080412918584089,
+   "ttft_mean": 1500.815693526826,
+   "ttft_p50": 1500.9473208338022,
+   "ttft_p95": 1580.6396501138806,
+   "sda_read_MBps": 25.591183401261357,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "sst2_b25|n1|I": {
+   "reps": 2,
+   "throughput_rps": 0.3353100115081069,
+   "ttft_mean": 1220.3963054145904,
+   "ttft_p50": 1229.4372040778399,
+   "ttft_p95": 1278.9995489642024,
+   "sda_read_MBps": 18.16402627888345,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "sst2_b25|n1|SEL": {
+   "reps": 2,
+   "throughput_rps": 0.38843384128996167,
+   "ttft_mean": 881.0329893009459,
+   "ttft_p50": 883.5754580795765,
+   "ttft_p95": 931.7196540534496,
+   "sda_read_MBps": 14.993819731216789,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "sst2_b25|n2|CKV": {
+   "reps": 2,
+   "throughput_rps": 0.5868552439104273,
+   "ttft_mean": 1633.6519848257076,
+   "ttft_p50": 1633.6229909211397,
+   "ttft_p95": 1784.9276712164283,
+   "sda_read_MBps": 49.09314630021793,
+   "n_window": 185,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "sst2_b25|n2|I": {
+   "reps": 2,
+   "throughput_rps": 0.6543701349788997,
+   "ttft_mean": 1285.2638032968325,
+   "ttft_p50": 1285.0163020193577,
+   "ttft_p95": 1373.047548532486,
+   "sda_read_MBps": 35.63752680599697,
+   "n_window": 186,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "sst2_b25|n2|SEL": {
+   "reps": 2,
+   "throughput_rps": 0.7557353926175997,
+   "ttft_mean": 942.7542768076175,
+   "ttft_p50": 945.7502830773592,
+   "ttft_p95": 1019.2266698926687,
+   "sda_read_MBps": 29.171940902903955,
+   "n_window": 187,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "sst2_b25|n4|CKV": {
+   "reps": 2,
+   "throughput_rps": 1.1176777016056563,
+   "ttft_mean": 1790.650805546634,
+   "ttft_p50": 1789.4244575873017,
+   "ttft_p95": 1990.3201650828123,
+   "sda_read_MBps": 92.86920726051932,
+   "n_window": 369,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "sst2_b25|n4|I": {
+   "reps": 2,
+   "throughput_rps": 1.2563199054678553,
+   "ttft_mean": 1402.7918220890551,
+   "ttft_p50": 1420.636243186891,
+   "ttft_p95": 1543.0599833838642,
+   "sda_read_MBps": 68.17381054820241,
+   "n_window": 369,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "sst2_b25|n4|SEL": {
+   "reps": 2,
+   "throughput_rps": 1.4942501264618364,
+   "ttft_mean": 967.9703792406094,
+   "ttft_p50": 976.0279841721058,
+   "ttft_p95": 1055.2505671977997,
+   "sda_read_MBps": 57.60004735904836,
+   "n_window": 370,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "sst2_b25|n8|CKV": {
+   "reps": 2,
+   "throughput_rps": 1.8874648209337774,
+   "ttft_mean": 2433.2610309144293,
+   "ttft_p50": 2466.6283149272203,
+   "ttft_p95": 2727.1807190030813,
+   "sda_read_MBps": 156.77399648081902,
+   "n_window": 734,
+   "cold_ok": 768,
+   "cold_total": 768
+  },
+  "sst2_b25|n8|I": {
+   "reps": 2,
+   "throughput_rps": 2.390618343842401,
+   "ttft_mean": 1563.764549976538,
+   "ttft_p50": 1567.6195826381445,
+   "ttft_p95": 1690.208207629621,
+   "sda_read_MBps": 129.87676835077565,
+   "n_window": 726,
+   "cold_ok": 768,
+   "cold_total": 768
+  },
+  "sst2_b25|n8|SEL": {
+   "reps": 2,
+   "throughput_rps": 2.851937891398312,
+   "ttft_mean": 1087.7277093496916,
+   "ttft_p50": 1100.9280644357204,
+   "ttft_p95": 1214.1124924644828,
+   "sda_read_MBps": 110.05871393269243,
+   "n_window": 730,
+   "cold_ok": 768,
+   "cold_total": 768
+  },
+  "trec_b25|n1|CKV": {
+   "reps": 2,
+   "throughput_rps": 0.23069537653639977,
+   "ttft_mean": 2084.8160099555203,
+   "ttft_p50": 2084.158468991518,
+   "ttft_p95": 2161.3531643524766,
+   "sda_read_MBps": 26.615234680338055,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "trec_b25|n1|I": {
+   "reps": 2,
+   "throughput_rps": 0.26732680841575973,
+   "ttft_mean": 1525.6645942225737,
+   "ttft_p50": 1528.7300664931536,
+   "ttft_p95": 1600.961167551577,
+   "sda_read_MBps": 18.896812461392436,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "trec_b25|n1|SEL": {
+   "reps": 2,
+   "throughput_rps": 0.3061870624419646,
+   "ttft_mean": 946.2922421541621,
+   "ttft_p50": 941.087881103158,
+   "ttft_p95": 978.6407120525837,
+   "sda_read_MBps": 12.390925012691394,
+   "n_window": 94,
+   "cold_ok": 96,
+   "cold_total": 96
+  },
+  "trec_b25|n2|CKV": {
+   "reps": 2,
+   "throughput_rps": 0.4333685265691757,
+   "ttft_mean": 2307.195365408896,
+   "ttft_p50": 2304.072815924883,
+   "ttft_p95": 2503.397123143077,
+   "sda_read_MBps": 50.04581012454959,
+   "n_window": 186,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "trec_b25|n2|I": {
+   "reps": 2,
+   "throughput_rps": 0.5029537239666584,
+   "ttft_mean": 1650.9733410430667,
+   "ttft_p50": 1647.1470640972257,
+   "ttft_p95": 1793.7732692807913,
+   "sda_read_MBps": 35.601861168479005,
+   "n_window": 184,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "trec_b25|n2|SEL": {
+   "reps": 2,
+   "throughput_rps": 0.625453732419325,
+   "ttft_mean": 993.7603247716374,
+   "ttft_p50": 987.6057747751474,
+   "ttft_p95": 1076.6995281912386,
+   "sda_read_MBps": 25.507957221892223,
+   "n_window": 184,
+   "cold_ok": 192,
+   "cold_total": 192
+  },
+  "trec_b25|n4|CKV": {
+   "reps": 2,
+   "throughput_rps": 0.8262116027691475,
+   "ttft_mean": 2518.6282779778476,
+   "ttft_p50": 2536.2703911960125,
+   "ttft_p95": 2716.5500223636627,
+   "sda_read_MBps": 96.05326310994548,
+   "n_window": 368,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "trec_b25|n4|I": {
+   "reps": 2,
+   "throughput_rps": 0.9791321117705722,
+   "ttft_mean": 1787.059637391143,
+   "ttft_p50": 1811.4895084872842,
+   "ttft_p95": 1968.0882119573653,
+   "sda_read_MBps": 69.15597857611297,
+   "n_window": 367,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "trec_b25|n4|SEL": {
+   "reps": 2,
+   "throughput_rps": 1.2476714376700837,
+   "ttft_mean": 975.4429158971933,
+   "ttft_p50": 975.3415137529373,
+   "ttft_p95": 1063.1073344498873,
+   "sda_read_MBps": 50.66372970449193,
+   "n_window": 367,
+   "cold_ok": 384,
+   "cold_total": 384
+  },
+  "trec_b25|n8|CKV": {
+   "reps": 2,
+   "throughput_rps": 1.4019345180624438,
+   "ttft_mean": 3378.3930217262796,
+   "ttft_p50": 3475.4720367491245,
+   "ttft_p95": 3747.3391010425985,
+   "sda_read_MBps": 162.36949202867635,
+   "n_window": 712,
+   "cold_ok": 768,
+   "cold_total": 768
+  },
+  "trec_b25|n8|I": {
+   "reps": 2,
+   "throughput_rps": 1.7939620891029069,
+   "ttft_mean": 2161.7991313553202,
+   "ttft_p50": 2230.1789773628116,
+   "ttft_p95": 2393.3437786996365,
+   "sda_read_MBps": 127.23399395267778,
+   "n_window": 728,
+   "cold_ok": 768,
+   "cold_total": 768
+  },
+  "trec_b25|n8|SEL": {
+   "reps": 2,
+   "throughput_rps": 2.4034055395335088,
+   "ttft_mean": 1114.7758413599431,
+   "ttft_p50": 1124.6065134182572,
+   "ttft_p95": 1230.3225274197757,
+   "sda_read_MBps": 97.40826767795053,
+   "n_window": 726,
+   "cold_ok": 768,
+   "cold_total": 768
+  }
+ }
+}

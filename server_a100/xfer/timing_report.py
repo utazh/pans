@@ -3,12 +3,13 @@
 用法: timing_report.py <study_dir> [cond] > out.json"""
 import json, random, statistics as st, sys
 from pathlib import Path
-D = Path(sys.argv[1]); cond_f = sys.argv[2] if len(sys.argv) > 2 else None
+ALL = '--all' in sys.argv; argv = [a for a in sys.argv if a != '--all']   # --all：敏感性分析，被标记的块也计入
+D = Path(argv[1]); cond_f = argv[2] if len(argv) > 2 else None
 blocks = [json.loads(l) for l in (D / 'blocks.jsonl').read_text().splitlines()]
 use = {}
 for b in blocks:                                   # 每 (cell,cond,block) 取最后一个未被标记且全部成功的记录
     k = (b['cell'], b['cond'], b['block'])
-    if b['flag'] is None and b['all_ok']: use[k] = b
+    if (b['flag'] is None or ALL) and b['all_ok']: use[k] = b
     elif k not in use: use.setdefault(('_bad',) + k, b)
 def mean_ttft(name):
     return st.mean(json.loads(l)['ttft_ms'] for l in (D / 'runs' / name / 'scored_records.jsonl').read_text().splitlines())

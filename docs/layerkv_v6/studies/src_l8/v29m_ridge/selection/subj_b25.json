@@ -1,0 +1,36 @@
+{
+ "cell": "subj_b25",
+ "n": 500,
+ "tolerance": 5,
+ "selected": "I",
+ "candidates": {
+  "I": {
+   "net": 0,
+   "eligible": true,
+   "bytes": 142344192.0,
+   "consumers": 0,
+   "disagree": 0
+  },
+  "S1": {
+   "net": -34,
+   "eligible": false,
+   "bytes": 128950272.0,
+   "consumers": 3,
+   "disagree": 54
+  },
+  "S2": {
+   "net": -61,
+   "eligible": false,
+   "bytes": 120020992.0,
+   "consumers": 5,
+   "disagree": 87
+  },
+  "S3": {
+   "net": -82,
+   "eligible": false,
+   "bytes": 106627072.0,
+   "consumers": 8,
+   "disagree": 106
+  }
+ }
+}

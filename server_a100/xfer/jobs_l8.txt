@@ -1,0 +1,8 @@
+src_l8 mlr_wiki v29m_ridge sst2_b25 env_l8.sh
+src_l8 mlr_wiki v29m_ridge trec_b25 env_l8.sh
+src_l8 mlr_loo v29m_ridge sst2_b25 env_l8.sh
+src_l8 mlr_loo v29m_ridge trec_b25 env_l8.sh
+src_l8 mlr_wiki v29m_ridge subj_b25 env_l8.sh
+src_l8 mlr_wiki v29m_ridge rte_b25 env_l8.sh
+src_l8 mlr_loo v29m_ridge subj_b25 env_l8.sh
+src_l8 mlr_loo v29m_ridge rte_b25 env_l8.sh

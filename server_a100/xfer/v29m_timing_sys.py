@@ -43,7 +43,7 @@ def argv(out, cell, arm, cond, block, name):
             '--selector-index-dir', str(R / 'assets/selector_index_k4_g32'), '--', '--pcache-root', str(kv), *cold, '--', *mode, '--',
             '--period', '8', '--profile', 'none', *tail]
 plan = []
-for cond in ('preserve', 'warm'):
+for cond in opt('--conds', 'preserve,warm').split(','):          # Llama 只跑 SSD 冷：--conds preserve
     for cell in CELLS:
         arms = ['I', shared_arm(cell)[0], 'CKV', 'IMP']
         for block in range(6): plan.append(dict(cell=cell, cond=cond, block=block, order=[arms[i] for i in WILLIAMS[block]]))
