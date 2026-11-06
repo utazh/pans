@@ -1,0 +1,43 @@
+{
+ "rule_sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "gpu": "2",
+ "cores": "28-31,60-63",
+ "meta": {
+  "arms": [
+   "NS8",
+   "NS4",
+   "RAPS4",
+   "CKV",
+   "IMP",
+   "AS",
+   "CAKE",
+   "LAVA"
+  ],
+  "p4_selection": {
+   "sst2_b25": "G24",
+   "subj_b25": "I",
+   "trec_b25": "G23",
+   "rte_b25": "G27"
+  },
+  "cache": "CKLFU 55 MiB GPU / 131 MiB CPU for all CKLFU systems; AS: LRU, same quotas",
+  "warmup": 4
+ },
+ "blocks": [
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  }
+ ],
+ "runs": 8
+}

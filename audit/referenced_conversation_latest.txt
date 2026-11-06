@@ -1,0 +1,722 @@
+**我建议第一版不训练 Qwen 主干，而是用“冻结主干的、无梯度离线校准”来得到这两个读取变换。**但矩阵不能随便加：K 侧应该围绕 **RoPE 和 attention 打分误差**设计，V 侧应该围绕 **实际 attention 输出误差**设计，而且必须正确处理 prefix 与当前 query 之间的归一化。
+
+我已经按照你当前仓库的接口写了一份附加实验代码：
+
+**:chatgpt-content-reference{index="17"}**
+
+代码包包括矩阵拟合、校准数据采集、共享 attention、物理 source 去重加载、原 runner 接入、测试和执行文档。**当前实际完成的是 24 项 CPU 数学与模拟接口测试通过，另有 2 项 CUDA 测试因环境没有 GPU 而跳过；还没有真实 Qwen 质量、传输量或 TTFT 的实测结果。**它是可以接入你仓库进行验证的研究原型，不是已经证明达到目标的版本。
+
+下面把设计依据、数学形式和执行路线讲清楚。
+
+---
+
+# 一、先明确：到底需不需要训练？
+
+我建议把三件事区分开。
+
+| 工作 | 第一版是否需要 | 具体含义 |
+|---|---|---|
+| 重新训练或微调 Qwen 主干 | **不需要** | Q/K/V 投影、MLP、归一化、`o_proj` 等原参数不更新 |
+| 离线校准读取矩阵 | **需要** | 运行少量独立校准 query，收集中间状态，用线性方程和 SVD 求矩阵 |
+| 对读取矩阵做梯度蒸馏 | **第一版不做** | 只有无梯度方案已经接近目标、但仍有可控误差时，才考虑这一阶段 |
+
+所以，准确的说法是：
+
+> **不需要主干训练，但需要数据驱动的离线校准。第一版甚至不需要反向传播。**
+
+这不是没有先例。ReCalKV 已经采用 K/V 非对称处理和离线 Value 校准；SVD-LLM 则说明了结合数据分布进行白化和截断的思路。它们可以为校准方式提供依据，但不能直接证明我们的跨层共享一定有效。:chatgpt-content-reference{index="0"}
+
+对你的固定 prefix 场景，离线校准有一个自然的摊销条件：同一个 prefix 会服务多次 query。因此，**可以在构建缓存时多做一些工作，换取之后每次恢复缓存时少搬运数据**。但每个 prefix 的校准时间、矩阵空间以及需要多少次复用才能回本，都必须计入实验。
+
+---
+
+# 二、设计的出发点：不是任意两个矩阵，而是两个不同职责的读取器
+
+你使用的 Qwen2.5-7B-Instruct 配置是 28 层、28 个 Q heads、4 个 KV heads，单 head 维度为 128。官方 Qwen2 attention 实现对 Q/K 应用 RoPE，Q/K/V 投影包含 bias，而 `o_proj` 不包含 bias。:chatgpt-content-reference{index="1"}
+
+这决定了我建议采用的基本单位：
+
+> **每个共享 consumer 层，按物理 KV head 配置读取参数；同一个 GQA 组的 7 个 Q heads 共用对应的读取器。**
+
+也就是说，不给 28 个 Q heads 分别随意添加一套矩阵，而是与原模型的四个 KV 组保持一致。
+
+两个读取器的职责不同：
+
+**K 读取器：让当前层尽量找对信息。**  
+它需要保持 attention 的打分关系，并控制 prefix 相对于当前 query 的注意力权重。
+
+**V 读取器：让读出的信息尽量正确。**  
+它需要让共享 V 的聚合结果接近当前层原本的内容表示。
+
+因此，没有必要要求：
+
+\[
+A_\ell=B_\ell
+\]
+
+更没有必要要求：
+
+\[
+B_\ell=A_\ell^{-1}
+\]
+
+**它们不是“变过去再变回来”的一对逆变换，而是分别补偿 K、V 的跨层差异。**
+
+---
+
+# 三、把原来的两个矩阵，升级成“非对称仿射读取器”
+
+我建议的近似形式是：
+
+\[
+\boxed{
+\widehat K_\ell=K_aA_\ell+\mathbf 1 b_\ell^K
+}
+\]
+
+\[
+\boxed{
+\widehat V_\ell=V_aB_\ell+\mathbf 1 b_\ell^V
+}
+\]
+
+这里 \(a\) 是共享源层，\(\ell\) 是读取它的 consumer 层。
+
+相比上次的解释，多了两个很小的偏置向量 \(b_\ell^K,b_\ell^V\)。这不是为了增加模块，而是为了补齐一个真实的数学缺口：**不同层的表示不仅可能旋转、缩放，也可能有均值偏移。**
+
+注意，\(b_\ell^K\) 是我们在实际缓存空间拟合得到的截距，**不是直接拿 Qwen 的 `k_proj.bias` 复制过来**；后者还会受到 RoPE 的影响。
+
+在线仍然不构造 \(\widehat K_\ell,\widehat V_\ell\)。它们只是用来定义我们希望模拟的计算。
+
+---
+
+## 3.1 K 侧：RoPE 结构先验，加上可学习的跨通道补偿
+
+### 第一步：保留 RoPE 频率平面的结构
+
+RoPE 会在成对的通道上执行旋转。针对一个频率平面，可以使用如下变换：
+
+\[
+C_{\ell,j}
+=
+\begin{bmatrix}
+a_{\ell,j}&-b_{\ell,j}\\
+b_{\ell,j}&a_{\ell,j}
+\end{bmatrix}
+\]
+
+它对应这个二维平面内的缩放与旋转，并且与同一频率的 RoPE 旋转交换。
+
+直观上：
+
+> **先允许当前层在每个位置编码频率平面中，调整读取的方向和尺度，而不是一开始就任意混合所有频率。**
+
+在 Qwen 的 split-half 实现中，配对的是：
+
+\[
+(j,\ j+d/2)
+\]
+
+而不是相邻的 \((2j,2j+1)\)。代码里已经按这个顺序处理。
+
+这一步的动机来自位置结构，而不是人为设置一种“看起来高级”的矩阵。但也必须承认：**原模型不同层未必只在同一个 RoPE 平面内存在差异，单靠这种结构很可能表达能力不足。**
+
+### 第二步：增加有限秩的残差补偿
+
+因此，我建议：
+
+\[
+\boxed{
+A_\ell=C_\ell+\Delta_\ell,
+\qquad
+\operatorname{rank}(\Delta_\ell)\leq r
+}
+\]
+
+其中 \(C_\ell\) 是上面的 RoPE 同频率块结构，\(\Delta_\ell\) 负责修复更复杂的跨通道差异。
+
+这里有一个必须强调的边界：
+
+**只有 \(C_\ell\) 具有上述交换性。加入一般残差 \(\Delta_\ell\) 后，整个 \(A_\ell\) 不再保证与 RoPE 交换。**
+
+因此，本方案第一版在 **post-RoPE 缓存空间**校准，绑定固定 prefix 的位置与 RoPE 配置，不声称它支持任意位置迁移，也不直接把完整 \(A_\ell\) 合并进 `q_proj`。MLA 中也专门讨论了普通 RoPE 与投影吸收之间的冲突。:chatgpt-content-reference{index="3"}
+
+### 为什么不是一上来就规定 rank=16？
+
+因为你首先需要回答的是：
+
+> **源层的 KV 是否具有足够的信息，可以通过线性读取来近似目标层？**
+
+所以实验顺序应当是：
+
+| 形式 | 用途 |
+|---|---|
+| 完整稠密 \(A_\ell\) | 先检验线性读取的表达能力 |
+| 只有 \(C_\ell\) | 检验强 RoPE 结构是否过度限制 |
+| \(C_\ell+\Delta_\ell\) | 检验结构先验与残差的折中 |
+| 直接共享 | 判断读取器到底补偿了多少损失 |
+
+**完整矩阵都做不好时，不应指望更小的结构化矩阵凭空解决信息缺失。**
+
+---
+
+## 3.2 K 侧的拟合目标：不只最小化 K 的均方误差
+
+一个自然但不充分的目标是：
+
+\[
+\|K_aA_\ell+b_\ell^K-K_\ell\|_F^2
+\]
+
+它把所有方向的误差看得一样重要。但真正影响 attention 的是：
+
+\[
+Q_\ell
+\left(
+K_aA_\ell+b_\ell^K-K_\ell
+\right)^\top
+\]
+
+也就是说，**如果某个误差方向几乎不会被当前层 Q 读取，它对 attention 的影响就可能很小。**
+
+因此，我们从校准 query 收集：
+
+\[
+M_{Q,\ell}
+=
+\mathbb E[q_\ell^\top q_\ell]+\epsilon I
+\]
+
+对某个 key 误差向量 \(e\)，有：
+
+\[
+\mathbb E[(q_\ell e^\top)^2]
+=
+eM_{Q,\ell}e^\top
+\]
+
+于是，可以使用 **Q 可观测的误差度量**来拟合 K reader，而不是单纯追求原始 K 的每一个元素都相近。
+
+结合前面的结构，中心化后的拟合目标为：
+
+\[
+\min_{\operatorname{rank}(\Delta)\leq r}
+\left\|
+\bigl(X\Delta-(Y-XC)\bigr)L_Q
+\right\|_F^2
++
+\lambda\|\Delta L_Q\|_F^2
+\]
+
+其中：
+
+\[
+M_Q=L_QL_Q^\top
+\]
+
+\(X,Y\) 分别是共享源与目标层的中心化 prefix K。
+
+**通俗地说：保留那些当前层 Q 真正会用来区分 token 的方向。**
+
+代码通过白化、截断 SVD 和线性方程求解这一目标，不需要梯度训练。借鉴的是数据感知分解思想，而不是直接对某个矩阵做普通 SVD 就结束。:chatgpt-content-reference{index="4"}
+
+还有两个限制需要写清：
+
+第一，校准时应使用一个 GQA 组的 **全部 7 个 Q heads**，不能只用你当前 selector 的一个代表 head。选择器的代表 head 是降低在线选择成本的设计，不足以代表全部读取行为。
+
+第二，Q 度量的优势主要应该在有限秩约束下验证。对某些完整、无约束回归形式，正定的右侧度量会消去，不能先验宣称它一定让完整矩阵拟合更好。
+
+---
+
+# 四、V 侧不要照搬 K：直接校准“读出来的结果”
+
+这是我认为比“给 V 再做一次低秩拟合”更适合你的设计。
+
+只拟合：
+
+\[
+V_aB_\ell+b_\ell^V\approx V_\ell
+\]
+
+有一个问题：**V 的每一行同样被对待，但实际模型并不会同等程度地读取所有 token。**
+
+更重要的是，K reader 已经改变了 attention 权重。即使原始 V 拟合不错，最终聚合输出仍然可能偏移。
+
+因此，我建议：
+
+> **先固定 K reader，再用它实际产生的注意力权重，校准 V reader。**
+
+ReCalKV 的离线 Value 校准和输出侧融合值得学习，但我们这里的目标需要进一步考虑“共享 prefix + 原生 query”两部分共同归一化，不能原样照搬。:chatgpt-content-reference{index="5"}
+
+## 4.1 为什么必须同时考虑 prefix 的注意力比例？
+
+设：
+
+- \(u_s\)：读取共享 prefix V 得到的条件输出；
+- \(u_t\)：原模型读取目标层 prefix V 得到的条件输出；
+- \(u_{\rm private}\)：当前 query 私有分支的条件输出；
+- \(\beta_s,\beta_t\)：新旧计算中，prefix 占整个 attention 的权重。
+
+原模型的输出是：
+
+\[
+O_{\rm teacher}
+=
+\beta_tu_t+(1-\beta_t)u_{\rm private}
+\]
+
+我们的方法输出是：
+
+\[
+O_{\rm shared}
+=
+\beta_s(u_sB_\ell+b_\ell^V)
++
+(1-\beta_s)u_{\rm private}
+\]
+
+因此，应该拟合：
+
+\[
+\boxed{
+O_{\rm shared}\approx O_{\rm teacher}
+}
+\]
+
+而不是只要求 \(u_sB_\ell\approx u_t\)。
+
+整理后，它依然是一个线性回归：
+
+\[
+\underbrace{
+[\beta_su_s,\ \beta_s]
+}_{\text{设计矩阵}}
+\begin{bmatrix}
+B_\ell\\
+b_\ell^V
+\end{bmatrix}
+\approx
+\underbrace{
+\beta_tu_t+(\beta_s-\beta_t)u_{\rm private}
+}_{\text{回归目标}}
+\]
+
+**这一步同时考虑了共享 V 的内容差异，以及 K reader 改变 prefix 权重后的影响。**
+
+代码先以原始 V 的仿射回归作为先验，再做这个 attention-output 回归，避免少量校准 query 下矩阵出现不受约束的放大。
+
+第一版的 \(B_\ell\) 保留完整的 \(128\times128\) 形式。我不建议为了形式对称，也强制给它套上与 K 一样的 RoPE 或低秩约束。
+
+---
+
+# 五、一个必须修正的细节：K 的偏置不能随便省掉
+
+这是相较上次方案最重要的完善之一。
+
+如果：
+
+\[
+\widehat K_\ell=K_aA_\ell+b_\ell^K
+\]
+
+那么对某个 query，所有 prefix logits 都会增加同一个值：
+
+\[
+\delta_\ell
+=
+\frac{q_\ell(b_\ell^K)^\top}{\sqrt d}
+\]
+
+这个值确实会在 **prefix 内部的 softmax** 中消去。
+
+但是，它不会在 **prefix 与当前 query 的竞争** 中消去。
+
+举例说，prefix 内部仍然是“第一个 token 读 70%，第二个读 30%”，但整个 prefix 可能从总注意力的 40% 变成 80%。这会显著改变模型行为。
+
+因此正确的计算是：
+
+\[
+z_P
+=
+\operatorname{logsumexp}
+\left(
+\frac{(Q_\ell A_\ell^\top)K_a^\top}{\sqrt d}
+\right)
++
+\frac{Q_\ell(b_\ell^K)^\top}{\sqrt d}
+\]
+
+然后与私有分支的 \(z_U\) 合并：
+
+\[
+\beta=
+\exp\left(z_P-\operatorname{logaddexp}(z_P,z_U)\right)
+\]
+
+最终：
+
+\[
+\boxed{
+O_\ell
+=
+\beta\,(u_PB_\ell+b_\ell^V)
++
+(1-\beta)\,u_U
+}
+\]
+
+这里“正确”指的是：**与显式构造仿射近似 KV 的 attention 数学等价**。它不意味着近似 KV 已经和原模型 KV 一样。
+
+代码包里的核心执行顺序就是：
+
+```python
+# 共享 prefix：Q 侧适配，但不重建该层 prefix KV。
+q_shared = query_transform(q, reader)
+u_prefix, logz_prefix = attention_with_lse(
+    q_shared, shared_k, shared_v, backend="flash2"
+)
+
+# 常量 key 偏移影响 prefix 与私有 tail 的竞争。
+logz_prefix += key_offset(q, reader, q.shape[-1] ** -0.5)
+u_prefix = value_transform(u_prefix, reader)
+
+# 当前 query / 后续 token：仍使用当前层自己的原生 KV。
+u_tail, logz_tail = attention_with_lse(
+    q, private_k, private_v, causal=True, backend="flash2"
+)
+
+# 共同归一化，不是两个独立 softmax 输出直接相加。
+output, _ = merge_segments(
+    u_prefix, logz_prefix, u_tail, logz_tail
+)
+```
+
+之后仍然使用原来的 `o_proj` 和 decoder 残差路径。
+
+---
+
+# 六、最值得学习的论文与代码
+
+我建议重点看下面五项，而不是同时引入很多新模块。
+
+| 工作 | 建议学习的部分 | 对我们方案的约束 |
+|---|---|---|
+| **DeepSeek-V2 / MLA** | K/V 投影向 Q 与输出侧移动，以及 RoPE 为什么阻碍直接吸收 | 矩阵移项本身不是新贡献；位置问题必须严肃处理。:chatgpt-content-reference{index="6"} |
+| **ReCalKV** | K/V 非对称设计、离线 Value 校准、输出侧融合 | 值得参考闭式校准，但我们的 B 只能作用于共享 prefix 分支。:chatgpt-content-reference{index="7"} |
+| **SVD-LLM** | 数据白化、截断与实际误差之间的联系 | 不要把“普通 SVD 截断”直接等同于保留模型读取能力。:chatgpt-content-reference{index="8"} |
+| **xKV / xKV-SR** | 跨层共享子空间、选择性重建，以及实际效率评测 | 是强相关工作和必要对照，不能只比较直接共享或逐层原始 KV。:chatgpt-content-reference{index="9"} |
+| **KVSharer** | 实际 KV 跨层共享和共享层选择 | 直接共享并不是空白领域，读侧适配需要证明其新增价值。:chatgpt-content-reference{index="10"} |
+
+代码方面，我核对了 ReCalKV 和 xKV 的当前作者仓库。ReCalKV 可重点读 `palu/model/modules/svd_linear.py` 中的校准实现以及 `palu/decomposition.py`；xKV 可从 `evaluate/eval_acc.py`、`examples/xKV/`、`examples/xKV_SR/` 入手。
+
+代码包的 `docs/SOURCES.md` 放了论文链接、作者仓库链接和重点路径。
+
+**关于创新性，我的判断是：这条路线值得做，但不能把“两个矩阵 + 跨层共享”直接视为已经成立的新贡献。**更有辨识度的问题是：
+
+> **在固定 prefix、主干冻结的条件下，能否用具有位置结构和归一化约束的读取校准，把原本层专属的缓存变成真正可共享的物理记忆，并且减少实际 prefill 恢复成本？**
+
+需要实验支撑的是这句话，而不是各个组成技术分别“看起来合理”。
+
+---
+
+# 七、如何接入你的代码，才能真的减少传输？
+
+我针对的是你仓库提交：
+
+```text
+e32c4a5605ca55d2904b33065d67a1d71667d47c
+```
+
+当前代码仍然是每层通过 `loader.resolve(layer_index)` 获取自己的 payload；选择阶段则可以把相同 token IDs 配给后续层。因此，**只修改 attention 公式还不够，必须同时修改物理加载的所有权。**
+
+## 7.1 分开两个周期：选择周期与实际 KV 共享范围
+
+第一版保持：
+
+\[
+P_{\rm index}=8
+\]
+
+实际 KV 共享从两层开始：
+
+\[
+P_{\rm KV}=2
+\]
+
+例如：
+
+```text
+层 10：读取自己的 prefix KV
+层 11：读取层 10 的同一份 prefix KV，并使用自己的 reader
+```
+
+我没有让每八层都共用同一份 K/V，也没有改成在线自适应共享。**选择可以沿用八层，并不代表张量也能共享八层。**
+
+第一版还保持 0、8、16、24 这些 selector leaders 使用自己的 KV，避免同时改变 selector 的含义。这个限制是为了隔离实验变量，不是断言这些层永远不能共享。
+
+## 7.2 不再给 consumer 加载自己的 prefix
+
+新增运行路径只对唯一 source 执行：
+
+```python
+loader.schedule(source_layer)
+loader.resolve(source_layer)
+```
+
+同一 source 的布局整理、FP16→BF16 转换只做一次。consumer 直接引用已存在的 tensor。
+
+所以共享层对必须满足：
+
+```python
+source_k.data_ptr() == consumer_k.data_ptr()
+source_v.data_ptr() == consumer_v.data_ptr()
+```
+
+代码有相应的模拟测试，也会拒绝“同组选择 IDs 不同”的情况。第一版没有实现不同选择集合的并集加载。
+
+## 7.3 不能把共享 prefix 再分别塞入每层 DynamicCache
+
+否则后续追加 query KV 时，可能又在每层生成一份独立的长 prefix 副本。
+
+我采用：
+
+> **请求级只读 prefix 缓冲区 + 每层私有 tail cache。**
+
+原始 `DynamicCache` 只存当前 query 和后续 token 的本层 KV；共享 prefix 由请求级对象持有。原来标签续写评分使用的 cache fork 也只复制私有 tail。
+
+你当前 greedy 路径确实包含标签续写时的缓存复制，因此这个生命周期问题不能省略。
+
+## 7.4 不要提前宣称磁盘压缩已经实现
+
+本版**不删除或重写你 SSD 上原来的逐层 KV 文件**。它先验证在线恢复、驻留和传输是否能够减少。
+
+因此，第一版能测的是“少恢复了多少数据”，不能把它写成“磁盘存储已经压缩了多少”。
+
+---
+
+# 八、代码包已经实现到什么程度？
+
+主要文件如下：
+
+| 文件 | 已实现内容 |
+|---|---|
+| `sharedkv/fit.py` | RoPE 块拟合、Q 度量 reduced-rank 回归、V 输出校准 |
+| `sharedkv/collect.py` | 在原 runner 上采集独立校准请求，不重复转储整个 prefix KV |
+| `sharedkv/compile.py` | 拟合矩阵、局部验证、拒绝不合格层对、保存身份信息 |
+| `sharedkv/core.py` | 仿射读侧 attention、GQA、私有 tail、共同归一化 |
+| `sharedkv/runtime.py` | 唯一 source 调度与恢复、请求级共享 prefix、原 greedy 接入 |
+| `scripts/run_sharedkv.py` | `original / collect / identity / shared` 四种模式 |
+| `tests/test_sharedkv.py` | 数学、所有权、RoPE、GQA、缓存 fork 和合成编译链路测试 |
+
+**本版没有实现的内容**包括：端到端梯度蒸馏、共享后重新采集状态的迭代校准、跨请求完整的 alias-aware 缓存评分、跨 P8 窗口共享、动态 RoPE、批处理，以及专门融合的最终 attention kernel。
+
+性能路径使用 FlashAttention-2 返回条件输出和 `logsumexp`，再合并两部分。官方接口允许获得这些统计；代码检查返回形状和是否意外产生大 attention mask，不会在性能运行中静默回退到参考实现。
+
+另外有一个重要细节：**虽然 K 残差可以按 rank 拟合，本版在线仍然导出和使用稠密 A/B。**当前的低秩约束用于控制拟合，而不是已经实现了更小的在线矩阵存储或更少 FLOPs。要实现后者，还需要进一步做分解执行和 kernel 融合。
+
+---
+
+# 九、建议按这个顺序执行，而不是直接跑全模型共享
+
+## 阶段 A：先验收 identity 路径
+
+把代码包里的新增文件复制到你仓库对应位置，具体命令见 `README_ZH.md`。它不覆盖原 runner 和 Pcache 文件，并校验关键源文件版本。
+
+先运行：
+
+```bash
+python scripts/run_sharedkv.py --mode original -- \
+  --task trec --budget 25 --period 8 \
+  --samples 16 --warmup 0 \
+  --output results/sharedkv_original_smoke
+
+python scripts/run_sharedkv.py --mode identity --backend flash2 \
+  --stats results/sharedkv_identity_smoke.extra.jsonl -- \
+  --task trec --budget 25 --period 8 \
+  --samples 16 --warmup 0 \
+  --output results/sharedkv_identity_smoke
+```
+
+`identity` 不跨层共享，也不做读取变换，但使用新的两分支 attention 和私有 cache。
+
+它要回答：
+
+> **新执行路径本身，有没有把 mask、RoPE、归一化、标签续写或缓存生命周期写错？**
+
+由于后端和浮点舍入不同，logits 不一定逐位一致，但明显的质量变化必须先解决。
+
+**一定保留 original。后面 shared 只比一个更慢的 identity 快，不代表它比你的原系统快。**
+
+## 阶段 B：采集独立的校准 query
+
+建议先以每个 prefix 32–64 个拟合 query、另 32–64 个验证 query 起步。这只是初始配置，不是已经证明充分的样本数。
+
+必须满足：
+
+\[
+\text{拟合集}\cap\text{验证集}
+=
+\text{拟合集}\cap\text{测试集}
+=
+\text{验证集}\cap\text{测试集}
+=
+\varnothing
+\]
+
+**可以共享相同 prefix，但不能共享同一个测试 query。**
+
+采集模式示例：
+
+```bash
+python scripts/run_sharedkv.py --mode collect \
+  --trace-dir runtime_data/sharedkv_cal_fit \
+  --max-query-samples 8 -- \
+  --task trec --budget 25 --period 8 \
+  --samples 64 --warmup 0 \
+  --bundle-dir /data/cal_fit \
+  --output results/sharedkv_collect_fit
+```
+
+验证集再运行一次，换成独立目录和输出路径。
+
+这一模式会额外做投影、拷贝和参考 attention，**其时间不能用作 TTFT 结果**。
+
+## 阶段 C：先只试一对层，使用完整矩阵
+
+例如：
+
+```bash
+python scripts/compile_sharedkv.py \
+  --store-root "$PANS_STORE_ROOT" \
+  --task trec \
+  --fit-traces runtime_data/sharedkv_cal_fit \
+  --validation-traces runtime_data/sharedkv_cal_val \
+  --pairs 2:3 \
+  --key-mode dense \
+  --ridge 0.001 \
+  --output assets/sharedkv_dense/trec.pt
+```
+
+`2:3` 只是一个 0-based 接口示例，**不是已经发现的最佳层对**。应当在开发集比较多个层段。
+
+完整矩阵版本成功后，再对相同层对尝试：
+
+```text
+--key-mode rope
+--key-mode rope_rr --rank 8
+--key-mode rope_rr --rank 16
+--key-mode rope_rr --rank 32
+```
+
+编译器会检查局部 attention 输出误差和 prefix 质量误差。不合格层对保持原始 KV，不进入共享表。
+
+但要注意：**局部门限通过，只能说明这个层对在 teacher 中间状态下近似得还可以，不代表多层替换后的真实模型质量一定保持。**
+
+## 阶段 D：运行真实共享，检查误差累积
+
+```bash
+python scripts/run_sharedkv.py --mode shared --backend flash2 \
+  --adapters assets/sharedkv_dense \
+  --stats results/sharedkv_trec25.extra.jsonl -- \
+  --task trec --budget 25 --period 8 \
+  --warmup 32 \
+  --output results/sharedkv_trec25
+```
+
+先单层对，再逐步增加。
+
+多层共享会改变后续 hidden states、Q 和 selector 结果，因此最终必须让共享后的模型完整执行，不能只拿原模型中间 Q 的局部拟合结果来宣称质量保持。
+
+---
+
+# 十、你的目标应该怎样验收？
+
+## 10.1 质量：对照当前 P8，也对照 Full-KV
+
+你需要分别回答：
+
+**相对当前 P8 基线，读侧共享增加了多少损失？**
+
+以及：
+
+**相对 Full-KV，整个系统最后损失多少？**
+
+校准代码以原 P8 执行路径为 teacher，并不会自动纠正你原来稀疏选择带来的误差。
+
+“没有明显下降”最好提前定义，例如以每个任务的 0.5 或 1 个百分点作为候选非劣界限，再结合样本量报告配对区间。这是评测协议的选择，不是当前方案已经达到的结果。
+
+另外，你当前入口固定 `max-tokens=1`，标签续写评分与 TTFT 分开，因此还需要补充较长 query 和多 token 生成的验收，避免首 token 看起来正常、后续误差持续累积。
+
+## 10.2 传输：统计物理字节，不只统计少了多少逻辑层
+
+在同精度、同选择集合下，两层共享一个 source，理想上该组只需要恢复一份 payload。
+
+例如，28 层里有 9 个 consumer 成功共享，其余条件相同，则逻辑所选 payload 理想减少：
+
+\[
+\frac{9}{28}\approx32.1\%
+\]
+
+**这不是对实际 H2D 或 TTFT 的预测。**若原来的数据已经在 GPU cache 中命中，本来就没有对应 H2D 可省。
+
+新统计区分了逻辑所选字节、唯一 source 所选字节、实际 `resolve` 次数和额外工作集。实际硬件传输仍要结合原 loader 的来源统计和独立 Nsight 测量，计入读放大、selector 和 reader 冷加载。
+
+参数也不能忽略。每个 consumer 的四组 BF16 稠密 A/B 与两个偏置向量，约为：
+
+\[
+2\times4\times128^2\times2
++
+2\times4\times128\times2
+=
+264192\ \text{bytes}
+\]
+
+即约 **258 KiB**。多个 consumer、多个 prefix/task 都要累计，不能只固定原来的 55 MiB payload cache 配额，却不报告新增矩阵和工作集。
+
+## 10.3 TTFT：省下的关键路径时间必须超过新增开销
+
+本方案没有省掉每层 attention，也没有省掉 MLP。它新增了 Q 变换、输出变换和分支合并。
+
+因此，真正需要满足：
+
+\[
+\boxed{
+\text{减少的数据恢复关键路径时间}
+>
+\text{读取适配与分支处理的新增关键路径时间}
+}
+\]
+
+这需要实际时间线来判断，不能简单把所有 memcpy 时间相加，因为有些工作可能重叠。
+
+我建议正式保留 `original、identity、shared` 三组，使用相同 UID、缓存条件和资源限制，交替顺序重复运行。CPU 命中、GPU 命中、冷数据条件分开报告。
+
+如果实际结果是“传输下降，但 shared 仍慢于 original”，那说明 **共享表示可能有价值，但当前执行后端还没有实现 TTFT 目标**；不能把这两件事混成一个成功结论。
+
+---
+
+# 十一、我认为最有价值的“故事”，应该建立在什么证据上？
+
+不是：
+
+> 我们发现跨层相似，于是加两个矩阵，再接一个缓存系统。
+
+而是：
+
+> **冻结模型的各层并不需要拥有独立的历史记忆副本，但需要保留各自的读取方式。我们把层间差异从长 prefix 的存储与恢复，转移到短 query 的读取过程；K 侧保持打分与归一化，V 侧保持聚合内容，从而在不重建消费者 KV 的前提下实现物理共享。**
+
+要让这个论点成立，至少应该出现以下证据链：
+
+**直接共享会造成读取误差；读侧适配能在相同共享预算下减少这些误差；结构与输出校准各自有可解释的作用；这种共享最后确实减少了物理恢复，并改善原系统的 TTFT。**
+
+其中一个特别重要的对照是：**直接共享与适配共享必须使用相同层对或相同共享预算。**不能一边只共享一层，另一边共享九层，然后把结果都归因于读取器。
+
+如果完整 A/B 在多数真实层对上都失败，那么可能不是矩阵设计不够精巧，而是同编号的源 KV head 缺少目标层需要的信息。那时再研究 head 匹配、扩大共享源子空间或少量 reader 蒸馏才有依据，而不是不断增加正则和阈值。
+
+---
+
+**我的明确建议是：先不训练主干，也不直接上 P8 实际 KV 共享。先完成 `identity → 单层对完整 A/B → 同层对结构化消融 → 多层真实共享`。**
+
+这份代码已经把离线校准与物理共享路径连接起来；下一轮最关键的结果不是“矩阵拟合误差很小”，而是：
+
+> **在独立 query 上，相同共享预算下质量保持，同时实际唯一恢复字节下降，并且 shared 的 TTFT 优于你当前 original 实现。**

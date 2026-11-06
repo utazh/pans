@@ -1,0 +1,12 @@
+{
+  "branch": "v2.6",
+  "commit": "11fde71c36ceecded60d560620900dec5c3a5d76",
+  "tree": "3816d8dcb6d8ca7a07abd26e932b71abcbe7f323",
+  "url": "https://github.com/utazh/pans/tree/v2.6",
+  "publication_files_changed": 406,
+  "tree_verified": true,
+  "report_blob_sha": "cba98cc718e1fbe49074a41e81d2e553f6027bc7",
+  "cpu_passed": 574,
+  "cpu_skipped": 31,
+  "subtests_passed": 87
+}

@@ -1,0 +1,115 @@
+{
+ "invalid_blocks": [
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 0,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 0,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 1,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 1,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 2,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 2,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 3,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 3,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 4,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 4,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 5,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 5,
+   "suffix": "_r1",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 0,
+   "suffix": "",
+   "flag": "foreign_gpu23_process",
+   "all_ok": true
+  }
+ ],
+ "valid_blocks": 42,
+ "selected": {
+  "sst2_b25": "G24",
+  "subj_b25": "G20",
+  "trec_b25": "G16",
+  "rte_b25": "G20"
+ }
+}

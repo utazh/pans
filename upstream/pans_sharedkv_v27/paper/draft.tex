@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref}
+\title{Read-Side Cross-Layer KV Sharing for Prefix-Hit Re-Prefill:\\Recovery Benefits and Quality Trade-offs}
+\author{Author information omitted}
+\date{Working draft based on the v2.6 evidence; not a submission template}
+\begin{document}
+\maketitle
+\begin{abstract}
+Prefix cache hits avoid recomputing shared context, but restoring layer-specific
+key--value states can still dominate time to first token. We study a frozen-backbone
+approach that moves cross-layer compensation to the query and attention-output
+paths, allowing multiple logical layers to read a shared physical prefix cache
+without materializing complete consumer-specific caches. A bounded subset of the
+originally selected prefix positions can remain native to each consumer. Current
+experiments on Qwen2.5-7B show lower observed SSD-cold re-prefill latency in all
+16 task--budget cells, with reductions of 17.87--42.01\%. However, accuracy declines
+in 15 of these cells. A separately blocked TREC/25\% study shows 39.15\% lower cold
+latency under matched cache-admission policies. These results support a recovery
+cost--quality trade-off rather than universal lossless compression. External
+cross-layer baselines and quality-matched operating points remain to be completed.
+\end{abstract}
+
+\section{Problem and scope}
+We consider requests whose historical prefix has already been computed and
+persisted. Online work includes selecting and restoring prefix KV, processing the
+new query, and producing the first-token logits. We do not claim savings in prefix
+projection work already avoided by the cache hit. Current query and generated-token
+KV remain layer-private. All decoder layers, residual paths, and feed-forward
+networks execute normally. This scope follows the re-prefill setting distinguished
+by ContiguousKV~\cite{contiguouskv}.
+
+\section{Method}
+Let $a(\ell)$ denote the physical source for logical consumer layer $\ell$.
+Within a KV head, calibrated matrices and offsets define the affine approximation
+\begin{align}
+ \widehat K_\ell &= K_{a(\ell)}A_\ell+\mathbf{1}b^K_\ell,\\
+ \widehat V_\ell &= V_{a(\ell)}B_\ell+\mathbf{1}b^V_\ell.
+\end{align}
+The approximation is evaluated without reconstructing these complete tensors:
+$Q_\ell\widehat K_\ell^T=(Q_\ell A_\ell^T)K_{a(\ell)}^T+
+(Q_\ell(b^K_\ell)^T)\mathbf{1}^T$. Likewise, a shared-value weighted aggregate is
+transformed after aggregation. These algebraic identities are not themselves a
+novelty claim; approximation quality must be measured separately.
+
+The originally selected support $\mathcal I_\ell$ is partitioned into a shared
+part $\mathcal C_\ell$ and an optional native subset $\mathcal R_\ell$, with
+$\mathcal I_\ell=\mathcal C_\ell\dot\cup\mathcal R_\ell$. No extra tokens are
+added. The current implementation uses the last four \emph{selected physical
+blocks}, not necessarily an absolute-position sliding window.
+Let $u_C,z_C$ and $u_N,z_N$ be conditional outputs and log-normalizers for the
+shared and native/private segments. The shared key offset is included in $z_C$.
+With $\beta=\exp(z_C-\operatorname{logaddexp}(z_C,z_N))$, the result is
+\begin{equation}
+ O_\ell=\beta(u_CB_\ell+b^V_\ell)+(1-\beta)u_N.
+\end{equation}
+This preserves joint normalization between historical and new information.
+
+\section{Offline calibration and online ownership}
+The backbone is frozen; only read-side parameters are calibrated offline.
+Source maps and readers are currently specific to the model, prefix, sparse
+budget, and calibration protocol. Online P8 selection still depends on the current
+query. Multiple consumers share immutable source storage; native subsets are loaded
+and admitted separately; the private tail never becomes shared across layers.
+The durable original 28-layer cache is retained in these experiments, so request
+buffer savings are not persistent-storage reductions.
+
+\section{Evidence and limitations}
+The v2.6 matrix spans SST-2, SUBJ, TREC, and RTE at 5, 10, 25, and 50\% token
+budgets. Accuracy uses the complete declared evaluation partitions; matrix latency
+uses 128 paired requests per cell and does not certify each cell independently.
+The matched executor control uses the project's optimized P8 path, not automatically
+a faithful full ContiguousKV implementation.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Frozen TREC/25\% control & Native identity & Shared reader\\
+\midrule
+Accuracy (500 historical queries) & 68.60\% & 73.00\%\\
+Cold TTFT, matched reuse admission (ms) & 1745.57 & 1062.24\\
+Ordinary-cache TTFT (ms) & 261.93 & 201.68\\
+\bottomrule
+\end{tabular}
+\caption{Eight-block primary study and historical quality case. This special case
+does not override the 15/16 quality declines in the broader matrix. Source: the
+user-provided v2.6 experiment report.}
+\end{table}
+
+A fixed-checkpoint unit-reader intervention reaches 16.80\%, showing the importance
+of the learned reader as a whole. Replacing native patch contents with affine
+source predictions reaches 76.80\% in this one case, higher than native patches.
+Thus the data do not establish that native content is indispensable. In exact
+arithmetic, the proxy construction and frozen-reader all-shared attention represent
+the same affine memory; finite-precision operation order and selector feedback
+remain separate effects to test.
+
+At 5\% budget, reader and packed-storage overhead produces negative net subsystem
+memory savings in three tasks. The broad matrix must therefore report total
+subsystem storage, quality, and latency together. No claim is made of universal
+non-inferiority or a larger-model result.
+
+\section{Required comparisons}
+ContiguousKV addresses granular recovery and prefetching~\cite{contiguouskv};
+KVSharer searches a direct layer-sharing strategy~\cite{kvsharer}; xKV extracts
+cross-layer token bases and includes selective reconstruction~\cite{xkv}.
+A fixed unit-reader ablation is not a substitute for KVSharer's search. Our current
+CLF quality reference is not the full xKV-SR serving engine. Before a submission,
+compare these methods at matched quality or total resource budgets in a clearly
+specified prefix-hit adaptation, preserving their original algorithmic choices
+where possible and disclosing changes.
+
+\section{Next experiments}
+Freeze the current implementation. Test frozen native, proxy, and R0 interventions;
+compare bounded-distance source maps without forcing an infeasible G16; obtain
+quality--recovery Pareto curves; and confirm a small number of predeclared operating
+points on unseen queries and matched cold/warm timing blocks. Do not hide the
+current negative results, retune on the historical benchmark, or reinterpret failed
+non-inferiority tests as passes.
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

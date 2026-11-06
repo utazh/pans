@@ -1,5 +1,3 @@
-> 发布说明：下文保留原始方案与包说明。文中的“没有真实 Qwen 新结果”描述上传包发布时的状态；服务器实测现已完成，结果以 [v2.2 实验报告](EXPERIMENT_REPORT_V22_ZH.md) 为准。路径移植限制见 [发布说明](docs/layerkv_v22/RELEASE_ZH.md)，本实验快照的固定路径不能仅靠 PANS_* 环境变量覆盖。
-
 # SharedKV v2.2：按实际读取误差对齐 GQA 组
 
 本补丁只增加一个方法变量：目标层的第 h 个 KV 组不必读取 source 层同编号的 h 组，可以读取离线选择的 π(h) 组。A/B/bK/bV、P8、主干、source bank 和 private tail 的语义保持不变。K 和 V 必须使用相同的一对一映射。

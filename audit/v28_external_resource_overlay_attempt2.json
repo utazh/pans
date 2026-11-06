@@ -1,0 +1,6 @@
+{
+  "base_manifest_sha256": "ee2003c591863b2315d1b8815ff5e6d4c66bf908b408dc6cf0d259253c0bd72d",
+  "gpu": "3",
+  "pcache_root": "/home/panzihang/src/prism_layerkv/runtime_data/v27_pcache_gpu3",
+  "scope": "Disjoint external preparation/quality jobs; no timing allowed. Inputs and numerical protocol unchanged."
+}

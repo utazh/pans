@@ -1,0 +1,93 @@
+{
+  "job_sha256": "d3a81144732500a6311825c29c50da98d9d36f204367388aa99c3c139ffe1666",
+  "job": {
+    "id": "sst2_b5_timing_I_warm_b00",
+    "argv": [
+      "/home/panzihang/venvs/vllm-stable/bin/python",
+      "/home/panzihang/src/prism_layerkv/scripts/run_evidence_v26.py",
+      "--admission",
+      "reuse-prefetch",
+      "--audit-jsonl",
+      "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00.v26.jsonl",
+      "--",
+      "--model-path",
+      "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+      "--store-root",
+      "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+      "--selector-index-dir",
+      "/home/panzihang/src/prism_layerkv/assets/selector_index_k4_g32",
+      "--",
+      "--pcache-root",
+      "/home/panzihang/src/prism_layerkv/runtime_data/v27_pcache_gpu2",
+      "--",
+      "--mode",
+      "identity",
+      "--backend",
+      "vllm2",
+      "--metadata-cache",
+      "--layout",
+      "hybrid",
+      "--stats",
+      "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00.extra.jsonl",
+      "--",
+      "--task",
+      "sst2",
+      "--budget",
+      "5",
+      "--period",
+      "8",
+      "--max-tokens",
+      "1",
+      "--warmup",
+      "4",
+      "--samples",
+      "16",
+      "--profile",
+      "none",
+      "--bundle-dir",
+      "/home/panzihang/src/prism_layerkv/studies/v28_frozen/bundles/sst2_b5/b00",
+      "--output",
+      "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00"
+    ],
+    "output": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00",
+    "task": "sst2",
+    "budget": 5,
+    "arm": "I",
+    "phase": "timing",
+    "condition": "warm",
+    "block": 0,
+    "quality_only": false,
+    "logits_dir": null,
+    "selection_dir": null,
+    "representation": null,
+    "position": 0
+  },
+  "status": "complete",
+  "start_unix": 1790215247.8769007,
+  "host_before": {
+    "loadavg": [
+      29.12255859375,
+      27.7080078125,
+      26.837890625
+    ],
+    "gpu_snapshot": "index, uuid, memory.used [MiB], utilization.gpu [%], temperature.gpu, power.draw [W]\n0, GPU-b1f7fa73-f984-05f0-b325-0edef724c0d0, 22255 MiB, 0 %, 56, 116.78 W\n1, GPU-ce16a16b-91ae-18c1-8704-776d412380dd, 22255 MiB, 0 %, 53, 116.71 W\n2, GPU-040da80c-3e74-ca1d-0c7f-34018d9e5f72, 15 MiB, 0 %, 49, 132.31 W\n3, GPU-86cfbc78-00fa-197b-f4bd-8e35560370ae, 15 MiB, 0 %, 36, 33.88 W\n"
+  },
+  "returncode": 0,
+  "process_seconds": 61.98229789733887,
+  "host_after": {
+    "loadavg": [
+      27.09228515625,
+      27.388671875,
+      26.78564453125
+    ],
+    "gpu_snapshot": "index, uuid, memory.used [MiB], utilization.gpu [%], temperature.gpu, power.draw [W]\n0, GPU-b1f7fa73-f984-05f0-b325-0edef724c0d0, 22255 MiB, 0 %, 55, 116.07 W\n1, GPU-ce16a16b-91ae-18c1-8704-776d412380dd, 22255 MiB, 0 %, 51, 115.51 W\n2, GPU-040da80c-3e74-ca1d-0c7f-34018d9e5f72, 15 MiB, 0 %, 46, 108.82 W\n3, GPU-86cfbc78-00fa-197b-f4bd-8e35560370ae, 15 MiB, 0 %, 36, 33.62 W\n"
+  },
+  "result_sha256": {
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00/scored_records.jsonl": "4e04194b6e18e25039e7a6a69ef1da5cb144e20268fa6339709225e5ba7a3d92",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/logs/sst2_b5_timing_I_warm_b00.log": "d422ae427d9061c5a57852a437601db07c2a3589b8c24f012aec7f03423f66fa",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00.v26.jsonl.effective_cli.json": "8eb52305ce8ba284fcf3350468c20f2667d1bca31c2ef064778391afb7816199",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00.extra.jsonl": "0c2985caf41e7187309940f71e6379c48a24fdebb20650bc5853f649180a49d4",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/runs/sst2_b5_timing_I_warm_b00.extra.jsonl.v25.jsonl": "4af3d38dc58e17b6650befe6e3f03e4617f12c2592f03e4f70b5a3ec4502dde2"
+  },
+  "n": 16
+}

@@ -1,0 +1,56 @@
+{
+  "start": 1790227247.2160308,
+  "target": "/data1/pans_kv",
+  "target_rotational": true,
+  "root_free_before": 12659937280,
+  "items": [
+    {
+      "source": "/home/panzihang/src/prism_layerkv/runtime_data/v27_pcache_gpu2",
+      "destination": "/data1/pans_kv/pcache_gpu2",
+      "files": 67313,
+      "bytes": 1649270954,
+      "sha256_verified": true,
+      "source_replaced_with_symlink": true,
+      "seconds": 38.64522624015808
+    },
+    {
+      "source": "/home/panzihang/src/prism_layerkv/runtime_data/v27_pcache_gpu3",
+      "destination": "/data1/pans_kv/pcache_gpu3",
+      "files": 67313,
+      "bytes": 1649270954,
+      "sha256_verified": true,
+      "source_replaced_with_symlink": true,
+      "seconds": 43.59265685081482
+    },
+    {
+      "source": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/masters",
+      "destination": "/data1/pans_kv/v28/masters",
+      "files": 4,
+      "bytes": 6278075028,
+      "sha256_verified": true,
+      "source_replaced_with_symlink": true,
+      "seconds": 57.313597440719604
+    },
+    {
+      "source": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations",
+      "destination": "/data1/pans_kv/v28/representations",
+      "files": 176,
+      "bytes": 46904538340,
+      "sha256_verified": true,
+      "source_replaced_with_symlink": true,
+      "seconds": 319.439395904541
+    },
+    {
+      "source": "/home/panzihang/src/prism_layerkv/studies/v28_frozen/parity_logits",
+      "destination": "/data1/pans_kv/v28/parity_logits",
+      "files": 256,
+      "bytes": 178642240,
+      "sha256_verified": true,
+      "source_replaced_with_symlink": true,
+      "seconds": 1.8468029499053955
+    }
+  ],
+  "completed": 1790227708.056917,
+  "root_free_after": 69296558080,
+  "root_free_increase": 56636620800
+}

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Complete P8 x four-budget x four-dataset evaluation, followed by separate diagnostic captures."""
-import argparse,csv,hashlib,json,math,os,subprocess,time,sys,traceback,shutil
+import argparse,csv,hashlib,json,math,os,subprocess,time,sys,traceback
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-PYTHON=sys.executable
-NSYS=os.environ.get('PANS_NSYS',shutil.which('nsys') or 'nsys')
+PYTHON='/home/panzihang/venvs/vllm-stable/bin/python'
+NSYS=ROOT/'runtime_tools/nsight-2025.5.1/opt/nvidia/nsight-systems-cli/2025.5.1/target-linux-x64/nsys'
 BUDGETS=[5,10,25,50]
 TASKS=['sst2','subj','trec','rte']
 p=argparse.ArgumentParser(description=__doc__)
@@ -23,7 +23,7 @@ def save():
     status['updated_at']=time.time()
     tmp=statepath.with_suffix('.tmp');tmp.write_text(json.dumps(status,indent=2));tmp.replace(statepath)
 def log(msg):print(time.strftime('%Y-%m-%d %H:%M:%S'),msg,flush=True)
-expected={task:[json.loads(line)['uid'] for line in (Path(os.environ.get('PANS_BUNDLE_DIR',ROOT/'data/paper_task_bundles_full_eval_strict'))/f'{task}.jsonl').read_text().splitlines() if line] for task in TASKS}
+expected={task:[json.loads(line)['uid'] for line in (ROOT/'data/paper_task_bundles_full_eval_strict'/f'{task}.jsonl').read_text().splitlines() if line] for task in TASKS}
 (runroot/'task_uids.json').write_text(json.dumps(expected,indent=2))
 sources=[x for d in ['src','scripts','tests','configs','vendor'] for x in (ROOT/d).rglob('*') if x.is_file() and '__pycache__' not in x.parts]
 snapshot={str(x.relative_to(ROOT)):hashlib.sha256(x.read_bytes()).hexdigest() for x in sources}

@@ -1,0 +1,234 @@
+{
+ "engine": "native",
+ "data_dir": "/home/panzihang/src/prism_layerkv/runtime_data/v29_rows_ssd/trec",
+ "cold": false,
+ "warmup": 0,
+ "requests": [
+  {
+   "index": 1,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 2,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 3,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 4,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 5,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 6,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 7,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 8,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 9,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 10,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 11,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 12,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 13,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 14,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 15,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 16,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 17,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 18,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 19,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 20,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 21,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 22,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 23,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 24,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 25,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 26,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 27,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 28,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 29,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 30,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 31,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  },
+  {
+   "index": 32,
+   "measured": true,
+   "cold_resident_after": null,
+   "cold_files": null
+  }
+ ],
+ "request_bytes": [
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480,
+  40468480
+ ]
+}

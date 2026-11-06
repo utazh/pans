@@ -1,0 +1,11 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/train_subj_canonical_v26.py",
+  "--gpu",
+  "3",
+  "--prefix",
+  "p0",
+  "--budgets",
+  "5,10,25,50"
+]

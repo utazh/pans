@@ -1,0 +1,43 @@
+{
+  "args": {
+    "mode": "shared",
+    "backend": "vllm2",
+    "adapters": "assets/v22_diag19_s200",
+    "stats": "results/v22_time_b2_diag19_s200.extra.jsonl",
+    "logits": null,
+    "layout": "hybrid",
+    "schedule": "window",
+    "packed_ops": true,
+    "metadata_cache": true,
+    "shadow_load": false,
+    "diagnostic": false,
+    "allow_candidate": true,
+    "trace_dir": null,
+    "replay_dir": null,
+    "selection_plan": null,
+    "trace_layers": null,
+    "max_query_samples": 8,
+    "nvtx": false,
+    "round4_args": [
+      "--",
+      "--task",
+      "trec",
+      "--budget",
+      "25",
+      "--period",
+      "8",
+      "--samples",
+      "32",
+      "--warmup",
+      "8",
+      "--bundle-dir",
+      "data/sharedkv_splits/test",
+      "--output",
+      "results/v22_time_b2_diag19_s200"
+    ]
+  },
+  "fixed_ids": false,
+  "selector_compute_preserved": true,
+  "formal_latency_eligible": true,
+  "warning": "No automatic quality or speed certification. Fixed plans are only controlled diagnostics."
+}

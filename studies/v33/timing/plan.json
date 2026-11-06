@@ -1,0 +1,748 @@
+{
+ "rule_sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "gpu": "2",
+ "cores": "28-31,60-63",
+ "meta": {
+  "arms": [
+   "NS8",
+   "NS4",
+   "RAPS4",
+   "CKV",
+   "IMP",
+   "AS",
+   "CAKE",
+   "LAVA"
+  ],
+  "p4_selection": {
+   "sst2_b25": "G24",
+   "subj_b25": "G20",
+   "trec_b25": "G16",
+   "rte_b25": "G20"
+  },
+  "cache": "CKLFU 55 MiB GPU / 131 MiB CPU for all CKLFU systems; AS: LRU, same quotas",
+  "warmup": 4
+ },
+ "blocks": [
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "preserve",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "sst2_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "subj_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "trec_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 0,
+   "order": [
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 1,
+   "order": [
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 2,
+   "order": [
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV",
+    "IMP",
+    "AS"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 3,
+   "order": [
+    "NS8",
+    "LAVA",
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 4,
+   "order": [
+    "IMP",
+    "AS",
+    "CAKE",
+    "LAVA",
+    "NS8",
+    "NS4",
+    "RAPS4",
+    "CKV"
+   ]
+  },
+  {
+   "cell": "rte_b25",
+   "cond": "warm",
+   "block": 5,
+   "order": [
+    "CAKE",
+    "AS",
+    "IMP",
+    "CKV",
+    "RAPS4",
+    "NS4",
+    "NS8",
+    "LAVA"
+   ]
+  }
+ ],
+ "runs": 384
+}

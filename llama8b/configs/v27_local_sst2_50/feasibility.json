@@ -1,0 +1,17 @@
+{
+  "requested": [
+    16,
+    20,
+    24,
+    28
+  ],
+  "feasible": [
+    28
+  ],
+  "infeasible_requested": [
+    16,
+    20,
+    24
+  ],
+  "warning": "No fallback widens distance or changes token IDs; infeasibility is a result, not an error to hide."
+}

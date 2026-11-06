@@ -1,7 +1,6 @@
 import hashlib
 import os
 import shutil
-import sys
 import subprocess
 import tempfile
 import unittest
@@ -28,28 +27,30 @@ class PrismMaxRunnerTest(unittest.TestCase):
 
     @staticmethod
     def run_runner(**environment_updates):
-        # Test preflight guards without relying on server-local datasets/stores.
-        with tempfile.TemporaryDirectory() as directory:
-            fixture = Path(directory)
-            bundle = fixture / "bundle"
-            bundle.mkdir()
-            (bundle / "metadata.json").write_text("{}")
-            store = fixture / "store"
-            (store / "trec").mkdir(parents=True)
-            (store / "trec" / "metadata.json").write_text("{}")
-            environment = os.environ.copy()
-            environment.update({
-                "PYTHON": sys.executable,
-                "METHOD": "contigkv", "SELECTOR_BACKEND": "fp16",
-                "BUDGET_TAG": "010", "TASK": "trec",
-                "BUNDLE_DIR": str(bundle), "STORE_ROOT": str(store),
-                "KV_DIR": str(fixture / "kv"),
+        environment = os.environ.copy()
+        environment.update(
+            {
+                "METHOD": "contigkv",
+                "SELECTOR_BACKEND": "fp16",
+                "BUDGET_TAG": "010",
+                "TASK": "trec",
+                "BUNDLE_DIR": str(ROOT / "data" / "paper_task_bundles_full_eval"),
+                "STORE_ROOT": "/home/panzihang/contiguous_fuxian_ssd/qwen25_7b_paper_seed42",
+                "KV_DIR": "/home/panzihang/contiguous_fuxian_ssd/paper4_online_contig_c16_v14",
                 "DEFER_CACHE_SCORE_UPDATES": "false",
                 "PROMIXED_ADAPTIVE_COVERAGE": "false",
                 **environment_updates,
-            })
-            return subprocess.run([str(RUNNER)], cwd=ROOT, env=environment,
-                                  check=False, capture_output=True, text=True, timeout=5)
+            }
+        )
+        return subprocess.run(
+            [str(RUNNER)],
+            cwd=ROOT,
+            env=environment,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
 
     @unittest.skipUnless(shutil.which("bash"), "bash is required")
     def test_runner_has_valid_bash_syntax(self):

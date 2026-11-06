@@ -1,0 +1,23 @@
+{
+  "NOTICE.md": "4aff263a3a4d76538c395b5219c54b1712424e54ea8c23319dd63f790c397fba",
+  "README_ZH.md": "9e52428fdab131f7fe70ac2b9ce91ec0755aa0f9c6e6fa8532763f40ad5344d3",
+  "TEST_RESULTS.md": "75a8a041ff72b034d85545ff0c40eba7c2956d9ef391f935f40013bc139093eb",
+  "docs/AUDIT_AND_PLAN_ZH.md": "19d52cc9d7e04c5dae4e3417a47861978a62bfa1b40d1927ec2e334eefd3d266",
+  "docs/SOURCES.md": "e7864da4c66973e59b4581f049edda06097e599ae22179ff1f463650f359eff2",
+  "scripts/bench_headalign_v22.py": "461a04ea81ffea49a87ebd4fb251b0d9318e84d756e0ad3815ed1136339c43a5",
+  "scripts/budget_frontier_v22.py": "8839b55f8ed8b2bd098cbafd03373a34846b2532ae720ff9dc2846214f554a39",
+  "scripts/compile_headalign_v22.py": "38f68e8daa2f7b11a0953befd29ad27419a1d170ca18bd09bd24b3cd41ed89b0",
+  "scripts/install_sharedkv_v22.py": "a85cf7cbb6e39aeaefbd600c769badec2983ecd6006c5da178144864075b77d9",
+  "scripts/run_sharedkv_v22.py": "cc4873a5ceee9d37c53d6187927c77f69a527cc01ee9ceaa028c934ce96a6e37",
+  "src/contiguous_fuxian/sharedkv_v22/__init__.py": "764c5fc2dff8f632f46c8b09097e5b9d7892e0fc8cd58fa83395b7b99575a2fc",
+  "src/contiguous_fuxian/sharedkv_v22/budget.py": "418f46452dd9cb5866279cc5674c7eb42ae5e6da7bb6ee0ec88c33ea48664475",
+  "src/contiguous_fuxian/sharedkv_v22/calibrate.py": "6c2ba91f1e16af00e8679f73a8d3261aa4e476e6a309412b43dd5475cd3d4b96",
+  "src/contiguous_fuxian/sharedkv_v22/guard.py": "b8f63b3b8a967c0057a2eb6b43a2749ed0aa5a53d38202142f9cea7b0d3c171e",
+  "src/contiguous_fuxian/sharedkv_v22/matching.py": "d27aa609615e00ae3b1ca877d0e090e3142b7f4fa6e46c709620a84bbeac6a93",
+  "src/contiguous_fuxian/sharedkv_v22/ops.py": "e61fdee9efba48c3afec3629286d47f35aba677843478ced4cd239f4bd1e62f2",
+  "src/contiguous_fuxian/sharedkv_v22/runtime.py": "65d73009a6ea7666cfe5d395e2a332547c6b6736e855f8330ff591b4b2b63d5d",
+  "tests/test_headalign_v22.py": "c9f0f185cf75a238e3f2ad1ec5d47e2b99d0fbd0d8798cf47126bb33ded13eaf",
+  "validation/budget_arithmetic.json": "c465b8fe5a24bbbad4b659d5d043262b4993585bb7ffe433f647bc3c4db1db5f",
+  "validation/cpu_tests.txt": "db15b7f02493cd1ebe044481612a63fb543ad4a194ac079f7fda6c966a4461e0",
+  "validation/environment.json": "bd0317c81e8ceada488cce471ec24e83be403fa703f1cd17cf1ff4e99e31d53b"
+}

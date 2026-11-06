@@ -1,0 +1,27 @@
+{
+  "status": "research_targets_not_validated",
+  "layers": 28,
+  "period": 8,
+  "groups": [
+    {
+      "start": 0,
+      "end": 8,
+      "source": 0
+    },
+    {
+      "start": 8,
+      "end": 16,
+      "source": 8
+    },
+    {
+      "start": 16,
+      "end": 24,
+      "source": 16
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "source": 24
+    }
+  ]
+}

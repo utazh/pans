@@ -1,0 +1,9 @@
+[
+  "/home/panzihang/src/prism_layerkv/runtime_tools/nsight-2025.5.1/opt/nvidia/nsight-systems-cli/2025.5.1/target-linux-x64/nsys",
+  "export",
+  "--type",
+  "sqlite",
+  "--output",
+  "/home/panzihang/src/prism_layerkv/profiles/v26/v26_profile_nsys_I_original.sqlite",
+  "/home/panzihang/src/prism_layerkv/profiles/v26/v26_profile_nsys_I_original.nsys-rep"
+]

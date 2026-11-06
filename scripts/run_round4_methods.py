@@ -29,7 +29,7 @@ if a.method == 'impress' and not (a.impress_reorder and a.impress_reorder.is_fil
 os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 sys.path.insert(0, str(ROOT / 'src'))
 import contiguous_fuxian.flexgen_qwen_reprefill as runner
-argv = ['--model-path', os.environ.get('PANS_MODEL_PATH', '/home/shensicheng/qyd/pans/models/Qwen2.5-7B-Instruct'), '--bundle-dir', str(a.bundle_dir),
+argv = ['--model-path', '/data1/llm/Qwen/Qwen2.5-7B-Instruct', '--bundle-dir', str(a.bundle_dir),
         '--store-root', str(ROOT / 'runtime_data/prefix_store'),
         '--plan', str(ROOT / f'configs/qwen25_k{a.budget:03d}_{a.method}.json'),
         '--output-dir', str(a.output), '--flexgen-root', str(ROOT / 'vendor/flexgen'), '--flexgen-kv-dir', str(a.kv_dir),
@@ -41,7 +41,7 @@ argv = ['--model-path', os.environ.get('PANS_MODEL_PATH', '/home/shensicheng/qyd
         '--warmup-samples-per-task', str(max(1, a.warmup)), '--no-defer-cache-score-updates']
 if not a.build_kv: argv.append('--reuse-flexgen-kv')
 if a.method == 'contigkv':
-    argv += ['--probe-query-heads', '0,1,2', '--selector-kv-head-ids', os.environ.get('PANS_SELECTOR_KV_HEAD_IDS', '0,1,2,3'), '--similarity-alpha', '0.6']
+    argv += ['--probe-query-heads', '0,1,2', '--selector-kv-head-ids', '0,1,2,3', '--similarity-alpha', '0.6']
 else:
     argv += ['--probe-query-heads', '0,1,2', '--selector-kv-head-ids', '0', '--similarity-alpha', '0.6',
              '--impress-reorder-manifest', str(a.impress_reorder), '--no-impress-async-prefetch']

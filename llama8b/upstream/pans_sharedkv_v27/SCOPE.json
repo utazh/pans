@@ -1,0 +1,38 @@
+{
+  "base_commit": "11fde71c36ceecded60d560620900dec5c3a5d76",
+  "tests": {
+    "passed": 54,
+    "skipped": 1,
+    "skip_reason": "CUDA unavailable",
+    "cli_help_passed": 7,
+    "python_files_compiled": 18
+  },
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "scipy": "1.17.0",
+    "cuda_available": false
+  },
+  "implemented": [
+    "frozen-R4-to-R0 export preserving all reader parameters and data bans",
+    "exact-arithmetic proxy/frozen-R0 identity reference",
+    "FIT-only bounded-distance source-map planner",
+    "paired quality and protocol-matched Pareto analysis",
+    "CLF factorization and selected-row reconstruction quality bridge",
+    "external direct-map quality bridge",
+    "KVSharer-style search primitive requiring external cosine evaluator"
+  ],
+  "not_completed": [
+    "real-Qwen validation",
+    "GPU attention/backward/lifecycle tests",
+    "SSD or TTFT benchmarks",
+    "official KVSharer Qwen search and model port",
+    "full xKV-SR selector and factor I/O runtime",
+    "14B or multi-GPU tests",
+    "submission-template verification"
+  ],
+  "baseline_quality_only": true,
+  "numerical_reference_does_not_prove_bf16_bitwise_or_accuracy_equivalence": true,
+  "preexisting_source_policy": "Additive install, seven live interface blob hashes; no old files overwritten",
+  "local_dependency_scope": "Core imports tested against previously supplied archived add-on interfaces, not a fully executed checkout of latest server."
+}

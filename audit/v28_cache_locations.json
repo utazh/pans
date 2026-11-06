@@ -1,0 +1,9 @@
+{
+  "default_cache_root": "/data1/pans_kv",
+  "pcache_gpu2": "/data1/pans_kv/pcache_gpu2",
+  "pcache_gpu3": "/data1/pans_kv/pcache_gpu3",
+  "v28_intermediates": "/data1/pans_kv/v28",
+  "storage_medium": "HDD",
+  "timing_note": "Do not pool HDD cold timings with prior SSD timings; start a separate measurement run.",
+  "source_project": "/home/panzihang/src/prism_layerkv"
+}

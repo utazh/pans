@@ -1,0 +1,9 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/export_direct_v26.py",
+  "--input",
+  "/home/panzihang/src/prism_layerkv/assets/v25_g16_r4_s24/trec.pt",
+  "--output",
+  "/home/panzihang/src/prism_layerkv/assets/v26_direct_g16_r4/trec.pt"
+]

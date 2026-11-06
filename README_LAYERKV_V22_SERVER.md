@@ -1,7 +1,7 @@
 # v2.2 server experiment delivery
 
 Full results and decisions: EXPERIMENT_REPORT_V22_ZH.md.
-All experiment paths are under /home/panzihang/src/prism_layerkv on [server address omitted].
+All experiment paths are under /home/panzihang/src/prism_layerkv on 10.147.20.12.
 Original prism_pans and prior code remain untouched.
 
 This is an additive overlay for the audited v2 interfaces. See README_HEADALIGN_V22.md for package use. The server directory has no Git metadata; all eight expected interface blob hashes matched before installation (audit/v22_before.json). Runtime guards remain enabled.

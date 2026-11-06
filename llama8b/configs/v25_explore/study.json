@@ -1,0 +1,215 @@
+{
+  "groups": [
+    {
+      "start": 0,
+      "end": 4,
+      "status": "structural_candidate",
+      "source": 2,
+      "consumers": [
+        1,
+        3
+      ],
+      "native": [
+        0,
+        2
+      ]
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "status": "structural_candidate",
+      "source": 6,
+      "consumers": [
+        5,
+        7
+      ],
+      "native": [
+        4,
+        6
+      ]
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "status": "structural_candidate",
+      "source": 10,
+      "consumers": [
+        9,
+        11
+      ],
+      "native": [
+        8,
+        10
+      ]
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "status": "structural_candidate",
+      "source": 14,
+      "consumers": [
+        13,
+        15
+      ],
+      "native": [
+        12,
+        14
+      ]
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "status": "structural_candidate",
+      "source": 18,
+      "consumers": [
+        17,
+        19
+      ],
+      "native": [
+        16,
+        18
+      ]
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "status": "structural_candidate",
+      "source": 22,
+      "consumers": [
+        21,
+        23
+      ],
+      "native": [
+        20,
+        22
+      ]
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "status": "structural_candidate",
+      "source": 26,
+      "consumers": [
+        25,
+        27
+      ],
+      "native": [
+        24,
+        26
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "plan": "configs/v25_explore/g26.json",
+      "G": 26,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.07119666048237469,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g26.json",
+      "G": 26,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.06771799628942482,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g24.json",
+      "G": 24,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.1423933209647495,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g24.json",
+      "G": 24,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.13543599257884964,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g22.json",
+      "G": 22,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.2135899814471246,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g22.json",
+      "G": 22,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.2031539888682747,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g20.json",
+      "G": 20,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.284786641929499,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g20.json",
+      "G": 20,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.2708719851576993,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g16.json",
+      "G": 16,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.4271799628942493,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g16.json",
+      "G": 16,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.4063079777365494,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g14.json",
+      "G": 14,
+      "native_blocks": 0,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.4983766233766227,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    },
+    {
+      "plan": "configs/v25_explore/g14.json",
+      "G": 14,
+      "native_blocks": 4,
+      "seed": 24,
+      "mean_selected_payload_reduction": 0.47402597402597385,
+      "status": "planned_research_not_run",
+      "quality_certified": false
+    }
+  ],
+  "unavailable_budgets": [],
+  "next_step": "Train each listed candidate explicitly; no automatic pass, no final-test selection",
+  "inherited_NI": "Previous failed gate unchanged. Preregister a separate independent final acceptance study."
+}

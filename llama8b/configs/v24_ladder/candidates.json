@@ -1,0 +1,93 @@
+[
+  {
+    "start": 0,
+    "end": 4,
+    "status": "no_compatible_group",
+    "source": null,
+    "consumers": []
+  },
+  {
+    "start": 4,
+    "end": 8,
+    "status": "structural_candidate",
+    "source": 6,
+    "consumers": [
+      5,
+      7
+    ],
+    "native": [
+      4,
+      6
+    ]
+  },
+  {
+    "start": 8,
+    "end": 12,
+    "status": "structural_candidate",
+    "source": 10,
+    "consumers": [
+      9,
+      11
+    ],
+    "native": [
+      8,
+      10
+    ]
+  },
+  {
+    "start": 12,
+    "end": 16,
+    "status": "structural_candidate",
+    "source": 14,
+    "consumers": [
+      13,
+      15
+    ],
+    "native": [
+      12,
+      14
+    ]
+  },
+  {
+    "start": 16,
+    "end": 20,
+    "status": "structural_candidate",
+    "source": 18,
+    "consumers": [
+      17,
+      19
+    ],
+    "native": [
+      16,
+      18
+    ]
+  },
+  {
+    "start": 20,
+    "end": 24,
+    "status": "structural_candidate",
+    "source": 22,
+    "consumers": [
+      21,
+      23
+    ],
+    "native": [
+      20,
+      22
+    ]
+  },
+  {
+    "start": 24,
+    "end": 28,
+    "status": "structural_candidate",
+    "source": 26,
+    "consumers": [
+      25,
+      27
+    ],
+    "native": [
+      24,
+      26
+    ]
+  }
+]

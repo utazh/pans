@@ -1,0 +1,43 @@
+{
+  "args": {
+    "mode": "shared",
+    "backend": "vllm2",
+    "adapters": "assets/v21_refit27_s200",
+    "stats": "results/v22_bridge_v22.extra.jsonl",
+    "logits": "results/v22_bridge_v22_logits",
+    "layout": "hybrid",
+    "schedule": "window",
+    "packed_ops": true,
+    "metadata_cache": true,
+    "shadow_load": false,
+    "diagnostic": true,
+    "allow_candidate": true,
+    "trace_dir": null,
+    "replay_dir": null,
+    "selection_plan": "results/v21_hold_original_logits",
+    "trace_layers": null,
+    "max_query_samples": 8,
+    "nvtx": false,
+    "round4_args": [
+      "--",
+      "--task",
+      "trec",
+      "--budget",
+      "25",
+      "--period",
+      "8",
+      "--samples",
+      "8",
+      "--warmup",
+      "2",
+      "--bundle-dir",
+      "data/v21_splits/holdout",
+      "--output",
+      "results/v22_bridge_v22"
+    ]
+  },
+  "fixed_ids": true,
+  "selector_compute_preserved": true,
+  "formal_latency_eligible": false,
+  "warning": "No automatic quality or speed certification. Fixed plans are only controlled diagnostics."
+}

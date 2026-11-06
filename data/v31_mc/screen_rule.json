@@ -1,0 +1,11 @@
+{
+ "written_unix": 1792651456.7105885,
+ "metric": "acc(NS-P4,25%) - acc(NS-P4,14.2857%) on dev500, percentage points",
+ "threshold_pp": 3.0,
+ "decision": ">= threshold: run the full v30 pipeline (P4 readers, dev selection, test, CAKE/LAVa, timing); otherwise report screen results only",
+ "datasets": {
+  "sst2": "banking77",
+  "subj": "clinc150",
+  "trec": "trecfine"
+ }
+}

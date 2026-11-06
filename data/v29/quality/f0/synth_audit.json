@@ -1,0 +1,39 @@
+{
+ "model": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+ "sampling": "{'do_sample': True, 'temperature': 0.9, 'top_p': 0.95, 'max_new_tokens': 700, 'seed': 2914, 'backend': 'transformers'}",
+ "note": "answers of synthetic questions are NOT used: reader calibration fits teacher scores; answer field is a placeholder",
+ "articles": {
+  "sst2": {
+   "article_hash": "47209865f4af833e",
+   "segments": 22,
+   "rounds": 2,
+   "generated_unique": 138,
+   "exact_overlap_with_real": 0,
+   "max_word_jaccard_with_real": 0.5384615384615384
+  },
+  "subj": {
+   "article_hash": "b9d0ff8fe9c098e8",
+   "segments": 21,
+   "rounds": 2,
+   "generated_unique": 129,
+   "exact_overlap_with_real": 0,
+   "max_word_jaccard_with_real": 0.4166666666666667
+  },
+  "trec": {
+   "article_hash": "956168545a8becca",
+   "segments": 19,
+   "rounds": 3,
+   "generated_unique": 186,
+   "exact_overlap_with_real": 0,
+   "max_word_jaccard_with_real": 0.4666666666666667
+  },
+  "rte": {
+   "article_hash": "5d9bf3ece565cda3",
+   "segments": 18,
+   "rounds": 3,
+   "generated_unique": 152,
+   "exact_overlap_with_real": 0,
+   "max_word_jaccard_with_real": 0.3125
+  }
+ }
+}

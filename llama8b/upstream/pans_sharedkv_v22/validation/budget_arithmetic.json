@@ -1,0 +1,50 @@
+[
+  {
+    "assumptions": "Qwen2.5-7B: 7 Q heads/KV group; full 16-token blocks; FP16/BF16 both 2 bytes. Not total model memory.",
+    "physical_sources": 27,
+    "baseline_payload_bytes": 70647808,
+    "same_retention_shared_payload_bytes": 68124672,
+    "reader_and_route_bytes": 397760,
+    "net_persistent_saving_bytes": 2125376,
+    "iso_payload_plus_readers_max_uniform_blocks": 79,
+    "iso_budget_remainder_bytes": 355904,
+    "automatic_runtime_retention_change": false,
+    "warning": "Changing retained IDs requires recalibration/revalidation and actual source/union accounting. This calculator does not change v2 keep_ratio guards."
+  },
+  {
+    "assumptions": "Qwen2.5-7B: 7 Q heads/KV group; full 16-token blocks; FP16/BF16 both 2 bytes. Not total model memory.",
+    "physical_sources": 26,
+    "baseline_payload_bytes": 70647808,
+    "same_retention_shared_payload_bytes": 65601536,
+    "reader_and_route_bytes": 795520,
+    "net_persistent_saving_bytes": 4250752,
+    "iso_payload_plus_readers_max_uniform_blocks": 81,
+    "iso_budget_remainder_bytes": 842880,
+    "automatic_runtime_retention_change": false,
+    "warning": "Changing retained IDs requires recalibration/revalidation and actual source/union accounting. This calculator does not change v2 keep_ratio guards."
+  },
+  {
+    "assumptions": "Qwen2.5-7B: 7 Q heads/KV group; full 16-token blocks; FP16/BF16 both 2 bytes. Not total model memory.",
+    "physical_sources": 25,
+    "baseline_payload_bytes": 70647808,
+    "same_retention_shared_payload_bytes": 63078400,
+    "reader_and_route_bytes": 1193280,
+    "net_persistent_saving_bytes": 6376128,
+    "iso_payload_plus_readers_max_uniform_blocks": 84,
+    "iso_budget_remainder_bytes": 641728,
+    "automatic_runtime_retention_change": false,
+    "warning": "Changing retained IDs requires recalibration/revalidation and actual source/union accounting. This calculator does not change v2 keep_ratio guards."
+  },
+  {
+    "assumptions": "Qwen2.5-7B: 7 Q heads/KV group; full 16-token blocks; FP16/BF16 both 2 bytes. Not total model memory.",
+    "physical_sources": 22,
+    "baseline_payload_bytes": 70647808,
+    "same_retention_shared_payload_bytes": 55508992,
+    "reader_and_route_bytes": 2386560,
+    "net_persistent_saving_bytes": 12752256,
+    "iso_payload_plus_readers_max_uniform_blocks": 94,
+    "iso_budget_remainder_bytes": 497024,
+    "automatic_runtime_retention_change": false,
+    "warning": "Changing retained IDs requires recalibration/revalidation and actual source/union accounting. This calculator does not change v2 keep_ratio guards."
+  }
+]

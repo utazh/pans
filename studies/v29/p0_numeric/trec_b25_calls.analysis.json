@@ -1,0 +1,50 @@
+[
+ {
+  "call": 0,
+  "n_prefix": 1228,
+  "t": 42,
+  "reader_dtype": "torch.bfloat16",
+  "fp64_readside_vs_explicit": 7.299478195064799e-16,
+  "fp64_unit_vs_direct": 9.686963259403678e-16,
+  "bf16_readside_vs_fp64": 0.0033094654871451083,
+  "bf16_explicit_vs_fp64": 0.0036563608577406146,
+  "bf16_readside_vs_bf16_explicit": 0.004777275348040196,
+  "bf16_unit_vs_fp64": 0.0017184885023898827,
+  "bf16_direct_vs_fp64": 0.0016764759716816331,
+  "bf16_unit_vs_bf16_direct": 0.0009613239375790448,
+  "max_abs_read_vs_exp": 0.02734375,
+  "output_scale": 3.2753200686024284
+ },
+ {
+  "call": 1,
+  "n_prefix": 1228,
+  "t": 42,
+  "reader_dtype": "torch.bfloat16",
+  "fp64_readside_vs_explicit": 5.977223014025932e-16,
+  "fp64_unit_vs_direct": 9.463698215724306e-16,
+  "bf16_readside_vs_fp64": 0.0029896220590463793,
+  "bf16_explicit_vs_fp64": 0.0023364136185472758,
+  "bf16_readside_vs_bf16_explicit": 0.003625265774345858,
+  "bf16_unit_vs_fp64": 0.0020577686963815533,
+  "bf16_direct_vs_fp64": 0.0016543621015983586,
+  "bf16_unit_vs_bf16_direct": 0.002225162904865886,
+  "max_abs_read_vs_exp": 0.0234375,
+  "output_scale": 2.86826108334666
+ },
+ {
+  "call": 2,
+  "n_prefix": 1228,
+  "t": 42,
+  "reader_dtype": "torch.bfloat16",
+  "fp64_readside_vs_explicit": 7.311348832902899e-16,
+  "fp64_unit_vs_direct": 1.097370359760002e-15,
+  "bf16_readside_vs_fp64": 0.003537070024439579,
+  "bf16_explicit_vs_fp64": 0.0024904959205404166,
+  "bf16_readside_vs_bf16_explicit": 0.004326839008754693,
+  "bf16_unit_vs_fp64": 0.001922876826555482,
+  "bf16_direct_vs_fp64": 0.0016857272011290675,
+  "bf16_unit_vs_bf16_direct": 0.0017457457040245693,
+  "max_abs_read_vs_exp": 0.015625,
+  "output_scale": 2.8887692029616514
+ }
+]

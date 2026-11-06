@@ -1,0 +1,6 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/run_layerkv_v25_suite.py",
+  "/home/panzihang/src/prism_layerkv/configs/v25_time_preserve_b0_g26_r4_jobs.json"
+]

@@ -1,0 +1,5 @@
+variant,n,accuracy_pct,delta_pp,baseline_right_student_wrong,baseline_wrong_student_right,first_token_mean_kl,label_mean_kl,whole_plan_exact_fraction,physical_payload_bytes,host_payload_source_bytes
+v21_fixed_demand,32,78.125,0.0,0,0,0.0,0.0,1,68132864,11240320
+v21_fixed_identity,32,81.25,3.125,0,1,0.0005336452498738709,0.002764549661833371,1,70647808,13408768
+v21_fixed_shadow,32,78.125,0.0,0,0,0.0,0.0,1,70647808,13408768
+v21_fixed_shared,32,78.125,0.0,0,0,0.0,0.0,1,68132864,11240320

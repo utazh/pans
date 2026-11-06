@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "n": 128,
+    "mean_kl": 0.0011158910172641978,
+    "greedy_agreement": 0.9921875
+  },
+  "direct1": {
+    "n": 128,
+    "mean_kl": 0.8489803686861706,
+    "greedy_agreement": 0.9375
+  },
+  "dense1": {
+    "n": 128,
+    "mean_kl": 0.009840575003631669,
+    "greedy_agreement": 0.984375
+  }
+}

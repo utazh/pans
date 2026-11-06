@@ -1,0 +1,101 @@
+{
+ "rule": {
+  "written_unix": 1792651456.7105885,
+  "metric": "acc(NS-P4,25%) - acc(NS-P4,14.2857%) on dev500, percentage points",
+  "threshold_pp": 3.0,
+  "decision": ">= threshold: run the full v30 pipeline (P4 readers, dev selection, test, CAKE/LAVa, timing); otherwise report screen results only",
+  "datasets": {
+   "sst2": "banking77",
+   "subj": "clinc150",
+   "trec": "trecfine"
+  }
+ },
+ "runs": {
+  "banking77_NSP4_k5": {
+   "acc": 49.6,
+   "MB": 19.628032
+  },
+  "banking77_NSP4_k10": {
+   "acc": 56.599999999999994,
+   "MB": 39.48544
+  },
+  "banking77_NSP4_k14p2857": {
+   "acc": 58.599999999999994,
+   "MB": 56.5248
+  },
+  "banking77_NSP4_k25": {
+   "acc": 59.599999999999994,
+   "MB": 99.090432
+  },
+  "banking77_NSP4_k50": {
+   "acc": 60.4,
+   "MB": 198.41024
+  },
+  "banking77_FULLKV": {
+   "acc": 51.800000000000004,
+   "MB": 397.049856
+  },
+  "clinc150_NSP4_k5": {
+   "acc": 79.4,
+   "MB": 23.153803263999997
+  },
+  "clinc150_NSP4_k10": {
+   "acc": 78.4,
+   "MB": 46.694793216
+  },
+  "clinc150_NSP4_k14p2857": {
+   "acc": 73.4,
+   "MB": 66.912256
+  },
+  "clinc150_NSP4_k25": {
+   "acc": 61.199999999999996,
+   "MB": 117.440512
+  },
+  "clinc150_NSP4_k50": {
+   "acc": 54.6,
+   "MB": 235.339776
+  },
+  "clinc150_FULLKV": {
+   "acc": 47.599999999999994,
+   "MB": 471.138304
+  },
+  "trecfine_NSP4_k5": {
+   "acc": 28.599999999999998,
+   "MB": 17.58994432
+  },
+  "trecfine_NSP4_k10": {
+   "acc": 39.4,
+   "MB": 35.34848
+  },
+  "trecfine_NSP4_k14p2857": {
+   "acc": 39.0,
+   "MB": 50.552832
+  },
+  "trecfine_NSP4_k25": {
+   "acc": 37.2,
+   "MB": 88.59648
+  },
+  "trecfine_NSP4_k50": {
+   "acc": 35.6,
+   "MB": 177.364992
+  },
+  "trecfine_FULLKV": {
+   "acc": 36.6,
+   "MB": 354.902016
+  }
+ },
+ "verdict": {
+  "banking77": {
+   "drop_pp": 1.0,
+   "sensitive": false
+  },
+  "clinc150": {
+   "drop_pp": -12.20000000000001,
+   "sensitive": false
+  },
+  "trecfine": {
+   "drop_pp": -1.7999999999999972,
+   "sensitive": false
+  }
+ }
+}

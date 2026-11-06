@@ -1,0 +1,9 @@
+{
+  "status": "started",
+  "representation": "/home/panzihang/src/prism_layerkv/assets/v27_kvsharer_g16/trec.pt",
+  "method": "direct-map-prefix-quality",
+  "quality_only": true,
+  "latency_valid": false,
+  "resource_measurement_valid": false,
+  "why": "Original native I/O is still executed; compressed factors are resident; not SSD xKV-SR performance."
+}

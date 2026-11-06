@@ -1,0 +1,6 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/run_layerkv_v24_suite.py",
+  "/home/panzihang/src/prism_layerkv/configs/v24_confirm_warm_b2_identity_job.json"
+]

@@ -1,0 +1,98 @@
+{
+ "f0/sst2": {
+  "article_hash": "47209865f4af833e",
+  "eval": 18,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f0/subj": {
+  "article_hash": "b9d0ff8fe9c098e8",
+  "eval": 17,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f0/trec": {
+  "article_hash": "956168545a8becca",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f0/rte": {
+  "article_hash": "5d9bf3ece565cda3",
+  "eval": 20,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f1/sst2": {
+  "article_hash": "ad2b3b7631e52098",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f1/subj": {
+  "article_hash": "a997084785876949",
+  "eval": 16,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f1/trec": {
+  "article_hash": "08bff8b77ff218c4",
+  "eval": 20,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f1/rte": {
+  "article_hash": "ae1c12b78d27157c",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f2/sst2": {
+  "article_hash": "4da84cea7e05a23f",
+  "eval": 20,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f2/subj": {
+  "article_hash": "b7188e5abc2ea1f0",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f2/trec": {
+  "article_hash": "a883d1a42bab18d8",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "f2/rte": {
+  "article_hash": "53d358342981373e",
+  "eval": 18,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "pilot/sst2": {
+  "article_hash": "8e4a77ca976be1d5",
+  "eval": 20,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "pilot/subj": {
+  "article_hash": "4261f6337ecc2545",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "pilot/trec": {
+  "article_hash": "7b186cbcdd4cfd62",
+  "eval": 19,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ },
+ "pilot/rte": {
+  "article_hash": "19d902aed95c6d00",
+  "eval": 18,
+  "ctl": 128,
+  "ctl_from_unselected_articles_only": true
+ }
+}

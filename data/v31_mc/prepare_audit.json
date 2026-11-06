@@ -1,0 +1,65 @@
+{
+ "raw": {
+  "TREC_10.label": "033f22c028c2bbba9ca682f68ffe204dc1aa6e1cf35dd6207f2d4ca67f0d0e8e",
+  "banking77_test.jsonl": "fb1b0043ded745b8767687084786e6dd0a5f0ce03243b6131992a1c7ae2c2595",
+  "banking77_train.jsonl": "d411780d8c0e18e166f5664c6cfe90dc9de399d722aa7cde282e31a771323ea7",
+  "clinc_README.md": "e28704a3c04f6b05c286ca2a8891bbf32c69c000dedfc5825d6e1713369b7a89",
+  "clinc_plus_test.jsonl": "97ce7917e17fe28393d4096ebb739a2db5d052972003bf94136a2770306de103",
+  "clinc_plus_test.parquet": "3e60e45b25bf86543aa5df8ba4fcc674114164e6184f0197690648c2908d0102",
+  "clinc_plus_train.jsonl": "b1d4770920b0cfe1b318290730899d248da7aed32f8830188aaad4ef01545c90",
+  "clinc_plus_train.parquet": "30188119cf9f86fc9db27e1c22442d091cb5cb0913c9496f945fe11e7a02a28f",
+  "clinc_plus_validation.jsonl": "a7605b6fa6ad3831c725d5979a5a871f4b0dbcf700134764404369586288ea9f",
+  "clinc_plus_validation.parquet": "fbd545b46c611c4a7ba4b48cae6c7f09bb5b59f33ff56206ad1cd366c85cdfaa",
+  "train_5500.label": "9e4c8bdcaffb96ed61041bd64b564183d52793a8e91d84fc3a8646885f466ec3"
+ },
+ "datasets": {
+  "banking77": {
+   "slot": "sst2",
+   "classes": 77,
+   "shots": 4,
+   "demos": 308,
+   "prefix_chars": 30763,
+   "train_pool": 10003,
+   "test_pool": 3080,
+   "fit": 64,
+   "val": 64,
+   "dev": 500,
+   "test": 1000,
+   "test_is_subset": true,
+   "demo_ids_sha": "abd8866f16146432f90f437b89a897cfd66c2eebce0a002cd0ac37221d1f33ef",
+   "disjoint": true
+  },
+  "clinc150": {
+   "slot": "subj",
+   "classes": 150,
+   "shots": 3,
+   "demos": 450,
+   "prefix_chars": 34728,
+   "train_pool": 18000,
+   "test_pool": 4500,
+   "fit": 64,
+   "val": 64,
+   "dev": 500,
+   "test": 1000,
+   "test_is_subset": true,
+   "demo_ids_sha": "8df86da009a901560337d3d0a07668ab138ed0c0643f36e909f3954a87bc054c",
+   "disjoint": true
+  },
+  "trecfine": {
+   "slot": "trec",
+   "classes": 50,
+   "shots": 6,
+   "demos": 296,
+   "prefix_chars": 23784,
+   "train_pool": 5452,
+   "test_pool": 500,
+   "fit": 64,
+   "val": 64,
+   "dev": 500,
+   "test": 500,
+   "test_is_subset": false,
+   "demo_ids_sha": "9b1a51e40d2bb240ea72c7f79babea3e4188bbb921ac3cb9c4e34383a8410ec3",
+   "disjoint": true
+  }
+ }
+}

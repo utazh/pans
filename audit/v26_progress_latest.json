@@ -1,0 +1,10 @@
+{
+  "time_unix": 1790077426.10488,
+  "stage": "calibration",
+  "reader_checkpoints_ready": 7,
+  "new_checkpoint_target": 19,
+  "frozen_historical_checkpoints": 1,
+  "admission_gpu_audit_passed": true,
+  "formal_timing_started": false,
+  "server_only": true
+}

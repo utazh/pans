@@ -1,0 +1,110 @@
+{
+  "status": "completed",
+  "native_blocks": 4,
+  "args": [
+    "--model-path",
+    "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+    "--store-root",
+    "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+    "--task",
+    "rte",
+    "--teacher-fit",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b10_teacher_fit",
+    "--teacher-val",
+    "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b10_teacher_val",
+    "--plan",
+    "/home/panzihang/src/prism_layerkv/configs/v26_p0_rte_b10_plan.json",
+    "--steps",
+    "200",
+    "--eval-every",
+    "25",
+    "--seed",
+    "24",
+    "--device",
+    "cuda",
+    "--output",
+    "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b10/rte.pt"
+  ],
+  "initial_reader_tensor_sha256": [
+    {
+      "A": "709f5dfbc408a278a1111d8bde5759d4b368929d86daaa7bb8a39015635f2bfc",
+      "B": "577acc7e58e561d6bd0619ec89b3a769a0a36f478ee5df3808ba41b26ef91f21",
+      "bk": "0b7adbd3892886fed763095b38b03117e2d7ecbcbe89a4cf3961ce2c76cef87e",
+      "bv": "393f1218e62977310ca1f2a7d217ad045f22f59d49dc4427685f20d85f58f668"
+    },
+    {
+      "A": "451b343391cb65e76a775cd230d2499ac212e363368421c64a313011876bee74",
+      "B": "4dd8f902ab279c5abbae20dc28925d79094772079eceddeee25c4bd6435bbb8c",
+      "bk": "e9ac7f70834329c52459d1686b3545ecf7b69ad9fd298099bf14c629a3ec499c",
+      "bv": "c5e0f850c487d6a215df4dff629251ace758b48365ad0efe450a91a257ccce78"
+    },
+    {
+      "A": "235e6cfaa318584e6a998059738cf49dd06ccf68fb2895db593abf966e9f73f9",
+      "B": "ac10b9a6c10035c4bf485ce03187cc5fb2e4748ac28e3eb58f033ba239f5a809",
+      "bk": "b11e1600ddb71ba6b256e3cf8f348924dcc6d2d777ec7625bc3d3cc1c6e94a1b",
+      "bv": "ddb42f58668f63a8c383e18c3b77ac7aceceb005bc52b55a553cabd60d85d71a"
+    },
+    {
+      "A": "2c422e8d022dac33a206f91dffaa6672cc17d22ef1394fb750330b9d8b687631",
+      "B": "35d0563ca64ab08a4923964fc0de21f80ec9a3969726683e50782772a2442cfb",
+      "bk": "52726eecd1e49a2559ab257d42734b92632ba2b51ed36757fc89d8913ccfcaf9",
+      "bv": "6dc47b2d331631c52d98c83bc9bd9a7bb25b1d82108b94ea1a4e776545abaf8a"
+    },
+    {
+      "A": "a412a609654b304b5ef0e1204a2e9d50b09f7b337e3aae5e335b681379a529e5",
+      "B": "2cd68555465acaf6c3658c9ff2f82fa512cd2139248e9cbe1cb47fda7a0d8a6b",
+      "bk": "e62a3ea81be79df24012cf4e61a49086ac7af2644ff88d82bcfacc454ef2d528",
+      "bv": "bcccd3d40077336214f97aa81630418f22fdff11cc412dca6fe111ae874e4037"
+    },
+    {
+      "A": "2002d5e9b325045447969eabd7d5a9201a908faecd18ecdeb6294d5a019b519b",
+      "B": "df602f83268ac5c510aae8b8f078a964b23db9e3bccfd1b0c7782a95d01f5978",
+      "bk": "59f0b4322691de5a7f3107c8ef2d334e5fb66b2d2ccb94778c396a6508b32005",
+      "bv": "8f68f9bbd4ab10098c3747b6c858803aed59d03e64ec771828ccd9a315088cd3"
+    },
+    {
+      "A": "eae72ac02f121039c120b01c86828505c47358b517a342abeb53cd63531c53fa",
+      "B": "18d083df9f12ecb1529ac782b465f75b449b5eae3e71883374c9850346448e77",
+      "bk": "f83c36d1b6477eb739b1d2780939d65daffc8556c309290f684291a1475f9562",
+      "bv": "5e66fcc0f7f620ac92b925b373877336c0fd6a4e0483b4301fff3a362d5b188b"
+    },
+    {
+      "A": "facd48059b42196322da28ed68190b0756ddafddc80b4b740fde915ce3522365",
+      "B": "12ca0742e5ac92dabef251c79777c8a7f29d8608d787f5708fda9df4e902186b",
+      "bk": "9ed33dcaeb16d71d27954244f1d5ccfe9689fd40005ab1fbc849f27726ca9375",
+      "bv": "ac66745fc8e619dc74231b38ce787c3b37e8060fe7e4269c5874d89184c41915"
+    },
+    {
+      "A": "99b238e200b075648f54521f4db532b13290d1fc28c78188ce6f6bd60c68a0f8",
+      "B": "82bab2034302d953069d4f0c648660845b601070991187a35bb4f4fd2c91d4f9",
+      "bk": "8af3e828f61ddebe28fb4e5c0bbbe7bfacbbe54b9b8da529bed04e1ebc9f61dc",
+      "bv": "b46f9459e12566f65ec60c05c885167f575021ba2980b1271c3c44ba4b73a50a"
+    },
+    {
+      "A": "d4c3aa4b475fe6a859259cde953c036533096d2f840731ec19ee5eb705f54ddb",
+      "B": "f6788946056683d26c93499adedae1513f957629c074258ffed6bfaace92723d",
+      "bk": "d2f15283475be241bbdee96a588d002f136c52b20dc6dbba4d2534e15014a3f1",
+      "bv": "47be78ffea50ae0763115f0b1a4cabe577d6083417e650f9d58d219bcbd79177"
+    },
+    {
+      "A": "6840fe06dd54c43aa18ca2dc0c514ee753d25d20262814d685d2273c2b8135d7",
+      "B": "6777acda598d50198cedf8d62e8c6ab981a8098124738b8a81b0810d9fa2b051",
+      "bk": "ccd18eb2021ddbdf67ad92262030031b20392c3edcf9be62ad4f0df7170a7aef",
+      "bv": "1930cf198cc3e06b8d365c1415f869dcf8ae4ad83f0d04257b1599518299f2eb"
+    },
+    {
+      "A": "10fc0194188b2113fa4f4f1879daa51a55d7a087672d1e03f2113651a9513d7d",
+      "B": "4587493b2f852fd92f8f87a09c4cfdd9a51b47837e50079c7ce48d41c9b6374f",
+      "bk": "ae510a10a8abce0d59383890e0fbab473afd1849484aa54679f2f9ab606436d4",
+      "bv": "7cb5dd57c22f7785e79ae3774dea4dd7c994c6016224013db4f59b518efb9ea8"
+    }
+  ],
+  "forward_calls_including_validation": {
+    "branch_no_grad": 1808,
+    "branch_grad": 400
+  },
+  "wall_seconds_total_including_load": 636.1509965420701,
+  "cuda_peak_allocated": 15876728320,
+  "cuda_peak_reserved": 16160653312,
+  "checkpoint_backward_recomputation_not_in_top_level_forward_count": true
+}

@@ -1,0 +1,36 @@
+{
+  "updated": 1790089597.9678848,
+  "status": "All calibration and full quality completed; serial formal timing active",
+  "active_gpus": [
+    2,
+    3
+  ],
+  "gpu2_primary": "v26_training_worker",
+  "gpu3_correction": "v26_subj_canonical_sequence",
+  "temporarily_suspended_quality_pid": null,
+  "quality_resumes_automatically_after_canonical_training": true,
+  "formal_controller": {
+    "pid": 25805,
+    "script": "v26_formal_sequence3.py"
+  },
+  "diagnostics_controller": {
+    "pid": 27801,
+    "script": "v26_diagnostics_sequence3.py"
+  },
+  "delivery_controller": {
+    "pid": 27802,
+    "script": "v26_delivery_sequence2.py"
+  },
+  "correction_controller": {
+    "pid": 37360,
+    "script": "v26_subj_canonical_sequence.py"
+  },
+  "subj_main_result_suffix": "_canonical",
+  "subj_custom_full_eval_count": 1003,
+  "main_cells": 16,
+  "secondary_cells": 4,
+  "archive_requires_agent_review": true,
+  "calibration_complete": true,
+  "quality_complete": true,
+  "formal_gpu": 3
+}

@@ -1,0 +1,11 @@
+{
+  "seconds": 20.780307054519653,
+  "files": {
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/sst2_b50/clf_384_576_fp32.pt": "c54cc89d62f5c49e00c1f3f695b45f2a0026c4e96f4a41598d81f2c7161b9e59",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/sst2_b50/clf_full64.pt": "18bbc7e878da8859ecab9b65edfaf240932525404766c59d8375a0a8f62f5952",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/sst2_b50/clf_256_384_bf16.pt": "b624caccdf1f49771df12e2bb7e58423db8dae8788737383fc43b25dec481237",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/sst2_b50/clf_384_576_bf16.pt": "53ec37b1e7785e8e7a938c775ddfb9c60bf800c250dca733cfbccf9edf3ef934",
+    "/home/panzihang/src/prism_layerkv/studies/v28_frozen/representations/sst2_b50/clf_256_384_fp32.pt": "95b6619a0693ef27690f061ec4ad2d169c0c365700310cb4282613b3b8ac326a"
+  },
+  "disk_free": 40806477824
+}

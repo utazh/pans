@@ -41,7 +41,7 @@
 
 original_context / original_repeat 是同一评测批次前后的原路径对照；dense1_repeat 为单层对重复。identity 使用新 attention/调度路径但不跨层共享。直接共享使用同一层对及单位 A/B，以控制读取路径。
 
-identity_fixed_v2 与 dense1_fixed_v2 使用 original 保存的相同选择集合，32 条请求，不能直接与 128 条均值作成对比较。这两组为最终有效结果；旧 fixed 目录仅保留为引用循环修复前的调试记录。共享版 288.61 ms 慢于 identity 的 245.35 ms，因此本次没有证实稳定的独立共享加速。详细逐请求记录、P95、配对 bootstrap 区间和来源字节在 docs/layerkv/results/comparison.json、comparison.csv。
+identity_fixed_v2 与 dense1_fixed_v2 使用 original 保存的相同选择集合，32 条请求，不能直接与 128 条均值作成对比较。这两组为最终有效结果；旧 fixed 目录仅保留为引用循环修复前的调试记录。共享版 288.61 ms 慢于 identity 的 245.35 ms，因此本次没有证实稳定的独立共享加速。详细逐请求记录、P95、配对 bootstrap 区间和来源字节在 results/comparison.json、comparison.csv。
 
 单层对选择为 **0-based 26 → 27**：
 - 平均 logits KL：直接共享 0.848980，补偿共享 0.009841，降低 98.84%。
@@ -78,12 +78,12 @@ Full-KV 在本批数据上的分类准确率低于当前稀疏原路径，这是
 
 ## 正确性、连续生成与长 query
 
-最终完整测试为 342 passed、2 skipped、87 subtests passed；2 项跳过的是需要独立 flash_attn 包的测试，vLLM FA2 GPU 测试已通过。记录见 docs/layerkv/validation/server_gpu_tests.txt，包括数学恒等式、共同归一化、RoPE、GQA、source 去重、真实 Qwen prefill/decode、私有 cache 及诊断 gate。
+最终完整测试为 342 passed、2 skipped、87 subtests passed；2 项跳过的是需要独立 flash_attn 包的测试，vLLM FA2 GPU 测试已通过。记录见 logs/final_tests.log，包括数学恒等式、共同归一化、RoPE、GQA、source 去重、真实 Qwen prefill/decode、私有 cache 及诊断 gate。
 
-8 条最多 8-token 连续生成的原路径/共享输出文本全部一致，私有 cache 长度检查通过；逐条文本见 docs/layerkv/results/generation_examples.json。长 query 压力检查使用 4 条测试请求加中性 padding，检查位置与 cache 生命周期，不作为自然任务质量基准；query 长度 687–696 tokens，4 条中 3 条生成文本完全相同，平均 logits KL 0.01666，私有 cache 长度检查通过。结果见 docs/layerkv/results/long_query_stress.json。
+8 条最多 8-token 连续生成的原路径/共享输出文本全部一致，私有 cache 长度检查通过；逐条文本见 results/generation_examples.json。长 query 压力检查使用 4 条测试请求加中性 padding，检查位置与 cache 生命周期，不作为自然任务质量基准；query 长度 687–696 tokens，4 条中 3 条生成文本完全相同，平均 logits KL 0.01666，私有 cache 长度检查通过。结果见 results/long_query_stress.json。
 
 ## 文件完整性和复现
 
-源代码/配置/脚本/vendor 检查 276 个文件，原目录内容哈希均未变化：True。实现补丁保留在服务器 audit/implementation.patch；GitHub 可直接查看 v1 提交差异；源仓库 HEAD=61318220e7df80488292b54b00a87134a031f169，同时保留其未提交修改。
+源代码/配置/脚本/vendor 检查 276 个文件，原目录内容哈希均未变化：True。实现补丁见 audit/implementation.patch；源仓库 HEAD=61318220e7df80488292b54b00a87134a031f169，同时保留其未提交修改。
 
 全部实验与结果在服务器。README_LAYERKV.md 提供单次命令，configs/layerkv_baselines.json 与 configs/layerkv_experiments.json 记录本次全部参数，scripts/analyze_layerkv.py 可重建对比与完整性检查。

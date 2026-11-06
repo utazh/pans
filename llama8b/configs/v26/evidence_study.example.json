@@ -1,0 +1,22 @@
+{
+  "repo": "/absolute/path/to/pans-v26",
+  "python": "/absolute/path/to/venv/bin/python",
+  "gpu": "2",
+  "task": "trec",
+  "model_path": "/absolute/path/to/Qwen2.5-7B-Instruct",
+  "store_root": "/absolute/path/to/prefix_store",
+  "selector_index_dir": "/absolute/path/to/selector_index_k4_g32",
+  "pcache_root": "/absolute/path/to/owned_non_hardlinked_pcache",
+  "adapter_dir": "/absolute/path/to/frozen_G16_R4_seed24",
+  "checkpoint_sha256": "REPLACE_WITH_ACTUAL_FROZEN_SHA256",
+  "bundle_file": "/absolute/path/to/known_timing_bundle/trec.jsonl",
+  "blocks": 12,
+  "block_size": 32,
+  "warmup": 8,
+  "conditions": ["preserve", "warm"],
+  "budget": 25,
+  "period": 8,
+  "seed": 2601,
+  "method_frozen": false,
+  "admission_gpu_parity_passed": false
+}

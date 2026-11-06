@@ -1,0 +1,23 @@
+{
+  "base": "681fe495028598e9d51f2f57220ecb96ed0e5f35",
+  "files": {
+    "README_ZH.md": "25d6d9024596a14664803afd6bb88b9051656adf904a6704c0db217aa87ec6af",
+    "TEST_RESULTS.md": "2e1df284262ef001f32349683053867beb52d79b38b9a1f0637d2a92b57da86b",
+    "docs/AUDIT_V27_ZH.md": "a6036deaa870f952341eba5529a2efcc0c610bf73fc648ebf43cc88a7de8fc3b",
+    "docs/BASELINE_PROTOCOL_ZH.md": "88529c92ac783e83495d5ac36dddbacbc99a95ea788c0dcbc49a706e0ad01a77",
+    "docs/PAPER_TABLES_ZH.md": "0954b3b5d21a17eab464b02ea9be0bb92dcb10c56799234b1c973da247e4c429",
+    "docs/SOURCES.md": "edb3aa73c9181b880b482cc0c7743f0f63b7b92adfefc2204182006f8323c680",
+    "scripts/install_sharedkv_v28.py": "8acd132f010741dce224395c4bd2f04b45ee95908d1df8e7937db25f661d5f2d",
+    "scripts/matrix_v28.py": "3b33a1949d780d1785c922bb622ffb550aabd2e743c64b6e170527c1a7d4e2a0",
+    "src/contiguous_fuxian/sharedkv_v28/__init__.py": "f87c106a7695d79a3e562890c983c90305fca3996cf539fe89f363ce47277978",
+    "src/contiguous_fuxian/sharedkv_v28/analyze.py": "dcd20294e0cff7d3a9076b486bb54d91d4e02f5465303c23741028ce29a6ad8c",
+    "src/contiguous_fuxian/sharedkv_v28/common.py": "2d8d6e3f79d2310c022f03b18ff8d67433d07200f8a2dd752b4dd549160d8771",
+    "src/contiguous_fuxian/sharedkv_v28/execute.py": "49c40a64073821b6d7c3e6ca06ef81150aeb6f2c0a201d1625e6821965a34302",
+    "src/contiguous_fuxian/sharedkv_v28/factors.py": "ad5e197344961751be712095617fd27d208cc440bc717376836dcf573e83a3e5",
+    "src/contiguous_fuxian/sharedkv_v28/kvsharer.py": "88d41bbceb7841d2d19a011654d790e823b8836a88ae5a79e307563168a42d2f",
+    "src/contiguous_fuxian/sharedkv_v28/protocol.py": "e92b93b74e2f0d8f0cce1a22a9d3a2bffd1f1215ba7b1030ac6eb25ce3f0e29d",
+    "src/contiguous_fuxian/sharedkv_v28/resources.py": "86b0790c35a68af8a17f1a05dbec24239b147ef11953e61ecc02cea78b682893",
+    "tests/CPU_TEST_LOG.txt": "3a678de8c375ebc793d38d380e23babb610814cce03b0cf80c5d910508c272bb",
+    "tests/test_sharedkv_v28.py": "e728d8f832a9cec4d0448aa8aa0473dd6bd3d8b2e441c9136178d55a21404d1e"
+  }
+}

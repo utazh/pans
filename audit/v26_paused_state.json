@@ -1,0 +1,23 @@
+{
+  "status": "paused_by_user",
+  "time": 1790071608.1928518,
+  "gpu_experiments_started": false,
+  "installed_v26_files": 23,
+  "original_source_overwritten": 0,
+  "protected_file_count": 4877,
+  "cpu_test_stopped": false,
+  "cpu_test_log_tail": "............................................ss........                   [100%]\n52 passed, 2 skipped in 2.56s\n",
+  "tasks": [
+    "sst2",
+    "subj",
+    "trec",
+    "rte"
+  ],
+  "budgets_pct": [
+    5,
+    10,
+    25,
+    50
+  ],
+  "resume_only_after_user_notification": true
+}

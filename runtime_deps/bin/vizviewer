@@ -1,0 +1,6 @@
+#!/home/panzihang/venvs/vllm-stable/bin/python
+import sys
+from viztracer.viewer import viewer_main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(viewer_main())

@@ -1,0 +1,24 @@
+{
+  "reviewed_unix": 1789919921.7325487,
+  "report_reviewed": true,
+  "plot_visually_reviewed": true,
+  "notes": [
+    "All four panels legible; no curves obscured; storage bars fully visible.",
+    "Warm order sensitivity explicit; cold timing and quality denominators stated.",
+    "Statistical and profiler claims checked against analysis JSON; no general acceleration or noninferiority claim."
+  ],
+  "files": {
+    "figures/v23_summary.png": {
+      "bytes": 284877,
+      "sha256": "0a747cf58e0eab15e438503ce7a450a039bf4883c725f229afeae9923b4be64b"
+    },
+    "figures/v23_summary.pdf": {
+      "bytes": 27291,
+      "sha256": "3d8e1bd144df3d2d65ca2b448b857bb2478d5aa59cfe2d0cb853531ba30e240b"
+    },
+    "EXPERIMENT_REPORT_V23_ZH.md": {
+      "bytes": 9992,
+      "sha256": "80fa29b1d351bd942debc6e4c78f31f2315fe588b6bc2f8c2995d8750000f750"
+    }
+  }
+}

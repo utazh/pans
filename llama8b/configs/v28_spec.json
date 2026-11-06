@@ -1,0 +1,215 @@
+{
+  "format": "pans-matrix-spec-v28",
+  "repo": "/home/panzihang/src/prism_layerkv",
+  "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
+  "store_root": "/home/panzihang/src/prism_layerkv/runtime_data/prefix_store",
+  "selector_index_dir": "/home/panzihang/src/prism_layerkv/assets/selector_index_k4_g32",
+  "pcache_root": "/home/panzihang/src/prism_layerkv/runtime_data/v27_pcache_gpu2",
+  "python": "/home/panzihang/venvs/vllm-stable/bin/python",
+  "gpu": "2",
+  "blocks": 6,
+  "block_size": 16,
+  "warmup": 4,
+  "seed": 2801,
+  "conditions": [
+    "preserve",
+    "warm"
+  ],
+  "ranks": [
+    [
+      256,
+      384
+    ],
+    [
+      384,
+      576
+    ]
+  ],
+  "kvsharer_g": [
+    24,
+    20,
+    16
+  ],
+  "svd_device": "cpu",
+  "search_device": "cuda",
+  "cells": [
+    {
+      "id": "sst2_b5",
+      "task": "sst2",
+      "budget": 5,
+      "expected_n": 872,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b5/sst2.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b5_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b5_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/sst2.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/sst2.jsonl"
+    },
+    {
+      "id": "sst2_b10",
+      "task": "sst2",
+      "budget": 10,
+      "expected_n": 872,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b10/sst2.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b10_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b10_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/sst2.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/sst2.jsonl"
+    },
+    {
+      "id": "sst2_b25",
+      "task": "sst2",
+      "budget": 25,
+      "expected_n": 872,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b25/sst2.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b25_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b25_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/sst2.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/sst2.jsonl"
+    },
+    {
+      "id": "sst2_b50",
+      "task": "sst2",
+      "budget": 50,
+      "expected_n": 872,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_sst2_b50/sst2.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b50_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_sst2_b50_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/sst2.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/sst2.jsonl"
+    },
+    {
+      "id": "subj_b5",
+      "task": "subj",
+      "budget": 5,
+      "expected_n": 1003,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b5_canonical/subj.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b5_canonical_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b5_canonical_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_full_eval/subj.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_val/subj.jsonl"
+    },
+    {
+      "id": "subj_b10",
+      "task": "subj",
+      "budget": 10,
+      "expected_n": 1003,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b10_canonical/subj.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b10_canonical_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b10_canonical_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_full_eval/subj.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_val/subj.jsonl"
+    },
+    {
+      "id": "subj_b25",
+      "task": "subj",
+      "budget": 25,
+      "expected_n": 1003,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b25_canonical/subj.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b25_canonical_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b25_canonical_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_full_eval/subj.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_val/subj.jsonl"
+    },
+    {
+      "id": "subj_b50",
+      "task": "subj",
+      "budget": 50,
+      "expected_n": 1003,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_subj_b50_canonical/subj.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b50_canonical_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_subj_b50_canonical_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_full_eval/subj.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/canonical_val/subj.jsonl"
+    },
+    {
+      "id": "trec_b5",
+      "task": "trec",
+      "budget": 5,
+      "expected_n": 500,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b5/trec.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b5_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b5_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/trec.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/trec.jsonl"
+    },
+    {
+      "id": "trec_b10",
+      "task": "trec",
+      "budget": 10,
+      "expected_n": 500,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b10/trec.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b10_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b10_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/trec.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/trec.jsonl"
+    },
+    {
+      "id": "trec_b25",
+      "task": "trec",
+      "budget": 25,
+      "expected_n": 500,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v25_g16_r4_s24/trec.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v24_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/trec.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v24_splits/val/trec.jsonl"
+    },
+    {
+      "id": "trec_b50",
+      "task": "trec",
+      "budget": 50,
+      "expected_n": 500,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_trec_b50/trec.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b50_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_trec_b50_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/trec.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/trec.jsonl"
+    },
+    {
+      "id": "rte_b5",
+      "task": "rte",
+      "budget": 5,
+      "expected_n": 277,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b5/rte.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b5_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b5_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/rte.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/rte.jsonl"
+    },
+    {
+      "id": "rte_b10",
+      "task": "rte",
+      "budget": 10,
+      "expected_n": 277,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b10/rte.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b10_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b10_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/rte.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/rte.jsonl"
+    },
+    {
+      "id": "rte_b25",
+      "task": "rte",
+      "budget": 25,
+      "expected_n": 277,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b25/rte.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b25_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b25_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/rte.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/rte.jsonl"
+    },
+    {
+      "id": "rte_b50",
+      "task": "rte",
+      "budget": 50,
+      "expected_n": 277,
+      "r4": "/home/panzihang/src/prism_layerkv/assets/v26_p0_rte_b50/rte.pt",
+      "teacher_fit": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b50_teacher_fit",
+      "teacher_val": "/home/panzihang/src/prism_layerkv/runtime_data/v26_p0_rte_b50_teacher_val",
+      "eval_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/full_eval/rte.jsonl",
+      "validation_file": "/home/panzihang/src/prism_layerkv/data/v26/p0/val/rte.jsonl"
+    }
+  ],
+  "paths_are_templates_verify_before_prepare": false,
+  "note": "Frozen R4-trained -> R0-inference; no retraining. External bridges QUALITY ONLY."
+}

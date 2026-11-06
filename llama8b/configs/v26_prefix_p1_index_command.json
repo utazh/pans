@@ -1,0 +1,17 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/build_selector_index.py",
+  "--source-pcache-dir",
+  "/home/panzihang/src/prism_layerkv/runtime_data/v26_p1_pcache_gpu3",
+  "--store-root",
+  "/home/panzihang/src/prism_layerkv/runtime_data/v26_prefix_p1",
+  "--output-dir",
+  "/home/panzihang/src/prism_layerkv/assets/v26_selector_p1",
+  "--tasks",
+  "sst2,subj,trec,rte",
+  "--source-task-order",
+  "sst2,subj,trec,rte",
+  "--model-path",
+  "/data1/llm/Qwen/Qwen2.5-7B-Instruct"
+]

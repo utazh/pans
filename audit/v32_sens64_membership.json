@@ -1,0 +1,44 @@
+{
+  "files_scanned": 365,
+  "rule": "v32 sens64: 64 new train-pool queries per task for the label-free layer-sensitivity ranking (v32_layer_sens.py), disjoint from\nevery historical role (all data/**, frozen bundles, prism_pans data, the v29 dev set and fit512/fit64) - the same conservative\nexclusion as scripts/prepare_v29_fit512.py, new seed. Prefix / labels / query layout are taken from the frozen test bundle of\nthe task (studies/v28_frozen/bundles/<task>_b25/eval), queries formatted with paper_tasks.format_example; --check prints one\nformatted query next to a frozen test query for comparison and writes nothing. Usage: prepare_v32_sens64.py [--check]",
+  "seed": 3201,
+  "target": 64,
+  "tasks": {
+    "sst2": {
+      "pool": 67349,
+      "in_history": 20,
+      "duplicate": 0,
+      "short": 62,
+      "too_long": 0,
+      "final": 64,
+      "sha256": "559307fce32ba149cdf0a72849b5e5326933f98153291e0020cddf86829c09e1"
+    },
+    "subj": {
+      "pool": 9018,
+      "in_history": 9,
+      "duplicate": 0,
+      "short": 0,
+      "too_long": 0,
+      "final": 64,
+      "sha256": "754103eb269ffcec3a270793be3d5932a0523814be3ad4306c24b484d9fbaa7e"
+    },
+    "trec": {
+      "pool": 5452,
+      "in_history": 223,
+      "duplicate": 0,
+      "short": 0,
+      "too_long": 0,
+      "final": 64,
+      "sha256": "f3fff92e9c477984be904e62adea80b007a8f202dfceaaa0bc2c8b86347ee7dc"
+    },
+    "rte": {
+      "pool": 2490,
+      "in_history": 131,
+      "duplicate": 0,
+      "short": 0,
+      "too_long": 1,
+      "final": 64,
+      "sha256": "45b32adfe1e182196af304d27c63922fae996f47552c9f1a6faba87aec3707dc"
+    }
+  }
+}

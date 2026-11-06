@@ -1,0 +1,28 @@
+{
+  "scope": "v27 validation then prefix inter-layer quality baselines; no paper writing",
+  "model": "Qwen2.5-7B-Instruct",
+  "primary_task": "trec",
+  "budget_pct": 25,
+  "quality_n": 500,
+  "quality_set_status": "previously observed regression; not new confirmatory holdout",
+  "frozen_controls": [
+    "identity",
+    "R4_native",
+    "R4_source_proxy",
+    "frozen_R0"
+  ],
+  "external": [
+    "KVSharer-Prefix searched G24/G20/G16 threshold0.5 on30 fit requests",
+    "xKV-CLF P8 group4 ranks256/384 and384/576"
+  ],
+  "external_latency_valid": false,
+  "frozen_R0_timing": "only separate SSD-cold/preserve after numerical and quality validation",
+  "no_changes": [
+    "old attention kernels",
+    "cold certification",
+    "old scoring rules",
+    "prism_pans"
+  ],
+  "source_graph_frontier": "geometry-only fit analysis 4tasks25/50; no automatic expansion",
+  "quality_certified": false
+}

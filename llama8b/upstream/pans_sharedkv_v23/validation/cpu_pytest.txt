@@ -1,0 +1,5 @@
+..........................s....s.......                                  [100%]
+=========================== short test summary info ============================
+SKIPPED [1] mnt/data/pans_sharedkv_v23/tests/test_sharedkv_v23.py:217: Host filesystem refuses DONTNEED: Cold precondition FAILED: 8/8 pages remain resident; no timed trial
+SKIPPED [1] mnt/data/pans_sharedkv_v23/tests/test_sharedkv_v23.py:280: No CUDA device
+37 passed, 2 skipped in 2.19s

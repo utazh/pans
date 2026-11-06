@@ -1,0 +1,39 @@
+{
+ "prefill_s": 17.344794988632202,
+ "pcache_s": 75.99615478515625,
+ "index_s": 62.201205253601074,
+ "prefix": {
+  "sst2": {
+   "task": "sst2",
+   "prefix_tokens": 6924,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "layers": 28,
+   "token_hash": "e34adac3b27cbe77a48e5b92af17ce0ff8d993165c199bb7c746bcaf0579adae"
+  },
+  "subj": {
+   "task": "subj",
+   "prefix_tokens": 8216,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "layers": 28,
+   "token_hash": "d560c951094859257326413304fa12572da96a831a5790d671534c965e11f2bd"
+  },
+  "trec": {
+   "task": "trec",
+   "prefix_tokens": 6189,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "layers": 28,
+   "token_hash": "7323cba972e5311e2043d4124a7f0dc2c69eff3297421f44a506be6b4c33d36f"
+  },
+  "rte": {
+   "task": "rte",
+   "prefix_tokens": 6011,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "layers": 28,
+   "token_hash": "d020c4122bbed0aacabe551a1e783df4d8be4bafe65413467b8a9b0a9b8b6b2e"
+  }
+ }
+}

@@ -1,0 +1,364 @@
+{
+ "sst2": {
+  "rows": {
+   "dev": {
+    "I": {
+     "acc": 93.60000000000001,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G21": {
+     "acc": 91.4,
+     "net": -11,
+     "harmed": 17,
+     "rescued": 6,
+     "bytes_vs_I": -0.25154858442384875
+    },
+    "G24": {
+     "acc": 94.39999999999999,
+     "net": 4,
+     "harmed": 3,
+     "rescued": 7,
+     "bytes_vs_I": -0.14382005753247318
+    },
+    "G24s": {
+     "acc": 92.4,
+     "net": -6,
+     "harmed": 12,
+     "rescued": 6,
+     "bytes_vs_I": -0.1437629912768854
+    }
+   },
+   "test": {
+    "I": {
+     "acc": 94.26605504587155,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G21": {
+     "acc": 93.34862385321101,
+     "net": -8,
+     "harmed": 15,
+     "rescued": 7,
+     "bytes_vs_I": -0.2516026951139734
+    },
+    "G24": {
+     "acc": 94.26605504587155,
+     "net": 0,
+     "harmed": 5,
+     "rescued": 5,
+     "bytes_vs_I": -0.14374419953243922
+    },
+    "G24s": {
+     "acc": 93.80733944954129,
+     "net": -4,
+     "harmed": 8,
+     "rescued": 4,
+     "bytes_vs_I": -0.1437616866349417
+    }
+   }
+  },
+  "selected_new": "I",
+  "eligible_new": [
+   "I"
+  ]
+ },
+ "subj": {
+  "rows": {
+   "dev": {
+    "I": {
+     "acc": 85.0,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 82.8,
+     "net": -11,
+     "harmed": 36,
+     "rescued": 25,
+     "bytes_vs_I": -0.4285714285714286
+    },
+    "G24": {
+     "acc": 83.0,
+     "net": -10,
+     "harmed": 19,
+     "rescued": 9,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20": {
+     "acc": 85.8,
+     "net": 4,
+     "harmed": 19,
+     "rescued": 23,
+     "bytes_vs_I": -0.2857142857142857
+    },
+    "G24s": {
+     "acc": 82.6,
+     "net": -12,
+     "harmed": 25,
+     "rescued": 13,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20s": {
+     "acc": 86.2,
+     "net": 6,
+     "harmed": 25,
+     "rescued": 31,
+     "bytes_vs_I": -0.2857142857142857
+    }
+   },
+   "test": {
+    "I": {
+     "acc": 82.95114656031905,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 77.7666999002991,
+     "net": -52,
+     "harmed": 92,
+     "rescued": 40,
+     "bytes_vs_I": -0.4285714285714286
+    },
+    "G24": {
+     "acc": 79.56131605184447,
+     "net": -34,
+     "harmed": 52,
+     "rescued": 18,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20": {
+     "acc": 82.35294117647058,
+     "net": -6,
+     "harmed": 44,
+     "rescued": 38,
+     "bytes_vs_I": -0.2857142857142857
+    },
+    "G24s": {
+     "acc": 79.76071784646062,
+     "net": -32,
+     "harmed": 55,
+     "rescued": 23,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20s": {
+     "acc": 82.35294117647058,
+     "net": -6,
+     "harmed": 55,
+     "rescued": 49,
+     "bytes_vs_I": -0.2857142857142857
+    }
+   }
+  },
+  "selected_new": "G20s",
+  "eligible_new": [
+   "I",
+   "G20s"
+  ]
+ },
+ "trec": {
+  "rows": {
+   "dev": {
+    "I": {
+     "acc": 73.2,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 77.0,
+     "net": 19,
+     "harmed": 37,
+     "rescued": 56,
+     "bytes_vs_I": -0.42717996289424864
+    },
+    "G24": {
+     "acc": 74.4,
+     "net": 6,
+     "harmed": 24,
+     "rescued": 30,
+     "bytes_vs_I": -0.14239332096474955
+    },
+    "G20": {
+     "acc": 75.2,
+     "net": 10,
+     "harmed": 27,
+     "rescued": 37,
+     "bytes_vs_I": -0.2847866419294991
+    },
+    "G24s": {
+     "acc": 73.6,
+     "net": 2,
+     "harmed": 32,
+     "rescued": 34,
+     "bytes_vs_I": -0.14239332096474955
+    },
+    "G20s": {
+     "acc": 74.0,
+     "net": 4,
+     "harmed": 34,
+     "rescued": 38,
+     "bytes_vs_I": -0.2847866419294991
+    }
+   },
+   "test": {
+    "I": {
+     "acc": 63.4,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 77.60000000000001,
+     "net": 71,
+     "harmed": 17,
+     "rescued": 88,
+     "bytes_vs_I": -0.42717996289424864
+    },
+    "G24": {
+     "acc": 72.0,
+     "net": 43,
+     "harmed": 13,
+     "rescued": 56,
+     "bytes_vs_I": -0.14239332096474955
+    },
+    "G20": {
+     "acc": 72.0,
+     "net": 43,
+     "harmed": 7,
+     "rescued": 50,
+     "bytes_vs_I": -0.2847866419294991
+    },
+    "G24s": {
+     "acc": 65.60000000000001,
+     "net": 11,
+     "harmed": 28,
+     "rescued": 39,
+     "bytes_vs_I": -0.14239332096474955
+    },
+    "G20s": {
+     "acc": 69.39999999999999,
+     "net": 30,
+     "harmed": 22,
+     "rescued": 52,
+     "bytes_vs_I": -0.2847866419294991
+    }
+   }
+  },
+  "selected_new": "G16",
+  "eligible_new": [
+   "I",
+   "G24s",
+   "G20s",
+   "G16"
+  ]
+ },
+ "rte": {
+  "rows": {
+   "dev": {
+    "I": {
+     "acc": 89.2,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 87.2,
+     "net": -10,
+     "harmed": 26,
+     "rescued": 16,
+     "bytes_vs_I": -0.4285714285714286
+    },
+    "G24": {
+     "acc": 89.8,
+     "net": 3,
+     "harmed": 0,
+     "rescued": 3,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20": {
+     "acc": 89.2,
+     "net": 0,
+     "harmed": 12,
+     "rescued": 12,
+     "bytes_vs_I": -0.2857142857142857
+    },
+    "G24s": {
+     "acc": 89.4,
+     "net": 1,
+     "harmed": 8,
+     "rescued": 9,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20s": {
+     "acc": 88.4,
+     "net": -4,
+     "harmed": 14,
+     "rescued": 10,
+     "bytes_vs_I": -0.2857142857142857
+    }
+   },
+   "test": {
+    "I": {
+     "acc": 89.53068592057761,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "bytes_vs_I": 0.0
+    },
+    "G16": {
+     "acc": 87.00361010830325,
+     "net": -7,
+     "harmed": 14,
+     "rescued": 7,
+     "bytes_vs_I": -0.4285714285714286
+    },
+    "G24": {
+     "acc": 89.16967509025271,
+     "net": -1,
+     "harmed": 1,
+     "rescued": 0,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20": {
+     "acc": 87.00361010830325,
+     "net": -7,
+     "harmed": 12,
+     "rescued": 5,
+     "bytes_vs_I": -0.2857142857142857
+    },
+    "G24s": {
+     "acc": 87.00361010830325,
+     "net": -7,
+     "harmed": 13,
+     "rescued": 6,
+     "bytes_vs_I": -0.1428571428571429
+    },
+    "G20s": {
+     "acc": 87.36462093862815,
+     "net": -6,
+     "harmed": 12,
+     "rescued": 6,
+     "bytes_vs_I": -0.2857142857142857
+    }
+   }
+  },
+  "selected_new": "G20s",
+  "eligible_new": [
+   "I",
+   "G24s",
+   "G20s"
+  ]
+ }
+}

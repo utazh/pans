@@ -1,0 +1,10 @@
+{
+  "time": 1790074200.6373825,
+  "resumed_by_user": true,
+  "gpus": [
+    2,
+    3
+  ],
+  "protected_files_verified": 4877,
+  "other_gpu_jobs_untouched": true
+}

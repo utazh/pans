@@ -1,0 +1,1250 @@
+{
+  "baseline": "v22_fixed_identity",
+  "scope": "quality only; captures invalidate formal latency claims",
+  "variants": {
+    "v22_fixed_diag19_s200": {
+      "n": 32,
+      "baseline_correct": 24,
+      "student_correct": 22,
+      "delta_pp": -6.25,
+      "paired_bootstrap_95pct_delta_pp": [
+        -15.625,
+        0.0
+      ],
+      "baseline_right_student_wrong": 2,
+      "baseline_wrong_student_right": 0,
+      "mcnemar_exact_two_sided_p": 0.5,
+      "noninferiority_margin_pp": 1.0,
+      "bootstrap_descriptive_lower_exceeds_margin": false,
+      "harm_rate_exact_one_sided_upper95_pp": 18.39434681769282,
+      "conservative_noninferiority_supported": false,
+      "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization",
+      "accuracy_pct": 68.75,
+      "diagnostic_ttft_ms": 320.2500602201326,
+      "physical_payload_bytes": 68132864,
+      "host_payload_source_bytes": 10977792,
+      "harmful_uids": [
+        "trec-88",
+        "trec-218"
+      ],
+      "beneficial_uids": [],
+      "whole_plan_exact_fraction": 1,
+      "first_token_mean_kl": 0.015706876857620955,
+      "first_token_p95_kl": 0.07816985081881281,
+      "token_jaccard_by_layer": [
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        }
+      ],
+      "label_score_reduction": "mean per token, matching actual runner decision",
+      "label_mean_kl": 0.058153092487060576,
+      "label_argmax_agreement": 0.9375,
+      "label_diagnostics": [
+        {
+          "query_hash": "090dff4675b18e75db2f9a9e3458aa5b52c67f8559a1f754d233c0b20baf126d",
+          "baseline_margin": 2.572739601135254,
+          "student_margin": 4.446921348571777,
+          "argmax_same": true,
+          "max_abs_delta": 1.6234455108642578,
+          "kl": 0.07085452973842621
+        },
+        {
+          "query_hash": "1d7e09886d5bcaf6f2f2cc4b398f13427600b77205661b1cb0c5c15c1b3d9e00",
+          "baseline_margin": 6.3693671226501465,
+          "student_margin": 5.27993631362915,
+          "argmax_same": true,
+          "max_abs_delta": 1.7412948608398438,
+          "kl": 0.004739959258586168
+        },
+        {
+          "query_hash": "1e79b1c0f9d48191d138fab0e81e26564904a7828ec44ffd50d124135bf05ca0",
+          "baseline_margin": 3.6341874599456787,
+          "student_margin": 4.380953788757324,
+          "argmax_same": true,
+          "max_abs_delta": 0.9935526847839355,
+          "kl": 0.00558822276070714
+        },
+        {
+          "query_hash": "2e5c545f277397e3a57a0fdbf1c330b0a04a983bf07b5e4299ad912748f6f27b",
+          "baseline_margin": 0.49088025093078613,
+          "student_margin": 1.4534459114074707,
+          "argmax_same": true,
+          "max_abs_delta": 1.8939552307128906,
+          "kl": 0.10601679235696793
+        },
+        {
+          "query_hash": "35a3b0e844dc6e22e22c6497709455204152bfe04b29837cb4a306a83d919955",
+          "baseline_margin": 5.277827739715576,
+          "student_margin": 4.562194347381592,
+          "argmax_same": true,
+          "max_abs_delta": 3.9316444396972656,
+          "kl": 0.004967469722032547
+        },
+        {
+          "query_hash": "3ac4adf7bb06e0760aac5b247635d4c709df7987846192dbbc985f439a18937f",
+          "baseline_margin": 5.372345447540283,
+          "student_margin": 3.4372363090515137,
+          "argmax_same": true,
+          "max_abs_delta": 2.370220184326172,
+          "kl": 0.02680414542555809
+        },
+        {
+          "query_hash": "3b27ec50b201b84dbabc6646e84083e3bd43f828f82304fbbdcd432a7bba9912",
+          "baseline_margin": 6.000009536743164,
+          "student_margin": 5.500018119812012,
+          "argmax_same": true,
+          "max_abs_delta": 0.370025634765625,
+          "kl": 0.00036730687133967876
+        },
+        {
+          "query_hash": "5a844fc2a757297fb9cf7e43a2bb2934f1c467477005bccb5b3b8f22af992ebb",
+          "baseline_margin": 6.418391227722168,
+          "student_margin": 5.87164306640625,
+          "argmax_same": true,
+          "max_abs_delta": 1.7185688018798828,
+          "kl": 0.0008254627464339137
+        },
+        {
+          "query_hash": "5ad984d5a8d3b81a8e7b3de0aa351786b82d1fc3edcd551bf2136d29253af401",
+          "baseline_margin": 4.312529563903809,
+          "student_margin": 4.437560081481934,
+          "argmax_same": true,
+          "max_abs_delta": 2.8108577728271484,
+          "kl": 0.00010465644299983978
+        },
+        {
+          "query_hash": "5bc667f10b861116ea046b00bb2b129b1bacdad7be934d65c4f02c41035780be",
+          "baseline_margin": 4.245555400848389,
+          "student_margin": 2.873487949371338,
+          "argmax_same": true,
+          "max_abs_delta": 1.1308097839355469,
+          "kl": 0.0386001355946064
+        },
+        {
+          "query_hash": "5f2c8f3dfed0b527cb956d4b5d01a49437153d7ad56f225e520fc8439ca6dbbc",
+          "baseline_margin": 0.6852002143859863,
+          "student_margin": 1.5631394386291504,
+          "argmax_same": false,
+          "max_abs_delta": 1.4967870712280273,
+          "kl": 0.5884197354316711
+        },
+        {
+          "query_hash": "6f2e8e782a15f55e65be710b4398e8da0a46b854d89ab54be26af25f40360305",
+          "baseline_margin": 1.0625057220458984,
+          "student_margin": 0.8750064373016357,
+          "argmax_same": true,
+          "max_abs_delta": 0.9991855621337891,
+          "kl": 0.003464493900537491
+        },
+        {
+          "query_hash": "71a274e368b330e8a788a58b7074ba332241a5c22467303040fdc0683e9be0dc",
+          "baseline_margin": 8.968384742736816,
+          "student_margin": 7.913050651550293,
+          "argmax_same": true,
+          "max_abs_delta": 0.9251394271850586,
+          "kl": 0.00020379613852128386
+        },
+        {
+          "query_hash": "71f78625e3c707bf27adba275b46a6db0bfac289065cd27cdedf0ac25c640fa8",
+          "baseline_margin": 4.937509536743164,
+          "student_margin": 4.937521457672119,
+          "argmax_same": true,
+          "max_abs_delta": 0.2557506561279297,
+          "kl": 2.7043734007747844e-07
+        },
+        {
+          "query_hash": "831120b639b98660252a548df03a77d7b8651ccf47f2e566f42e551e5f9a6490",
+          "baseline_margin": 0.24896478652954102,
+          "student_margin": 1.0627169609069824,
+          "argmax_same": false,
+          "max_abs_delta": 1.9984893798828125,
+          "kl": 0.20823296904563904
+        },
+        {
+          "query_hash": "868a8d906ebfa77e409231b9cfac5c3ef066c7fedb539bbc168605b1772939bd",
+          "baseline_margin": 5.053061008453369,
+          "student_margin": 4.9636759757995605,
+          "argmax_same": true,
+          "max_abs_delta": 1.866323471069336,
+          "kl": 0.0002024840796366334
+        },
+        {
+          "query_hash": "9019e05c71d441903ebf094285756e9f2399cc15f9e29e9c2df992eb21e0f374",
+          "baseline_margin": 1.8708934783935547,
+          "student_margin": 0.3110799789428711,
+          "argmax_same": true,
+          "max_abs_delta": 1.1196832656860352,
+          "kl": 0.20170022547245026
+        },
+        {
+          "query_hash": "91c57e5ec949ac06ea4b7ca267019594a688b4a5d3bf111bae560e993c7d93c5",
+          "baseline_margin": 2.6868300437927246,
+          "student_margin": 0.8123111724853516,
+          "argmax_same": true,
+          "max_abs_delta": 1.3740849494934082,
+          "kl": 0.27080586552619934
+        },
+        {
+          "query_hash": "93be3cab0d25377d2e13bfefc57ce24158687ba02237229aeefcdb54f0682ab4",
+          "baseline_margin": 0.4375016689300537,
+          "student_margin": 0.6250040531158447,
+          "argmax_same": true,
+          "max_abs_delta": 0.43723106384277344,
+          "kl": 0.005586232990026474
+        },
+        {
+          "query_hash": "9cd7c15cbabb49740b0aadb4a905592374d8e19d48a75ce68f18d189f817504a",
+          "baseline_margin": 4.4146294593811035,
+          "student_margin": 4.839894771575928,
+          "argmax_same": true,
+          "max_abs_delta": 1.1630439758300781,
+          "kl": 0.0009734045015648007
+        },
+        {
+          "query_hash": "a0b1ccd663ba339d40f52209476d3d4047fe827704922eb5789251ba2d95fb1f",
+          "baseline_margin": 4.096545219421387,
+          "student_margin": 5.8865180015563965,
+          "argmax_same": true,
+          "max_abs_delta": 1.83001708984375,
+          "kl": 0.015615226700901985
+        },
+        {
+          "query_hash": "ac7defe1f0619e06d36f7b4ac0bcbdcdfdb99a5a5696df14666411ee1e41908a",
+          "baseline_margin": 4.917903900146484,
+          "student_margin": 5.230630397796631,
+          "argmax_same": true,
+          "max_abs_delta": 2.2497358322143555,
+          "kl": 0.0004498109919950366
+        },
+        {
+          "query_hash": "b8e5cceec72d6475d0a53e19f138dafd2fade43c64ea20ab51df3d1bff65ce0c",
+          "baseline_margin": 3.942443609237671,
+          "student_margin": 4.570866584777832,
+          "argmax_same": true,
+          "max_abs_delta": 0.9340605735778809,
+          "kl": 0.003452010452747345
+        },
+        {
+          "query_hash": "d15659103d9a568099d4f5b8549fbd03ad6a5baf84e610aa78d8ff4fc6352b7e",
+          "baseline_margin": 2.4265007972717285,
+          "student_margin": 3.7254271507263184,
+          "argmax_same": true,
+          "max_abs_delta": 1.7544803619384766,
+          "kl": 0.04449383541941643
+        },
+        {
+          "query_hash": "d210d3e9accf45f3dbd88da3e69a0b1192a5cff6c47fc515bfc235bad4097c96",
+          "baseline_margin": 4.218409061431885,
+          "student_margin": 4.4372944831848145,
+          "argmax_same": true,
+          "max_abs_delta": 1.7497310638427734,
+          "kl": 0.0005616180133074522
+        },
+        {
+          "query_hash": "d31b2b78b641b163a3f146a2f0cde8412c058c02d3edb15e9fb68bf6fcaa9f06",
+          "baseline_margin": 1.063671588897705,
+          "student_margin": 2.500241279602051,
+          "argmax_same": true,
+          "max_abs_delta": 2.3731794357299805,
+          "kl": 0.15122158825397491
+        },
+        {
+          "query_hash": "d752b25bea22b3ae9083bd2df8d568eec5116dccb589cf012864e2f9c44bd835",
+          "baseline_margin": 2.928034543991089,
+          "student_margin": 2.100337028503418,
+          "argmax_same": true,
+          "max_abs_delta": 1.8428802490234375,
+          "kl": 0.041366096585989
+        },
+        {
+          "query_hash": "d7ddea9c11b42ef6415321a1d0b0c63cbb6b0b661aaae88b54e26827fb7fe10f",
+          "baseline_margin": 0.8750016689300537,
+          "student_margin": 1.3124890327453613,
+          "argmax_same": true,
+          "max_abs_delta": 2.427438735961914,
+          "kl": 0.03409010171890259
+        },
+        {
+          "query_hash": "dec4d42689e1042df135fce8050bfb059f056b59d0e6686e1295b877cc70a264",
+          "baseline_margin": 2.5837759971618652,
+          "student_margin": 3.451390027999878,
+          "argmax_same": true,
+          "max_abs_delta": 1.1102924346923828,
+          "kl": 0.019347405061125755
+        },
+        {
+          "query_hash": "ebca5b3d17fc49a83528929fd944ed376894e34ab8fd6e9913e3532013ee4cfa",
+          "baseline_margin": 5.163138389587402,
+          "student_margin": 5.085616111755371,
+          "argmax_same": true,
+          "max_abs_delta": 1.7824764251708984,
+          "kl": 5.206589412409812e-05
+        },
+        {
+          "query_hash": "f1adc250ca7536a006b51657626afdbe9f2c8cdd406b04b8b5ad9a1500bc9d8f",
+          "baseline_margin": 4.441736698150635,
+          "student_margin": 4.9376959800720215,
+          "argmax_same": true,
+          "max_abs_delta": 1.6190662384033203,
+          "kl": 0.0037354128435254097
+        },
+        {
+          "query_hash": "f5095a747bc197fb072e4ba6653e8eda7f9a256f5b60d3cc7562e319e92b114a",
+          "baseline_margin": 2.4375030994415283,
+          "student_margin": 2.937507152557373,
+          "argmax_same": true,
+          "max_abs_delta": 0.9976768493652344,
+          "kl": 0.008055629208683968
+        }
+      ],
+      "query_tokens": {
+        "mean": 40.84375,
+        "min": 37,
+        "max": 49
+      },
+      "physical_alias_all": true,
+      "private_tail_bounded_all": true,
+      "physical_resolve_calls": 27,
+      "request_prefix_buffer_bytes": 68132864,
+      "resident_reader_bytes": 264192,
+      "cuda_peak_allocated_bytes": 15765060096
+    },
+    "v22_fixed_identity": {
+      "n": 32,
+      "baseline_correct": 24,
+      "student_correct": 24,
+      "delta_pp": 0.0,
+      "paired_bootstrap_95pct_delta_pp": [
+        0.0,
+        0.0
+      ],
+      "baseline_right_student_wrong": 0,
+      "baseline_wrong_student_right": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "noninferiority_margin_pp": 1.0,
+      "bootstrap_descriptive_lower_exceeds_margin": true,
+      "harm_rate_exact_one_sided_upper95_pp": 8.93681989862648,
+      "conservative_noninferiority_supported": false,
+      "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization",
+      "accuracy_pct": 75.0,
+      "diagnostic_ttft_ms": 302.79897197760874,
+      "physical_payload_bytes": 70647808,
+      "host_payload_source_bytes": 13359104,
+      "harmful_uids": [],
+      "beneficial_uids": [],
+      "whole_plan_exact_fraction": 1,
+      "first_token_mean_kl": 0.0,
+      "first_token_p95_kl": 0.0,
+      "token_jaccard_by_layer": [
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        }
+      ],
+      "label_score_reduction": "mean per token, matching actual runner decision",
+      "label_mean_kl": 0.0,
+      "label_argmax_agreement": 1,
+      "label_diagnostics": [
+        {
+          "query_hash": "090dff4675b18e75db2f9a9e3458aa5b52c67f8559a1f754d233c0b20baf126d",
+          "baseline_margin": 2.572739601135254,
+          "student_margin": 2.572739601135254,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "1d7e09886d5bcaf6f2f2cc4b398f13427600b77205661b1cb0c5c15c1b3d9e00",
+          "baseline_margin": 6.3693671226501465,
+          "student_margin": 6.3693671226501465,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "1e79b1c0f9d48191d138fab0e81e26564904a7828ec44ffd50d124135bf05ca0",
+          "baseline_margin": 3.6341874599456787,
+          "student_margin": 3.6341874599456787,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "2e5c545f277397e3a57a0fdbf1c330b0a04a983bf07b5e4299ad912748f6f27b",
+          "baseline_margin": 0.49088025093078613,
+          "student_margin": 0.49088025093078613,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "35a3b0e844dc6e22e22c6497709455204152bfe04b29837cb4a306a83d919955",
+          "baseline_margin": 5.277827739715576,
+          "student_margin": 5.277827739715576,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "3ac4adf7bb06e0760aac5b247635d4c709df7987846192dbbc985f439a18937f",
+          "baseline_margin": 5.372345447540283,
+          "student_margin": 5.372345447540283,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "3b27ec50b201b84dbabc6646e84083e3bd43f828f82304fbbdcd432a7bba9912",
+          "baseline_margin": 6.000009536743164,
+          "student_margin": 6.000009536743164,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "5a844fc2a757297fb9cf7e43a2bb2934f1c467477005bccb5b3b8f22af992ebb",
+          "baseline_margin": 6.418391227722168,
+          "student_margin": 6.418391227722168,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "5ad984d5a8d3b81a8e7b3de0aa351786b82d1fc3edcd551bf2136d29253af401",
+          "baseline_margin": 4.312529563903809,
+          "student_margin": 4.312529563903809,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "5bc667f10b861116ea046b00bb2b129b1bacdad7be934d65c4f02c41035780be",
+          "baseline_margin": 4.245555400848389,
+          "student_margin": 4.245555400848389,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "5f2c8f3dfed0b527cb956d4b5d01a49437153d7ad56f225e520fc8439ca6dbbc",
+          "baseline_margin": 0.6852002143859863,
+          "student_margin": 0.6852002143859863,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "6f2e8e782a15f55e65be710b4398e8da0a46b854d89ab54be26af25f40360305",
+          "baseline_margin": 1.0625057220458984,
+          "student_margin": 1.0625057220458984,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "71a274e368b330e8a788a58b7074ba332241a5c22467303040fdc0683e9be0dc",
+          "baseline_margin": 8.968384742736816,
+          "student_margin": 8.968384742736816,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "71f78625e3c707bf27adba275b46a6db0bfac289065cd27cdedf0ac25c640fa8",
+          "baseline_margin": 4.937509536743164,
+          "student_margin": 4.937509536743164,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "831120b639b98660252a548df03a77d7b8651ccf47f2e566f42e551e5f9a6490",
+          "baseline_margin": 0.24896478652954102,
+          "student_margin": 0.24896478652954102,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "868a8d906ebfa77e409231b9cfac5c3ef066c7fedb539bbc168605b1772939bd",
+          "baseline_margin": 5.053061008453369,
+          "student_margin": 5.053061008453369,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "9019e05c71d441903ebf094285756e9f2399cc15f9e29e9c2df992eb21e0f374",
+          "baseline_margin": 1.8708934783935547,
+          "student_margin": 1.8708934783935547,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "91c57e5ec949ac06ea4b7ca267019594a688b4a5d3bf111bae560e993c7d93c5",
+          "baseline_margin": 2.6868300437927246,
+          "student_margin": 2.6868300437927246,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "93be3cab0d25377d2e13bfefc57ce24158687ba02237229aeefcdb54f0682ab4",
+          "baseline_margin": 0.4375016689300537,
+          "student_margin": 0.4375016689300537,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "9cd7c15cbabb49740b0aadb4a905592374d8e19d48a75ce68f18d189f817504a",
+          "baseline_margin": 4.4146294593811035,
+          "student_margin": 4.4146294593811035,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "a0b1ccd663ba339d40f52209476d3d4047fe827704922eb5789251ba2d95fb1f",
+          "baseline_margin": 4.096545219421387,
+          "student_margin": 4.096545219421387,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "ac7defe1f0619e06d36f7b4ac0bcbdcdfdb99a5a5696df14666411ee1e41908a",
+          "baseline_margin": 4.917903900146484,
+          "student_margin": 4.917903900146484,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "b8e5cceec72d6475d0a53e19f138dafd2fade43c64ea20ab51df3d1bff65ce0c",
+          "baseline_margin": 3.942443609237671,
+          "student_margin": 3.942443609237671,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "d15659103d9a568099d4f5b8549fbd03ad6a5baf84e610aa78d8ff4fc6352b7e",
+          "baseline_margin": 2.4265007972717285,
+          "student_margin": 2.4265007972717285,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "d210d3e9accf45f3dbd88da3e69a0b1192a5cff6c47fc515bfc235bad4097c96",
+          "baseline_margin": 4.218409061431885,
+          "student_margin": 4.218409061431885,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "d31b2b78b641b163a3f146a2f0cde8412c058c02d3edb15e9fb68bf6fcaa9f06",
+          "baseline_margin": 1.063671588897705,
+          "student_margin": 1.063671588897705,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "d752b25bea22b3ae9083bd2df8d568eec5116dccb589cf012864e2f9c44bd835",
+          "baseline_margin": 2.928034543991089,
+          "student_margin": 2.928034543991089,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "d7ddea9c11b42ef6415321a1d0b0c63cbb6b0b661aaae88b54e26827fb7fe10f",
+          "baseline_margin": 0.8750016689300537,
+          "student_margin": 0.8750016689300537,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "dec4d42689e1042df135fce8050bfb059f056b59d0e6686e1295b877cc70a264",
+          "baseline_margin": 2.5837759971618652,
+          "student_margin": 2.5837759971618652,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "ebca5b3d17fc49a83528929fd944ed376894e34ab8fd6e9913e3532013ee4cfa",
+          "baseline_margin": 5.163138389587402,
+          "student_margin": 5.163138389587402,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "f1adc250ca7536a006b51657626afdbe9f2c8cdd406b04b8b5ad9a1500bc9d8f",
+          "baseline_margin": 4.441736698150635,
+          "student_margin": 4.441736698150635,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        },
+        {
+          "query_hash": "f5095a747bc197fb072e4ba6653e8eda7f9a256f5b60d3cc7562e319e92b114a",
+          "baseline_margin": 2.4375030994415283,
+          "student_margin": 2.4375030994415283,
+          "argmax_same": true,
+          "max_abs_delta": 0.0,
+          "kl": 0.0
+        }
+      ],
+      "query_tokens": {
+        "mean": 40.84375,
+        "min": 37,
+        "max": 49
+      },
+      "physical_alias_all": true,
+      "private_tail_bounded_all": true,
+      "physical_resolve_calls": 28,
+      "request_prefix_buffer_bytes": 70647808,
+      "resident_reader_bytes": 0,
+      "cuda_peak_allocated_bytes": 15762349568
+    },
+    "v22_fixed_map19_s200": {
+      "n": 32,
+      "baseline_correct": 24,
+      "student_correct": 23,
+      "delta_pp": -3.125,
+      "paired_bootstrap_95pct_delta_pp": [
+        -9.375,
+        0.0
+      ],
+      "baseline_right_student_wrong": 1,
+      "baseline_wrong_student_right": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "noninferiority_margin_pp": 1.0,
+      "bootstrap_descriptive_lower_exceeds_margin": false,
+      "harm_rate_exact_one_sided_upper95_pp": 13.98494602742259,
+      "conservative_noninferiority_supported": false,
+      "warning": "No multiple-selection or dataset-cluster correction; not proof of generalization",
+      "accuracy_pct": 71.875,
+      "diagnostic_ttft_ms": 291.6536296834238,
+      "physical_payload_bytes": 68132864,
+      "host_payload_source_bytes": 10977792,
+      "harmful_uids": [
+        "trec-88"
+      ],
+      "beneficial_uids": [],
+      "whole_plan_exact_fraction": 1,
+      "first_token_mean_kl": 0.019121948301801694,
+      "first_token_p95_kl": 0.055219469126313876,
+      "token_jaccard_by_layer": [
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        },
+        {
+          "mean": 1.0,
+          "min": 1.0
+        }
+      ],
+      "label_score_reduction": "mean per token, matching actual runner decision",
+      "label_mean_kl": 0.021146136987908903,
+      "label_argmax_agreement": 0.96875,
+      "label_diagnostics": [
+        {
+          "query_hash": "090dff4675b18e75db2f9a9e3458aa5b52c67f8559a1f754d233c0b20baf126d",
+          "baseline_margin": 2.572739601135254,
+          "student_margin": 3.324399948120117,
+          "argmax_same": true,
+          "max_abs_delta": 0.7220783233642578,
+          "kl": 0.015013919211924076
+        },
+        {
+          "query_hash": "1d7e09886d5bcaf6f2f2cc4b398f13427600b77205661b1cb0c5c15c1b3d9e00",
+          "baseline_margin": 6.3693671226501465,
+          "student_margin": 5.154778957366943,
+          "argmax_same": true,
+          "max_abs_delta": 1.3666095733642578,
+          "kl": 0.004892903845757246
+        },
+        {
+          "query_hash": "1e79b1c0f9d48191d138fab0e81e26564904a7828ec44ffd50d124135bf05ca0",
+          "baseline_margin": 3.6341874599456787,
+          "student_margin": 4.321048736572266,
+          "argmax_same": true,
+          "max_abs_delta": 0.7487192153930664,
+          "kl": 0.0050052073784172535
+        },
+        {
+          "query_hash": "2e5c545f277397e3a57a0fdbf1c330b0a04a983bf07b5e4299ad912748f6f27b",
+          "baseline_margin": 0.49088025093078613,
+          "student_margin": 1.1094245910644531,
+          "argmax_same": true,
+          "max_abs_delta": 0.48708534240722656,
+          "kl": 0.04142755642533302
+        },
+        {
+          "query_hash": "35a3b0e844dc6e22e22c6497709455204152bfe04b29837cb4a306a83d919955",
+          "baseline_margin": 5.277827739715576,
+          "student_margin": 3.0000171661376953,
+          "argmax_same": true,
+          "max_abs_delta": 4.868183135986328,
+          "kl": 0.06223362311720848
+        },
+        {
+          "query_hash": "3ac4adf7bb06e0760aac5b247635d4c709df7987846192dbbc985f439a18937f",
+          "baseline_margin": 5.372345447540283,
+          "student_margin": 3.1247425079345703,
+          "argmax_same": true,
+          "max_abs_delta": 2.995208740234375,
+          "kl": 0.032811835408210754
+        },
+        {
+          "query_hash": "3b27ec50b201b84dbabc6646e84083e3bd43f828f82304fbbdcd432a7bba9912",
+          "baseline_margin": 6.000009536743164,
+          "student_margin": 7.187510013580322,
+          "argmax_same": true,
+          "max_abs_delta": 2.3106307983398438,
+          "kl": 0.0012193709844723344
+        },
+        {
+          "query_hash": "5a844fc2a757297fb9cf7e43a2bb2934f1c467477005bccb5b3b8f22af992ebb",
+          "baseline_margin": 6.418391227722168,
+          "student_margin": 6.705524444580078,
+          "argmax_same": true,
+          "max_abs_delta": 0.7382335662841797,
+          "kl": 9.142499038716778e-05
+        },
+        {
+          "query_hash": "5ad984d5a8d3b81a8e7b3de0aa351786b82d1fc3edcd551bf2136d29253af401",
+          "baseline_margin": 4.312529563903809,
+          "student_margin": 5.781278610229492,
+          "argmax_same": true,
+          "max_abs_delta": 2.9046669006347656,
+          "kl": 0.009190232492983341
+        },
+        {
+          "query_hash": "5bc667f10b861116ea046b00bb2b129b1bacdad7be934d65c4f02c41035780be",
+          "baseline_margin": 4.245555400848389,
+          "student_margin": 3.3416237831115723,
+          "argmax_same": true,
+          "max_abs_delta": 1.5046310424804688,
+          "kl": 0.014183507300913334
+        },
+        {
+          "query_hash": "5f2c8f3dfed0b527cb956d4b5d01a49437153d7ad56f225e520fc8439ca6dbbc",
+          "baseline_margin": 0.6852002143859863,
+          "student_margin": 0.5591559410095215,
+          "argmax_same": true,
+          "max_abs_delta": 1.2478961944580078,
+          "kl": 0.0017866800772026181
+        },
+        {
+          "query_hash": "6f2e8e782a15f55e65be710b4398e8da0a46b854d89ab54be26af25f40360305",
+          "baseline_margin": 1.0625057220458984,
+          "student_margin": 1.0000038146972656,
+          "argmax_same": true,
+          "max_abs_delta": 1.3135643005371094,
+          "kl": 0.0003887927159667015
+        },
+        {
+          "query_hash": "71a274e368b330e8a788a58b7074ba332241a5c22467303040fdc0683e9be0dc",
+          "baseline_margin": 8.968384742736816,
+          "student_margin": 7.360415935516357,
+          "argmax_same": true,
+          "max_abs_delta": 2.2160897254943848,
+          "kl": 0.0006321913097053766
+        },
+        {
+          "query_hash": "71f78625e3c707bf27adba275b46a6db0bfac289065cd27cdedf0ac25c640fa8",
+          "baseline_margin": 4.937509536743164,
+          "student_margin": 5.875010013580322,
+          "argmax_same": true,
+          "max_abs_delta": 1.6186294555664062,
+          "kl": 0.002335574012249708
+        },
+        {
+          "query_hash": "831120b639b98660252a548df03a77d7b8651ccf47f2e566f42e551e5f9a6490",
+          "baseline_margin": 0.24896478652954102,
+          "student_margin": 0.1259455680847168,
+          "argmax_same": false,
+          "max_abs_delta": 0.5000677108764648,
+          "kl": 0.0180813055485487
+        },
+        {
+          "query_hash": "868a8d906ebfa77e409231b9cfac5c3ef066c7fedb539bbc168605b1772939bd",
+          "baseline_margin": 5.053061008453369,
+          "student_margin": 4.714116096496582,
+          "argmax_same": true,
+          "max_abs_delta": 1.0528888702392578,
+          "kl": 0.0024337568320333958
+        },
+        {
+          "query_hash": "9019e05c71d441903ebf094285756e9f2399cc15f9e29e9c2df992eb21e0f374",
+          "baseline_margin": 1.8708934783935547,
+          "student_margin": 0.8720588684082031,
+          "argmax_same": true,
+          "max_abs_delta": 0.6261649131774902,
+          "kl": 0.07422593981027603
+        },
+        {
+          "query_hash": "91c57e5ec949ac06ea4b7ca267019594a688b4a5d3bf111bae560e993c7d93c5",
+          "baseline_margin": 2.6868300437927246,
+          "student_margin": 0.999640941619873,
+          "argmax_same": true,
+          "max_abs_delta": 2.3756179809570312,
+          "kl": 0.19599422812461853
+        },
+        {
+          "query_hash": "93be3cab0d25377d2e13bfefc57ce24158687ba02237229aeefcdb54f0682ab4",
+          "baseline_margin": 0.4375016689300537,
+          "student_margin": 1.0000016689300537,
+          "argmax_same": true,
+          "max_abs_delta": 1.0627202987670898,
+          "kl": 0.03848852962255478
+        },
+        {
+          "query_hash": "9cd7c15cbabb49740b0aadb4a905592374d8e19d48a75ce68f18d189f817504a",
+          "baseline_margin": 4.4146294593811035,
+          "student_margin": 4.855844497680664,
+          "argmax_same": true,
+          "max_abs_delta": 0.3824272155761719,
+          "kl": 0.0010028217220678926
+        },
+        {
+          "query_hash": "a0b1ccd663ba339d40f52209476d3d4047fe827704922eb5789251ba2d95fb1f",
+          "baseline_margin": 4.096545219421387,
+          "student_margin": 5.091017723083496,
+          "argmax_same": true,
+          "max_abs_delta": 1.1764488220214844,
+          "kl": 0.005911245010793209
+        },
+        {
+          "query_hash": "ac7defe1f0619e06d36f7b4ac0bcbdcdfdb99a5a5696df14666411ee1e41908a",
+          "baseline_margin": 4.917903900146484,
+          "student_margin": 3.2759809494018555,
+          "argmax_same": true,
+          "max_abs_delta": 1.3463480472564697,
+          "kl": 0.01959119364619255
+        },
+        {
+          "query_hash": "b8e5cceec72d6475d0a53e19f138dafd2fade43c64ea20ab51df3d1bff65ce0c",
+          "baseline_margin": 3.942443609237671,
+          "student_margin": 5.192620277404785,
+          "argmax_same": true,
+          "max_abs_delta": 1.1253552436828613,
+          "kl": 0.010549835860729218
+        },
+        {
+          "query_hash": "d15659103d9a568099d4f5b8549fbd03ad6a5baf84e610aa78d8ff4fc6352b7e",
+          "baseline_margin": 2.4265007972717285,
+          "student_margin": 3.6203651428222656,
+          "argmax_same": true,
+          "max_abs_delta": 1.7314739227294922,
+          "kl": 0.03858670964837074
+        },
+        {
+          "query_hash": "d210d3e9accf45f3dbd88da3e69a0b1192a5cff6c47fc515bfc235bad4097c96",
+          "baseline_margin": 4.218409061431885,
+          "student_margin": 4.0310139656066895,
+          "argmax_same": true,
+          "max_abs_delta": 2.0622940063476562,
+          "kl": 0.0006967294029891491
+        },
+        {
+          "query_hash": "d31b2b78b641b163a3f146a2f0cde8412c058c02d3edb15e9fb68bf6fcaa9f06",
+          "baseline_margin": 1.063671588897705,
+          "student_margin": 1.3131532669067383,
+          "argmax_same": true,
+          "max_abs_delta": 0.8739547729492188,
+          "kl": 0.007222513202577829
+        },
+        {
+          "query_hash": "d752b25bea22b3ae9083bd2df8d568eec5116dccb589cf012864e2f9c44bd835",
+          "baseline_margin": 2.928034543991089,
+          "student_margin": 2.0175461769104004,
+          "argmax_same": true,
+          "max_abs_delta": 2.070962905883789,
+          "kl": 0.04213542118668556
+        },
+        {
+          "query_hash": "d7ddea9c11b42ef6415321a1d0b0c63cbb6b0b661aaae88b54e26827fb7fe10f",
+          "baseline_margin": 0.8750016689300537,
+          "student_margin": 1.3124973773956299,
+          "argmax_same": true,
+          "max_abs_delta": 1.1168975830078125,
+          "kl": 0.021345747634768486
+        },
+        {
+          "query_hash": "dec4d42689e1042df135fce8050bfb059f056b59d0e6686e1295b877cc70a264",
+          "baseline_margin": 2.5837759971618652,
+          "student_margin": 2.5395302772521973,
+          "argmax_same": true,
+          "max_abs_delta": 0.8384952545166016,
+          "kl": 0.00016363192116841674
+        },
+        {
+          "query_hash": "ebca5b3d17fc49a83528929fd944ed376894e34ab8fd6e9913e3532013ee4cfa",
+          "baseline_margin": 5.163138389587402,
+          "student_margin": 4.136209487915039,
+          "argmax_same": true,
+          "max_abs_delta": 0.8038549423217773,
+          "kl": 0.0043804096058011055
+        },
+        {
+          "query_hash": "f1adc250ca7536a006b51657626afdbe9f2c8cdd406b04b8b5ad9a1500bc9d8f",
+          "baseline_margin": 4.441736698150635,
+          "student_margin": 5.000057220458984,
+          "argmax_same": true,
+          "max_abs_delta": 0.9976968765258789,
+          "kl": 0.004043534863740206
+        },
+        {
+          "query_hash": "f5095a747bc197fb072e4ba6653e8eda7f9a256f5b60d3cc7562e319e92b114a",
+          "baseline_margin": 2.4375030994415283,
+          "student_margin": 2.312502384185791,
+          "argmax_same": true,
+          "max_abs_delta": 1.5663766860961914,
+          "kl": 0.0006100106984376907
+        }
+      ],
+      "query_tokens": {
+        "mean": 40.84375,
+        "min": 37,
+        "max": 49
+      },
+      "physical_alias_all": true,
+      "private_tail_bounded_all": true,
+      "physical_resolve_calls": 27,
+      "request_prefix_buffer_bytes": 68132864,
+      "resident_reader_bytes": 264192,
+      "cuda_peak_allocated_bytes": 15874759168
+    }
+  }
+}

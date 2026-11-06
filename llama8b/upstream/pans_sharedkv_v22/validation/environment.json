@@ -1,0 +1,8 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "torch": "2.10.0+cpu",
+  "cuda_available": false,
+  "git_read_source": "GitHub connector; direct git clone unavailable because container DNS could not resolve github.com",
+  "test_dependencies": "Previously uploaded sharedkv/sharedkv_v21 code; core mathematics imports. Runtime compatibility test explicitly mocks the parent interface. Not a full public-v2 test suite or GPU/Qwen test."
+}

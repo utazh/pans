@@ -1,0 +1,574 @@
+{
+  "layer_drift": {
+    "27": {
+      "q": {
+        "mean": 0.08852589449672811,
+        "p95": 0.09897301364599607,
+        "max": 0.10454593547087646
+      },
+      "hidden_in": {
+        "mean": 0.22138309929942263,
+        "p95": 0.2621881832265106,
+        "max": 0.2729445046863318
+      },
+      "pre_mlp": {
+        "mean": 0.13916330970557,
+        "p95": 0.17203136859557855,
+        "max": 0.1867503925942725
+      },
+      "hidden_out": {
+        "mean": 0.2381257472530408,
+        "p95": 0.28278360400937286,
+        "max": 0.3284075425015664
+      },
+      "attention_output": {
+        "mean": 0.2417975473031405,
+        "p95": 0.27402778944077866,
+        "max": 0.28387392827092633
+      },
+      "selected_ids_mean_jaccard": 1.0
+    }
+  },
+  "logit_span": {
+    "scope": "unweighted logit-span diagnostic; NOT an accuracy/KL lower bound",
+    "rows": [
+      {
+        "query_hash": "0168583da3b0d078c097ac970e5d4a4812b438fa78f3bc5513f0464eadedec36",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.27152448184317246,
+            "rmse": 0.6566878758547074,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4289950389697014,
+            "rmse": 6.478604250356432,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.25456607098702116,
+            "rmse": 0.6236530292901169,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4105280398606889,
+            "rmse": 1.0302235966285564,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "02e747a76ba582517ee41aea249d5b88dc09b02523f76dbb65f72d8c0ab2ceea",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.25237826779637984,
+            "rmse": 0.6512260995371005,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4293215209489235,
+            "rmse": 6.5886771858577475,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.2392468749318037,
+            "rmse": 0.6273287249060897,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.3808943251534074,
+            "rmse": 1.0016977186512708,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "05544c3353423db6f576fa24c301fe5f45c16359bca08985da048e69f4470938",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.25893172082712895,
+            "rmse": 0.6278586538906773,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4299686064993473,
+            "rmse": 6.404028760039982,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.2444000510916201,
+            "rmse": 0.60583615873419,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.3913456523660977,
+            "rmse": 0.9788925994938303,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "0606d23d9dad200dbbf9823a1d76db0e0b757ae713baadb61e9a709f78f12f90",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.24784634696955843,
+            "rmse": 0.6488254576343402,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4334233145483171,
+            "rmse": 6.587799282795847,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.23179110726871602,
+            "rmse": 0.6184817492810893,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.37326453498298856,
+            "rmse": 1.0058637199475358,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "0aacb5d8da204d4a5789e3189b7f225a7bbd87b7d1c69f4bb4c85f7244a7bfda",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.25940467741976475,
+            "rmse": 0.6287041928854589,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4301740037670745,
+            "rmse": 6.419877194348284,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.24335420412421685,
+            "rmse": 0.5990661226844575,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.39824800511593456,
+            "rmse": 0.9998275893716064,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "0b776af8f08f1738117414c214575b13a8de612cf71c45883885b5b3c0365551",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.2636696484276314,
+            "rmse": 0.6579951692011469,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.441135671846204,
+            "rmse": 6.720336206868318,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.243054719144887,
+            "rmse": 0.6147072884590018,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.38543811015083596,
+            "rmse": 1.000366990599888,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "0fb3bc4534a0a83e8fe26be64c1749995eef23a816038cfca86aa9bbaed548c8",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.254987083022911,
+            "rmse": 0.6530359832990342,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4394105381437022,
+            "rmse": 6.685573344525082,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.23926652785049918,
+            "rmse": 0.6190144987429114,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.38637235509650647,
+            "rmse": 1.0103328963604796,
+            "potentially_vacuous": false
+          }
+        ]
+      },
+      {
+        "query_hash": "10064f95c3d152a799168b21ffa8612061a58feea099170fb08332084ef2064d",
+        "heads": [
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.2635075947926838,
+            "rmse": 0.6587537649447197,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.4400003906806134,
+            "rmse": 6.667613514911821,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.24252605272824357,
+            "rmse": 0.6205523778162799,
+            "potentially_vacuous": false
+          },
+          {
+            "rank": 129,
+            "tokens": 1228,
+            "relative_to_centered_logit_energy": 0.3907192333576884,
+            "rmse": 1.0172767216533891,
+            "potentially_vacuous": false
+          }
+        ]
+      }
+    ]
+  },
+  "operator": {
+    "scope": "local conditional counterfactuals; not whole-model causal proof; relative errors do not add",
+    "A_spectral_norm_per_head": [
+      2.1030914783477783,
+      3.3781001567840576,
+      1.6377755403518677,
+      2.3564071655273438
+    ],
+    "B_spectral_norm_per_head": [
+      34.22560501098633,
+      309.8390197753906,
+      14.89139175415039,
+      41.987667083740234
+    ],
+    "rows": [
+      {
+        "query_hash": "0168583da3b0d078c097ac970e5d4a4812b438fa78f3bc5513f0464eadedec36",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.19605291350871226,
+        "local_substitution_shared_vs_native_student": 0.18092870489660282,
+        "total_shared_vs_clean_teacher": 0.2025164266952797,
+        "k_only_substitution_vs_native_student": 0.21437960461852223,
+        "v_only_substitution_vs_native_student": 0.9236671492915826
+      },
+      {
+        "query_hash": "02e747a76ba582517ee41aea249d5b88dc09b02523f76dbb65f72d8c0ab2ceea",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2647817464259539,
+        "local_substitution_shared_vs_native_student": 0.20701676383130743,
+        "total_shared_vs_clean_teacher": 0.23597008831848387,
+        "k_only_substitution_vs_native_student": 0.23206656854460347,
+        "v_only_substitution_vs_native_student": 0.8897386440590972
+      },
+      {
+        "query_hash": "05544c3353423db6f576fa24c301fe5f45c16359bca08985da048e69f4470938",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.211698630306037,
+        "local_substitution_shared_vs_native_student": 0.19049776202438323,
+        "total_shared_vs_clean_teacher": 0.22333423822524873,
+        "k_only_substitution_vs_native_student": 0.21661591374997005,
+        "v_only_substitution_vs_native_student": 0.9339570766231762
+      },
+      {
+        "query_hash": "0606d23d9dad200dbbf9823a1d76db0e0b757ae713baadb61e9a709f78f12f90",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2590528230116666,
+        "local_substitution_shared_vs_native_student": 0.20564063608019081,
+        "total_shared_vs_clean_teacher": 0.23955623958222802,
+        "k_only_substitution_vs_native_student": 0.24054418207703424,
+        "v_only_substitution_vs_native_student": 0.9231604186359359
+      },
+      {
+        "query_hash": "0aacb5d8da204d4a5789e3189b7f225a7bbd87b7d1c69f4bb4c85f7244a7bfda",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.20046815269260246,
+        "local_substitution_shared_vs_native_student": 0.18520590140233084,
+        "total_shared_vs_clean_teacher": 0.20539506018517537,
+        "k_only_substitution_vs_native_student": 0.21774474937152477,
+        "v_only_substitution_vs_native_student": 0.9406772979678675
+      },
+      {
+        "query_hash": "0b776af8f08f1738117414c214575b13a8de612cf71c45883885b5b3c0365551",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.26652824850465734,
+        "local_substitution_shared_vs_native_student": 0.2151376265248691,
+        "total_shared_vs_clean_teacher": 0.249772319611788,
+        "k_only_substitution_vs_native_student": 0.2566862174014921,
+        "v_only_substitution_vs_native_student": 0.9825668517630225
+      },
+      {
+        "query_hash": "0fb3bc4534a0a83e8fe26be64c1749995eef23a816038cfca86aa9bbaed548c8",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.25343099233383787,
+        "local_substitution_shared_vs_native_student": 0.20649681261416902,
+        "total_shared_vs_clean_teacher": 0.2274289634912696,
+        "k_only_substitution_vs_native_student": 0.2377465185476222,
+        "v_only_substitution_vs_native_student": 0.8733366507975872
+      },
+      {
+        "query_hash": "10064f95c3d152a799168b21ffa8612061a58feea099170fb08332084ef2064d",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2718528715440021,
+        "local_substitution_shared_vs_native_student": 0.22345943291595446,
+        "total_shared_vs_clean_teacher": 0.259152243260215,
+        "k_only_substitution_vs_native_student": 0.270116994402352,
+        "v_only_substitution_vs_native_student": 1.012960838528439
+      },
+      {
+        "query_hash": "107352ad7c8e13ed9e83810437dc3958896fa6e68c894f2c93bc269fd7793a1c",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2086269354816741,
+        "local_substitution_shared_vs_native_student": 0.18604329354470694,
+        "total_shared_vs_clean_teacher": 0.21117549258233206,
+        "k_only_substitution_vs_native_student": 0.2108265235362514,
+        "v_only_substitution_vs_native_student": 0.9117498645307537
+      },
+      {
+        "query_hash": "13f14f450d84a849ab3687b36f5ed20a74ac3b13d612563206a4c9403362e169",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2614377015334739,
+        "local_substitution_shared_vs_native_student": 0.21516950367682297,
+        "total_shared_vs_clean_teacher": 0.23911925761836791,
+        "k_only_substitution_vs_native_student": 0.23797666482852925,
+        "v_only_substitution_vs_native_student": 0.8988326298361804
+      },
+      {
+        "query_hash": "154b0aa0961e9f55e9e8d0d843ae849df7da1fde17cbbfbca327b723f28c16a6",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2502484600740149,
+        "local_substitution_shared_vs_native_student": 0.19178017223010096,
+        "total_shared_vs_clean_teacher": 0.21624158276692843,
+        "k_only_substitution_vs_native_student": 0.23556694799322458,
+        "v_only_substitution_vs_native_student": 0.8812599127622303
+      },
+      {
+        "query_hash": "1f4fda9900153a7beea4c2e04c63a5408a0579c850107056ec688bc84ea243c5",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2503586677431664,
+        "local_substitution_shared_vs_native_student": 0.227246746373009,
+        "total_shared_vs_clean_teacher": 0.27742744138131137,
+        "k_only_substitution_vs_native_student": 0.21444884402640463,
+        "v_only_substitution_vs_native_student": 0.8774991692778683
+      },
+      {
+        "query_hash": "2128015d4b1298bf6e9bac871ac5ec1f58ff779b1a3247b3fffa4c53b88b6b78",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2600631879363259,
+        "local_substitution_shared_vs_native_student": 0.19957972946873132,
+        "total_shared_vs_clean_teacher": 0.22525537544175847,
+        "k_only_substitution_vs_native_student": 0.22558777888614645,
+        "v_only_substitution_vs_native_student": 0.901619838947802
+      },
+      {
+        "query_hash": "25ef741723c8365541550a66f020969df154a34b42bb15cb81e795be70aed4ef",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.27038101883505933,
+        "local_substitution_shared_vs_native_student": 0.20003955233696746,
+        "total_shared_vs_clean_teacher": 0.23841061392292048,
+        "k_only_substitution_vs_native_student": 0.23865397249462553,
+        "v_only_substitution_vs_native_student": 0.9282909420862907
+      },
+      {
+        "query_hash": "260fe5b87e8784ce29daae33078db6979db7b19c7bb81e329e639a0144e54ca4",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2838800656455713,
+        "local_substitution_shared_vs_native_student": 0.2376089988247755,
+        "total_shared_vs_clean_teacher": 0.278788337248815,
+        "k_only_substitution_vs_native_student": 0.24014652008043044,
+        "v_only_substitution_vs_native_student": 0.9804470133263616
+      },
+      {
+        "query_hash": "2a70ac98a5220aed00a9d5c8b81d5fbf44f11dac50adc2f0a2cee9bda4f8c1bb",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.20792714149182503,
+        "local_substitution_shared_vs_native_student": 0.18436656356665038,
+        "total_shared_vs_clean_teacher": 0.2056039033376887,
+        "k_only_substitution_vs_native_student": 0.20881785033012612,
+        "v_only_substitution_vs_native_student": 0.9514399476598511
+      },
+      {
+        "query_hash": "2b104773c01f85c0283c0734fa6943ef9f0c497373edec4c0224537f4e53e7d7",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2727601700939312,
+        "local_substitution_shared_vs_native_student": 0.20869521880304556,
+        "total_shared_vs_clean_teacher": 0.24949964872878944,
+        "k_only_substitution_vs_native_student": 0.2521508113266954,
+        "v_only_substitution_vs_native_student": 0.9598790713512845
+      },
+      {
+        "query_hash": "2f28613f3d5f81855ff0b273541692760395a2de4b27be98639da378c1b21371",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.21212157230583675,
+        "local_substitution_shared_vs_native_student": 0.19502662602853782,
+        "total_shared_vs_clean_teacher": 0.2276426922820063,
+        "k_only_substitution_vs_native_student": 0.1987980500933313,
+        "v_only_substitution_vs_native_student": 0.9549410981339895
+      },
+      {
+        "query_hash": "322c33d264220a1f766dadf6cf94117f00d1f2ae63000ed09315d604690c2bca",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2623466328520634,
+        "local_substitution_shared_vs_native_student": 0.21925572444676833,
+        "total_shared_vs_clean_teacher": 0.24842956056972518,
+        "k_only_substitution_vs_native_student": 0.2410781952737241,
+        "v_only_substitution_vs_native_student": 0.9396829838873848
+      },
+      {
+        "query_hash": "327453268996d08623e0adeb7a1184669d69ba889185b1ad2551ac49a0781d09",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.250273122211345,
+        "local_substitution_shared_vs_native_student": 0.19760345797691142,
+        "total_shared_vs_clean_teacher": 0.22017950895843538,
+        "k_only_substitution_vs_native_student": 0.2327339554446248,
+        "v_only_substitution_vs_native_student": 0.9038643554136729
+      },
+      {
+        "query_hash": "3aebcc8b12fc75236ae27d0ba32bd337edb96130af8976f50607da1259539bd5",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.20047425570814867,
+        "local_substitution_shared_vs_native_student": 0.19150211545345436,
+        "total_shared_vs_clean_teacher": 0.2092705635462552,
+        "k_only_substitution_vs_native_student": 0.20584092346254212,
+        "v_only_substitution_vs_native_student": 0.9142460142516718
+      },
+      {
+        "query_hash": "3be9e52a8110b27bfefc314c9e56f7163e91d7b0643610be5e5278c7a959ba69",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.27390206404426515,
+        "local_substitution_shared_vs_native_student": 0.21185910213465034,
+        "total_shared_vs_clean_teacher": 0.24957971343047958,
+        "k_only_substitution_vs_native_student": 0.23525094485709497,
+        "v_only_substitution_vs_native_student": 0.8993766217026335
+      },
+      {
+        "query_hash": "4d7dbddb4500711565dc10ecaad82cb42b7ed211097679edb3f2f38ac1af5474",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.25648551321239865,
+        "local_substitution_shared_vs_native_student": 0.20046520270965726,
+        "total_shared_vs_clean_teacher": 0.22130022666816565,
+        "k_only_substitution_vs_native_student": 0.24845567575189806,
+        "v_only_substitution_vs_native_student": 0.9095687343812277
+      },
+      {
+        "query_hash": "50686e09a5e022b031a77bbf90469401d2bc19cf752c596a2216e62585c4c918",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.21217733796720434,
+        "local_substitution_shared_vs_native_student": 0.18760044879481058,
+        "total_shared_vs_clean_teacher": 0.21387995095316992,
+        "k_only_substitution_vs_native_student": 0.22041564595386168,
+        "v_only_substitution_vs_native_student": 0.9334138815949921
+      },
+      {
+        "query_hash": "511e4e7676ccad50aef672aacb1784907ab51f0b16b499df7ef7085dcf02eb0b",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.26745631129484276,
+        "local_substitution_shared_vs_native_student": 0.2214024890014927,
+        "total_shared_vs_clean_teacher": 0.253334848648841,
+        "k_only_substitution_vs_native_student": 0.2582550925458514,
+        "v_only_substitution_vs_native_student": 0.9970773716347073
+      },
+      {
+        "query_hash": "58bae9b0cfc4d475853badfe05798f273024d9693d17ef55d5d8f12bc1385f5d",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2582778780206036,
+        "local_substitution_shared_vs_native_student": 0.20613956755476243,
+        "total_shared_vs_clean_teacher": 0.228941338802144,
+        "k_only_substitution_vs_native_student": 0.24775704611600075,
+        "v_only_substitution_vs_native_student": 0.9266866463084674
+      },
+      {
+        "query_hash": "592bead728bd015ce7add4b978843509cdcf50c21b33aca124239a1a5328a0ea",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2595314619468396,
+        "local_substitution_shared_vs_native_student": 0.19883954113518576,
+        "total_shared_vs_clean_teacher": 0.22707572965505396,
+        "k_only_substitution_vs_native_student": 0.2496386691952342,
+        "v_only_substitution_vs_native_student": 0.9492533841534011
+      },
+      {
+        "query_hash": "5be3d9708f4cc30560bfa7e33cd2f1124c3ddfc2d2f4811ad224c3b4cf53b199",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.24942889468544038,
+        "local_substitution_shared_vs_native_student": 0.18866908259249912,
+        "total_shared_vs_clean_teacher": 0.215592851486504,
+        "k_only_substitution_vs_native_student": 0.24182340089723875,
+        "v_only_substitution_vs_native_student": 0.909317912561107
+      },
+      {
+        "query_hash": "61f1a92ea0542522d8e6fe04cca7a19ea5fcebda0dddabc9451b84253c1a20ec",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.24650122690076387,
+        "local_substitution_shared_vs_native_student": 0.20025858265175825,
+        "total_shared_vs_clean_teacher": 0.2241439474672333,
+        "k_only_substitution_vs_native_student": 0.2453179499757558,
+        "v_only_substitution_vs_native_student": 0.8995737948870326
+      },
+      {
+        "query_hash": "63d4c98cddd67c14bc9c8f92f9e417762f90823f51c157f3822718a37bbb3307",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.19708965968934133,
+        "local_substitution_shared_vs_native_student": 0.21856887487411164,
+        "total_shared_vs_clean_teacher": 0.2529140440372851,
+        "k_only_substitution_vs_native_student": 0.25705290253085794,
+        "v_only_substitution_vs_native_student": 0.9932900600770637
+      },
+      {
+        "query_hash": "644a6164cafaf4bec4fb35b6b3f8e134916a9b8bf2f7e10003a59aef09fc1844",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.20111541267725794,
+        "local_substitution_shared_vs_native_student": 0.18058039810740742,
+        "total_shared_vs_clean_teacher": 0.20938024976140612,
+        "k_only_substitution_vs_native_student": 0.2247812786876948,
+        "v_only_substitution_vs_native_student": 0.8972181788821012
+      },
+      {
+        "query_hash": "68520ccc674f59c0c466b4ee09909a3d033a65bb596b147b0b475254d5e3b7ba",
+        "upstream_input_error_native_student_vs_clean_teacher": 0.2670208661884836,
+        "local_substitution_shared_vs_native_student": 0.20382532975746756,
+        "total_shared_vs_clean_teacher": 0.23781659123161358,
+        "k_only_substitution_vs_native_student": 0.2307010072294436,
+        "v_only_substitution_vs_native_student": 0.9792459862645522
+      }
+    ]
+  }
+}

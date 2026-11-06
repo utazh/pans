@@ -1,0 +1,9 @@
+{
+  "payload_chars": 3008976,
+  "entries": 406,
+  "expected_tree": "3816d8dcb6d8ca7a07abd26e932b71abcbe7f323",
+  "binary_files": [
+    "docs/layerkv_v26/figures/v26_matrix.png"
+  ],
+  "report_sha256": "e4be46345982cd784e649f2210450e7400764056c4d6bb09b972bb606ec04657"
+}

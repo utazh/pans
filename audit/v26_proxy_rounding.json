@@ -1,0 +1,170 @@
+[
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.061962127685546875,
+      "relative_l2": 0.0029963883571326733,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.025830745697021484,
+      "relative_l2": 0.002396917901933193,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.07503890991210938,
+      "relative_l2": 0.00261724554002285,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.013222694396972656,
+      "relative_l2": 0.0025415620766580105,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.07819366455078125,
+      "relative_l2": 0.0026021271478384733,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.012763500213623047,
+      "relative_l2": 0.0024266031105071306,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.06140899658203125,
+      "relative_l2": 0.002664796309545636,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.014904499053955078,
+      "relative_l2": 0.002398778684437275,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.14966964721679688,
+      "relative_l2": 0.001989516196772456,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.014843463897705078,
+      "relative_l2": 0.0025200876407325268,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.08939933776855469,
+      "relative_l2": 0.00230990769341588,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.0218505859375,
+      "relative_l2": 0.002414506394416094,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.05462169647216797,
+      "relative_l2": 0.002486774930730462,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.018532752990722656,
+      "relative_l2": 0.0023285711649805307,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.12411117553710938,
+      "relative_l2": 0.002049209550023079,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.02212810516357422,
+      "relative_l2": 0.0023425875697284937,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.06244850158691406,
+      "relative_l2": 0.0024244487285614014,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.02264690399169922,
+      "relative_l2": 0.0024107524659484625,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.05826091766357422,
+      "relative_l2": 0.0024391317274421453,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.030329227447509766,
+      "relative_l2": 0.0024383016861975193,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 0.06161975860595703,
+      "relative_l2": 0.0024358390364795923,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.05548381805419922,
+      "relative_l2": 0.0024554412811994553,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  },
+  {
+    "patch_tokens": 60,
+    "whole_prefix_reconstructed": false,
+    "k": {
+      "max_abs_error": 1.02691650390625,
+      "relative_l2": 0.001523130340501666,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    },
+    "v": {
+      "max_abs_error": 0.10535049438476562,
+      "relative_l2": 0.0024115056730806828,
+      "reference": "FP32 contraction and addition on the exact same BF16 source/readers; proxy remains BF16"
+    }
+  }
+]

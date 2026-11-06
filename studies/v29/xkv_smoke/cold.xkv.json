@@ -1,0 +1,129 @@
+{
+ "xkv_dir": "/home/panzihang/src/prism_layerkv/runtime_data/v29_xkv_ssd/trec_b25",
+ "cold": true,
+ "warmup": 4,
+ "requests": [
+  {
+   "index": 1,
+   "measured": false,
+   "cold_resident_after": null
+  },
+  {
+   "index": 2,
+   "measured": false,
+   "cold_resident_after": null
+  },
+  {
+   "index": 3,
+   "measured": false,
+   "cold_resident_after": null
+  },
+  {
+   "index": 4,
+   "measured": false,
+   "cold_resident_after": null
+  },
+  {
+   "index": 5,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 6,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 7,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 8,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 9,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 10,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 11,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 12,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 13,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 14,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 15,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 16,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 17,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 18,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 19,
+   "measured": true,
+   "cold_resident_after": 0
+  },
+  {
+   "index": 20,
+   "measured": true,
+   "cold_resident_after": 0
+  }
+ ],
+ "bytes_per_request": [
+  11187200,
+  11207680,
+  11146240,
+  11146240,
+  11187200,
+  11207680,
+  11146240,
+  11146240,
+  11146240,
+  11146240,
+  11146240,
+  11187200,
+  11187200,
+  11146240,
+  11166720,
+  11146240,
+  11146240,
+  11146240,
+  11146240,
+  11146240
+ ]
+}

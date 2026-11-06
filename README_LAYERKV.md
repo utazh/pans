@@ -18,7 +18,7 @@
 
 入口增加独立 bundle、max-tokens、全词表 logits 保存、固定选择计划和诊断导出。修复原入口 `--warmup 0` 与正数 warmup-sample 参数的冲突。原核心 runner、Pcache、selector 逻辑保留复制时内容。
 
-`sharedkv/io.py` 中继承的 `BASE_COMMIT=e32c4a...` 是原型兼容标识，不是此次服务器工作树提交。服务器源仓库 HEAD 为 `61318220e7df80488292b54b00a87134a031f169`，且含用户现有未提交修改。实际复制内容见 `docs/layerkv/audit/source_before.json` 和接口 guard `docs/layerkv/audit/integration_hashes.json`。
+`sharedkv/io.py` 中继承的 `BASE_COMMIT=e32c4a...` 是原型兼容标识，不是此次服务器工作树提交。服务器源仓库 HEAD 为 `61318220e7df80488292b54b00a87134a031f169`，且含用户现有未提交修改。实际复制内容见 `audit/source_before.json` 和接口 guard `audit/integration_hashes.json`。
 
 ## 快速复现
 
@@ -52,7 +52,7 @@ $PY scripts/run_sharedkv.py --mode shared --backend vllm2 \
 
 ## 校准与门限
 
-拟合、验证、测试以请求为单位随机划分，seed=20260918：32/32/128。UID 清单在 `data/sharedkv_splits/manifest.json`，实际 query hash 交集检查在 `docs/layerkv/results/split_validation.json`。这些请求来自现有 strict 数据池，并非新外部测试集。
+拟合、验证、测试以请求为单位随机划分，seed=20260918：32/32/128。UID 清单在 `data/sharedkv_splits/manifest.json`，实际 query hash 交集检查在 `results/split_validation.json`。这些请求来自现有 strict 数据池，并非新外部测试集。
 
 ```bash
 $PY scripts/compile_sharedkv.py \
@@ -84,13 +84,3 @@ TTFT 是原 runner 的 logits-ready 边界，不含模型加载、离线校准�
 保留 original/identity/shared 对照。新路径关闭了原路径的推测 next-layer 预取，identity 的调度/两分支计算差异可能单独影响时间。共享收益应同时对照 identity 和 original。服务器并非独占，延迟仅描述本次共享负载下的运行，不能推断独占硬件稳定收益。
 
 最终固定集合对照使用 configs/layerkv_fixed_verification.json，结果目录为 identity_fixed_v2 / dense1_fixed_v2；旧 fixed 结果仅作引用循环修复前的调试记录。完整效果见 EXPERIMENT_REPORT_ZH.md。
-
-## GitHub v1 发布范围
-
-该分支基于 GitHub main 的 e32c4a5605ca55d2904b33065d67a1d71667d47c，合入服务器最新 LayerKV 实现；保留 main 已有的可配置路径及隔离测试。run_round4.py 合入 max-tokens、100% 预算和零预热修复，不退回服务器硬编码路径。
-
-本仓库附带代码、配置、测试、上传原型快照和小型结果摘要。模型权重、数据集、prefix store、Pcache、selector index、校准 traces、adapter 二进制和原始运行日志不随代码发布，需要按主 README 准备，并在目标环境重新校准。上文命令描述原服务器环境；其他环境请替换 Python 路径，并通过 PANS_MODEL_PATH/PANS_BUNDLE_DIR/PANS_STORE_ROOT/PANS_PCACHE_DIR/PANS_SELECTOR_INDEX_DIR 或 run_round4 参数指定资源。套件 JSON 保留原实验参数。
-
-共享模块、新增 Python 入口、配置和测试均复制自服务器最新代码。原服务器的一次性 stage/finalize shell 脚本依赖绝对路径或历史 PID，不作为通用运行入口发布。upstream 是用户提供原型的原始快照，不代表最终服务器实现或当前验证结论。docs/layerkv/audit 中哈希记录属于原服务器实验快照；该发布分支的文件以 Git 提交为准。
-
-历史 GPU 测试记录见 docs/layerkv/validation/server_gpu_tests.txt；发布副本的 CPU 检查另存于同目录。全部发布整理与检查在服务器独立 publication 目录完成，原实验目录代码未改写。

@@ -1,0 +1,182 @@
+{
+ "sst2": {
+  "selected": "G24",
+  "n": 500,
+  "disagree": 10,
+  "harmed": 3,
+  "rescued": 7,
+  "acc_NS": 93.6,
+  "acc_shared": 94.4,
+  "feature_auc": {
+   "promixed_mean_uncertainty": {
+    "disagree": 0.4757142857142857,
+    "harmed": 0.3856472166331321
+   },
+   "promixed_mean_boundary_margin": {
+    "disagree": 0.5606122448979591,
+    "harmed": 0.6498993963782697
+   },
+   "promixed_mean_gqa_agreement": {
+    "disagree": 0.42346938775510207,
+    "harmed": 0.4118041582830315
+   },
+   "selector_mean_jaccard": {
+    "disagree": 0.4293877551020408,
+    "harmed": 0.42052313883299797
+   },
+   "impress_period_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "impress_next_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "query_len": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   }
+  },
+  "oracle_route": {
+   "fraction_native": 0.02,
+   "acc": 93.6,
+   "bytes_vs_NS": -0.1409436563818237,
+   "shared_bytes_vs_NS": -0.14382005753247318
+  }
+ },
+ "subj": {
+  "selected": "G20",
+  "n": 500,
+  "disagree": 42,
+  "harmed": 19,
+  "rescued": 23,
+  "acc_NS": 85.0,
+  "acc_shared": 85.8,
+  "feature_auc": {
+   "promixed_mean_uncertainty": {
+    "disagree": 0.5104491578290705,
+    "harmed": 0.4563956669219827
+   },
+   "promixed_mean_boundary_margin": {
+    "disagree": 0.48752339363693076,
+    "harmed": 0.5394463289200131
+   },
+   "promixed_mean_gqa_agreement": {
+    "disagree": 0.48237679351216467,
+    "harmed": 0.5263157894736842
+   },
+   "selector_mean_jaccard": {
+    "disagree": 0.48237679351216467,
+    "harmed": 0.5263157894736842
+   },
+   "impress_period_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "impress_next_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "query_len": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   }
+  },
+  "oracle_route": {
+   "fraction_native": 0.084,
+   "acc": 85.0,
+   "bytes_vs_NS": -0.2617142857142857,
+   "shared_bytes_vs_NS": -0.2857142857142857
+  }
+ },
+ "trec": {
+  "selected": "G16",
+  "n": 500,
+  "disagree": 106,
+  "harmed": 37,
+  "rescued": 56,
+  "acc_NS": 73.2,
+  "acc_shared": 77.0,
+  "feature_auc": {
+   "promixed_mean_uncertainty": {
+    "disagree": 0.4357580691504645,
+    "harmed": 0.5150896036425194
+   },
+   "promixed_mean_boundary_margin": {
+    "disagree": 0.5527966669859209,
+    "harmed": 0.47177631194909814
+   },
+   "promixed_mean_gqa_agreement": {
+    "disagree": 0.5658461833157743,
+    "harmed": 0.5470783958904909
+   },
+   "selector_mean_jaccard": {
+    "disagree": 0.5563643329183029,
+    "harmed": 0.5442764578833693
+   },
+   "impress_period_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "impress_next_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "query_len": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   }
+  },
+  "oracle_route": {
+   "fraction_native": 0.212,
+   "acc": 73.2,
+   "bytes_vs_NS": -0.3366178107606679,
+   "shared_bytes_vs_NS": -0.42717996289424864
+  }
+ },
+ "rte": {
+  "selected": "G20",
+  "n": 500,
+  "disagree": 24,
+  "harmed": 12,
+  "rescued": 12,
+  "acc_NS": 89.2,
+  "acc_shared": 89.2,
+  "feature_auc": {
+   "promixed_mean_uncertainty": {
+    "disagree": 0.5163690476190477,
+    "harmed": 0.5831625683060109
+   },
+   "promixed_mean_boundary_margin": {
+    "disagree": 0.4654236694677871,
+    "harmed": 0.45030737704918034
+   },
+   "promixed_mean_gqa_agreement": {
+    "disagree": 0.5129551820728291,
+    "harmed": 0.4421106557377049
+   },
+   "selector_mean_jaccard": {
+    "disagree": 0.5129551820728291,
+    "harmed": 0.4421106557377049
+   },
+   "impress_period_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "impress_next_prediction_mean_jaccard": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   },
+   "query_len": {
+    "disagree": 0.5,
+    "harmed": 0.5
+   }
+  },
+  "oracle_route": {
+   "fraction_native": 0.048,
+   "acc": 89.2,
+   "bytes_vs_NS": -0.272,
+   "shared_bytes_vs_NS": -0.2857142857142857
+  }
+ }
+}

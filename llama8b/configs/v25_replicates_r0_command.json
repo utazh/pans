@@ -1,0 +1,11 @@
+[
+  "/home/panzihang/venvs/vllm-stable/bin/python",
+  "-u",
+  "scripts/train_v25_replicates.py",
+  "--G",
+  "16",
+  "--R",
+  "0",
+  "--gpu",
+  "2"
+]

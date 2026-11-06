@@ -1,0 +1,296 @@
+{
+ "rule": "configs/v29_selection_rule.json rev 3 (unchanged), applied to P4 dev500",
+ "rule_sha256": "56faa2f328ea71c64836335d9598a06853f5f3b107ad29a6e0746fb7f4418a27",
+ "cells": {
+  "sst2_b25": {
+   "status": "selected",
+   "selected": "G24",
+   "tolerance_correct": 5,
+   "eligible": [
+    "I",
+    "G29",
+    "G27",
+    "G24"
+   ],
+   "candidate_set": [
+    "G29",
+    "G27",
+    "G24"
+   ],
+   "candidates": {
+    "I": {
+     "n": 500,
+     "acc_base": 0.938,
+     "acc": 0.938,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "disagree": 0,
+     "bytes": 123994112.0,
+     "bytes_vs_I": 0.0,
+     "eligible": true,
+     "shared_consumers": 0
+    },
+    "G29": {
+     "n": 500,
+     "acc_base": 0.938,
+     "acc": 0.936,
+     "delta_pp": -0.2,
+     "net": -1,
+     "harmed": 3,
+     "rescued": 2,
+     "disagree": 5,
+     "bytes": 112467968.0,
+     "bytes_vs_I": -0.09295718816067655,
+     "eligible": true,
+     "shared_consumers": -1
+    },
+    "G27": {
+     "n": 500,
+     "acc_base": 0.938,
+     "acc": 0.94,
+     "delta_pp": 0.2,
+     "net": 1,
+     "harmed": 5,
+     "rescued": 6,
+     "disagree": 11,
+     "bytes": 104783872.0,
+     "bytes_vs_I": -0.15492864693446085,
+     "eligible": true,
+     "shared_consumers": 1
+    },
+    "G24": {
+     "n": 500,
+     "acc_base": 0.938,
+     "acc": 0.934,
+     "delta_pp": -0.4,
+     "net": -2,
+     "harmed": 15,
+     "rescued": 13,
+     "disagree": 28,
+     "bytes": 93257728.0,
+     "bytes_vs_I": -0.2478858350951374,
+     "eligible": true,
+     "shared_consumers": 4
+    }
+   }
+  },
+  "subj_b25": {
+   "status": "selected",
+   "selected": "I",
+   "tolerance_correct": 5,
+   "eligible": [
+    "I"
+   ],
+   "candidate_set": [
+    "G29",
+    "G27",
+    "G24"
+   ],
+   "candidates": {
+    "I": {
+     "n": 500,
+     "acc_base": 0.926,
+     "acc": 0.926,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "disagree": 0,
+     "bytes": 142359445.504,
+     "bytes_vs_I": 0.0,
+     "eligible": true,
+     "shared_consumers": 0
+    },
+    "G29": {
+     "n": 500,
+     "acc_base": 0.926,
+     "acc": 0.886,
+     "delta_pp": -4.0,
+     "net": -20,
+     "harmed": 27,
+     "rescued": 7,
+     "disagree": 34,
+     "bytes": 128961626.112,
+     "bytes_vs_I": -0.09411261293247697,
+     "eligible": false,
+     "shared_consumers": -1
+    },
+    "G27": {
+     "n": 500,
+     "acc_base": 0.926,
+     "acc": 0.904,
+     "delta_pp": -2.2,
+     "net": -11,
+     "harmed": 20,
+     "rescued": 9,
+     "disagree": 29,
+     "bytes": 120024203.264,
+     "bytes_vs_I": -0.15689329331767055,
+     "eligible": false,
+     "shared_consumers": 1
+    },
+    "G24": {
+     "n": 500,
+     "acc_base": 0.926,
+     "acc": 0.888,
+     "delta_pp": -3.8,
+     "net": -19,
+     "harmed": 32,
+     "rescued": 13,
+     "disagree": 45,
+     "bytes": 106634297.344,
+     "bytes_vs_I": -0.25095031828426306,
+     "eligible": false,
+     "shared_consumers": 4
+    }
+   }
+  },
+  "trec_b25": {
+   "status": "selected",
+   "selected": "G23",
+   "tolerance_correct": 5,
+   "eligible": [
+    "I",
+    "G23"
+   ],
+   "candidate_set": [
+    "G27",
+    "G23",
+    "G18"
+   ],
+   "candidates": {
+    "I": {
+     "n": 500,
+     "acc_base": 0.734,
+     "acc": 0.734,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "disagree": 0,
+     "bytes": 160825344.0,
+     "bytes_vs_I": 0.0,
+     "eligible": true,
+     "shared_consumers": 0
+    },
+    "G27": {
+     "n": 500,
+     "acc_base": 0.734,
+     "acc": 0.722,
+     "delta_pp": -1.2,
+     "net": -6,
+     "harmed": 22,
+     "rescued": 16,
+     "disagree": 59,
+     "bytes": 135778304.0,
+     "bytes_vs_I": -0.15574062754686224,
+     "eligible": false,
+     "shared_consumers": 1
+    },
+    "G23": {
+     "n": 500,
+     "acc_base": 0.734,
+     "acc": 0.734,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 16,
+     "rescued": 16,
+     "disagree": 48,
+     "bytes": 115740672.0,
+     "bytes_vs_I": -0.2803331295843521,
+     "eligible": true,
+     "shared_consumers": 5
+    },
+    "G18": {
+     "n": 500,
+     "acc_base": 0.734,
+     "acc": 0.688,
+     "delta_pp": -4.6,
+     "net": -23,
+     "harmed": 39,
+     "rescued": 16,
+     "disagree": 90,
+     "bytes": 90693632.0,
+     "bytes_vs_I": -0.4360737571312143,
+     "eligible": false,
+     "shared_consumers": 10
+    }
+   }
+  },
+  "rte_b25": {
+   "status": "selected",
+   "selected": "G27",
+   "tolerance_correct": 5,
+   "eligible": [
+    "I",
+    "G29",
+    "G27"
+   ],
+   "candidate_set": [
+    "G29",
+    "G27",
+    "G24"
+   ],
+   "candidates": {
+    "I": {
+     "n": 500,
+     "acc_base": 0.864,
+     "acc": 0.864,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 0,
+     "rescued": 0,
+     "disagree": 0,
+     "bytes": 190578688.0,
+     "bytes_vs_I": 0.0,
+     "eligible": true,
+     "shared_consumers": 0
+    },
+    "G29": {
+     "n": 500,
+     "acc_base": 0.864,
+     "acc": 0.874,
+     "delta_pp": 1.0,
+     "net": 5,
+     "harmed": 8,
+     "rescued": 13,
+     "disagree": 21,
+     "bytes": 172810240.0,
+     "bytes_vs_I": -0.09323418156808805,
+     "eligible": true,
+     "shared_consumers": -1
+    },
+    "G27": {
+     "n": 500,
+     "acc_base": 0.864,
+     "acc": 0.864,
+     "delta_pp": 0.0,
+     "net": 0,
+     "harmed": 18,
+     "rescued": 18,
+     "disagree": 36,
+     "bytes": 160964608.0,
+     "bytes_vs_I": -0.15539030261348008,
+     "eligible": true,
+     "shared_consumers": 1
+    },
+    "G24": {
+     "n": 500,
+     "acc_base": 0.864,
+     "acc": 0.85,
+     "delta_pp": -1.4,
+     "net": -7,
+     "harmed": 31,
+     "rescued": 24,
+     "disagree": 55,
+     "bytes": 143196160.0,
+     "bytes_vs_I": -0.24862448418156813,
+     "eligible": false,
+     "shared_consumers": 4
+    }
+   }
+  }
+ }
+}

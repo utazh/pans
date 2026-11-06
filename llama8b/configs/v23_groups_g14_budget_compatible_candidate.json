@@ -1,0 +1,63 @@
+{
+  "status": "candidate_verify_actual_equal_IDs",
+  "period": 8,
+  "groups": [
+    {
+      "start": 0,
+      "end": 4,
+      "source": 1,
+      "native": [
+        0
+      ]
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "source": 5,
+      "native": [
+        4
+      ]
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "source": 9,
+      "native": [
+        8
+      ]
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "source": 13,
+      "native": [
+        12
+      ]
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "source": 17,
+      "native": [
+        16
+      ]
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "source": 21,
+      "native": [
+        20
+      ]
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "source": 25,
+      "native": [
+        24
+      ]
+    }
+  ],
+  "independent_sources": 14
+}

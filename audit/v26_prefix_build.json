@@ -1,0 +1,39 @@
+{
+  "prefix_prefill_wall": 18.68865966796875,
+  "store_and_pcache_wall": 74.43850779533386,
+  "peak_gpu": 17514162688,
+  "prefix_info": {
+    "sst2": {
+      "task": "sst2",
+      "prefix_tokens": 3811,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "layers": 28,
+      "token_hash": "0706a1bd08132de8b13032f87bd0ab6c9c49080c4c4434bf0c0499c482a3c9eb"
+    },
+    "subj": {
+      "task": "subj",
+      "prefix_tokens": 4412,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "layers": 28,
+      "token_hash": "7319fc5e5ed69b3b9413200bd587f66b31b5bfa5303668fae2e393c1e44a975e"
+    },
+    "trec": {
+      "task": "trec",
+      "prefix_tokens": 4930,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "layers": 28,
+      "token_hash": "ef7c088a8c87a36e3e2fa4d8b540454292054d67957fffb81e0ade645ba1534c"
+    },
+    "rte": {
+      "task": "rte",
+      "prefix_tokens": 5986,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "layers": 28,
+      "token_hash": "fc669fb4ffd0488a1532f1ce9cfa37478a9f120962c735aafb13d2e26ac21b3b"
+    }
+  }
+}

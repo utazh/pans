@@ -1,0 +1,470 @@
+**可以开始面向全部 28 层做系统性的扩展研究，但不建议把当前这一组三层共享直接复制到全模型。**这轮已经有值得保留的冷缓存收益证据；下一步的重点应从“再优化一个局部 reader”，转为：
+
+> **以全模型独立 KV 来源数为目标，逐步从 26 份降到 24、22、20，再研究 16／14 份；同时让多个 reader 直接对齐最终的实际评分，而不只对齐局部 hidden state。**
+
+我核对了 `v2.3` 分支的 **`3868c6b64332f89cc0b301c75b53c35630302f0e`**，包括组级训练、采集、运行入口、Pcache 恢复路径，以及你上传的完整报告。这次准备的是附加式代码，**不再更换推理 attention 内核，也不修改原来的冷缓存判定**。
+
+**:chatgpt-content-reference{index="22"}**
+
+配套文档：:chatgpt-content-reference{index="23"} · :chatgpt-content-reference{index="24"} · :chatgpt-content-reference{index="25"} · :chatgpt-content-reference{index="26"}
+
+**实际验证：40 项 CPU 数学／模拟接口测试通过，2 项 CUDA 测试因没有 GPU 而跳过。**没有新的真实 Qwen 准确率、RTX 3090 显存或 TTFT 结果，也没有在这里重新运行你服务器的 461 项完整测试。
+
+---
+
+## 一、这轮结果比之前前进了一步，但还不能说“质量基本过关，可以直接扩层”
+
+### 1. 冷缓存收益已经是可以讨论的实测结果
+
+正式 SSD-cold/native 配对中，无共享为 2067.87 ms，联合共享为 1962.81 ms，平均减少约 **105 ms／请求**，相对下降 **5.08%**；报告给出的区间支持下降 2.87%～7.35%。进入正式结果的 1000 次请求都通过了冷状态检查。:chatgpt-content-reference{index="1"}:chatgpt-content-reference{index="2"}
+
+因此，现在不应继续概括为“跨层共享没有速度效果”。更准确的是：
+
+> **在这套持久化 KV 冷恢复路径和本次实验环境中，当前两消费者共享已经显示了延迟收益。**
+
+普通缓存仍然要保留限制：整体均值下降，但按运行顺序分组后，一组的区间跨零，不能宣布顺序无关的稳定加速。:chatgpt-content-reference{index="3"}
+
+### 2. “少错一题”不能覆盖开发集退化
+
+完整 500 条上，343→342 的确只少答对一题，但实际是：
+
+\[
+4\text{ 条原来正确、现在错误}
+\quad+\quad
+3\text{ 条原来错误、现在正确}
+\]
+
+净差为 −0.2 个百分点，配对区间为 \([-1.2,+0.8]\) 个百分点，仍没有通过原先的非劣验收。**McNemar \(p=1\) 也不是“两个方法等价”的证明。**:chatgpt-content-reference{index="4"}
+
+更重要的是，开发集 128 条为：
+
+| 配置 | 正确数 |
+|---|---:|
+| 无共享 | 99 |
+| 独立层校准 | 100 |
+| 联合，仅 query | 98 |
+| 联合，完整续写 | **95** |
+
+所以，**联合校准在完整 500 条上优于独立校准，但在开发集上方向相反**。再考虑目前只有一个训练种子，不能确定“联合完整续写已经是质量上更好的方法”。:chatgpt-content-reference{index="5"}
+
+这不是要求停止研究，而是说：**下一轮要解释并改善这种不一致，不能用已观察过的 500 条结果反过来取消开发集停止条件。**
+
+### 3. 当前省掉的是两份 KV，不是整个模型已经广泛共享
+
+目前：
+
+```text
+source 26
+    ├── layer 25：reader
+    ├── layer 26：原生读取
+    └── layer 27：reader
+```
+
+因此，独立来源数是 **28→26**。所选 prefix KV 减少 7.12%；计入 reader 和 packed 副本后，这部分合计净减少约 **5.99%**，而不是模型总显存或持久磁盘空间减少 7.12%。:chatgpt-content-reference{index="6"}
+
+**这足以支持开始做覆盖率曲线，但还不足以外推到“共享一半层就一定获得相同比例加速”。**
+
+---
+
+## 二、我从代码看到的主要缺口：已经训练了完整续写，但还没有直接优化“最终怎么判类别”
+
+这里要准确区分，不能再说 v2.3 没有使用续写信息。
+
+你的 `capture.py` **确实收集了完整 query 和实际候选标签前缀**；`block.py` 也确实重放了真实 attention、残差、归一化和 MLP。
+
+但 `train.py::loss_for()` 的主目标仍然是：
+
+\[
+\text{组末 hidden state 误差}
++
+\text{中间层输出误差}
+\]
+
+即使启用 `logit_weight`，也是一些位置的完整词表 KL。最终 checkpoint 仍按这个组合 objective 选择。**它没有直接比较候选标签的完整平均续写分数，也没有直接保持候选之间的胜负关系。**
+
+而你的实际分类规则是：
+
+\[
+s(c)=
+\frac{1}{|y_c|}
+\sum_{j=1}^{|y_c|}
+\log p(y_{c,j}\mid x,y_{c,<j},\text{prefix})
+\]
+
+最后选择分数最高的候选。报告也明确保留了这套 mean continuation log-probability 协议。:chatgpt-content-reference{index="11"}
+
+因此，有一个具体、值得验证的解释：
+
+> **reader 可能让大量不影响分类的表示更接近 teacher，但仍在少数关键候选上改变了很小的分数差；平均重建误差改善，分类却不一定改善。**
+
+这是从训练目标与评价目标的差异得到的推断，**不是已经证明所有掉点都由它造成**。
+
+---
+
+## 三、下一步的模型侧改动：从“组边界校准”走到“指定来源预算下的最终评分联合校准”
+
+这次不增加新的矩阵结构，不再搜索 head 对应，也不训练 Qwen 主干。仍然只有：
+
+\[
+A_\ell,\ B_\ell,\ b_\ell^K,\ b_\ell^V
+\]
+
+变化主要发生在离线训练目标和训练范围。
+
+### 1. 直接保存原评分器真实产生的监督信号
+
+新采集器从现有 `greedy_flexgen_completion()` 取得：
+
+- 每个候选标签的完整 token IDs；
+- 每个候选 token 的 log-probability；
+- 按原规则计算的平均分数；
+- 该请求实际使用的逐层选择集合。
+
+**不读取 gold label，不只训练正确答案分支，也不拿首 token 分数代替完整标签分数。**原 scorer 本身就会产生这些逐 token 得分，因此不需要猜测缺失的监督。
+
+这份数据比完整 hidden-state traces 小很多，也明确包含候选的最后一个 token。
+
+### 2. 同时约束“分布接近”和“候选顺序保持”
+
+新目标主要包含：
+
+\[
+\mathcal L_{\rm score}
+=
+D_{\rm KL}(\pi_T\Vert\pi_S)
++
+\lambda\|\widetilde s_S-\widetilde s_T\|^2
++
+\gamma\mathcal L_{\rm margin}
+\]
+
+其中：
+
+\[
+\pi(c)=\operatorname{softmax}(s(c)/\tau)
+\]
+
+是用于蒸馏的候选分布；它只是训练用的构造，**不是声称平均续写分数天然就是模型定义的类别概率**。
+
+\(\widetilde s\) 是减去候选均值后的分数，避免对所有候选都相同的偏移被过度惩罚。
+
+`margin` 项则保护 teacher 最优候选相对其他候选的分数差，并进行截断，避免把已经非常大的差距继续拉大。另有较轻的逐 token 得分误差和 reader 相对初始化的约束。
+
+这个目标有一个直接的数学依据。设 teacher 第一、第二名的分数差是 \(m_T\)，所有中心化候选分数的最大误差为 \(\epsilon\)。如果：
+
+\[
+\boxed{m_T>2\epsilon}
+\]
+
+那么 student 仍会选择 teacher 的最优候选。
+
+**这不是准确率保证，因为 teacher 也可能答错；但它比“hidden RMSE 低于某个值”更直接对应当前分类器的决策。**
+
+### 3. 每次重算完整 student，不再把各组独立训练完后直接拼起来
+
+给定一个来源映射，例如：
+
+```text
+26供25/27使用
+22供21/23使用
+……
+```
+
+新训练器每次从当前 query 的 embedding 开始，执行全部 decoder 层；当前 query 和候选前缀的私有 KV 也逐层重新计算。
+
+**所有已启用的 reader 可以一起更新。**因此，前一组变化之后，后一组接收到的是这次真实 student 的状态，不是旧 teacher 状态，也不是已经过时的 student traces。
+
+这里仍有一个明确限制：
+
+> **训练期间固定 teacher 的 token 选择集合，不对离散 selector 做反向传播；正式质量评估必须恢复真实在线 P8 选择。**
+
+所以它是“固定选择条件下的全网络 reader 联合蒸馏”，不能把固定计划下的结果直接称为线上质量已经通过。
+
+这类从压缩结构出发、通过最终输出蒸馏恢复行为的思路可以参考 Minitron；使用真实 student 输入对齐干净 teacher 的原则可以参考 GPTAQ。但这些工作不证明我们的 KV reader 一定有效，**新贡献仍必须由共享覆盖率和质量—资源曲线建立**。:chatgpt-content-reference{index="13"}
+
+### 4. 推理成本基本不变，离线训练成本会增加
+
+这次导出的仍然是原来的标准 reader 格式，线上继续使用 v23/v21 路径。**没有增加一个新的推理模块。**
+
+但离线训练需要更长的计算图。我实现了两项内存控制：
+
+**逐层 activation checkpoint**，以重算换激活内存；以及**逐候选分支反传**，避免同时保存所有候选的完整模型图。后者在 CPU 测试中与一次性完整图的梯度做了对照。PyTorch 官方也明确说明 checkpoint 是计算量与内存的交换，而不是无成本优化。:chatgpt-content-reference{index="14"}
+
+不能再只比较“都训练 200 步”。新训练每步处理多个候选，应同时记录候选前向数、反向数、墙钟和显存峰值。**RTX 3090 上的实际内存需求还需要服务器验收。**
+
+---
+
+## 四、怎样扩到 28 层：扩的是结构覆盖范围，目标是减少独立来源数
+
+我建议用 \(G\) 表示全模型的独立 prefix KV 来源数。
+
+| 阶段 | 目标来源数 \(G\) | 主要工作 |
+|---|---:|---|
+| 当前 | 26 | 一组三层共用一份 |
+| 下一步 | 24 | 增加一个共享组，旧、新 reader 联合校准 |
+| 中间目标 | 22／20 | 开始形成跨多个层段的覆盖率曲线 |
+| 保守全模型方案 | 16 | 前四层保留，后续六个四层块各减少两份 |
+| 后续目标 | 14 | 七个四层块都纳入研究，每块保留两份来源 |
+
+**14 份来源是研发目标，不是这份代码已经证明的质量结果。**
+
+### 为什么先保留每个四层块的第一层？
+
+当前 25% 精确整数预算存在 77／78 块差异，你的运行时又要求 source 与 consumer 使用相同 IDs。新规划器不会绕过这个约束。
+
+它会在每个四层块中：
+
+1. 先保留块首层；
+2. 检查另外三层在所有 fit 请求上是否具有完全相同的 IDs；
+3. 在符合条件的组里选择中间层作为 source。
+
+例如最后四层就会得到当前的：
+
+```text
+24：原生
+25：读取26
+26：source
+27：读取26
+```
+
+其他组可能形成：
+
+```text
+20：原生
+21：读取22
+22：source
+23：读取22
+```
+
+但这只是候选结构，必须根据实际 IDs 验证。**没有偷偷取并集、截断 token，或修改 25% 预算。**
+
+### 为什么新代码允许从最后组往前增加？
+
+旧训练依赖提前采集的上游 student traces，因此需要严格按层号向后推进。新训练每步重新运行完整 student，**不再存在把旧下游输入直接用于新上游结构的问题**。
+
+所以可以从当前 `26→25/27` 出发，增加前面的组，同时重新优化所有已启用 reader。
+
+这不意味着后面的组一定更容易共享，只是为了尽量少改变已有 pilot，并保持清楚的逐步对照。
+
+**先修复当前 \(G=26\) 的开发集表现，再进入 \(G=24\) 的主比较；与此同时，可以把其他层段作为独立探索候选，不必因为一个旧局部门限失败就永久停止结构研究。**
+
+---
+
+## 五、SSD 冷缓存还有一个必须补强的对照：当前是否存在“预取一次、缓存晋升时又读一次”？
+
+这不是要否定本轮 5.08% 的结果，而是为了保证以后扩大共享后，收益不只依赖某个低效恢复路径。
+
+### 1. 报告中的数据值得注意
+
+SSD-cold/native 完整实验中：
+
+- identity 所选 payload：约 **70.65 MB**；
+- first-decoder 的进程 `read_bytes`：约 **128.87 MB**。
+
+而另一个小规模 SSD-cold/preserve 对照中，进程读取量接近 70.65 MB。**两组样本规模、读取策略不同，不能直接用差值精确归因，但这个量级差值得调查。**:chatgpt-content-reference{index="15"}
+
+代码中确实存在这样的路径：
+
+```text
+预取读取磁盘 chunk
+    ↓
+resolve 得到选中的 KV
+    ↓
+_update_loaded_layer_score
+    ↓
+CKLFU 更新／晋升
+    ↓
+TokenCacheDisk.to 再从磁盘路径恢复
+```
+
+`resolve()` 在缓存返回前调用评分更新；`TokenCacheDisk.to()` 处理 disk→CPU/GPU 时，会调用 `uncache`、重新建立 memmap 并执行 `.to(device)`，而不是直接引用前面请求恢复出的 buffer。
+
+**这证明有可能发生重复恢复的代码路径，不证明全部多出来的读取字节都来自它。**
+
+### 2. 新代码先增加诊断，没有贸然改缓存策略
+
+新增审计分别记录：
+
+| 路径 | 记录内容 |
+|---|---|
+| 预取恢复 | 从 disk 状态的 chunk 发起的读取尝试 |
+| 缓存晋升 | disk→CPU/GPU 的读取尝试 |
+| 两者交集 | 同一请求中同时出现在两条路径的文件 |
+
+这些是**读取尝试与文件声明字节数**，不是物理 SSD 或 H2D 计数。还要结合 `/proc/self/io` 和 Nsight；Linux 的 `read_bytes` 是存储层记账，含义不同于 PCIe 数据量。:chatgpt-content-reference{index="18"}
+
+诊断有额外 Python 包装和队列屏障，**不进入正式 TTFT 结论**。
+
+### 3. 把 preserve 对照扩成正式配对，而不是只留 8 条
+
+下一轮性能主表建议包含：
+
+| 缓存条件 | 读取策略 | identity 与 shared |
+|---|---|---|
+| 普通缓存 | native | 保留原结果和顺序分析 |
+| SSD cold | native | 保留兼容原系统的主对照 |
+| SSD cold | preserve | 检查减少重复驱逐后，共享是否仍然受益 |
+
+identity/shared 必须使用相同策略。
+
+`preserve` 不意味着请求开始时不是冷的。它仍可以从零驻留页开始，只是不在请求执行期间反复驱逐刚读过的页。`DONTNEED` 本身只是内核建议，冷状态仍应由原来的驻留检查确认。:chatgpt-content-reference{index="19"}
+
+**如果以后优化缓存晋升，就必须同样提供给 identity 和 shared，然后重新测共享的增量。**不能把通用缓存修复带来的全部收益写成跨层共享收益。
+
+---
+
+## 六、代码如何执行？
+
+### 1. 安装到独立 v2.3 worktree
+
+```bash
+git fetch origin v2.3
+
+git worktree add ../pans-v24 \
+  3868c6b64332f89cc0b301c75b53c35630302f0e
+
+python /path/to/pans_sharedkv_v24/scripts/install_sharedkv_v24.py \
+  --repo ../pans-v24
+
+cd ../pans-v24
+PYTHONPATH=src python -m pytest -q tests/test_sharedkv_v24.py
+```
+
+安装器核对九个关键接口，只增加文件，不覆盖原来的 runner、Pcache 或 v23 冷缓存实现。
+
+### 2. 重新采集实际候选评分
+
+新采集不需要完整 hidden-state traces。示例：
+
+```bash
+python scripts/run_sharedkv_v24.py \
+  --teacher-records runtime_data/v24_teacher_fit --split fit -- \
+  --pcache-root /path/to/private_pcache -- \
+  --mode identity --backend vllm2 --diagnostic \
+  --metadata-cache --layout hybrid -- \
+  --task trec --budget 25 --period 8 \
+  --samples 64 --warmup 0 --max-tokens 1 \
+  --bundle-dir /path/to/fit_bundle \
+  --output results/v24_teacher_fit
+```
+
+这里有三次 `--`，分别分隔 v24、v23、v21 和原 runner 参数。验证集使用独立路径及 `--split validation`。
+
+**采集结果不用于性能结论。**
+
+### 3. 根据真实 IDs 生成来源预算阶梯
+
+```bash
+python scripts/plan_sources_v24.py \
+  --teacher-fit runtime_data/v24_teacher_fit \
+  --task trec \
+  --protect-first 4 \
+  --output-dir configs/v24_ladder
+```
+
+满足合约时会生成 `g26.json`、`g24.json` 等结构。代码不会自动把这些结构认证为“质量通过”。
+
+### 4. 先在当前 26 来源结构上验证新目标
+
+```bash
+python scripts/train_budget_sharedkv_v24.py \
+  --model-path /path/to/Qwen2.5-7B-Instruct \
+  --store-root /path/to/prefix_store \
+  --task trec \
+  --teacher-fit runtime_data/v24_teacher_fit \
+  --teacher-val runtime_data/v24_teacher_val \
+  --plan configs/v24_ladder/g26.json \
+  --steps 200 --eval-every 25 --seed 24 \
+  --device cuda \
+  --output assets/v24_g26_s24/trec.pt
+```
+
+训练前会运行**无 reader 的全网络数值重放检查**。如果它与真实 teacher 的候选得分超过预设误差，代码先中止，不会在数值不一致的基础上继续训练。
+
+可以使用已有 reader 初始化，但旧 bundle 若只有合并的 calibration hash、无法区分旧 fit/val 角色，代码会拒绝无法确认的数据重叠。具体处理规则在执行文档中，不需要猜测旧数据用途或绕过校验。
+
+### 5. 通过开发验收后，再训练 24 来源
+
+```bash
+python scripts/train_budget_sharedkv_v24.py \
+  --model-path /path/to/Qwen2.5-7B-Instruct \
+  --store-root /path/to/prefix_store \
+  --task trec \
+  --teacher-fit runtime_data/v24_teacher_fit \
+  --teacher-val runtime_data/v24_teacher_val \
+  --plan configs/v24_ladder/g24.json \
+  --initial assets/v24_g26_s24/trec.pt \
+  --steps 200 --eval-every 25 --seed 24 \
+  --device cuda \
+  --output assets/v24_g24_s24/trec.pt
+```
+
+此时旧、新 reader 一起优化，而不是简单拼接。
+
+**导出的 bundle 继续使用原来的 v23 推理入口和 SSD 冷恢复协议。**这样更容易把训练方法的改善，与推理系统改动区分开。
+
+---
+
+## 七、下一轮实验怎样安排，才不会再次陷入“局部指标变好，整体结论不清楚”？
+
+### 第一阶段：修复当前结构，而不是立即增加压缩率
+
+在同一个 \(G=26\) 结构下比较：
+
+| 训练方式 | 主要对照 |
+|---|---|
+| v23 组边界目标 | 当前方法 |
+| v24 最终评分目标 | 检查目标对齐是否有效 |
+| v24 去掉 margin 项 | 检查候选顺序约束是否有独立作用 |
+
+保持相同数据、初始化和预登记的训练种子，例如 24／25／26；同时报告真实训练工作量，不能只按步数声称等成本。
+
+**这一步最重要的是开发集上的完整评分表现，不是训练 loss 是否下降。**
+
+### 第二阶段：来源数逐步下降，失败结果也保留
+
+按 \(26\rightarrow24\rightarrow22\rightarrow20\) 推进。每一级都报告：
+
+\[
+\text{准确率差}
+,\quad
+\text{有害／有益翻转}
+,\quad
+\text{来源数}
+,\quad
+\text{净资源量}
+,\quad
+\text{冷恢复 TTFT}
+\]
+
+局部旧门限可以继续记录为诊断，但新训练器不会伪造它们已经通过。**独立开发验收失败的结构不能自动晋升，也不能因为历史 500 条上恰好不错就放行。**
+
+### 第三阶段：再研究覆盖所有层段
+
+默认先保护前四层，对应目标是 16 个来源。前面阶段证明可靠后，显式解除保护，研究 14 个来源的结构。
+
+这时候需要至少增加一个新 prefix 或任务。因为新评分目标直接利用任务候选空间，**它更贴合当前分类协议，也更需要防止把“这个 TREC prefix 上有效”写成通用生成能力保持。**
+
+xKV 等跨层共同子空间工作仍是重要的相关基线；后续应比较同等质量或同等总资源预算，而不只比较各自最有利的压缩率。:chatgpt-content-reference{index="20"}
+
+---
+
+## 我的最终判断
+
+**下一步可以向全模型扩展，但扩展方式应该是“带质量约束的来源数阶梯”，而不是把三层 pilot 机械复制七次。**
+
+这轮最值得保留的成果是：**实际物理共享已经在严格定义的 SSD 冷恢复场景中产生了约 5% 的实测延迟收益。**它使这条研究路线不再只有压缩数字。
+
+现在最需要补上的，是让训练目标真正对应最后的决策，并验证多个共享组能否一起使用。新代码因此把重点放在：
+
+> **推理结构不变，多个 reader 联合优化最终候选评分；独立 KV 来源数逐级下降；冷缓存收益同时接受 native 和 preserve 强对照。**
+
+如果最终能在开发／独立验证质量保持的前提下，把来源数稳定降到 20、16 甚至 14，这才会比反复优化最后两层更接近你最初想做的“大范围跨层 KV 共享”。
+
+### 白话版
+
+现在已经证明了：**三个人共用一本资料，确实可以少搬东西，冷缓存时也能省一些时间。**
+
+但还没证明：把很多组都改成这样以后，整道题仍然能答好。之前主要检查“每一组传出去的信息像不像原模型”，这次改成同时检查“最后给每个候选答案打的分，顺序有没有被改错”。
+
+所以不是停在三层，也不是一下子把 28 层全改掉。**先把现在这组的质量稳定下来，再一组一组加入，让全模型要搬的资料从 26 份逐渐降到 24、22、20……每少两份，都检查一次完整效果。**

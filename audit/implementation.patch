@@ -1,0 +1,2423 @@
+--- a/src/contiguous_fuxian/sharedkv/__init__.py
++++ b/src/contiguous_fuxian/sharedkv/__init__.py
+@@ -0,0 +1,7 @@
++"""Experimental, inference-only shared-prefix readers for pans e32c4a5.
++
++No model weights or third-party implementation source are included.
++"""
++from .core import Reader, segmented_attention, attention_with_lse
++
++__all__ = ["Reader", "segmented_attention", "attention_with_lse"]
+--- a/src/contiguous_fuxian/sharedkv/collect.py
++++ b/src/contiguous_fuxian/sharedkv/collect.py
+@@ -0,0 +1,75 @@
++"""Collect unlabelled teacher queries on separate calibration requests.
++
++This deliberately does extra projections, CPU copies and file I/O. NEVER use
++its timings as performance measurements. Prefix payload is NOT dumped again.
++"""
++from __future__ import annotations
++from pathlib import Path
++import torch
++from .core import apply_rope, attention_with_lse
++from .io import TRACE_FORMAT, BASE_COMMIT, geometry, query_hash, save_new
++
++
++class Collector:
++    def __init__(self, trace_dir, max_query_samples=8):
++        self.trace_dir = Path(trace_dir)
++        self.max_query_samples = int(max_query_samples)
++        if self.max_query_samples <= 0:
++            raise ValueError("max_query_samples must be positive")
++
++    def install(self, runner):
++        original_greedy = runner.greedy_flexgen_completion
++        def completion(*args, **kw):
++            model, loader = kw["model"], kw["loader"]
++            digest = query_hash(kw["query_token_ids"])
++            task = loader._info.task
++            outpath = self.trace_dir/task/f"{digest}.pt"
++            if outpath.exists():  # Deduplicate warmup and repeated queries.
++                return original_greedy(*args, **kw)
++            records, handles = {}, []
++            for lid, layer in enumerate(model.model.layers):
++                def before(module, inputs, kwargs, lid=lid):
++                    if lid in records:
++                        return  # Only the initial query prefill, not label decode.
++                    x = kwargs.get("hidden_states", inputs[0] if inputs else None)
++                    if x is None or "position_embeddings" not in kwargs:
++                        raise RuntimeError("Unsupported Qwen attention call signature")
++                    cos, sin = kwargs["position_embeddings"]
++                    b, t, _ = x.shape
++                    d = module.head_dim
++                    if b != 1:
++                        raise ValueError("Calibration v1 requires batch=1")
++                    with torch.no_grad():
++                        q = apply_rope(module.q_proj(x).view(b, t, -1, d), cos, sin)
++                        k = apply_rope(module.k_proj(x).view(b, t, -1, d), cos, sin)
++                        v = module.v_proj(x).view(b, t, -1, d)
++                        pos = (torch.tensor([t-1], device=x.device) if self.max_query_samples == 1 else
++                               torch.linspace(0, t-1, min(t, self.max_query_samples), device=x.device).round().long().unique())
++                        q_sample = q.index_select(1, pos)
++                        ut, lt = attention_with_lse(q_sample, k, v, causal=True,
++                                                   q_positions=pos, backend="reference")
++                    records[lid] = {
++                        "q": q_sample[0].detach().cpu(),
++                        "tail_output": ut[0].detach().cpu(),
++                        "tail_lse": lt[0].transpose(0, 1).detach().cpu(),
++                        "query_positions": pos.cpu(),
++                        "selected_tokens": torch.tensor(loader._selected_by_layer[lid], dtype=torch.long),
++                    }
++                handles.append(layer.self_attn.register_forward_pre_hook(before, with_kwargs=True))
++            try:
++                result = original_greedy(*args, **kw)
++            finally:
++                for handle in handles:
++                    handle.remove()
++            if len(records) != len(model.model.layers):
++                raise RuntimeError("Incomplete calibration trace")
++            if loader._selector_index is None:
++                raise ValueError("Use the current K4 index so its validated model identity is available")
++            save_new(outpath, {"format": TRACE_FORMAT, "base_commit": BASE_COMMIT,
++                "task": task, "query_hash": digest, "token_hash": loader._info.token_hash,
++                "prefix_tokens": loader.prefix_tokens, "geometry": geometry(model.config),
++                "model_identity": loader._selector_index.payload["model_identity"],
++                "period": int(kw["impress_selection_period_size"]),
++                "keep_ratio": float(loader.keep_ratio), "layers": records})
++            return result
++        runner.greedy_flexgen_completion = completion
+--- a/src/contiguous_fuxian/sharedkv/compile.py
++++ b/src/contiguous_fuxian/sharedkv/compile.py
+@@ -0,0 +1,184 @@
++"""Offline reader compiler for fixed-prefix calibration traces."""
++from __future__ import annotations
++import argparse
++import json
++from pathlib import Path
++import torch
++from .core import Reader, attention_with_lse, query_transform, key_offset, value_transform
++from .fit import fit_key_reader, affine_ridge, fit_value_from_attention
++from .io import FORMAT, TRACE_FORMAT, BASE_COMMIT, load_safe, save_new, read_prefix, validate_sources
++
++
++def _traces(root, task):
++    paths = sorted((Path(root)/task).glob("*.pt"))
++    if not paths:
++        raise ValueError(f"No traces under {root}/{task}")
++    rows = [load_safe(p) for p in paths]
++    for r in rows:
++        if r["format"] != TRACE_FORMAT or r["task"] != task:
++            raise ValueError("Wrong trace format/task")
++    return rows
++
++
++def _features(rows, source, target, ks, vs, kt, vt, reader):
++    result = []
++    for record in rows:
++        data = record["layers"][target]
++        ids = data["selected_tokens"]
++        if not torch.equal(ids, record["layers"][source]["selected_tokens"]):
++            raise ValueError("v1 requires equal selected token IDs within a shared pair")
++        q = data["q"].float().unsqueeze(0)
++        sp, lp = attention_with_lse(query_transform(q, reader), ks[ids].unsqueeze(0), vs[ids].unsqueeze(0))
++        lp = lp + key_offset(q, reader, q.shape[-1]**-0.5)
++        tp, lt = attention_with_lse(q, kt[ids].unsqueeze(0), vt[ids].unsqueeze(0))
++        tail_lse = data["tail_lse"].float().transpose(0, 1).unsqueeze(0)
++        bs = torch.sigmoid(lp-tail_lse).transpose(1, 2)[0]
++        bt = torch.sigmoid(lt-tail_lse).transpose(1, 2)[0]
++        result.append({"us":sp[0], "ut":tp[0], "uv":data["tail_output"].float(),
++                       "bs":bs, "bt":bt, "hash":record["query_hash"]})
++    return result
++
++
++def _validation(features, reader):
++    error = signal = 0.0
++    mass_errors = []
++    request_errors = []
++    for x in features:
++        corrected = value_transform(x["us"].unsqueeze(0), reader)[0]
++        actual = x["bs"][..., None]*corrected + (1-x["bs"])[..., None]*x["uv"]
++        target = x["bt"][..., None]*x["ut"] + (1-x["bt"])[..., None]*x["uv"]
++        e = (actual-target).double().square().sum().item()
++        s = target.double().square().sum().item()
++        error += e
++        signal += s
++        request_errors.append((e/max(s,1e-30))**0.5)
++        mass_errors.append((x["bs"]-x["bt"]).abs().flatten())
++    mass = torch.cat(mass_errors)
++    return {"output_relative_rmse": (error/max(signal,1e-30))**0.5,
++            "output_request_max_relative_rmse": max(request_errors),
++            "prefix_mass_mae": mass.mean().item(),
++            "prefix_mass_p95_absolute_error": torch.quantile(mass,0.95).item(),
++            "validation_requests":len(features)}
++
++
++def main(argv=None):
++    p = argparse.ArgumentParser(description=__doc__)
++    p.add_argument("--store-root", required=True)
++    p.add_argument("--task", required=True)
++    p.add_argument("--fit-traces", required=True)
++    p.add_argument("--validation-traces", required=True)
++    p.add_argument("--pairs", required=True, help="source:consumer, e.g. 2:3,4:5; disjoint pairs")
++    p.add_argument("--key-mode", choices=["dense","rope","rope_rr","direct"], default="rope_rr")
++    p.add_argument("--rank", type=int, default=16)
++    p.add_argument("--ridge", type=float, default=1e-3)
++    p.add_argument("--key-fit-tokens", type=int, default=8192)
++    p.add_argument("--max-output-error", type=float, default=0.03)
++    p.add_argument("--max-request-output-error", type=float, default=0.08)
++    p.add_argument("--max-mass-p95", type=float, default=0.03)
++    p.add_argument("--output", required=True)
++    p.add_argument("--diagnostic-output", help="Export rejected candidates separately for explicitly diagnostic runs")
++    a = p.parse_args(argv)
++    if Path(a.output).exists():
++        raise FileExistsError(a.output)
++    if a.key_fit_tokens <= 0 or min(a.max_output_error,a.max_request_output_error,a.max_mass_p95) <= 0:
++        raise ValueError("Positive token count and validation thresholds required")
++    train, valid = _traces(a.fit_traces,a.task), _traces(a.validation_traces,a.task)
++    header = train[0]
++    for r in train+valid:
++        for field in ("task","token_hash","prefix_tokens","geometry","model_identity","period","keep_ratio"):
++            if r[field] != header[field]:
++                raise ValueError(f"Mixed calibration identities/configurations: {field}")
++    th, vh = {r["query_hash"] for r in train}, {r["query_hash"] for r in valid}
++    if th & vh:
++        raise ValueError("Fit/validation query overlap; split by whole request")
++    if len(th) != len(train) or len(vh) != len(valid):
++        raise ValueError("Duplicate calibration requests")
++    g = header["geometry"]
++    sources = list(range(g["layers"]))
++    candidate_sources = sources.copy()
++    pairs, used = [], set()
++    for pair in a.pairs.split(","):
++        source,target = map(int,pair.split(":"))
++        if source == target or source in used or target in used:
++            raise ValueError("v1 accepts disjoint two-layer pairs only")
++        if not (0<=source<g["layers"] and 0<=target<g["layers"]):
++            raise ValueError("Invalid pair layer index")
++        used.update((source,target)); pairs.append((source,target))
++        candidate_sources[target] = source
++    validate_sources(candidate_sources,period=header["period"])
++    readers, reports = {}, {}
++    candidate_readers = {}
++    torch.set_num_threads(min(torch.get_num_threads(),4))
++    with torch.no_grad():
++        for source,target in pairs:
++            ks, ms = read_prefix(a.store_root,a.task,source,"key")
++            vs, _ = read_prefix(a.store_root,a.task,source,"value")
++            kt, mt = read_prefix(a.store_root,a.task,target,"key")
++            vt, _ = read_prefix(a.store_root,a.task,target,"value")
++            if ms["token_hash"] != header["token_hash"] or mt["token_hash"] != header["token_hash"]:
++                raise ValueError("Prefix content identity differs from the calibration trace")
++            n,h,d = ks.shape
++            ids = torch.linspace(0,n-1,min(n,a.key_fit_tokens)).round().long().unique()
++            q = torch.cat([r["layers"][target]["q"].float() for r in train],dim=0)
++            groups = g["q_heads"]//h
++            qr = q.reshape(-1,h,groups,d)
++            matrices, offsets, key_reports = [], [], []
++            for head in range(h):
++                if a.key_mode == "direct":
++                    ak,bk,rep = torch.eye(d),torch.zeros(d),{"key_mode":"direct"}
++                else:
++                    ak,bk,rep = fit_key_reader(ks[ids,head],kt[ids,head],qr[:,head].reshape(-1,d),
++                        rank=min(a.rank,d),ridge=a.ridge,mode=a.key_mode)
++                matrices.append(ak);offsets.append(bk);key_reports.append(rep)
++            reader = Reader(torch.stack(matrices),torch.eye(d).expand(h,d,d).clone(),
++                            torch.stack(offsets),torch.zeros(h,d))
++            if a.key_mode != "direct":
++                fs = _features(train,source,target,ks,vs,kt,vt,reader)
++                joined = {name:torch.cat([x[name] for x in fs],dim=0) for name in ("us","ut","uv","bs","bt")}
++                b_list,bias_list = [],[]
++                for head in range(h):
++                    lo,hi = head*groups,(head+1)*groups
++                    b0,c0 = affine_ridge(vs[ids,head],vt[ids,head],ridge=a.ridge)
++                    prior = torch.cat((b0,c0.unsqueeze(0)))
++                    args = [joined[name][:,lo:hi].reshape(-1,d) for name in ("us","ut","uv")]
++                    args += [joined[name][:,lo:hi].reshape(-1) for name in ("bs","bt")]
++                    b1,c1 = fit_value_from_attention(*args,ridge=a.ridge,prior=prior)
++                    b_list.append(b1);bias_list.append(c1)
++                reader = Reader(reader.A,torch.stack(b_list),reader.bk,torch.stack(bias_list))
++            reader.validate()
++            # Validate the same BF16-quantized coefficients used online (reference
++            # attention still accumulates in FP32, so real GPU parity is separate).
++            reader = reader.to(device="cpu",dtype=torch.bfloat16).to(device="cpu",dtype=torch.float32)
++            report = _validation(_features(valid,source,target,ks,vs,kt,vt,reader),reader)
++            accept = (report["output_relative_rmse"]<=a.max_output_error and
++                report["output_request_max_relative_rmse"]<=a.max_request_output_error and
++                report["prefix_mass_p95_absolute_error"]<=a.max_mass_p95)
++            report.update({"source":source,"consumer":target,"accepted_local_only":accept,
++                           "key_fit":key_reports,
++                           "warning":"Local teacher-query validation is NOT end-to-end quality validation."})
++            reports[str(target)] = report
++            candidate_readers[str(target)] = reader.state_dict()
++            if accept:
++                sources[target]=source
++                readers[str(target)]=reader.state_dict()
++            print(json.dumps({"layer":target,**report},ensure_ascii=False),flush=True)
++    bundle = {"format":FORMAT,"base_commit":BASE_COMMIT,"task":a.task,"sources":sources,
++        "readers":readers,"token_hash":header["token_hash"],"prefix_tokens":header["prefix_tokens"],
++        "geometry":g,"model_identity":header["model_identity"],"period":header["period"],
++        "keep_ratio":header["keep_ratio"],"calibration_query_hashes":sorted(th|vh),
++        "reports":reports,"compiler_args":vars(a),
++        "scope":"post-RoPE, fixed-position, fixed-prefix; no backbone training; dense exported readers",
++        "accepted_consumers":len(readers),"end_to_end_validated":False}
++    validate_sources(sources,period=header["period"])
++    save_new(a.output,bundle)
++    Path(a.output).with_suffix(".report.json").write_text(json.dumps({k:v for k,v in bundle.items() if k!="readers"},indent=2,ensure_ascii=False))
++    if a.diagnostic_output:
++        diagnostic = {**bundle, "sources":candidate_sources, "readers":candidate_readers,
++                      "diagnostic_only":True, "active_consumers":len(candidate_readers),
++                      "warning":"Includes locally rejected readers; research ablation only."}
++        save_new(a.diagnostic_output,diagnostic)
++    print(f"Accepted {len(readers)} of {len(pairs)} candidate pairs. No quality/TTFT claim is implied.")
++
++
++if __name__ == "__main__":
++    main()
+--- a/src/contiguous_fuxian/sharedkv/core.py
++++ b/src/contiguous_fuxian/sharedkv/core.py
+@@ -0,0 +1,203 @@
++"""Read shared physical KV without reconstructing per-layer prefix tensors.
++
++All public attention tensors use [batch, token, head, feature]. Readers use
++[physical_kv_head, input_feature, output_feature]. Runtime is inference-only.
++The reference backend is for correctness, NOT a latency benchmark backend.
++"""
++from __future__ import annotations
++from dataclasses import dataclass
++import math
++from typing import Literal
++import torch
++
++Backend = Literal["reference", "flash2", "vllm2"]
++
++
++@dataclass(frozen=True)
++class Reader:
++    A: torch.Tensor
++    B: torch.Tensor
++    bk: torch.Tensor
++    bv: torch.Tensor
++
++    def validate(self) -> None:
++        if self.A.ndim != 3 or self.A.shape[-1] != self.A.shape[-2]:
++            raise ValueError("A must be [KV heads, d, d]")
++        h, d, _ = self.A.shape
++        if self.B.shape != (h, d, d) or self.bk.shape != (h, d) or self.bv.shape != (h, d):
++            raise ValueError("Reader geometry mismatch")
++        for t in (self.A, self.B, self.bk, self.bv):
++            if not torch.is_floating_point(t) or not torch.isfinite(t).all():
++                raise ValueError("Reader parameters must be finite floating tensors")
++
++    def to(self, *, device, dtype) -> "Reader":
++        return Reader(*(x.to(device=device, dtype=dtype).contiguous()
++                        for x in (self.A, self.B, self.bk, self.bv)))
++
++    def state_dict(self) -> dict[str, torch.Tensor]:
++        return {name: getattr(self, name).detach().cpu() for name in ("A", "B", "bk", "bv")}
++
++    @classmethod
++    def from_state_dict(cls, x: dict) -> "Reader":
++        result = cls(*(x[n] for n in ("A", "B", "bk", "bv")))
++        result.validate()
++        return result
++
++
++def rotate_half(x: torch.Tensor) -> torch.Tensor:
++    """Qwen2 split-half RoPE pairs j with j+d/2, NOT adjacent channels."""
++    if x.shape[-1] % 2:
++        raise ValueError("RoPE dimension must be even")
++    left, right = x.chunk(2, dim=-1)
++    return torch.cat((-right, left), dim=-1)
++
++
++def apply_rope(x: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.Tensor:
++    # x: [B,T,H,D]; cos/sin: [B,T,D], supplied by the original model.
++    return x * cos.unsqueeze(2) + rotate_half(x) * sin.unsqueeze(2)
++
++
++def query_transform(q: torch.Tensor, reader: Reader) -> torch.Tensor:
++    b, t, hq, d = q.shape
++    hk = reader.A.shape[0]
++    if hq % hk or reader.A.shape[-1] != d:
++        raise ValueError("Reader does not match the GQA geometry")
++    # K_hat = K_source @ A, so Q_read = Q @ A.T.
++    return torch.einsum("bthgj,hij->bthgi", q.reshape(b, t, hk, hq // hk, d),
++                        reader.A).reshape_as(q).contiguous()
++
++
++def value_transform(u: torch.Tensor, reader: Reader) -> torch.Tensor:
++    b, t, hq, d = u.shape
++    hk = reader.B.shape[0]
++    z = torch.einsum("bthgi,hij->bthgj", u.reshape(b, t, hk, hq // hk, d), reader.B)
++    return (z + reader.bv[None, None, :, None, :]).reshape_as(u)
++
++
++def key_offset(q: torch.Tensor, reader: Reader, scale: float) -> torch.Tensor:
++    b, t, hq, d = q.shape
++    hk = reader.bk.shape[0]
++    dtype = torch.float64 if q.dtype == torch.float64 else torch.float32
++    z = torch.einsum("bthgj,hj->bthg", q.reshape(b, t, hk, hq // hk, d).to(dtype), reader.bk.to(dtype))
++    return z.reshape(b, t, hq).transpose(1, 2) * scale
++
++
++def _geometry(q, k, v):
++    if q.ndim != 4 or k.ndim != 4 or v.shape != k.shape:
++        raise ValueError("Expected q/k/v [B,T,H,D]; K and V must have equal shapes")
++    if q.shape[0] != k.shape[0] or q.shape[-1] != k.shape[-1] or q.shape[2] % k.shape[2]:
++        raise ValueError("Batch/feature/GQA geometry mismatch")
++    if not q.shape[1] or not k.shape[1]:
++        raise ValueError("Empty attention segments are not supported")
++    if not (q.device == k.device == v.device and q.dtype == k.dtype == v.dtype):
++        raise ValueError("q/k/v must have identical device and dtype")
++
++
++def attention_with_lse(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, *,
++                       causal: bool = False, backend: Backend = "reference",
++                       q_positions: torch.Tensor | None = None,
++                       query_chunk: int = 16, key_chunk: int = 1024):
++    """Return conditional segment output and natural-log Z [B,Hq,T].
++
++    Causal alignment is bottom-right: q row i sees keys <= N-T+i.
++    q_positions overrides these positions in reference mode (calibration).
++    """
++    _geometry(q, k, v)
++    scale = q.shape[-1] ** -0.5
++    if backend == "vllm2":
++        if q_positions is not None or q.device.type != "cuda" or q.dtype not in (torch.float16, torch.bfloat16):
++            raise ValueError("vllm2 requires CUDA fp16/bf16 with contiguous query positions")
++        from vllm.vllm_flash_attn import flash_attn_varlen_func
++        b, tq, hq, d = q.shape
++        nk, hk = k.shape[1:3]
++        # No repeated GQA KV heads or reconstructed consumer prefix.
++        cuq = torch.arange(0, (b+1)*tq, tq, dtype=torch.int32, device=q.device)
++        cuk = torch.arange(0, (b+1)*nk, nk, dtype=torch.int32, device=q.device)
++        out, lse = flash_attn_varlen_func(
++            q.reshape(b*tq,hq,d), k.reshape(b*nk,hk,d), v.reshape(b*nk,hk,d),
++            max_seqlen_q=tq, cu_seqlens_q=cuq, max_seqlen_k=nk, cu_seqlens_k=cuk, causal=causal, softmax_scale=scale,
++            return_softmax_lse=True, fa_version=2)
++        return out.reshape_as(q), lse.reshape(hq,b,tq).permute(1,0,2)
++    if backend == "flash2":
++        if q_positions is not None:
++            raise ValueError("Sampled query positions are reference-only")
++        if q.device.type != "cuda" or q.dtype not in (torch.float16, torch.bfloat16):
++            raise ValueError("flash2 requires CUDA fp16/bf16")
++        # Public API. At dropout_p=0, upstream gates return_softmax to false in
++        # the CUDA kernel; output+LSE are returned without a quadratic mask.
++        # Never silently fall back to reference when doing timing.
++        from flash_attn import flash_attn_func
++        out, lse, mask = flash_attn_func(q.contiguous(), k.contiguous(), v.contiguous(),
++                                       dropout_p=0.0, softmax_scale=scale,
++                                       causal=causal, return_attn_probs=True)
++        if mask is not None and mask.numel() != 0:
++            raise RuntimeError("Unexpected quadratic attention-mask output; unsupported FlashAttention build")
++        if lse.shape != (q.shape[0], q.shape[2], q.shape[1]):
++            raise RuntimeError("Unexpected FlashAttention LSE shape")
++        return out, lse
++    if backend != "reference":
++        raise ValueError(f"Unknown backend: {backend}")
++    if query_chunk <= 0 or key_chunk <= 0:
++        raise ValueError("Chunk sizes must be positive")
++    b, tq, hq, d = q.shape
++    n, hk = k.shape[1:3]
++    groups = hq // hk
++    dtype = torch.float64 if q.dtype == torch.float64 else torch.float32
++    outputs, lses = [], []
++    if q_positions is None:
++        q_positions = torch.arange(n - tq, n, device=q.device)
++    if q_positions.shape != (tq,):
++        raise ValueError("q_positions must be [query_tokens]")
++    if causal and (q_positions.min() < 0 or q_positions.max() >= n):
++        raise ValueError("Every causal query must have at least one visible key")
++    for start in range(0, tq, query_chunk):
++        end = min(start + query_chunk, tq)
++        qc = q[:, start:end].to(dtype).reshape(b, end-start, hk, groups, d).permute(0, 2, 3, 1, 4)
++        shape = (b, hk, groups, end-start)
++        maximum = torch.full(shape, -torch.inf, device=q.device, dtype=dtype)
++        denom = torch.zeros(shape, device=q.device, dtype=dtype)
++        numer = torch.zeros((*shape, d), device=q.device, dtype=dtype)
++        for lo in range(0, n, key_chunk):
++            hi = min(lo + key_chunk, n)
++            kc = k[:, lo:hi].to(dtype).permute(0, 2, 1, 3).unsqueeze(2)
++            vc = v[:, lo:hi].to(dtype).permute(0, 2, 1, 3).unsqueeze(2)
++            scores = torch.matmul(qc, kc.transpose(-1, -2)) * scale
++            if causal:
++                allowed = torch.arange(lo, hi, device=q.device)[None, :] <= q_positions[start:end, None]
++                scores = scores.masked_fill(~allowed[None, None, None], -torch.inf)
++            new_max = torch.maximum(maximum, scores.amax(dim=-1))
++            alpha = torch.exp(maximum - new_max)
++            p = torch.exp(scores - new_max.unsqueeze(-1))
++            numer = numer * alpha.unsqueeze(-1) + torch.matmul(p, vc)
++            denom = denom * alpha + p.sum(dim=-1)
++            maximum = new_max
++        out = (numer / denom.unsqueeze(-1)).permute(0, 3, 1, 2, 4).reshape(b, end-start, hq, d)
++        lse = (maximum + denom.log()).reshape(b, hq, end-start)
++        outputs.append(out.to(q.dtype))
++        lses.append(lse)
++    return torch.cat(outputs, dim=1), torch.cat(lses, dim=-1)
++
++
++def merge_segments(up, lp, ut, lt):
++    """Joint softmax, not a sum of separately-normalized attention outputs."""
++    logz = torch.logaddexp(lp, lt)
++    beta = (lp - logz).exp().transpose(1, 2).unsqueeze(-1)
++    # Do accumulation in float32 (or float64 for mathematical unit tests).
++    dtype = torch.float64 if up.dtype == torch.float64 else torch.float32
++    result = beta.to(dtype) * up.to(dtype) + (1 - beta.to(dtype)) * ut.to(dtype)
++    return result.to(up.dtype), logz
++
++
++def segmented_attention(q, prefix_k, prefix_v, tail_k, tail_v, *,
++                        reader: Reader | None = None, backend: Backend = "reference",
++                        q_positions: torch.Tensor | None = None):
++    """Shared prefix + private causal tail. No per-layer prefix reconstruction."""
++    qp = q if reader is None else query_transform(q, reader)
++    up, lp = attention_with_lse(qp, prefix_k, prefix_v, backend=backend)
++    if reader is not None:
++        up = value_transform(up, reader)
++        # A constant key offset cancels within prefix softmax, but NOT in the
++        # competition with the private tail. Restore it to prefix log Z.
++        lp = lp + key_offset(q, reader, q.shape[-1] ** -0.5).to(lp.dtype)
++    ut, lt = attention_with_lse(q, tail_k, tail_v, causal=True, backend=backend, q_positions=q_positions)
++    return merge_segments(up, lp, ut, lt)[0]
+--- a/src/contiguous_fuxian/sharedkv/fit.py
++++ b/src/contiguous_fuxian/sharedkv/fit.py
+@@ -0,0 +1,154 @@
++"""Offline closed-form fitting. No backbone update and no backpropagation.
++
++The RoPE-commuting component is a prior, not a claim that pretrained layers
++are exactly equivalent. The residual and affine offsets are prefix-specific.
++"""
++from __future__ import annotations
++import torch
++
++
++def _double(x: torch.Tensor) -> torch.Tensor:
++    x = x.detach().to(device="cpu", dtype=torch.float64)
++    if x.ndim != 2 or not torch.isfinite(x).all():
++        raise ValueError("Expected finite rank-2 observations")
++    return x
++
++
++def commuting_rope_fit(x, y, ridge: float = 1e-4):
++    """Fit same-frequency complex scale/rotation in split-half layout.
++
++    Each row-vector pair maps through [[a,-b],[b,a]]. Such blocks commute
++    with every rotation of that frequency. There is no cross-frequency mix.
++    """
++    x, y = _double(x), _double(y)
++    if x.shape != y.shape or x.shape[1] % 2:
++        raise ValueError("Equal [tokens, even_head_dim] matrices required")
++    d = x.shape[1]
++    half = d // 2
++    x0, x1 = x[:, :half], x[:, half:]
++    y0, y1 = y[:, :half], y[:, half:]
++    denom = (x0.square() + x1.square()).sum(0)
++    lam = ridge * denom.mean().clamp_min(1e-12)
++    # Small shrinkage towards the identity: useful as a prior, not mandatory.
++    a = ((x0*y0 + x1*y1).sum(0) + lam) / (denom + lam)
++    b = (x1*y0 - x0*y1).sum(0) / (denom + lam)
++    result = torch.zeros(d, d, dtype=torch.float64)
++    ids = torch.arange(half)
++    result[ids, ids] = a
++    result[ids+half, ids+half] = a
++    result[ids, ids+half] = -b
++    result[ids+half, ids] = b
++    return result
++
++
++def weighted_reduced_rank(x, y, output_metric, rank: int, ridge: float):
++    """Minimize ||(X D-Y)L||^2 + lambda||D L||^2, rank(D)<=rank.
++
++    output_metric = L L.T. The truncated SVD is performed AFTER whitening
++    the regression inputs and weighting observable output directions.
++    Unlike truncating D itself, this solves the stated reduced-rank problem.
++    """
++    x, y = _double(x), _double(y)
++    d, o = x.shape[1], y.shape[1]
++    if x.shape[0] != y.shape[0] or not 0 <= rank <= min(d, o) or ridge <= 0:
++        raise ValueError("Invalid rank/ridge/observation shapes")
++    if rank == 0:
++        return torch.zeros(d, o, dtype=torch.float64)
++    metric = _double(output_metric)
++    if metric.shape != (o, o):
++        raise ValueError("Output metric shape mismatch")
++    chol_m = torch.linalg.cholesky(metric)
++    gram = x.T @ x
++    lam = ridge * (gram.trace()/d).clamp_min(1e-12)
++    chol_g = torch.linalg.cholesky(gram + lam * torch.eye(d, dtype=x.dtype))
++    z = torch.linalg.solve_triangular(chol_g, x.T @ y @ chol_m, upper=False)
++    u, s, vh = torch.linalg.svd(z, full_matrices=False)
++    z_r = (u[:, :rank] * s[:rank]) @ vh[:rank]
++    dl = torch.linalg.solve_triangular(chol_g.T, z_r, upper=True)
++    # D L = dl => L.T D.T = dl.T; no explicit matrix inverse.
++    return torch.linalg.solve_triangular(chol_m.T, dl.T, upper=True).T
++
++
++def fit_key_reader(source_k, target_k, query_rows, *, rank: int = 16,
++                   ridge: float = 1e-3, mode: str = "rope_rr"):
++    """Fit K_target ~= K_source @ A + bk for ONE physical KV head.
++
++    query_rows includes every query head in that GQA group, not just the
++    representative index head. Keys and queries must both be post-RoPE.
++    """
++    x, y, q = _double(source_k), _double(target_k), _double(query_rows)
++    if x.shape != y.shape or q.shape[1] != x.shape[1]:
++        raise ValueError("Key/query feature mismatch")
++    if ridge <= 0:
++        raise ValueError("ridge must be positive")
++    mx, my = x.mean(0), y.mean(0)
++    xc, yc = x-mx, y-my
++    d = x.shape[1]
++    metric = q.T @ q / max(1, q.shape[0])
++    metric = metric / (metric.trace()/d).clamp_min(1e-12)
++    metric = metric + ridge * torch.eye(d, dtype=torch.float64)
++    if mode == "dense":
++        base, use_rank = torch.zeros(d, d, dtype=x.dtype), d
++    elif mode == "rope":
++        base, use_rank = commuting_rope_fit(xc, yc, ridge), 0
++    elif mode == "rope_rr":
++        base, use_rank = commuting_rope_fit(xc, yc, ridge), rank
++    else:
++        raise ValueError(f"Unknown key mode {mode}")
++    delta = weighted_reduced_rank(xc, yc-xc@base, metric, use_rank, ridge)
++    a = base + delta
++    bias = my - mx @ a
++    residual = x @ a + bias - y
++    weighted_error = ((residual @ metric) * residual).sum()
++    weighted_signal = ((y @ metric) * y).sum().clamp_min(1e-30)
++    return a.float(), bias.float(), {
++        "key_query_metric_relative_rmse_fit": float((weighted_error/weighted_signal).sqrt()),
++        "key_residual_rank": use_rank,
++        "key_mode": mode,
++        "key_matrix_spectral_norm": float(torch.linalg.matrix_norm(a, ord=2)),
++    }
++
++
++def affine_ridge(x, y, *, ridge: float = 1e-3, prior=None):
++    """Affine regression with a small positive bias regularizer."""
++    x, y = _double(x), _double(y)
++    xa = torch.cat((x, torch.ones(x.shape[0], 1, dtype=x.dtype)), dim=-1)
++    if prior is None:
++        prior = torch.zeros(xa.shape[1], y.shape[1], dtype=x.dtype)
++    return ridge_design(xa, y, ridge=ridge, prior=prior)
++
++
++def ridge_design(design, target, *, ridge: float, prior=None):
++    """Regression of an explicitly supplied design matrix (last column bias)."""
++    x, y = _double(design), _double(target)
++    if ridge <= 0 or x.shape[0] != y.shape[0]:
++        raise ValueError("Invalid ridge or data shape")
++    p = torch.zeros(x.shape[1], y.shape[1], dtype=x.dtype) if prior is None else _double(prior)
++    if p.shape != (x.shape[1], y.shape[1]):
++        raise ValueError("Prior shape mismatch")
++    gram = x.T @ x
++    lam = ridge * (gram.trace()/x.shape[1]).clamp_min(1e-12)
++    regularizer = torch.eye(x.shape[1], dtype=x.dtype) * lam
++    regularizer[-1, -1] *= 0.01
++    beta = torch.linalg.solve(gram + regularizer, x.T @ y + regularizer @ p)
++    return beta[:-1].float(), beta[-1].float()
++
++
++def fit_value_from_attention(shared_conditional, teacher_conditional,
++                             private_conditional, shared_mass, teacher_mass,
++                             *, ridge=1e-3, prior=None):
++    """Fit B,bv using actual attention outputs, for ONE physical KV head.
++
++    Teacher mixed output = beta_t*U_t + (1-beta_t)*U_private.
++    Design = [beta_s*U_s, beta_s], target subtracts student's private part.
++    Therefore the fit respects prefix-vs-private normalization and the
++    attention changes induced by the key reader. It is NOT raw V-only MSE.
++    """
++    us, ut, uv = map(_double, (shared_conditional, teacher_conditional, private_conditional))
++    bs = shared_mass.detach().cpu().double().reshape(-1, 1)
++    bt = teacher_mass.detach().cpu().double().reshape(-1, 1)
++    if us.shape != ut.shape or us.shape != uv.shape or bs.shape != bt.shape or bs.shape[0] != us.shape[0]:
++        raise ValueError("Attention regression observation shapes mismatch")
++    design = torch.cat((bs * us, bs), dim=-1)
++    target = bt*ut + (bs-bt)*uv
++    return ridge_design(design, target, ridge=ridge, prior=prior)
+--- a/src/contiguous_fuxian/sharedkv/io.py
++++ b/src/contiguous_fuxian/sharedkv/io.py
+@@ -0,0 +1,68 @@
++"""On-disk contracts and the exact raw-BF16 prefix layout used by pans."""
++from __future__ import annotations
++import hashlib
++import json
++from pathlib import Path
++import numpy as np
++import torch
++
++BASE_COMMIT = "e32c4a5605ca55d2904b33065d67a1d71667d47c"
++FORMAT = "pans-readside-shared-prefix-v1"
++TRACE_FORMAT = "pans-readside-calibration-v1"
++
++
++def query_hash(ids) -> str:
++    return hashlib.sha256(json.dumps([int(x) for x in ids], separators=(",", ":")).encode()).hexdigest()
++
++
++def save_new(path, data):
++    path = Path(path)
++    path.parent.mkdir(parents=True, exist_ok=True)
++    if path.exists():
++        raise FileExistsError(path)
++    torch.save(data, path)
++
++
++def load_safe(path):
++    return torch.load(path, map_location="cpu", weights_only=True)
++
++
++def read_prefix(store_root, task, layer, kind):
++    """Return the values actually seen by FP16-payload/BF16-compute pans.
++
++    Existing store is raw BF16, token-major; not a NumPy .npy container.
++    """
++    root = Path(store_root)/task
++    meta = json.loads((root/"metadata.json").read_text())
++    if meta.get("dtype") != "bfloat16" or meta.get("layout") != "token,kv_head,head_dim":
++        raise ValueError("This add-on requires the existing BF16 token-major store")
++    n, h, d = (int(meta[x]) for x in ("prefix_tokens", "kv_heads", "head_dim"))
++    path = root/f"layer_{layer:02d}_{kind}.bf16"
++    if kind not in ("key", "value") or path.stat().st_size != n*h*d*2:
++        raise ValueError(f"Invalid prefix tensor {path}")
++    raw = np.fromfile(path, dtype=np.uint16).reshape(n, h, d)
++    values = torch.from_numpy(raw).view(torch.bfloat16)
++    values = values.to(torch.float16).to(torch.bfloat16).float()
++    return values, meta
++
++
++def validate_sources(sources, *, period):
++    """One-hop ownership only; leaders exact; all consumers in one P8 window."""
++    n = len(sources)
++    if period <= 0 or not n:
++        raise ValueError("Invalid layer/selection-period geometry")
++    for layer, source in enumerate(sources):
++        if not isinstance(source, int) or not 0 <= source < n:
++            raise ValueError("Out-of-range physical source")
++        if sources[source] != source:
++            raise ValueError("Chained/cyclic ownership is forbidden")
++        if layer//period != source//period:
++            raise ValueError("Sharing cannot cross a selector window in v1")
++        if layer % period == 0 and source != layer:
++            raise ValueError("P8 selector leaders remain exact in v1")
++
++
++def geometry(config):
++    return {"layers": int(config.num_hidden_layers), "q_heads": int(config.num_attention_heads),
++            "kv_heads": int(config.num_key_value_heads),
++            "head_dim": int(getattr(config, "head_dim", config.hidden_size//config.num_attention_heads))}
+--- a/src/contiguous_fuxian/sharedkv/runtime.py
++++ b/src/contiguous_fuxian/sharedkv/runtime.py
+@@ -0,0 +1,231 @@
++"""Opt-in pans integration; existing runner and Pcache remain unchanged on disk.
++
++Only the fixed-P8 ProMixed, same-selected-IDs, batch-one Qwen2 path is supported.
++The original greedy completion and label-continuation scoring are retained.
++DynamicCache contains PRIVATE tail only. Shared prefix lives in request state,
++so label-continuation forks copy only tails and read the same immutable prefix.
++"""
++from __future__ import annotations
++from contextvars import ContextVar
++from dataclasses import dataclass, field
++import json
++from pathlib import Path
++import time
++import torch
++from .core import Reader, apply_rope, segmented_attention
++from .io import FORMAT, BASE_COMMIT, load_safe, geometry, query_hash, validate_sources
++
++_ACTIVE: ContextVar = ContextVar("pans_shared_prefix_request", default=None)
++
++
++@dataclass
++class RequestState:
++    sources: list[int]
++    readers: dict[int, Reader]
++    backend: str
++    bank: dict = field(default_factory=dict)
++    scheduled: set = field(default_factory=set)
++    resolve_calls: int = 0
++    geometry: dict = field(default_factory=dict)
++    tail_lengths: dict = field(default_factory=dict)
++
++    def schedule_window(self, loader, start: int, end: int):
++        # Every logical layer was configured by the original selector first.
++        # Scheduling consumers here would negate the transfer reduction.
++        unique = []
++        for layer in range(start, end):
++            source = self.sources[layer]
++            if loader._selected_by_layer[layer] != loader._selected_by_layer[source]:
++                raise RuntimeError("Shared consumers selected different token IDs; union mode is not implemented")
++            if source not in self.scheduled:
++                unique.append(source)
++                self.scheduled.add(source)
++        for source in unique:
++            loader.schedule(source)
++
++    def resolve(self, loader, layer, *, dtype, device):
++        source = self.sources[layer]
++        if source not in self.bank:
++            k, v = loader.resolve(source)
++            if k.ndim != 3 or k.shape != v.shape:
++                raise RuntimeError("pans payload layout changed; expected [token,kv_head,dim]")
++            # Convert/layout exactly ONCE per physical source, not per consumer.
++            k = k.to(device=device,dtype=dtype).contiguous()
++            v = v.to(device=device,dtype=dtype).contiguous()
++            self.bank[source] = (k.unsqueeze(0),v.unsqueeze(0))
++            loader._loaded[source] = (k,v)
++            self.resolve_calls += 1
++        return self.bank[source]
++
++
++def decoder_logits(*, model, input_ids, cache, position_start, loader,
++                   period_size, subperiod_size, impress_selection_block_size=1,
++                   impress_period_prefetch_size=1, impress_selection_period_size=1,
++                   impress_known_period_prefetch=False):
++    state = _ACTIVE.get()
++    if state is None:
++        raise RuntimeError("Shared decoder called outside its request scope")
++    core = model.model
++    hidden = core.embed_tokens(input_ids)
++    b,t,_ = hidden.shape
++    if b != 1:
++        raise ValueError("Shared-prefix v1 requires batch=1")
++    positions = torch.arange(position_start,position_start+t,device=hidden.device)
++    position_ids = positions.unsqueeze(0)
++    cos,sin = core.rotary_emb(hidden,position_ids)
++    first = cache.get_seq_length(0)==0
++    # Imported at call time to preserve current repository implementation.
++    from contiguous_fuxian.flexgen_qwen_reprefill import configure_online_layer_selection
++    g = state.geometry
++    for lid,layer in enumerate(core.layers):
++        if first and lid % impress_selection_period_size == 0:
++            chosen_period = configure_online_layer_selection(
++                decoder_layer=layer,hidden_states=hidden,position_embeddings=(cos,sin),
++                layer_index=lid,loader=loader,period_size=period_size,
++                impress_selection_block_size=impress_selection_block_size,
++                impress_selection_period_size=impress_selection_period_size)
++            if chosen_period != impress_selection_period_size:
++                raise RuntimeError("Adaptive selector periods are not supported")
++            state.schedule_window(loader,lid,min(g["layers"],lid+chosen_period))
++            loader.prefetch_selector_keys(lid+chosen_period)
++        pk,pv = state.resolve(loader,lid,dtype=hidden.dtype,device=hidden.device)
++        residual = hidden
++        x = layer.input_layernorm(hidden)
++        attn = layer.self_attn
++        q = attn.q_proj(x).view(b,t,g["q_heads"],g["head_dim"])
++        k = attn.k_proj(x).view(b,t,g["kv_heads"],g["head_dim"])
++        v = attn.v_proj(x).view(b,t,g["kv_heads"],g["head_dim"])
++        q,k = apply_rope(q,cos,sin),apply_rope(k,cos,sin)
++        # Existing DynamicCache API; cache length intentionally excludes prefix.
++        tk,tv = cache.update(k.transpose(1,2),v.transpose(1,2),lid,
++                            {"cos":cos,"sin":sin,"cache_position":positions})
++        state.tail_lengths[lid] = max(state.tail_lengths.get(lid,0),int(tk.shape[2]))
++        out = segmented_attention(q,pk,pv,tk.transpose(1,2),tv.transpose(1,2),
++                                  reader=state.readers.get(lid),backend=state.backend)
++        hidden = residual + attn.o_proj(out.reshape(b,t,-1).contiguous())
++        hidden = hidden + layer.mlp(layer.post_attention_layernorm(hidden))
++    return model.lm_head(core.norm(hidden))
++
++
++class SharedRuntime:
++    def __init__(self, *, mode, backend, adapter_dir=None, stats_path=None, allow_diagnostic=False):
++        if mode not in ("identity","shared") or backend not in ("reference","flash2","vllm2"):
++            raise ValueError("Unsupported runtime configuration")
++        self.mode,self.backend = mode,backend
++        self.allow_diagnostic = allow_diagnostic
++        self.adapter_dir = Path(adapter_dir) if adapter_dir else None
++        self.stats_path = Path(stats_path) if stats_path else None
++        self.prepared = {}
++        if mode=="shared" and adapter_dir is None:
++            raise ValueError("--adapters is required for shared mode")
++
++    def _prepare(self,model,loader,period):
++        task = loader._info.task
++        if task in self.prepared:
++            return self.prepared[task]
++        g = geometry(model.config)
++        if model.config.model_type != "qwen2" or getattr(model.config,"use_sliding_window",False):
++            raise ValueError("Only full-attention Qwen2/Qwen2.5 is supported")
++        if getattr(model.config,"rope_scaling",None) is not None:
++            raise ValueError("v1 requires the unmodified fixed RoPE configuration; scaling needs additional validation")
++        for layer in model.model.layers:
++            if getattr(layer.self_attn,"sliding_window",None) is not None:
++                raise ValueError("Sliding-window layer detected")
++            if hasattr(layer.self_attn,"q_norm") or hasattr(layer.self_attn,"k_norm"):
++                raise ValueError("QK normalization requires a different integration")
++        device = next(model.parameters()).device
++        dtype = next(model.parameters()).dtype
++        if dtype != torch.bfloat16:
++            raise ValueError("The compiler models the repository BF16-compute/FP16-payload path")
++        readers,banned = {},set()
++        sources = list(range(g["layers"]))
++        if self.mode=="shared":
++            bundle = load_safe(self.adapter_dir/f"{task}.pt")
++            if bundle.get("diagnostic_only",False) and not self.allow_diagnostic:
++                raise ValueError("Locally rejected candidate bundle: use --allow-diagnostic only for research ablations")
++            if bundle["format"]!=FORMAT or bundle["base_commit"]!=BASE_COMMIT:
++                raise ValueError("Unsupported bundle/repository version")
++            checks = {"task":task,"token_hash":loader._info.token_hash,"prefix_tokens":loader.prefix_tokens,
++                      "geometry":g,"period":period,"keep_ratio":float(loader.keep_ratio)}
++            for key,value in checks.items():
++                if bundle[key]!=value:
++                    raise ValueError(f"Reader identity/configuration mismatch: {key}")
++            if loader._selector_index is None or bundle["model_identity"]!=loader._selector_index.payload["model_identity"]:
++                raise ValueError("Reader/model/adapter/config fingerprint mismatch")
++            sources = list(bundle["sources"])
++            if len(sources) != g["layers"]:
++                raise ValueError("Shared source map length differs from layer count")
++            readers = {int(l):Reader.from_state_dict(p).to(device=device,dtype=dtype)
++                       for l,p in bundle["readers"].items()}
++            if set(readers)!={l for l,s in enumerate(sources) if l!=s}:
++                raise ValueError("Every shared consumer must have exactly one reader")
++            banned = set(bundle["calibration_query_hashes"])
++        validate_sources(sources,period=period)
++        if self.backend in ("flash2","vllm2"):
++            # Small warm-up/probe before original logits-ready TTFT boundary.
++            # This is not a CUDA parity certification; run GPU tests first.
++            from .core import attention_with_lse
++            q = torch.zeros(1,2,g["q_heads"],g["head_dim"],device=device,dtype=dtype)
++            k = torch.zeros(1,3,g["kv_heads"],g["head_dim"],device=device,dtype=dtype)
++            attention_with_lse(q,k,k,backend=self.backend,causal=True)
++            torch.cuda.synchronize()
++        prepared = (g,sources,readers,banned)
++        self.prepared[task] = prepared
++        return prepared
++
++    def install(self,runner):
++        original_greedy = runner.greedy_flexgen_completion
++        runtime_variant = runner.runtime_variant
++        runner.runtime_variant = lambda **kw: runtime_variant(**kw)+f"+readside-{self.mode}-{self.backend}"
++        runner.flexgen_sparse_decoder_logits = decoder_logits
++        def completion(*args,**kw):
++            model,loader = kw["model"],kw["loader"]
++            period = kw["impress_selection_period_size"]
++            if not loader.online_selection or loader.method!="impress" or not loader.impress_async_prefetch:
++                raise ValueError("Use current online, async fixed-period ProMixed configuration")
++            if not loader.promixed_policy or loader.promixed_policy.get("reuse_mode")!="fixed":
++                raise ValueError("Only fixed reuse mode is supported")
++            if loader.promixed_policy.get("adaptive_coverage",False):
++                raise ValueError("Adaptive coverage is outside the v1 contract")
++            if any(getattr(loader,n,False) for n in ("impress_rolling_period_prefetch","impress_priority_prefetch","impress_value_ordered_prefetch")):
++                raise ValueError("Predictive/speculative schedulers must be disabled")
++            if getattr(loader,"impress_period_prefetch_size",1)!=1:
++                raise ValueError("Use --impress-period-prefetch-size 1")
++            if getattr(loader,"_physical_to_logical",None) is not None:
++                raise ValueError("Reordered physical token storage is unsupported")
++            prep_started = time.perf_counter()
++            g,sources,readers,banned = self._prepare(model,loader,period)
++            prep_ms = (time.perf_counter()-prep_started)*1000
++            digest = query_hash(kw["query_token_ids"])
++            if digest in banned:
++                raise ValueError("Evaluation query occurs in reader fit/validation set; leakage rejected")
++            state = RequestState(sources,readers,self.backend,geometry=g)
++            token = _ACTIVE.set(state)
++            try:
++                result = original_greedy(*args,**kw)
++                if self.stats_path:
++                    h,d = g["kv_heads"],g["head_dim"]
++                    logical = sum(len(x) for x in loader._selected_by_layer)*2*h*d*2
++                    unique = sum(len(loader._selected_by_layer[s]) for s in state.bank)*2*h*d*2
++                    stats = {"query_hash":digest,"task":loader._info.task,"mode":self.mode,
++                        "backend":self.backend,"sources":sources,"physical_resolve_calls":state.resolve_calls,
++                        "private_tail_lengths":state.tail_lengths,
++                        "query_tokens":len(kw["query_token_ids"]),
++                        "requested_max_tokens":kw["max_tokens"],
++                        "prefix_storage_ptrs_by_layer":[[state.bank[s][0].data_ptr(),state.bank[s][1].data_ptr()] for s in sources],
++                        "cuda_allocated_bytes":torch.cuda.memory_allocated(),
++                        "cuda_peak_allocated_bytes":torch.cuda.max_memory_allocated(),
++                        "logical_selected_payload_bytes_fp16":logical,
++                        "unique_selected_payload_bytes_fp16":unique,
++                        "request_prefix_buffer_bytes":sum(x.numel()*x.element_size() for kv in state.bank.values() for x in kv),
++                        "resident_reader_bytes":sum(x.numel()*x.element_size() for r in readers.values() for x in (r.A,r.B,r.bk,r.bv)),
++                        "preparation_ms_outside_logits_ttft":prep_ms,
++                        "logits_ready_ms":result[1] if isinstance(result[1],(float,int)) else None,
++                        "note":"Selected-byte counts are not hardware H2D bytes. Use native loader source statistics/Nsight for transfers."}
++                    self.stats_path.parent.mkdir(parents=True,exist_ok=True)
++                    with self.stats_path.open("a") as f:
++                        f.write(json.dumps(stats)+"\n")
++                return result
++            finally:
++                _ACTIVE.reset(token)
++        runner.greedy_flexgen_completion = completion
+--- a/src/contiguous_fuxian/sharedkv/selection.py
++++ b/src/contiguous_fuxian/sharedkv/selection.py
+@@ -0,0 +1,22 @@
++"""Temporarily freeze selected IDs without retaining request loader cycles."""
++from contextlib import contextmanager
++
++@contextmanager
++def fixed_selection(loader, selected):
++    name = "configure_impress_layer"
++    had_override = name in vars(loader)
++    previous_override = vars(loader).get(name)
++    configure = loader.configure_impress_layer
++    def fixed_configure(*, layer, selected_tokens, prefetch_priority_tokens=None):
++        ids = selected[layer]
++        return configure(layer=layer,selected_tokens=ids,prefetch_priority_tokens=ids)
++    setattr(loader,name,fixed_configure)
++    try:
++        yield
++    finally:
++        # Restoring a newly bound class method into the instance dict creates
++        # loader -> bound_method -> loader. Restore attribute ownership instead.
++        if had_override:
++            setattr(loader,name,previous_override)
++        else:
++            delattr(loader,name)
+--- a/scripts/analyze_layerkv.py
++++ b/scripts/analyze_layerkv.py
+@@ -0,0 +1,92 @@
++#!/usr/bin/env python3
++from pathlib import Path
++import csv,json,statistics,random,hashlib,difflib
++import torch
++ROOT=Path(__file__).resolve().parents[1]
++# These capture files were generated by this experiment under results/, never user-supplied pickle inputs.
++torch.set_num_threads(4)
++names=['fullkv','original','identity','original_context','direct1','dense1','dense3','dense7','dense1_repeat','original_repeat','identity_fixed_v2','dense1_fixed_v2','original_gen8','dense1_gen8']
++rows={}
++for name in names:
++ p=ROOT/'results'/name/'scored_records.jsonl'
++ if p.exists():rows[name]=[json.loads(x) for x in p.read_text().splitlines()]
++baseline={x['uid']:x for x in rows['original']}
++def mean(x):return statistics.mean(x) if x else None
++def paired_ci(d):
++ rng=random.Random(912);n=len(d)
++ boot=sorted(sum(d[rng.randrange(n)] for _ in range(n))/n for _ in range(2000))
++ return [boot[50],boot[1950]]
++result=[]
++for name, rs in rows.items():
++ n=len(rs);t=sorted(x['ttft_ms'] for x in rs)
++ d=[int(x['correct'])-int(baseline[x['uid']]['correct']) for x in rs]
++ row={'variant':name,'n':n,'accuracy':mean([x['correct'] for x in rs]),
++      'accuracy_delta_vs_original':mean(d),'paired_bootstrap95_delta':paired_ci(d),
++      'prediction_agreement_vs_original':mean([x['prediction']==baseline[x['uid']]['prediction'] for x in rs]),
++      'mean_ttft_ms':mean(t),'p95_ttft_ms':t[min(n-1,int(.95*n))],
++      'mean_physical_prefetch_bytes':mean([x['physical_prefetch_kv_bytes'] for x in rs]),
++      'mean_logical_selected_bytes':mean([x['selected_kv_bytes'] for x in rs]),
++      'mean_ssd_read_bytes':mean([x['total_ssd_read_bytes'] for x in rs]),
++      'mean_selector_bytes':mean([x['selector_key_bytes'] for x in rs]),
++      'selection_agreement_vs_original':mean([x['layer_token_selection_sha256']==baseline[x['uid']]['layer_token_selection_sha256'] for x in rs])}
++ # Loader source counters count K and V tensor tokens separately.
++ head_bytes=4*128*2
++ row['mean_host_source_payload_bytes']=mean([(x['prefetch_cpu_source_tensor_tokens']+x['prefetch_disk_source_tensor_tokens'])*head_bytes for x in rs])
++ extra=ROOT/'results'/f'{name}.extra.jsonl'
++ if extra.exists():
++  es=[json.loads(x) for x in extra.read_text().splitlines()][-n:]
++  row.update(mean_unique_selected_bytes=mean([x['unique_selected_payload_bytes_fp16'] for x in es]),
++             physical_resolve_calls=sorted(set(x['physical_resolve_calls'] for x in es)),
++             reader_bytes=max(x['resident_reader_bytes'] for x in es),
++             prefix_buffer_bytes=max(x['request_prefix_buffer_bytes'] for x in es))
++  if 'prefix_storage_ptrs_by_layer' in es[0]:
++   row['physical_alias_verified']=all(all(x['prefix_storage_ptrs_by_layer'][lid]==x['prefix_storage_ptrs_by_layer'][src] for lid,src in enumerate(x['sources'])) and len(set(tuple(p) for p in x['prefix_storage_ptrs_by_layer']))==x['physical_resolve_calls'] for x in es)
++  if 'query_tokens' in es[0]:
++   row['private_cache_bounded']=all(all(v<=x['query_tokens']+max(x['requested_max_tokens']-1,3) for v in x['private_tail_lengths'].values()) for x in es)
++ # Full-vocabulary first-token comparison on exactly the available matched queries.
++ lp=ROOT/'results'/f'{name}_logits'
++ kl=[];rmse=[];top=[];completions=[]
++ if lp.exists():
++  for p in sorted(lp.glob('*.pt')):
++   bp=ROOT/'results/original_logits'/p.name
++   if not bp.exists():continue
++   b=torch.load(bp,weights_only=False)['logits'].float()
++   saved=torch.load(p,weights_only=False);x=saved['logits'].float()
++   kl.append((b.softmax(-1)*(b.log_softmax(-1)-x.log_softmax(-1))).sum().item())
++   rmse.append((b-x).square().mean().sqrt().item());top.append(int(b.argmax()==x.argmax()))
++   gp=ROOT/'results/original_gen8_logits'/p.name
++   if name=='dense1_gen8' and gp.exists():
++    old=torch.load(gp,weights_only=False)
++    completions.append({'query_hash':p.stem,'original':old.get('completion'),'shared':saved.get('completion')})
++  row.update(logits_compared=len(kl),mean_logits_kl=mean(kl),mean_logits_rmse=mean(rmse),greedy_agreement=mean(top))
++  if completions:
++   row['generation_exact_match']=mean([x['original']==x['shared'] for x in completions])
++   (ROOT/'results/generation_examples.json').write_text(json.dumps(completions,indent=2,ensure_ascii=False))
++ result.append(row)
++(ROOT/'results/comparison.json').write_text(json.dumps(result,indent=2))
++columns=sorted(set().union(*(x.keys() for x in result)))
++with (ROOT/'results/comparison.csv').open('w') as f:
++ w=csv.DictWriter(f,fieldnames=columns);w.writeheader();w.writerows(result)
++# Confirm calibration/test separation using actual trace and captured query hashes.
++fit={p.stem for p in (ROOT/'runtime_data/cal_fit/trec').glob('*.pt')}
++val={p.stem for p in (ROOT/'runtime_data/cal_val/trec').glob('*.pt')}
++test={p.stem for p in (ROOT/'results/original_logits').glob('*.pt')}
++separation={'fit':len(fit),'validation':len(val),'test':len(test),'pairwise_disjoint':not(fit&val or fit&test or val&test)}
++(ROOT/'results/split_validation.json').write_text(json.dumps(separation,indent=2))
++source=Path('/home/panzihang/src/prism_pans')
++before=json.loads((ROOT/'audit/source_before.json').read_text())
++changes=[f for f,h in before.items() if hashlib.sha256((source/f).read_bytes()).hexdigest()!=h]
++(ROOT/'audit/source_integrity.json').write_text(json.dumps({'checked_files':len(before),'changed_files':changes,'unchanged':not changes},indent=2))
++patch=[]
++for folder in ['src','scripts','tests','configs']:
++ for p in sorted((ROOT/folder).rglob('*')):
++  if p.suffix not in ['.py','.sh','.json'] or '__pycache__' in p.parts:continue
++  rel=p.relative_to(ROOT);op=source/rel
++  try:
++   old=op.read_text() if op.exists() else ''
++   new=p.read_text()
++  except UnicodeError:continue
++  if old!=new:patch.extend(difflib.unified_diff(old.splitlines(True),new.splitlines(True),fromfile='a/'+str(rel),tofile='b/'+str(rel)))
++(ROOT/'audit/implementation.patch').write_text(''.join(patch))
++print(json.dumps(result,indent=2))
++print('SPLIT',separation,'SOURCE_CHANGED',changes)
+--- a/scripts/bench_sharedkv.py
++++ b/scripts/bench_sharedkv.py
+@@ -0,0 +1,60 @@
++#!/usr/bin/env python3
++"""Synthetic GPU transfer+attention microbenchmark, NOT model TTFT/quality.
++
++Baseline and shared variants both use the same two-segment attention backend.
++The source tensors are equal across the two synthetic layers, so the shared
++variant can use identity readers. Include real learned-reader costs separately
++in the model-level run_sharedkv.py experiment.
++"""
++from pathlib import Path
++import argparse,json,sys,time,statistics
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
++import torch
++from contiguous_fuxian.sharedkv.core import Reader,segmented_attention
++
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__)
++    p.add_argument("--prefix-tokens",type=int,default=8192)
++    p.add_argument("--query-tokens",type=int,default=64)
++    p.add_argument("--iterations",type=int,default=30)
++    p.add_argument("--warmup",type=int,default=5)
++    p.add_argument("--output",type=Path,required=True)
++    a=p.parse_args()
++    if not torch.cuda.is_available():raise RuntimeError("CUDA is required; no CPU timing fallback")
++    if min(a.prefix_tokens,a.query_tokens,a.iterations)<=0:raise ValueError("Positive sizes required")
++    if a.output.exists():raise FileExistsError(a.output)
++    torch.manual_seed(0)
++    hk,hq,d=4,28,128
++    cpu=[torch.randn(1,a.prefix_tokens,hk,d,dtype=torch.float16).pin_memory() for _ in range(2)]
++    q=[torch.randn(1,a.query_tokens,hq,d,device="cuda",dtype=torch.bfloat16) for _ in range(2)]
++    kt=torch.randn(1,a.query_tokens,hk,d,device="cuda",dtype=torch.bfloat16)
++    vt=torch.randn_like(kt)
++    eye=torch.eye(d,device="cuda",dtype=torch.bfloat16).repeat(hk,1,1)
++    reader=Reader(eye,eye,torch.zeros(hk,d,device="cuda",dtype=torch.bfloat16),torch.zeros(hk,d,device="cuda",dtype=torch.bfloat16))
++    def transfer():return tuple(x.to("cuda",non_blocking=True).to(torch.bfloat16) for x in cpu)
++    def run(shared):
++        bank=None
++        for i in range(2):
++            if bank is None or not shared:bank=transfer()
++            out=segmented_attention(q[i],*bank,kt,vt,reader=reader if shared and i==1 else None,backend="flash2")
++        return out
++    measured={"independent":[],"shared":[]}
++    with torch.inference_mode():
++        for i in range(a.warmup):run(False);run(True)
++        torch.cuda.synchronize()
++        for i in range(a.iterations):
++            for shared in ((False,True) if i%2==0 else (True,False)):
++                torch.cuda.synchronize();start=time.perf_counter()
++                run(shared);torch.cuda.synchronize()
++                measured["shared" if shared else "independent"].append((time.perf_counter()-start)*1000)
++    one=sum(x.numel()*x.element_size() for x in cpu)
++    result={"type":"synthetic transfer+attention only; NOT model TTFT", "args":{k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},
++        "requested_cpu_to_gpu_payload_bytes":{"independent":2*one,"shared":one},
++        "ms":{k:{"mean":statistics.mean(v),"median":statistics.median(v),"all":v} for k,v in measured.items()},
++        "torch":torch.__version__,"gpu":torch.cuda.get_device_name(),
++        "warning":"No SSD/host gather/index/MLP/real Qwen accuracy here. Equal synthetic KV is not evidence of cross-layer similarity."}
++    a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2))
++    print(json.dumps(result,indent=2))
++
++if __name__=="__main__":main()
+--- a/scripts/check_layerkv_stress.py
++++ b/scripts/check_layerkv_stress.py
+@@ -0,0 +1,22 @@
++#!/usr/bin/env python3
++from pathlib import Path
++import json,torch,statistics
++R=Path(__file__).resolve().parents[1]
++torch.set_num_threads(2)
++details=[]
++for p in sorted((R/'results/original_long_logits').glob('*.pt')):
++ q=R/'results/dense1_long_logits'/p.name
++ a=torch.load(p,weights_only=False);b=torch.load(q,weights_only=False)
++ x=a['logits'].float();y=b['logits'].float()
++ details.append({'query_hash':p.stem,'query_tokens':a['query_tokens'],
++                 'original_completion':a['completion'],'shared_completion':b['completion'],
++                 'logits_kl':(x.softmax(-1)*(x.log_softmax(-1)-y.log_softmax(-1))).sum().item()})
++extra=[json.loads(x) for x in (R/'results/dense1_long.extra.jsonl').read_text().splitlines()]
++report={'samples':len(details),'details':details,
++        'query_token_range':[min(x['query_tokens'] for x in details),max(x['query_tokens'] for x in details)],
++        'mean_logits_kl':statistics.mean(x['logits_kl'] for x in details),
++        'generation_exact_match':statistics.mean(x['original_completion']==x['shared_completion'] for x in details),
++        'private_cache_bounded':all(max(x['private_tail_lengths'].values())<=x['query_tokens']+3 for x in extra),
++        'scope':'Artificial neutral-padding stress cases, not a natural task-quality benchmark.'}
++(R/'results/long_query_stress.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
++print(json.dumps(report,indent=2,ensure_ascii=False))
+--- a/scripts/compile_sharedkv.py
++++ b/scripts/compile_sharedkv.py
+@@ -0,0 +1,6 @@
++#!/usr/bin/env python3
++from pathlib import Path
++import sys
++sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"src"))
++from contiguous_fuxian.sharedkv.compile import main
++if __name__=="__main__":main()
+--- a/scripts/compile_stage.sh
++++ b/scripts/compile_stage.sh
+@@ -0,0 +1,8 @@
++#!/bin/bash
++set -euo pipefail
++cd /home/panzihang/src/prism_layerkv
++export OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1
++PY=/home/panzihang/venvs/vllm-stable/bin/python
++$PY scripts/compile_sharedkv.py --store-root runtime_data/prefix_store --task trec --fit-traces runtime_data/cal_fit --validation-traces runtime_data/cal_val --pairs 2:3,6:7,10:11,14:15,18:19,22:23,26:27 --key-mode dense --output assets/layerkv_strict_forward/trec.pt --diagnostic-output assets/layerkv_diag_forward/trec.pt > logs/compile_forward.log 2>&1
++$PY scripts/compile_sharedkv.py --store-root runtime_data/prefix_store --task trec --fit-traces runtime_data/cal_fit --validation-traces runtime_data/cal_val --pairs 3:2,7:6,11:10,15:14,19:18,23:22,27:26 --key-mode dense --output assets/layerkv_strict_reverse/trec.pt --diagnostic-output assets/layerkv_diag_reverse/trec.pt > logs/compile_reverse.log 2>&1
++echo completed > logs/compile.done
+--- a/scripts/compile_structured.sh
++++ b/scripts/compile_structured.sh
+@@ -0,0 +1,8 @@
++#!/bin/bash
++set -euo pipefail
++cd /home/panzihang/src/prism_layerkv
++export OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1
++PY=/home/panzihang/venvs/vllm-stable/bin/python
++for mode in rope rope_rr; do
++$PY scripts/compile_sharedkv.py --store-root runtime_data/prefix_store --task trec --fit-traces runtime_data/cal_fit --validation-traces runtime_data/cal_val --pairs 26:27 --key-mode "$mode" --rank 16 --output "assets/layerkv_${mode}_strict/trec.pt" --diagnostic-output "assets/layerkv_${mode}_diagnostic/trec.pt" > "logs/compile_${mode}.log" 2>&1
++done
+--- a/scripts/experiments_after_baselines.sh
++++ b/scripts/experiments_after_baselines.sh
+@@ -0,0 +1,6 @@
++#!/bin/bash
++set -euo pipefail
++cd /home/panzihang/src/prism_layerkv
++while kill -0 50714 2>/dev/null; do sleep 5; done
++grep -q 'SUITE COMPLETE' logs/baselines.log
++exec env CUDA_VISIBLE_DEVICES=2 OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 /home/panzihang/venvs/vllm-stable/bin/python scripts/run_layerkv_suite.py configs/layerkv_experiments.json
+--- a/scripts/finalize_layerkv.sh
++++ b/scripts/finalize_layerkv.sh
+@@ -0,0 +1,12 @@
++#!/bin/bash
++set -euo pipefail
++cd /home/panzihang/src/prism_layerkv
++export CUDA_VISIBLE_DEVICES=2 OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src
++PY=/home/panzihang/venvs/vllm-stable/bin/python
++$PY scripts/run_layerkv_suite.py configs/layerkv_fixed_verification.json > logs/fixed_verification.log 2>&1
++cp logs/final_tests.log logs/final_tests_before_fixture_copy.log
++$PY -m pytest tests -q > logs/final_tests.log 2>&1
++$PY scripts/analyze_layerkv.py > logs/final_analysis.log 2>&1
++$PY scripts/check_layerkv_stress.py > logs/stress_check.log 2>&1
++$PY scripts/write_layerkv_report.py > logs/write_report.log 2>&1
++echo completed > logs/finalization.done
+--- a/scripts/run_layerkv_suite.py
++++ b/scripts/run_layerkv_suite.py
+@@ -0,0 +1,43 @@
++#!/usr/bin/env python3
++"""Run a JSON list of launcher argument arrays; fresh Pcache store per job.
++Reuse frozen model weights and content fingerprints only while all underlying
++weight/config file stat signatures stay unchanged. Setup remains outside TTFT.
++"""
++import argparse,sys,runpy,importlib,gc,json,time
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'))
++p=argparse.ArgumentParser();p.add_argument('jobs',type=Path);a=p.parse_args()
++import torch
++import contiguous_fuxian.flexgen_qwen_reprefill as runner
++import contiguous_fuxian.quantized_key_index as index
++load_model=runner._load_model_and_tokenizer
++identity=index.model_identity
++models={};identities={}
++def signature(path):
++    r=Path(path)
++    paths=sorted(set(r.glob('*.safetensors'))|set(r.glob('pytorch_model*.bin'))|
++                 set(r.glob('adapter_model*.bin'))|set(r.glob('*config.json')))
++    return tuple((str(x),x.stat().st_size,x.stat().st_mtime_ns,x.stat().st_ino) for x in paths)
++def cached_identity(path):
++    key=(str(Path(path).resolve()),signature(path))
++    if key not in identities: identities[key]=identity(path)
++    return identities[key]
++def cached_model(path,*,dtype,device):
++    key=(str(Path(path).resolve()),dtype,device,signature(path))
++    if key not in models: models[key]=load_model(path,dtype=dtype,device=device)
++    return models[key]
++index.model_identity=cached_identity
++log=ROOT/'logs'/f'{a.jobs.stem}.progress.jsonl'
++for job in json.loads(a.jobs.read_text()):
++    importlib.reload(runner)
++    runner._load_model_and_tokenizer=cached_model
++    torch.cuda.reset_peak_memory_stats()
++    started=time.time()
++    print('START',job,flush=True)
++    sys.argv=[str(ROOT/'scripts/run_sharedkv.py'),*job]
++    runpy.run_path(str(ROOT/'scripts/run_sharedkv.py'),run_name='__main__')
++    gc.collect();torch.cuda.empty_cache()
++    with log.open('a') as f:f.write(json.dumps({'args':job,'wall_s':time.time()-started,'cuda_peak_allocated_bytes':torch.cuda.max_memory_allocated(),'cuda_peak_reserved_bytes':torch.cuda.max_memory_reserved()})+'\n')
++    print('FINISHED',round(time.time()-started,2),flush=True)
++print('SUITE COMPLETE',flush=True)
+--- a/scripts/run_round4.py
++++ b/scripts/run_round4.py
+@@ -4,6 +4,8 @@
+ from pathlib import Path
+ ROOT=Path(__file__).resolve().parents[1]
+ p=argparse.ArgumentParser()
++p.add_argument('--bundle-dir',type=Path,default=ROOT/'data/paper_task_bundles_full_eval_strict')
++p.add_argument('--max-tokens',type=int,default=1)
+ p.add_argument('--task',choices=['sst2','subj','trec','rte'],required=True)
+ p.add_argument('--output',type=Path,required=True)
+ p.add_argument('--samples',type=int,default=1000000)
+@@ -11,7 +13,7 @@
+ p.add_argument('--profile',choices=['none','viztracer','nsys','torch'],default='none')
+ p.add_argument('--period',type=int,choices=[1,2,4,8],default=8)
+ p.add_argument('--timing',choices=['deferred','sync'],default='deferred')
+-p.add_argument('--budget',type=int,choices=[5,10,25,50],default=25)
++p.add_argument('--budget',type=int,choices=[5,10,25,50,100],default=25)
+ p.add_argument('--variant',choices=['optimized','baseline'],default='optimized')
+ a=p.parse_args()
+ CODE_ROOT=ROOT if a.variant=='optimized' else ROOT/'audit/round4_baseline'
+@@ -87,12 +89,12 @@
+     state['profile'] = tracer
+ argv=[
+ '--model-path','/data1/llm/Qwen/Qwen2.5-7B-Instruct',
+-'--bundle-dir',str(ROOT/'data/paper_task_bundles_full_eval_strict'),
++'--bundle-dir',str(a.bundle_dir),
+ '--store-root',str(ROOT/'runtime_data/prefix_store'),
+ '--plan',str(ROOT/'configs/round2'/f'qwen25_k{a.budget:03d}_uniform.json'),
+ '--flexgen-root',str(CODE_ROOT/'vendor/flexgen'),'--flexgen-kv-dir',str(ROOT/'runtime_data/pcache_c16'),
+ '--reuse-flexgen-kv','--tasks',a.task,'--store-tasks','sst2,subj,trec,rte',
+-'--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens','1',
++'--output-dir',str(a.output),'--samples-per-task',str(a.samples),'--max-tokens',str(a.max_tokens),
+ '--accuracy-scoring','label_continuation_loglikelihood','--dtype','bfloat16','--device','cuda',
+ '--gpu-cache-mb','55','--cpu-cache-mb','131','--cache-type','CKLFU',
+ '--online-selection','--probe-query-heads','0,7,14,21','--selector-kv-head-ids','0,1,2,3',
+@@ -104,7 +106,7 @@
+ '--no-impress-value-ordered-prefetch','--no-defer-cache-score-updates',
+ '--impress-known-period-prefetch' if a.period>1 else '--no-impress-known-period-prefetch',
+ '--period-size','8','--subperiod-size','4','--expected-keep-ratio',str(a.budget/100),
+-'--warmup-passes','1' if a.warmup else '0','--warmup-samples-per-task',str(a.warmup),
++'--warmup-passes','1' if a.warmup else '0','--warmup-samples-per-task',str(max(1,a.warmup)),
+ '--selector-index-dir',str(ROOT/'assets/selector_index_k4_g32')]
+ sys.argv=[runner.__file__]+argv
+ try:
+--- a/scripts/run_sharedkv.py
++++ b/scripts/run_sharedkv.py
+@@ -0,0 +1,84 @@
++#!/usr/bin/env python3
++"""Opt-in launcher over the repository's existing scripts/run_round4.py.
++
++Example: python scripts/run_sharedkv.py --mode identity --backend flash2 --
++         --task trec --budget 25 --period 8 --warmup 32 --output results/id
++"""
++from pathlib import Path
++import argparse
++import hashlib
++import runpy
++import sys
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/"src"))
++
++
++def main():
++    p=argparse.ArgumentParser(description=__doc__)
++    p.add_argument("--mode",choices=["original","collect","identity","shared"],required=True)
++    p.add_argument("--backend",choices=["reference","flash2","vllm2"],default="vllm2")
++    p.add_argument("--adapters",type=Path)
++    p.add_argument("--allow-diagnostic",action="store_true")
++    p.add_argument("--trace-dir",type=Path)
++    p.add_argument("--stats",type=Path)
++    p.add_argument("--logits",type=Path)
++    p.add_argument("--selection-plan",type=Path)
++    p.add_argument("--max-query-samples",type=int,default=8)
++    p.add_argument("round4_args",nargs=argparse.REMAINDER)
++    a=p.parse_args()
++    argv=a.round4_args
++    if argv and argv[0]=="--":argv=argv[1:]
++    if not argv:raise ValueError("Pass run_round4.py arguments after --")
++    checks={'scripts/run_round4.py': 'd9b973eb528c26e713f75b8620ec7cc9608b8dc8', 'src/contiguous_fuxian/flexgen_qwen_reprefill.py': 'd52f1f610b7e63d9b150f7bfdba2caaa2866101e', 'src/contiguous_fuxian/flexgen_pcache.py': 'b86364086588327f9b9a06e608968aa16b2ce20c'}
++    for name,expected in checks.items():
++        content=(ROOT/name).read_bytes()
++        actual=hashlib.sha1(b"blob "+str(len(content)).encode()+b"\0"+content).hexdigest()
++        if actual!=expected:
++            raise RuntimeError(f"Upstream file changed: {name}. Re-audit the integration rather than bypassing this guard.")
++    if "--variant" in argv and argv[argv.index("--variant")+1]!="optimized":
++        raise ValueError("Only the current optimized code tree is supported")
++    if "--profile" in argv and argv[argv.index("--profile")+1]!="none":
++        raise ValueError("Use unprofiled formal runs. Profile the new path externally in a separate process.")
++    import contiguous_fuxian.flexgen_qwen_reprefill as runner
++    if a.mode=="collect":
++        if a.trace_dir is None:raise ValueError("--trace-dir is required")
++        from contiguous_fuxian.sharedkv.collect import Collector
++        Collector(a.trace_dir,a.max_query_samples).install(runner)
++    elif a.mode in ("shared","identity"):
++        from contiguous_fuxian.sharedkv.runtime import SharedRuntime
++        if a.stats and a.stats.exists():raise FileExistsError(a.stats)
++        SharedRuntime(mode=a.mode,backend=a.backend,adapter_dir=a.adapters,stats_path=a.stats,allow_diagnostic=a.allow_diagnostic).install(runner)
++    if a.selection_plan:
++        import torch
++        from contiguous_fuxian.sharedkv.io import query_hash
++        unfrozen_completion = runner.greedy_flexgen_completion
++        def frozen_completion(*args, **kw):
++            path=a.selection_plan/(query_hash(kw["query_token_ids"])+".pt")
++            chosen=torch.load(path,map_location="cpu",weights_only=True)["selected_by_layer"]
++            loader=kw["loader"]
++            from contiguous_fuxian.sharedkv.selection import fixed_selection
++            with fixed_selection(loader,chosen):
++                return unfrozen_completion(*args,**kw)
++        runner.greedy_flexgen_completion=frozen_completion
++    if a.logits:
++        import torch
++        from contiguous_fuxian.sharedkv.io import query_hash
++        a.logits.mkdir(parents=True,exist_ok=True)
++        original_completion = runner.greedy_flexgen_completion
++        def capture(*args, **kw):
++            output = kw.get("first_token_logits_out")
++            if output is None:
++                output = []
++                kw["first_token_logits_out"] = output
++            result = original_completion(*args, **kw)
++            torch.save({"logits":output[-1], "completion":result[0], "query_tokens":len(kw["query_token_ids"]), "query_hash":query_hash(kw["query_token_ids"]),
++                        "selected_by_layer":kw["loader"]._selected_by_layer},
++                       a.logits / (query_hash(kw["query_token_ids"])+".pt"))
++            return result
++        runner.greedy_flexgen_completion = capture
++    sys.argv=[str(ROOT/"scripts/run_round4.py"),*argv]
++    runpy.run_path(str(ROOT/"scripts/run_round4.py"),run_name="__main__")
++
++
++if __name__=="__main__":main()
+--- a/scripts/stage1.sh
++++ b/scripts/stage1.sh
+@@ -0,0 +1,10 @@
++#!/bin/bash
++set -euo pipefail
++cd /home/panzihang/src/prism_layerkv
++export CUDA_VISIBLE_DEVICES=2 OMP_NUM_THREADS=4 PYTHONDONTWRITEBYTECODE=1
++PY=/home/panzihang/venvs/vllm-stable/bin/python
++$PY scripts/run_sharedkv.py --mode original --logits results/original_smoke_logits -- --task trec --budget 25 --period 8 --samples 16 --warmup 0 --bundle-dir data/sharedkv_splits/test --output results/original_smoke > logs/original_smoke.log 2>&1
++$PY scripts/run_sharedkv.py --mode identity --backend vllm2 --logits results/identity_smoke_logits --stats results/identity_smoke.extra.jsonl -- --task trec --budget 25 --period 8 --samples 16 --warmup 0 --bundle-dir data/sharedkv_splits/test --output results/identity_smoke > logs/identity_smoke.log 2>&1
++$PY scripts/run_sharedkv.py --mode collect --trace-dir runtime_data/cal_fit --max-query-samples 8 -- --task trec --budget 25 --period 8 --samples 32 --warmup 0 --bundle-dir data/sharedkv_splits/fit --output results/collect_fit > logs/collect_fit.log 2>&1
++$PY scripts/run_sharedkv.py --mode collect --trace-dir runtime_data/cal_val --max-query-samples 8 -- --task trec --budget 25 --period 8 --samples 32 --warmup 0 --bundle-dir data/sharedkv_splits/val --output results/collect_val > logs/collect_val.log 2>&1
++echo completed > logs/stage1.done
+--- a/scripts/write_layerkv_report.py
++++ b/scripts/write_layerkv_report.py
+@@ -0,0 +1,97 @@
++#!/usr/bin/env python3
++from pathlib import Path
++import json
++R=Path(__file__).resolve().parents[1]
++rows=json.loads((R/'results/comparison.json').read_text())
++by={x['variant']:x for x in rows}
++table=['|方案|请求数|准确率 %|TTFT ms|原路径 logits KL|实际预取 payload MB|物理 resolve 次数|',
++       '|---|---:|---:|---:|---:|---:|---:|']
++for name in ['fullkv','original','identity','original_context','direct1','dense1','dense3','dense7','dense1_repeat','original_repeat','identity_fixed_v2','dense1_fixed_v2']:
++ if name not in by:continue
++ x=by[name];kl=x.get('mean_logits_kl')
++ table.append(f"|{name}|{x['n']}|{100*x['accuracy']:.2f}|{x['mean_ttft_ms']:.2f}|{kl:.6f}" if kl is not None else f"|{name}|{x['n']}|{100*x['accuracy']:.2f}|{x['mean_ttft_ms']:.2f}|—")
++ table[-1]+=f"|{x['mean_physical_prefetch_bytes']/1e6:.2f}|{x.get('physical_resolve_calls','—')}|"
++local=['|K reader|局部输出相对 RMSE|prefix mass P95 误差|','|---|---:|---:|']
++for title,path in [('直接共享','layerkv_direct_strict'),('稠密 A/B','layerkv_strict_forward'),('RoPE 块','layerkv_rope_strict'),('RoPE + rank16','layerkv_rope_rr_strict')]:
++ b=json.loads((R/f'assets/{path}/trec.report.json').read_text());v=b['reports']['27']
++ local.append(f"|{title}|{v['output_relative_rmse']:.6f}|{v['prefix_mass_p95_absolute_error']:.6f}|")
++split=json.loads((R/'results/split_validation.json').read_text())
++integrity=json.loads((R/'audit/source_integrity.json').read_text())
++dense=by['dense1'];direct=by['direct1'];original=by['original'];identity=by['identity']
++payload_saved=1-dense['mean_unique_selected_bytes']/identity['mean_unique_selected_bytes']
++kl_reduction=1-dense['mean_logits_kl']/direct['mean_logits_kl']
++ci=dense['paired_bootstrap95_delta']
++text=f"""# 跨层共享 prefix KV 实现与服务器实测
++
++功能已实现，单层对可以显著降低直接共享造成的输出分布偏移；扩大到 3 或 7 个层对后，本次分类质量明显下降。所有 14 个稠密候选方向均未通过原型默认的严格局部门限。固定选择集合的对照中，共享版慢于 identity，尚未证明共享本身带来稳定延迟收益。当前交付为可运行、可验证的研究实现，不能把这些诊断配置视为已验收的部署配置。
++
++## 实验设置
++
++- 路径：/home/panzihang/src/prism_layerkv；原目录 /home/panzihang/src/prism_pans 保留。
++- Qwen2.5-7B-Instruct，28 层、28 Q heads、4 KV heads、head_dim=128；FP16 payload、BF16 模型与在线 readers。
++- PyTorch 2.10.0+cu130、Transformers 4.57.6，服务器现有 vLLM FlashAttention-2，GPU 2 / RTX 3090。
++- TREC 固定 prefix 长 4940 tokens，P8 + K4 selector，25% 精确全局块预算；Full-KV 对照用 100%。
++- 拟合 32 条、验证 32 条、测试 128 条；seed=20260918。来自现有 strict 数据池，不是全新外部 holdout。实际 query hash 两两无交集：{split['pairwise_disjoint']}。
++- 测试请求未用于拟合或层对筛选。拟合使用无标签中间态、闭式回归和 SVD，主干参数不更新。
++- 主要质量组预热 8 条、评测相同 128 条；固定集合组 32 条，连续生成组 8 条，人工长 query 组 4 条且不预热。使用完整标签续写对数似然打分；TTFT 只计 logits-ready。
++- 批量实验共享已加载的冻结模型，模型文件 stat 未变时复用已计算的内容指纹；每组新建、关闭 Pcache store。模型加载、矩阵加载/预热及校准不计入 TTFT。
++- GPU 与服务器有其他负载。本次仅两次单层对与原路径的重复运行，不能据此宣称独占环境稳定加速或统计非劣。
++
++## 核心实现
++
++当前层正常生成自己的 Q/K/V。历史 prefix 读取时，在 post-RoPE Q 上应用 A 的转置；源 K/V 在请求级 bank 中仅加载和转换一次。prefix 条件输出经 B 和 bv 变换，bk 对 prefix logsumexp 的贡献显式保留，再与原生私有 tail attention 共同归一化。DynamicCache 中只保存 query/生成 token 的本层 K/V，标签续写 fork 不复制 prefix。
++
++新增 vllm2 后端不展开 GQA 的 KV heads，不重建 consumer prefix KV。每个 consumer 的 BF16 A/B/bias 占 264192 bytes。在线仍为稠密矩阵，rank 约束只用于拟合。
++
++原 runner 和 Pcache 的核心源文件没有改写。新增入口支持独立数据集、连续生成、固定选择计划、全词表 logits 保存、诊断导出。原型的 warmup=0 参数冲突已修复；接口 hash guard 针对实际复制的工作树重新记录。
++
++## 独立测试结果
++
++{chr(10).join(table)}
++
++original_context / original_repeat 是同一评测批次前后的原路径对照；dense1_repeat 为单层对重复。identity 使用新 attention/调度路径但不跨层共享。直接共享使用同一层对及单位 A/B，以控制读取路径。
++
++identity_fixed_v2 与 dense1_fixed_v2 使用 original 保存的相同选择集合，32 条请求，不能直接与 128 条均值作成对比较。这两组为最终有效结果；旧 fixed 目录仅保留为引用循环修复前的调试记录。共享版 288.61 ms 慢于 identity 的 245.35 ms，因此本次没有证实稳定的独立共享加速。详细逐请求记录、P95、配对 bootstrap 区间和来源字节在 results/comparison.json、comparison.csv。
++
++单层对选择为 **0-based 26 → 27**：
++- 平均 logits KL：直接共享 {direct['mean_logits_kl']:.6f}，补偿共享 {dense['mean_logits_kl']:.6f}，降低 {100*kl_reduction:.2f}%。
++- 准确率：原路径 {100*original['accuracy']:.2f}%，直接共享 {100*direct['accuracy']:.2f}%，补偿共享 {100*dense['accuracy']:.2f}%。补偿并未在这批分类准确率上超过直接共享；它的明确作用是更接近原模型分布。
++- 补偿共享相对 original 准确率差的配对 bootstrap 95% 区间为 [{100*ci[0]:.2f}, {100*ci[1]:.2f}] 个百分点。样本量不足以认证 0.5 或 1 个百分点的非劣界限。
++- 唯一加载次数 28 → 27，所选物理 payload 降低 {100*payload_saved:.2f}%。来源与消费者 data_ptr 一致，未重建长 prefix。
++- 单层对 TTFT 相比 original 有下降，但 identity 自身也更快，因此不能将整个下降归因于 KV 共享或 reader。固定集合对照与重复运行见表。
++- 3 个层对为 26→27、3→2、18→19；7 个层对再增加 22→23、15→14、10→11、6→7。层对依据验证集局部误差选择，不依据测试准确率。
++
++Full-KV 在本批数据上的分类准确率低于当前稀疏原路径，这是实测结果，不能预设 Full-KV 为这项分类协议的准确率上界。
++
++## 校准与结构消融
++
++对同一 26→27 层对，32 条独立验证请求的 teacher-state 局部指标：
++
++{chr(10).join(local)}
++
++默认接受门限是整体输出相对 RMSE <= 0.03、单请求最大 <= 0.08、prefix mass P95 误差 <= 0.03。14 个稠密方向通过数为 0，严格 bundle 自动保留原层 KV。诊断 bundle 必须显式 --allow-diagnostic，失败门限没有为了跑通而放宽。
++
++局部改善不能代替共享后的端到端评测。纯 RoPE 块表达能力不足；rank16 残差接近稠密结果，但并未达到严格门限。
++
++## 物理与计时口径
++
++额外 stats 记录每层 prefix 存储地址、实际 source resolve 次数、唯一所选 payload、reader bytes、请求级 prefix buffer 和私有 tail 长度。结果中的 physical_alias_verified / private_cache_bounded 应全部为 true。
++
++物理预取 payload 包括 GPU/CPU/SSD 来源，**不是 PCIe 总传输字节**。comparison.json 另给出 loader 来源计数推导的 host payload bytes；它也不是 Nsight 的硬件 H2D 认证。没有删除或压缩逐层 SSD 文件，不能宣称磁盘存储减少。
++
++新路径禁用了原路径的推测 next-layer 预取。原路径相对 identity 的差异还包含后端、mask、cache 组织和调度成本。跨请求的 cache score 没有扩展为按逻辑消费者加权的 alias-aware 策略。不同选择集合的 union 加载、batch>1、动态 RoPE 和融合 reader kernel 均未实现。
++
++## 正确性、连续生成与长 query
++
++最终完整测试为 342 passed、2 skipped、87 subtests passed；2 项跳过的是需要独立 flash_attn 包的测试，vLLM FA2 GPU 测试已通过。记录见 logs/final_tests.log，包括数学恒等式、共同归一化、RoPE、GQA、source 去重、真实 Qwen prefill/decode、私有 cache 及诊断 gate。
++
++8 条最多 8-token 连续生成的原路径/共享输出文本全部一致，私有 cache 长度检查通过；逐条文本见 results/generation_examples.json。长 query 压力检查使用 4 条测试请求加中性 padding，检查位置与 cache 生命周期，不作为自然任务质量基准；query 长度 687–696 tokens，4 条中 3 条生成文本完全相同，平均 logits KL 0.01666，私有 cache 长度检查通过。结果见 results/long_query_stress.json。
++
++## 文件完整性和复现
++
++源代码/配置/脚本/vendor 检查 {integrity['checked_files']} 个文件，原目录内容哈希均未变化：{integrity['unchanged']}。实现补丁见 audit/implementation.patch；源仓库 HEAD=61318220e7df80488292b54b00a87134a031f169，同时保留其未提交修改。
++
++全部实验与结果在服务器。README_LAYERKV.md 提供单次命令，configs/layerkv_baselines.json 与 configs/layerkv_experiments.json 记录本次全部参数，scripts/analyze_layerkv.py 可重建对比与完整性检查。
++"""
++(R/'EXPERIMENT_REPORT_ZH.md').write_text(text)
++print('Wrote',R/'EXPERIMENT_REPORT_ZH.md')
+--- a/tests/test_layerkv_integration.py
++++ b/tests/test_layerkv_integration.py
+@@ -0,0 +1,94 @@
++import copy
++import pytest
++import torch
++from transformers import Qwen2Config, Qwen2ForCausalLM
++from transformers.cache_utils import DynamicCache
++from contiguous_fuxian.sharedkv.core import attention_with_lse
++from contiguous_fuxian.sharedkv.runtime import RequestState, _ACTIVE, decoder_logits
++
++@pytest.mark.skipif(not torch.cuda.is_available(),reason="CUDA unavailable")
++@pytest.mark.parametrize("batch,t,n,causal",[(1,1,71,True),(1,7,71,True),(2,5,71,False),(2,5,71,True)])
++def test_vllm_qwen_gqa_lse(batch,t,n,causal):
++    torch.manual_seed(91)
++    q=torch.randn(batch,t,28,128,device="cuda",dtype=torch.bfloat16)
++    k=torch.randn(batch,n,4,128,device="cuda",dtype=q.dtype)
++    v=torch.randn_like(k)
++    a,l=attention_with_lse(q,k,v,backend="vllm2",causal=causal)
++    b,m=attention_with_lse(q,k,v,backend="reference",causal=causal)
++    torch.testing.assert_close(a,b,atol=.016,rtol=.03)
++    torch.testing.assert_close(l,m,atol=2e-5,rtol=2e-5)
++
++def test_actual_qwen_identity_prefill_decode_and_private_cache(monkeypatch):
++    torch.manual_seed(912)
++    cfg=Qwen2Config(vocab_size=128,hidden_size=64,intermediate_size=128,
++                   num_hidden_layers=3,num_attention_heads=4,num_key_value_heads=2,
++                   max_position_embeddings=256)
++    cfg._attn_implementation="eager"
++    model=Qwen2ForCausalLM(cfg).eval()
++    prefix=torch.tensor([[2,3,4,5,6,7]])
++    with torch.inference_mode():
++        teacher=model(prefix,use_cache=True).past_key_values
++        pairs=[(x.keys.transpose(1,2)[0].clone(),x.values.transpose(1,2)[0].clone()) for x in teacher.layers]
++        class Loader:
++            _selected_by_layer=[list(range(6)) for _ in range(3)]
++            _loaded={}
++            def schedule(self,l): pass
++            def prefetch_selector_keys(self,l): pass
++            def resolve(self,l): return pairs[l]
++        loader=Loader()
++        monkeypatch.setattr("contiguous_fuxian.flexgen_qwen_reprefill.configure_online_layer_selection",lambda **kw:1)
++        g={"layers":3,"q_heads":4,"kv_heads":2,"head_dim":16}
++        state=RequestState(list(range(3)),{},"reference",geometry=g)
++        token=_ACTIVE.set(state)
++        cache=DynamicCache(config=cfg)
++        try:
++            for start,ids in [(6,[[11,12,13]]),(9,[[14]]),(10,[[15]])]:
++                x=torch.tensor(ids)
++                expected=model(x,past_key_values=teacher,use_cache=True).logits
++                actual=decoder_logits(model=model,input_ids=x,cache=cache,position_start=start,
++                                      loader=loader,period_size=1,subperiod_size=1)
++                torch.testing.assert_close(actual,expected,atol=2e-6,rtol=2e-5)
++                assert cache.get_seq_length()==start+x.shape[1]-6
++            assert state.resolve_calls==3
++        finally: _ACTIVE.reset(token)
++
++
++def test_diagnostic_bundle_requires_explicit_opt_in(monkeypatch):
++    from types import SimpleNamespace
++    from contiguous_fuxian.sharedkv.runtime import SharedRuntime
++    config=Qwen2Config(vocab_size=128,hidden_size=64,intermediate_size=128,
++                      num_hidden_layers=2,num_attention_heads=4,num_key_value_heads=2)
++    model=Qwen2ForCausalLM(config).to(torch.bfloat16)
++    loader=SimpleNamespace(_info=SimpleNamespace(task="demo"))
++    monkeypatch.setattr("contiguous_fuxian.sharedkv.runtime.load_safe",
++                        lambda path: {"diagnostic_only":True})
++    runtime=SharedRuntime(mode="shared",backend="reference",adapter_dir="unused")
++    with pytest.raises(ValueError,match="Locally rejected"):
++        runtime._prepare(model,loader,8)
++
++@pytest.mark.parametrize("fail",[False,True])
++def test_fixed_selection_restores_class_method_without_reference_cycle(fail):
++    import weakref
++    from contiguous_fuxian.sharedkv.selection import fixed_selection
++    class Loader:
++        def configure_impress_layer(self, **kw): return kw
++    loader=Loader()
++    weak=weakref.ref(loader)
++    try:
++        with fixed_selection(loader,[[2,4]]):
++            assert loader.configure_impress_layer(layer=0,selected_tokens=[1])["selected_tokens"]==[2,4]
++            if fail:raise RuntimeError("test")
++    except RuntimeError: pass
++    assert "configure_impress_layer" not in vars(loader)
++    del loader
++    assert weak() is None
++
++def test_fixed_selection_preserves_preexisting_instance_override():
++    from contiguous_fuxian.sharedkv.selection import fixed_selection
++    class Loader: pass
++    loader=Loader()
++    original=lambda **kw:kw
++    loader.configure_impress_layer=original
++    with fixed_selection(loader,[[2,4]]):
++        assert loader.configure_impress_layer(layer=0,selected_tokens=[1])["selected_tokens"]==[2,4]
++    assert loader.configure_impress_layer is original
+--- a/tests/test_sharedkv.py
++++ b/tests/test_sharedkv.py
+@@ -0,0 +1,298 @@
++import importlib.util
++import types
++import sys
++import torch
++import pytest
++from contiguous_fuxian.sharedkv.core import (Reader, attention_with_lse, segmented_attention,
++                                           rotate_half, query_transform)
++from contiguous_fuxian.sharedkv.fit import (commuting_rope_fit,fit_key_reader,
++                                          weighted_reduced_rank,fit_value_from_attention)
++from contiguous_fuxian.sharedkv.io import validate_sources
++from contiguous_fuxian.sharedkv.runtime import RequestState, decoder_logits, _ACTIVE
++
++torch.set_num_threads(2)
++
++
++def tensors(dtype=torch.float64,device="cpu",b=1,t=3,n=11,h=2,g=3,d=8,tail=5):
++    torch.manual_seed(42)
++    def r(*shape):return torch.randn(*shape,dtype=dtype,device=device)
++    return r(b,t,h*g,d),r(b,n,h,d),r(b,n,h,d),r(b,tail,h,d),r(b,tail,h,d)
++
++
++def dense_attn(q,k,v,causal=False):
++    g=q.shape[2]//k.shape[2]
++    k=k.repeat_interleave(g,dim=2);v=v.repeat_interleave(g,dim=2)
++    s=torch.einsum("bthd,bnhd->bhtn",q,k)*q.shape[-1]**-0.5
++    if causal:
++        tq,n=q.shape[1],k.shape[1]
++        mask=torch.arange(n)[None,:]<=torch.arange(n-tq,n)[:,None]
++        s=s.masked_fill(~mask[None,None],-torch.inf)
++    return torch.einsum("bhtn,bnhd->bthd",s.softmax(-1),v),s.logsumexp(-1)
++
++
++@pytest.mark.parametrize("causal",[False,True])
++@pytest.mark.parametrize("key_chunk",[2,7,32])
++def test_streaming_attention(causal,key_chunk):
++    q,k,v,_,_=tensors(b=2)
++    out,lse=attention_with_lse(q,k,v,causal=causal,key_chunk=key_chunk,query_chunk=2)
++    ref,rl=dense_attn(q,k,v,causal)
++    torch.testing.assert_close(out,ref,atol=1e-12,rtol=1e-12)
++    torch.testing.assert_close(lse,rl,atol=1e-12,rtol=1e-12)
++
++
++def test_joint_attention_affine_exact():
++    q,k,v,kt,vt=tensors()
++    h,d=k.shape[2:]
++    reader=Reader(torch.randn(h,d,d,dtype=q.dtype),torch.randn(h,d,d,dtype=q.dtype),
++                  torch.randn(h,d,dtype=q.dtype),torch.randn(h,d,dtype=q.dtype))
++    kh=torch.einsum("bthi,hij->bthj",k,reader.A)+reader.bk
++    vh=torch.einsum("bthi,hij->bthj",v,reader.B)+reader.bv
++    actual=segmented_attention(q,k,v,kt,vt,reader=reader)
++    # Concatenated prefix and bottom-right-causal private tail reference.
++    expected,_=dense_attn(q,torch.cat((kh,kt),1),torch.cat((vh,vt),1),True)
++    torch.testing.assert_close(actual,expected,atol=2e-12,rtol=2e-12)
++
++
++def test_omitting_key_bias_changes_mass():
++    q,k,v,kt,vt=tensors()
++    h,d=k.shape[2:]
++    i=torch.eye(d,dtype=q.dtype).repeat(h,1,1)
++    r=Reader(i,i,torch.ones(h,d,dtype=q.dtype)*3,torch.zeros(h,d,dtype=q.dtype))
++    out=segmented_attention(q,k,v,kt,vt,reader=r)
++    wrong=segmented_attention(q,k,v,kt,vt)
++    assert (out-wrong).abs().max()>0.1
++
++
++def test_value_bias_scaled_by_prefix_mass():
++    q,k,v,kt,vt=tensors()
++    h,d=k.shape[2:]
++    i=torch.eye(d,dtype=q.dtype).repeat(h,1,1)
++    r=Reader(i,i,torch.zeros(h,d,dtype=q.dtype),torch.ones(h,d,dtype=q.dtype))
++    actual=segmented_attention(q,k,v,kt,vt,reader=r)
++    wrong=segmented_attention(q,k,v,kt,vt)+1
++    assert (actual-wrong).abs().max()>0.05
++
++
++def test_identity_segmentation():
++    q,k,v,kt,vt=tensors()
++    out=segmented_attention(q,k,v,kt,vt)
++    ref,_=dense_attn(q,torch.cat((k,kt),1),torch.cat((v,vt),1),True)
++    torch.testing.assert_close(out,ref,atol=1e-12,rtol=1e-12)
++
++
++def test_gqa_group_specific_readers():
++    q,k,v,kt,vt=tensors()
++    h,d=k.shape[2:]
++    aa=torch.eye(d,dtype=q.dtype).repeat(h,1,1)
++    aa[1]*=2
++    r=Reader(aa,aa,torch.zeros(h,d,dtype=q.dtype),torch.zeros(h,d,dtype=q.dtype))
++    transformed=query_transform(q,r)
++    torch.testing.assert_close(transformed[:,:,:3],q[:,:,:3])
++    torch.testing.assert_close(transformed[:,:,3:],2*q[:,:,3:])
++
++
++def test_rope_commutation_split_half():
++    torch.manual_seed(1)
++    x=torch.randn(128,8,dtype=torch.float64)
++    y=torch.randn_like(x)
++    a=commuting_rope_fit(x,y)
++    theta=torch.randn(128,4,dtype=x.dtype)
++    c=torch.cat((theta.cos(),theta.cos()),-1)
++    s=torch.cat((theta.sin(),theta.sin()),-1)
++    rotate=lambda z:z*c+rotate_half(z)*s
++    torch.testing.assert_close(rotate(x@a),rotate(x)@a,rtol=1e-12,atol=1e-12)
++
++
++def test_dense_affine_fit_recovery():
++    torch.manual_seed(2)
++    x=torch.randn(512,8)
++    a=torch.randn(8,8);b=torch.randn(8)
++    y=x@a+b
++    af,bf,_=fit_key_reader(x,y,torch.randn(128,8),mode="dense",ridge=1e-8)
++    torch.testing.assert_close(af,a,rtol=1e-5,atol=1e-5)
++    torch.testing.assert_close(bf,b,rtol=1e-5,atol=1e-5)
++
++
++def test_rank_constraint_and_improvement():
++    torch.manual_seed(3)
++    x=torch.randn(500,8,dtype=torch.float64)
++    y=torch.randn(500,8,dtype=torch.float64)
++    metric=torch.diag(torch.arange(1,9,dtype=torch.float64))
++    losses=[]
++    for r in (0,1,3,8):
++        delta=weighted_reduced_rank(x,y,metric,r,1e-3)
++        assert int(torch.linalg.matrix_rank(delta,atol=1e-8))<=r
++        residual=x@delta-y
++        losses.append(float((residual@metric*residual).sum()))
++    assert all(a>=b-1e-8 for a,b in zip(losses,losses[1:]))
++
++
++def test_value_attention_regression():
++    torch.manual_seed(4)
++    us=torch.randn(512,8);uv=torch.randn_like(us)
++    b=torch.randn(8,8);bias=torch.randn(8)
++    ut=us@b+bias
++    mass=torch.rand(512)*0.9+0.05
++    bf,cf=fit_value_from_attention(us,ut,uv,mass,mass,ridge=1e-8)
++    torch.testing.assert_close(bf,b,atol=1e-5,rtol=1e-5)
++    torch.testing.assert_close(cf,bias,atol=1e-5,rtol=1e-5)
++
++
++@pytest.mark.parametrize("sources,period",[([1,1,2,3],2),([0,2,2,3],2),([0,2,1,3],4),([0,1,9,3],4)])
++def test_bad_source_maps(sources,period):
++    with pytest.raises(ValueError):validate_sources(sources,period=period)
++
++
++def test_valid_future_source():
++    validate_sources([0,1,3,3,4,5,6,7],period=8)
++
++
++class FakeLoader:
++    def __init__(self,k,v,layers=4):
++        self.k,self.v=k,v;self._loaded={};self.calls=[];self.schedules=[]
++        self._selected_by_layer=[list(range(k.shape[0])) for _ in range(layers)]
++    def resolve(self,lid):
++        self.calls.append(lid);return self.k,self.v
++    def schedule(self,lid):self.schedules.append(lid)
++    def prefetch_selector_keys(self,lid):pass
++
++
++def test_physical_resolve_once_and_alias():
++    _,k,v,_,_=tensors()
++    loader=FakeLoader(k[0],v[0])
++    state=RequestState([0,1,2,2],{},"reference")
++    state.schedule_window(loader,0,4)
++    a=state.resolve(loader,2,dtype=k.dtype,device=k.device)
++    b=state.resolve(loader,3,dtype=k.dtype,device=k.device)
++    assert a[0].data_ptr()==b[0].data_ptr()
++    assert a[1].data_ptr()==b[1].data_ptr()
++    assert loader.calls==[2] and loader.schedules==[0,1,2]
++
++
++def test_mismatched_selection_rejected():
++    _,k,v,_,_=tensors()
++    loader=FakeLoader(k[0],v[0]);loader._selected_by_layer[3]=[0]
++    with pytest.raises(RuntimeError):
++        RequestState([0,1,2,2],{},"reference").schedule_window(loader,0,4)
++
++
++class TinyCache:
++    def __init__(self,n):self.data=[None]*n
++    def get_seq_length(self,lid=0):return 0 if self.data[lid] is None else self.data[lid][0].shape[2]
++    def update(self,k,v,lid,extra):
++        old=self.data[lid]
++        if old is not None:k,v=torch.cat((old[0],k),2),torch.cat((old[1],v),2)
++        self.data[lid]=(k,v);return k,v
++    def fork(self):
++        c=TinyCache(len(self.data));c.data=[(k.clone(),v.clone()) for k,v in self.data];return c
++
++
++def test_decoder_private_tail_fork_and_shared_lifetime(monkeypatch):
++    torch.manual_seed(5)
++    hq,hk,d,nlayers=4,2,4,4
++    hidden=hq*d
++    def linear(out):return torch.nn.Linear(hidden,out,dtype=torch.float64)
++    class Core(torch.nn.Module):
++        def __init__(self):
++            super().__init__();self.embed_tokens=torch.nn.Embedding(23,hidden,dtype=torch.float64)
++            self.norm=torch.nn.Identity();self.layers=[]
++            for i in range(nlayers):
++                attn=types.SimpleNamespace(q_proj=linear(hq*d),k_proj=linear(hk*d),v_proj=linear(hk*d),o_proj=linear(hidden))
++                self.layers.append(types.SimpleNamespace(input_layernorm=torch.nn.Identity(),
++                    post_attention_layernorm=torch.nn.Identity(),self_attn=attn,mlp=linear(hidden)))
++        def rotary_emb(self,x,positions):
++            theta=positions.to(x.dtype)[...,None]*torch.tensor([0.1,0.5],dtype=x.dtype)
++            return torch.cat((theta.cos(),theta.cos()),-1),torch.cat((theta.sin(),theta.sin()),-1)
++    model=types.SimpleNamespace(model=Core(),lm_head=linear(23))
++    k=torch.randn(9,hk,d,dtype=torch.float64);v=torch.randn_like(k)
++    loader=FakeLoader(k,v)
++    runner=types.ModuleType("contiguous_fuxian.flexgen_qwen_reprefill")
++    runner.configure_online_layer_selection=lambda **kw:4
++    monkeypatch.setitem(sys.modules,"contiguous_fuxian.flexgen_qwen_reprefill",runner)
++    state=RequestState([0,1,2,2],{},"reference",geometry={"layers":4,"q_heads":hq,"kv_heads":hk,"head_dim":d})
++    token=_ACTIVE.set(state)
++    cache=TinyCache(4)
++    base=dict(model=model,loader=loader,period_size=4,subperiod_size=2,impress_selection_period_size=4)
++    try:
++        result=decoder_logits(input_ids=torch.tensor([[1,2,3]]),cache=cache,position_start=9,**base)
++        assert result.shape==(1,3,23)
++        assert cache.get_seq_length()==3 # private only, NOT 12.
++        fork=cache.fork()
++        out1=decoder_logits(input_ids=torch.tensor([[4]]),cache=cache,position_start=12,**base)
++        out2=decoder_logits(input_ids=torch.tensor([[4]]),cache=fork,position_start=12,**base)
++        torch.testing.assert_close(out1,out2)
++        assert loader.calls==[0,1,2] # neither decode nor label fork rereads prefix.
++        assert cache.data[0][0].data_ptr()!=fork.data[0][0].data_ptr()
++    finally:_ACTIVE.reset(token)
++
++
++@pytest.mark.skipif(not torch.cuda.is_available() or importlib.util.find_spec("flash_attn") is None,
++                    reason="CUDA and FlashAttention-2 unavailable")
++@pytest.mark.parametrize("dtype",[torch.float16,torch.bfloat16])
++def test_flash2_segmented_matches_reference(dtype):
++    q,k,v,kt,vt=tensors(dtype=dtype,device="cuda",d=128,t=5,n=67,tail=9)
++    h,d=k.shape[2:]
++    eye=torch.eye(d,device="cuda",dtype=dtype).repeat(h,1,1)
++    reader=Reader(eye*0.8,eye*1.1,torch.randn(h,d,device="cuda",dtype=dtype)*0.1,
++                  torch.randn(h,d,device="cuda",dtype=dtype)*0.1)
++    actual=segmented_attention(q,k,v,kt,vt,reader=reader,backend="flash2")
++    expected=segmented_attention(q,k,v,kt,vt,reader=reader,backend="reference")
++    torch.testing.assert_close(actual,expected,atol=0.025 if dtype==torch.bfloat16 else 0.004,rtol=0.03)
++
++
++def test_compiler_end_to_end_synthetic(tmp_path):
++    import json
++    from contiguous_fuxian.sharedkv.compile import main
++    from contiguous_fuxian.sharedkv.io import TRACE_FORMAT,BASE_COMMIT,load_safe
++    torch.manual_seed(8)
++    task="demo";n,h,d,hq,layers=32,2,4,4,4
++    store=tmp_path/"store"/task;store.mkdir(parents=True)
++    meta={"dtype":"bfloat16","layout":"token,kv_head,head_dim","task":task,
++          "prefix_tokens":n,"kv_heads":h,"head_dim":d,"layers":layers,"token_hash":"synthetic"}
++    (store/"metadata.json").write_text(json.dumps(meta))
++    k=torch.randn(n,h,d);v=torch.randn(n,h,d)
++    # Equal source/target ensures the pipeline can pass, without claiming real
++    # Qwen layers have this property. Roundtrip is exactly the documented store.
++    for lid in range(layers):
++        for kind,x in (("key",k),("value",v)):
++            (store/f"layer_{lid:02d}_{kind}.bf16").write_bytes(x.bfloat16().view(torch.uint8).numpy().tobytes())
++    common={"format":TRACE_FORMAT,"base_commit":BASE_COMMIT,"task":task,"token_hash":"synthetic",
++            "prefix_tokens":n,"geometry":{"layers":layers,"q_heads":hq,"kv_heads":h,"head_dim":d},
++            "model_identity":{"synthetic":True},"period":4,"keep_ratio":0.5}
++    for split in ("fit","val"):
++        path=tmp_path/split/task;path.mkdir(parents=True)
++        for idx in range(3):
++            q=torch.randn(8,hq,d)
++            layer_rows={lid:{"q":q,"tail_output":torch.randn_like(q),"tail_lse":torch.ones(8,hq),
++                              "selected_tokens":torch.arange(16)} for lid in range(layers)}
++            # Tail differs by layer but teacher and student for each target use
++            # the SAME private segment, as the compiler contract specifies.
++            torch.save({**common,"query_hash":f"{split}-{idx}","layers":layer_rows},path/f"{idx}.pt")
++    out=tmp_path/"adapters"/"demo.pt"
++    main(["--store-root",str(tmp_path/"store"),"--task",task,"--fit-traces",str(tmp_path/"fit"),
++          "--validation-traces",str(tmp_path/"val"),"--pairs","2:3","--key-mode","dense",
++          "--ridge","1e-6","--output",str(out)])
++    bundle=load_safe(out)
++    assert bundle["sources"]==[0,1,2,2]
++    assert bundle["accepted_consumers"]==1
++    assert bundle["reports"]["3"]["output_relative_rmse"]<1e-4
++    assert bundle["end_to_end_validated"] is False
++    assert len(bundle["calibration_query_hashes"])==6
++    # Whole-request overlap must fail closed.
++    with pytest.raises(ValueError,match="overlap"):
++        main(["--store-root",str(tmp_path/"store"),"--task",task,"--fit-traces",str(tmp_path/"fit"),
++          "--validation-traces",str(tmp_path/"fit"),"--pairs","2:3","--output",str(tmp_path/"other.pt")])
++
++
++@pytest.mark.skipif(not torch.cuda.is_available() ,
++                    reason="CUDA and FlashAttention-2 unavailable")
++@pytest.mark.parametrize("dtype",[torch.float16,torch.bfloat16])
++def test_vllm2_segmented_matches_reference(dtype):
++    q,k,v,kt,vt=tensors(dtype=dtype,device="cuda",d=128,t=5,n=67,tail=9)
++    h,d=k.shape[2:]
++    eye=torch.eye(d,device="cuda",dtype=dtype).repeat(h,1,1)
++    reader=Reader(eye*0.8,eye*1.1,torch.randn(h,d,device="cuda",dtype=dtype)*0.1,
++                  torch.randn(h,d,device="cuda",dtype=dtype)*0.1)
++    actual=segmented_attention(q,k,v,kt,vt,reader=reader,backend="vllm2")
++    expected=segmented_attention(q,k,v,kt,vt,reader=reader,backend="reference")
++    torch.testing.assert_close(actual,expected,atol=0.025 if dtype==torch.bfloat16 else 0.004,rtol=0.03)
+--- a/configs/layerkv_baselines.json
++++ b/configs/layerkv_baselines.json
+@@ -0,0 +1,104 @@
++[
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/original_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/original"
++  ],
++  [
++    "--mode",
++    "identity",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/identity_logits",
++    "--stats",
++    "results/identity.extra.jsonl",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/identity"
++  ],
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/fullkv_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "100",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/fullkv"
++  ],
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/original_gen8_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "8",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "8",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/original_gen8"
++  ]
++]--- a/configs/layerkv_experiments.json
++++ b/configs/layerkv_experiments.json
+@@ -0,0 +1,344 @@
++[
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/original_context_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/original_context"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_direct1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/direct1.extra.jsonl",
++    "--logits",
++    "results/direct1_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/direct1"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1.extra.jsonl",
++    "--logits",
++    "results/dense1_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense1"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense3",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense3.extra.jsonl",
++    "--logits",
++    "results/dense3_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense3"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense7",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense7.extra.jsonl",
++    "--logits",
++    "results/dense7_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense7"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1_repeat.extra.jsonl",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense1_repeat"
++  ],
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "128",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/original_repeat"
++  ],
++  [
++    "--mode",
++    "identity",
++    "--backend",
++    "vllm2",
++    "--stats",
++    "results/identity_fixed.extra.jsonl",
++    "--logits",
++    "results/identity_fixed_logits",
++    "--selection-plan",
++    "results/original_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "32",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/identity_fixed"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1_fixed.extra.jsonl",
++    "--logits",
++    "results/dense1_fixed_logits",
++    "--selection-plan",
++    "results/original_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "32",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "1",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense1_fixed"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1_gen8.extra.jsonl",
++    "--logits",
++    "results/dense1_gen8_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "8",
++    "--warmup",
++    "8",
++    "--max-tokens",
++    "8",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense1_gen8"
++  ],
++  [
++    "--mode",
++    "original",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/original_long_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "4",
++    "--warmup",
++    "0",
++    "--max-tokens",
++    "4",
++    "--bundle-dir",
++    "data/sharedkv_splits/long_query_stress",
++    "--output",
++    "results/original_long"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--logits",
++    "results/dense1_long_logits",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1_long.extra.jsonl",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "4",
++    "--warmup",
++    "0",
++    "--max-tokens",
++    "4",
++    "--bundle-dir",
++    "data/sharedkv_splits/long_query_stress",
++    "--output",
++    "results/dense1_long"
++  ]
++]--- a/configs/layerkv_fixed_verification.json
++++ b/configs/layerkv_fixed_verification.json
+@@ -0,0 +1,59 @@
++[
++  [
++    "--mode",
++    "identity",
++    "--backend",
++    "vllm2",
++    "--stats",
++    "results/identity_fixed_v2.extra.jsonl",
++    "--logits",
++    "results/identity_fixed_v2_logits",
++    "--selection-plan",
++    "results/original_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "32",
++    "--warmup",
++    "8",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/identity_fixed_v2"
++  ],
++  [
++    "--mode",
++    "shared",
++    "--backend",
++    "vllm2",
++    "--adapters",
++    "assets/layerkv_dense1",
++    "--allow-diagnostic",
++    "--stats",
++    "results/dense1_fixed_v2.extra.jsonl",
++    "--logits",
++    "results/dense1_fixed_v2_logits",
++    "--selection-plan",
++    "results/original_logits",
++    "--",
++    "--task",
++    "trec",
++    "--budget",
++    "25",
++    "--period",
++    "8",
++    "--samples",
++    "32",
++    "--warmup",
++    "8",
++    "--bundle-dir",
++    "data/sharedkv_splits/test",
++    "--output",
++    "results/dense1_fixed_v2"
++  ]
++]--- a/configs/round2/qwen25_k100_uniform.json
++++ b/configs/round2/qwen25_k100_uniform.json
+@@ -0,0 +1,13 @@
++{
++  "metadata": {
++    "method": "impress",
++    "model_path": "/data1/llm/Qwen/Qwen2.5-7B-Instruct",
++    "model_compute_dtype": "bfloat16",
++    "keep_ratio": 1.0,
++    "chunk_size": 16,
++    "online_selection_only": true,
++    "selection_source": "online ProMixed GQA selector with INT4 key index",
++    "hybrid_mode": "ProMixed GQA fixed P8; uniform exact global block budget",
++    "storage_precision": "float16"
++  }
++}
